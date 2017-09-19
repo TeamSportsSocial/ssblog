@@ -1,0 +1,19 @@
+.keywords{
+   
+    width: 100%;
+    z-index: 1;
+    border-bottom: 1px solid #bbbbbb;
+    background-color: #ffffff;
+    white-space: nowrap !important;
+    
+    
+}
+.keywords div{
+    text-align: center;
+    overflow-x: scroll;
+    max-width: 100%;
+    margin: 2px auto;
+}
+.keywords div::-webkit-scrollbar{
+   display: none;
+}

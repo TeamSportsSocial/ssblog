@@ -1,0 +1,110 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    font-family: 'Roboto',sans-serif;
+}
+header{
+    width: 100%;
+    background-color: #fafafa;
+    border-bottom: 1px solid #bbbbbb;
+    position: fixed;
+    top:0px;
+    z-index: 10;
+}
+ul{
+    display: inline-block;
+    width: 49%;
+    vertical-align: middle;
+}
+li{
+    display: inline-block;
+    list-style: none;
+    width: auto;
+    margin: 0.2% 0.1% 0.2% 0%;
+    vertical-align: top;
+}
+.brand-image{
+    width: 45px;
+    height: 45px;
+    margin-left: 1%;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.brand-title{
+   font-size: 1.5em;
+   font-weight: 800;
+}
+.brand-title>span:first-child{
+    color: #024770;
+}
+.brand-title>span:nth-child(2){
+    color: #ffa600;
+}
+.brand-title>span:nth-child(3){
+    font-size: 60%;
+    color: #024770;
+    font-weight: 400;
+}
+.brand-title>p{
+    font-size: 60%;
+    color: #024770;
+    font-weight: 400;
+    text-align: center;
+    font-style: italic;
+}
+.right{
+    text-align: right;
+    width:49%;
+}
+.right li{
+    margin: 1% 2% 1% 1%;
+}
+input{
+    height: 25px;
+    background-image: url('/assets/images/search.png');
+    border: 1px solid #bbbbbb;;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    background-position-x: 2%;
+    background-size: 15px;
+    outline: #fafafa;
+    padding-left: 15%;
+}
+.right p{
+    color: #024770;
+    padding: 2%
+}
+.mobileView{
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    float: right;  
+    padding: 2%;
+}
+.menuImageHolder{
+    width: 30px;
+    height: 30px;
+}
+.menuImageHolder img{
+    width: 100%;
+    height: 100%;
+}
+.dropdown-menu{
+  width: 30%;
+  background-color: #fafafa;
+  position: fixed;
+  top:10%;
+  left:40%;
+}
+.dropdown-menu button{
+    float: right;
+    width: auto;
+    padding:0.5% 1% 0% 0%;
+}
+.dropdown-menu p{
+    color: #024770;
+    padding: 2%;
+}

@@ -1,0 +1,39 @@
+<header #Header>
+  <ul class="left">
+    <a routerLink="/">
+      <li class="brand-image">
+        <img src="/assets/images/Logo.png" >
+      </li>
+      <li class="brand-title">
+        <span>Sports</span> <span>Social</span> <span>Blog</span>
+        <p>Chase your Sports</p>
+      </li>
+    </a>
+  </ul>
+  <ul class="right" *ngIf="!mobileView">
+    <li>
+      <input type="text" placeholder="Search">
+    </li>
+    <li *ngFor="let link of header">
+      <a href="{{link.pageUrl}}">
+        <p >{{link.name}}</p>
+      </a>
+    </li>
+  </ul>
+  <div class="mobileView dropdown" *ngIf="mobileView">
+     <div class="menuImageHolder" data-toggle="dropdown">
+       <img src="/assets/images/menu.png" role="button" >
+     </div>
+     <div class="dropdown-menu">
+        <button type="button" class="close" data-dismiss="dropdown">&times;</button>
+        <div *ngFor="let link of header">
+          <a href="{{link.pageUrl}}">
+            <p >{{link.name}}</p>
+          </a>
+        </div>
+      <div>
+         <input type="text" placeholder="Search">
+      </div>
+    </div>
+  </div> 
+</header>

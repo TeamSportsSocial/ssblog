@@ -1,0 +1,73 @@
+<SportSocialBlog-keywords></SportSocialBlog-keywords>
+<div class="blog" #blog *ngIf="!mobileView">
+    <SportSocial-latest-blog></SportSocial-latest-blog>
+    <div class="col-8" TabViewAvailable >
+        <div class="col-6">
+            <SportSocial-normal-blog></SportSocial-normal-blog>
+        </div>
+        <div class="col-6" >
+            <SportSocial-normal-blog></SportSocial-normal-blog>
+        </div>
+        <div class="col-12" >
+            <SportSocial-normal-blog></SportSocial-normal-blog>
+        </div>
+    </div>        
+    <div class="trendingBlogs" *ngIf="!removeTrendingBlock" >
+        <SportSocial-trending-blog ></SportSocial-trending-blog>
+    </div>
+    <div class="col-8" TabViewAvailable >
+        <SportSocial-normal-blog ></SportSocial-normal-blog>
+    </div>
+    <div class="col-4" TabViewAvailable >
+        <SportSocial-normal-blog ></SportSocial-normal-blog>
+    </div>
+    <div class="col-4" TabViewAvailable >
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div>
+    <div class="col-4"  TabViewAvailable>
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div>
+    <div class="col-4" TabViewAvailable >
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div>
+    <div class="col-8" TabViewAvailable >
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div> 
+    <div class="col-4" TabViewAvailable >
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div>      
+</div>            
+<div class="blog mobileView" *ngIf="mobileView" #blog>
+    <div class="col-4">
+        <SportSocial-latest-blog></SportSocial-latest-blog>
+    </div>
+    <div class="col-4">
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div>
+    <div class="col-4">
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div>
+    <div class="col-4">
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div>
+    <div class="col-4">
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div>
+    <div class="col-4">
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div>
+    <div class="col-4">
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div>
+    <div class="col-4">
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div>
+    <div class="col-4">
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div>
+    <div class="col-4">
+        <SportSocial-normal-blog></SportSocial-normal-blog>
+    </div>
+</div>
+            
+       

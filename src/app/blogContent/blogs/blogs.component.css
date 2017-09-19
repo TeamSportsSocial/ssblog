@@ -1,0 +1,34 @@
+
+.blog{
+    padding: 0% 1.5% 1.5% 1.5%;
+}
+.col-6{
+    width: 49.50%;
+    display: inline-block;
+    vertical-align: top;
+    padding:0% 1.5% 2% 1.5%;
+}
+.col-12{
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+   
+}
+.col-4,.trendingBlogs{
+    width: 33%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 1%;
+}
+ .col-8{
+    width: 66.2%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 1%;
+    
+}
+.mobileView .col-4{
+    width: 100%;
+}
+
+

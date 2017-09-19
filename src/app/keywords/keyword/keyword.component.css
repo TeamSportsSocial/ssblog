@@ -1,0 +1,31 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.keyword{
+    display: inline-block;
+    width: auto;
+    vertical-align: top;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    margin: 0.5% 0.15% 0.5% 0.15%;
+     
+}
+.image{
+    background-repeat:no-repeat ;
+    background-size: 100%;
+}
+.title{
+    padding: 6px 14px 6px 14px;
+    display: inline-block;
+    width: auto;
+    
+}
+.title p{
+    display: inline-block;
+    width: auto;
+    font-size: 0.9em;
+    color:#ffffff;
+    text-align: left;
+    font-weight: 700;
+}

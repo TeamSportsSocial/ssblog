@@ -1,0 +1,67 @@
+import {
+   Component, 
+   OnInit,
+   ViewChild,
+   HostListener,
+   ElementRef,
+   Renderer2,
+   AfterViewInit,
+   ViewChildren
+} from '@angular/core';
+import {PropertyService} from "../services/property.service";
+import { KeywordComponent } from './keyword/keyword.component';
+@Component({
+  selector: 'SportSocialBlog-keywords',
+  templateUrl: './keywords.component.html',
+  styleUrls: ['./keywords.component.css']
+})
+export class KeywordsComponent implements OnInit,AfterViewInit {
+
+  keywords:{name:string,backgroundImg:string}[]=[
+    {name:'Sports is a new social', backgroundImg:'url("/assets/images/ariel-lustre-242326.jpg")'},
+    {name:'Boxing', backgroundImg:'url("/assets/images/robert-collins-333411.jpg")'},
+    {name:'Running',backgroundImg:"url('/assets/images/clem-onojeghuo-71989.jpg')"},
+    {name:'Social',backgroundImg:"url('/assets/images/robert-collins-341231.jpg')"}, 
+    {name:'Passion',backgroundImg:"url('/assets/images/2.jpg')"},
+    {name:'Help Center',backgroundImg:"url('/assets/images/alec-moore-5093.jpg')"},
+    {name:'Local Sports',backgroundImg:"url('/assets/images/robert-collins-341231.jpg')"},
+    {name:'College',backgroundImg:"url('/assets/images/goh-rhy-yan-273921 (1).jpg')"},
+    {name:'Cricket',backgroundImg:"url('/assets/images/robert-collins-341231.jpg')"},
+    {name:'Football',backgroundImg:"url('/assets/images/hermes-rivera-265368.jpg')"},
+    {name:'BasketBall',backgroundImg:"url('/assets/images/tom-sodoge-54031.jpg')"},
+    {name:'Badminton',backgroundImg:"url('/assets/images/robert-collins-341231.jpg')"},
+    {name:'Hockey',backgroundImg:"url('/assets/images/robert-collins-341231.jpg')"},
+    {name:'Champion',backgroundImg:"url('/assets/images/sayan-nath-180616.jpg')"}
+  ]
+
+ @ViewChild('Keywords') Keywords:ElementRef;
+  topMargin;
+  keyWordContainerwidth;
+  sumofkeyWordWidth;
+  constructor(private renderer :Renderer2 ,
+    private recieveHeight:PropertyService,
+    private sendHeight:PropertyService
+  ) { }
+
+  ngOnInit() {
+    this.recieveHeight.ofHeader.subscribe(
+      margin=>{
+        this.topMargin=margin
+      }
+    )
+    this.keyWordContainerwidth=this.Keywords.nativeElement.children[0].getBoundingClientRect().width
+    this.renderer.setStyle(this.Keywords.nativeElement,'position',"fixed");
+    this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
+  }
+  ngAfterViewInit(){
+    this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
+  }
+  @HostListener('window:resize',[]) onresize(){
+    this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
+    this.recieveHeight.ofHeader.subscribe(
+      margin=> this.topMargin=margin
+    )
+    this.renderer.setStyle(this.Keywords.nativeElement,'position',"fixed");
+    this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
+  }
+}
