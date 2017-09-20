@@ -1,0 +1,45 @@
+<div class="container" #form>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form  #f="ngForm">
+        <div id="blog-data" ngModelGroup="blogData" #userData="ngModelGroup">
+          <div class="form-group">
+            <label for="username">Name</label>
+            <input type="text" id="username" class="form-control" ngModel name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="bloggerImage">Blogger Image</label>
+            <input type="file" id="bloggerImage" class="form-control" ngModel name="bloggerImage" #bloggerImage>
+            <div class="imgTest"></div>
+          </div>
+          <div class="form-group">
+            <label for="date">Date </label>
+            <input type="date" id="datetime" class="form-control" ngModel name="date" required>
+          </div>
+          <div class="form-group">
+            <label for="Title">Title</label>
+            <input type="text" id="title" class="form-control" ngModel name="Title" required>
+          </div>
+          <div class="form-group">
+            <label for="keywords">Keywords</label>
+            <input type="text" id="keywords" class="form-control" ngModel name="keywords" required>
+          </div>
+          <div class="form-group">
+            <label for="blogImage">Blog Image</label>
+            <input type="file" id="blogImage" class="form-control" ngModel name="blogMainImage" #blogImage>
+            <div class="imgTest"></div>
+          </div>
+          <div class="form-group">
+            <label for="desc">Desc  </label>
+            <textarea rows="50" id="desc" class="form-control" ngModel name="desc" required >
+              <b>hello</b>
+            </textarea>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" (click)="upload()">Upload</button>
+      </form>
+    </div>
+  </div>
+  <hr>
+</div>
