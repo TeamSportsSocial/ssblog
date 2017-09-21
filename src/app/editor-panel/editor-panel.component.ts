@@ -41,7 +41,7 @@ ngOnInit(){
       this.topMargin=margin
     }
   )
-  this.renderer.setStyle(this.panel.nativeElement,'margin-top',this.topMargin+10+"px")
+  //this.renderer.setStyle(this.panel.nativeElement,'margin-top',this.topMargin+10+"px")
 }
 bold(){
 
