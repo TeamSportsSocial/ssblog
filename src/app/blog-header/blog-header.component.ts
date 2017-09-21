@@ -18,7 +18,7 @@ export class BlogHeaderComponent implements OnInit {
   header:{imageUrl?:string,name?:string,pageUrl:string}[]=[
     {name:"App",pageUrl:"#"},
     {name:"Website",pageUrl:"#"},
-    {name:"Editor",pageUrl:"/editorPanel"},
+    {name:"Editor",pageUrl:"/blogOpen"},
   ]
   @ViewChild('Header') Header:ElementRef;
   mobileView:boolean=false;
