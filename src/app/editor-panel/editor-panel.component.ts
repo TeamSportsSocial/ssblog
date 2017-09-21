@@ -5,8 +5,8 @@ import {
   ElementRef,
   Input,
   Renderer2
-} from '@angular/core';
-import { Http,Headers,RequestOptions} from '@angular/http';
+}from '@angular/core';
+import {Http,Headers,RequestOptions} from '@angular/http';
 import {NgForm} from "@angular/forms";
 import {PropertyService} from "../services/property.service";
 
@@ -16,7 +16,6 @@ import {PropertyService} from "../services/property.service";
   styleUrls: ['./editor-panel.component.css']
 })
 export class EditorPanelComponent implements OnInit {
-
   @ViewChild('f') signupForm: NgForm;
   @ViewChild('bloggerImage') bloggerImage;
   @ViewChild('blogImage') blogImage;
@@ -32,6 +31,7 @@ export class EditorPanelComponent implements OnInit {
     blofDesc:any,
     keywords:any[]
 }
+x;
 constructor(private http:Http,private recieveHeight:PropertyService,private renderer:Renderer2){
   this.filesToUpload = [];
 }
@@ -43,7 +43,9 @@ ngOnInit(){
   )
   this.renderer.setStyle(this.panel.nativeElement,'margin-top',this.topMargin+10+"px")
 }
+bold(){
 
+}
 makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
   this.imageName=["bloggerImage","blogImage"]
   return new Promise((resolve, reject) => {

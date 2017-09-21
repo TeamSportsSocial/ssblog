@@ -72,6 +72,7 @@ input{
     background-size: 15px;
     outline: #fafafa;
     padding-left: 15%;
+    border-radius: 3px
 }
 .right p{
     color: #024770;

@@ -65,9 +65,9 @@ span >img{
     overflow: hidden;
     font-weight: 700;
     font-size:1.2em;
-    white-space: nowrap;
     text-overflow: ellipsis;
-    color: black
+    color: black;
+    border: 1px solid black;
 }
 .blogFooter>p:last-child{
     position:absolute ;

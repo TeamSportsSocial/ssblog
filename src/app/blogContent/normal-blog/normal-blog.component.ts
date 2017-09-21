@@ -3,7 +3,8 @@ import {
   OnInit,
   Input,
   HostListener,
-  ViewChild
+  ViewChild,
+  Renderer2
 } from '@angular/core';
 import {PropertyService} from "../../services/property.service";
 @Component({
@@ -12,6 +13,7 @@ import {PropertyService} from "../../services/property.service";
   styleUrls: ['./normal-blog.component.css']
 })
 export class NormalBlogComponent implements OnInit {
+  @ViewChild('title') title;
   @Input() blogDetails:{
     img:string,
     bloggerName:string,
@@ -20,10 +22,17 @@ export class NormalBlogComponent implements OnInit {
     viewCount:string,
     shareCount:string
   }
-
-  constructor() { }
+  titleboxHeightInital;
+  titleboxHeightFinal;
+  constructor(private renderer:Renderer2) { }
 
   ngOnInit() {
-  }
+    this.titleboxHeightInital=this.title.nativeElement.getBoundingClientRect().height;
+    this.titleboxHeightFinal=2*(this.titleboxHeightInital);
+    //this.renderer.setStyle(this.title.nativeElement,"height",this.titleboxHeightFinal+"px")
+    console.log(this.title)
 
+    
+  }
+ 
 }
