@@ -77,7 +77,7 @@ upload(){
   this.makeFileRequest("https://test.sportsocial.in/poc/saveNewBlog", [], this.filesToUpload).then((result) => {
     console.log(result);
   }, (error) => {
-    console.error(error);
+   // console.error(error);
   });
   this.blog={
     bloggerName:this.signupForm.value.blogData.name,
