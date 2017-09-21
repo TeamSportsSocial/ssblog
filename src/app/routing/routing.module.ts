@@ -10,7 +10,7 @@ import {Routes,RouterModule,RouterLink} from '@angular/router';
  const appRoute:Routes=[
    {path:"" ,component:BlogsComponent},
    {path:'blogOpen',component: BlogOpenComponent },
-   {path:"editorPanel", component:EditorPanelComponent}
+   {path:"editorPanel", component:LoginPageComponent}
  ]
 @NgModule({
   imports: [
