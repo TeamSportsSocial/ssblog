@@ -28,7 +28,6 @@ export class NormalBlogComponent implements OnInit {
 
   ngOnInit() {
     this.titleboxHeightInital=this.title.nativeElement.getBoundingClientRect().height;
-    this.titleboxHeightFinal=2*(this.titleboxHeightInital);
     //this.renderer.setStyle(this.title.nativeElement,"height",this.titleboxHeightFinal+"px")
     console.log(this.title)
 

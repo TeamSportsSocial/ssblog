@@ -28,7 +28,7 @@ export class EditorPanelComponent implements OnInit {
     bloggerName:any,
     blogDate:any,
     blogTitle:any,
-    blofDesc:any,
+    blogDesc:any,
     keywords:any[]
 }
 constructor(private http:Http,private recieveHeight:PropertyService,private renderer:Renderer2){
@@ -42,9 +42,6 @@ ngOnInit(){
   )
   this.renderer.setStyle(this.panel.nativeElement,'margin-top',this.topMargin+10+"px")
 }
-bold(){
-
-}
 makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
   this.imageName=["bloggerImage","blogImage"]
   return new Promise((resolve, reject) => {
@@ -53,6 +50,11 @@ makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
       for(var i = 0; i < files.length; i++) {
           formData.append(this.imageName[i],files[i]);
       }
+      formData.append("bloggerName",this.blog.bloggerName)
+      formData.append("blogrTitle",this.blog.blogTitle)
+      formData.append("blogDesc",this.blog.blogDesc)
+      formData.append("blogDate",this.blog.blogDate)
+      formData.append("keywords",this.blog.keywords)
       xhr.onreadystatechange = function () {
           if (xhr.readyState == 4) {
               if (xhr.status == 200) {
@@ -81,11 +83,11 @@ upload(){
     bloggerName:this.signupForm.value.blogData.name,
     blogDate:this.signupForm.value.blogData.date,
     blogTitle:this.signupForm.value.blogData.Title,
-    blofDesc:this.signupForm.value.blogData.desc,
+    blogDesc:this.signupForm.value.blogData.desc,
     keywords:this.signupForm.value.blogData.keywords.split(",")
   }
-  this.http.post('https://test.sportsocial.in/poc/saveNewBlog',this.blog).subscribe(
+  /* this.http.post('https://test.sportsocial.in/poc/saveNewBlog',this.blog).subscribe(
     (data)=>console.log(data)
-  )
+  ) */
  }
 }
