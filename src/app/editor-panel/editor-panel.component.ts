@@ -6,7 +6,7 @@ import {
   Input,
   Renderer2
 }from '@angular/core';
-import {Http,Headers,RequestOptions} from '@angular/http';
+import {Http} from '@angular/http';
 import {NgForm} from "@angular/forms";
 import {PropertyService} from "../services/property.service";
 
@@ -31,7 +31,6 @@ export class EditorPanelComponent implements OnInit {
     blofDesc:any,
     keywords:any[]
 }
-x;
 constructor(private http:Http,private recieveHeight:PropertyService,private renderer:Renderer2){
   this.filesToUpload = [];
 }
@@ -41,7 +40,7 @@ ngOnInit(){
       this.topMargin=margin
     }
   )
-  //this.renderer.setStyle(this.panel.nativeElement,'margin-top',this.topMargin+10+"px")
+  this.renderer.setStyle(this.panel.nativeElement,'margin-top',this.topMargin+10+"px")
 }
 bold(){
 

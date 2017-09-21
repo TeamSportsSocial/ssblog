@@ -15,7 +15,7 @@
       <input type="text" placeholder="Search">
     </li>
     <li *ngFor="let link of header">
-      <a href="{{link.pageUrl}}">
+      <a routerLink="{{link.pageUrl}}">
         <p >{{link.name}}</p>
       </a>
     </li>
