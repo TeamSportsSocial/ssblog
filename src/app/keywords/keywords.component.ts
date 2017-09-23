@@ -10,12 +10,17 @@ import {
 } from '@angular/core';
 import {PropertyService} from "../services/property.service";
 import { KeywordComponent } from './keyword/keyword.component';
+import {Http} from "@angular/http";
 @Component({
   selector: 'SportSocialBlog-keywords',
   templateUrl: './keywords.component.html',
   styleUrls: ['./keywords.component.css']
 })
 export class KeywordsComponent implements OnInit,AfterViewInit {
+  
+  postKeyWords:{
+    name:string;
+  }
 
   keywords:{name:string,backgroundImg:string}[]=[
     {name:'Sports is a new social', backgroundImg:'url("/assets/images/ariel-lustre-242326.jpg")'},
@@ -40,7 +45,8 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
   sumofkeyWordWidth;
   constructor(private renderer :Renderer2 ,
     private recieveHeight:PropertyService,
-    private sendHeight:PropertyService
+    private sendHeight:PropertyService,
+    private http:Http
   ) { }
 
   ngOnInit() {
@@ -54,7 +60,17 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
   }
   ngAfterViewInit(){
+    //console.log(this.Keywords.nativeElement.getBoundingClientRect().bottom," b")
     this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
+  }
+  send(i:number){
+    this.postKeyWords={
+      name:this.keywords[i].name
+    }
+    console.log(this.postKeyWords);
+    this.http.post('https://test.sportsocial.in/poc/loadblogdata',this.postKeyWords).subscribe(
+      (data)=>console.log(data)
+    )
   }
   @HostListener('window:resize',[]) onresize(){
     this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);

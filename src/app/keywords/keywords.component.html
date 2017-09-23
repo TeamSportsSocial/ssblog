@@ -1,7 +1,7 @@
 <div class="keywords" #Keywords>
   <div>
-    <SportSocialBlog-keyword *ngFor="let keyword of keywords" 
-      [title]="keyword.name" [backgroundImage]="keyword.backgroundImg" class="keyword">
+    <SportSocialBlog-keyword *ngFor="let keyword of keywords;let i=index" 
+      [title]="keyword.name" [backgroundImage]="keyword.backgroundImg" class="keyword" role="button" (click)="send(i)">
     </SportSocialBlog-keyword>
   </div>
 </div>

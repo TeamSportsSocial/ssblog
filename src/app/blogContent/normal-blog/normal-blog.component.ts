@@ -13,25 +13,47 @@ import {PropertyService} from "../../services/property.service";
   styleUrls: ['./normal-blog.component.css']
 })
 export class NormalBlogComponent implements OnInit {
-  @ViewChild('title') title;
-  @Input() blogDetails:{
-    img:string,
+  
+  @Input()  blogImage:string
+  @Input()  bloggerImage:string
+  @Input()  bloggerName:string
+  @Input()  title:string
+  @Input()  dow:string
+  @Input()  desc:string
+  @Input()  viewCount:string
+  @Input()  shareCount:string
+  @Input()  keys:string
+  
+  blog:{
+    blogImage:string;
     bloggerName:string,
+    bloggerImage:string,
     title:string,
+    desc:string,
     dow:string,
     viewCount:string,
-    shareCount:string
+    shareCount:string,
+    keys:string
   }
-  titleboxHeightInital;
-  titleboxHeightFinal;
-  constructor(private renderer:Renderer2) { }
+  constructor(private Send: PropertyService) { }
 
-  ngOnInit() {
-    this.titleboxHeightInital=this.title.nativeElement.getBoundingClientRect().height;
-    //this.renderer.setStyle(this.title.nativeElement,"height",this.titleboxHeightFinal+"px")
-    console.log(this.title)
-
-    
+  ngOnInit() {  
+    //console.log(this.title)  
+   // console.log(this.Heading)
+   this.blog={
+    blogImage:this.blogImage,
+    bloggerName:this.bloggerName,
+    bloggerImage:this.bloggerImage,
+    title:this.title,
+    desc:this.desc,
+    dow:this.dow,
+    viewCount:this.viewCount,
+    shareCount:this.shareCount,
+    keys:this.keys
+   }
   }
- 
+  send(){
+    //console.log(this.blog)
+    this.Send.detailsofBlog.next(this.blog)
+  }
 }

@@ -3,6 +3,7 @@ import {
   OnInit, 
   Input
 } from '@angular/core';
+import {PropertyService} from "../../services/property.service";
 
 @Component({
   selector: 'SportSocial-latest-blog',
@@ -10,20 +11,50 @@ import {
   styleUrls: ['./latest-blog.component.css']
 })
 export class LatestBlogComponent implements OnInit {
-  @Input() blogDetails:{
-    img:string,
+   
+  @Input()  blogImage:string
+  @Input()  bloggerName:string
+  @Input()  bloggerImage:string
+  @Input()  title:string
+  @Input()  desc:string
+  @Input()  dow:string
+  @Input()  viewCount:string
+  @Input()  shareCount:string
+  @Input()  keys:string
+  
+  blog:{
+    blogImage:string;
     bloggerName:string,
-    bloggerImg:string,
+    bloggerImage:string,
     title:string,
     desc:string,
     dow:string,
     viewCount:string,
     shareCount:string,
-    tag:string
+    keys:string
   }
-  constructor() { }
+  constructor(private Send: PropertyService) { }
 
   ngOnInit() {
+    
+    this.blog={
+      blogImage:this.blogImage,
+      bloggerName:this.bloggerName,
+      bloggerImage:this.bloggerImage,
+      title:this.title,
+      desc:this.desc,
+      dow:this.dow,
+      viewCount:this.viewCount,
+      shareCount:this.shareCount,
+      keys:this.keys
+     }
+     
+  }
+  ngAfterViewInit(){
+  }
+  send(){
+    console.log(this.blog)
+    this.Send.detailsofBlog.next(this.blog)
   }
 
 }

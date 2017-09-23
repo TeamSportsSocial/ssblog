@@ -1,72 +1,80 @@
 <SportSocialBlog-keywords></SportSocialBlog-keywords>
 <div class="blog" #blog *ngIf="!mobileView">
-    <SportSocial-latest-blog></SportSocial-latest-blog>
+    <div class="col-12" *ngFor="let data of latestBlogDetails;let i=index">
+        <SportSocial-latest-blog 
+            [blogImage]="data.blogImage"
+            [bloggerImage]="data.bloggerImage"
+            [bloggerName]="data.bloggerName"
+            [dow]="data.dow"
+            [title]="data.title"
+            [desc]="data.desc"
+            [viewCount]="data.viewCount"
+            [shareCount]="data.shareCount"
+            [keys]="data.keys">
+        </SportSocial-latest-blog>
+    </div>
     <div class="col-8" TabViewAvailable >
-        <div class="col-6">
-            <SportSocial-normal-blog></SportSocial-normal-blog>
-        </div>
-        <div class="col-6" >
-            <SportSocial-normal-blog></SportSocial-normal-blog>
-        </div>
-        <div class="col-12" >
-            <SportSocial-normal-blog></SportSocial-normal-blog>
+        <div  
+            *ngFor="let data of topBlogDetails;let i=index" 
+            [ngClass]="{'col-6':i!=2,'col-12':i===2}">
+            <SportSocial-normal-blog 
+                [blogImage]="data.blogImage"
+                [bloggerImage]="data.bloggerImage"
+                [bloggerName]="data.bloggerName"
+                [dow]="data.dow"
+                [title]="data.title"
+                [desc]="data.desc"
+                [viewCount]="data.viewCount"
+                [shareCount]="data.shareCount"
+                [keys]="data.keys">
+            </SportSocial-normal-blog>
         </div>
     </div>        
-    <div class="trendingBlogs" *ngIf="!removeTrendingBlock" >
+  <div class="trendingBlogs" *ngIf="!removeTrendingBlock" >
         <SportSocial-trending-blog ></SportSocial-trending-blog>
+  </div>
+    <div  TabViewAvailable 
+        *ngFor="let data of restBlogDetails;let i=index"
+        [ngClass]="{'col-8':i%5===0 ,'col-4': i%5!=0}">
+        <SportSocial-normal-blog
+            [blogImage]="data.blogImage"
+            [bloggerImage]="data.bloggerImage"
+            [bloggerName]="data.bloggerName"
+            [dow]="data.dow"
+            [title]="data.title"
+            [desc]="data.desc"
+            [viewCount]="data.viewCount"
+            [shareCount]="data.shareCount"
+            [keys]="data.keys">
+        </SportSocial-normal-blog>
     </div>
-    <div class="col-8" TabViewAvailable >
-        <SportSocial-normal-blog ></SportSocial-normal-blog>
-    </div>
-    <div class="col-4" TabViewAvailable >
-        <SportSocial-normal-blog ></SportSocial-normal-blog>
-    </div>
-    <div class="col-4" TabViewAvailable >
-        <SportSocial-normal-blog></SportSocial-normal-blog>
-    </div>
-    <div class="col-4"  TabViewAvailable>
-        <SportSocial-normal-blog></SportSocial-normal-blog>
-    </div>
-    <div class="col-4" TabViewAvailable >
-        <SportSocial-normal-blog></SportSocial-normal-blog>
-    </div>
-    <div class="col-8" TabViewAvailable >
-        <SportSocial-normal-blog></SportSocial-normal-blog>
-    </div> 
-    <div class="col-4" TabViewAvailable >
-        <SportSocial-normal-blog></SportSocial-normal-blog>
-    </div>      
 </div>            
 <div class="blog mobileView" *ngIf="mobileView" #blog>
-    <div class="col-4">
-        <SportSocial-latest-blog></SportSocial-latest-blog>
+    <div class="col-4" *ngFor="let data of latestBlogDetails;let i=index" >
+        <SportSocial-latest-blog
+            [blogImage]="data.blogImage"
+            [bloggerImage]="data.bloggerImage"
+            [bloggerName]="data.bloggerName"
+            [dow]="data.dow"
+            [title]="data.title"
+            [desc]="data.desc"
+            [viewCount]="data.viewCount"
+            [shareCount]="data.shareCount"
+            [keys]="data.keys">
+        </SportSocial-latest-blog>
     </div>
-    <div class="col-4">
-        <SportSocial-normal-blog></SportSocial-normal-blog>
-    </div>
-    <div class="col-4">
-        <SportSocial-normal-blog></SportSocial-normal-blog>
-    </div>
-    <div class="col-4">
-        <SportSocial-normal-blog></SportSocial-normal-blog>
-    </div>
-    <div class="col-4">
-        <SportSocial-normal-blog></SportSocial-normal-blog>
-    </div>
-    <div class="col-4">
-        <SportSocial-normal-blog></SportSocial-normal-blog>
-    </div>
-    <div class="col-4">
-        <SportSocial-normal-blog></SportSocial-normal-blog>
-    </div>
-    <div class="col-4">
-        <SportSocial-normal-blog></SportSocial-normal-blog>
-    </div>
-    <div class="col-4">
-        <SportSocial-normal-blog></SportSocial-normal-blog>
-    </div>
-    <div class="col-4">
-        <SportSocial-normal-blog></SportSocial-normal-blog>
+    <div class="col-4" *ngFor="let data of mobileBlogDetails;let i=index">
+        <SportSocial-normal-blog 
+            [blogImage]="data.blogImage"
+            [bloggerImage]="data.bloggerImage"
+            [bloggerName]="data.bloggerName"
+            [dow]="data.dow"
+            [title]="data.title"
+            [desc]="data.desc"
+            [viewCount]="data.viewCount"
+            [shareCount]="data.shareCount"
+            [keys]="data.keys">
+        </SportSocial-normal-blog>
     </div>
 </div>
             

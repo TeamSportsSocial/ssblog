@@ -1,27 +1,23 @@
 <div class="blog" MaintainHeightWidthRatio >
   <div class="blogImageHolder">
-    <img src="/assets/images/clem-onojeghuo-71989.jpg" >
+    <img src="{{blogImage}}" >
   </div>
   <div class="blogFooter">
     <p>
       <span>1 Day Ago</span>|<span>2 min read</span>
       <span>
         <img src="/assets/images/views-black.png" >
-        340
-      </span>
-      <span>
-        <img src="/assets/images/share-black.png" >
-        400
+        {{viewCount}}
       </span>
     </p>
-    <a routerLink="/blogOpen">
-      <p #title>
-        They for the way they become family with thier team.
+    <a routerLink="/blogOpen" (click)="send()">
+      <p >
+        {{title}}
       </p>
     </a>
     <p>
       <img src="/assets/images/edit.png" >
-      Akhil Tripathi
+      {{bloggerName}}
     </p>
   </div>
 </div>

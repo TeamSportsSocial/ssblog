@@ -59,7 +59,7 @@ import { BlogFooterComponent } from './blog-footer/blog-footer.component';
     HttpModule,
     RoutingModule
   ],
-  providers: [PropertyService],
+  providers: [PropertyService,GetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
