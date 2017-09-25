@@ -1,9 +1,11 @@
+*{
+    font-size: 100%;
+}
 .latest{
     display: inline-block;
     width: 100%;
     height: 500px;
     font-family: 'Roboto', sans-serif;
-    font-size: 100%;
     position: relative;
     background-color: #000000;
     overflow: hidden;
@@ -17,7 +19,7 @@ img{
 }
 .desc{
     width: 100%;
-    height:65%;
+    height:70%;
     position: absolute;
     bottom: 0px;
     left:0px;
@@ -54,7 +56,7 @@ img{
     margin: auto;
     max-width:70%;
     color: #ffffff;
-    font-size: 1.2em;
+    font-size: 1.4em;
     text-align: left;
     overflow: hidden;
     white-space: nowrap;
@@ -66,7 +68,6 @@ img{
     height: 40px;
     border-radius: 50%;
     display: inline-block;
-    border: 1px solid white;
 }
 .bloggerImage >img{
     width: 100%;
@@ -84,7 +85,7 @@ img{
 }
 .smallDesc{
     color: white;
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: left;
     font-weight: 500;
     white-space: nowrap;
@@ -93,7 +94,7 @@ img{
 }
 .readMore >a{
     color: white;
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: left;
     font-weight: 500;
 }

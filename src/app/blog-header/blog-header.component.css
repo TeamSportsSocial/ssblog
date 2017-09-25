@@ -6,17 +6,18 @@
 }
 header{
     width: 100%;
-    background-color: #fafafa;
-    border-bottom: 1px solid #bbbbbb;
+    background-color: #ffffff;
     position: fixed;
     top:0px;
     z-index: 10;
+    box-shadow: 1px 1px #bbbbbb
 }
-ul{
+.left{
     display: inline-block;
-    width: 49%;
     vertical-align: middle;
+    border: 1px solid black;
 }
+
 li{
     display: inline-block;
     list-style: none;
@@ -24,18 +25,28 @@ li{
     margin: 0.2% 0.1% 0.2% 0%;
     vertical-align: top;
 }
+.left>li{
+    display: inline-block;
+    vertical-align: middle;
+    width: 60%;
+    margin-left:3%;
+}
 .brand-image{
-    width: 45px;
-    height: 45px;
-    margin-left: 1%;
+    width: 40px;
+    height: 40px;
+    margin-left:2%;
+    display: inline-block;
+    vertical-align: middle
 }
 img{
     width: 100%;
     height: 100%;
 }
 .brand-title{
-   font-size: 1.5em;
-   font-weight: 800;
+   font-size: 1.4em;
+   font-weight: 700;
+   display: inline-block;
+   vertical-align: middle
 }
 .brand-title>span:first-child{
     color: #024770;
@@ -45,25 +56,28 @@ img{
 }
 .brand-title>span:nth-child(3){
     font-size: 60%;
-    color: #024770;
-    font-weight: 400;
+    color: black;
+    font-weight: 700;
 }
 .brand-title>p{
-    font-size: 60%;
+    font-size: 55%;
     color: #024770;
     font-weight: 400;
-    text-align: center;
+    text-align: left;
     font-style: italic;
+    padding-left: 9%;
 }
 .right{
+    display: inline-block;
+    vertical-align: middle;
     text-align: right;
-    width:49%;
+    width:13%;
 }
 .right li{
     margin: 1% 2% 1% 1%;
 }
 input{
-    height: 25px;
+    height: 35px;
     background-image: url('/assets/images/search.png');
     border: 1px solid #bbbbbb;;
     background-repeat: no-repeat;
@@ -72,7 +86,8 @@ input{
     background-size: 15px;
     outline: #fafafa;
     padding-left: 15%;
-    border-radius: 3px
+    border-radius: 25px;
+    background-color: #e5e5e5;
 }
 .right p{
     color: #024770;

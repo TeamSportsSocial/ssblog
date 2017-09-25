@@ -20,7 +20,7 @@
     vertical-align: top;
     padding: 1%;
 }
- .col-8{
+.col-8{
     width: 66.2%;
     display: inline-block;
     vertical-align: top;
@@ -30,5 +30,7 @@
 .mobileView .col-4{
     width: 100%;
 }
-
+.suscribeCard{
+    border: 1px solid black;
+}
 

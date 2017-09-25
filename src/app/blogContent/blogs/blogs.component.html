@@ -10,7 +10,8 @@
             [desc]="data.desc"
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
-            [keys]="data.keys">
+            [keys]="data.keys"
+            [exactDate]="data.exactDate">
         </SportSocial-latest-blog>
     </div>
     <div class="col-8" TabViewAvailable >
@@ -26,7 +27,8 @@
                 [desc]="data.desc"
                 [viewCount]="data.viewCount"
                 [shareCount]="data.shareCount"
-                [keys]="data.keys">
+                [keys]="data.keys"
+                [exactDate]="data.exactDate">
             </SportSocial-normal-blog>
         </div>
     </div>        
@@ -45,7 +47,8 @@
             [desc]="data.desc"
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
-            [keys]="data.keys">
+            [keys]="data.keys"
+            [exactDate]="data.exactDate">
         </SportSocial-normal-blog>
     </div>
 </div>            
@@ -60,10 +63,11 @@
             [desc]="data.desc"
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
-            [keys]="data.keys">
+            [keys]="data.keys"
+            [exactDate]="data.exactDate">
         </SportSocial-latest-blog>
     </div>
-    <div class="col-4" *ngFor="let data of mobileBlogDetails;let i=index">
+    <div class="col-4" *ngFor="let data of topBlogDetails;let i=index">
         <SportSocial-normal-blog 
             [blogImage]="data.blogImage"
             [bloggerImage]="data.bloggerImage"
@@ -73,7 +77,25 @@
             [desc]="data.desc"
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
-            [keys]="data.keys">
+            [keys]="data.keys"
+            [exactDate]="data.exactDate">
+        </SportSocial-normal-blog>
+    </div>
+    <div class="suscribeCard">
+        <SportSocial-subscribe-card></SportSocial-subscribe-card>
+    </div>
+    <div class="col-4" *ngFor="let data of restBlogDetails;let i=index">
+        <SportSocial-normal-blog 
+            [blogImage]="data.blogImage"
+            [bloggerImage]="data.bloggerImage"
+            [bloggerName]="data.bloggerName"
+            [dow]="data.dow"
+            [title]="data.title"
+            [desc]="data.desc"
+            [viewCount]="data.viewCount"
+            [shareCount]="data.shareCount"
+            [keys]="data.keys"
+            [exactDate]="data.exactDate">
         </SportSocial-normal-blog>
     </div>
 </div>

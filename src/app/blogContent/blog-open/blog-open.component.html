@@ -1,5 +1,5 @@
 <p #openBlog class="Catagory">
-  <span>Boxing</span>
+  <span>{{blog.keys[0]}}</span>
   <span>|</span>
   <span>2 min read</span>
 </p>
@@ -8,15 +8,15 @@
 </div>
 <p class="title">{{blog.title}}</p>
 <div class="content">
-  <div class="blogInfo">
+  <div class="blogInfo" #BlogInfo>
     <div class="bloggerImage">
       <img src="{{blog.bloggerImage}}">
     </div>
     <div class="bloggerName">
-      {{blog.bloggerName}}
+      Written by {{blog.bloggerName}}
     </div>
     <div class="writtenDate">
-      {{blog.dow}}
+      {{blog.exactDate}}
     </div>
     <div class="count">
       <span>
@@ -30,15 +30,21 @@
     </div>
     <p>
       Share on 
-      <img src="/assets/images/facebook-logo.png" >
-      <img src="/assets/images/instagram-logo.png" >
-      <img src="/assets/images/twitter-logo.png" >
+      <img src="/assets/images/facebook-logo.png" role="button" (click)="shareOnFacebook()">
+      <img src="/assets/images/instagram-logo.png" role="button" (click)="shareOnFacebook()">
+      <img src="/assets/images/twitter-logo.png" role="button" (click)="shareOnTwitter()">
     </p>
-    <p>
+    <p class="desc">
       {{blog.desc}}
     </p>
+    <div class="tags" >
+       <div class="tagHolder">
+         <img src="" alt="">
+       </div>
+       <a *ngFor="let key of blog.keys;let i=index"href="#">{{key}}</a>
+    </div>
   </div>
-  <div class="social">
+  <div class="social" *ngIf="!removeSocial">
     <div class="follow">
       <p>Follow us</p>
       <div>
@@ -78,4 +84,7 @@
     </a>
     </div>
   </div>
+</div>
+<div class="comments">
+  <SportSocial-comments ></SportSocial-comments>
 </div>

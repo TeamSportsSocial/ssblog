@@ -1,8 +1,8 @@
 <div class="latest" MaintainHeightWidthRatio>
   <img src="{{blogImage}}" class="blogImg">
-  <div class="desc">
+  <div class="desc" #Desc>
     <div>
-      <span>Today</span><span>Boxing</span>
+      <span>{{dow}}</span><span>Boxing</span>
       <div class="count">
         <img src="/assets/images/views-white.png" alt="">
       </div> 
@@ -12,18 +12,18 @@
       </div> 
       <span>{{shareCount}}</span>
     </div>
-    <a routerLink="/blogOpen" class="title" (click)="send()">
-      <p >
+    <a routerLink="/{{title}}" class="title" (click)="send()">
+      <p #latestTitle>
         {{title}}
       </p>
     </a>
     <div class="Blogger">
-      <div class="bloggerImage">
+      <div class="bloggerImage" #BloggerImage>
           <img src="{{bloggerImage}}" alt="" >
       </div>  
       <p class="bloggerName">{{bloggerName}}</p>
     </div>
-    <p class="smallDesc"> "Rhythm is every thing in boxing.Every move you makr starts with your heart"</p>
-    <p class="readMore"><a routerLink="/blogOpen">....Read More</a></p> 
+    <p class="smallDesc" #latestDesc> {{desc}}</p>
+    <p class="readMore" ><a routerLink="/{{title}}" (click)="send()" #readmore>....Read More</a></p> 
   </div>
 </div>

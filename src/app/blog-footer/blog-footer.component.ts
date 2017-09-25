@@ -1,7 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { 
+  Component,
+  OnInit,
+  HostListener,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
 
 @Component({
-  selector: 'app-blog-footer',
+  selector: 'SportSocial-blog-footer',
   templateUrl: './blog-footer.component.html',
   styleUrls: ['./blog-footer.component.css']
 })
@@ -11,5 +17,7 @@ export class BlogFooterComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  @HostListener('window:scroll',[])onresize(){
+    
+  }
 }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+
 import { AppComponent } from './app.component';
 import { EditorPanelComponent } from './editor-panel/editor-panel.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
@@ -22,6 +23,7 @@ import {PropertyService} from "./services/property.service";
 import {PostService} from "./services/post.service";
 import {PutService} from "./services/put.service";
 import {GetService} from "./services/get.service";
+import {SaveService} from "./services/save.service";
 
 import { ResponsivefontDirective } from './directives/responsivefont.directive';
 import { MaintainHeightWidthRatioDirective } from './directives/maintain-height-width-ratio.directive';
@@ -29,6 +31,10 @@ import { TabViewAvailableDirective } from './directives/tab-view-available.direc
 
 import {RoutingModule} from "./routing/routing.module";
 import { BlogFooterComponent } from './blog-footer/blog-footer.component';
+import { SearchComponent } from './search/search.component';
+import { CommentsComponent } from './comments/comments.component';
+
+import { FacebookModule } from 'ngx-facebook';
 
 
 
@@ -51,15 +57,18 @@ import { BlogFooterComponent } from './blog-footer/blog-footer.component';
     ResponsivefontDirective,
     MaintainHeightWidthRatioDirective,
     TabViewAvailableDirective,
-    BlogFooterComponent
+    BlogFooterComponent,
+    SearchComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RoutingModule
+    RoutingModule,
+    FacebookModule.forRoot()
   ],
-  providers: [PropertyService,GetService],
+  providers: [PropertyService,GetService,SaveService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

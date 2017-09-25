@@ -5,14 +5,16 @@
     margin: 0px;
     font-family: 'Roboto', sans-serif;
     font-size: 100%;
-   
+    border: 1px solid #bbbbbb;
+    position: relative;
 }
 
 .blogImageHolder{
     width: 100%;
-    height:72%;
+    max-height:72%;
     overflow: hidden;
     border-radius: 5px;   
+    border-bottom: 1px solid #bbbbbb;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
@@ -23,9 +25,8 @@
     border-bottom-right-radius: 0px;
 }
 .blogFooter{
-    position: relative;
-    height: 28%;
-    border: 1px solid #bbbbbb;
+   
+    min-height: 28%;
     border-radius: 5px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;

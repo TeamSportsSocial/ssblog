@@ -4,14 +4,14 @@
   </div>
   <div class="blogFooter">
     <p>
-      <span>1 Day Ago</span>|<span>2 min read</span>
+      <span>{{dow}}</span>|<span>2 min read</span>
       <span>
         <img src="/assets/images/views-black.png" >
         {{viewCount}}
       </span>
     </p>
-    <a routerLink="/blogOpen" (click)="send()">
-      <p >
+    <a routerLink="/{{title}}" (click)="send()">
+      <p #blogTitle>
         {{title}}
       </p>
     </a>

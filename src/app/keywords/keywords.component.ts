@@ -55,12 +55,28 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
         this.topMargin=margin
       }
     )
-    this.keyWordContainerwidth=this.Keywords.nativeElement.children[0].getBoundingClientRect().width
     this.renderer.setStyle(this.Keywords.nativeElement,'position',"fixed");
     this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
   }
   ngAfterViewInit(){
-    //console.log(this.Keywords.nativeElement.getBoundingClientRect().bottom," b")
+    
+    this.recieveHeight.ofHeader.subscribe(
+      margin=>{
+        this.topMargin=margin
+      }
+    )
+    this.renderer.setStyle(this.Keywords.nativeElement,'position',"fixed");
+    this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
+    this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
+  }
+  ngAfterViewChecked(){
+    this.recieveHeight.ofHeader.subscribe(
+      margin=>{
+        this.topMargin=margin
+      }
+    )
+    this.renderer.setStyle(this.Keywords.nativeElement,'position',"fixed");
+    this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
     this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
   }
   send(i:number){
@@ -77,6 +93,7 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     this.recieveHeight.ofHeader.subscribe(
       margin=> this.topMargin=margin
     )
+    
     this.renderer.setStyle(this.Keywords.nativeElement,'position',"fixed");
     this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
   }

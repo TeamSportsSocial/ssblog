@@ -29,7 +29,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     dow:string,
     viewCount:string,
     shareCount:string,
-    keys:string
+    keys:string[],
+    exactDate:string;
   }[]=[]
   blogDetails:{
     blogImage:string;
@@ -40,7 +41,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     dow:string,
     viewCount:string,
     shareCount:string,
-    keys:string
+    keys:string[],
+    exactDate:string;
   }[]=[]
   topBlogDetails:{
     blogImage:string;
@@ -51,7 +53,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     dow:string,
     viewCount:string,
     shareCount:string,
-    keys:string
+    keys:string[],
+    exactDate:string;
   }[]=[]
   restBlogDetails:{
     blogImage:string;
@@ -62,7 +65,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     dow:string,
     viewCount:string,
     shareCount:string,
-    keys:string
+    keys:string[],
+    exactDate:string;
   }[]=[]
   mobileBlogDetails:{
     blogImage:string;
@@ -73,7 +77,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     dow:string,
     viewCount:string,
     shareCount:string,
-    keys:string
+    keys:string[],
+    exactDate:string;
   }[]=[]
   topMargin;
   removeTrendingBlock:boolean=false;
@@ -86,7 +91,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     private cd: ChangeDetectorRef
   ) { }
   ngOnInit(){
-    
+    sessionStorage.clear();
     if(window.innerWidth>950){
       this.removeTrendingBlock=false;
       this.mobileView=false;
@@ -99,11 +104,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       this.removeTrendingBlock=true;
       this.mobileView=true;
     }
-    this.get.blogData().subscribe(
+    this.get.blogData(0).subscribe(
       (data)=>{
-        //console.log(data)
         for(let i in data){
-           // console.log(data[i]);
             this.blogDetails.push(
               {
                 blogImage:data[i].blogImage,
@@ -111,14 +114,15 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 bloggerImage:data[i].bloggerImage,
                 title:data[i].heading,
                 desc:data[i].Content,
-                dow:data[i].insertedDate,
+                dow:this.timePassed(data[i].insertedDate),
                 viewCount:"50",
                 shareCount:"50",
-                keys:data[i].keys
+                keys:data[i].keys.split(","),
+                exactDate:this.ExactDate(data[i].insertedDate)
               }
             )
         }
-        // console.log(this.blogDetails," b") 
+        //console.log(this.blogDetails)
         this.latestBlogDetails.push(
           {
             blogImage:this.blogDetails[this.blogDetails.length-1].blogImage,
@@ -129,10 +133,10 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             dow:this.blogDetails[this.blogDetails.length-1].dow,
             viewCount:"50",
             shareCount:"50",
-            keys:this.blogDetails[this.blogDetails.length-1].keys
+            keys:this.blogDetails[this.blogDetails.length-1].keys,
+            exactDate:this.blogDetails[this.blogDetails.length-1].exactDate
           }
         )
-        //console.log(this.latestBlogDetails,"l")
         for(var i=this.blogDetails.length-2; i>this.blogDetails.length-5;i--){
           this.topBlogDetails.push(
             {
@@ -144,11 +148,11 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               dow:this.blogDetails[i].dow,
               viewCount:"50",
               shareCount:"50",
-              keys:this.blogDetails[i].keys
+              keys:this.blogDetails[i].keys,
+              exactDate:this.blogDetails[i].exactDate
             }
           )
         }
-       // console.log(this.topBlogDetails)
        for(var i=this.blogDetails.length-5;i>=0;i--){
         this.restBlogDetails.push(
           {
@@ -160,11 +164,12 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             dow:this.blogDetails[i].dow,
             viewCount:"50",
             shareCount:"50",
-            keys:this.blogDetails[i].keys
+            keys:this.blogDetails[i].keys,
+            exactDate:this.blogDetails[i].exactDate
           }
         )
-       }
-      // console.log(this.restBlogDetails)
+      }
+     // console.log(this.restBlogDetails, " i")
       for(var i=this.blogDetails.length-2;i>=0;i--){
         this.mobileBlogDetails.push(
           {
@@ -176,7 +181,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             dow:this.blogDetails[i].dow,
             viewCount:"50",
             shareCount:"50",
-            keys:this.blogDetails[i].keys
+            keys:this.blogDetails[i].keys,
+            exactDate:this.blogDetails[i].exactDate
           }
         )
        }
@@ -186,6 +192,12 @@ export class BlogsComponent implements OnInit,AfterViewInit {
   
   }
   ngAfterViewInit(){
+    this.reciveHeight.ofKeyWords.subscribe(
+      (margin)=>this.topMargin=margin
+    ) 
+    this.renderer.setStyle(this.blog.nativeElement,'margin-top',this.topMargin+"px")
+  }
+  ngAfterViewChecked(){
     this.reciveHeight.ofKeyWords.subscribe(
       (margin)=>this.topMargin=margin
     ) 
@@ -209,8 +221,60 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       this.mobileView=true;
     }
   }
-  send(i:number){
-    console.log(i)
+  timePassed(i:string){
+      let writtenDate=new Date(i);
+      let presentDate=new Date();
+      //console.log(writtenDate.getDate(),presentDate.getDate())
+      if(writtenDate.getFullYear()==presentDate.getFullYear()){
+        if(writtenDate.getMonth()==presentDate.getMonth()){
+          if(writtenDate.getDate()==presentDate.getDate()){
+              return "Today"
+          }
+          else{
+            return presentDate.getDate()-writtenDate.getDate() + " day ago"
+          }
+        }
+        else{
+          return presentDate.getMonth()-writtenDate.getMonth() + " month ago"
+        }
+      }
+      else{
+        return presentDate.getFullYear()-writtenDate.getFullYear() + " year ago"
+      }
+     
   }
+  ExactDate(i:number){
+    let writtenDate=new Date(i);
+    return writtenDate.toDateString()
+  }
+  @HostListener('window:scroll',[]) onscroll(){
+    let currentPageNumber=this.get.page.pageNumber
+    let nextPageNumber=Math.round((window.scrollY)/1500)
+    if(nextPageNumber>currentPageNumber && nextPageNumber>0){
+      this.get.blogData(nextPageNumber).subscribe(
+        (data)=>{
+           for(let i in data){
+            this.restBlogDetails.push(
+              {
+                blogImage:data[i].blogImage,
+                bloggerName:data[i].bloggerName,
+                bloggerImage:data[i].bloggerImage,
+                title:data[i].heading,
+                desc:data[i].Content,
+                dow:data[i].insertedDate,
+                viewCount:"50",
+                shareCount:"50",
+                keys:data[i].keys,
+                exactDate:this.blogDetails[i].exactDate
+              }
+            )
+           }
+        }
+      )
+      //console.log(this.restBlogDetails)
+    }
+
+  }
+
 
 }
