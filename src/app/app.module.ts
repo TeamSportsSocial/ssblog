@@ -25,7 +25,6 @@ import {PutService} from "./services/put.service";
 import {GetService} from "./services/get.service";
 import {SaveService} from "./services/save.service";
 
-import { ResponsivefontDirective } from './directives/responsivefont.directive';
 import { MaintainHeightWidthRatioDirective } from './directives/maintain-height-width-ratio.directive';
 import { TabViewAvailableDirective } from './directives/tab-view-available.directive';
 
@@ -54,7 +53,6 @@ import { FacebookModule } from 'ngx-facebook';
     NormalBlogComponent,
     BlogsComponent,
     BlogOpenComponent,
-    ResponsivefontDirective,
     MaintainHeightWidthRatioDirective,
     TabViewAvailableDirective,
     BlogFooterComponent,
