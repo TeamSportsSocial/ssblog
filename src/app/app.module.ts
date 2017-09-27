@@ -34,7 +34,6 @@ import { SearchComponent } from './search/search.component';
 import { CommentsComponent } from './comments/comments.component';
 
 import { FacebookModule } from 'ngx-facebook';
-import { NguiAutoCompleteModule } from '@ngui/auto-complete';
 
 
 @NgModule({
@@ -65,7 +64,6 @@ import { NguiAutoCompleteModule } from '@ngui/auto-complete';
     HttpModule,
     RoutingModule,
     FacebookModule.forRoot(),
-    NguiAutoCompleteModule
   ],
   providers: [PropertyService,GetService,SaveService],
   bootstrap: [AppComponent]

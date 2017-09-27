@@ -40,11 +40,13 @@ export class NormalBlogComponent implements OnInit {
     exactDate:string
   }
   @ViewChild('blogTitle') blogTitle;
+  @ViewChild('image') image;
   constructor(private Send: PropertyService,private renderer:Renderer2) { }
 
   ngOnInit() {  
     //console.log(this.title)  
    // console.log(this.Heading)
+   //console.log(this.image)
    this.blog={
     blogId:this.blogId,
     blogImage:this.blogImage,
@@ -58,6 +60,7 @@ export class NormalBlogComponent implements OnInit {
     keywords:this.keywords,
     exactDate:this.exactDate
    }
+   console.log(this.blogImage)
    if(window.innerWidth>1100){
      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
    }

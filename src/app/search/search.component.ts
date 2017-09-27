@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { 
+  Component, 
+  OnInit,
+  ViewChild,
+  Renderer2,
+  HostListener
+} from '@angular/core';
+import {PropertyService} from "../services/property.service";
 
 @Component({
   selector: 'app-search',
@@ -6,10 +13,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  topMargin;
 
-  constructor() { }
+  @ViewChild('searchPage') searchPage;
+  constructor(private recieveHeight:PropertyService,private renderer:Renderer2) { }
 
   ngOnInit() {
+    this.recieveHeight.ofHeader.subscribe(
+      margin=>{
+      this.topMargin=margin
+      }
+   )
+   this.renderer.setStyle(this.searchPage.nativeElement,'margin-top',this.topMargin+"px")
+  }
+  ngAfterViewInit(){
+    this.recieveHeight.ofHeader.subscribe(
+      margin=>{
+      this.topMargin=margin
+      }
+  )
   }
 
 }

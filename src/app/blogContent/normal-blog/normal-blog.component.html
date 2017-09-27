@@ -1,7 +1,7 @@
 <a routerLink="/{{title}}" (click)="send()">
   <div class="blog" MaintainHeightWidthRatio >
     <div class="blogImageHolder">
-      <img src="{{blogImage}}" >
+      <img src="{{blogImage}}" #image>
     </div>
     <div class="blogFooter">
       <p>
@@ -11,7 +11,7 @@
           {{viewCount}}
         </span>
       </p>
-      <a routerLink="/{{title}}" (click)="send()">
+      <a routerLink="/{{keywords[0]}}/{{title}}" (click)="send()">
         <p [innerHtml]="title" #blogTitle>
         </p>
       </a>

@@ -11,6 +11,8 @@ import {
 import {PropertyService} from "../services/property.service";
 import { KeywordComponent } from './keyword/keyword.component';
 import {Http} from "@angular/http";
+import {GetService} from "../services/get.service";
+import {Router} from "@angular/router";
 @Component({
   selector: 'SportSocialBlog-keywords',
   templateUrl: './keywords.component.html',
@@ -28,15 +30,20 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
   topMargin;
   keyWordContainerwidth;
   sumofkeyWordWidth;
+  pageNumber=1;
+  path:string;
   constructor(private renderer :Renderer2 ,
     private recieveHeight:PropertyService,
     private sendHeight:PropertyService,
-    private http:Http
+    private searched:GetService,
+    private http:Http,
+    private sendSearchedData:PropertyService,
+    private router:Router
   ) { }
 
   ngOnInit() {
     
-    console.log(this.keywords)
+   // console.log(this.keywords)
     this.recieveHeight.ofHeader.subscribe(
       margin=>{
         this.topMargin=margin
@@ -81,13 +88,15 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
   }
   send(i:number){
-    this.postKeyWords={
-      name:this.keywords[i].name
-    }
-    console.log(this.postKeyWords);
-    this.http.post('https://test.sportsocial.in/poc/loadblogdata',this.postKeyWords).subscribe(
-      (data)=>console.log(data)
+    this.searched.blogData(this.pageNumber,this.keywords[i].name).subscribe(
+      res=>{
+        console.log(res)
+        this.sendSearchedData.ofBlogCard.next(res);
+
+      }
     )
+    this.path="/"+this.keywords[i].name;
+    this.router.navigate([this.path]);
   }
   @HostListener('window:resize',[]) onresize(){
     this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);

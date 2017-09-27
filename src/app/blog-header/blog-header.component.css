@@ -161,6 +161,6 @@ input{
      top:65px;
      width: 100%;
  }
- .ngui-auto-complete ul {
-    background-color: black;
-  }   
+ .ngui-auto-complete {
+     border: 1px solid black;
+  }
