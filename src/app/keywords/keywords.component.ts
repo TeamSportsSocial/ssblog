@@ -22,22 +22,7 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     name:string;
   }
 
-  keywords:{name:string,backgroundImg:string}[]=[
-    {name:'Sports is a new social', backgroundImg:'url("/assets/images/ariel-lustre-242326.jpg")'},
-    {name:'Boxing', backgroundImg:'url("/assets/images/robert-collins-333411.jpg")'},
-    {name:'Running',backgroundImg:"url('/assets/images/clem-onojeghuo-71989.jpg')"},
-    {name:'Social',backgroundImg:"url('/assets/images/robert-collins-341231.jpg')"}, 
-    {name:'Passion',backgroundImg:"url('/assets/images/2.jpg')"},
-    {name:'Help Center',backgroundImg:"url('/assets/images/alec-moore-5093.jpg')"},
-    {name:'Local Sports',backgroundImg:"url('/assets/images/robert-collins-341231.jpg')"},
-    {name:'College',backgroundImg:"url('/assets/images/goh-rhy-yan-273921 (1).jpg')"},
-    {name:'Cricket',backgroundImg:"url('/assets/images/robert-collins-341231.jpg')"},
-    {name:'Football',backgroundImg:"url('/assets/images/hermes-rivera-265368.jpg')"},
-    {name:'BasketBall',backgroundImg:"url('/assets/images/tom-sodoge-54031.jpg')"},
-    {name:'Badminton',backgroundImg:"url('/assets/images/robert-collins-341231.jpg')"},
-    {name:'Hockey',backgroundImg:"url('/assets/images/robert-collins-341231.jpg')"},
-    {name:'Champion',backgroundImg:"url('/assets/images/sayan-nath-180616.jpg')"}
-  ]
+  keywords:{name:string}[]=[]
 
  @ViewChild('Keywords') Keywords:ElementRef;
   topMargin;
@@ -50,6 +35,8 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
   ) { }
 
   ngOnInit() {
+    
+    console.log(this.keywords)
     this.recieveHeight.ofHeader.subscribe(
       margin=>{
         this.topMargin=margin
@@ -59,7 +46,21 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
   }
   ngAfterViewInit(){
-    
+    this.http.get(' https://test.sportsocial.in/user/getKeywords  ')
+    .map(res=>res.json())
+    .subscribe(
+      res=>{
+       // console.log(res)
+        for(let i in res){
+          //console.log(res[i])
+          this.keywords.push(
+            {
+              name:res[i].Keyword
+            }
+          )
+        }
+      }
+    )
     this.recieveHeight.ofHeader.subscribe(
       margin=>{
         this.topMargin=margin

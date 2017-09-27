@@ -15,14 +15,10 @@ import {
 export class KeywordComponent implements OnInit {
 
   @Input() title;
-  @Input() backgroundImage;
-
   @ViewChild('Keyword') Keyword:ElementRef;
   constructor(private renderer:Renderer2) { }
 
   ngOnInit() {
-    this.renderer.setStyle(this.Keyword.nativeElement,'background-image',this.backgroundImage)
-    this.renderer.addClass(this.Keyword.nativeElement,'image')
   }
 
 }

@@ -5,6 +5,7 @@ import {
     Renderer2,
     HostListener
  } from '@angular/core';
+import {Http} from "@angular/http";
 import {PropertyService} from "../../services/property.service";
 import {SaveService} from "../../services/save.service";
 import {ActivatedRoute} from "@angular/router";
@@ -31,12 +32,14 @@ export class BlogOpenComponent implements OnInit {
     @ViewChild('openBlog') openBlog;
     @ViewChild('Social') Social;
     @ViewChild('BlogInfo') BlogInfo;
+    @ViewChild('popup') popup;
     constructor(
         private recieve:PropertyService ,
         private recieveHeight:PropertyService,
         private renderer :Renderer2,
         private route :ActivatedRoute,
-        private fb: FacebookService
+        private fb: FacebookService,
+        private http:Http
     ) { 
         fb.init({
             appId: '140286013252973',
@@ -45,7 +48,7 @@ export class BlogOpenComponent implements OnInit {
     }
 
     ngOnInit() {
-        
+        console.log(this.popup)
         this.recieveHeight.ofHeader.subscribe(
             margin=>{
             this.topMargin=margin
@@ -84,7 +87,7 @@ export class BlogOpenComponent implements OnInit {
             this.removeSocial=false;
             this.renderer.setStyle(this.BlogInfo.nativeElement,'width','65%')
         }
-        //console.log(this.blog)
+        console.log(this.blog)
 
     }
     ngAfterViewInit () {
@@ -106,8 +109,7 @@ export class BlogOpenComponent implements OnInit {
            
             }
         )
-        
-      this.renderer.setStyle(this.openBlog.nativeElement,"margin-top",this.topMargin+"px")
+        this.renderer.setStyle(this.openBlog.nativeElement,"margin-top",this.topMargin+"px")
         
     }
     ngAfterViewChecked(){
@@ -197,5 +199,22 @@ export class BlogOpenComponent implements OnInit {
             })
             .catch(this.handleError);
     }
+    shareOnTwitter(){
+        var width  = 575,
+        height = 400,
+        left   = (window.innerWidth  - width)  / 2,
+        top    = (window.innerHeight - height) / 2,
+        url    = this.popup.nativeElement.attributes[2].value,
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+    
+    window.open(url, 'twitter', opts);
+ 
+    return false;
+    }
+
     
 }

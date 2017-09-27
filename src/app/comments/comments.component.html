@@ -1,11 +1,26 @@
 <div class="comment" #commentBox>
   <div class="imageHolder">
-    <img src="{{Comment.profilePicture}}">
+    <img src="{{profilePicture}}">
   </div>
   <div class="commentBox ">
     <textarea cols="50"  class="text" ngModel name="desc" required placeholder="Add a Comment..." #textArea></textarea>
     <div class="commentButton">
       <button (click)="post()"> {{isConnected ? 'Comment' : 'Login to Comment'}}</button>
     </div>
+  </div>
+</div>
+<div class="loadComment" *ngFor="let data of recivedComment.reverse();let i = index">
+  <div class="imageHolder">
+    <img src="{{data.image}}" alt="">
+  </div>
+  <div class="commentBox">
+    <p class="userName">
+       {{data.userName}}
+       <span class="commentDate">{{data.commentDate}}</span>
+    </p>
+   
+    <p class="userComment">
+      {{data.comment}}
+    </p>
   </div>
 </div>

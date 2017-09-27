@@ -42,3 +42,30 @@ button{
     white-space: nowrap;
     width:auto;
 }
+.loadComment{
+    margin-top: 2%;
+}
+.loadComment>.imageHolder{
+    width: 40px;
+    height: 40px;
+}
+.loadComment>.commentBox{
+    margin-left: 1%;
+    width: 85%;
+    border:none;
+}
+.commentDate{
+    padding-left: 2%;
+}
+.userName{
+    font-family: 'Roboto',sans-serif;
+    font-size: 1em;
+    color: #024771;
+    font-weight: 700;
+}
+.userComment{
+    font-family: 'Roboto',sans-serif;
+    font-size: 0.9em;
+    color: black;
+    font-weight: 700;
+}

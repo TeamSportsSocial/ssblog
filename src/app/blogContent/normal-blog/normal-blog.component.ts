@@ -14,6 +14,7 @@ import {PropertyService} from "../../services/property.service";
 })
 export class NormalBlogComponent implements OnInit {
   
+  @Input()  blogId:string  
   @Input()  blogImage:string
   @Input()  bloggerImage:string
   @Input()  bloggerName:string
@@ -22,10 +23,11 @@ export class NormalBlogComponent implements OnInit {
   @Input()  desc:string
   @Input()  viewCount:string
   @Input()  shareCount:string
-  @Input()  keys:string[]
+  @Input()  keywords:string[]
   @Input()  exactDate:string
   
   blog:{
+    blogId:string;
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
@@ -34,7 +36,7 @@ export class NormalBlogComponent implements OnInit {
     dow:string,
     viewCount:string,
     shareCount:string,
-    keys:string[],
+    keywords:string[],
     exactDate:string
   }
   @ViewChild('blogTitle') blogTitle;
@@ -44,6 +46,7 @@ export class NormalBlogComponent implements OnInit {
     //console.log(this.title)  
    // console.log(this.Heading)
    this.blog={
+    blogId:this.blogId,
     blogImage:this.blogImage,
     bloggerName:this.bloggerName,
     bloggerImage:this.bloggerImage,
@@ -52,7 +55,7 @@ export class NormalBlogComponent implements OnInit {
     dow:this.dow,
     viewCount:this.viewCount,
     shareCount:this.shareCount,
-    keys:this.keys,
+    keywords:this.keywords,
     exactDate:this.exactDate
    }
    if(window.innerWidth>1100){

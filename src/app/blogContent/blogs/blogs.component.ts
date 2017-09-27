@@ -21,6 +21,7 @@ import {GetService} from "../../services/get.service";
 })
 export class BlogsComponent implements OnInit,AfterViewInit {
   latestBlogDetails:{
+    blogId:string;
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
@@ -29,10 +30,11 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     dow:string,
     viewCount:string,
     shareCount:string,
-    keys:string[],
+    keywords:string[],
     exactDate:string;
   }[]=[]
   blogDetails:{
+    blogId:string;
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
@@ -41,10 +43,11 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     dow:string,
     viewCount:string,
     shareCount:string,
-    keys:string[],
+    keywords:string[],
     exactDate:string;
   }[]=[]
   topBlogDetails:{
+    blogId:string;
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
@@ -53,10 +56,11 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     dow:string,
     viewCount:string,
     shareCount:string,
-    keys:string[],
+    keywords:string[],
     exactDate:string;
   }[]=[]
   restBlogDetails:{
+    blogId:string;    
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
@@ -65,10 +69,11 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     dow:string,
     viewCount:string,
     shareCount:string,
-    keys:string[],
+    keywords:string[],
     exactDate:string;
   }[]=[]
   mobileBlogDetails:{
+    blogId:string;
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
@@ -77,12 +82,16 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     dow:string,
     viewCount:string,
     shareCount:string,
-    keys:string[],
+    keywords:string[],
     exactDate:string;
   }[]=[]
   topMargin;
   removeTrendingBlock:boolean=false;
   mobileView=false;
+  nextPageNumber=1;
+  defaultKey="dfg";
+  show:boolean=false;
+  dataRecived:boolean=false;
   @ViewChild('blog') blog;
   constructor(
     private reciveHeight:PropertyService,
@@ -104,11 +113,17 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       this.removeTrendingBlock=true;
       this.mobileView=true;
     }
-    this.get.blogData(0).subscribe(
-      (data)=>{
+  
+    this.get.blogData(this.nextPageNumber,this.defaultKey).subscribe(
+      (data)=>{ 
+        this.show=true;
+        this.dataRecived=true;
+        console.log("hii")
+        console.log(data)
         for(let i in data){
             this.blogDetails.push(
               {
+                blogId:data[i].blogId,
                 blogImage:data[i].blogImage,
                 bloggerName:data[i].bloggerName,
                 bloggerImage:data[i].bloggerImage,
@@ -117,14 +132,14 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 dow:this.timePassed(data[i].insertedDate),
                 viewCount:"50",
                 shareCount:"50",
-                keys:data[i].keys.split(","),
+                keywords:data[i].keywords.split(","),
                 exactDate:this.ExactDate(data[i].insertedDate)
               }
             )
         }
-        //console.log(this.blogDetails)
         this.latestBlogDetails.push(
           {
+            blogId:this.blogDetails[this.blogDetails.length-1].blogId,
             blogImage:this.blogDetails[this.blogDetails.length-1].blogImage,
             bloggerName:this.blogDetails[this.blogDetails.length-1].bloggerName,
             bloggerImage:this.blogDetails[this.blogDetails.length-1].bloggerImage,
@@ -133,13 +148,14 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             dow:this.blogDetails[this.blogDetails.length-1].dow,
             viewCount:"50",
             shareCount:"50",
-            keys:this.blogDetails[this.blogDetails.length-1].keys,
+            keywords:this.blogDetails[this.blogDetails.length-1].keywords,
             exactDate:this.blogDetails[this.blogDetails.length-1].exactDate
           }
         )
         for(var i=this.blogDetails.length-2; i>this.blogDetails.length-5;i--){
           this.topBlogDetails.push(
             {
+              blogId:this.blogDetails[i].blogId,
               blogImage:this.blogDetails[i].blogImage,
               bloggerName:this.blogDetails[i].bloggerName,
               bloggerImage:this.blogDetails[i].bloggerImage,
@@ -148,7 +164,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               dow:this.blogDetails[i].dow,
               viewCount:"50",
               shareCount:"50",
-              keys:this.blogDetails[i].keys,
+              keywords:this.blogDetails[i].keywords,
               exactDate:this.blogDetails[i].exactDate
             }
           )
@@ -156,6 +172,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
        for(var i=this.blogDetails.length-5;i>=0;i--){
         this.restBlogDetails.push(
           {
+            blogId:this.blogDetails[i].blogId,
             blogImage:this.blogDetails[i].blogImage,
             bloggerName:this.blogDetails[i].bloggerName,
             bloggerImage:this.blogDetails[i].bloggerImage,
@@ -164,15 +181,16 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             dow:this.blogDetails[i].dow,
             viewCount:"50",
             shareCount:"50",
-            keys:this.blogDetails[i].keys,
+            keywords:this.blogDetails[i].keywords,
             exactDate:this.blogDetails[i].exactDate
           }
         )
       }
-     // console.log(this.restBlogDetails, " i")
+    // console.log(this.restBlogDetails, " i")
       for(var i=this.blogDetails.length-2;i>=0;i--){
         this.mobileBlogDetails.push(
           {
+            blogId:this.blogDetails[i].blogId,
             blogImage:this.blogDetails[i].blogImage,
             bloggerName:this.blogDetails[i].bloggerName,
             bloggerImage:this.blogDetails[i].bloggerImage,
@@ -181,7 +199,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             dow:this.blogDetails[i].dow,
             viewCount:"50",
             shareCount:"50",
-            keys:this.blogDetails[i].keys,
+            keywords:this.blogDetails[i].keywords,
             exactDate:this.blogDetails[i].exactDate
           }
         )
@@ -190,6 +208,14 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     )
     
   
+  }
+  showTrendingBlock(){
+    if(this.blogDetails.length==0 || window.innerWidth<950){
+      return false;
+    }
+    if(this.blogDetails.length>=0 && window.innerWidth>950){
+      return true;
+    }
   }
   ngAfterViewInit(){
     this.reciveHeight.ofKeyWords.subscribe(
@@ -220,6 +246,10 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       this.removeTrendingBlock=true;
       this.mobileView=true;
     }
+    if(this.blogDetails.length>0){
+      this.show=true
+      console.log("tr")
+    }
   }
   timePassed(i:string){
       let writtenDate=new Date(i);
@@ -247,33 +277,43 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     let writtenDate=new Date(i);
     return writtenDate.toDateString()
   }
-  @HostListener('window:scroll',[]) onscroll(){
-    let currentPageNumber=this.get.page.pageNumber
-    let nextPageNumber=Math.round((window.scrollY)/1500)
-    if(nextPageNumber>currentPageNumber && nextPageNumber>0){
-      this.get.blogData(nextPageNumber).subscribe(
+  showLoadMorebutton(){
+   if(this.dataRecived || this.show){
+     return true
+   }
+  }
+  nextPage(){
+    this.dataRecived=false;
+    this.nextPageNumber++;
+    if(this.nextPageNumber>0){
+      this.get.blogData((this.nextPageNumber),this.defaultKey).subscribe(
         (data)=>{
+          this.dataRecived=true;
+           console.log(data)
+           if(data.length==0){
+             console.log("true")
+           }
            for(let i in data){
             this.restBlogDetails.push(
               {
+                blogId:data[i].blogId,
                 blogImage:data[i].blogImage,
                 bloggerName:data[i].bloggerName,
                 bloggerImage:data[i].bloggerImage,
                 title:data[i].heading,
                 desc:data[i].Content,
-                dow:data[i].insertedDate,
+                dow:this.timePassed(data[i].insertedDate),
                 viewCount:"50",
                 shareCount:"50",
-                keys:data[i].keys,
-                exactDate:this.blogDetails[i].exactDate
+                keywords:data[i].keywords.split(","),
+                exactDate:this.ExactDate(data[i].exactDate)
               }
             )
            }
+           console.log(this.restBlogDetails)
         }
       )
-      //console.log(this.restBlogDetails)
     }
-
   }
 
 

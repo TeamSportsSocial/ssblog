@@ -33,4 +33,19 @@
 .suscribeCard{
     border: 1px solid black;
 }
-
+button{
+    display: block;
+    margin: 1% auto;
+    width: 30%;
+    background-color: #ffa600;
+    border:none;
+    color: #ffffff;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    padding: 0.5%;
+}
+.loading{
+    display: block;
+    margin: auto;
+}

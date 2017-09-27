@@ -2,6 +2,7 @@
 <div class="blog" #blog *ngIf="!mobileView">
     <div class="col-12" *ngFor="let data of latestBlogDetails;let i=index">
         <SportSocial-latest-blog 
+            [blogId]="data.blogId"
             [blogImage]="data.blogImage"
             [bloggerImage]="data.bloggerImage"
             [bloggerName]="data.bloggerName"
@@ -10,7 +11,7 @@
             [desc]="data.desc"
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
-            [keys]="data.keys"
+            [keywords]="data.keywords"
             [exactDate]="data.exactDate">
         </SportSocial-latest-blog>
     </div>
@@ -19,6 +20,7 @@
             *ngFor="let data of topBlogDetails;let i=index" 
             [ngClass]="{'col-6':i!=2,'col-12':i===2}">
             <SportSocial-normal-blog 
+                [blogId]="data.blogId"
                 [blogImage]="data.blogImage"
                 [bloggerImage]="data.bloggerImage"
                 [bloggerName]="data.bloggerName"
@@ -27,18 +29,19 @@
                 [desc]="data.desc"
                 [viewCount]="data.viewCount"
                 [shareCount]="data.shareCount"
-                [keys]="data.keys"
+                [keywords]="data.keywords"
                 [exactDate]="data.exactDate">
             </SportSocial-normal-blog>
         </div>
     </div>        
-  <div class="trendingBlogs" *ngIf="!removeTrendingBlock" >
-        <SportSocial-trending-blog ></SportSocial-trending-blog>
-  </div>
+    <div class="trendingBlogs" *ngIf="showTrendingBlock()" >
+            <SportSocial-trending-blog></SportSocial-trending-blog>
+    </div>
     <div  TabViewAvailable 
         *ngFor="let data of restBlogDetails;let i=index"
         [ngClass]="{'col-8':i%5===0 ,'col-4': i%5!=0}">
         <SportSocial-normal-blog
+            [blogId]="data.blogId"
             [blogImage]="data.blogImage"
             [bloggerImage]="data.bloggerImage"
             [bloggerName]="data.bloggerName"
@@ -47,14 +50,21 @@
             [desc]="data.desc"
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
-            [keys]="data.keys"
+            [keywords]="data.keywords"
             [exactDate]="data.exactDate">
         </SportSocial-normal-blog>
     </div>
-</div>            
+    
+</div> 
+<div *ngIf="!mobileView">
+    <button (click)="nextPage()" *ngIf="dataRecived">Load More</button>
+    <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
+    <SportSocial-blog-footer *ngIf="show"></SportSocial-blog-footer> 
+</div>          
 <div class="blog mobileView" *ngIf="mobileView" #blog>
     <div class="col-4" *ngFor="let data of latestBlogDetails;let i=index" >
         <SportSocial-latest-blog
+            [blogId]="data.blogId"
             [blogImage]="data.blogImage"
             [bloggerImage]="data.bloggerImage"
             [bloggerName]="data.bloggerName"
@@ -63,12 +73,13 @@
             [desc]="data.desc"
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
-            [keys]="data.keys"
+            [keywords]="data.keywords"
             [exactDate]="data.exactDate">
         </SportSocial-latest-blog>
     </div>
     <div class="col-4" *ngFor="let data of topBlogDetails;let i=index">
-        <SportSocial-normal-blog 
+        <SportSocial-normal-blog
+            [blogId]="data.blogId" 
             [blogImage]="data.blogImage"
             [bloggerImage]="data.bloggerImage"
             [bloggerName]="data.bloggerName"
@@ -77,15 +88,16 @@
             [desc]="data.desc"
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
-            [keys]="data.keys"
+            [keywords]="data.keywords"
             [exactDate]="data.exactDate">
         </SportSocial-normal-blog>
     </div>
-    <div class="suscribeCard">
+    <div class="suscribeCard" *ngIf="show">
         <SportSocial-subscribe-card></SportSocial-subscribe-card>
     </div>
     <div class="col-4" *ngFor="let data of restBlogDetails;let i=index">
         <SportSocial-normal-blog 
+            [blogId]="data.blogId"
             [blogImage]="data.blogImage"
             [bloggerImage]="data.bloggerImage"
             [bloggerName]="data.bloggerName"
@@ -94,10 +106,13 @@
             [desc]="data.desc"
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
-            [keys]="data.keys"
+            [keywords]="data.keywords"
             [exactDate]="data.exactDate">
         </SportSocial-normal-blog>
     </div>
+    <button (click)="nextPage()" *ngIf="dataRecived">Load More</button>
+    <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
+    <SportSocial-blog-footer *ngIf="show"></SportSocial-blog-footer> 
 </div>
             
        

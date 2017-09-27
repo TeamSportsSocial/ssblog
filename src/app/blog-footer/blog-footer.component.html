@@ -1,14 +1,45 @@
-<div class="footer">
-  <div class="subscribe">
+<footer >
+  <div class="subscribe" #subscribeCard>
     <p>
       Subscribe
     </p>
-    <input type="email" name="" id="" placeholder="Enter your Email">
-    <button type="submit">Submit</button>
+    <input type="email" placeholder="Enter your Email" #subscriber>
+    <button (click)="Subscribe()">Submit</button>
   </div>
-  <p class="blogName">Chase Your Sports</p>
-  <p class="tagline">The Sports Social Blog</p>
-  <p class="copyright">
-    <img src="/assets/images/copyright.png" alt="">
+  <p class="blogName" #blogName>Chase Your Sports</p>
+  <p class="tagline" #tagline>The Sports Social Blog</p>
+  <p class="about" #about> 
+    'Chase Your Sport' blog provides Health, Fitness and
+     Sport information and other useful information to help everyone
+     to keep them active, healthy and fit .<br>
+     We are here to help you to follow your passion for sports. 
   </p>
-</div>
+  <p class="contactUs" #contactUs>
+    Contact Us: letstalk@sportsocial.in
+  </p>
+  <p class="copyright" >
+    <img src="/assets/images/copyright.png" alt=""> Sports Social
+  </p>
+  <p class="followUs" >
+    Follow us on 
+    <a href="https://www.facebook.com/chaseyoursport" target="_blank">
+        <img src="/assets/images/sport-social-facebook-logo-white.png" alt="">
+    </a> 
+    <a href="https://www.twitter.com/chaseyoursport" target="_blank">
+        <img src="/assets/images/sport-social-twitter-logo-white.png" alt="">
+    </a>
+    <a href="https://www.instagram.com/chaseyoursport" target="_blank">
+        <img src="/assets/images/sport-social-instagram-logo-white.png" alt="">
+    </a>
+    <a href="https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network" target="_blank">
+        <img src="/assets/images/sport-social-quora-logo-white.png" alt="">
+    </a>
+    <a href="https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ" target="_blank">
+        <img src="/assets/images/sport-social-youtube-logo-white.png" alt="">
+    </a>
+    <a href="https://www.pinterest.com/chaseyoursport" target="_blank">
+        <img src="/assets/images/sport-social-pinterest-logo-white.png" alt="">
+    </a>
+    
+  </p>
+</footer>

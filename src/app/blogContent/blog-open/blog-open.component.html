@@ -1,12 +1,12 @@
 <p #openBlog class="Catagory">
-  <span>{{blog.keys[0]}}</span>
+  <span>{{blog.keywords[0]}}</span>
   <span>|</span>
   <span>2 min read</span>
 </p>
 <div class="blogImageHolder">
   <img src="{{blog.blogImage}}">
 </div>
-<p class="title">{{blog.title}}</p>
+<p [innerHtml]="blog.title"class="title"></p>
 <div class="content">
   <div class="blogInfo" #BlogInfo>
     <div class="bloggerImage">
@@ -30,18 +30,18 @@
     </div>
     <p>
       Share on 
-      <img src="/assets/images/facebook-logo.png" role="button" (click)="shareOnFacebook()">
-      <img src="/assets/images/instagram-logo.png" role="button" (click)="shareOnFacebook()">
-      <img src="/assets/images/twitter-logo.png" role="button" (click)="shareOnTwitter()">
+      <img src="/assets/images/facebook-logo.png" role="button" (click)="shareOnFacebook()" class="facebook">
+      <a href="http://twitter.com/share" (click)="shareOnTwitter()" #popup class="twitter">
+        <img src="/assets/images/twitter-logo.png"  class="twitterButton">
+      </a> 
     </p>
-    <p class="desc">
-      {{blog.desc}}
+    <p [innerHtml]="blog.desc" class="desc">
     </p>
     <div class="tags" >
        <div class="tagHolder">
          <img src="" alt="">
        </div>
-       <a *ngFor="let key of blog.keys;let i=index"href="#">{{key}}</a>
+       <a *ngFor="let key of blog.keywords;let i=index"href="#">{{key}}</a>
     </div>
   </div>
   <div class="social" *ngIf="!removeSocial">
@@ -86,5 +86,7 @@
   </div>
 </div>
 <div class="comments">
-  <SportSocial-comments ></SportSocial-comments>
+  <SportSocial-comments
+     [BlogId]="blog.blogId">
+  </SportSocial-comments>
 </div>

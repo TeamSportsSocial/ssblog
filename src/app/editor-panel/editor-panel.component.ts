@@ -90,7 +90,7 @@ upload(){
   this.makeFileRequest("https://test.sportsocial.in/poc/saveNewBlog", [], this.filesToUpload)
   .then((result) => {
     this.Result=result
-    console.log(this.Result.Status);
+    console.log(result);
     if(this.Result.Status=="Success"){
       this.isDisabled=false;
     }

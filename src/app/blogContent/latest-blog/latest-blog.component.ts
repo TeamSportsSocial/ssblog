@@ -16,6 +16,7 @@ import {PropertyService} from "../../services/property.service";
 })
 export class LatestBlogComponent implements OnInit {
    
+  @Input()  blogId:string
   @Input()  blogImage:string
   @Input()  bloggerName:string
   @Input()  bloggerImage:string
@@ -24,10 +25,11 @@ export class LatestBlogComponent implements OnInit {
   @Input()  dow:string
   @Input()  viewCount:string
   @Input()  shareCount:string
-  @Input()  keys:string[]
+  @Input()  keywords:string[]
   @Input()  exactDate:string
   
   blog:{
+    blogId:string;
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
@@ -36,7 +38,7 @@ export class LatestBlogComponent implements OnInit {
     dow:string,
     viewCount:string,
     shareCount:string,
-    keys:string[],
+    keywords:string[],
     exactDate:string
   }
 
@@ -50,6 +52,7 @@ export class LatestBlogComponent implements OnInit {
   ngOnInit() {
     
     this.blog={
+      blogId:this.blogId,
       blogImage:this.blogImage,
       bloggerName:this.bloggerName,
       bloggerImage:this.bloggerImage,
@@ -58,7 +61,7 @@ export class LatestBlogComponent implements OnInit {
       dow:this.dow,
       viewCount:this.viewCount,
       shareCount:this.shareCount,
-      keys:this.keys,
+      keywords:this.keywords,
       exactDate:this.exactDate
      }
      if(window.innerWidth>=1000){

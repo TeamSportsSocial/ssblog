@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { 
+  Component,
+  OnInit,
+  HostListener,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
+import {Http} from "@angular/http";
 
 @Component({
   selector: 'SportSocial-subscribe-card',
@@ -6,10 +13,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./subscribe-card.component.css']
 })
 export class SubscribeCardComponent implements OnInit {
-
-  constructor() { }
+  Email:{
+    userid:string;
+    email:string;
+  }
+  @ViewChild('subscriber') subscriber;
+  constructor(private http:Http) { }
 
   ngOnInit() {
   }
-
+  Subscribe(){
+    this.Email={
+      userid:"2",
+      email:this.subscriber.nativeElement.value
+    }
+   // console.log(this.subscriber.nativeElement.value)
+    console.log(this.Email)
+    this.http.post("https://test.sportsocial.in/user/subscribeBlog",this.Email)
+    .subscribe(
+      res=>{
+        console.log(res)
+      }
+    )
+  }
 }

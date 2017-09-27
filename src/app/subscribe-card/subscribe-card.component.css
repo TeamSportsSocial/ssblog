@@ -18,6 +18,7 @@ input{
     border: 1px solid  #bbbbbb;
     padding: 0.6% 0% 0.6% 0%;
     border-radius: 5px;
+    text-align: center;
 }
 
 button{

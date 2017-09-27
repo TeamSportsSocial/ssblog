@@ -2,18 +2,17 @@
     padding: 0px;
     margin: 0px;
 }
-.footer{
+footer{
     z-index: 1;
-    position: fixed;
-    bottom: 0px;
     background-color: #4372a0;
     width:100%;
+    padding: 0.8%;
    
 }
 .subscribe{
     width: 70%;
-    margin: 2% auto;
-    background-color: #bbbbbb;
+    margin: 0.4% auto;
+    background-color: #e5e5e5;
     padding: 0.5%
 }
 .subscribe>p{
@@ -26,12 +25,14 @@
     padding: 0.5%;
     padding-right: 2%;
     padding-left:1%;
+    
 }
+
 .subscribe>input{
     width: 70%;
     height: 35px;
     margin-left: 2%;
-    margin-right: 3%;
+    margin-right: 2%;
 }
 ::-webkit-input-placeholder {
     text-align: center;
@@ -49,12 +50,18 @@
     text-align: center; 
  }
  button{
-     
+     border:none;
+     background-color: #ffa600;
+     font-family: 'Roboto',sans-serif;
+     font-size: 1.1em;
+     color: white;
+     padding: 0.5% 3% 0.5% 3%;
+     margin-right: 2%;
  }
  .blogName{
      text-align: center;
      font-family: 'Roboto',sans-serif;
-     font-size: 1.8em;
+     font-size: 1.6em;
      color: #ffffff;
      font-weight: 900;
  }
@@ -64,4 +71,50 @@
     font-size: 1em;
     color: #ffffff;
     font-weight: 400;
+ }
+ .about{
+     text-align: center;
+     width:65%;
+     margin: 1% auto;
+     font-family: 'Roboto',sans-serif;
+     color: #ffffff;
+     font-size: 1.1em;
+     font-weight: 500;
+ }
+ .copyright{
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+    color: #ffffff;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+ }
+ .copyright>img{
+     width: 20px;
+     height: 20px;
+ }
+ .contactUs{
+     margin: 1% auto;
+     text-align: center;
+     width:50%;
+     font-family: 'Roboto',sans-serif;
+     color: #ffffff;
+     font-size: 1.1em;
+     font-weight: 500;
+ }
+ .followUs{
+     text-align: right;
+    display: inline-block;
+    vertical-align: middle;
+    width: 69%;
+    color: #ffffff;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+ }
+ .followUs img{
+    width: 25px;
+    height: 25px;
+    margin-left: 2%;
  }

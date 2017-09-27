@@ -4,16 +4,19 @@ import 'rxjs/Rx'
 
 @Injectable()
 export class GetService {
-   page={
-     name:"dfg",
-     pageNumber:0
+   Page:{
+     name:string,
+     page:number
    }
   constructor(private http:Http) { }
   
-  blogData(i:number){
-    this.page.pageNumber=i
-    console.log(this.page, 'p')
-    return this.http.post('https://test.sportsocial.in/poc/loadblogdata',this.page)
+  blogData(i:number,s:string){
+    this.Page={
+      name:s,
+      page:i
+    }
+    console.log(this.Page)
+    return this.http.post('https://test.sportsocial.in/poc/loadblogdata',this.Page)
     .map( res => res.json());
   }
 

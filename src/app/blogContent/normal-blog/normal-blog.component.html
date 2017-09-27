@@ -1,23 +1,24 @@
-<div class="blog" MaintainHeightWidthRatio >
-  <div class="blogImageHolder">
-    <img src="{{blogImage}}" >
-  </div>
-  <div class="blogFooter">
-    <p>
-      <span>{{dow}}</span>|<span>2 min read</span>
-      <span>
-        <img src="/assets/images/views-black.png" >
-        {{viewCount}}
-      </span>
-    </p>
-    <a routerLink="/{{title}}" (click)="send()">
-      <p #blogTitle>
-        {{title}}
+<a routerLink="/{{title}}" (click)="send()">
+  <div class="blog" MaintainHeightWidthRatio >
+    <div class="blogImageHolder">
+      <img src="{{blogImage}}" >
+    </div>
+    <div class="blogFooter">
+      <p>
+        <span>{{dow}}</span>|<span>2 min read</span>
+        <span>
+          <img src="/assets/images/views-black.png" >
+          {{viewCount}}
+        </span>
       </p>
-    </a>
-    <p>
-      <img src="/assets/images/edit.png" >
-      {{bloggerName}}
-    </p>
+      <a routerLink="/{{title}}" (click)="send()">
+        <p [innerHtml]="title" #blogTitle>
+        </p>
+      </a>
+      <p>
+        <img src="/assets/images/edit.png" >
+        {{bloggerName}}
+      </p>
+    </div>
   </div>
-</div>
+</a>
