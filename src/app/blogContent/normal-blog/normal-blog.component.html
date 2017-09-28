@@ -1,24 +1,26 @@
-<a routerLink="/{{title}}" (click)="send()">
+
   <div class="blog" MaintainHeightWidthRatio >
-    <div class="blogImageHolder">
-      <img src="{{blogImage}}" #image>
-    </div>
-    <div class="blogFooter">
-      <p>
-        <span>{{dow}}</span>|<span>2 min read</span>
-        <span>
-          <img src="/assets/images/views-black.png" >
-          {{viewCount}}
-        </span>
-      </p>
-      <a routerLink="/{{keywords[0]}}/{{title}}" (click)="send()">
-        <p [innerHtml]="title" #blogTitle>
-        </p>
+      <a routerLink="/{{keywords[0]}}/{{heading}}" (click)="send()">
+        <div class="blogImageHolder" #holder>
+          <img src="{{blogImage}}" (load)="setInitialImage()" (error)="setDefault()" >
+        </div>
+        <div class="blogFooter">
+          <p>
+            <span>{{insertedDate}}</span>|<span>2 min read</span>
+            <span>
+              <img src="/assets/images/views-black.png"  >
+              {{viewCount}}
+            </span>
+          </p>
+          <a routerLink="/{{keywords[0]}}/{{heading}}" (click)="send()">
+            <p [innerHtml]="heading" #blogTitle>
+            </p>
+          </a>
+          <p>
+            <img src="/assets/images/edit.png" >
+            {{bloggerName}}
+          </p>
+        </div>
       </a>
-      <p>
-        <img src="/assets/images/edit.png" >
-        {{bloggerName}}
-      </p>
-    </div>
   </div>
-</a>
+

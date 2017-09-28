@@ -3,7 +3,7 @@
   <img src="{{blogImage}}" class="blogImg">
   <div class="desc" #Desc>
     <div>
-      <span>{{dow}}</span><span>{{keywords[0]}}</span>
+      <span>{{insertedDate}}</span><span>{{keywords[0]}}</span>
       <div class="count">
         <img src="/assets/images/views-white.png" alt="">
       </div> 
@@ -14,7 +14,7 @@
       <span>{{shareCount}}</span>
     </div>
     <a routerLink="/{{keywords[0]}}/{{title}}" class="title" (click)="send()">
-      <p [innerHtml]="title" #latestTitle>
+      <p [innerHtml]="heading" #latestTitle>
       </p>
     </a>
     <div class="Blogger">
@@ -23,7 +23,7 @@
       </div>  
       <p class="bloggerName">{{bloggerName}}</p>
     </div>
-    <p [innerHtml]="desc" class="smallDesc" #latestDesc></p>
+    <p [innerHtml]="Content" class="smallDesc" #latestDesc></p>
     <p class="readMore" ><a routerLink="/{{keywords[0]}}/{{title}}" (click)="send()" #readmore>....Read More</a></p> 
   </div>
 </div>

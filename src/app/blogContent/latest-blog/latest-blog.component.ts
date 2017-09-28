@@ -20,9 +20,9 @@ export class LatestBlogComponent implements OnInit {
   @Input()  blogImage:string
   @Input()  bloggerName:string
   @Input()  bloggerImage:string
-  @Input()  title:string
-  @Input()  desc:string
-  @Input()  dow:string
+  @Input()  heading:string
+  @Input()  Content:string
+  @Input()  insertedDate:string
   @Input()  viewCount:string
   @Input()  shareCount:string
   @Input()  keywords:string[]
@@ -33,9 +33,9 @@ export class LatestBlogComponent implements OnInit {
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
-    title:string,
-    desc:string,
-    dow:string,
+    heading:string,
+    Content:string,
+    insertedDate:string,
     viewCount:string,
     shareCount:string,
     keywords:string[],
@@ -56,9 +56,9 @@ export class LatestBlogComponent implements OnInit {
       blogImage:this.blogImage,
       bloggerName:this.bloggerName,
       bloggerImage:this.bloggerImage,
-      title:this.title,
-      desc:this.desc,
-      dow:this.dow,
+      heading:this.heading,
+      Content:this.Content,
+      insertedDate:this.insertedDate,
       viewCount:this.viewCount,
       shareCount:this.shareCount,
       keywords:this.keywords,

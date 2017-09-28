@@ -14,7 +14,7 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
   width;
   constructor(private elRef:ElementRef,private renderer:Renderer2) {
     this.width=this.elRef.nativeElement.getBoundingClientRect().width;
-    
+   // console.log(this.elRef.nativeElement.parentNode.className)
     if(this.elRef.nativeElement.parentNode.parentNode.className=='col-8'){
       this.height=-(.536231884057*(this.width))+this.width
     }
@@ -52,7 +52,7 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
   ngAfterViewInit(){
     this.width=this.elRef.nativeElement.getBoundingClientRect().width;
     
-    if(this.elRef.nativeElement.parentNode.parentNode.className=='col-8'){
+    if(this.elRef.nativeElement.parentNode.parentNode.className=='col-8' ){
       this.height=-(.536231884057*(this.width))+this.width
     }
     if(this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){

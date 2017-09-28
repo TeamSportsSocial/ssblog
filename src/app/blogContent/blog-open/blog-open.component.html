@@ -6,7 +6,7 @@
 <div class="blogImageHolder">
   <img src="{{blog.blogImage}}">
 </div>
-<p [innerHtml]="blog.title"class="title"></p>
+<p [innerHtml]="blog.heading"class="title"></p>
 <div class="content">
   <div class="blogInfo" #BlogInfo>
     <div class="bloggerImage">
@@ -35,7 +35,7 @@
         <img src="/assets/images/twitter-logo.png"  class="twitterButton">
       </a> 
     </p>
-    <p [innerHtml]="blog.desc" class="desc">
+    <p [innerHtml]="blog.Content" class="desc">
     </p>
     <div class="tags" >
        <div class="tagHolder">

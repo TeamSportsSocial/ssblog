@@ -1,0 +1,40 @@
+.Row{
+    padding: 1%;
+}
+.col-6{
+    width: 49.50%;
+    display: inline-block;
+    vertical-align: top;
+    padding:0% 1.5% 2% 1.5%;
+}
+.col-12{
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+   
+}
+.col-4{
+    width: 33%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 1%;
+}
+.mobileView .col-4{
+    width: 100%;
+}
+button{
+    display: block;
+    margin: 1% auto;
+    width: 30%;
+    background-color: #ffa600;
+    border:none;
+    color: #ffffff;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    padding: 0.5%;
+}
+.loading{
+    display: block;
+    margin: auto;
+}

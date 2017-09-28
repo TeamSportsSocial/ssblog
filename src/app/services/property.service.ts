@@ -13,4 +13,5 @@ export class PropertyService {
   ofBlogCard=new ReplaySubject();
   detailsofBlog= new ReplaySubject();
   saveDetailsOfBlog=new ReplaySubject();
+  ofsearchBlog=new Subject()
 }

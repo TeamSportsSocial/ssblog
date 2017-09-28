@@ -1,5 +1,44 @@
 <div #searchPage>
-  <p>
-    search works!
-  </p>
+
+  
+  <div class="Row"  *ngIf="!mobileView">
+      <h2>{{recievedKey}} blogs</h2>
+      <p>Read the latest articles, blogs, news and other informations related to {{recievedKey}}</p>
+    <div TabViewAvailable class="col-4" *ngFor="let data of blogDetails">
+      <SportSocial-normal-blog 
+      [blogId]="data.blogId"
+      [blogImage]="data.blogImage"
+      [bloggerImage]="data.bloggerImage"
+      [bloggerName]="data.bloggerName"
+      [insertedDate]="data.insertedDate"
+      [heading]="data.heading"
+      [Content]="data.Content"
+      [viewCount]="data.viewCount"
+      [shareCount]="data.shareCount"
+      [keywords]="data.keywords"
+      [exactDate]="data.exactDate">
+      </SportSocial-normal-blog>
+    </div>
+    
+  </div>
+  <div class="Row mobileView" *ngIf="mobileView" >
+      <div class="col-4" *ngFor="let data of blogDetails;let i=index">
+          <SportSocial-normal-blog 
+              [blogId]="data.blogId"
+              [blogImage]="data.blogImage"
+              [bloggerImage]="data.bloggerImage"
+              [bloggerName]="data.bloggerName"
+              [insertedDate]="data.insertedDate"
+              [heading]="data.heading"
+              [Content]="data.Content"
+              [viewCount]="data.viewCount"
+              [shareCount]="data.shareCount"
+              [keywords]="data.keywords"
+              [exactDate]="data.exactDate">
+          </SportSocial-normal-blog>
+      </div>
+  </div>
 </div>
+<button (click)="nextPage()" *ngIf="dataRecieved">Load More</button>
+<img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecieved" class="loading">
+<SportSocial-blog-footer *ngIf="show"></SportSocial-blog-footer> 

@@ -25,9 +25,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
-    title:string,
-    desc:string,
-    dow:string,
+    heading:string,
+    Content:string,
+    insertedDate:string,
     viewCount:string,
     shareCount:string,
     keywords:string[],
@@ -38,9 +38,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
-    title:string,
-    desc:string,
-    dow:string,
+    heading:string,
+    Content:string,
+    insertedDate:string,
     viewCount:string,
     shareCount:string,
     keywords:string[],
@@ -51,22 +51,22 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
-    title:string,
-    desc:string,
-    dow:string,
+    heading:string,
+    Content:string,
+    insertedDate:string,
     viewCount:string,
     shareCount:string,
     keywords:string[],
     exactDate:string;
   }[]=[]
   restBlogDetails:{
-    blogId:string;    
+    blogId:string;
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
-    title:string,
-    desc:string,
-    dow:string,
+    heading:string,
+    Content:string,
+    insertedDate:string,
     viewCount:string,
     shareCount:string,
     keywords:string[],
@@ -77,9 +77,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
-    title:string,
-    desc:string,
-    dow:string,
+    heading:string,
+    Content:string,
+    insertedDate:string,
     viewCount:string,
     shareCount:string,
     keywords:string[],
@@ -100,25 +100,31 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     private cd: ChangeDetectorRef
   ) { }
   ngOnInit(){
-    sessionStorage.clear();
+    sessionStorage.removeItem('Blog')
+    sessionStorage.removeItem('pageNumber')
+    sessionStorage.removeItem('searchedBlog')
     if(window.innerWidth>950){
       this.removeTrendingBlock=false;
       this.mobileView=false;
     }
-    if(window.innerWidth>600 && window.innerWidth<=950){
+    if(window.innerWidth>700 && window.innerWidth<=950){
       this.removeTrendingBlock=true;
       this.mobileView=false;
     }
-    if(window.innerWidth<=600 ){
+    if(window.innerWidth<=700 ){
       this.removeTrendingBlock=true;
       this.mobileView=true;
     }
-  
+    this.nextPageNumber=JSON.parse(sessionStorage.getItem('blogPageNumber'))
+    console.log(this.nextPageNumber," try")
+    if(this.nextPageNumber==null){
+      this.nextPageNumber=1
+    }
+    if(this.nextPageNumber==1){
     this.get.blogData(this.nextPageNumber,this.defaultKey).subscribe(
       (data)=>{ 
         this.show=true;
         this.dataRecived=true;
-        console.log("hii")
         console.log(data)
         for(let i in data){
             this.blogDetails.push(
@@ -127,9 +133,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 blogImage:data[i].blogImage,
                 bloggerName:data[i].bloggerName,
                 bloggerImage:data[i].bloggerImage,
-                title:data[i].heading,
-                desc:data[i].Content,
-                dow:this.timePassed(data[i].insertedDate),
+                heading:data[i].heading,
+                Content:data[i].Content,
+                insertedDate:this.timePassed(data[i].insertedDate),
                 viewCount:"50",
                 shareCount:"50",
                 keywords:data[i].keywords.split(","),
@@ -139,29 +145,29 @@ export class BlogsComponent implements OnInit,AfterViewInit {
         }
         this.latestBlogDetails.push(
           {
-            blogId:this.blogDetails[this.blogDetails.length-1].blogId,
-            blogImage:this.blogDetails[this.blogDetails.length-1].blogImage,
-            bloggerName:this.blogDetails[this.blogDetails.length-1].bloggerName,
-            bloggerImage:this.blogDetails[this.blogDetails.length-1].bloggerImage,
-            title:this.blogDetails[this.blogDetails.length-1].title,
-            desc:this.blogDetails[this.blogDetails.length-1].desc,
-            dow:this.blogDetails[this.blogDetails.length-1].dow,
+            blogId:this.blogDetails[0].blogId,
+            blogImage:this.blogDetails[0].blogImage,
+            bloggerName:this.blogDetails[0].bloggerName,
+            bloggerImage:this.blogDetails[0].bloggerImage,
+            heading:this.blogDetails[0].heading,
+            Content:this.blogDetails[0].Content,
+            insertedDate:this.blogDetails[0].insertedDate,
             viewCount:"50",
             shareCount:"50",
-            keywords:this.blogDetails[this.blogDetails.length-1].keywords,
-            exactDate:this.blogDetails[this.blogDetails.length-1].exactDate
+            keywords:this.blogDetails[0].keywords,
+            exactDate:this.blogDetails[0].exactDate
           }
         )
-        for(var i=this.blogDetails.length-2; i>this.blogDetails.length-5;i--){
+        for(var i=1; i<4;i++){
           this.topBlogDetails.push(
             {
               blogId:this.blogDetails[i].blogId,
               blogImage:this.blogDetails[i].blogImage,
               bloggerName:this.blogDetails[i].bloggerName,
               bloggerImage:this.blogDetails[i].bloggerImage,
-              title:this.blogDetails[i].title,
-              desc:this.blogDetails[i].desc,
-              dow:this.blogDetails[i].dow,
+              heading:this.blogDetails[i].heading,
+              Content:this.blogDetails[i].Content,
+              insertedDate:this.blogDetails[i].insertedDate,
               viewCount:"50",
               shareCount:"50",
               keywords:this.blogDetails[i].keywords,
@@ -169,16 +175,16 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             }
           )
         }
-       for(var i=this.blogDetails.length-5;i>=0;i--){
+       for(var i=4;i<this.blogDetails.length;i++){
         this.restBlogDetails.push(
           {
             blogId:this.blogDetails[i].blogId,
             blogImage:this.blogDetails[i].blogImage,
             bloggerName:this.blogDetails[i].bloggerName,
             bloggerImage:this.blogDetails[i].bloggerImage,
-            title:this.blogDetails[i].title,
-            desc:this.blogDetails[i].desc,
-            dow:this.blogDetails[i].dow,
+            heading:this.blogDetails[i].heading,
+            Content:this.blogDetails[i].Content,
+            insertedDate:this.blogDetails[i].insertedDate,
             viewCount:"50",
             shareCount:"50",
             keywords:this.blogDetails[i].keywords,
@@ -186,28 +192,65 @@ export class BlogsComponent implements OnInit,AfterViewInit {
           }
         )
       }
-    // console.log(this.restBlogDetails, " i")
-      for(var i=this.blogDetails.length-2;i>=0;i--){
-        this.mobileBlogDetails.push(
-          {
-            blogId:this.blogDetails[i].blogId,
-            blogImage:this.blogDetails[i].blogImage,
-            bloggerName:this.blogDetails[i].bloggerName,
-            bloggerImage:this.blogDetails[i].bloggerImage,
-            title:this.blogDetails[i].title,
-            desc:this.blogDetails[i].desc,
-            dow:this.blogDetails[i].dow,
-            viewCount:"50",
-            shareCount:"50",
-            keywords:this.blogDetails[i].keywords,
-            exactDate:this.blogDetails[i].exactDate
-          }
-        )
-       }
       }
     )
-    
-  
+  }
+  else{
+    this.blogDetails=JSON.parse(sessionStorage.getItem('blogData'))
+    console.log(this.blogDetails," mus")
+    this.latestBlogDetails.push(
+      {
+        blogId:this.blogDetails[0].blogId,
+        blogImage:this.blogDetails[0].blogImage,
+        bloggerName:this.blogDetails[0].bloggerName,
+        bloggerImage:this.blogDetails[0].bloggerImage,
+        heading:this.blogDetails[0].heading,
+        Content:this.blogDetails[0].Content,
+        insertedDate:this.blogDetails[0].insertedDate,
+        viewCount:"50",
+        shareCount:"50",
+        keywords:this.blogDetails[0].keywords,
+        exactDate:this.blogDetails[0].exactDate
+      }
+    )
+    for(var i=1; i<4;i++){
+      this.topBlogDetails.push(
+        {
+          blogId:this.blogDetails[i].blogId,
+          blogImage:this.blogDetails[i].blogImage,
+          bloggerName:this.blogDetails[i].bloggerName,
+          bloggerImage:this.blogDetails[i].bloggerImage,
+          heading:this.blogDetails[i].heading,
+          Content:this.blogDetails[i].Content,
+          insertedDate:this.blogDetails[i].insertedDate,
+          viewCount:"50",
+          shareCount:"50",
+          keywords:this.blogDetails[i].keywords,
+          exactDate:this.blogDetails[i].exactDate
+        }
+      )
+    }
+   for(var i=4;i<this.blogDetails.length;i++){
+    this.restBlogDetails.push(
+      {
+        blogId:this.blogDetails[i].blogId,
+        blogImage:this.blogDetails[i].blogImage,
+        bloggerName:this.blogDetails[i].bloggerName,
+        bloggerImage:this.blogDetails[i].bloggerImage,
+        heading:this.blogDetails[i].heading,
+        Content:this.blogDetails[i].Content,
+        insertedDate:this.blogDetails[i].insertedDate,
+        viewCount:"50",
+        shareCount:"50",
+        keywords:this.blogDetails[i].keywords,
+        exactDate:this.blogDetails[i].exactDate
+      }
+    )
+  }
+  this.show=true;
+  this.dataRecived=true;
+  } 
+   
   }
   showTrendingBlock(){
     if(this.blogDetails.length==0 || window.innerWidth<950){
@@ -238,17 +281,17 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       this.removeTrendingBlock=false;
       this.mobileView=false;
     }
-    if(window.innerWidth>600 && window.innerWidth<=950){
+    if(window.innerWidth>700 && window.innerWidth<=950){
       this.removeTrendingBlock=true;
       this.mobileView=false;
     }
-    if(window.innerWidth<=600 ){
+    if(window.innerWidth<=700 ){
       this.removeTrendingBlock=true;
       this.mobileView=true;
     }
     if(this.blogDetails.length>0){
       this.show=true
-      console.log("tr")
+     // console.log("tr")
     }
   }
   timePassed(i:string){
@@ -285,7 +328,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
   nextPage(){
     this.dataRecived=false;
     this.nextPageNumber++;
-    if(this.nextPageNumber>0){
+    if(this.nextPageNumber>1){
       this.get.blogData((this.nextPageNumber),this.defaultKey).subscribe(
         (data)=>{
           this.dataRecived=true;
@@ -300,9 +343,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 blogImage:data[i].blogImage,
                 bloggerName:data[i].bloggerName,
                 bloggerImage:data[i].bloggerImage,
-                title:data[i].heading,
-                desc:data[i].Content,
-                dow:this.timePassed(data[i].insertedDate),
+                heading:data[i].heading,
+                Content:data[i].Content,
+                insertedDate:this.timePassed(data[i].insertedDate),
                 viewCount:"50",
                 shareCount:"50",
                 keywords:data[i].keywords.split(","),
@@ -310,10 +353,13 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               }
             )
            }
-           console.log(this.restBlogDetails)
+           console.log(this.restBlogDetails.concat(this.topBlogDetails).concat(this.latestBlogDetails),"  hr")
+           sessionStorage.setItem('blogData',JSON.stringify((this.latestBlogDetails).concat(this.topBlogDetails).concat(this.restBlogDetails)))
         }
       )
     }
+   
+    sessionStorage.setItem('blogPageNumber',JSON.stringify(this.nextPageNumber))
   }
 
 

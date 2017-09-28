@@ -38,7 +38,9 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     private searched:GetService,
     private http:Http,
     private sendSearchedData:PropertyService,
-    private router:Router
+    private router:Router,
+    private sendKey:PropertyService
+
   ) { }
 
   ngOnInit() {
@@ -91,12 +93,13 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     this.searched.blogData(this.pageNumber,this.keywords[i].name).subscribe(
       res=>{
         console.log(res)
-        this.sendSearchedData.ofBlogCard.next(res);
-
+        this.sendSearchedData.ofsearchBlog.next(res);
+        sessionStorage.setItem('searchedBlog',JSON.stringify(res))
       }
     )
     this.path="/"+this.keywords[i].name;
     this.router.navigate([this.path]);
+    this.sendKey.ofBlogCard.next(this.keywords[i].name)
   }
   @HostListener('window:resize',[]) onresize(){
     this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);

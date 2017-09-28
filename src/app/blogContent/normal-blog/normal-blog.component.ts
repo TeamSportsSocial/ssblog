@@ -18,9 +18,9 @@ export class NormalBlogComponent implements OnInit {
   @Input()  blogImage:string
   @Input()  bloggerImage:string
   @Input()  bloggerName:string
-  @Input()  title:string
-  @Input()  dow:string
-  @Input()  desc:string
+  @Input()  heading:string
+  @Input()  insertedDate:string
+  @Input()  Content:string
   @Input()  viewCount:string
   @Input()  shareCount:string
   @Input()  keywords:string[]
@@ -31,36 +31,40 @@ export class NormalBlogComponent implements OnInit {
     blogImage:string;
     bloggerName:string,
     bloggerImage:string,
-    title:string,
-    desc:string,
-    dow:string,
+    heading:string,
+    Content:string,
+    insertedDate:string,
     viewCount:string,
     shareCount:string,
     keywords:string[],
     exactDate:string
   }
   @ViewChild('blogTitle') blogTitle;
-  @ViewChild('image') image;
-  constructor(private Send: PropertyService,private renderer:Renderer2) { }
+  @ViewChild('holder') holder;
+
+  loading:boolean=true;
+  constructor(private Send: PropertyService,private renderer:Renderer2) { 
+  }
 
   ngOnInit() {  
     //console.log(this.title)  
    // console.log(this.Heading)
    //console.log(this.image)
+   //console.log(this.holder)
    this.blog={
     blogId:this.blogId,
     blogImage:this.blogImage,
     bloggerName:this.bloggerName,
     bloggerImage:this.bloggerImage,
-    title:this.title,
-    desc:this.desc,
-    dow:this.dow,
+    heading:this.heading,
+    Content:this.Content,
+    insertedDate:this.insertedDate,
     viewCount:this.viewCount,
     shareCount:this.shareCount,
     keywords:this.keywords,
     exactDate:this.exactDate
    }
-   console.log(this.blogImage)
+  // console.log(this.blogImage)
    if(window.innerWidth>1100){
      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
    }
@@ -85,10 +89,18 @@ export class NormalBlogComponent implements OnInit {
    if(window.innerWidth>300 && window.innerWidth<400){
     this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1em')
    }
+
   }
   send(){
-    //console.log(this.blog)
+    
     this.Send.detailsofBlog.next(this.blog)
+  }
+  setDefault(event){
+  
+    this.blogImage="/assets/images/noimage.png"
+  }
+  setInitialImage(){
+    this.renderer.removeStyle(this.holder.nativeElement,'background-image')
   }
   @HostListener('window:resize',[])onresize(){
     if(window.innerWidth>1100){
