@@ -8,7 +8,7 @@
     display: inline-block;
     width: 100%;
     height: 500px;
-    
+    box-shadow: 3px 3px #fafafa;
     position: relative;
     background-color: #000000;
     overflow: hidden;

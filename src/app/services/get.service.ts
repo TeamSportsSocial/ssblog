@@ -16,7 +16,7 @@ export class GetService {
       page:i
     }
     console.log(this.Page)
-    return this.http.post('https://test.sportsocial.in/poc/loadblogdata',this.Page)
+    return this.http.post('http://admin.chaseyoursport.com/blog/loadblogdata',this.Page)
     .map( res => res.json());
   }
 

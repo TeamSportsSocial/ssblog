@@ -72,7 +72,7 @@ export class BlogFooterComponent implements OnInit {
     }
     if(window.innerWidth<540 && window.innerWidth>470){
       this.renderer.setStyle(this.subscribeCard.nativeElement,'width','95%')
-      this.renderer.setStyle(this.subscriber.nativeElement,'width','53%')
+      this.renderer.setStyle(this.subscriber.nativeElement,'width','51%')
     }
     if(window.innerWidth<=470 && window.innerWidth>400){
       this.renderer.setStyle(this.subscribeCard.nativeElement,'width','95%')
@@ -91,7 +91,7 @@ export class BlogFooterComponent implements OnInit {
     }
    // console.log(this.subscriber.nativeElement.value)
     console.log(this.Email)
-    this.http.post("https://test.sportsocial.in/user/subscribeBlog",this.Email)
+    this.http.post("http://admin.chaseyoursport.com/blog/subscribeBlog",this.Email)
     .subscribe(
       res=>{
         console.log(res)
@@ -147,15 +147,15 @@ export class BlogFooterComponent implements OnInit {
     }
     if(window.innerWidth<540 && window.innerWidth>470){
       this.renderer.setStyle(this.subscribeCard.nativeElement,'width','95%')
-      this.renderer.setStyle(this.subscriber.nativeElement,'width','53%')
+      this.renderer.setStyle(this.subscriber.nativeElement,'width','51%')
     }
     if(window.innerWidth<=470 && window.innerWidth>400){
       this.renderer.setStyle(this.subscribeCard.nativeElement,'width','95%')
-      this.renderer.setStyle(this.subscriber.nativeElement,'width','47%')
+      this.renderer.setStyle(this.subscriber.nativeElement,'width','45%')
      
     }
     if(window.innerWidth<400){
-      this.renderer.setStyle(this.subscribeCard.nativeElement,'width','95%')
+      this.renderer.setStyle(this.subscribeCard.nativeElement,'width','100%')
       this.renderer.setStyle(this.subscriber.nativeElement,'width','42%')
      
    

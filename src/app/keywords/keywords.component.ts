@@ -55,7 +55,7 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
   }
   ngAfterViewInit(){
-    this.http.get(' https://test.sportsocial.in/user/getKeywords  ')
+    this.http.get(' http://admin.chaseyoursport.com/blog/getKeywords  ')
     .map(res=>res.json())
     .subscribe(
       res=>{

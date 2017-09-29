@@ -29,7 +29,7 @@ export class SubscribeCardComponent implements OnInit {
     }
    // console.log(this.subscriber.nativeElement.value)
     console.log(this.Email)
-    this.http.post("https://test.sportsocial.in/user/subscribeBlog",this.Email)
+    this.http.post("http://admin.chaseyoursport.com/blog/subscribeBlog",this.Email)
     .subscribe(
       res=>{
         console.log(res)

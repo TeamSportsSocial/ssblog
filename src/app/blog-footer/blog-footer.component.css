@@ -84,7 +84,7 @@ footer{
  .copyright{
     display: inline-block;
     vertical-align: middle;
-    width: 30%;
+    width: 35%;
     color: #ffffff;
     font-family: 'Roboto',sans-serif;
     font-size: 1em;
@@ -105,16 +105,26 @@ footer{
  }
  .followUs{
      text-align: right;
+     float: right;
     display: inline-block;
     vertical-align: middle;
-    width: 69%;
+    width: 60%;
     color: #ffffff;
     font-family: 'Roboto',sans-serif;
     font-size: 1.1em;
     font-weight: 500;
  }
  .followUs img{
-    width: 25px;
-    height: 25px;
+    width: 3%;
+    height: 3%;
     margin-left: 1.5%;
+ }
+ 
+ .editor{
+     text-align: center;
+     width: 50%;
+    margin: auto;
+ }
+ .editor a{
+     color: white
  }

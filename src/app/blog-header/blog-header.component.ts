@@ -53,7 +53,7 @@ export class BlogHeaderComponent implements OnInit {
   ) { }
   ngOnInit() {
     
-    this.http.get(' https://test.sportsocial.in/user/getKeywords  ')
+    this.http.get(' http://admin.chaseyoursport.com/blog/getKeywords  ')
     .map(res=>res.json())
     .subscribe(
       res=>{
