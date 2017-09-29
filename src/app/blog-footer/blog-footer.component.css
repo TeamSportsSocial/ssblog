@@ -13,7 +13,7 @@ footer{
     width: 70%;
     margin: 0.4% auto;
     background-color: #e5e5e5;
-    padding: 0.5%
+    padding: 0.4%
 }
 .subscribe>p{
     display: inline-block;
@@ -127,4 +127,79 @@ footer{
  }
  .editor a{
      color: white
+ }
+ @media  (max-width:100px) and (min-width:800) {
+    .followUs img{
+        width: 5%;
+        height: 5%;
+        margin-left: 1.5%;
+     }
+ }
+ @media  (max-width:800px) and(min-width:650px) {
+    .followUs img{
+        width: 4%;
+        height: 4%;
+        margin-left: 1.5%;
+     }
+     .about{
+        width: 80%;
+        font-size: 1em;
+    }
+    .contactUs{
+        font-size: 1em;
+    }
+    .blogName{
+        font-size: 1.5em
+    }
+    .tagline{
+        font-size: 0.95em
+    }
+    .subscribe>input{
+        height: 32px;
+    }
+ }
+ @media  (max-width:650px) and(min-width:520px){
+    .followUs img{
+        width: 5%;
+        height: 5%;
+        margin-left: 1.5%;
+     }
+     .about{
+        width: 100%;
+    }
+    .contactUs{
+        font-size: 0.9em;
+    }
+    .blogName{
+        font-size: 1.3em
+    }
+    .tagline{
+        font-size: 0.9em
+    }
+    .subscribe>input{
+        height: 30px;
+    }
+ }
+ @media  (max-width:520px) {
+    .followUs img{
+        width: 6%;
+        height: 6%;
+        margin-left: 1.5%;
+     }
+     .about{
+         width: 100%;
+         font-size: 0.9em
+     }
+     .contactUs{
+         font-size: 0.9em;
+     }
+     .blogName{
+         font-size: 1.3em
+     }
+     .tagline{
+         font-size: 0.85em
+     }
+     .subscribe>input{
+         height: 25px;
+     }
  }

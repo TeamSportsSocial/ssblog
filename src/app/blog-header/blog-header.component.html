@@ -16,7 +16,7 @@
         [list-formatter]="autocompleListFormatter"
         type="text" 
         placeholder="Search here the latest topics & trends in sports" 
-        (customSelected)="customCallback($event)"
+        (valueChanged)="valueChanged($event)"
         [max-num-list]="10"
         (keypress)="sendData($event)"
         #searchBox>  

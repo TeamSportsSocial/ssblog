@@ -107,11 +107,11 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       this.removeTrendingBlock=false;
       this.mobileView=false;
     }
-    if(window.innerWidth>700 && window.innerWidth<=950){
+    if(window.innerWidth>600 && window.innerWidth<=950){
       this.removeTrendingBlock=true;
       this.mobileView=false;
     }
-    if(window.innerWidth<=700 ){
+    if(window.innerWidth<=600 ){
       this.removeTrendingBlock=true;
       this.mobileView=true;
     }
@@ -281,11 +281,11 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       this.removeTrendingBlock=false;
       this.mobileView=false;
     }
-    if(window.innerWidth>700 && window.innerWidth<=950){
+    if(window.innerWidth>600 && window.innerWidth<=950){
       this.removeTrendingBlock=true;
       this.mobileView=false;
     }
-    if(window.innerWidth<=700 ){
+    if(window.innerWidth<=600 ){
       this.removeTrendingBlock=true;
       this.mobileView=true;
     }
@@ -324,6 +324,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
    if(this.dataRecived || this.show){
      return true
    }
+  }
+  @HostListener('window:scroll',[])onsrcol(){
+    console.log(window.scrollY)
   }
   nextPage(){
     this.dataRecived=false;

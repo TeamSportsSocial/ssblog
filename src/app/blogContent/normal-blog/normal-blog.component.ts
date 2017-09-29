@@ -73,7 +73,7 @@ export class NormalBlogComponent implements OnInit {
     this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.25em')
    }
    if(window.innerWidth>600 && window.innerWidth<700){
-    this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.4em')
+    this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
    }
    if(window.innerWidth>600 && window.innerWidth<500){
     this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em')
@@ -111,7 +111,7 @@ export class NormalBlogComponent implements OnInit {
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.25em')
      }
      if(window.innerWidth>600 && window.innerWidth<700){
-      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.4em')
+      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
      }
      if(window.innerWidth>600 && window.innerWidth<500){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em')

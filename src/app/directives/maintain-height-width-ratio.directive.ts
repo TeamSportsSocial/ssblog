@@ -34,7 +34,6 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
       this.height=-(.631555929660*(this.width))+this.width
     }
     if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
-      // this.renderer.setStyle(this.elRef.nativeElement,'height','auto')
       this.height=-(.448751486325*(this.width))+this.width
      }
     if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth<950){
@@ -69,9 +68,8 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
       this.height=-(.631555929660*(this.width))+this.width
     }
     if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
-      // this.renderer.setStyle(this.elRef.nativeElement,'height','auto')
       this.height=-(.448751486325*(this.width))+this.width
-     }
+    }
     if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth<950){
       this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
       this.width=this.elRef.nativeElement.getBoundingClientRect().width
@@ -145,7 +143,6 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
       this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
       this.width=this.elRef.nativeElement.getBoundingClientRect().width
       this.height=-(.548751486325*(this.width))+this.width
-      this.renderer.setStyle(this.elRef.nativeElement,'background-color',"yellow")
     }
     if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth>=950){
       this.renderer.setStyle(this.elRef.nativeElement,'height',"23.5%")
