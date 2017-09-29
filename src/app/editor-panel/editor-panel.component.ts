@@ -6,11 +6,9 @@ import {
   Input,
   Renderer2
 }from '@angular/core';
-import {Http} from '@angular/http';
+import {Http,HttpModule} from '@angular/http';
 import {NgForm} from "@angular/forms";
 import {PropertyService} from "../services/property.service";
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/fromEvent';
 
 @Component({
   selector: 'SportSocialBlog-editor-panel',

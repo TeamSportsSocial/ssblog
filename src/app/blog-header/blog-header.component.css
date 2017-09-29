@@ -76,6 +76,15 @@ img{
 .right li{
     margin: 1% 2% 1% 1%;
 }
+.right img{
+    width: 10%;
+    height: 10%;
+}
+.right a{
+    color: #024771;
+    font-weight: 500;
+    font-family: 'Roboto',sans-serif
+}
 input{
     height: 35px;
     background-image: url('/assets/images/search.png');
@@ -163,4 +172,7 @@ input{
  }
  .ngui-auto-complete {
      border: 1px solid black;
+  }
+  a:hover{
+      text-decoration: none;
   }

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 
@@ -33,7 +33,10 @@ import { BlogFooterComponent } from './blog-footer/blog-footer.component';
 import { SearchComponent } from './search/search.component';
 import { CommentsComponent } from './comments/comments.component';
 
+
 import { FacebookModule } from 'ngx-facebook';
+import { NguiAutoCompleteModule } from '@ngui/auto-complete';
+
 
 
 @NgModule({
@@ -64,6 +67,8 @@ import { FacebookModule } from 'ngx-facebook';
     HttpModule,
     RoutingModule,
     FacebookModule.forRoot(),
+    ReactiveFormsModule,
+    NguiAutoCompleteModule
   ],
   providers: [PropertyService,GetService,SaveService],
   bootstrap: [AppComponent]

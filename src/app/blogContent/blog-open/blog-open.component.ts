@@ -8,6 +8,7 @@ import {
 import {Http} from "@angular/http";
 import {PropertyService} from "../../services/property.service";
 import {SaveService} from "../../services/save.service";
+import {GetService} from "../../services/get.service";
 import {ActivatedRoute} from "@angular/router";
 import { 
     FacebookService, 
@@ -17,6 +18,7 @@ import {
     UIParams, 
     FBVideoComponent 
 } from 'ngx-facebook';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'SportSocial-blog-open',
@@ -29,6 +31,20 @@ export class BlogOpenComponent implements OnInit {
     topMargin;
     removeSocial:boolean=false;
     isConnectedWithFacebook:boolean=false;
+    mobileView:boolean=false;
+    relatedBlogDetails:{
+        blogId:string;
+        blogImage:string;
+        bloggerName:string,
+        bloggerImage:string,
+        heading:string,
+        Content:string,
+        insertedDate:string,
+        viewCount:string,
+        shareCount:string,
+        keywords:string[],
+        exactDate:string;
+      }[]=[]
     @ViewChild('openBlog') openBlog;
     @ViewChild('Social') Social;
     @ViewChild('BlogInfo') BlogInfo;
@@ -39,7 +55,11 @@ export class BlogOpenComponent implements OnInit {
         private renderer :Renderer2,
         private route :ActivatedRoute,
         private fb: FacebookService,
-        private http:Http
+        private http:Http,
+        private getRelated: GetService,
+        private searchKeyword: GetService,
+        private sendKey:PropertyService,
+        private router:Router
     ) { 
         fb.init({
             appId: '140286013252973',
@@ -79,15 +99,45 @@ export class BlogOpenComponent implements OnInit {
         if(this.blog==null){
             this.blog=JSON.parse(sessionStorage.getItem('Blog'))
         }
-        if(window.innerWidth<=900){
-           this.removeSocial=true; 
-           this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%')
-        }
-        else{
+        if(window.innerWidth>950){
+            this.mobileView=false;
             this.removeSocial=false;
-            this.renderer.setStyle(this.BlogInfo.nativeElement,'width','65%')
+            this.renderer.setStyle(this.BlogInfo.nativeElement,'width','68%')
         }
-        console.log(this.blog)
+        if(window.innerWidth<=950 && window.innerWidth>700){
+           this.removeSocial=true; 
+           this.mobileView=false;
+           this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%');
+           
+        }
+        if(window.innerWidth<700){
+            this.removeSocial=true;
+            this.mobileView=true;
+            this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%')
+        }
+        console.log(this.blog.keywords.length,"  tffcv")
+        this.getRelated.blogData(1,this.blog.keywords[this.blog.keywords.length-1]).subscribe(
+            data=>{
+                console.log(data, " related")
+                for(let i=0;i<3;i++){
+                    this.relatedBlogDetails.push(
+                      {
+                        blogId:data[i].blogId,
+                        blogImage:data[i].blogImage,
+                        bloggerName:data[i].bloggerName,
+                        bloggerImage:data[i].bloggerImage,
+                        heading:data[i].heading,
+                        Content:data[i].Content,
+                        insertedDate:this.timePassed(data[i].insertedDate),
+                        viewCount:"50",
+                        shareCount:"50",
+                        keywords:data[i].keywords.split(","),
+                        exactDate:this.ExactDate(data[i].insertedDate)
+                      }
+                    )
+                }
+            }
+        )
 
     }
     ngAfterViewInit () {
@@ -151,15 +201,49 @@ export class BlogOpenComponent implements OnInit {
             }
         )
         this.renderer.setStyle(this.openBlog.nativeElement,"margin-top",this.topMargin+"px")
-        if(window.innerWidth<=900){
-            this.removeSocial=true; 
+        if(window.innerWidth>950){
+            this.mobileView=false;
+            this.removeSocial=false;
+            this.renderer.setStyle(this.BlogInfo.nativeElement,'width','68%')
+        }
+        if(window.innerWidth<=950 && window.innerWidth>700){
+           this.removeSocial=true; 
+           this.mobileView=false;
+           this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%');
+           
+        }
+        if(window.innerWidth<700){
+            this.removeSocial=true;
+            this.mobileView=true;
             this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%')
-         }
-         else{
-             this.removeSocial=false;
-             this.renderer.setStyle(this.BlogInfo.nativeElement,'width','65%')
-         }
+        }
         
+    }
+    timePassed(i:string){
+        let writtenDate=new Date(i);
+        let presentDate=new Date();
+        //console.log(writtenDate.getDate(),presentDate.getDate())
+        if(writtenDate.getFullYear()==presentDate.getFullYear()){
+          if(writtenDate.getMonth()==presentDate.getMonth()){
+            if(writtenDate.getDate()==presentDate.getDate()){
+                return "Today"
+            }
+            else{
+              return presentDate.getDate()-writtenDate.getDate() + " day ago"
+            }
+          }
+          else{
+            return presentDate.getMonth()-writtenDate.getMonth() + " month ago"
+          }
+        }
+        else{
+          return presentDate.getFullYear()-writtenDate.getFullYear() + " year ago"
+        }
+       
+    }
+    ExactDate(i:number){
+      let writtenDate=new Date(i);
+      return writtenDate.toDateString()
     }
     private handleError(error) {
         console.error('Error processing action', error);
@@ -215,6 +299,12 @@ export class BlogOpenComponent implements OnInit {
  
     return false;
     }
-
+    getblogs(event){
+        let key=event.toElement.innerText
+        console.log(event.toElement.innerText,"   clicked")
+        this.router.navigate(['/'+key])
+        this.sendKey.ofBlogCard.next(key)
+        
+    }
     
 }

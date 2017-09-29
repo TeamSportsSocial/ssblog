@@ -125,7 +125,6 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       (data)=>{ 
         this.show=true;
         this.dataRecived=true;
-        console.log(data)
         for(let i in data){
             this.blogDetails.push(
               {
@@ -143,6 +142,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               }
             )
         }
+        console.log(this.blogDetails, " tfd")
         this.latestBlogDetails.push(
           {
             blogId:this.blogDetails[0].blogId,
@@ -332,10 +332,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       this.get.blogData((this.nextPageNumber),this.defaultKey).subscribe(
         (data)=>{
           this.dataRecived=true;
-           console.log(data)
-           if(data.length==0){
-             console.log("true")
-           }
+           console.log(data.length)
            for(let i in data){
             this.restBlogDetails.push(
               {
@@ -349,7 +346,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 viewCount:"50",
                 shareCount:"50",
                 keywords:data[i].keywords.split(","),
-                exactDate:this.ExactDate(data[i].exactDate)
+                exactDate:this.ExactDate(data[i].insertedDate)
               }
             )
            }
@@ -361,6 +358,5 @@ export class BlogsComponent implements OnInit,AfterViewInit {
    
     sessionStorage.setItem('blogPageNumber',JSON.stringify(this.nextPageNumber))
   }
-
 
 }

@@ -1,3 +1,7 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
 .blog{
     width: 100%;
     height: 400px;
@@ -42,10 +46,13 @@
     font-size: 0.8em;
     font-weight: 400;
     color: black;
+    text-align: left;
+    width: 97%;
 }
 span >img{
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
+    margin-right: 2%;
 }
 .blogFooter>p:first-child>span{
     padding-right: 4px;
@@ -55,14 +62,15 @@ span >img{
     vertical-align: top;
 }
 .blogFooter>p:first-child>span:last-child{
+    width: 20%;
     float: right;
+    text-align: right;
     padding-right: 5px;
-}
-.blogFooter>p:first-child>span:nth-child(3){
-    float: right;
+    color: #ffa600;
+    font-weight: 500
 }
 .blogFooter>a>p{
-    margin: 1% auto;
+    margin: 2% auto;
     overflow: hidden;
     font-weight: 700;
     font-size:1.2em;
@@ -74,13 +82,14 @@ span >img{
     position:absolute ;
     bottom:2%;
     left: 2.5%;
-    color: #888888;
+    color: #444444;
     font-weight: 500;
     font-size:0.8em;
 }
 p>img{
   width: 12px;
   height: 12px;
+  margin-right: 2%;
 }
 a:hover{
     text-decoration: none;

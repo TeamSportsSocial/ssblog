@@ -1,51 +1,50 @@
 <header #Header>
   <ul class="left" #left>
-    <a routerLink="/">
+    <a href="/">
       <li class="brand-image">
-        <img src="/assets/images/Logo.png" >
+        <img src="/assets/images/sports-social-logo.png" >
       </li>
       <li class="brand-title">
-        <span>Sport</span> <span>Social</span> <span>Blog</span>
+        <span>Sports</span> <span>Social</span> <span>Blog</span>
         <p>Chase your Sport</p>
       </li>
     </a>
     <li  *ngIf="!mobileView">
       <input 
+        ngui-auto-complete
+        [source]="keywords"
+        [list-formatter]="autocompleListFormatter"
         type="text" 
-        placeholder="Search here the latest topics & trends in here" 
-        >  
+        placeholder="Search here the latest topics & trends in sports" 
+        (customSelected)="customCallback($event)"
+        [max-num-list]="10"
+        (keypress)="sendData($event)"
+        #searchBox>  
     </li>
   </ul>
   <ul class="right" *ngIf="!mobileView">
     <li>
-     <a routerLink="/editorPanel">Editor</a>
+      <a href="http://testweb.sportsocial.in" target="_blank">
+        <img src="/assets/images/sports-social-link-symbol.png">
+        Go to website
+      </a>
     </li>
   </ul>
   <div class="mobileView dropdown" *ngIf="mobileView">
      <div class="menuImageHolder" data-toggle="dropdown">
-       <img src="/assets/images/menu.png" role="button" >
+       <img src="/assets/images/sports-social-menu.png" role="button" >
      </div>
      <div class="dropdown-menu">
         <button type="button" class="close" data-dismiss="dropdown">&times;</button>
         <p>Go to Website</p>
       <div>
-         <input type="text" placeholder="Search " >
-         <div class="suggestion" #suggestion>
-          <ul>
-            <li>
-              {{keys}}
-            </li>
-            <li>
-              vfdrtgfd
-            </li>
-            <li>
-              vfdrtgfd
-            </li>
-            <li>
-              vfdrtgfd
-            </li>
-          </ul>
-        </div>
+         <input 
+            ngui-auto-complete
+            [source]="keywords"
+            [list-formatter]="autocompleListFormatter"
+            type="text" 
+            placeholder="Search "
+            (valueChanged)="valueChanged($event)" >
       </div>
     </div>
   </div> 

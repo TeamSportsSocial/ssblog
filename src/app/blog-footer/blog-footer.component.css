@@ -4,7 +4,7 @@
 }
 footer{
     z-index: 1;
-    background-color: #4372a0;
+    background-color: #024771;
     width:100%;
     padding: 0.8%;
    
@@ -116,5 +116,5 @@ footer{
  .followUs img{
     width: 25px;
     height: 25px;
-    margin-left: 2%;
+    margin-left: 1.5%;
  }

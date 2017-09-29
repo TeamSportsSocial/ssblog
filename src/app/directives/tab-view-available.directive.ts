@@ -32,7 +32,7 @@ export class TabViewAvailableDirective {
     this.windowWidth=window.innerWidth;
     if(this.windowWidth<950 &&this.windowWidth>600){
       this.className=this.elRef.nativeElement.className
-     // console.log(this.className, " b")
+      console.log(this.className, " b")
       if(this.className=='col-8'){
         this.renderer.removeClass(this.elRef.nativeElement,this.className)
         this.renderer.addClass(this.elRef.nativeElement,'col-12')
@@ -42,7 +42,7 @@ export class TabViewAvailableDirective {
         this.renderer.removeClass(this.elRef.nativeElement,this.className)
         this.renderer.addClass(this.elRef.nativeElement,'col-6')
       }
-     // console.log(this.className)
+      console.log(this.className)
    }
   }
   ngAfterContentInit(){
@@ -66,7 +66,7 @@ export class TabViewAvailableDirective {
     this.windowWidth=window.innerWidth;
     if(this.windowWidth>950){
       this.className=this.elRef.nativeElement.className
-     
+       console.log(this.className)
       if(this.className=='col-12'){
         this.renderer.removeClass(this.elRef.nativeElement,this.className)
         this.renderer.addClass(this.elRef.nativeElement,'col-8')
@@ -91,7 +91,7 @@ export class TabViewAvailableDirective {
         this.renderer.addClass(this.elRef.nativeElement,'col-6')
       }
     }
-
+    console.log(this.className)
   }
 
 }

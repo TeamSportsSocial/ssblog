@@ -1,13 +1,14 @@
 *{
     padding: 0px;
     margin: 0px;
+    font-family: 'Roboto',sans-serif
 }
 .keyword{
     display: inline-block;
     width: auto;
     vertical-align: top;
-    border: 1px solid #bbbbbb;
-    border-radius: 5px;
+    border: 1px solid #024771;
+    border-radius: 4px;
     margin: 0.5% 0.15% 0.5% 0.15%;
      
 }
@@ -16,17 +17,24 @@
     background-size: 100%;
 }
 .title{
+   
+    display: inline-block;
+    width: auto;       
+}
+.title p{
     padding: 6px 14px 6px 14px;
     display: inline-block;
     width: auto;
-   
+    font-size: 0.9em;
+    color: #024771;
+    text-align: left;
+    font-weight: 500;
+}
+.keyword:hover{
+    background-color: #024771;
+    border:none;
     
 }
-.title p{
-    display: inline-block;
-    width: auto;
-    font-size: 0.9em;
-    color: black;
-    text-align: left;
-    font-weight: 700;
+.title p:hover{
+    color: white
 }

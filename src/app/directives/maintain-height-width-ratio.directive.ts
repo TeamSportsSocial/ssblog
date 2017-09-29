@@ -41,11 +41,9 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
       this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
       this.width=this.elRef.nativeElement.getBoundingClientRect().width
       this.height=-(.548751486325*(this.width))+this.width
-      this.renderer.setStyle(this.elRef.nativeElement,'background-color',"yellow")
     }
     if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth>=950){
       this.renderer.setStyle(this.elRef.nativeElement,'height',"23.5%")
-      this.renderer.setStyle(this.elRef.nativeElement,'background-color',"red")
     }
     this.renderer.setStyle(this.elRef.nativeElement,'height',this.height+"px")
   }
@@ -78,11 +76,9 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
       this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
       this.width=this.elRef.nativeElement.getBoundingClientRect().width
       this.height=-(.548751486325*(this.width))+this.width
-      this.renderer.setStyle(this.elRef.nativeElement,'background-color',"yellow")
     }
     if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth>=950){
       this.renderer.setStyle(this.elRef.nativeElement,'height',"23.5%")
-      this.renderer.setStyle(this.elRef.nativeElement,'background-color',"red")
     }
     this.renderer.setStyle(this.elRef.nativeElement,'height',this.height+"px")
   }
@@ -115,11 +111,9 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
       this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
       this.width=this.elRef.nativeElement.getBoundingClientRect().width
       this.height=-(.548751486325*(this.width))+this.width
-      this.renderer.setStyle(this.elRef.nativeElement,'background-color',"yellow")
     }
     if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth>=950){
       this.renderer.setStyle(this.elRef.nativeElement,'height',"23.5%")
-      this.renderer.setStyle(this.elRef.nativeElement,'background-color',"red")
     }
     this.renderer.setStyle(this.elRef.nativeElement,'height',this.height+"px")
   }
@@ -155,7 +149,6 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
     }
     if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth>=950){
       this.renderer.setStyle(this.elRef.nativeElement,'height',"23.5%")
-      this.renderer.setStyle(this.elRef.nativeElement,'background-color',"red")
     }
     this.renderer.setStyle(this.elRef.nativeElement,'height',this.height+"px")
 

@@ -1,5 +1,5 @@
 <p #openBlog class="Catagory">
-  <span>{{blog.keywords[0]}}</span>
+  <span role="button" (click)="getblogs($event)">{{blog.keywords[0]}}</span>
   <span>|</span>
   <span>2 min read</span>
 </p>
@@ -20,64 +20,64 @@
     </div>
     <div class="count">
       <span>
-        <img src="/assets/images/views-black.png">
+        <img src="/assets/images/sports-social-view-black.png">
         {{blog.viewCount}}
       </span>
       <span>
-        <img src="/assets/images/share-black.png" >
+        <img src="/assets/images/sports-social-share-black.png" >
         {{blog.shareCount}}
       </span>
     </div>
-    <p>
+    <p class="shareOn">
       Share on 
-      <img src="/assets/images/facebook-logo.png" role="button" (click)="shareOnFacebook()" class="facebook">
+      <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()" class="facebook">
       <a href="http://twitter.com/share" (click)="shareOnTwitter()" #popup class="twitter">
-        <img src="/assets/images/twitter-logo.png"  class="twitterButton">
+        <img src="/assets/images/sports-social-twitter-logo-black.png"  class="twitterButton">
       </a> 
     </p>
     <p [innerHtml]="blog.Content" class="desc">
     </p>
     <div class="tags" >
        <div class="tagHolder">
-         <img src="" alt="">
+         <img src="/assets/images/sports-social-tag.png" alt="">
        </div>
-       <a *ngFor="let key of blog.keywords;let i=index"href="#">{{key}}</a>
+       <a *ngFor="let key of blog.keywords;let i=index" role="button" (click)="getblogs($event)">{{key}}</a>
     </div>
   </div>
   <div class="social" *ngIf="!removeSocial">
     <div class="follow">
       <p>Follow us</p>
-      <div>
-        <img src="/assets/images/facebook-logo.png">
-      </div> 
-      <div> 
-        <img src="/assets/images/instagram-logo.png">
-      </div>
-      <div>  
-        <img src="/assets/images/twitter-logo.png">
-      </div>
-      <div>  
-        <img src="/assets/images/youtube-logo.png">
-      </div>
-      <div>  
-        <img src="/assets/images/pinterest-logo.png">
-      </div>
-      <div>  
-        <img src="/assets/images/linkedin-logo.png">
-      </div>
-      <div>  
-        <img src="/assets/images/quora-logo.png">
-      </div>
+      <a href="https://www.facebook.com/chaseyoursport" target="_blank">
+        <img src="/assets/images/sports-social-facebook-logo-blue.png">
+      </a> 
+      <a href="https://www.instagram.com/chaseyoursport" target="_blank"> 
+        <img src="/assets/images/sports-social-instagram-logo-blue.png">
+      </a>
+      <a href="https://www.twitter.com/chaseyoursport" target="_blank">  
+        <img src="/assets/images/sports-social-twitter-logo-blue.png">
+      </a>
+      <a href="https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ" target="_blank">  
+        <img src="/assets/images/sports-social-youtube-logo-blue.png">
+      </a>
+      <a href="https://www.pinterest.com/chaseyoursport" target="_blank">  
+        <img src="/assets/images/sports-social-pinterest-logo-blue.png">
+      </a>
+      <a href=" https://in.linkedin.com/company/sports-social" target="_blank">  
+        <img src="/assets/images/sports-social-linkedin-logo-blue.png">
+      </a>
+      <a href="https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network" target="_blank">  
+        <img src="/assets/images/sports-social-quora-logo-blue.png">
+      </a>
     </div>
     <div class="popular"></div>
     <div class="twitter">
       <p>
-        <img src="/assets/images/twitter-logo.png">
+        <img src="/assets/images/sports-social-twitter-logo-blue.png">
         Tweets by @chaseyoursports</p>
     <a 
       class="twitter-timeline" 
       href="https://twitter.com/chaseyoursport"
-      data-width="500"
+      data-width="450"
       data-height="700"
       data-chrome="noheader nofooter">
       Tweets by chaseyoursport
@@ -90,3 +90,38 @@
      [BlogId]="blog.blogId">
   </SportSocial-comments>
 </div>
+<div  *ngIf="!mobileView" class="relatedBlog">
+  <div TabViewAvailable class="col-4" *ngFor="let data of relatedBlogDetails;let i=index">
+    <SportSocial-normal-blog 
+      [blogId]="data.blogId"
+      [blogImage]="data.blogImage"
+      [bloggerImage]="data.bloggerImage"
+      [bloggerName]="data.bloggerName"
+      [insertedDate]="data.insertedDate"
+      [heading]="data.heading"
+      [Content]="data.Content"
+      [viewCount]="data.viewCount"
+      [shareCount]="data.shareCount"
+      [keywords]="data.keywords"
+      [exactDate]="data.exactDate">
+    </SportSocial-normal-blog>
+  </div>
+</div>
+<div *ngIf="mobileView" class="mobileView relatedBlog">
+  <div class="col-4" *ngFor="let data of relatedBlogDetails;let i=index">
+    <SportSocial-normal-blog 
+        [blogId]="data.blogId"
+        [blogImage]="data.blogImage"
+        [bloggerImage]="data.bloggerImage"
+        [bloggerName]="data.bloggerName"
+        [insertedDate]="data.insertedDate"
+        [heading]="data.heading"
+        [Content]="data.Content"
+        [viewCount]="data.viewCount"
+        [shareCount]="data.shareCount"
+        [keywords]="data.keywords"
+        [exactDate]="data.exactDate">
+    </SportSocial-normal-blog>
+</div>
+</div>
+<SportSocial-blog-footer></SportSocial-blog-footer>

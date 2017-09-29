@@ -65,67 +65,54 @@ export class LatestBlogComponent implements OnInit {
       exactDate:this.exactDate
      }
      if(window.innerWidth>=1000){
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'width','40px')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'height','40px')
+      this.renderer.setStyle(this.Desc.nativeElement,'height','70%')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','2.2em')
+      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
      }
      if(window.innerWidth>800 && window.innerWidth<1000){
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.3em')
+      this.renderer.setStyle(this.Desc.nativeElement,'height','75%')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.8em')
+      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
+    }
+    if(window.innerWidth<800 && window.innerWidth>=500){
+      this.renderer.setStyle(this.Desc.nativeElement,'height','85%')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
-      this.renderer.setStyle(this.readmore.nativeElement,'font-size','1.1em')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'width','40px')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'height','40px')
     }
-    if(window.innerWidth<700 && window.innerWidth>=400){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','80%')
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.2em')
+    if(window.innerWidth<500){
+      this.renderer.setStyle(this.Desc.nativeElement,'height','100%')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.3em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
-      this.renderer.setStyle(this.readmore.nativeElement,'font-size','1em')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'width','35px')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'height','35px')
-    }
-    if(window.innerWidth<400){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','95%')
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.1em')
-      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','0.95em')
-      this.renderer.setStyle(this.readmore.nativeElement,'font-size','0.95em')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'width','32px')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'height','32px')
     }
     
      
   }
   send(){
-    // console.log(this.blog)
+      console.log(this.blog)
      this.Send.detailsofBlog.next(this.blog)
    }
   @HostListener('window:resize',[])onresize(){
     if(window.innerWidth>=1000){
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'width','40px')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'height','40px')
+      this.renderer.setStyle(this.Desc.nativeElement,'height','70%')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','2.2em')
+      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
      }
-    if(window.innerWidth>800 && window.innerWidth<1000){
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.3em')
+     if(window.innerWidth>800 && window.innerWidth<1000){
+      this.renderer.setStyle(this.Desc.nativeElement,'height','75%')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.8em')
+      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
+    }
+    if(window.innerWidth<800 && window.innerWidth>=500){
+      this.renderer.setStyle(this.Desc.nativeElement,'height','85%')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
-      this.renderer.setStyle(this.readmore.nativeElement,'font-size','1.1em')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'width','40px')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'height','40px')
     }
-    if(window.innerWidth<700 && window.innerWidth>=400){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','80%')
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.2em')
+    if(window.innerWidth<500){
+      this.renderer.setStyle(this.Desc.nativeElement,'height','100%')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.3em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
-      this.renderer.setStyle(this.readmore.nativeElement,'font-size','1em')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'width','35px')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'height','35px')
     }
-    if(window.innerWidth<400){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','95%')
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.1em')
-      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','0.95em')
-      this.renderer.setStyle(this.readmore.nativeElement,'font-size','0.95em')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'width','32px')
-      this.renderer.setStyle(this.Bloggerimage.nativeElement,'height','32px')
-    }
+    
   }
   
 
