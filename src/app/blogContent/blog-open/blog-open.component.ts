@@ -8,7 +8,7 @@ import {
 import {Http} from "@angular/http";
 import {PropertyService} from "../../services/property.service";
 import {SaveService} from "../../services/save.service";
-import {GetService} from "../../services/get.service";
+import {PostService} from "../../services/post.service";
 import {ActivatedRoute} from "@angular/router";
 import { 
     FacebookService, 
@@ -44,6 +44,7 @@ export class BlogOpenComponent implements OnInit {
         shareCount:string,
         keywords:string[],
         exactDate:string;
+        readingTime:string;
       }[]=[]
     @ViewChild('openBlog') openBlog;
     @ViewChild('Social') Social;
@@ -56,8 +57,7 @@ export class BlogOpenComponent implements OnInit {
         private route :ActivatedRoute,
         private fb: FacebookService,
         private http:Http,
-        private getRelated: GetService,
-        private searchKeyword: GetService,
+        private getRelated: PostService,
         private sendKey:PropertyService,
         private router:Router
     ) { 
@@ -115,11 +115,10 @@ export class BlogOpenComponent implements OnInit {
             this.mobileView=true;
             this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%')
         }
-        console.log(this.blog.keywords.length,"  tffcv")
         this.getRelated.blogData(1,this.blog.keywords[this.blog.keywords.length-1]).subscribe(
             data=>{
                 console.log(data, " related")
-                for(let i=0;i<3;i++){
+                for(let i=2;i<5;i++){
                     this.relatedBlogDetails.push(
                       {
                         blogId:data[i].blogId,
@@ -132,13 +131,18 @@ export class BlogOpenComponent implements OnInit {
                         viewCount:"50",
                         shareCount:"50",
                         keywords:data[i].keywords.split(","),
-                        exactDate:this.ExactDate(data[i].insertedDate)
+                        exactDate:this.ExactDate(data[i].insertedDate),
+                        readingTime:this.timeToRead(data[i].Content)
                       }
                     )
                 }
             }
         )
 
+    }
+    timeToRead(s:string){
+        let words = s.split(" ");
+        return Math.round(words.length/180) + " min read"
     }
     ngAfterViewInit () {
         !function(d,s,id){
@@ -222,7 +226,6 @@ export class BlogOpenComponent implements OnInit {
     timePassed(i:string){
         let writtenDate=new Date(i);
         let presentDate=new Date();
-        //console.log(writtenDate.getDate(),presentDate.getDate())
         if(writtenDate.getFullYear()==presentDate.getFullYear()){
           if(writtenDate.getMonth()==presentDate.getMonth()){
             if(writtenDate.getDate()==presentDate.getDate()){
@@ -258,7 +261,7 @@ export class BlogOpenComponent implements OnInit {
     getLoginStatusofFacebook() {
         this.fb.getLoginStatus()
           .then((res)=>{
-            console.log(res, "r")
+            console.log(res)
             if(res.status=="connected"){
                 this.isConnectedWithFacebook=true;
             }

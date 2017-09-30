@@ -6,7 +6,7 @@ import {
   HostListener
 } from '@angular/core';
 import {PropertyService} from "../services/property.service";
-import {GetService} from "../services/get.service";
+import {PostService} from "../services/post.service";
 
 @Component({
   selector: 'app-search',
@@ -39,6 +39,7 @@ export class SearchComponent implements OnInit {
   pageNumber=1;
   recievedKey;
   mobileView:boolean=false;
+  haveData:boolean=true;
   @ViewChild('searchPage') searchPage;
   @ViewChild('blog') blog;
   constructor(
@@ -46,7 +47,7 @@ export class SearchComponent implements OnInit {
     private renderer:Renderer2,
     private recieveData: PropertyService,
     private recievekey: PropertyService,
-    private get: GetService
+    private get: PostService
   ) { }
 
   ngOnInit() {
@@ -165,6 +166,13 @@ export class SearchComponent implements OnInit {
       data=>{
         console.log(data, " nm")
         this.dataRecieved=true;
+        if(data.length>0){
+          this.haveData=true
+        }
+        else{
+          this.haveData=false;
+        }
+        console.log(this.haveData)
         for(let i in data){
           this.blogDetails.push(
             {

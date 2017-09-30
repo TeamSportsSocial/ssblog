@@ -9,7 +9,10 @@
   </div> 
   <div class="desc" #Desc>
     <div>
-      <span>{{insertedDate}}</span><span>|</span><span>2 min read</span><span>{{keywords[0]}}</span>
+      <span>{{insertedDate}}</span>
+      <span>|</span>
+      <span>{{readingTime}}</span>
+      <span>{{keywords[0]}}</span>
     </div>
     <a routerLink="/{{keywords[0]}}/{{heading}}" class="title" (click)="send()">
       <p [innerHtml]="heading" #latestTitle>

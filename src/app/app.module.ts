@@ -24,6 +24,7 @@ import {PostService} from "./services/post.service";
 import {PutService} from "./services/put.service";
 import {GetService} from "./services/get.service";
 import {SaveService} from "./services/save.service";
+import {StatusService} from "./services/status.service";
 
 import { MaintainHeightWidthRatioDirective } from './directives/maintain-height-width-ratio.directive';
 import { TabViewAvailableDirective } from './directives/tab-view-available.directive';
@@ -32,10 +33,12 @@ import {RoutingModule} from "./routing/routing.module";
 import { BlogFooterComponent } from './blog-footer/blog-footer.component';
 import { SearchComponent } from './search/search.component';
 import { CommentsComponent } from './comments/comments.component';
-
+import {UrlSerializer} from '@angular/router';
 
 import { FacebookModule } from 'ngx-facebook';
 import { NguiAutoCompleteModule } from '@ngui/auto-complete';
+import { MessageComponent } from './message/message.component';
+import { CustomUrlComponent } from './custom-url/custom-url.component';
 
 
 
@@ -59,7 +62,9 @@ import { NguiAutoCompleteModule } from '@ngui/auto-complete';
     TabViewAvailableDirective,
     BlogFooterComponent,
     SearchComponent,
-    CommentsComponent
+    CommentsComponent,
+    MessageComponent,
+    CustomUrlComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +75,14 @@ import { NguiAutoCompleteModule } from '@ngui/auto-complete';
     ReactiveFormsModule,
     NguiAutoCompleteModule
   ],
-  providers: [PropertyService,GetService,SaveService],
+  providers: [
+    PropertyService,
+    GetService,
+    SaveService,
+    StatusService,
+    PostService,
+    { provide: UrlSerializer, useClass: CustomUrlComponent }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

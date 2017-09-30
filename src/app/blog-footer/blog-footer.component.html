@@ -3,7 +3,7 @@
     <p>
       Subscribe
     </p>
-    <input type="email" placeholder="Enter your Email" #subscriber>
+    <input type="email" placeholder="Enter your Email" #subscriber  email>
     <button (click)="Subscribe()">Submit</button>
   </div>
   <p class="blogName" #blogName>Chase Your Sports</p>
@@ -44,3 +44,7 @@
     
   </p>
 </footer>
+<div class="subscriptionBox" #subscriptionBox *ngIf="showSubscriptionBox">
+    <img src="/assets/images/sports-social-cancel-orange.png" role="button" class="closeMessage"  (click)="close()">
+    <p class="message">You have subscribed</p>
+</div>

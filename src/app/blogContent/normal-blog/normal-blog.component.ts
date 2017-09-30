@@ -25,6 +25,7 @@ export class NormalBlogComponent implements OnInit {
   @Input()  shareCount:string
   @Input()  keywords:string[]
   @Input()  exactDate:string
+  @Input()  readingTime:string
   
   blog:{
     blogId:string;
@@ -37,12 +38,15 @@ export class NormalBlogComponent implements OnInit {
     viewCount:string,
     shareCount:string,
     keywords:string[],
-    exactDate:string
+    exactDate:string,
+    readingTime:string
   }
   @ViewChild('blogTitle') blogTitle;
   @ViewChild('holder') holder;
+  @ViewChild('fullImage') fullImage;
 
   loading:boolean=true;
+  openFullImage:boolean=false;
   constructor(private Send: PropertyService,private renderer:Renderer2) { 
   }
 
@@ -58,7 +62,8 @@ export class NormalBlogComponent implements OnInit {
     viewCount:this.viewCount,
     shareCount:this.shareCount,
     keywords:this.keywords,
-    exactDate:this.exactDate
+    exactDate:this.exactDate,
+    readingTime:this.readingTime
    }
    if(window.innerWidth>1100){
     this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em')
@@ -84,7 +89,16 @@ export class NormalBlogComponent implements OnInit {
    if(window.innerWidth>300 && window.innerWidth<400){
     this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.1em')
    }
+   
 
+  }
+  openfullImage(){
+    this.openFullImage=true;
+    //this.renderer.setStyle(this.fullImage.nativeElement,'background-color','red');
+    
+  }
+  closeFullImage(){
+    this.openFullImage=false;
   }
   send(){
     console.log(this.blog)

@@ -16,6 +16,10 @@ import {
   FBVideoComponent 
 } from 'ngx-facebook';
 import {Http} from "@angular/http";
+import {PostService} from ".././services/post.service"
+import {GetService} from ".././services/get.service"
+
+
 @Component({
   selector: 'SportSocial-comments',
   templateUrl: './comments.component.html',
@@ -25,9 +29,13 @@ export class CommentsComponent implements OnInit {
   @ViewChild('commentBox') commentBox;
   @ViewChild('textArea') textArea;
   @ViewChild('profileImage') profileImage;
+  
   isConnected:boolean=false;
-  @Input() BlogId;
   profilePicture;
+  userId;
+  
+  @Input() BlogId;
+  
   newComment:{
     userName:string;
     image:string;
@@ -40,32 +48,15 @@ export class CommentsComponent implements OnInit {
     comment:string;
     commentDate:string;
   }[]=[]
-  Comment:{
-    blogid:string;
-    userid:string;
-    comment:string;
-  }={
-    blogid:"",
-    userid:"",
-    comment:''
-  }
-  loginDetails:{
-    id:string,
-    email:string,
-    name:string,
-    isFb:string,
-    image:string
-  }={
-    id:"",
-    email:"",
-    name:"",
-    isFb:"1",
-    image:''
-  }
-  dataforComments:{
-    blogid:string
-  }
-  constructor(private renderer:Renderer2,private fb: FacebookService,private http:Http) {
+  
+  constructor(
+    private renderer:Renderer2,
+    private fb: FacebookService,
+    private http:Http,
+    private  sendUserInfo:PostService,
+    private send:PostService,
+    private loadComment:PostService
+  ) {
     fb.init({
       appId: '140286013252973',
       version: 'v2.10'
@@ -74,25 +65,35 @@ export class CommentsComponent implements OnInit {
   private handleError(error) {
     console.error('Error processing action', error);
   }
+  
+  
   ngOnInit() {
-    //console.log(this.BlogId)
     if(window.innerWidth>900){
       this.renderer.setStyle(this.commentBox.nativeElement,'width','65%')
     }
     if(window.innerWidth<=900 && window.innerWidth>650){
       this.renderer.setStyle(this.commentBox.nativeElement,'width','80%')
-   }
-   if(window.innerWidth<650){
-      
-       this.renderer.setStyle(this.commentBox.nativeElement,'width','100%')
-   }
-   this.getLoginStatus()
-   this.dataforComments={
-     blogid:this.BlogId
-   }
-   console.log(this.dataforComments)
-   this.getComments("https://test.sportsocial.in/user/loadBlogComment")
+    }
+    if(window.innerWidth<650){
+      this.renderer.setStyle(this.commentBox.nativeElement,'width','100%')
+    }
+    this.getLoginStatus()
+    this.loadComment.ofBlog(this.BlogId).subscribe(
+    res=>{
+        for(let i in res){
+          this.recivedComment.push({
+            userName:res[i].Name,
+            image:res[i].Image,
+            comment:res[i].Comment,
+            commentDate:this.getDate(res[i].InsertedDate)
+          })
+        }
+      }
+    )
   }
+  
+  
+  
   getLoginStatus() {
     this.fb.getLoginStatus()
       .then(
@@ -100,8 +101,7 @@ export class CommentsComponent implements OnInit {
           console.log(Log)
           if(Log.status=="unknown" || Log.status=="not_authorized"){
             this.isConnected=false;
-            this.profilePicture="https://i2.wp.com/www.thisblogrules.com/wp-content/uploads/2010/02/batman-for-facebook.jpg?resize=250%2C280"
-            
+            this.profilePicture="/assets/images/user.png"
           }
           if(Log.status=="connected"){
             this.isConnected=true;
@@ -111,11 +111,13 @@ export class CommentsComponent implements OnInit {
       )
       .catch(console.error.bind(console));
   }
+  
+  
   getDate(i:string){
     let commentDate=new Date(i)
     let presentDate=new Date();
-    console.log('p: ',"y= ",presentDate.getFullYear(),"mon= ",presentDate.getMonth(),"d= ",presentDate.getDate(),"h= ",presentDate.getHours(),"s= ",presentDate.getSeconds(),'t= ',presentDate.toDateString())
-    console.log('c: ',"y= ",commentDate.getFullYear(),"mon= ",commentDate.getMonth(),"d= ",commentDate.getDate(),"h= ",commentDate.getHours(),"s= ",commentDate.getSeconds(),'t= ',commentDate.toDateString())
+   // console.log('p: ',"y= ",presentDate.getFullYear(),"mon= ",presentDate.getMonth(),"d= ",presentDate.getDate(),"h= ",presentDate.getHours(),"s= ",presentDate.getSeconds(),'t= ',presentDate.toDateString())
+    //console.log('c: ',"y= ",commentDate.getFullYear(),"mon= ",commentDate.getMonth(),"d= ",commentDate.getDate(),"h= ",commentDate.getHours(),"s= ",commentDate.getSeconds(),'t= ',commentDate.toDateString())
     if(commentDate.getFullYear()==presentDate.getFullYear()){
       if(commentDate.getMonth()==presentDate.getMonth()){
          if(presentDate.getDate()==commentDate.getDate()){
@@ -131,14 +133,14 @@ export class CommentsComponent implements OnInit {
               else{
                 return presentDate.getMinutes()-commentDate.getMinutes()+" min"
               }
-           }
-           else{
-             presentDate.getHours()-commentDate.getHours()+ " h"
-           }
-         }
-         else{
-          return presentDate.getDate()-commentDate.getDate()+" d"
-         }
+            }
+            else{
+              presentDate.getHours()-commentDate.getHours()+ " h"
+            }
+          }
+          else{
+            return presentDate.getDate()-commentDate.getDate()+" d"
+          }
       }
       else{
         return presentDate.getMonth()-commentDate.getMonth()+ " month"
@@ -149,64 +151,39 @@ export class CommentsComponent implements OnInit {
     }
    
   }
+  
+  
   getProfile() {
     this.fb.api('/me', "get",{fields: 'email,name'})
       .then((res: any) => {
-        let ID= res.id
         console.log('Got the users profile', res);
         this.profilePicture='http://graph.facebook.com/'+res.id+'/picture?type=large'
-        this.loginDetails={
-          id:res.id,
-          name:res.name,
-          email:res.email,
-          isFb:"1",
-          image:this.profilePicture
-        }
-        console.log(this.loginDetails)
-        this.http.post("https://test.sportsocial.in/user/blogLogin",this.loginDetails)
-        .map(res=>res.json())
-        .subscribe(
+        this.sendUserInfo.ofFacebookUser(res.id,res.name,res.email,this.profilePicture).subscribe(
           res=>{
-            console.log(res)
-            console.log(res[0].UserId)
-            this.Comment.userid=res[0].UserId
+            console.log(res," login")
+            //console.log(res[0].UserId)
+            this.userId=res[0].UserId
           }
         )
       })
       .catch(this.handleError);
   }
 
+  
   @HostListener('window:resize',[])onresize(){
     if(window.innerWidth>900){
       this.renderer.setStyle(this.commentBox.nativeElement,'width','65%')
     }
     if(window.innerWidth<=900 && window.innerWidth>650){
       this.renderer.setStyle(this.commentBox.nativeElement,'width','80%')
-   }
-   if(window.innerWidth<650){
-      
-       this.renderer.setStyle(this.commentBox.nativeElement,'width','100%')
-   }
+    }
+    if(window.innerWidth<650){
+      this.renderer.setStyle(this.commentBox.nativeElement,'width','100%')
+    }
   }
   
-  getComments(url:string){
-    this.http.post(url,this.dataforComments)
-    .map(res=> res.json())
-    .subscribe(
-      res=>{
-        console.log(res, "  r")
-        for(let i in res){
-          this.recivedComment.push({
-            userName:res[i].Name,
-            image:res[i].Image,
-            comment:res[i].Comment,
-            commentDate:this.getDate(res[i].InsertedDate)
-          })
-      }
-    }
-    )
-    console.log(this.recivedComment, "  n")
-  }
+  
+  
   post(){
     console.log(this.textArea)
     const loginOptions: LoginOptions = {
@@ -214,7 +191,6 @@ export class CommentsComponent implements OnInit {
       return_scopes: true,
       scope: 'public_profile,user_friends,email,pages_show_list'
     };
-    
     if(this.isConnected==false){
       this.fb.login(loginOptions)
         .then((res: LoginResponse) => {
@@ -222,34 +198,25 @@ export class CommentsComponent implements OnInit {
           if(res.status=="connected"){
             this.isConnected=true;
             this.getProfile();
-            //console.log(this.Comment)
-          }
-          
+          }       
         })
         .catch(this.handleError);
     }
-    console.log(this.isConnected)
     if(this.isConnected==true){
-      this.Comment.comment=this.textArea.nativeElement.value
-      this.Comment.blogid=this.BlogId
-      console.log(this.Comment)
-      this.textArea.nativeElement.value=""
-      this.http.post("https://test.sportsocial.in/user/commentBlog",this.Comment)
-      .map(res=>res.json())
-      .subscribe(
+      this.send.userComment(this.BlogId,this.userId,this.textArea.nativeElement.value).subscribe(
         res=>{
           console.log(res, "c")
+          this.textArea.nativeElement.value=""
           this.newComment={
             userName:res[res.length-1].Name,
             image:res[res.length-1].Image,
             comment:res[res.length-1].Comment,
             commentDate:this.getDate(res[res.length-1].InsertedDate)
           }
-          console.log(this.newComment, " m" )
+          console.log(this.newComment, " new comment" )
           this.recivedComment.push(this.newComment)
         }
       )
     }
-    
   }
 }

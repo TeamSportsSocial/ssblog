@@ -10,7 +10,7 @@ import {
 import {PropertyService} from "../services/property.service";
 import {SaveService} from "../services/save.service";
 import {Http} from "@angular/http";
-import {GetService} from "../services/get.service";
+import {PostService} from "../services/post.service";
 import { Observable } from 'rxjs/Rx';
 import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 import {Router} from '@angular/router'
@@ -46,7 +46,7 @@ export class BlogHeaderComponent implements OnInit {
     private elRef:ElementRef,
     private http:Http,
     private _sanitizer: DomSanitizer,
-    private searchKeyword: GetService,
+    private searchKeyword: PostService,
     private router:Router,
     private sendKey:PropertyService,
     private cd:ChangeDetectorRef

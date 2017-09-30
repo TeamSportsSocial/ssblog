@@ -1,7 +1,7 @@
 <p #openBlog class="Catagory">
   <span role="button" (click)="getblogs($event)">{{blog.keywords[0]}}</span>
   <span>|</span>
-  <span>2 min read</span>
+  <span>{{blog.readingTime}}</span>
 </p>
 <div class="blogImageHolder">
   <img src="{{blog.blogImage}}">
@@ -103,7 +103,8 @@
       [viewCount]="data.viewCount"
       [shareCount]="data.shareCount"
       [keywords]="data.keywords"
-      [exactDate]="data.exactDate">
+      [exactDate]="data.exactDate"
+      [readingTime]="data.readingTime">
     </SportSocial-normal-blog>
   </div>
 </div>
@@ -120,7 +121,8 @@
         [viewCount]="data.viewCount"
         [shareCount]="data.shareCount"
         [keywords]="data.keywords"
-        [exactDate]="data.exactDate">
+        [exactDate]="data.exactDate"
+        [readingTime]="data.readingTime">
     </SportSocial-normal-blog>
 </div>
 </div>

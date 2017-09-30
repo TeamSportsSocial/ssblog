@@ -2,6 +2,7 @@ import {
   Component, 
   OnInit,
 } from '@angular/core';
+import {GetService} from "../../services/get.service";
 
 @Component({
   selector: 'SportSocial-trending-blog',
@@ -10,12 +11,21 @@ import {
 })
 export class TrendingBlogComponent implements OnInit {
   blogDetails:{
-    img:string,
-    title:string,
+    blogId:string;
+    blogImage:string;
+    bloggerName:string,
+    bloggerImage:string,
+    heading:string,
+    Content:string,
+    insertedDate:string,
     viewCount:string,
     shareCount:string,
-  }
-  constructor() { }
+    keywords:string[],
+    exactDate:string;
+  }[]=[]
+  constructor(
+    private get: GetService,
+  ) { }
 
   ngOnInit() {
   }

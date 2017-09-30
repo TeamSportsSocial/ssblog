@@ -7,6 +7,8 @@ import {
   Renderer2
 } from '@angular/core';
 import {Http} from "@angular/http";
+import {StatusService} from ".././services/status.service";
+import {PostService} from ".././services/post.service"
 
 @Component({
   selector: 'SportSocial-blog-footer',
@@ -14,14 +16,14 @@ import {Http} from "@angular/http";
   styleUrls: ['./blog-footer.component.css']
 })
 export class BlogFooterComponent implements OnInit {
-  Email:{
-    userid:string;
-    email:string;
-  }
-  cppyrightBelow:boolean=true;
+  showSubscriptionBox:boolean=false;
   @ViewChild('subscriber') subscriber;
   @ViewChild('subscribeCard') subscribeCard;
-  constructor(private http:Http,private renderer: Renderer2) { }
+  constructor(
+    private sendEmail:PostService,
+    private renderer: Renderer2,
+    private status:StatusService,
+  ) { }
 
   ngOnInit() {
     if(window.innerWidth>1150){
@@ -85,19 +87,27 @@ export class BlogFooterComponent implements OnInit {
      }
   }
   Subscribe(){
-    this.Email={
-      userid:"2",
-      email:this.subscriber.nativeElement.value
+    if(this.subscriber.nativeElement.validity.valid==true && this.subscriber.nativeElement.value){
+      this.sendEmail.ofUser(this.subscriber.nativeElement.value)
+      .subscribe(
+        res=>{
+          console.log(res.Status)
+          if(res.Status=="Success"){
+            this.showSubscriptionBox=true;
+            console.log(this.showSubscriptionBox)
+            this.subscriber.nativeElement.value=""
+          }
+        }
+      )
     }
-   // console.log(this.subscriber.nativeElement.value)
-    console.log(this.Email)
-    this.http.post("http://admin.chaseyoursport.com/blog/subscribeBlog",this.Email)
-    .subscribe(
-      res=>{
-        console.log(res)
-      }
-    )
+    else{
+      this.subscriber.nativeElement.value=""
+    }
   }
+  close(){
+    this.showSubscriptionBox=false;
+    console.log(this.showSubscriptionBox)
+   }
   @HostListener('window:resize',[]) onresize(){
     if(window.innerWidth>1150){
       this.renderer.setStyle(this.subscribeCard.nativeElement,'width','71%')

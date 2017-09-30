@@ -12,7 +12,8 @@
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
             [keywords]="data.keywords"
-            [exactDate]="data.exactDate">
+            [exactDate]="data.exactDate"
+            [readingTime]="data.readingTime">
         </SportSocial-latest-blog>
     </div>
     <div class="col-8" TabViewAvailable >
@@ -30,7 +31,8 @@
                 [viewCount]="data.viewCount"
                 [shareCount]="data.shareCount"
                 [keywords]="data.keywords"
-                [exactDate]="data.exactDate">
+                [exactDate]="data.exactDate"
+                [readingTime]="data.readingTime">
             </SportSocial-normal-blog>
         </div>
     </div>        
@@ -51,16 +53,13 @@
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
             [keywords]="data.keywords"
-            [exactDate]="data.exactDate">
+            [exactDate]="data.exactDate"
+            [readingTime]="data.readingTime">
         </SportSocial-normal-blog>
     </div>
     
 </div> 
-<div *ngIf="!mobileView">
-    <button (click)="nextPage()" *ngIf="dataRecived">Load More</button>
-    <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
-    <SportSocial-blog-footer *ngIf="show"></SportSocial-blog-footer> 
-</div>          
+        
 <div class="blog mobileView" *ngIf="mobileView" #blog>
     <div class="col-4" *ngFor="let data of latestBlogDetails;let i=index" >
         <SportSocial-latest-blog
@@ -74,7 +73,8 @@
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
             [keywords]="data.keywords"
-            [exactDate]="data.exactDate">
+            [exactDate]="data.exactDate"
+            [readingTime]="data.readingTime">
         </SportSocial-latest-blog>
     </div>
     <div class="col-4" *ngFor="let data of topBlogDetails;let i=index">
@@ -89,7 +89,8 @@
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
             [keywords]="data.keywords"
-            [exactDate]="data.exactDate">
+            [exactDate]="data.exactDate"
+            [readingTime]="data.readingTime">
         </SportSocial-normal-blog>
     </div>
     <div class="suscribeCard" *ngIf="show">
@@ -107,13 +108,17 @@
             [viewCount]="data.viewCount"
             [shareCount]="data.shareCount"
             [keywords]="data.keywords"
-            [exactDate]="data.exactDate">
+            [exactDate]="data.exactDate"
+            [readingTime]="data.readingTime">
         </SportSocial-normal-blog>
     </div>
 </div>
-<div *ngIf="mobileView">
-    <button (click)="nextPage()" *ngIf="dataRecived">Load More</button>
-    <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
+
+    <div *ngIf="haveData">
+        <button (click)="nextPage()" *ngIf="dataRecived">Load More</button>
+        <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
+    </div>
+    <p *ngIf="!haveData" class="noMoreData">No More Data !!!</p>
     <SportSocial-blog-footer *ngIf="show"></SportSocial-blog-footer> 
-</div>           
+          
        

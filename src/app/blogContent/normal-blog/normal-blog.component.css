@@ -69,7 +69,7 @@ span >img{
     color: #ffa600;
     font-weight: 500
 }
-.blogFooter>a>p{
+.blogFooter>p:nth-of-type(2){
     text-align: left;
     margin: 1% auto;
     overflow: hidden;
@@ -94,4 +94,41 @@ p>img{
 }
 a:hover{
     text-decoration: none;
+}
+.fullImage{
+    width: 40%;
+    display: inline-block;
+    position: fixed;
+    top:13%;
+    left:30%;
+    z-index: 50;
+    box-shadow: 1px 1px #bbbbbb;
+    border: 1px solid #bbbbbb;
+}
+.fullImageHolder{
+    width: 100%;
+    position: relative;
+}
+.fullImageHolder>img{
+    width: 100%;
+}
+.cancel{
+    position: absolute;
+    top:1%;
+    right:1%;
+    width: 20px;
+    height: 20px;
+    z-index: 150
+}
+@media (max-width:800px) and (min-width:600){
+    .fullImage{
+        width: 70%;
+        left: 15%;
+    }
+}
+@media (max-width:600px){
+    .fullImage{
+        width: 90%;
+        left: 5%;
+    }
 }

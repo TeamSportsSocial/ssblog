@@ -12,6 +12,7 @@ import {
 } from '@angular/core';
 import {PropertyService} from "../../services/property.service";
 import {GetService} from "../../services/get.service";
+import {PostService} from "../../services/post.service";
 
 
 @Component({
@@ -32,6 +33,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     shareCount:string,
     keywords:string[],
     exactDate:string;
+    readingTime:string
   }[]=[]
   blogDetails:{
     blogId:string;
@@ -45,6 +47,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     shareCount:string,
     keywords:string[],
     exactDate:string;
+    readingTime:string
   }[]=[]
   topBlogDetails:{
     blogId:string;
@@ -58,6 +61,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     shareCount:string,
     keywords:string[],
     exactDate:string;
+    readingTime:string
   }[]=[]
   restBlogDetails:{
     blogId:string;
@@ -71,19 +75,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     shareCount:string,
     keywords:string[],
     exactDate:string;
-  }[]=[]
-  mobileBlogDetails:{
-    blogId:string;
-    blogImage:string;
-    bloggerName:string,
-    bloggerImage:string,
-    heading:string,
-    Content:string,
-    insertedDate:string,
-    viewCount:string,
-    shareCount:string,
-    keywords:string[],
-    exactDate:string;
+    readingTime:string
   }[]=[]
   topMargin;
   removeTrendingBlock:boolean=false;
@@ -92,11 +84,12 @@ export class BlogsComponent implements OnInit,AfterViewInit {
   defaultKey="dfg";
   show:boolean=false;
   dataRecived:boolean=false;
+  haveData:boolean=true
   @ViewChild('blog') blog;
   constructor(
     private reciveHeight:PropertyService,
     private renderer:Renderer2,
-    private get: GetService,
+    private get: PostService,
     private cd: ChangeDetectorRef
   ) { }
   ngOnInit(){
@@ -138,7 +131,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 viewCount:"50",
                 shareCount:"50",
                 keywords:data[i].keywords.split(","),
-                exactDate:this.ExactDate(data[i].insertedDate)
+                exactDate:this.ExactDate(data[i].insertedDate),
+                readingTime:this.timeToRead(data[i].Content)
               }
             )
         }
@@ -155,7 +149,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             viewCount:"50",
             shareCount:"50",
             keywords:this.blogDetails[0].keywords,
-            exactDate:this.blogDetails[0].exactDate
+            exactDate:this.blogDetails[0].exactDate,
+            readingTime:this.blogDetails[0].readingTime
           }
         )
         for(var i=1; i<4;i++){
@@ -171,7 +166,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               viewCount:"50",
               shareCount:"50",
               keywords:this.blogDetails[i].keywords,
-              exactDate:this.blogDetails[i].exactDate
+              exactDate:this.blogDetails[i].exactDate,
+              readingTime:this.blogDetails[i].readingTime
             }
           )
         }
@@ -188,7 +184,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             viewCount:"50",
             shareCount:"50",
             keywords:this.blogDetails[i].keywords,
-            exactDate:this.blogDetails[i].exactDate
+            exactDate:this.blogDetails[i].exactDate,
+            readingTime:this.blogDetails[i].readingTime
           }
         )
       }
@@ -210,7 +207,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
         viewCount:"50",
         shareCount:"50",
         keywords:this.blogDetails[0].keywords,
-        exactDate:this.blogDetails[0].exactDate
+        exactDate:this.blogDetails[0].exactDate,
+        readingTime:this.blogDetails[0].readingTime
       }
     )
     for(var i=1; i<4;i++){
@@ -226,7 +224,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
           viewCount:"50",
           shareCount:"50",
           keywords:this.blogDetails[i].keywords,
-          exactDate:this.blogDetails[i].exactDate
+          exactDate:this.blogDetails[i].exactDate,
+          readingTime:this.blogDetails[i].readingTime
         }
       )
     }
@@ -243,7 +242,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
         viewCount:"50",
         shareCount:"50",
         keywords:this.blogDetails[i].keywords,
-        exactDate:this.blogDetails[i].exactDate
+        exactDate:this.blogDetails[i].exactDate,
+        readingTime:this.blogDetails[i].readingTime
       }
     )
   }
@@ -320,13 +320,15 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     let writtenDate=new Date(i);
     return writtenDate.toDateString()
   }
-  showLoadMorebutton(){
-   if(this.dataRecived || this.show){
-     return true
-   }
-  }
-  @HostListener('window:scroll',[])onsrcol(){
-    console.log(window.scrollY)
+  timeToRead(s:string){
+    let words = s.split(" ");
+    let time=Math.round(words.length/180)
+    if(time>0){
+      return time + " min read"
+    }
+    else{
+      return "1 min read"
+    }
   }
   nextPage(){
     this.dataRecived=false;
@@ -336,6 +338,12 @@ export class BlogsComponent implements OnInit,AfterViewInit {
         (data)=>{
           this.dataRecived=true;
            console.log(data.length)
+           if(data.length==0){
+             this.haveData=false;
+           }
+           else{
+             this.haveData=true;
+           }
            for(let i in data){
             this.restBlogDetails.push(
               {
@@ -349,7 +357,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 viewCount:"50",
                 shareCount:"50",
                 keywords:data[i].keywords.split(","),
-                exactDate:this.ExactDate(data[i].insertedDate)
+                exactDate:this.ExactDate(data[i].insertedDate),
+                readingTime:this.timeToRead(data[i].Content)
               }
             )
            }

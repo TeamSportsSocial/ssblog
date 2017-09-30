@@ -1,5 +1,9 @@
 <div class="subscribeCard" MaintainHeightWidthRatio>
   <p>Subscribe via Email</p>
-  <input type="email" name="Email" placeholder="Enter your Email"  #subscriber>
+  <input type="email" name="Email" placeholder="Enter your Email"  #subscriber email>
   <button (click)="Subscribe()" type="submit">Submit</button>
+</div>
+<div class="subscriptionBox" #subscriptionBox *ngIf="showSubscriptionBox">
+  <img src="/assets/images/sports-social-cancel-orange.png" role="button" class="closeMessage"  (click)="close()">
+  <p class="message">You have subscribed</p>
 </div>

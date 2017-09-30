@@ -6,7 +6,14 @@ import { LoginPageComponent } from '../login-page/login-page.component';
 import { EditorPanelComponent } from '../editor-panel/editor-panel.component';
 import { SearchComponent } from '../search/search.component';
 
-import {Routes,RouterModule,RouterLink} from '@angular/router';
+import {
+  Routes,
+  RouterModule,
+  RouterLink,
+  UrlSerializer, 
+  UrlTree, 
+  DefaultUrlSerializer
+} from '@angular/router';
 
  const appRoute:Routes=[
    {path:"" ,component:BlogsComponent},

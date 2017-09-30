@@ -16,6 +16,8 @@ import {PropertyService} from "../../services/property.service";
 })
 export class LatestBlogComponent implements OnInit {
    
+  openFullImage:boolean=false;
+
   @Input()  blogId:string
   @Input()  blogImage:string
   @Input()  bloggerName:string
@@ -27,6 +29,7 @@ export class LatestBlogComponent implements OnInit {
   @Input()  shareCount:string
   @Input()  keywords:string[]
   @Input()  exactDate:string
+  @Input()  readingTime:string;
   
   blog:{
     blogId:string;
@@ -39,7 +42,8 @@ export class LatestBlogComponent implements OnInit {
     viewCount:string,
     shareCount:string,
     keywords:string[],
-    exactDate:string
+    exactDate:string,
+    readingTime:string
   }
 
   @ViewChild('Desc') Desc;
@@ -62,7 +66,8 @@ export class LatestBlogComponent implements OnInit {
       viewCount:this.viewCount,
       shareCount:this.shareCount,
       keywords:this.keywords,
-      exactDate:this.exactDate
+      exactDate:this.exactDate,
+      readingTime:this.readingTime
      }
      if(window.innerWidth>=1000){
       this.renderer.setStyle(this.Desc.nativeElement,'height','70%')
@@ -90,7 +95,14 @@ export class LatestBlogComponent implements OnInit {
   send(){
       console.log(this.blog)
      this.Send.detailsofBlog.next(this.blog)
-   }
+  }
+  openfullImage(){
+    this.openFullImage=true;
+  }
+  closeFullImage(){
+    this.openFullImage=false;
+  }
+
   @HostListener('window:resize',[])onresize(){
     if(window.innerWidth>=1000){
       this.renderer.setStyle(this.Desc.nativeElement,'height','70%')

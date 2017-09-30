@@ -158,6 +158,29 @@ footer{
         height: 32px;
     }
  }
+ .subscriptionBox{
+    width: 40%;
+    height: 150px;
+    z-index: 50;
+    position: fixed;
+    top:30%;
+    left: 30%;
+    border: 1px solid black;
+    background-color: #fafafa
+ }
+ .closeMessage{
+    width: 25px;
+    height: 25px;
+    float: right;
+    padding: 1%;
+}
+.message{
+   width: 100%;
+   font-family: 'Roboto',sans-serif;
+   font-weight: 500;
+   color: #024771;
+   text-align: center;
+}
  @media  (max-width:650px) and(min-width:520px){
     .followUs img{
         width: 5%;

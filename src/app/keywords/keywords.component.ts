@@ -9,8 +9,8 @@ import {
    ViewChildren
 } from '@angular/core';
 import {PropertyService} from "../services/property.service";
-import { KeywordComponent } from './keyword/keyword.component';
-import {Http} from "@angular/http";
+import {KeywordComponent} from './keyword/keyword.component';
+import {PostService} from "../services/post.service";
 import {GetService} from "../services/get.service";
 import {Router} from "@angular/router";
 @Component({
@@ -35,17 +35,26 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
   constructor(private renderer :Renderer2 ,
     private recieveHeight:PropertyService,
     private sendHeight:PropertyService,
-    private searched:GetService,
-    private http:Http,
+    private searched:PostService,
     private sendSearchedData:PropertyService,
     private router:Router,
-    private sendKey:PropertyService
+    private sendKey:PropertyService,
+    private get: GetService
 
   ) { }
 
   ngOnInit() {
-    
-   // console.log(this.keywords)
+    this.get.keywords().subscribe(
+      res=>{
+          for(let i in res){
+            this.keywords.push(
+            {
+             name:res[i].Keyword
+            }
+          )
+        }
+      }
+    )
     this.recieveHeight.ofHeader.subscribe(
       margin=>{
         this.topMargin=margin
@@ -55,16 +64,12 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
   }
   ngAfterViewInit(){
-    this.http.get(' http://admin.chaseyoursport.com/blog/getKeywords  ')
-    .map(res=>res.json())
-    .subscribe(
+    this.get.keywords().subscribe(
       res=>{
-       // console.log(res)
-        for(let i in res){
-          //console.log(res[i])
-          this.keywords.push(
+          for(let i in res){
+            this.keywords.push(
             {
-              name:res[i].Keyword
+             name:res[i].Keyword
             }
           )
         }
