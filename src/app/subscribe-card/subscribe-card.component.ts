@@ -3,7 +3,8 @@ import {
   OnInit,
   HostListener,
   ViewChild,
-  ElementRef
+  ElementRef,
+  Renderer2
 } from '@angular/core';
 import {PostService} from ".././services/post.service"
 import {StatusService} from ".././services/status.service";
@@ -18,9 +19,11 @@ export class SubscribeCardComponent implements OnInit {
     userid:string;
     email:string;
   }
+  errorMessage:boolean=false;
   showSubscriptionBox:boolean=false;
   @ViewChild('subscriber') subscriber;
-  constructor( private sendEmail:PostService,private status:StatusService) { }
+  @ViewChild('button') button;
+  constructor( private sendEmail:PostService,private status:StatusService,private renderer:Renderer2) { }
 
   ngOnInit() {
   }
@@ -34,12 +37,16 @@ export class SubscribeCardComponent implements OnInit {
             this.showSubscriptionBox=true;
             console.log(this.showSubscriptionBox)
             this.subscriber.nativeElement.value=""
+            this.errorMessage=false
+            this.renderer.setStyle(this.button.nativeElement,'margin','5% auto')
           }
         }
       )
     }
     else{
       this.subscriber.nativeElement.value=""
+      this.errorMessage=true;
+      this.renderer.setStyle(this.button.nativeElement,'margin','-6% auto')
     }
   }
   close(){

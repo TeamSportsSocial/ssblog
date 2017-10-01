@@ -6,7 +6,8 @@
     <input type="email" placeholder="Enter your Email" #subscriber  email>
     <button (click)="Subscribe()">Submit</button>
   </div>
-  <p class="blogName" #blogName>Chase Your Sports</p>
+  <p  class="errorMessage" *ngIf="errorMessage">Email is Inavlid!!! Please enter correct Email</p>
+  <p class="blogName" #blogName>Chase Your Sport</p>
   <p class="tagline" #tagline>The Sports Social Blog</p>
   <p class="about" #about> 
     'Chase Your Sport' blog provides Health, Fitness and

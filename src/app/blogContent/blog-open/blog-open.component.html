@@ -4,7 +4,7 @@
   <span>{{blog.readingTime}}</span>
 </p>
 <div class="blogImageHolder">
-  <img src="{{blog.blogImage}}">
+  <img src="{{blog.blogImage}}" (error)="setDefault()" role="button" (click)="openfullImage()" >
 </div>
 <p [innerHtml]="blog.heading"class="title"></p>
 <div class="content">
@@ -13,19 +13,19 @@
       <img src="{{blog.bloggerImage}}">
     </div>
     <div class="bloggerName">
-      Written by {{blog.bloggerName}}
+      Written by <span> {{blog.bloggerName}}</span>
     </div>
     <div class="writtenDate">
       {{blog.exactDate}}
     </div>
     <div class="count">
       <span>
-        <img src="/assets/images/sports-social-view-black.png">
-        {{blog.viewCount}}
+        <img src="/assets/images/sports-social-view-orange.png">
+        <span>{{blog.viewCount}}</span>
       </span>
       <span>
-        <img src="/assets/images/sports-social-share-black.png" >
-        {{blog.shareCount}}
+        <img src="/assets/images/sports-social-share-orange.png" >
+        <span>{{blog.shareCount}}</span>
       </span>
     </div>
     <p class="shareOn">
@@ -43,6 +43,13 @@
        </div>
        <a *ngFor="let key of blog.keywords;let i=index" role="button" (click)="getblogs($event)">{{key}}</a>
     </div>
+    <p class="shareOn">
+      Share on 
+      <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()" class="facebook">
+      <a href="http://twitter.com/share" (click)="shareOnTwitter()" #popup class="twitter">
+        <img src="/assets/images/sports-social-twitter-logo-black.png"  class="twitterButton">
+      </a> 
+    </p>
   </div>
   <div class="social" *ngIf="!removeSocial">
     <div class="follow">
@@ -73,7 +80,7 @@
     <div class="twitter">
       <p>
         <img src="/assets/images/sports-social-twitter-logo-blue.png">
-        Tweets by @chaseyoursports</p>
+        Tweets by @chaseyoursport</p>
     <a 
       class="twitter-timeline" 
       href="https://twitter.com/chaseyoursport"
@@ -91,6 +98,8 @@
   </SportSocial-comments>
 </div>
 <div  *ngIf="!mobileView" class="relatedBlog">
+  <p>Related Articles</p>
+  <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
   <div TabViewAvailable class="col-4" *ngFor="let data of relatedBlogDetails;let i=index">
     <SportSocial-normal-blog 
       [blogId]="data.blogId"
@@ -109,6 +118,7 @@
   </div>
 </div>
 <div *ngIf="mobileView" class="mobileView relatedBlog">
+  <p>Related Articles</p>
   <div class="col-4" *ngFor="let data of relatedBlogDetails;let i=index">
     <SportSocial-normal-blog 
         [blogId]="data.blogId"
@@ -127,3 +137,13 @@
 </div>
 </div>
 <SportSocial-blog-footer></SportSocial-blog-footer>
+
+<div class="fullImage" #fullImage *ngIf="openFullImage">
+  <img 
+   src="/assets/images/sports-social-cancel-white.png" 
+   class="cancel" role="button" (click)="closeFullImage()">   
+   
+ </div>
+ <div class="fullImageHolder" *ngIf="openFullImage">
+   <img src="{{blog.blogImage}}" >
+ </div>

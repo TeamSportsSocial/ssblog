@@ -76,15 +76,6 @@ img{
 .right li{
     margin: 1% 2% 1% 1%;
 }
-.right img{
-    width: 10%;
-    height: 10%;
-}
-.right a{
-    color: #024771;
-    font-weight: 500;
-    font-family: 'Roboto',sans-serif
-}
 input{
     height: 35px;
     background-image: url('/assets/images/search.png');
@@ -98,10 +89,6 @@ input{
     background-color: #e5e5e5;
     text-align: center;
 
-}
-.right p{
-    color: #024770;
-    padding: 2%
 }
 .mobileView{
     display: inline-block;
@@ -175,4 +162,16 @@ input{
   }
   a:hover{
       text-decoration: none;
+  }
+  .websiteLink{
+      color: #024771;
+      font-weight: 700;
+  }
+ .websiteLink>img{
+     width: 20px;
+     height: 20px;
+     padding: 1%
+}
+  .websiteLink:hover{
+      color: #ffa600;
   }

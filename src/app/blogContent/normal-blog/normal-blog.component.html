@@ -2,7 +2,7 @@
   <div class="blog" MaintainHeightWidthRatio >
       
         <div class="blogImageHolder" #holder>
-          <img src="{{blogImage}}" (load)="setInitialImage()" (error)="setDefault()" role="button" (click)="openfullImage()" >
+          <img src="{{blogImage}}" (load)="setInitialImage()"  (error)="setDefault()" role="button" (click)="openfullImage()" >
         </div>
         <a routerLink="/{{keywords[0]}}/{{heading}}" (click)="send()">
         <div class="blogFooter">
@@ -27,10 +27,11 @@
 
   <div class="fullImage" #fullImage *ngIf="openFullImage">
    <img 
-      src="/assets/images/sports-social-cancel-orange.png" 
-      class="cancel" role="button" (click)="closeFullImage()">
-   <div class="fullImageHolder">
-     <img src="{{blogImage}}" alt="">
-   </div>   
+    src="/assets/images/sports-social-cancel-white.png" 
+    class="cancel" role="button" (click)="closeFullImage()">   
+    
+  </div>
+  <div class="fullImageHolder" *ngIf="openFullImage">
+    <img src="{{blogImage}}" >
   </div>
 

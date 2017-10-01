@@ -23,10 +23,15 @@
     </li>
   </ul>
   <ul class="right" *ngIf="!mobileView">
-    <li>
-      <a href="http://testweb.sportsocial.in" target="_blank">
-        <img src="/assets/images/sports-social-link-symbol.png">
-        Go to website
+    <li >
+      <a 
+        href="http://testweb.sportsocial.in" 
+        target="_blank" 
+        class=" websiteLink" 
+        (mouseover)="hover($event)"
+        (mouseout)="removehoverColor($event)">
+        <img src="/assets/images/sports-social-link-blue-symbol.png" alt="" #linkImage>
+        Go to Website 
       </a>
     </li>
   </ul>

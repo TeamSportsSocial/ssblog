@@ -47,8 +47,7 @@ export class NormalBlogComponent implements OnInit {
 
   loading:boolean=true;
   openFullImage:boolean=false;
-  constructor(private Send: PropertyService,private renderer:Renderer2) { 
-  }
+  constructor(private Send: PropertyService,private renderer:Renderer2) { }
 
   ngOnInit() {  
    this.blog={
@@ -94,8 +93,6 @@ export class NormalBlogComponent implements OnInit {
   }
   openfullImage(){
     this.openFullImage=true;
-    //this.renderer.setStyle(this.fullImage.nativeElement,'background-color','red');
-    
   }
   closeFullImage(){
     this.openFullImage=false;
@@ -106,8 +103,7 @@ export class NormalBlogComponent implements OnInit {
     window.scrollTo(0,0)
   }
   setDefault(event){
-  
-    this.blogImage="/assets/images/noimage.png"
+    this.blogImage="/assets/images/default-image.png"
   }
   setInitialImage(){
     this.renderer.removeStyle(this.holder.nativeElement,'background-image')

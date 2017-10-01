@@ -33,6 +33,7 @@ footer{
     height: 35px;
     margin-left: 2%;
     margin-right: 2%;
+    text-align: center;
 }
 ::-webkit-input-placeholder {
     text-align: center;
@@ -56,7 +57,7 @@ footer{
      font-size: 1.1em;
      color: white;
      padding: 0.5% 3% 0.5% 3%;
-     margin-right: 2%;
+     margin-right: 1%;
  }
  .blogName{
      text-align: center;
@@ -180,6 +181,15 @@ footer{
    font-weight: 500;
    color: #024771;
    text-align: center;
+   
+}
+.errorMessage{
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    color: #b33a3a
 }
  @media  (max-width:650px) and(min-width:520px){
     .followUs img{
@@ -203,6 +213,7 @@ footer{
         height: 30px;
     }
  }
+
  @media  (max-width:520px) {
     .followUs img{
         width: 6%;

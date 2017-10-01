@@ -35,6 +35,7 @@ export class BlogHeaderComponent implements OnInit {
   @ViewChild('Header') Header:ElementRef;
   @ViewChild('left') left :ElementRef;
   @ViewChild('searchBox') searchBox:ElementRef;
+  @ViewChild('linkImage') linkImage:ElementRef;
   mobileView:boolean=false;
   searchedTextPresent:boolean=false;
   constructor(
@@ -108,6 +109,7 @@ export class BlogHeaderComponent implements OnInit {
     )
     this.router.navigate(['/'+newVal])
     this.sendKey.ofBlogCard.next(newVal)
+    this.searchBox.nativeElement.value=""
   }
  
   sendData(key){
@@ -121,6 +123,7 @@ export class BlogHeaderComponent implements OnInit {
       ) */
       this.router.navigate(['/'+input])
       this.sendKey.ofBlogCard.next(input)
+      this.searchBox.nativeElement.value=""
     }
   }
   autocompleListFormatter = (data: any) => {
@@ -128,5 +131,14 @@ export class BlogHeaderComponent implements OnInit {
     let html = `<span style='font-size:1.2em'>${data} </span>`;
     return this._sanitizer.bypassSecurityTrustHtml(html);
   }
-  
+  hover(event){
+   //console.log(event)
+    //event.toElement.children[0].src="/assets/images/sports-social-link-orange-symbol.png"
+    this.linkImage.nativeElement.src="/assets/images/sports-social-link-orange-symbol.png"
+  }
+  removehoverColor(event){
+    //console.log(event)
+    //event.fromElement.children[0].src="/assets/images/sports-social-link-blue-symbol.png"
+    this.linkImage.nativeElement.src="/assets/images/sports-social-link-blue-symbol.png"
+  }
 }

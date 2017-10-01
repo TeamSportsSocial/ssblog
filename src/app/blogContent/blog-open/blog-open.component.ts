@@ -32,6 +32,8 @@ export class BlogOpenComponent implements OnInit {
     removeSocial:boolean=false;
     isConnectedWithFacebook:boolean=false;
     mobileView:boolean=false;
+    dataRecived:boolean=false;
+    openFullImage:boolean=false;
     relatedBlogDetails:{
         blogId:string;
         blogImage:string;
@@ -117,6 +119,7 @@ export class BlogOpenComponent implements OnInit {
         }
         this.getRelated.blogData(1,this.blog.keywords[this.blog.keywords.length-1]).subscribe(
             data=>{
+                this.dataRecived=true;
                 console.log(data, " related")
                 for(let i=2;i<5;i++){
                     this.relatedBlogDetails.push(
@@ -257,6 +260,12 @@ export class BlogOpenComponent implements OnInit {
     private handleError(error) {
         console.error('Error processing action', error);
     }
+    openfullImage(){
+        this.openFullImage=true;
+      }
+      closeFullImage(){
+        this.openFullImage=false;
+      }
     loginOnFacebook() {
         this.fb.login()
           .then((res: LoginResponse) => {

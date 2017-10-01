@@ -17,6 +17,7 @@ import {PostService} from ".././services/post.service"
 })
 export class BlogFooterComponent implements OnInit {
   showSubscriptionBox:boolean=false;
+  errorMessage:boolean=false
   @ViewChild('subscriber') subscriber;
   @ViewChild('subscribeCard') subscribeCard;
   constructor(
@@ -96,12 +97,14 @@ export class BlogFooterComponent implements OnInit {
             this.showSubscriptionBox=true;
             console.log(this.showSubscriptionBox)
             this.subscriber.nativeElement.value=""
+            this.errorMessage=false;
           }
         }
       )
     }
     else{
       this.subscriber.nativeElement.value=""
+      this.errorMessage=true
     }
   }
   close(){
