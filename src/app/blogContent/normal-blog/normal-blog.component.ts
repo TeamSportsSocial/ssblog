@@ -103,6 +103,7 @@ export class NormalBlogComponent implements OnInit {
   send(){
     console.log(this.blog)
     this.Send.detailsofBlog.next(this.blog)
+    window.scrollTo(0,0)
   }
   setDefault(event){
   

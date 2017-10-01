@@ -10,16 +10,15 @@ import {
   Routes,
   RouterModule,
   RouterLink,
-  UrlSerializer, 
-  UrlTree, 
-  DefaultUrlSerializer
 } from '@angular/router';
 
  const appRoute:Routes=[
    {path:"" ,component:BlogsComponent},
    {path:"editorPanel" , component: EditorPanelComponent},
-   {path:":tag" ,component:SearchComponent},
    {path:':tag/:title',component: BlogOpenComponent },
+   {path:":tag" ,component:SearchComponent ,children:[
+     {path:':title',component: BlogOpenComponent }
+   ]},
    
  ]
 @NgModule({

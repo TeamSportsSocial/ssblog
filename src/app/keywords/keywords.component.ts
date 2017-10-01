@@ -99,7 +99,7 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
       res=>{
         console.log(res)
         this.sendSearchedData.ofsearchBlog.next(res);
-        sessionStorage.setItem('searchedBlog',JSON.stringify(res))
+       // sessionStorage.setItem('searchedBlog',JSON.stringify(res))
       }
     )
     this.path="/"+this.keywords[i].name;

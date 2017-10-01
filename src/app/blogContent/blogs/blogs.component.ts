@@ -96,6 +96,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     sessionStorage.removeItem('Blog')
     sessionStorage.removeItem('pageNumber')
     sessionStorage.removeItem('searchedBlog')
+    sessionStorage.removeItem('key')
     if(window.innerWidth>950){
       this.removeTrendingBlock=false;
       this.mobileView=false;

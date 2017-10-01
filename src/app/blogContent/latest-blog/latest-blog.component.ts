@@ -94,7 +94,8 @@ export class LatestBlogComponent implements OnInit {
   }
   send(){
       console.log(this.blog)
-     this.Send.detailsofBlog.next(this.blog)
+      this.Send.detailsofBlog.next(this.blog)
+      window.scrollTo(0,0)
   }
   openfullImage(){
     this.openFullImage=true;
