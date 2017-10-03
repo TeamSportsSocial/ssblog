@@ -64,7 +64,7 @@ export class BlogOpenComponent implements OnInit {
         private router:Router
     ) { 
         fb.init({
-            appId: '140286013252973',
+            appId: '1750709328507665',
             version: 'v2.10'
           });
     }

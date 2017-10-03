@@ -55,6 +55,7 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
         }
       }
     )
+    console.log(this.keywords, " check")
     this.recieveHeight.ofHeader.subscribe(
       margin=>{
         this.topMargin=margin
@@ -64,17 +65,6 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
   }
   ngAfterViewInit(){
-    this.get.keywords().subscribe(
-      res=>{
-          for(let i in res){
-            this.keywords.push(
-            {
-             name:res[i].Keyword
-            }
-          )
-        }
-      }
-    )
     this.recieveHeight.ofHeader.subscribe(
       margin=>{
         this.topMargin=margin

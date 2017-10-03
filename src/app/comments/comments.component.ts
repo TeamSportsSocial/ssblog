@@ -58,7 +58,7 @@ export class CommentsComponent implements OnInit {
     private loadComment:PostService
   ) {
     fb.init({
-      appId: '140286013252973',
+      appId: '1750709328507665',
       version: 'v2.10'
     });
    }
