@@ -1,10 +1,17 @@
 <div class="subscribeCard" MaintainHeightWidthRatio>
-  <p>Subscribe via Email</p>
+  <p class="heading">Subscribe via Email</p>
   <input type="email" name="Email" placeholder="Enter your Email"  #subscriber email>
   <p  class="errorMessage" *ngIf="errorMessage">Email is Inavlid!!! Please enter correct Email</p>
   <button (click)="Subscribe()" type="submit" #button>Submit</button>
 </div>
 <div class="subscriptionBox" #subscriptionBox *ngIf="showSubscriptionBox">
-  <img src="/assets/images/sports-social-cancel-orange.png" role="button" class="closeMessage"  (click)="close()">
-  <p class="message">You have subscribed</p>
+    <div class="top">
+        <img src="/assets/images/sports-social-cancel-black.png" role="button" class="closeMessage"  (click)="close()">
+    </div>
+    <div class="bottom">
+        <p>Great</p>
+        <p>
+            You have Subscribed for our Newsletter and Blog updates.
+        </p>
+    </div>
 </div>

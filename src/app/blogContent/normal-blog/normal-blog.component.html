@@ -4,7 +4,7 @@
         <div class="blogImageHolder" #holder>
           <img src="{{blogImage}}" (load)="setInitialImage()"  (error)="setDefault()" role="button" (click)="openfullImage()" >
         </div>
-        <a routerLink="/{{keywords[0]}}/{{heading}}" (click)="send()">
+        <a routerLink="{{blogId}}/{{keywords[0]}}/{{heading}}" (click)="send()">
         <div class="blogFooter">
           <p>
             <span>{{insertedDate}}</span>
@@ -12,7 +12,7 @@
             <span>{{readingTime}}</span>
             <span>
               <img src="/assets/images/sports-social-view-orange.png"  >
-              {{viewCount}}
+              {{ViewCount}}
             </span>
           </p>
           <p [innerHtml]="heading" #blogTitle></p>

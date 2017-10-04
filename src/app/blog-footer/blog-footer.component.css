@@ -129,14 +129,66 @@ footer{
  .editor a{
      color: white
  }
- @media  (max-width:100px) and (min-width:800) {
+ .subscriptionBox{
+    width: 40%;
+    height: 200px;
+    z-index: 50;
+    position: fixed;
+    top:20%;
+    left: 30%;
+    background-color: #ffffff;
+    border: 1px solid #888888;
+
+ }
+ .subscriptionBox>.top{
+     width:100%;
+     height: 60%;
+     background-image: url('/assets/images/sports-social-correct-symbol-white.png');
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: 60px;
+ }
+ .subscriptionBox>.bottom>p:first-child{
+    color: black;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 0.5%
+ }
+ .subscriptionBox>.bottom>p:last-child{
+    font-family: 'Roboto',sans-serif;
+    font-weight: 500;
+    color: #024771;
+    text-align: center;
+ }
+ .closeMessage{
+    width: 20px;
+    height: 20px;
+    float: right;
+    padding: 1%;
+}
+.errorMessage{
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    color: #b33a3a
+}
+
+ @media  (max-width:1000px) and (min-width:800px) {
     .followUs img{
         width: 5%;
         height: 5%;
         margin-left: 1.5%;
      }
+     .subscriptionBox{
+         width: 60%;
+         left: 20%;
+     }
  }
- @media  (max-width:800px) and(min-width:650px) {
+ @media  (max-width:800px) and (min-width:650px) {
     .followUs img{
         width: 4%;
         height: 4%;
@@ -158,40 +210,13 @@ footer{
     .subscribe>input{
         height: 32px;
     }
+    .subscriptionBox{
+        width: 70%;
+        left: 15%;
+    }
  }
- .subscriptionBox{
-    width: 40%;
-    height: 150px;
-    z-index: 50;
-    position: fixed;
-    top:30%;
-    left: 30%;
-    border: 1px solid black;
-    background-color: #fafafa
- }
- .closeMessage{
-    width: 25px;
-    height: 25px;
-    float: right;
-    padding: 1%;
-}
-.message{
-   width: 100%;
-   font-family: 'Roboto',sans-serif;
-   font-weight: 500;
-   color: #024771;
-   text-align: center;
-   
-}
-.errorMessage{
-    width: 100%;
-    text-align: center;
-    font-family: 'Roboto',sans-serif;
-    font-size: 1em;
-    font-weight: 500;
-    color: #b33a3a
-}
- @media  (max-width:650px) and(min-width:520px){
+ 
+ @media  (max-width:650px) and (min-width:520px){
     .followUs img{
         width: 5%;
         height: 5%;
@@ -212,6 +237,11 @@ footer{
     .subscribe>input{
         height: 30px;
     }
+    .subscriptionBox{
+        width: 74%;
+        left: 13%;
+    }
+    
  }
 
  @media  (max-width:520px) {
@@ -236,4 +266,8 @@ footer{
      .subscribe>input{
          height: 25px;
      }
+     .subscriptionBox{
+        width: 90%;
+        left: 5%;
+    }
  }

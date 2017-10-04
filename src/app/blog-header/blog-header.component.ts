@@ -38,6 +38,7 @@ export class BlogHeaderComponent implements OnInit {
   @ViewChild('linkImage') linkImage:ElementRef;
   mobileView:boolean=false;
   searchedTextPresent:boolean=false;
+  open:boolean=false;
   constructor(
     private sendHeight:PropertyService,
     private renderer : Renderer2,
@@ -68,12 +69,9 @@ export class BlogHeaderComponent implements OnInit {
     this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
     if(window.innerWidth<=750){
       this.mobileView=true;
-      this.renderer.setStyle(this.Header.nativeElement.firstElementChild,'width','80% ')
     }
     else{
       this.mobileView=false;
-      this.renderer.removeStyle(this.Header.nativeElement.firstElementChild,'width')
-      this.renderer.setStyle(this.Header.nativeElement.firstElementChild,'width','85%')
     }
     
     
@@ -82,22 +80,22 @@ export class BlogHeaderComponent implements OnInit {
     
     this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
   }
-  ngAfterViewInit(){
-
-   // console.log(this.selected,"  hghgrdre")
-  }
+  
   @HostListener('window:resize',[]) onresize(){
     this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
     if(window.innerWidth<=750){
       this.mobileView=true;
-      this.renderer.setStyle(this.Header.nativeElement.firstElementChild,'width','80% ')
     }
     else{
       this.mobileView=false;
-      this.renderer.removeStyle(this.Header.nativeElement.firstElementChild,'width')
-      this.renderer.setStyle(this.Header.nativeElement.firstElementChild,'width','85%')
     }
   
+  }
+  openDropDown(){
+    this.open=true;
+  }
+  closeDropDown(){
+    this.open=false;
   }
   valueChanged(newVal) {
     this.searchedTextPresent=true;
@@ -107,6 +105,7 @@ export class BlogHeaderComponent implements OnInit {
         console.log(data)
       }
     )
+    this.open=false;
     this.router.navigate(['/'+newVal])
     this.sendKey.ofBlogCard.next(newVal)
     this.searchBox.nativeElement.value=""
@@ -116,11 +115,7 @@ export class BlogHeaderComponent implements OnInit {
     let input=this.searchBox.nativeElement.value
     if(key.code=="Enter"){
       console.log(input)
-      /* this.searchKeyword.blogData(1,input).subscribe(
-        data=>{
-          console.log(data)
-        }
-      ) */
+      this.open=false;
       this.router.navigate(['/'+input])
       this.sendKey.ofBlogCard.next(input)
       this.searchBox.nativeElement.value=""

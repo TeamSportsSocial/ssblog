@@ -113,8 +113,8 @@ export class BlogFooterComponent implements OnInit {
    }
   @HostListener('window:resize',[]) onresize(){
     if(window.innerWidth>1150){
-      this.renderer.setStyle(this.subscribeCard.nativeElement,'width','71%')
-      this.renderer.setStyle(this.subscriber.nativeElement,'width','69%')
+      this.renderer.setStyle(this.subscribeCard.nativeElement,'width','72%')
+      this.renderer.setStyle(this.subscriber.nativeElement,'width','70%')
     }
     if(window.innerWidth<1150 && window.innerWidth>1080){
       this.renderer.setStyle(this.subscribeCard.nativeElement,'width','80%')
@@ -164,14 +164,12 @@ export class BlogFooterComponent implements OnInit {
     }
     if(window.innerWidth<=470 && window.innerWidth>400){
       this.renderer.setStyle(this.subscribeCard.nativeElement,'width','95%')
-      this.renderer.setStyle(this.subscriber.nativeElement,'width','45%')
+      this.renderer.setStyle(this.subscriber.nativeElement,'width','47%')
      
     }
     if(window.innerWidth<400){
-      this.renderer.setStyle(this.subscribeCard.nativeElement,'width','100%')
+      this.renderer.setStyle(this.subscribeCard.nativeElement,'width','95%')
       this.renderer.setStyle(this.subscriber.nativeElement,'width','42%')
-     
-   
-    }
+     }
   }
 }

@@ -8,6 +8,7 @@ import {
   ViewChild
 } from '@angular/core';
 import {PropertyService} from "../../services/property.service";
+import {PostService} from "../../services/post.service";
 
 @Component({
   selector: 'SportSocial-latest-blog',
@@ -25,8 +26,8 @@ export class LatestBlogComponent implements OnInit {
   @Input()  heading:string
   @Input()  Content:string
   @Input()  insertedDate:string
-  @Input()  viewCount:string
-  @Input()  shareCount:string
+  @Input()  ViewCount:string
+  @Input()  ShareCount:string
   @Input()  keywords:string[]
   @Input()  exactDate:string
   @Input()  readingTime:string;
@@ -39,8 +40,8 @@ export class LatestBlogComponent implements OnInit {
     heading:string,
     Content:string,
     insertedDate:string,
-    viewCount:string,
-    shareCount:string,
+    ViewCount:string,
+    ShareCount:string,
     keywords:string[],
     exactDate:string,
     readingTime:string
@@ -51,7 +52,11 @@ export class LatestBlogComponent implements OnInit {
   @ViewChild('latestDesc') latestDesc;
   @ViewChild('readmore') readmore;
   @ViewChild('BloggerImage') Bloggerimage;
-  constructor(private Send: PropertyService,private renderer:Renderer2) { }
+  constructor(
+    private Send: PropertyService,
+    private renderer:Renderer2,
+    private post: PostService
+  ) { }
 
   ngOnInit() {
     
@@ -63,8 +68,8 @@ export class LatestBlogComponent implements OnInit {
       heading:this.heading,
       Content:this.Content,
       insertedDate:this.insertedDate,
-      viewCount:this.viewCount,
-      shareCount:this.shareCount,
+      ViewCount:this.ViewCount,
+      ShareCount:this.ShareCount,
       keywords:this.keywords,
       exactDate:this.exactDate,
       readingTime:this.readingTime
@@ -79,15 +84,15 @@ export class LatestBlogComponent implements OnInit {
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.8em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
     }
-    if(window.innerWidth<800 && window.innerWidth>=500){
+    if(window.innerWidth<800 && window.innerWidth>=600){
       this.renderer.setStyle(this.Desc.nativeElement,'height','85%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }
-    if(window.innerWidth<500){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','100%')
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.3em')
-      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
+    if(window.innerWidth<600){
+      this.renderer.setStyle(this.Desc.nativeElement,'height','70%')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.6em')
+      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.3em')
     }
     
      
@@ -95,6 +100,11 @@ export class LatestBlogComponent implements OnInit {
   send(){
       console.log(this.blog)
       this.Send.detailsofBlog.next(this.blog)
+      this.post.viewCountOfBlog(this.blogId).subscribe(
+        data=>{
+          console.log(data)
+        }
+      )
       window.scrollTo(0,0)
   }
   openfullImage(){
@@ -115,15 +125,15 @@ export class LatestBlogComponent implements OnInit {
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.8em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
     }
-    if(window.innerWidth<800 && window.innerWidth>=500){
+    if(window.innerWidth<800 && window.innerWidth>=600){
       this.renderer.setStyle(this.Desc.nativeElement,'height','85%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }
-    if(window.innerWidth<500){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','100%')
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.3em')
-      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
+    if(window.innerWidth<600){
+      this.renderer.setStyle(this.Desc.nativeElement,'height','70%')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
+      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }
     
   }

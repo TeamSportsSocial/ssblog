@@ -68,18 +68,11 @@ export class CommentsComponent implements OnInit {
   
   
   ngOnInit() {
-    if(window.innerWidth>900){
-      this.renderer.setStyle(this.commentBox.nativeElement,'width','65%')
-    }
-    if(window.innerWidth<=900 && window.innerWidth>650){
-      this.renderer.setStyle(this.commentBox.nativeElement,'width','80%')
-    }
-    if(window.innerWidth<650){
-      this.renderer.setStyle(this.commentBox.nativeElement,'width','100%')
-    }
+
     this.getLoginStatus()
     this.loadComment.ofBlog(this.BlogId).subscribe(
     res=>{
+      console.log("aman")
         for(let i in res){
           this.recivedComment.push({
             userName:res[i].Name,
@@ -93,7 +86,10 @@ export class CommentsComponent implements OnInit {
   }
   
   
-  
+  setDefault(event){
+    this.profilePicture="/assets/images/user.png"
+  }
+
   getLoginStatus() {
     this.fb.getLoginStatus()
       .then(
@@ -170,21 +166,12 @@ export class CommentsComponent implements OnInit {
   }
 
   
-  @HostListener('window:resize',[])onresize(){
-    if(window.innerWidth>900){
-      this.renderer.setStyle(this.commentBox.nativeElement,'width','65%')
-    }
-    if(window.innerWidth<=900 && window.innerWidth>650){
-      this.renderer.setStyle(this.commentBox.nativeElement,'width','80%')
-    }
-    if(window.innerWidth<650){
-      this.renderer.setStyle(this.commentBox.nativeElement,'width','100%')
-    }
-  }
+
   
   
   
   post(){
+    console.log(this.isConnected)
     console.log(this.textArea)
     const loginOptions: LoginOptions = {
       enable_profile_selector: true,

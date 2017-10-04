@@ -18,7 +18,7 @@
 .commentBox{
     display: inline-block;
     vertical-align: top;
-    width: calc(100% - 55px);
+    width: calc(60% - 55px);
     border: 1px solid #888888;
 }
 .text{
@@ -70,4 +70,10 @@ button{
     font-size: 0.9em;
     color: black;
     font-weight: 700;
+}
+
+@media (max-width:950px) {
+    .commentBox{
+        width: calc(90% - 55px);
+    }
 }

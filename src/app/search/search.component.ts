@@ -31,8 +31,8 @@ export class SearchComponent implements OnInit {
     heading:string,
     Content:string,
     insertedDate:string,
-    viewCount:string,
-    shareCount:string,
+    ViewCount:string,
+    ShareCount:string,
     keywords:string[],
     exactDate:string;
     readingTime:string
@@ -104,8 +104,8 @@ export class SearchComponent implements OnInit {
                 heading:data[i].heading,
                 Content:data[i].Content,
                 insertedDate:this.timePassed(data[i].insertedDate),
-                viewCount:"50",
-                shareCount:"50",
+                ViewCount:data[i].ViewCount,
+                ShareCount:data[i].ShareCount,
                 keywords:data[i].keywords.split(","),
                 exactDate:this.ExactDate(data[i].insertedDate),
                 readingTime:this.timeToRead(data[i].Content)
@@ -206,8 +206,8 @@ export class SearchComponent implements OnInit {
                 heading:data[i].heading,
                 Content:data[i].Content,
                 insertedDate:this.timePassed(data[i].insertedDate),
-                viewCount:"50",
-                shareCount:"50",
+                ViewCount:data[i].ViewCount,
+                ShareCount:data[i].ShareCount,
                 keywords:data[i].keywords.split(","),
                 exactDate:this.ExactDate(data[i].insertedDate),
                 readingTime:this.timeToRead(data[i].Content)

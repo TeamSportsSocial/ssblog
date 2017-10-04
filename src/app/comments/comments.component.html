@@ -1,6 +1,6 @@
 <div class="comment" #commentBox>
   <div class="imageHolder">
-    <img src="{{profilePicture}}">
+    <img src="{{profilePicture}}" (error)="setDefault()">
   </div>
   <div class="commentBox ">
     <textarea cols="50"  class="text" ngModel name="desc" required placeholder="Add a Comment..." #textArea></textarea>

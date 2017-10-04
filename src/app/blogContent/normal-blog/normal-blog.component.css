@@ -11,7 +11,7 @@
     font-size: 100%;
     border: 1px solid #bbbbbb;
     position: relative;
-    box-shadow: 3px 3px #fafafa
+    
 }
 
 .blogImageHolder{
@@ -106,19 +106,19 @@ a:hover{
     box-shadow: 1px 1px #bbbbbb;
     border: 1px solid #bbbbbb;
     background-color: black;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 .fullImageHolder{
     position: fixed;
-    width: 50%;
-    left: 25%;
+    width: 70%;
+    left: 15%;
     top:0%;
     z-index: 100;
 }
 .fullImageHolder>img{
     display: block;
     text-align: center;
-    padding: 10%;
+    padding: 5%;
     max-width: 100%;
     max-height: 100%;
 }
@@ -130,10 +130,10 @@ a:hover{
     height: 20px;
     z-index: 150
 }
-@media (max-width:800px) and (min-width:600){
+@media (max-width:800px) and (min-width:600px){
     .fullImageHolder{
-        width: 70%;
-        left: 15%;
+        width: 80%;
+        left: 10%;
     }
 }
 @media (max-width:600px){

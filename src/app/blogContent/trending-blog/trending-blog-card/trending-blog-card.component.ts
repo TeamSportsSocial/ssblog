@@ -17,8 +17,8 @@ export class TrendingBlogCardComponent implements OnInit {
   @Input()  heading:string
   @Input()  insertedDate:string
   @Input()  Content:string
-  @Input()  viewCount:string
-  @Input()  shareCount:string
+  @Input()  ViewCount:string
+  @Input()  ShareCount:string
   @Input()  keywords:string[]
   @Input()  exactDate:string
   
@@ -30,8 +30,8 @@ export class TrendingBlogCardComponent implements OnInit {
     heading:string,
     Content:string,
     insertedDate:string,
-    viewCount:string,
-    shareCount:string,
+    ViewCount:string,
+    ShareCount:string,
     keywords:string[],
     exactDate:string
   }

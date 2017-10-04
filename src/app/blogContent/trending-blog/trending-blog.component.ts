@@ -18,8 +18,8 @@ export class TrendingBlogComponent implements OnInit {
     heading:string,
     Content:string,
     insertedDate:string,
-    viewCount:string,
-    shareCount:string,
+    ViewCount:string,
+    ShareCount:string,
     keywords:string[],
     exactDate:string;
   }[]=[]

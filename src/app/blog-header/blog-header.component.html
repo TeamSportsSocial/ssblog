@@ -35,21 +35,34 @@
       </a>
     </li>
   </ul>
-  <div class="mobileView dropdown" *ngIf="mobileView">
-     <div class="menuImageHolder" data-toggle="dropdown">
-       <img src="/assets/images/sports-social-menu.png" role="button" >
+  <div class="mobileView " *ngIf="mobileView">
+     <div class="menuImageHolder">
+       <img src="/assets/images/sports-social-menu.png" role="button" (click)="openDropDown()">
      </div>
-     <div class="dropdown-menu">
-        <button type="button" class="close" data-dismiss="dropdown">&times;</button>
-        <p>Go to Website</p>
+     <div *ngIf="open" class="dropDown">
+        <img src="/assets/images/sports-social-cancel-black.png" role="button" (click)="closeDropDown()" class="Close">
+        <p> 
+          <a 
+            href="http://testweb.sportsocial.in" 
+            target="_blank" 
+            class=" websiteLink" 
+            (mouseover)="hover($event)"
+            (mouseout)="removehoverColor($event)">
+            <img src="/assets/images/sports-social-link-blue-symbol.png" alt="" #linkImage>
+            Go to Website 
+         </a>
+        </p>
       <div>
          <input 
-            ngui-auto-complete
-            [source]="keywords"
-            [list-formatter]="autocompleListFormatter"
-            type="text" 
-            placeholder="Search "
-            (valueChanged)="valueChanged($event)" >
+          ngui-auto-complete
+          [source]="keywords"
+          [list-formatter]="autocompleListFormatter"
+          type="text" 
+          placeholder="Search " 
+          (valueChanged)="valueChanged($event)"
+          [max-num-list]="10"
+          (keypress)="sendData($event)"
+          #searchBox >
       </div>
     </div>
   </div> 

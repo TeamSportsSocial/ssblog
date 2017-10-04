@@ -7,6 +7,8 @@ import {
   Renderer2
 } from '@angular/core';
 import {PropertyService} from "../../services/property.service";
+import {PostService} from "../../services/post.service";
+
 @Component({
   selector: 'SportSocial-normal-blog',
   templateUrl: './normal-blog.component.html',
@@ -21,8 +23,8 @@ export class NormalBlogComponent implements OnInit {
   @Input()  heading:string
   @Input()  insertedDate:string
   @Input()  Content:string
-  @Input()  viewCount:string
-  @Input()  shareCount:string
+  @Input()  ViewCount:string
+  @Input()  ShareCount:string
   @Input()  keywords:string[]
   @Input()  exactDate:string
   @Input()  readingTime:string
@@ -35,8 +37,8 @@ export class NormalBlogComponent implements OnInit {
     heading:string,
     Content:string,
     insertedDate:string,
-    viewCount:string,
-    shareCount:string,
+    ViewCount:string,
+    ShareCount:string,
     keywords:string[],
     exactDate:string,
     readingTime:string
@@ -47,7 +49,11 @@ export class NormalBlogComponent implements OnInit {
 
   loading:boolean=true;
   openFullImage:boolean=false;
-  constructor(private Send: PropertyService,private renderer:Renderer2) { }
+  constructor(
+    private Send: PropertyService,
+    private renderer:Renderer2,
+    private post :PostService
+  ) { }
 
   ngOnInit() {  
    this.blog={
@@ -58,8 +64,8 @@ export class NormalBlogComponent implements OnInit {
     heading:this.heading,
     Content:this.Content,
     insertedDate:this.insertedDate,
-    viewCount:this.viewCount,
-    shareCount:this.shareCount,
+    ViewCount:this.ViewCount,
+    ShareCount:this.ShareCount,
     keywords:this.keywords,
     exactDate:this.exactDate,
     readingTime:this.readingTime
@@ -91,23 +97,38 @@ export class NormalBlogComponent implements OnInit {
    
 
   }
+  
   openfullImage(){
     this.openFullImage=true;
   }
+  
   closeFullImage(){
     this.openFullImage=false;
   }
+  
+  
   send(){
     console.log(this.blog)
     this.Send.detailsofBlog.next(this.blog)
+    this.post.viewCountOfBlog(this.blogId).subscribe(
+      data=>{
+        console.log(data)
+      }
+    )
     window.scrollTo(0,0)
   }
+  
+  
   setDefault(event){
     this.blogImage="/assets/images/default-image.png"
   }
+  
+  
   setInitialImage(){
     this.renderer.removeStyle(this.holder.nativeElement,'background-image')
   }
+  
+  
   @HostListener('window:resize',[])onresize(){
     if(window.innerWidth>1100){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em')

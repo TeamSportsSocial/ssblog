@@ -29,8 +29,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     heading:string,
     Content:string,
     insertedDate:string,
-    viewCount:string,
-    shareCount:string,
+    ViewCount:string,
+    ShareCount:string,
     keywords:string[],
     exactDate:string;
     readingTime:string
@@ -43,8 +43,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     heading:string,
     Content:string,
     insertedDate:string,
-    viewCount:string,
-    shareCount:string,
+    ViewCount:string,
+    ShareCount:string,
     keywords:string[],
     exactDate:string;
     readingTime:string
@@ -57,8 +57,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     heading:string,
     Content:string,
     insertedDate:string,
-    viewCount:string,
-    shareCount:string,
+    ViewCount:string,
+    ShareCount:string,
     keywords:string[],
     exactDate:string;
     readingTime:string
@@ -71,8 +71,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     heading:string,
     Content:string,
     insertedDate:string,
-    viewCount:string,
-    shareCount:string,
+    ViewCount:string,
+    ShareCount:string,
     keywords:string[],
     exactDate:string;
     readingTime:string
@@ -117,6 +117,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     if(this.nextPageNumber==1){
     this.get.blogData(this.nextPageNumber,this.defaultKey).subscribe(
       (data)=>{ 
+        console.log(data)
         this.show=true;
         this.dataRecived=true;
         for(let i in data){
@@ -129,8 +130,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 heading:data[i].heading,
                 Content:data[i].Content,
                 insertedDate:this.timePassed(data[i].insertedDate),
-                viewCount:"50",
-                shareCount:"50",
+                ViewCount:data[i].ViewCount,
+                ShareCount:data[i].ShareCount,
                 keywords:data[i].keywords.split(","),
                 exactDate:this.ExactDate(data[i].insertedDate),
                 readingTime:this.timeToRead(data[i].Content)
@@ -147,8 +148,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             heading:this.blogDetails[0].heading,
             Content:this.blogDetails[0].Content,
             insertedDate:this.blogDetails[0].insertedDate,
-            viewCount:"50",
-            shareCount:"50",
+            ViewCount:this.blogDetails[0].ViewCount,
+            ShareCount:this.blogDetails[0].ShareCount,
             keywords:this.blogDetails[0].keywords,
             exactDate:this.blogDetails[0].exactDate,
             readingTime:this.blogDetails[0].readingTime
@@ -164,8 +165,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               heading:this.blogDetails[i].heading,
               Content:this.blogDetails[i].Content,
               insertedDate:this.blogDetails[i].insertedDate,
-              viewCount:"50",
-              shareCount:"50",
+              ViewCount:this.blogDetails[i].ViewCount,
+              ShareCount:this.blogDetails[i].ShareCount,
               keywords:this.blogDetails[i].keywords,
               exactDate:this.blogDetails[i].exactDate,
               readingTime:this.blogDetails[i].readingTime
@@ -182,8 +183,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             heading:this.blogDetails[i].heading,
             Content:this.blogDetails[i].Content,
             insertedDate:this.blogDetails[i].insertedDate,
-            viewCount:"50",
-            shareCount:"50",
+            ViewCount:this.blogDetails[i].ViewCount,
+            ShareCount:this.blogDetails[i].ShareCount,
             keywords:this.blogDetails[i].keywords,
             exactDate:this.blogDetails[i].exactDate,
             readingTime:this.blogDetails[i].readingTime
@@ -205,8 +206,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
         heading:this.blogDetails[0].heading,
         Content:this.blogDetails[0].Content,
         insertedDate:this.blogDetails[0].insertedDate,
-        viewCount:"50",
-        shareCount:"50",
+        ViewCount:this.blogDetails[0].ViewCount,
+        ShareCount:this.blogDetails[0].ShareCount,
         keywords:this.blogDetails[0].keywords,
         exactDate:this.blogDetails[0].exactDate,
         readingTime:this.blogDetails[0].readingTime
@@ -222,8 +223,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
           heading:this.blogDetails[i].heading,
           Content:this.blogDetails[i].Content,
           insertedDate:this.blogDetails[i].insertedDate,
-          viewCount:"50",
-          shareCount:"50",
+          ViewCount:this.blogDetails[i].ViewCount,
+          ShareCount:this.blogDetails[i].ShareCount,
           keywords:this.blogDetails[i].keywords,
           exactDate:this.blogDetails[i].exactDate,
           readingTime:this.blogDetails[i].readingTime
@@ -240,8 +241,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
         heading:this.blogDetails[i].heading,
         Content:this.blogDetails[i].Content,
         insertedDate:this.blogDetails[i].insertedDate,
-        viewCount:"50",
-        shareCount:"50",
+        ViewCount:this.blogDetails[i].ViewCount,
+        ShareCount:this.blogDetails[i].ShareCount,
         keywords:this.blogDetails[i].keywords,
         exactDate:this.blogDetails[i].exactDate,
         readingTime:this.blogDetails[i].readingTime
@@ -292,7 +293,6 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     }
     if(this.blogDetails.length>0){
       this.show=true
-     // console.log("tr")
     }
   }
   timePassed(i:string){
@@ -355,8 +355,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 heading:data[i].heading,
                 Content:data[i].Content,
                 insertedDate:this.timePassed(data[i].insertedDate),
-                viewCount:"50",
-                shareCount:"50",
+                ViewCount:data[i].ViewCount,
+                ShareCount:data[i].ShareCount,
                 keywords:data[i].keywords.split(","),
                 exactDate:this.ExactDate(data[i].insertedDate),
                 readingTime:this.timeToRead(data[i].Content)

@@ -1,31 +1,29 @@
-<a routerLink="/{{keywords[0]}}/{{heading}}" (click)="send()">
+
 <div class="latest" MaintainHeightWidthRatio>
-  <img src="{{blogImage}}" class="blogImg">
-  <div class="count">
-    <img src="/assets/images/sports-social-view-white.png" alt="">
-    <span>{{viewCount}}</span> 
-    <img src="/assets/images/sports-social-share-white.png" alt="">
-    <span>{{shareCount}}</span>
-  </div> 
-  <div class="desc" #Desc>
-    <div>
-      <span>{{insertedDate}}</span>
-      <span>|</span>
-      <span>{{readingTime}}</span>
-      <span>{{keywords[0]}}</span>
+  <a routerLink="{{blogId}}/{{keywords[0]}}/{{heading}}" (click)="send()">
+    <img src="{{blogImage}}" class="blogImg">
+    <div class="count">
+      <img src="/assets/images/sports-social-view-white.png" alt="">
+      <span>{{ViewCount}}</span> 
+      <img src="/assets/images/sports-social-share-white.png" alt="">
+      <span>{{ShareCount}}</span>
+    </div> 
+    <div class="desc" #Desc>
+      <div>
+        <span>{{insertedDate}}</span>
+        <span>|</span>
+        <span>{{readingTime}}</span>
+        <span>{{keywords[0]}}</span>
+      </div>
+      <p class="heading" [innerHtml]="heading" #latestTitle> </p>
+      <p [innerHtml]="Content" class="smallDesc" #latestDesc></p>
+      <div class="Blogger">
+        <div class="bloggerImage" #BloggerImage>
+            <img src="/assets/images/sports-social-blogger-white.png" alt="" >
+        </div>  
+        <p class="bloggerName">{{bloggerName}}</p>
+      </div>
+      
     </div>
-    <a routerLink="/{{keywords[0]}}/{{heading}}" class="title" (click)="send()">
-      <p [innerHtml]="heading" #latestTitle>
-      </p>
-    </a>
-    <p [innerHtml]="Content" class="smallDesc" #latestDesc></p>
-    <div class="Blogger">
-      <div class="bloggerImage" #BloggerImage>
-          <img src="/assets/images/sports-social-blogger-white.png" alt="" >
-      </div>  
-      <p class="bloggerName">{{bloggerName}}</p>
-    </div>
-    
-  </div>
+  </a>
 </div>
-</a>

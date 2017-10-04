@@ -46,7 +46,7 @@ export class SubscribeCardComponent implements OnInit {
     else{
       this.subscriber.nativeElement.value=""
       this.errorMessage=true;
-      this.renderer.setStyle(this.button.nativeElement,'margin','-6% auto')
+      this.renderer.setStyle(this.button.nativeElement,'margin','1% auto')
     }
   }
   close(){
