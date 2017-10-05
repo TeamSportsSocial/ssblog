@@ -85,7 +85,7 @@ upload(){
   for(var i=0;i<this.files.length;i++){
     this.filesToUpload.push(<File> this.files[i].nativeElement.files[0]);
   }
-  this.makeFileRequest("http://admin.chaseyoursport.com/blog/saveNewBlog", [], this.filesToUpload)
+  this.makeFileRequest("https://admin.chaseyoursport.com/blog/saveNewBlog", [], this.filesToUpload)
   .then((result) => {
     this.Result=result
     console.log(result);
