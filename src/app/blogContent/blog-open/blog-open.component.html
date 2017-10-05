@@ -1,11 +1,12 @@
 <div>
   <p #openBlog class="Catagory">
     <span role="button" (click)="getblogs($event)">{{Keywords[0]}}</span>
-    <span>|</span>
+    <span  *ngIf="blogDataRecieved">|</span>
     <span>{{blog.readingTime}}</span>
   </p>
   <div class="blogImageHolder">
-    <img src="{{blog.blogImage}}"  role="button" (click)="openfullImage()" >
+    <img  src="{{blog.blogImage}}"  role="button" (click)="openfullImage()"  (error)="setDefaultBlogImage()" *ngIf="blogDataRecieved" >
+    <img src="/assets/images/default-image.png" *ngIf="!blogDataRecieved">
   </div>
   <p [innerHtml]="blog.heading"class="title"></p>
   <div class="content">
@@ -13,7 +14,7 @@
       <div class="bloggerImage">
         <img src="{{blog.bloggerImage}}" (error)="setDefault()" >
       </div>
-      <div class="bloggerName">
+      <div class="bloggerName" *ngIf="blogDataRecieved">
         Written by <span> {{blog.bloggerName}}</span>
       </div>
       <div class="writtenDate">
@@ -29,7 +30,7 @@
           <span>{{blog.ShareCount}}</span>
         </span>
       </div>
-      <p class="shareOn">
+      <p class="shareOn" *ngIf="blogDataRecieved">
         Share on 
         <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()" class="facebook">
         <a href="http://twitter.com/share" (click)="shareOnTwitter()" #popup class="twitter">
@@ -44,7 +45,7 @@
         </div>
         <a *ngFor="let key of Keywords;let i=index" role="button" (click)="getblogs($event)">{{key}}</a>
       </div>
-      <p class="shareOn">
+      <p class="shareOn" *ngIf="blogDataRecieved">
         Share on 
         
         <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()" class="facebook">
@@ -55,7 +56,7 @@
     </div>
     <div class="social" *ngIf="!removeSocial">
       <div class="follow">
-        <p>Follow us</p>
+        <p *ngIf="blogDataRecieved">Follow us</p>
         <a href="https://www.facebook.com/chaseyoursport" target="_blank">
           <img src="/assets/images/sports-social-facebook-logo-blue.png">
         </a> 
@@ -94,14 +95,14 @@
       </div>
     </div>
   </div>
-  <div class="comments">
+  <div class="comments" *ngIf="blogDataRecieved">
     <SportSocial-comments
       [BlogId]="blogID">
     </SportSocial-comments>
   </div>
   <div>
     <div  *ngIf="!mobileView" class="relatedBlog">
-      <p>Related Articles</p>
+      <p *ngIf="blogDataRecieved">Related Articles</p>
       <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
       <div TabViewAvailable class="col-4" *ngFor="let data of relatedBlogDetails;let i=index">
         <SportSocial-normal-blog 
@@ -121,7 +122,7 @@
       </div>
     </div>
     <div *ngIf="mobileView" class="mobileView relatedBlog">
-      <p>Related Articles</p>
+      <p *ngIf="blogDataRecieved">Related Articles</p>
       <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
       <div class="col-4" *ngFor="let data of relatedBlogDetails;let i=index">
         <SportSocial-normal-blog 

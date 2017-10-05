@@ -15,8 +15,8 @@ import {
  const appRoute:Routes=[
    {path:"" ,component:BlogsComponent},
    {path:"editorPanel" , component: EditorPanelComponent},
-   {path:":tag" ,component:SearchComponent },
-   {path:':blogId/:tag/:title',component: BlogOpenComponent }
+   {path:":tag" ,component:SearchComponent},
+   {path:':tag/:title/:blogId',component: BlogOpenComponent }
    
  ]
 @NgModule({

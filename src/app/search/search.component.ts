@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import {PropertyService} from "../services/property.service";
 import {PostService} from "../services/post.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-search',
@@ -49,7 +50,8 @@ export class SearchComponent implements OnInit {
     private renderer:Renderer2,
     private recieveData: PropertyService,
     private recievekey: PropertyService,
-    private get: PostService
+    private get: PostService,
+    private route:  ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -59,11 +61,15 @@ export class SearchComponent implements OnInit {
       }
     )
     this.renderer.setStyle(this.searchPage.nativeElement,'margin-top',this.topMargin+"px")
-    this.recievekey.ofBlogCard.subscribe(
-      res=>{
-        this.recievedKey=res
+   
+    this.recievedKey=this.route.snapshot.url[0].path.replace(/-/g, " ")
+    this.route.params.subscribe(
+      (params)=>{
+        console.log(params, " params")
+        this.recievedKey=params.tag
       }
     )
+    console.log(this.route.snapshot.url[0].path, "key")
     if(window.innerWidth<700){
      this.mobileView=true;
     }
@@ -71,12 +77,7 @@ export class SearchComponent implements OnInit {
       this.mobileView=false;
     }
    
-    if(this.recievedKey!=undefined){
-      sessionStorage.setItem('key',JSON.stringify(this.recievedKey))
-    }
-    if(this.recievedKey==undefined){
-      this.recievedKey=JSON.parse(sessionStorage.getItem('key'))
-    }
+   
     this.pageNumber=JSON.parse(sessionStorage.getItem('pageNumber'))
     if(this.pageNumber==null){
       this.pageNumber=1

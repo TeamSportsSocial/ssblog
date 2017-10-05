@@ -52,6 +52,7 @@ export class BlogOpenComponent implements OnInit {
     blogDataRecieved:boolean=false;
     blogID;
     Keywords=[]
+    loading:boolean=true;
     relatedBlogDetails:{
         blogId:string;
         blogImage:string;
@@ -84,7 +85,7 @@ export class BlogOpenComponent implements OnInit {
         private metaService: Meta,
         private load:PostService
     ) { 
-        this.blogID=this.route.snapshot.url[0].path
+        this.blogID=this.route.snapshot.url[2].path
         this.scriptOfTwitter()
         fb.init({
             appId: '1750709328507665',
@@ -96,6 +97,7 @@ export class BlogOpenComponent implements OnInit {
         console.log('https://www.chaseyoursport.com/'+this.route.snapshot.url[0].path+'/'+this.route.snapshot.url[1].path+'/'+this.route.snapshot.url[2].path)
         console.log(this.route.snapshot.url[1].path)
         console.log(this.route.snapshot.url[2].path)
+        
         this.scriptOfTwitter()
         this.loadBlog()
         
@@ -122,7 +124,7 @@ export class BlogOpenComponent implements OnInit {
             res=>{
                 const data=res[0]
                 console.log(data," t")
-                this.blogDataRecieved=true;
+                console.log(this.blogDataRecieved,"  true")
                 this.blog={
                     blogId:data.blogId,
                     blogImage:data.blogImage,
@@ -138,9 +140,11 @@ export class BlogOpenComponent implements OnInit {
                     readingTime:this.timeToRead(data.Content)
                 }
                 this.Keywords=this.blog.keywords;
+                this.blogDataRecieved=true;
+                window.scrollTo(0,0)
                 this.getRelatedBlogs()
                 this.setMetaTags();
-                console.log(this.blog,this.blogDataRecieved,"  true")
+                console.log(this.blogDataRecieved,"  true")
             }
         )
        
@@ -158,8 +162,6 @@ export class BlogOpenComponent implements OnInit {
         }
     }
     
-    
-
     timePassed(i:string){
         let writtenDate=new Date(i);
         let presentDate=new Date();
@@ -194,23 +196,29 @@ export class BlogOpenComponent implements OnInit {
         this.blog.bloggerImage="/assets/images/user.png"
     }
 
-    
+    initialBloagImage(){
+        this.loading=false
+    }
+    setDefaultBlogImage(){
+        console.log("loadingImage2")
+        this.blog.blogImage="/assets/images/default-image.png"
+    }
     setMobileView(){
         if(window.innerWidth>950){
             this.mobileView=false;
             this.removeSocial=false;
-            //this.renderer.setStyle(this.BlogInfo.nativeElement,'width','68%')
+            this.renderer.setStyle(this.BlogInfo.nativeElement,'width','68%')
         }
         if(window.innerWidth<=950 && window.innerWidth>700){
            this.removeSocial=true; 
            this.mobileView=false;
-          // this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%');
+           this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%');
            
         }
         if(window.innerWidth<700){
             this.removeSocial=true;
             this.mobileView=true;
-            //this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%')
+            this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%')
         }
         
     }

@@ -98,14 +98,14 @@ export class BlogHeaderComponent implements OnInit {
   valueChanged(newVal) {
     this.searchedTextPresent=true;
     console.log("Case 2: value is changed to ", newVal );
-    this.searchKeyword.blogData(1,newVal).subscribe(
+    /* this.searchKeyword.blogData(1,newVal).subscribe(
       data=>{
         console.log(data)
       }
-    )
+    ) */
     this.open=false;
     this.router.navigate(['/'+newVal])
-    this.sendKey.ofBlogCard.next(newVal)
+    //this.sendKey.ofBlogCard.next(newVal)
     this.searchBox.nativeElement.value=""
   }
  
@@ -115,7 +115,7 @@ export class BlogHeaderComponent implements OnInit {
       console.log(input)
       this.open=false;
       this.router.navigate(['/'+input])
-      this.sendKey.ofBlogCard.next(input)
+      //this.sendKey.ofBlogCard.next(input)
       this.searchBox.nativeElement.value=""
     }
   }

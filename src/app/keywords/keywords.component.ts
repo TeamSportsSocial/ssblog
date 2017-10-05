@@ -85,16 +85,15 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
   }
   send(i:number){
-    this.searched.blogData(this.pageNumber,this.keywords[i].name).subscribe(
+    /* this.searched.blogData(this.pageNumber,this.keywords[i].name).subscribe(
       res=>{
         console.log(res)
         this.sendSearchedData.ofsearchBlog.next(res);
-       // sessionStorage.setItem('searchedBlog',JSON.stringify(res))
       }
-    )
+    ) */
     this.path="/"+this.keywords[i].name;
     this.router.navigate([this.path]);
-    this.sendKey.ofBlogCard.next(this.keywords[i].name)
+    //this.sendKey.ofBlogCard.next(this.keywords[i].name)
   }
   @HostListener('window:resize',[]) onresize(){
     this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
