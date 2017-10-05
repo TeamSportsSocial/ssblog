@@ -8,7 +8,7 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 import {PropertyService} from "../services/property.service";
-import {SaveService} from "../services/save.service";
+import {GetService} from "../services/get.service";
 import {Http} from "@angular/http";
 import {PostService} from "../services/post.service";
 import { Observable } from 'rxjs/Rx';
@@ -43,8 +43,7 @@ export class BlogHeaderComponent implements OnInit {
     private sendHeight:PropertyService,
     private renderer : Renderer2,
     private send:PropertyService,
-    private recieveSaved: SaveService,
-    private sendSaved: SaveService,
+    private get :GetService,
     private elRef:ElementRef,
     private http:Http,
     private _sanitizer: DomSanitizer,
@@ -55,8 +54,7 @@ export class BlogHeaderComponent implements OnInit {
   ) { }
   ngOnInit() {
     
-    this.http.get(' http://admin.chaseyoursport.com/blog/getKeywords  ')
-    .map(res=>res.json())
+    this.get.keywords()
     .subscribe(
       res=>{
         for(let i in res){
@@ -122,18 +120,13 @@ export class BlogHeaderComponent implements OnInit {
     }
   }
   autocompleListFormatter = (data: any) => {
-    //console.log(data)
     let html = `<span style='font-size:1.2em'>${data} </span>`;
     return this._sanitizer.bypassSecurityTrustHtml(html);
   }
   hover(event){
-   //console.log(event)
-    //event.toElement.children[0].src="/assets/images/sports-social-link-orange-symbol.png"
     this.linkImage.nativeElement.src="/assets/images/sports-social-link-orange-symbol.png"
   }
   removehoverColor(event){
-    //console.log(event)
-    //event.fromElement.children[0].src="/assets/images/sports-social-link-blue-symbol.png"
     this.linkImage.nativeElement.src="/assets/images/sports-social-link-blue-symbol.png"
   }
 }

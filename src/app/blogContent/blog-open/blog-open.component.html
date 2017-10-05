@@ -96,7 +96,7 @@
   </div>
   <div class="comments">
     <SportSocial-comments
-      [BlogId]="blogId">
+      [BlogId]="blogID">
     </SportSocial-comments>
   </div>
   <div>
@@ -146,11 +146,7 @@
   <SportSocial-blog-footer></SportSocial-blog-footer>
 </div> 
 
-<div class="comments">
-    <SportSocial-comments
-      [BlogId]="blogID">
-    </SportSocial-comments>
-  </div>
+
 <div class="fullImage" #fullImage *ngIf="openFullImage">
   <img 
    src="/assets/images/sports-social-cancel-white.png" 
