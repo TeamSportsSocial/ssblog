@@ -5,7 +5,7 @@ import {
     Renderer2,
     HostListener,
     NgZone
- } from '@angular/core';
+} from '@angular/core';
 import {Http} from "@angular/http";
 import { Meta } from '@angular/platform-browser';
 import {PropertyService} from "../../services/property.service";
@@ -130,7 +130,7 @@ export class BlogOpenComponent implements OnInit {
                 window.scrollTo(0,0) */
                 this.getRelatedBlogs()
                 this.setMetaTags();
-                console.log(this.blog, " temp")
+                //console.log(this.blog, " temp")
             }
         )
         this.scriptOfTwitter()
@@ -152,14 +152,21 @@ export class BlogOpenComponent implements OnInit {
             }
         )
     }
+    
     setMetaTags(){
         this.metaService.addTags([
-            {property:'og:title' , content:this.blog.heading},
-            {property: "og:description" ,content:this.blog.Content},
-            {property:'og:image' , content:this.blog.blogImage},
+            {name: 'twitter:title', content:this.blog.heading},
+            {property:'fb:app_id' , content:'1750709328507665'},
             {property: 'og:url' ,content:'https://www.chaseyoursport.com/'+this.route.snapshot.url[0].path+'/'+this.route.snapshot.url[1].path+'/'+this.route.snapshot.url[2].path},
-            { property:'og:type',content: 'website'}
+            {property:'og:type',content:'website'},
+            {property:'og:title' , content:this.blog.heading},
+            {property: 'og:description' ,content:this.blog.Content},
+            {property:'og:image' , content:this.blog.blogImage},
+            {name: 'twitter:image', content:this.blog.blogImage},
+          
+            
         ])
+
     }
 
     loadBlog(){
