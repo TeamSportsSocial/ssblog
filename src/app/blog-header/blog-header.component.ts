@@ -5,7 +5,8 @@ import {
   ElementRef,
   HostListener,
   Renderer2,
-  ChangeDetectorRef
+  ChangeDetectorRef,
+  NgZone
 } from '@angular/core';
 import {PropertyService} from "../services/property.service";
 import {GetService} from "../services/get.service";
@@ -39,6 +40,7 @@ export class BlogHeaderComponent implements OnInit {
   mobileView:boolean=false;
   searchedTextPresent:boolean=false;
   open:boolean=false;
+  search:boolean=false;
   constructor(
     private sendHeight:PropertyService,
     private renderer : Renderer2,
@@ -50,7 +52,8 @@ export class BlogHeaderComponent implements OnInit {
     private searchKeyword: PostService,
     private router:Router,
     private sendKey:PropertyService,
-    private cd:ChangeDetectorRef
+    private cd:ChangeDetectorRef,
+    private zone :NgZone
   ) { }
   ngOnInit() {
     
@@ -79,6 +82,12 @@ export class BlogHeaderComponent implements OnInit {
     this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
   }
   
+  reloadPage() { 
+    this.zone.runOutsideAngular(() => {
+        location.reload();
+    });
+  }
+
   @HostListener('window:resize',[]) onresize(){
     this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
     if(window.innerWidth<=750){
@@ -98,29 +107,25 @@ export class BlogHeaderComponent implements OnInit {
   valueChanged(newVal) {
     this.searchedTextPresent=true;
     console.log("Case 2: value is changed to ", newVal );
-    /* this.searchKeyword.blogData(1,newVal).subscribe(
-      data=>{
-        console.log(data)
-      }
-    ) */
     this.open=false;
     this.router.navigate(['/'+newVal])
-    //this.sendKey.ofBlogCard.next(newVal)
     this.searchBox.nativeElement.value=""
+    this.reloadPage()
   }
- 
+  searchSportSocial(){
+    this.search=true
+  }
   sendData(key){
     let input=this.searchBox.nativeElement.value
-    if(key.code=="Enter"){
+    if(key.code=="Enter" || this.search==true){
       console.log(input)
       this.open=false;
       this.router.navigate(['/'+input])
-      //this.sendKey.ofBlogCard.next(input)
       this.searchBox.nativeElement.value=""
     }
   }
   autocompleListFormatter = (data: any) => {
-    let html = `<span style='font-size:1.2em'>${data} </span>`;
+    let html = `<span style='font-size:1.2em'>${data}</span>`;
     return this._sanitizer.bypassSecurityTrustHtml(html);
   }
   hover(event){

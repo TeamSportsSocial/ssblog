@@ -110,11 +110,6 @@ export class NormalBlogComponent implements OnInit {
   send(){
     console.log(this.blog)
     this.Send.detailsofBlog.next(this.blog)
-    this.post.viewCountOfBlog(this.blogId).subscribe(
-      data=>{
-        console.log(data)
-      }
-    )
     window.scrollTo(0,0)
   }
   

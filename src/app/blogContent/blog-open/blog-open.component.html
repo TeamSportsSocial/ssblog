@@ -1,24 +1,27 @@
-<div>
+<div class=openBlog>
   <p #openBlog class="Catagory">
     <span role="button" (click)="getblogs($event)">{{Keywords[0]}}</span>
     <span  *ngIf="blogDataRecieved">|</span>
     <span>{{blog.readingTime}}</span>
   </p>
   <div class="blogImageHolder">
-    <img  src="{{blog.blogImage}}"  role="button" (click)="openfullImage()"  (error)="setDefaultBlogImage()" *ngIf="blogDataRecieved" >
-    <img src="/assets/images/default-image.png" *ngIf="!blogDataRecieved">
+    <img class="blogImage" src="{{blog.blogImage}}"  (error)="setDefaultBlogImage()" *ngIf="blogDataRecieved" >
+    <img class="blogImage" src="/assets/images/default-image.png"  *ngIf="!blogDataRecieved">
+    <img src="/assets/images/sports-social-zoom-out-orange.png" role="button" (click)="openfullImage()"  class="zoom">
   </div>
-  <p [innerHtml]="blog.heading"class="title"></p>
+  
   <div class="content">
+    
     <div class="blogInfo" #BlogInfo>
+      <p [innerHtml]="blog.heading"class="title"></p>
       <div class="bloggerImage">
         <img src="{{blog.bloggerImage}}" (error)="setDefault()" >
       </div>
-      <div class="bloggerName" *ngIf="blogDataRecieved">
-        Written by <span> {{blog.bloggerName}}</span>
-      </div>
-      <div class="writtenDate">
-        {{blog.exactDate}}
+      <div class="blogger" *ngIf="blogDataRecieved">
+        <p  class="bloggerName">Written by <span> {{blog.bloggerName}}</span></p>  
+        <p class="writtenDate">
+          {{blog.exactDate}}
+        </p>
       </div>
       <div class="count">
         <span>
@@ -30,18 +33,19 @@
           <span>{{blog.ShareCount}}</span>
         </span>
       </div>
-      <p class="shareOn" *ngIf="blogDataRecieved">
+      
+      <div class="shareOn" *ngIf="blogDataRecieved">
         Share on 
         <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()" class="facebook">
         <a href="http://twitter.com/share" (click)="shareOnTwitter()" #popup class="twitter">
           <img src="/assets/images/sports-social-twitter-logo-black.png"  class="twitterButton">
         </a> 
-      </p>
+      </div>
       <p [innerHtml]="blog.Content" class="desc">
       </p>
       <div class="tags" >
         <div class="tagHolder">
-          <img src="/assets/images/sports-social-tag.png" alt="">
+          <img src="/assets/images/sports-social-tag.png" >
         </div>
         <a *ngFor="let key of Keywords;let i=index" role="button" (click)="getblogs($event)">{{key}}</a>
       </div>
@@ -79,20 +83,19 @@
           <img src="/assets/images/sports-social-quora-logo-blue.png">
         </a>
       </div>
-      <div class="popular"></div>
       <div class="twitter">
         <p>
           <img src="/assets/images/sports-social-twitter-logo-blue.png">
           Tweets by @chaseyoursport</p>
-      <a 
-        class="twitter-timeline" 
-        href="https://twitter.com/chaseyoursport"
-        data-width="450"
-        data-height="700"
-        data-chrome="noheader nofooter">
-        Tweets by chaseyoursport
-      </a>
-      </div>
+        <a 
+          class="twitter-timeline" 
+          href="https://twitter.com/chaseyoursport"
+          data-width="450"
+          data-height="700"
+          data-chrome="noheader nofooter">
+          Tweets by chaseyoursport
+        </a>
+        </div>
     </div>
   </div>
   <div class="comments" *ngIf="blogDataRecieved">
@@ -154,6 +157,6 @@
    class="cancel" role="button" (click)="closeFullImage()">   
    
  </div>
- <div class="fullImageHolder" *ngIf="openFullImage">
+ <div class="fullImageHolder" *ngIf="openFullImage" #fullImageHolder>
    <img src="{{blog.blogImage}}" >
  </div>

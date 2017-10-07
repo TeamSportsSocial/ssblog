@@ -52,6 +52,7 @@ export class LatestBlogComponent implements OnInit {
   @ViewChild('latestDesc') latestDesc;
   @ViewChild('readmore') readmore;
   @ViewChild('BloggerImage') Bloggerimage;
+  @ViewChild('latest') latest;
   constructor(
     private Send: PropertyService,
     private renderer:Renderer2,
@@ -59,7 +60,7 @@ export class LatestBlogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+    console.log(this.latest)
     this.blog={
       blogId:this.blogId,
       blogImage:this.blogImage,
@@ -89,8 +90,8 @@ export class LatestBlogComponent implements OnInit {
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }
-    if(window.innerWidth<600){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','70%')
+    if(window.innerWidth<600 ){
+      this.renderer.setStyle(this.Desc.nativeElement,'height','75%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.6em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.3em')
     }
@@ -100,11 +101,6 @@ export class LatestBlogComponent implements OnInit {
   send(){
       console.log(this.blog)
       this.Send.detailsofBlog.next(this.blog)
-      this.post.viewCountOfBlog(this.blogId).subscribe(
-        data=>{
-          console.log(data)
-        }
-      )
       window.scrollTo(0,0)
   }
   openfullImage(){
@@ -130,8 +126,8 @@ export class LatestBlogComponent implements OnInit {
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }
-    if(window.innerWidth<600){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','70%')
+    if(window.innerWidth<600 ){
+      this.renderer.setStyle(this.Desc.nativeElement,'height','75%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }

@@ -52,6 +52,8 @@ export class BlogOpenComponent implements OnInit {
     blogDataRecieved:boolean=false;
     blogID;
     Keywords=[]
+    ViewCount:number;
+    ShareCount:number;
     loading:boolean=true;
     relatedBlogDetails:{
         blogId:string;
@@ -71,6 +73,7 @@ export class BlogOpenComponent implements OnInit {
     @ViewChild('Social') Social;
     @ViewChild('BlogInfo') BlogInfo;
     @ViewChild('popup') popup;
+    @ViewChild('fullImageHolder') fullImageHolder;
     constructor(
         private recieve:PropertyService ,
         private recieveHeight:PropertyService,
@@ -82,6 +85,7 @@ export class BlogOpenComponent implements OnInit {
         private sendKey:PropertyService,
         private router:Router,
         private post:PostService,
+        private send:PostService,
         private metaService: Meta,
         private load:PostService
     ) { 
@@ -100,7 +104,6 @@ export class BlogOpenComponent implements OnInit {
         
         this.scriptOfTwitter()
         this.loadBlog()
-        
        
         this.setTopMargin()
         this.setMobileView()
@@ -108,13 +111,19 @@ export class BlogOpenComponent implements OnInit {
 
     }
     
-
+    sendViewCount(){
+        this.send.viewCountOfBlog(this.blogID,this.ViewCount).subscribe(
+            data=>{
+              console.log(data, " view")
+            }
+        )
+    }
     setMetaTags(){
         this.metaService.addTags([
             {property:'og:title' , content:this.blog.heading},
             {property: "og:description" ,content:this.blog.Content},
             {property:'og:image' , content:this.blog.blogImage},
-            {property: 'og:url' ,content:'www.chaseyoursport.com/'+this.blog.blogId+'/'+this.blog.keywords[0]+'/'+this.blog.heading},
+            {property: 'og:url' ,content:'https://www.chaseyoursport.com/'+this.route.snapshot.url[0].path+'/'+this.route.snapshot.url[1].path+'/'+this.route.snapshot.url[2].path},
             { property:'og:type',content: 'website'}
         ])
     }
@@ -139,12 +148,17 @@ export class BlogOpenComponent implements OnInit {
                     exactDate:this.ExactDate(data.insertedDate),
                     readingTime:this.timeToRead(data.Content)
                 }
+               
+                this.ShareCount=+this.blog.ShareCount
+                this.ViewCount=+(this.blog.ViewCount)
+               
+                this.sendViewCount()
                 this.Keywords=this.blog.keywords;
                 this.blogDataRecieved=true;
                 window.scrollTo(0,0)
                 this.getRelatedBlogs()
                 this.setMetaTags();
-                console.log(this.blogDataRecieved,"  true")
+               // console.log(this.blogDataRecieved,"  true")
             }
         )
        
@@ -165,6 +179,7 @@ export class BlogOpenComponent implements OnInit {
     timePassed(i:string){
         let writtenDate=new Date(i);
         let presentDate=new Date();
+        console.log(writtenDate.getDate(),presentDate.getDate(), " Date")
         if(writtenDate.getFullYear()==presentDate.getFullYear()){
           if(writtenDate.getMonth()==presentDate.getMonth()){
             if(writtenDate.getDate()==presentDate.getDate()){
@@ -187,6 +202,7 @@ export class BlogOpenComponent implements OnInit {
     
     ExactDate(i:number){
       let writtenDate=new Date(i);
+      console.log(writtenDate," wDate")
       return writtenDate.toDateString()
     }
     
@@ -248,8 +264,8 @@ export class BlogOpenComponent implements OnInit {
     }
     
     @HostListener('window:resize',[]) onresize(){
-        this.setMobileView()
         this.scriptOfTwitter();
+        this.setMobileView()
         this.setTopMargin() 
     }
     
@@ -261,8 +277,12 @@ export class BlogOpenComponent implements OnInit {
     
     openfullImage(){
         this.openFullImage=true;
+        this.centerAlign()
+        
     }
-    
+    centerAlign(){
+      
+    }
     
     closeFullImage(){
         this.openFullImage=false;
@@ -292,13 +312,15 @@ export class BlogOpenComponent implements OnInit {
           .catch(console.error.bind(console));
     }
     
-    
-    shareOnFacebook(){
-        this.post.shareCountOfBlog(this.blog.blogId).subscribe(
+    sendShareCount(){
+        this.post.shareCountOfBlog(this.blog.blogId,this.ShareCount).subscribe(
             data=>{
                 console.log(data, "sharedOnFacebook")
             }
         )
+    }
+    shareOnFacebook(){
+        this.sendShareCount()
         const options: UIParams = {
             method: 'share',
             href: 'www.chaseyoursport.com/'+this.route.snapshot.url[0].path+'/'+this.route.snapshot.url[1].path+'/'+this.route.snapshot.url[2].path
@@ -315,11 +337,7 @@ export class BlogOpenComponent implements OnInit {
     
     
     shareOnTwitter(){
-        this.post.shareCountOfBlog(this.blog.blogId).subscribe(
-            data=>{
-                console.log(data, " shareOnTwitter")
-            }
-        )
+        this.sendShareCount()
         var width  = 575,
         height = 400,
         left   = (window.innerWidth  - width)  / 2,
@@ -363,7 +381,7 @@ export class BlogOpenComponent implements OnInit {
             }
         )
     }
-
+    
     getblogs(event){
         let key=event.toElement.innerText
         //console.log(event.toElement.innerText,"   clicked")
@@ -371,5 +389,6 @@ export class BlogOpenComponent implements OnInit {
         this.sendKey.ofBlogCard.next(key)
         
     }
+    
     
 }

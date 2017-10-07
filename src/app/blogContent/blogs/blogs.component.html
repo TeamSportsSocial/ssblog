@@ -61,7 +61,7 @@
 </div> 
         
 <div class="blog mobileView" *ngIf="mobileView" #blog>
-    <div class="col-4" *ngFor="let data of latestBlogDetails;let i=index" >
+    <div  *ngFor="let data of latestBlogDetails;let i=index" >
         <SportSocial-latest-blog
             [blogId]="data.blogId"
             [blogImage]="data.blogImage"

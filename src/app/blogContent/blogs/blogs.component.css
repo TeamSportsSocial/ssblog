@@ -31,6 +31,9 @@
     padding: 1%;
     
 }
+.mobileView>.latest{
+    height: auto !important
+}
 .mobileView .col-4{
     width: 100%;
 }

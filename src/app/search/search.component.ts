@@ -3,7 +3,8 @@ import {
   OnInit,
   ViewChild,
   Renderer2,
-  HostListener
+  HostListener,
+  NgZone 
 } from '@angular/core';
 import {PropertyService} from "../services/property.service";
 import {PostService} from "../services/post.service";
@@ -51,7 +52,8 @@ export class SearchComponent implements OnInit {
     private recieveData: PropertyService,
     private recievekey: PropertyService,
     private get: PostService,
-    private route:  ActivatedRoute
+    private route:  ActivatedRoute,
+    private zone: NgZone
   ) { }
 
   ngOnInit() {
@@ -63,13 +65,16 @@ export class SearchComponent implements OnInit {
     this.renderer.setStyle(this.searchPage.nativeElement,'margin-top',this.topMargin+"px")
    
     this.recievedKey=this.route.snapshot.url[0].path.replace(/-/g, " ")
+    console.log(this.recievedKey, "key")
     this.route.params.subscribe(
       (params)=>{
         console.log(params, " params")
-        this.recievedKey=params.tag
+        this.recievedKey=params.tag.replace(/-/g, " ")
+        
+        
       }
     )
-    console.log(this.route.snapshot.url[0].path, "key")
+    console.log(this.recievedKey, "keyParams")
     if(window.innerWidth<700){
      this.mobileView=true;
     }
@@ -125,6 +130,14 @@ export class SearchComponent implements OnInit {
     }
     
     }
+
+    reloadPage() { 
+      this.zone.runOutsideAngular(() => {
+          location.reload();
+      });
+    }
+
+
     timeToRead(s:string){
       let words = s.split(" ");
       let time=Math.round(words.length/180)

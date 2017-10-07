@@ -52,7 +52,7 @@
             Go to Website 
          </a>
         </p>
-      <div>
+      <div class="search">
          <input 
           ngui-auto-complete
           [source]="keywords"
@@ -63,7 +63,9 @@
           [max-num-list]="10"
           (keypress)="sendData($event)"
           #searchBox >
+          <button (click)="searchSportSocial()">Search</button>
       </div>
+      
     </div>
   </div> 
 </header>

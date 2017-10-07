@@ -30,12 +30,12 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
     if(this.elRef.nativeElement.parentNode.parentNode.className=='trendingBlogs'){
       this.height=(.9193700617283*(this.width))+this.width
     }
-    if(this.elRef.nativeElement.className=='latest'  && this.elRef.nativeElement.parentNode.parentNode.className!='col-4'){
+    if(this.elRef.nativeElement.className=='latest'  && this.elRef.nativeElement.parentNode.parentNode.className=='col-12 latestBlog'){
       this.height=-(.631555929660*(this.width))+this.width
+      console.log("hello", this.elRef)
     }
     /* if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
-      this.height=-(.063889538965*(this.width))+this.width
-      console.log("true   ee")
+      this.renderer.setStyle(this.elRef.nativeElement,'max-height','500px')
      } */
     if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth<950){
       this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
@@ -65,11 +65,11 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
     if(this.elRef.nativeElement.parentNode.parentNode.className=='trendingBlogs'){
       this.height=(.9193700617283*(this.width))+this.width
     }
-    if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className!='col-4'){
+    if(this.elRef.nativeElement.className=='latest'  && this.elRef.nativeElement.parentNode.parentNode.className=='col-12 latestBlog'){
       this.height=-(.631555929660*(this.width))+this.width
     }
     /* if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
-      this.height=-(.448751486325*(this.width))+this.width
+      this.renderer.setStyle(this.elRef.nativeElement,'max-height','500px')
     } */
     if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth<950){
       this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
@@ -99,12 +99,11 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
     if(this.elRef.nativeElement.parentNode.parentNode.className=='trendingBlogs'){
       this.height=(.9193700617283*(this.width))+this.width
     }
-    if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className!='col-4'){
+    if(this.elRef.nativeElement.className=='latest'   && this.elRef.nativeElement.parentNode.parentNode.className=='col-12 latestBlog'){
       this.height=-(.631555929660*(this.width))+this.width
     }
     /* if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
-      // this.renderer.setStyle(this.elRef.nativeElement,'height','auto')
-      this.height=-(.448751486325*(this.width))+this.width
+      this.renderer.setStyle(this.elRef.nativeElement,'max-height','500px')
      } */
     if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth<950){
       this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
@@ -133,12 +132,11 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
     if(this.elRef.nativeElement.parentNode.parentNode.className=='trendingBlogs'){
       this.height=(.9552700617283*(this.width))+this.width
     }
-    if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className!='col-4'){
+    if(this.elRef.nativeElement.className=='latest'  && this.elRef.nativeElement.parentNode.parentNode.className=='col-12 latestBlog'){
       this.height=-(.631555929660*(this.width))+this.width
     }
-   /*  if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
-      // this.renderer.setStyle(this.elRef.nativeElement,'height','auto')
-      this.height=-(.448751486325*(this.width))+this.width
+    /* if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
+      this.renderer.setStyle(this.elRef.nativeElement,'max-height','500px')
      } */
     if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth<950){
       this.renderer.setStyle(this.elRef.nativeElement,'width','100%')

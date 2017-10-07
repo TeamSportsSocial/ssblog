@@ -29,12 +29,13 @@ export class PostService {
   }
   viewCount:{
     blogid:string;
-    viewcount:string
+    viewcount:number
   }
   shareCount:{
     blogid:string;
-    sharecount:string
+    sharecount:number
   }
+  
  constructor(private http:Http) { }
  
   blogData(i:number,s:string){
@@ -81,19 +82,23 @@ export class PostService {
     return this.http.post('https://admin.chaseyoursport.com/blog/loadBlogComment',this.BlogId)
     .map(res=>res.json())
   }
-  viewCountOfBlog(id:string){
+  viewCountOfBlog(id:string,count:number){
+    count++;
     this.viewCount={
       blogid:id,
-      viewcount:"1"
+      viewcount:count
     }
+    console.log(this.viewCount,"count")
     return this.http.post("https://admin.chaseyoursport.com/blog/updateViewCount",this.viewCount)
     .map(res=>res.json())
   }
-  shareCountOfBlog(id:string){
+  shareCountOfBlog(id:string,count:number){
+    count++;
     this.shareCount={
       blogid:id,
-      sharecount:"1"
+      sharecount:count
     }
+    console.log(this.shareCount,"count")
     return this.http.post("https://admin.chaseyoursport.com/blog/updateShareCount",this.shareCount)
     .map(res=>res.json())
   }

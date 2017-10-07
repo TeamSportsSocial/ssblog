@@ -107,7 +107,7 @@ input{
 .dropDown{
   width: 80%;
   background-color: #ffffff;
-  padding: 1% 1% 1% 1%;
+  padding: 1% 1% 0% 1%;
   position: fixed;
   z-index: 50;
   top:10%;
@@ -125,11 +125,26 @@ input{
     text-align: center;
     margin: 1%;
 }
-.dropDown input{
+
+.search input{
+    display: inline-block;
     border-radius: 0px;
     border: none;
-    
+    background-image: none;
+    width: 100%;
+   
 }
+.search button{
+    display: block;
+    width: 70%;
+    margin: 2% auto;
+    border-radius: 4px;
+    background-color: #ffa600;
+    color: #ffffff;
+    border: none;
+    padding: 1%
+}
+
 ::-webkit-input-placeholder {
     text-align: center;
  }

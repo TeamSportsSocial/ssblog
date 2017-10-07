@@ -1,8 +1,9 @@
 *{
     margin: 0px;
     padding: 0px;
-    font-family:'Roboto',sans-serif
+    font-family:'Roboto',sans-serif;
 }
+
 .Catagory{
     width: 90%;
     margin: auto;
@@ -15,25 +16,34 @@
     font-weight: 700
 }
 .blogImageHolder{
+    position: relative;
     width:90%;
     margin: 1% auto;
     max-height:400px;
     box-shadow: 3px 3px #fafafa;
     overflow: hidden;
 }
-.blogImageHolder >img{
+
+.blogImage{
+   
     width:100%;
+}
+.zoom{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    widows: 20px;
+    height: 20px;
 }
 .count img{
     width:15px;
     height: 15px;
 }
 .title{
-    width: 90%;
-    margin: 1% auto;
-    font-size: 1.5em;
+    font-size: 2.2em;
     font-weight: 900;
     color: black;
+    margin-bottom: 1%
 }
 .facebook{
     width:20px;
@@ -48,18 +58,19 @@
 .content{
     width: 90%;
     margin: 1% auto;
+    padding-top:2% 
 }
 .blogInfo{
-    padding: 1% 1% 1% 0%;
     width:65%;
     display: inline-block;
-    margin-right: 3%;
+    margin-right: 3.5%;
+    margin-top: -0.6%;
 }
-.blogInfo >div{
+
+.bloggerImage{
+    
     display: inline-block;
     vertical-align: middle;
-}
-.bloggerImage{
     width:45px;
     height: 45px;
     border: 1px solid #bbbbbb;
@@ -68,31 +79,45 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .bloggerImage>img{
     width:100%;
     height: 100%;
     border-radius: 50%;
 }
-.bloggerName, .writtenDate,.count>span{
-    font-size: 0.9em;
-    font-weight: 400;
-   
+
+.blogger{
+    display: inline-block;
+    vertical-align: middle;
+    width:52%;
+    font-family: 'Roboto',Cambria, Cochin, Georgia, Times, Times New Roman, serif
 }
-.bloggerName >span{
-    font-weight: 700
+.bloggerName>span{
+    font-weight:700
 }
 .writtenDate{
-    padding: 0% 2% 0% 2%;
+    font-style: italic;
+    font-size: 0.9em;
+    font-weight: 700
 }
 .count{
-    padding: 1% 0% 0.3% 0%;
-    width: 32%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+    width:38%;
+    padding: 1% 2% 1% 2%;
+}
+.count>span{
+    margin-left: 5%
+}
+.count>span>span{
+    color: #ffa600;
+    font-size: 1.1em
+}
+.count>span>img{
+    margin-right: 3%
 }
 
-.count>span>span{
-    padding-left: 5%;
-    color: #ffa600;
-}
 .shareOn{
     font-family: 'Roboto',sans-serif;
     font-size: 1em;
@@ -153,6 +178,9 @@
 .social> .twitter{
     border: 1px solid #bbbbbb;
     margin-top:2%;
+}
+.twitter{
+    min-height: 700px
 }
 .twitter p{
     padding: 1% 1% 1% 4%;
@@ -218,13 +246,12 @@
     position: fixed;
     width: 70%;
     left: 15%;
-    top:0%;
     z-index: 100;
 }
 .fullImageHolder>img{
     display: block;
+    padding: 15%;
     text-align: center;
-    padding: 10%;
     max-width: 100%;
     max-height: 100%;
 }
@@ -242,9 +269,31 @@
         left: 10%;
     }
 }
-@media (max-width:600px){
+@media (max-width:600px) and (min-width:500px){
     .fullImageHolder{
         width: 90%;
         left: 5%;
+    }
+    .blogger{
+        width:50%;
+    }
+    .title{
+        font-size: 2em
+    }
+}
+@media (max-width:500px) and (min-width:360px) {
+    .blogger{
+        width:45%;
+    }
+    .title{
+        font-size: 1.8em
+    }
+}
+@media (max-width:360px) {
+    .blogger{
+        width:42%;
+    }
+    .title{
+        font-size: 1.6em
     }
 }
