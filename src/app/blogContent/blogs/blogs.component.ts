@@ -298,7 +298,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
   timePassed(i:string){
       let writtenDate=new Date(i);
       let presentDate=new Date();
-      //console.log(writtenDate.getDate(),presentDate.getDate())
+     // console.log(writtenDate.getDate(),presentDate.getDate() ," date")
       if(writtenDate.getFullYear()==presentDate.getFullYear()){
         if(writtenDate.getMonth()==presentDate.getMonth()){
           if(writtenDate.getDate()==presentDate.getDate()){
@@ -319,6 +319,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
   }
   ExactDate(i:number){
     let writtenDate=new Date(i);
+    console.log(i, writtenDate,writtenDate.toDateString())
     return writtenDate.toDateString()
   }
   timeToRead(s:string){

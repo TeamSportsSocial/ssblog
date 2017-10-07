@@ -4,7 +4,8 @@ import {
   Input,
   HostListener,
   ViewChild,
-  Renderer2
+  Renderer2,
+  NgZone
 } from '@angular/core';
 import {PropertyService} from "../../services/property.service";
 import {PostService} from "../../services/post.service";
@@ -52,7 +53,8 @@ export class NormalBlogComponent implements OnInit {
   constructor(
     private Send: PropertyService,
     private renderer:Renderer2,
-    private post :PostService
+    private post :PostService,
+    private zone:NgZone
   ) { }
 
   ngOnInit() {  
@@ -98,17 +100,16 @@ export class NormalBlogComponent implements OnInit {
 
   }
   
-  openfullImage(){
-    this.openFullImage=true;
-  }
-  
-  closeFullImage(){
-    this.openFullImage=false;
+  reloadPage() { 
+    this.zone.runOutsideAngular(() => {
+        location.reload();
+    });
   }
   
   
   send(){
-    console.log(this.blog)
+   // console.log(this.blog)
+    this.reloadPage()
     this.Send.detailsofBlog.next(this.blog)
     window.scrollTo(0,0)
   }

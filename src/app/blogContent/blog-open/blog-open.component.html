@@ -23,7 +23,7 @@
           {{blog.exactDate}}
         </p>
       </div>
-      <div class="count">
+      <div class="count" *ngIf="blogDataRecieved">
         <span>
           <img src="/assets/images/sports-social-view-orange.png">
           <span>{{blog.ViewCount}}</span>
@@ -37,13 +37,13 @@
       <div class="shareOn" *ngIf="blogDataRecieved">
         Share on 
         <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()" class="facebook">
-        <a href="http://twitter.com/share" (click)="shareOnTwitter()" #popup class="twitter">
+        <a href="https://twitter.com/share" (click)="shareOnTwitter()" #popup class="twitter">
           <img src="/assets/images/sports-social-twitter-logo-black.png"  class="twitterButton">
         </a> 
       </div>
-      <p [innerHtml]="blog.Content" class="desc">
+      <p [innerHtml]="blog.Content" class="desc" *ngIf="blogDataRecieved">
       </p>
-      <div class="tags" >
+      <div class="tags" *ngIf="blogDataRecieved" >
         <div class="tagHolder">
           <img src="/assets/images/sports-social-tag.png" >
         </div>

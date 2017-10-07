@@ -13,10 +13,12 @@ footer{
     width: 70%;
     margin: 0.4% auto;
     background-color: #e5e5e5;
-    padding: 0.4%
+    padding: 0.4%;
 }
 .subscribe>p{
+    width:100px;
     display: inline-block;
+    vertical-align: middle;
     color: #ffa600;
     font-family: 'Roboto',sans-serif;
     border-right: 1px solid #ffa600;
@@ -27,38 +29,47 @@ footer{
     padding-left:1%;
     
 }
-
 .subscribe>input{
-    width: 70%;
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 238px);
     height: 35px;
     margin-left: 2%;
-    margin-right: 2%;
     text-align: center;
+}
+button{
+    display: inline-block;
+    vertical-align: middle;
+    width:100px;
+    border:none;
+    background-color: #ffa600;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.1em;
+    color: white;
+    height: 33px;
+    padding: 0.5% 0% 0.5% 0%;
+    margin:0% 0% 0% 1%
 }
 ::-webkit-input-placeholder {
     text-align: center;
- }
+    font-size: 0.9em;
+}
  
- :-moz-placeholder { 
+:-moz-placeholder { 
     text-align: center;  
- }
+    font-size: 0.9em;
+}
  
  ::-moz-placeholder {  
-    text-align: center;  
+    text-align: center; 
+    font-size: 0.9em; 
  }
  
  :-ms-input-placeholder {  
     text-align: center; 
+    font-size: 0.9em;
  }
- button{
-     border:none;
-     background-color: #ffa600;
-     font-family: 'Roboto',sans-serif;
-     font-size: 1.1em;
-     color: white;
-     padding: 0.5% 3% 0.5% 3%;
-     margin-right: 1%;
- }
+ 
  .blogName{
      text-align: center;
      font-family: 'Roboto',sans-serif;
@@ -107,13 +118,13 @@ footer{
  .followUs{
      text-align: right;
      float: right;
-    display: inline-block;
-    vertical-align: middle;
-    width: 60%;
-    color: #ffffff;
-    font-family: 'Roboto',sans-serif;
-    font-size: 1.1em;
-    font-weight: 500;
+     display: inline-block;
+     vertical-align: middle;
+     width: 60%;
+     color: #ffffff;
+     font-family: 'Roboto',sans-serif;
+     font-size: 1.1em;
+     font-weight: 500;
  }
  .followUs img{
     width: 3%;
@@ -187,6 +198,13 @@ footer{
          width: 60%;
          left: 20%;
      }
+     button{
+         height: 30px
+     }
+     .subscribe>input{
+        height: 32px;
+        width: calc(100% - 230px);
+    }
  }
  @media  (max-width:800px) and (min-width:650px) {
     .followUs img{
@@ -207,8 +225,15 @@ footer{
     .tagline{
         font-size: 0.95em
     }
+    .subscribe{
+        width: 85%;
+    }
+    button{
+        height: 30px;
+    }
     .subscribe>input{
         height: 32px;
+        width: calc(100% - 230px);
     }
     .subscriptionBox{
         width: 70%;
@@ -234,8 +259,15 @@ footer{
     .tagline{
         font-size: 0.9em
     }
+    .subscribe{
+        width: 90%;
+    }
     .subscribe>input{
         height: 30px;
+        width: calc(100% - 230px);
+    }
+    button{
+        height: 28px;
     }
     .subscriptionBox{
         width: 74%;
@@ -244,7 +276,7 @@ footer{
     
  }
 
- @media  (max-width:520px) {
+ @media  (max-width:520px) and (min-width:450px) {
     .followUs img{
         width: 6%;
         height: 6%;
@@ -263,8 +295,57 @@ footer{
      .tagline{
          font-size: 0.85em
      }
+     .subscribe{
+        width: 100%;
+    }
+    .subscribe>p{
+        width: 85px
+    }
+    button{
+        height: 25px;
+        width: 75px
+    }
      .subscribe>input{
          height: 25px;
+         width: calc(100% - 190px);
+     }
+     .subscriptionBox{
+        width: 90%;
+        left: 5%;
+    }
+ }
+ @media (max-width:450px) {
+    .followUs img{
+        width: 6%;
+        height: 6%;
+        margin-left: 1%;
+     }
+     .about{
+         width: 100%;
+         font-size: 0.9em
+     }
+     .contactUs{
+         font-size: 0.9em;
+     }
+     .blogName{
+         font-size: 1.3em
+     }
+     .tagline{
+         font-size: 0.85em
+     }
+    .subscribe{
+        width: 100%;
+    }
+    .subscribe>p{
+        width: 85px
+    }
+    button{
+        height: 25px;
+        width: 75px
+    }
+     .subscribe>input{
+         height: 25px;
+         width: calc(100% - 182px);
      }
      .subscriptionBox{
         width: 90%;

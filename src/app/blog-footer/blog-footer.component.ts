@@ -27,7 +27,7 @@ export class BlogFooterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(window.innerWidth>1150){
+   /*  if(window.innerWidth>1150){
       this.renderer.setStyle(this.subscribeCard.nativeElement,'width','70%')
       this.renderer.setStyle(this.subscriber.nativeElement,'width','70%')
     }
@@ -85,7 +85,7 @@ export class BlogFooterComponent implements OnInit {
     if(window.innerWidth<400){
       this.renderer.setStyle(this.subscribeCard.nativeElement,'width','95%')
       this.renderer.setStyle(this.subscriber.nativeElement,'width','42%')
-     }
+     } */
   }
   Subscribe(){
     if(this.subscriber.nativeElement.validity.valid==true && this.subscriber.nativeElement.value){
@@ -112,7 +112,7 @@ export class BlogFooterComponent implements OnInit {
     console.log(this.showSubscriptionBox)
    }
   @HostListener('window:resize',[]) onresize(){
-    if(window.innerWidth>1150){
+    /* if(window.innerWidth>1150){
       this.renderer.setStyle(this.subscribeCard.nativeElement,'width','72%')
       this.renderer.setStyle(this.subscriber.nativeElement,'width','70%')
     }
@@ -170,6 +170,6 @@ export class BlogFooterComponent implements OnInit {
     if(window.innerWidth<400){
       this.renderer.setStyle(this.subscribeCard.nativeElement,'width','95%')
       this.renderer.setStyle(this.subscriber.nativeElement,'width','42%')
-     }
+     } */
   }
 }

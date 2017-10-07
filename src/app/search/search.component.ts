@@ -131,11 +131,11 @@ export class SearchComponent implements OnInit {
     
     }
 
-    reloadPage() { 
+   /*  reloadPage() { 
       this.zone.runOutsideAngular(() => {
           location.reload();
       });
-    }
+    } */
 
 
     timeToRead(s:string){

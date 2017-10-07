@@ -39,6 +39,7 @@ import { FacebookModule } from 'ngx-facebook';
 import { NguiAutoCompleteModule } from '@ngui/auto-complete';
 import { MessageComponent } from './message/message.component';
 import { CustomUrlComponent } from './custom-url/custom-url.component';
+import { OpenFullImageComponent } from './open-full-image/open-full-image.component';
 
 
 
@@ -64,7 +65,8 @@ import { CustomUrlComponent } from './custom-url/custom-url.component';
     SearchComponent,
     CommentsComponent,
     MessageComponent,
-    CustomUrlComponent
+    CustomUrlComponent,
+    OpenFullImageComponent
   ],
   imports: [
     BrowserModule,

@@ -99,7 +99,7 @@ export class LatestBlogComponent implements OnInit {
      
   }
   send(){
-      console.log(this.blog)
+      console.log(this.blog, "lates")
       this.Send.detailsofBlog.next(this.blog)
       window.scrollTo(0,0)
   }
