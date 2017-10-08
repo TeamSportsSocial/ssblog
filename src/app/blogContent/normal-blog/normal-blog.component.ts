@@ -48,8 +48,9 @@ export class NormalBlogComponent implements OnInit {
   @ViewChild('holder') holder;
   @ViewChild('fullImage') fullImage;
 
-  loading:boolean=true;
+  isloading:boolean=true;
   openFullImage:boolean=false;
+  dataRecieved:boolean=false
   constructor(
     private Send: PropertyService,
     private renderer:Renderer2,
@@ -96,10 +97,18 @@ export class NormalBlogComponent implements OnInit {
    if(window.innerWidth>300 && window.innerWidth<400){
     this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.1em')
    }
-   
+   if(this.blogImage){
+    this.dataRecieved=true
+   }
 
   }
   
+  ngAfterViewInit(){
+   
+    if(this.blogImage){
+      this.dataRecieved=true
+    }
+  }
   reloadPage() { 
     this.zone.runOutsideAngular(() => {
         location.reload();
@@ -119,8 +128,8 @@ export class NormalBlogComponent implements OnInit {
   }
   
   
-  setInitialImage(){
-    this.renderer.removeStyle(this.holder.nativeElement,'background-image')
+  removeInitialImage(){
+    this.isloading=false;
   }
   
   

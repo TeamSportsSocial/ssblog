@@ -49,12 +49,13 @@ export class LatestBlogComponent implements OnInit {
   }
   
   isloading:boolean=true;
+  dataRecieved:boolean=false;
   @ViewChild('Desc') Desc;
   @ViewChild('latestTitle') latestTitle;
   @ViewChild('latestDesc') latestDesc;
-  @ViewChild('readmore') readmore;
-  @ViewChild('BloggerImage') Bloggerimage;
+  @ViewChild('blogImage') blogimage;
   @ViewChild('latest') latest;
+  @ViewChild('initialImage') initialImage;
   constructor(
     private Send: PropertyService,
     private renderer:Renderer2,
@@ -98,10 +99,19 @@ export class LatestBlogComponent implements OnInit {
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.6em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.3em')
     }
-    
+    if(this.blogImage){
+      this.dataRecieved=true
+      console.log("blogImage")
+    }
      
   }
-  
+  ngAfterViewInit(){
+    this.heightOfInitialImage();
+    if(this.blogImage){
+      this.dataRecieved=true
+      console.log("blogImage")
+    }
+  }
   removeInitialImage(){
     this.isloading=false
   }
@@ -115,7 +125,6 @@ export class LatestBlogComponent implements OnInit {
     });
   }
   send(){
-     // this.reloadPage()
       this.Send.detailsofBlog.next(this.blog)
       window.scrollTo(0,0)
   }
@@ -125,8 +134,15 @@ export class LatestBlogComponent implements OnInit {
   closeFullImage(){
     this.openFullImage=false;
   }
-
+  heightOfInitialImage(){
+    if(window.innerWidth<=600){
+    let width=this.initialImage.nativeElement.getBoundingClientRect().width
+    let height=.75*width
+    this.renderer.setStyle(this.initialImage.nativeElement,'height',height+ 'px')
+    }
+  }
   @HostListener('window:resize',[])onresize(){
+    this.heightOfInitialImage();
     if(window.innerWidth>=1000){
       this.renderer.setStyle(this.Desc.nativeElement,'height','70%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','2.2em')

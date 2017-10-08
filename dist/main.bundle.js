@@ -1286,7 +1286,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    font-size: 100%;\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n.latest{\r\n    display: inline-block;\r\n    width: 100%;\r\n    max-height: 500px;\r\n    box-shadow: 3px 3px #fafafa;\r\n    position: relative;\r\n    background-color: #000000;\r\n    overflow: hidden;\r\n    border-radius: 5px;\r\n}\r\n.blogImg{\r\n    opacity: 0.5\r\n}\r\nimg{\r\n    width: 100%;\r\n}\r\n.desc{\r\n    width: 100%;\r\n    height:70%;\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left:0px;\r\n}\r\n.desc>div{\r\n    width: 71%;\r\n    height: auto;\r\n    margin:5px auto;\r\n}\r\n.desc>div>div{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n.desc span{\r\n    color: white;\r\n    font-size: 0.9em;\r\n    padding: 0.8%;\r\n    font-weight: 400;\r\n}\r\n.count{\r\n    position: absolute;\r\n    top:5%;\r\n    right: 2%;\r\n    width:100%;\r\n    text-align: right\r\n}\r\n.count>img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-left: 1%\r\n}\r\n.count>span{\r\n    display: inline-block;\r\n    color: white;\r\n    font-size: 0.9em\r\n}\r\n.desc>p {\r\n    width: 70%;\r\n    height: auto;\r\n    margin:5px auto;\r\n}\r\n.heading{\r\n    margin: auto;\r\n    max-width:70%;\r\n    color: #ffffff;\r\n    font-size: 2.2em;\r\n    text-align: left;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    font-weight: 700\r\n   \r\n}\r\n.bloggerImage{\r\n    display: inline-block;\r\n    padding: 0px;\r\n    width: 20px !important;\r\n    height: 20px !important;\r\n    margin-right: 5px;\r\n}\r\n.bloggerImage >img{\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n    margin: 0px;\r\n}\r\n.bloggerName{\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: middle;\r\n    color: white;\r\n    font-size: 0.9em;\r\n    font-weight: 700;\r\n}\r\n.Blogger{\r\n    padding: 1% 0% 1%  0%;\r\n}\r\n.smallDesc{\r\n    color: white;\r\n    font-size: 1.2em;\r\n    text-align: left;\r\n    font-weight: 500;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    padding: 1% 0% 1%  0%;\r\n}\r\n.readMore >a{\r\n    color: white;\r\n    font-size: 1.2em;\r\n    text-align: left;\r\n    font-weight: 500;\r\n}\r\n\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 40%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:13%;\r\n    left:30%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n}\r\n.fullImageHolder{\r\n    width: 100%;\r\n    position: relative;\r\n}\r\n.fullImageHolder>img{\r\n    max-width: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600){\r\n    .fullImage{\r\n        width: 70%;\r\n        left: 15%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImage{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
+exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    font-size: 100%;\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n.latest{\r\n    display: inline-block;\r\n    width: 100%;\r\n    box-shadow: 3px 3px #fafafa;\r\n    position: relative;\r\n    background-color: #000000;\r\n    overflow: hidden;\r\n    border-radius: 5px;\r\n}\r\n\r\n.blogImg{\r\n    opacity: 0.5\r\n}\r\nimg{\r\n    width: 100%;\r\n}\r\n.desc{\r\n    width: 100%;\r\n    height:70%;\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left:0px;\r\n}\r\n.desc>div{\r\n    width: 71%;\r\n    height: auto;\r\n    margin:5px auto;\r\n}\r\n.desc>div>div{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n.desc span{\r\n    color: white;\r\n    font-size: 0.9em;\r\n    padding: 0.8%;\r\n    font-weight: 400;\r\n}\r\n.count{\r\n    position: absolute;\r\n    top:5%;\r\n    right: 2%;\r\n    width:100%;\r\n    text-align: right\r\n}\r\n.count>img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-left: 1%\r\n}\r\n.count>span{\r\n    display: inline-block;\r\n    color: white;\r\n    font-size: 0.9em\r\n}\r\n.desc>p {\r\n    width: 70%;\r\n    height: auto;\r\n    margin:5px auto;\r\n}\r\n.heading{\r\n    margin: auto;\r\n    max-width:70%;\r\n    color: #ffffff;\r\n    font-size: 2.2em;\r\n    text-align: left;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    font-weight: 700\r\n   \r\n}\r\n.bloggerImage{\r\n    display: inline-block;\r\n    padding: 0px;\r\n    width: 20px !important;\r\n    height: 20px !important;\r\n    margin-right: 5px;\r\n}\r\n.bloggerImage >img{\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n    margin: 0px;\r\n}\r\n.bloggerName{\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: middle;\r\n    color: white;\r\n    font-size: 0.9em;\r\n    font-weight: 700;\r\n}\r\n.Blogger{\r\n    padding: 1% 0% 1%  0%;\r\n}\r\n.smallDesc{\r\n    color: white;\r\n    font-size: 1.2em;\r\n    text-align: left;\r\n    font-weight: 500;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    padding: 1% 0% 1%  0%;\r\n}\r\n.readMore >a{\r\n    color: white;\r\n    font-size: 1.2em;\r\n    text-align: left;\r\n    font-weight: 500;\r\n}\r\n\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 40%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:13%;\r\n    left:30%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n}\r\n.fullImageHolder{\r\n    width: 100%;\r\n    position: relative;\r\n}\r\n.fullImageHolder>img{\r\n    max-width: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600){\r\n    .fullImage{\r\n        width: 70%;\r\n        left: 15%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImage{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -1299,7 +1299,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/latest-blog/latest-blog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"latest\" MaintainHeightWidthRatio #latest>\n  <a routerLink=\"/{{keywords[0]}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\n    <img src=\"{{blogImage}}\" class=\"blogImg\" (error)=\"setDefault()\" (load)=\"removeInitialImage()\" alt=\"blogImage\">\n    <img src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\n    <div class=\"count\">\n      <img src=\"/assets/images/sports-social-view-white.png\" alt=\"sports-social-view-white\">\n      <span>{{ViewCount}}</span> \n      <img src=\"/assets/images/sports-social-share-white.png\" alt=\"sports-social-share-white\">\n      <span>{{ShareCount}}</span>\n    </div> \n    <div class=\"desc\" #Desc>\n      <div>\n        <span>{{insertedDate}}</span>\n        <span>|</span>\n        <span>{{readingTime}}</span>\n        <span>{{keywords[0]}}</span>\n      </div>\n      <p class=\"heading\" [innerHtml]=\"heading\" #latestTitle> </p>\n      <p [innerHtml]=\"Content\" class=\"smallDesc\" #latestDesc></p>\n      <div class=\"Blogger\">\n        <div class=\"bloggerImage\" #BloggerImage>\n            <img src=\"/assets/images/sports-social-blogger-white.png\" alt=\"sports-social-blogger-white\" >\n        </div>  \n        <p class=\"bloggerName\">{{bloggerName}}</p>\n      </div>\n      \n    </div>\n  </a>\n</div>\n"
+module.exports = "\n<div class=\"latest\" MaintainHeightWidthRatio #latest>\n  <a routerLink=\"/{{keywords[0]}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\n    <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\n    <img src=\"{{blogImage}}\" class=\"blogImg\" (error)=\"setDefault()\" (load)=\"removeInitialImage()\" *ngIf=\"dataRecieved\">\n    \n    <div class=\"count\">\n      <img src=\"/assets/images/sports-social-view-white.png\" alt=\"sports-social-view-white\">\n      <span>{{ViewCount}}</span> \n      <img src=\"/assets/images/sports-social-share-white.png\" alt=\"sports-social-share-white\">\n      <span>{{ShareCount}}</span>\n    </div> \n    <div class=\"desc\" #Desc>\n      <div>\n        <span>{{insertedDate}}</span>\n        <span>|</span>\n        <span>{{readingTime}}</span>\n        <span>{{keywords[0]}}</span>\n      </div>\n      <p class=\"heading\" [innerHtml]=\"heading\" #latestTitle> </p>\n      <p [innerHtml]=\"Content\" class=\"smallDesc\" #latestDesc></p>\n      <div class=\"Blogger\">\n        <div class=\"bloggerImage\" #BloggerImage>\n            <img src=\"/assets/images/sports-social-blogger-white.png\" alt=\"sports-social-blogger-white\" >\n        </div>  \n        <p class=\"bloggerName\">{{bloggerName}}</p>\n      </div>\n      \n    </div>\n  </a>\n</div>\n"
 
 /***/ }),
 
@@ -1331,6 +1331,7 @@ var LatestBlogComponent = /** @class */ (function () {
         this.zone = zone;
         this.openFullImage = false;
         this.isloading = true;
+        this.dataRecieved = false;
     }
     LatestBlogComponent.prototype.ngOnInit = function () {
         //console.log(this.latest)
@@ -1368,6 +1369,17 @@ var LatestBlogComponent = /** @class */ (function () {
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.6em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.3em');
         }
+        if (this.blogImage) {
+            this.dataRecieved = true;
+            console.log("blogImage");
+        }
+    };
+    LatestBlogComponent.prototype.ngAfterViewInit = function () {
+        this.heightOfInitialImage();
+        if (this.blogImage) {
+            this.dataRecieved = true;
+            console.log("blogImage");
+        }
     };
     LatestBlogComponent.prototype.removeInitialImage = function () {
         this.isloading = false;
@@ -1381,7 +1393,6 @@ var LatestBlogComponent = /** @class */ (function () {
         });
     };
     LatestBlogComponent.prototype.send = function () {
-        // this.reloadPage()
         this.Send.detailsofBlog.next(this.blog);
         window.scrollTo(0, 0);
     };
@@ -1391,7 +1402,15 @@ var LatestBlogComponent = /** @class */ (function () {
     LatestBlogComponent.prototype.closeFullImage = function () {
         this.openFullImage = false;
     };
+    LatestBlogComponent.prototype.heightOfInitialImage = function () {
+        if (window.innerWidth <= 600) {
+            var width = this.initialImage.nativeElement.getBoundingClientRect().width;
+            var height = .75 * width;
+            this.renderer.setStyle(this.initialImage.nativeElement, 'height', height + 'px');
+        }
+    };
     LatestBlogComponent.prototype.onresize = function () {
+        this.heightOfInitialImage();
         if (window.innerWidth >= 1000) {
             this.renderer.setStyle(this.Desc.nativeElement, 'height', '70%');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '2.2em');
@@ -1474,17 +1493,17 @@ var LatestBlogComponent = /** @class */ (function () {
         __metadata("design:type", Object)
     ], LatestBlogComponent.prototype, "latestDesc", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('readmore'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('blogImage'),
         __metadata("design:type", Object)
-    ], LatestBlogComponent.prototype, "readmore", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('BloggerImage'),
-        __metadata("design:type", Object)
-    ], LatestBlogComponent.prototype, "Bloggerimage", void 0);
+    ], LatestBlogComponent.prototype, "blogimage", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('latest'),
         __metadata("design:type", Object)
     ], LatestBlogComponent.prototype, "latest", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('initialImage'),
+        __metadata("design:type", Object)
+    ], LatestBlogComponent.prototype, "initialImage", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
         __metadata("design:type", Function),
@@ -1515,7 +1534,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n}\r\n.blog{\r\n    width: 100%;\r\n    height: 400px;\r\n    border-radius: 5px;\r\n    margin: 0px;\r\n    font-family: 'Roboto', sans-serif;\r\n    font-size: 100%;\r\n    border: 1px solid #bbbbbb;\r\n    position: relative;\r\n    \r\n}\r\n\r\n.blogImageHolder{\r\n    width: 100%;\r\n    max-height:72%;\r\n    min-height: 60%;\r\n    overflow: hidden;\r\n    border-radius: 5px;   \r\n    border-bottom: 1px solid #bbbbbb;\r\n    border-bottom-left-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n    background-image: url('/assets/images/default-image.png');\r\n    background-repeat: no-repeat\r\n}\r\n.blogImageHolder img{\r\n    width: 100%;\r\n    border-radius: 5px;   \r\n    border-bottom-left-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n}\r\n.blogFooter{\r\n   \r\n    min-height: 28%;\r\n    border-radius: 5px;\r\n    border-top-left-radius: 0px;\r\n    border-top-right-radius: 0px;\r\n}\r\n.blogFooter p{\r\n    width: 95%;\r\n    margin:0.8% auto;\r\n}\r\n.blogFooter>p:first-child{\r\n    font-size: 0.8em;\r\n    font-weight: 400;\r\n    color: black;\r\n    text-align: left;\r\n    width: 95%;\r\n}\r\nspan >img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-right: 2%;\r\n}\r\n.blogFooter>p:first-child>span{\r\n    padding-right: 4px;\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: top;\r\n}\r\n.blogFooter>p:first-child>span:last-child{\r\n    width: 20%;\r\n    float: right;\r\n    text-align: right;\r\n    padding-right: 5px;\r\n    color: #ffa600;\r\n    font-weight: 500\r\n}\r\n.blogFooter>p:nth-of-type(2){\r\n    text-align: left;\r\n    margin: 1% auto;\r\n    overflow: hidden;\r\n    font-weight: 700;\r\n    font-size:1.2em;\r\n    text-overflow: ellipsis;\r\n    color: black;\r\n    white-space: nowrap;\r\n}\r\n.blogFooter>p:last-child{\r\n    position:absolute ;\r\n    bottom:2%;\r\n    left: 2.5%;\r\n    color: #444444;\r\n    font-weight: 500;\r\n    font-size:0.8em;\r\n}\r\np>img{\r\n  width: 12px;\r\n  height: 12px;\r\n  margin-right: 2%;\r\n}\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 100%;\r\n    height: 100%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:0%;\r\n    left:0%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n    background-color: black;\r\n    opacity: 0.8;\r\n}\r\n.fullImageHolder{\r\n    position: fixed;\r\n    width: 70%;\r\n    left: 15%;\r\n    top:0%;\r\n    z-index: 100;\r\n}\r\n.fullImageHolder>img{\r\n    display: block;\r\n    text-align: center;\r\n    padding: 5%;\r\n    max-width: 100%;\r\n    max-height: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600px){\r\n    .fullImageHolder{\r\n        width: 80%;\r\n        left: 10%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImageHolder{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
+exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n}\r\n.blog{\r\n    width: 100%;\r\n    height: 400px;\r\n    border-radius: 5px;\r\n    margin: 0px;\r\n    font-family: 'Roboto', sans-serif;\r\n    font-size: 100%;\r\n    border: 1px solid #bbbbbb;\r\n    position: relative;\r\n    \r\n}\r\n\r\n.blogImageHolder{\r\n    width: 100%;\r\n    max-height:72%;\r\n    min-height: 60%;\r\n    overflow: hidden;\r\n    border-radius: 5px;   \r\n    border-bottom: 1px solid #bbbbbb;\r\n    border-bottom-left-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n   /*  background-image: url('/assets/images/default-image.png');\r\n    background-repeat: no-repeat */\r\n}\r\n.blogImageHolder img{\r\n    width: 100%;\r\n    border-radius: 5px;   \r\n    border-bottom-left-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n}\r\n.blogFooter{\r\n   \r\n    min-height: 28%;\r\n    border-radius: 5px;\r\n    border-top-left-radius: 0px;\r\n    border-top-right-radius: 0px;\r\n}\r\n.blogFooter p{\r\n    width: 95%;\r\n    margin:0.8% auto;\r\n}\r\n.blogFooter>p:first-child{\r\n    font-size: 0.8em;\r\n    font-weight: 400;\r\n    color: black;\r\n    text-align: left;\r\n    width: 95%;\r\n}\r\nspan >img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-right: 2%;\r\n}\r\n.blogFooter>p:first-child>span{\r\n    padding-right: 4px;\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: top;\r\n}\r\n.blogFooter>p:first-child>span:last-child{\r\n    width: 20%;\r\n    float: right;\r\n    text-align: right;\r\n    padding-right: 5px;\r\n    color: #ffa600;\r\n    font-weight: 500\r\n}\r\n.blogFooter>p:nth-of-type(2){\r\n    text-align: left;\r\n    margin: 1% auto;\r\n    overflow: hidden;\r\n    font-weight: 700;\r\n    font-size:1.2em;\r\n    text-overflow: ellipsis;\r\n    color: black;\r\n    white-space: nowrap;\r\n}\r\n.blogFooter>p:last-child{\r\n    position:absolute ;\r\n    bottom:2%;\r\n    left: 2.5%;\r\n    color: #444444;\r\n    font-weight: 500;\r\n    font-size:0.8em;\r\n}\r\np>img{\r\n  width: 12px;\r\n  height: 12px;\r\n  margin-right: 2%;\r\n}\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 100%;\r\n    height: 100%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:0%;\r\n    left:0%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n    background-color: black;\r\n    opacity: 0.8;\r\n}\r\n.fullImageHolder{\r\n    position: fixed;\r\n    width: 70%;\r\n    left: 15%;\r\n    top:0%;\r\n    z-index: 100;\r\n}\r\n.fullImageHolder>img{\r\n    display: block;\r\n    text-align: center;\r\n    padding: 5%;\r\n    max-width: 100%;\r\n    max-height: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600px){\r\n    .fullImageHolder{\r\n        width: 80%;\r\n        left: 10%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImageHolder{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -1528,7 +1547,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/normal-blog/normal-blog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n  <div class=\"blog\" MaintainHeightWidthRatio >\n    <a routerLink=\"/{{keywords[0]}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\n        <div class=\"blogImageHolder\" #holder>\n          <img src=\"{{blogImage}}\" (load)=\"setInitialImage()\"  (error)=\"setDefault()\" alt=\"blogImage\" >\n        </div>\n        <div class=\"blogFooter\">\n          <p>\n            <span>{{insertedDate}}</span>\n            <span>|</span>\n            <span>{{readingTime}}</span>\n            <span>\n              <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\" >\n              {{ViewCount}}\n            </span>\n          </p>\n          <p [innerHtml]=\"heading\" #blogTitle></p>\n  \n          <p>\n            <img src=\"/assets/images/sports-social-blogger-black.png\"  alt=\"sports-social-blogger-black\">\n            {{bloggerName}}\n          </p>\n        </div>\n      </a>\n  </div>\n\n <!--  <div class=\"fullImage\" #fullImage *ngIf=\"openFullImage\">\n   <img \n    src=\"/assets/images/sports-social-cancel-white.png\" \n    class=\"cancel\" role=\"button\" (click)=\"closeFullImage()\">   \n    \n  </div>\n  <div class=\"fullImageHolder\" *ngIf=\"openFullImage\">\n    <img src=\"{{blogImage}}\" >\n  </div>\n -->\n"
+module.exports = "\n  <div class=\"blog\" MaintainHeightWidthRatio >\n    <a routerLink=\"/{{keywords[0]}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\n        <div class=\"blogImageHolder\" #holder>\n          <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\n          <img src=\"{{blogImage}}\" (load)=\"removeInitialImage()\"  (error)=\"setDefault()\" alt=\"blogImage\"  *ngIf=\"dataRecieved\" >\n        </div>\n        <div class=\"blogFooter\">\n          <p>\n            <span>{{insertedDate}}</span>\n            <span>|</span>\n            <span>{{readingTime}}</span>\n            <span>\n              <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\" >\n              {{ViewCount}}\n            </span>\n          </p>\n          <p [innerHtml]=\"heading\" #blogTitle></p>\n  \n          <p>\n            <img src=\"/assets/images/sports-social-blogger-black.png\"  alt=\"sports-social-blogger-black\">\n            {{bloggerName}}\n          </p>\n        </div>\n      </a>\n  </div>\n\n <!--  <div class=\"fullImage\" #fullImage *ngIf=\"openFullImage\">\n   <img \n    src=\"/assets/images/sports-social-cancel-white.png\" \n    class=\"cancel\" role=\"button\" (click)=\"closeFullImage()\">   \n    \n  </div>\n  <div class=\"fullImageHolder\" *ngIf=\"openFullImage\">\n    <img src=\"{{blogImage}}\" >\n  </div>\n -->\n"
 
 /***/ }),
 
@@ -1558,8 +1577,9 @@ var NormalBlogComponent = /** @class */ (function () {
         this.renderer = renderer;
         this.post = post;
         this.zone = zone;
-        this.loading = true;
+        this.isloading = true;
         this.openFullImage = false;
+        this.dataRecieved = false;
     }
     NormalBlogComponent.prototype.ngOnInit = function () {
         this.blog = {
@@ -1600,6 +1620,14 @@ var NormalBlogComponent = /** @class */ (function () {
         if (window.innerWidth > 300 && window.innerWidth < 400) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
         }
+        if (this.blogImage) {
+            this.dataRecieved = true;
+        }
+    };
+    NormalBlogComponent.prototype.ngAfterViewInit = function () {
+        if (this.blogImage) {
+            this.dataRecieved = true;
+        }
     };
     NormalBlogComponent.prototype.reloadPage = function () {
         this.zone.runOutsideAngular(function () {
@@ -1614,8 +1642,8 @@ var NormalBlogComponent = /** @class */ (function () {
     NormalBlogComponent.prototype.setDefault = function (event) {
         this.blogImage = "/assets/images/default-image.png";
     };
-    NormalBlogComponent.prototype.setInitialImage = function () {
-        this.renderer.removeStyle(this.holder.nativeElement, 'background-image');
+    NormalBlogComponent.prototype.removeInitialImage = function () {
+        this.isloading = false;
     };
     NormalBlogComponent.prototype.onresize = function () {
         if (window.innerWidth > 1100) {

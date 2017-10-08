@@ -23,8 +23,8 @@
     border-bottom: 1px solid #bbbbbb;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    background-image: url('/assets/images/default-image.png');
-    background-repeat: no-repeat
+   /*  background-image: url('/assets/images/default-image.png');
+    background-repeat: no-repeat */
 }
 .blogImageHolder img{
     width: 100%;
