@@ -5,9 +5,9 @@
     <span>{{blog.readingTime}}</span>
   </p>
   <div class="blogImageHolder">
-    <img class="blogImage" src="{{blog.blogImage}}"  (error)="setDefaultBlogImage()" (load)="removeInitalImage()" *ngIf="blogDataRecieved" >
-    <img class="blogImage" src="/assets/images/default-image.png"  *ngIf="loading">
-    <img src="/assets/images/sports-social-zoom-out-orange.png" role="button" (click)="openfullImage()"  class="zoom">
+    <img class="blogImage" alt="blogImage" src="{{blog.blogImage}}"  (error)="setDefaultBlogImage()" (load)="removeInitalImage()" *ngIf="blogDataRecieved" >
+    <img class="blogImage"  alt="InitialblogImage" src="/assets/images/default-image.png"  *ngIf="loading">
+    <img src="/assets/images/sports-social-zoom-out-orange.png" alt="sports-social-zoom-out-orange" role="button" (click)="openfullImage()"  class="zoom">
   </div>
   
   <div class="content">
@@ -15,7 +15,7 @@
     <div class="blogInfo" #BlogInfo>
       <p [innerHtml]="blog.heading"class="title"></p>
       <div class="bloggerImage">
-        <img src="{{blog.bloggerImage}}" (error)="setDefault()" >
+        <img src="{{blog.bloggerImage}}" alt="bloggerImage" (error)="setDefault()" >
       </div>
       <div class="blogger" *ngIf="blogDataRecieved">
         <p  class="bloggerName">Written by <span> {{blog.bloggerName}}</span></p>  
@@ -25,67 +25,67 @@
       </div>
       <div class="count" *ngIf="blogDataRecieved">
         <span>
-          <img src="/assets/images/sports-social-view-orange.png">
+          <img src="/assets/images/sports-social-view-orange.png" alt="sports-social-view-orange">
           <span>{{blog.ViewCount}}</span>
         </span>
         <span>
-          <img src="/assets/images/sports-social-share-orange.png" >
+          <img src="/assets/images/sports-social-share-orange.png" alt="sports-social-share-orange">
           <span>{{blog.ShareCount}}</span>
         </span>
       </div>
       
       <div class="shareOn" *ngIf="blogDataRecieved">
         Share on 
-        <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()" class="facebook">
+        <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()" class="facebook" alt="sports-social-facebook-logo-black">
         <a href="https://twitter.com/share" (click)="shareOnTwitter()" #popup class="twitter">
-          <img src="/assets/images/sports-social-twitter-logo-black.png"  class="twitterButton">
+          <img src="/assets/images/sports-social-twitter-logo-black.png"  class="twitterButton" alt="sports-social-twitter-logo-black">
         </a> 
       </div>
       <p [innerHtml]="blog.Content" class="desc" *ngIf="blogDataRecieved">
       </p>
       <div class="tags" *ngIf="blogDataRecieved" >
         <div class="tagHolder">
-          <img src="/assets/images/sports-social-tag.png" >
+          <img src="/assets/images/sports-social-tag.png" alt="sports-social-tag">
         </div>
         <a *ngFor="let key of Keywords;let i=index" role="button" (click)="getblogs($event)">{{key}}</a>
       </div>
       <p class="shareOn" *ngIf="blogDataRecieved">
         Share on 
         
-        <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()" class="facebook">
+        <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()" class="facebook" alt="sports-social-facebook-logo-black">
         <a href="http://twitter.com/share" (click)="shareOnTwitter()" #popup class="twitter">
-          <img src="/assets/images/sports-social-twitter-logo-black.png"  class="twitterButton">
+          <img src="/assets/images/sports-social-twitter-logo-black.png"  class="twitterButton" alt="sports-social-twitter-logo-black">
         </a> 
       </p>
     </div>
     <div class="social" *ngIf="!removeSocial">
       <div class="follow">
         <p *ngIf="blogDataRecieved">Follow us</p>
-        <a href="https://www.facebook.com/chaseyoursport" target="_blank">
-          <img src="/assets/images/sports-social-facebook-logo-blue.png">
+        <a href="https://www.facebook.com/chaseyoursport" target="_blank"  rel="noopener">
+          <img src="/assets/images/sports-social-facebook-logo-blue.png" alt="sports-social-facebook-logo-blue">
         </a> 
-        <a href="https://www.instagram.com/chaseyoursport" target="_blank"> 
-          <img src="/assets/images/sports-social-instagram-logo-blue.png">
+        <a href="https://www.instagram.com/chaseyoursport" target="_blank"  rel="noopener"> 
+          <img src="/assets/images/sports-social-instagram-logo-blue.png" alt="sports-social-instagram-logo-blue">
         </a>
-        <a href="https://www.twitter.com/chaseyoursport" target="_blank">  
-          <img src="/assets/images/sports-social-twitter-logo-blue.png">
+        <a href="https://www.twitter.com/chaseyoursport" target="_blank"  rel="noopener">  
+          <img src="/assets/images/sports-social-twitter-logo-blue.png" alt="sports-social-twitter-logo-blue">
         </a>
-        <a href="https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ" target="_blank">  
-          <img src="/assets/images/sports-social-youtube-logo-blue.png">
+        <a href="https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ" target="_blank"  rel="noopener">  
+          <img src="/assets/images/sports-social-youtube-logo-blue.png" alt="sports-social-youtube-logo-blue">
         </a>
-        <a href="https://www.pinterest.com/chaseyoursport" target="_blank">  
-          <img src="/assets/images/sports-social-pinterest-logo-blue.png">
+        <a href="https://www.pinterest.com/chaseyoursport" target="_blank"  rel="noopener">  
+          <img src="/assets/images/sports-social-pinterest-logo-blue.png" alt="sports-social-pinterest-logo-blue">
         </a>
-        <a href=" https://in.linkedin.com/company/sports-social" target="_blank">  
-          <img src="/assets/images/sports-social-linkedin-logo-blue.png">
+        <a href=" https://in.linkedin.com/company/sports-social" target="_blank"  rel="noopener">  
+          <img src="/assets/images/sports-social-linkedin-logo-blue.png" alt="sports-social-linkedin-logo-blue">
         </a>
-        <a href="https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network" target="_blank">  
-          <img src="/assets/images/sports-social-quora-logo-blue.png">
+        <a href="https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network" target="_blank"  rel="noopener">  
+          <img src="/assets/images/sports-social-quora-logo-blue.png" alt="sports-social-quora-logo-blue">
         </a>
       </div>
       <div class="twitter">
         <p>
-          <img src="/assets/images/sports-social-twitter-logo-blue.png">
+          <img src="/assets/images/sports-social-twitter-logo-blue.png" alt="sports-social-twitter-logo-blue">
           Tweets by @chaseyoursport</p>
         <a 
           class="twitter-timeline" 
@@ -106,7 +106,7 @@
   <div>
     <div  *ngIf="!mobileView" class="relatedBlog">
       <p *ngIf="blogDataRecieved">Related Articles</p>
-      <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
+      <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading" >
       <div TabViewAvailable class="col-4" *ngFor="let data of relatedBlogDetails;let i=index">
         <SportSocial-normal-blog 
           [blogId]="data.blogId"

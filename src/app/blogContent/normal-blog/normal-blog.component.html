@@ -2,7 +2,7 @@
   <div class="blog" MaintainHeightWidthRatio >
     <a routerLink="/{{keywords[0]}}/{{heading}}/{{blogId}}" (click)="send()">
         <div class="blogImageHolder" #holder>
-          <img src="{{blogImage}}" (load)="setInitialImage()"  (error)="setDefault()" >
+          <img src="{{blogImage}}" (load)="setInitialImage()"  (error)="setDefault()" alt="blogImage" >
         </div>
         <div class="blogFooter">
           <p>
@@ -10,14 +10,14 @@
             <span>|</span>
             <span>{{readingTime}}</span>
             <span>
-              <img src="/assets/images/sports-social-view-orange.png"  >
+              <img src="/assets/images/sports-social-view-orange.png" alt="sports-social-view-orange" >
               {{ViewCount}}
             </span>
           </p>
           <p [innerHtml]="heading" #blogTitle></p>
   
           <p>
-            <img src="/assets/images/sports-social-blogger-black.png" >
+            <img src="/assets/images/sports-social-blogger-black.png"  alt="sports-social-blogger-black">
             {{bloggerName}}
           </p>
         </div>

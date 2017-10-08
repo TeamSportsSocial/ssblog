@@ -2,7 +2,7 @@
   <ul class="left" #left>
     <a href="/">
       <li class="brand-image">
-        <img src="/assets/images/sports-social-logo.png" >
+        <img src="/assets/images/sports-social-logo.png" alt="Sports Social logo">
       </li>
       <li class="brand-title">
         <span>Sports</span> <span>Social</span> <span>Blog</span>
@@ -30,17 +30,17 @@
         class=" websiteLink" 
         (mouseover)="hover($event)"
         (mouseout)="removehoverColor($event)">
-        <img src="/assets/images/sports-social-link-blue-symbol.png" alt="" #linkImage>
+        <img src="/assets/images/sports-social-link-blue-symbol.png" alt="sports-social-link-blue-symbol" #linkImage>
         Go to Website 
       </a>
     </li>
   </ul>
   <div class="mobileView " *ngIf="mobileView">
      <div class="menuImageHolder">
-       <img src="/assets/images/sports-social-menu.png" role="button" (click)="openDropDown()">
+       <img src="/assets/images/sports-social-menu.png" role="button" (click)="openDropDown()" alt="sports-social-menu">
      </div>
      <div *ngIf="open" class="dropDown">
-        <img src="/assets/images/sports-social-cancel-black.png" role="button" (click)="closeDropDown()" class="Close">
+        <img src="/assets/images/sports-social-cancel-black.png" role="button" (click)="closeDropDown()" class="Close" alt="sports-social-cancel-black">
         <p> 
           <a 
             href="http://testweb.sportsocial.in" 

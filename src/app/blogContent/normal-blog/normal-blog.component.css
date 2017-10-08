@@ -17,14 +17,14 @@
 .blogImageHolder{
     width: 100%;
     max-height:72%;
-    min-height: 50%;
+    min-height: 60%;
     overflow: hidden;
     border-radius: 5px;   
     border-bottom: 1px solid #bbbbbb;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    background-image:url('/assets/images/default-image.png');
-    background-size: cover
+    background-image: url('/assets/images/default-image.png');
+    background-repeat: no-repeat
 }
 .blogImageHolder img{
     width: 100%;

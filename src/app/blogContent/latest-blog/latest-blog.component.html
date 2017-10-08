@@ -1,12 +1,12 @@
 
 <div class="latest" MaintainHeightWidthRatio #latest>
   <a routerLink="/{{keywords[0]}}/{{heading}}/{{blogId}}" (click)="send()">
-    <img src="{{blogImage}}" class="blogImg" (error)="setDefault()" (load)="removeInitialImage()">
-    <img src="/assets/images/default-image.png" *ngIf="isloading">
+    <img src="{{blogImage}}" class="blogImg" (error)="setDefault()" (load)="removeInitialImage()" alt="blogImage">
+    <img src="/assets/images/default-image.png" alt="InitialblogImage" *ngIf="isloading">
     <div class="count">
-      <img src="/assets/images/sports-social-view-white.png" alt="">
+      <img src="/assets/images/sports-social-view-white.png" alt="sports-social-view-white">
       <span>{{ViewCount}}</span> 
-      <img src="/assets/images/sports-social-share-white.png" alt="">
+      <img src="/assets/images/sports-social-share-white.png" alt="sports-social-share-white">
       <span>{{ShareCount}}</span>
     </div> 
     <div class="desc" #Desc>
@@ -20,7 +20,7 @@
       <p [innerHtml]="Content" class="smallDesc" #latestDesc></p>
       <div class="Blogger">
         <div class="bloggerImage" #BloggerImage>
-            <img src="/assets/images/sports-social-blogger-white.png" alt="" >
+            <img src="/assets/images/sports-social-blogger-white.png" alt="sports-social-blogger-white" >
         </div>  
         <p class="bloggerName">{{bloggerName}}</p>
       </div>
