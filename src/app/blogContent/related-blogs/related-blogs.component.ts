@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
 import {PostService} from "../../services/post.service";
 import {PropertyService} from "../../services/property.service";
 
@@ -13,7 +13,7 @@ export class RelatedBlogsComponent implements OnInit {
   relatedBlogDetails;
   numberofBlog;
   dataRecived:boolean=false;
-  
+  mobileView:boolean=false;
 
   constructor( 
     private getRelated: PostService,
@@ -21,6 +21,7 @@ export class RelatedBlogsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.setMobileView()
    this.recieveKey.ofBlogCard.subscribe(
      data=>{
        console.log(data, " checkarticle")
@@ -118,7 +119,16 @@ let writtenDate=new Date(i);
 //console.log(writtenDate," wDate")
 return writtenDate.toDateString()
 }
-
-
+setMobileView(){
+  if(window.innerWidth>950){
+      this.mobileView=false;
+  }
+  else{
+    this.mobileView=true
+  }
+}
+@HostListener('window:resize',[])onresize(){
+  this.setMobileView()
+}
 
 }

@@ -1775,9 +1775,11 @@ var RelatedBlogsComponent = /** @class */ (function () {
         this.getRelated = getRelated;
         this.recieveKey = recieveKey;
         this.dataRecived = false;
+        this.mobileView = false;
     }
     RelatedBlogsComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.setMobileView();
         this.recieveKey.ofBlogCard.subscribe(function (data) {
             console.log(data, " checkarticle");
             _this.getRelatedBlogs(data);
@@ -1852,6 +1854,23 @@ var RelatedBlogsComponent = /** @class */ (function () {
         //console.log(writtenDate," wDate")
         return writtenDate.toDateString();
     };
+    RelatedBlogsComponent.prototype.setMobileView = function () {
+        if (window.innerWidth > 950) {
+            this.mobileView = false;
+        }
+        else {
+            this.mobileView = true;
+        }
+    };
+    RelatedBlogsComponent.prototype.onresize = function () {
+        this.setMobileView();
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], RelatedBlogsComponent.prototype, "onresize", null);
     RelatedBlogsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'SportSocial-related-blogs',
