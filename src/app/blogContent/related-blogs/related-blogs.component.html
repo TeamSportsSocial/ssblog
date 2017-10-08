@@ -1,0 +1,42 @@
+<div>
+  <div  *ngIf="!mobileView" class="relatedBlog">
+    <p *ngIf="blogDataRecieved">Related Articles</p>
+    <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading" >
+    <div TabViewAvailable class="col-4" *ngFor="let data of relatedBlogDetails;let i=index">
+      <SportSocial-normal-blog 
+        [blogId]="data.blogId"
+        [blogImage]="data.blogImage"
+        [bloggerImage]="data.bloggerImage"
+        [bloggerName]="data.bloggerName"
+        [insertedDate]="data.insertedDate"
+        [heading]="data.heading"
+        [Content]="data.Content"
+        [ViewCount]="data.ViewCount"
+        [ShareCount]="data.ShareCount"
+        [keywords]="data.keywords"
+        [exactDate]="data.exactDate"
+        [readingTime]="data.readingTime">
+      </SportSocial-normal-blog>
+    </div>
+  </div>
+  <div *ngIf="mobileView" class="mobileView relatedBlog">
+    <p *ngIf="blogDataRecieved">Related Articles</p>
+    <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
+    <div class="col-4" *ngFor="let data of relatedBlogDetails;let i=index">
+      <SportSocial-normal-blog 
+          [blogId]="data.blogId"
+          [blogImage]="data.blogImage"
+          [bloggerImage]="data.bloggerImage"
+          [bloggerName]="data.bloggerName"
+          [insertedDate]="data.insertedDate"
+          [heading]="data.heading"
+          [Content]="data.Content"
+          [ViewCount]="data.ViewCount"
+          [ShareCount]="data.ShareCount"
+          [keywords]="data.keywords"
+          [exactDate]="data.exactDate"
+          [readingTime]="data.readingTime">
+      </SportSocial-normal-blog>
+  </div>
+  </div>
+</div>

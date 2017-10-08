@@ -40,6 +40,7 @@ import { NguiAutoCompleteModule } from '@ngui/auto-complete';
 import { MessageComponent } from './message/message.component';
 import { CustomUrlComponent } from './custom-url/custom-url.component';
 import { OpenFullImageComponent } from './open-full-image/open-full-image.component';
+import { RelatedBlogsComponent } from './blogContent/related-blogs/related-blogs.component';
 
 
 
@@ -66,7 +67,8 @@ import { OpenFullImageComponent } from './open-full-image/open-full-image.compon
     CommentsComponent,
     MessageComponent,
     CustomUrlComponent,
-    OpenFullImageComponent
+    OpenFullImageComponent,
+    RelatedBlogsComponent
   ],
   imports: [
     BrowserModule,

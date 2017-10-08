@@ -2,7 +2,7 @@
     padding: 0px;
     margin: 0px;
     width: 100%;
-    font-family: 'Roboto',sans-serif;
+    
 }
 header{
     width: 100%;
@@ -10,7 +10,8 @@ header{
     position: fixed;
     top:0px;
     z-index: 10;
-    box-shadow: 1px 1px #bbbbbb
+    box-shadow: 1px 1px #bbbbbb;
+    font-family: 'Roboto',sans-serif;
 }
 .left{
     display: inline-block;
@@ -179,9 +180,7 @@ input{
      top:65px;
      width: 100%;
  }
- .ngui-auto-complete {
-     border: 1px solid black;
-  }
+ 
   a:hover{
       text-decoration: none;
   }

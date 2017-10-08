@@ -63,7 +63,7 @@ export class LatestBlogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.latest)
+    //console.log(this.latest)
     this.blog={
       blogId:this.blogId,
       blogImage:this.blogImage,
@@ -115,7 +115,7 @@ export class LatestBlogComponent implements OnInit {
     });
   }
   send(){
-      this.reloadPage()
+     // this.reloadPage()
       this.Send.detailsofBlog.next(this.blog)
       window.scrollTo(0,0)
   }

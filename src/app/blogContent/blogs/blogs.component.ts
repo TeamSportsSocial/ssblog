@@ -90,7 +90,6 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     private reciveHeight:PropertyService,
     private renderer:Renderer2,
     private get: PostService,
-    private cd: ChangeDetectorRef
   ) { }
   ngOnInit(){
     sessionStorage.removeItem('Blog')
@@ -117,7 +116,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     if(this.nextPageNumber==1){
     this.get.blogData(this.nextPageNumber,this.defaultKey).subscribe(
       (data)=>{ 
-        console.log(data)
+       // console.log(data)
         this.show=true;
         this.dataRecived=true;
         for(let i in data){
@@ -138,7 +137,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               }
             )
         }
-        console.log(this.blogDetails, " tfd")
+        //console.log(this.blogDetails, " tfd")
         this.latestBlogDetails.push(
           {
             blogId:this.blogDetails[0].blogId,
@@ -196,7 +195,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
   }
   else{
     this.blogDetails=JSON.parse(sessionStorage.getItem('blogData'))
-    console.log(this.blogDetails," mus")
+   // console.log(this.blogDetails," mus")
     this.latestBlogDetails.push(
       {
         blogId:this.blogDetails[0].blogId,
@@ -319,7 +318,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
   }
   ExactDate(i:number){
     let writtenDate=new Date(i);
-    console.log(i, writtenDate,writtenDate.toDateString())
+    //console.log(i, writtenDate,writtenDate.toDateString())
     return writtenDate.toDateString()
   }
   timeToRead(s:string){
@@ -339,7 +338,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       this.get.blogData((this.nextPageNumber),this.defaultKey).subscribe(
         (data)=>{
           this.dataRecived=true;
-           console.log(data.length)
+          // console.log(data.length)
            if(data.length==0){
              this.haveData=false;
            }
@@ -364,7 +363,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               }
             )
            }
-           console.log(this.restBlogDetails.concat(this.topBlogDetails).concat(this.latestBlogDetails),"  hr")
+           //console.log(this.restBlogDetails.concat(this.topBlogDetails).concat(this.latestBlogDetails),"  hr")
            sessionStorage.setItem('blogData',JSON.stringify((this.latestBlogDetails).concat(this.topBlogDetails).concat(this.restBlogDetails)))
         }
       )

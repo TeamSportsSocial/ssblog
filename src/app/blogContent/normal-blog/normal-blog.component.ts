@@ -108,7 +108,7 @@ export class NormalBlogComponent implements OnInit {
   
   
   send(){
-    this.reloadPage()
+    //this.reloadPage()
     this.Send.detailsofBlog.next(this.blog)
     window.scrollTo(0,0)
   }

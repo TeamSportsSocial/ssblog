@@ -34,7 +34,6 @@ export class BlogHeaderComponent implements OnInit {
   }
   
   @ViewChild('Header') Header:ElementRef;
-  @ViewChild('left') left :ElementRef;
   @ViewChild('searchBox') searchBox:ElementRef;
   @ViewChild('linkImage') linkImage:ElementRef;
   mobileView:boolean=false;
@@ -47,12 +46,10 @@ export class BlogHeaderComponent implements OnInit {
     private send:PropertyService,
     private get :GetService,
     private elRef:ElementRef,
-    private http:Http,
     private _sanitizer: DomSanitizer,
     private searchKeyword: PostService,
     private router:Router,
     private sendKey:PropertyService,
-    private cd:ChangeDetectorRef,
     private zone :NgZone
   ) { }
   ngOnInit() {
@@ -106,7 +103,7 @@ export class BlogHeaderComponent implements OnInit {
   }
   valueChanged(newVal) {
     this.searchedTextPresent=true;
-    console.log("Case 2: value is changed to ", newVal );
+    //console.log("Case 2: value is changed to ", newVal );
     this.open=false;
     this.router.navigate(['/'+newVal])
     this.searchBox.nativeElement.value=""
@@ -116,9 +113,10 @@ export class BlogHeaderComponent implements OnInit {
     this.search=true
   }
   sendData(key){
+    
     let input=this.searchBox.nativeElement.value
     if(key.code=="Enter" || this.search==true){
-      console.log(input)
+     // console.log(input)
       this.open=false;
       this.router.navigate(['/'+input])
       this.searchBox.nativeElement.value=""
@@ -135,4 +133,5 @@ export class BlogHeaderComponent implements OnInit {
   removehoverColor(event){
     this.linkImage.nativeElement.src="/assets/images/sports-social-link-blue-symbol.png"
   }
+  
 }

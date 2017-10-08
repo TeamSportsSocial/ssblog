@@ -56,20 +56,7 @@ export class BlogOpenComponent implements OnInit {
     ViewCount:number;
     ShareCount:number;
     loading:boolean=true;
-    relatedBlogDetails:{
-        blogId:string;
-        blogImage:string;
-        bloggerName:string,
-        bloggerImage:string,
-        heading:string,
-        Content:string,
-        insertedDate:string,
-        ViewCount:string,
-        ShareCount:string,
-        keywords:string[],
-        exactDate:string;
-        readingTime:string;
-      }[]=[]
+   
     @ViewChild('openBlog') openBlog;
     @ViewChild('Social') Social;
     @ViewChild('BlogInfo') BlogInfo;
@@ -81,8 +68,6 @@ export class BlogOpenComponent implements OnInit {
         private renderer :Renderer2,
         private route :ActivatedRoute,
         private fb: FacebookService,
-        private http:Http,
-        private getRelated: PostService,
         private sendKey:PropertyService,
         private router:Router,
         private post:PostService,
@@ -100,11 +85,10 @@ export class BlogOpenComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.route.snapshot.url[2].path," ngOnit")
         this.scriptOfTwitter()
         
         this.loadBlogFromSendData()
-        console.log(this.blog, " ngOnit")
+
         if(this.blog==undefined){
             this.loadBlogFromUrl()
         }
@@ -117,7 +101,7 @@ export class BlogOpenComponent implements OnInit {
     sendViewCount(){
         this.send.viewCountOfBlog(this.blogID,this.ViewCount).subscribe(
             data=>{
-              console.log(data, " view")
+              //console.log(data, " view")
               
             }
         )
@@ -161,7 +145,8 @@ export class BlogOpenComponent implements OnInit {
                 this.ViewCount=+(this.blog.ViewCount)
                 this.sendViewCount()
                 this.Keywords=this.blog.keywords;
-                this.getRelatedBlogs()
+                this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length-1])
+                // this.getRelatedBlogs()
                 this.setMetaTags();
             }
         )
@@ -197,7 +182,7 @@ export class BlogOpenComponent implements OnInit {
                 this.Keywords=this.blog.keywords;
                 
                 window.scrollTo(0,0)
-                this.getRelatedBlogs()
+                this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length-1])
                 this.setMetaTags();
               
             }
@@ -243,7 +228,7 @@ export class BlogOpenComponent implements OnInit {
     
     ExactDate(i:number){
       let writtenDate=new Date(i);
-      console.log(writtenDate," wDate")
+      //console.log(writtenDate," wDate")
       return writtenDate.toDateString()
     }
     
@@ -327,7 +312,7 @@ export class BlogOpenComponent implements OnInit {
     loginOnFacebook() {
         this.fb.login()
           .then((res: LoginResponse) => {
-            console.log('Logged in', res);
+            //console.log('Logged in', res);
           })
           .catch(this.handleError);
     }
@@ -350,7 +335,7 @@ export class BlogOpenComponent implements OnInit {
     sendShareCount(){
         this.post.shareCountOfBlog(this.blog.blogId,this.ShareCount).subscribe(
             data=>{
-                console.log(data, "sharedOnFacebook")
+                //console.log(data, "sharedOnFacebook")
             }
         )
     }
@@ -361,11 +346,11 @@ export class BlogOpenComponent implements OnInit {
             href: 'https://www.chaseyoursport.com/'+this.route.snapshot.url[0].path+'/'+this.route.snapshot.url[1].path+'/'+this.route.snapshot.url[2].path
           };
        
-          console.log(this.isConnectedWithFacebook)
+          //console.log(this.isConnectedWithFacebook)
        
           this.fb.ui(options)
             .then((res: UIResponse) => {
-              console.log('Got the users profile', res);
+              //console.log('Got the users profile', res);
             })
             .catch(this.handleError);
     }
@@ -389,7 +374,7 @@ export class BlogOpenComponent implements OnInit {
     return false;
     }
     
-    getRelatedBlogs(){
+    /* getRelatedBlogs(){
         this.getRelated.blogData(1,this.blog.keywords[this.blog.keywords.length-1]).subscribe(
             data=>{
                 this.dataRecived=true;
@@ -416,7 +401,7 @@ export class BlogOpenComponent implements OnInit {
             }
         )
     }
-    
+     */
     getblogs(event){
         let key=event.toElement.innerText
         this.router.navigate(['/'+key])
