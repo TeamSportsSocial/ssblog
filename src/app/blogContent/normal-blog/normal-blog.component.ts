@@ -71,8 +71,8 @@ export class NormalBlogComponent implements OnInit {
     keywords:this.keywords,
     exactDate:this.exactDate,
     readingTime:this.readingTime
-   }
-   if(window.innerWidth>1100){
+  }
+  if(window.innerWidth>1100){
     this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em')
   }
   if(window.innerWidth<1100 && window.innerWidth>1000){
@@ -108,7 +108,6 @@ export class NormalBlogComponent implements OnInit {
   
   
   send(){
-   // console.log(this.blog)
     this.reloadPage()
     this.Send.detailsofBlog.next(this.blog)
     window.scrollTo(0,0)

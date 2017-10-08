@@ -1,7 +1,8 @@
 
 <div class="latest" MaintainHeightWidthRatio #latest>
   <a routerLink="/{{keywords[0]}}/{{heading}}/{{blogId}}" (click)="send()">
-    <img src="{{blogImage}}" class="blogImg">
+    <img src="{{blogImage}}" class="blogImg" (error)="setDefault()" (load)="removeInitialImage()">
+    <img src="/assets/images/default-image.png" *ngIf="isloading">
     <div class="count">
       <img src="/assets/images/sports-social-view-white.png" alt="">
       <span>{{ViewCount}}</span> 

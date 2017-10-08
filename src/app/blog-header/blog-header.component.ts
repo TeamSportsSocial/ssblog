@@ -122,6 +122,7 @@ export class BlogHeaderComponent implements OnInit {
       this.open=false;
       this.router.navigate(['/'+input])
       this.searchBox.nativeElement.value=""
+      this.reloadPage()
     }
   }
   autocompleListFormatter = (data: any) => {

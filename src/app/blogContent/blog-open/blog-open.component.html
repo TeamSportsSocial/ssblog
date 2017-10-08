@@ -5,8 +5,8 @@
     <span>{{blog.readingTime}}</span>
   </p>
   <div class="blogImageHolder">
-    <img class="blogImage" src="{{blog.blogImage}}"  (error)="setDefaultBlogImage()" *ngIf="blogDataRecieved" >
-    <img class="blogImage" src="/assets/images/default-image.png"  *ngIf="!blogDataRecieved">
+    <img class="blogImage" src="{{blog.blogImage}}"  (error)="setDefaultBlogImage()" (load)="removeInitalImage()" *ngIf="blogDataRecieved" >
+    <img class="blogImage" src="/assets/images/default-image.png"  *ngIf="loading">
     <img src="/assets/images/sports-social-zoom-out-orange.png" role="button" (click)="openfullImage()"  class="zoom">
   </div>
   
@@ -147,9 +147,9 @@
   </div>
   
 
-  <SportSocial-blog-footer></SportSocial-blog-footer>
+  
 </div> 
-
+<SportSocial-blog-footer></SportSocial-blog-footer>
 
 <div class="fullImage" #fullImage *ngIf="openFullImage">
   <img 

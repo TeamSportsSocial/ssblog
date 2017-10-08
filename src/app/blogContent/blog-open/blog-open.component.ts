@@ -100,48 +100,18 @@ export class BlogOpenComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('https://www.chaseyoursport.com/'+this.route.snapshot.url[0].path+'/'+this.route.snapshot.url[1].path+'/'+this.route.snapshot.url[2].path)
-        console.log(this.route.snapshot.url[1].path)
-        console.log(this.route.snapshot.url[2].path)
-        this.recieve.detailsofBlog.subscribe(
-            data=>{
-                this.blogDataRecieved=true;
-                //console.log(data)
-                this.blog={
-                    blogId:data['blogId'],
-                    blogImage:data['blogImage'],
-                    bloggerName:data['bloggerName'],
-                    bloggerImage:data['bloggerImage'],
-                    heading:data['heading'],
-                    Content:data['Content'],
-                    insertedDate:data['insertedDate'],
-                    ViewCount:data['ViewCount'],
-                    ShareCount:data['ShareCount'],
-                    keywords:data['keywords'],
-                    exactDate:data['exactDate'],
-                    readingTime:data['readingTime']
-                }
-                this.ShareCount=+this.blog.ShareCount
-                this.ViewCount=+(this.blog.ViewCount)
-               
-                this.sendViewCount()
-                this.Keywords=this.blog.keywords;
-                /* this.blogDataRecieved=true;
-                window.scrollTo(0,0) */
-                this.getRelatedBlogs()
-                this.setMetaTags();
-                //console.log(this.blog, " temp")
-            }
-        )
+        console.log(this.route.snapshot.url[2].path," ngOnit")
         this.scriptOfTwitter()
+        
+        this.loadBlogFromSendData()
+        console.log(this.blog, " ngOnit")
         if(this.blog==undefined){
-            this.loadBlog()
+            this.loadBlogFromUrl()
         }
        
         this.setTopMargin()
         this.setMobileView()
         
-
     }
     
     sendViewCount(){
@@ -168,8 +138,37 @@ export class BlogOpenComponent implements OnInit {
         ])
 
     }
+    
+    loadBlogFromSendData(){
+        this.recieve.detailsofBlog.subscribe(
+            data=>{
+                this.blogDataRecieved=true;
+                this.blog={
+                    blogId:data['blogId'],
+                    blogImage:data['blogImage'],
+                    bloggerName:data['bloggerName'],
+                    bloggerImage:data['bloggerImage'],
+                    heading:data['heading'],
+                    Content:data['Content'],
+                    insertedDate:data['insertedDate'],
+                    ViewCount:data['ViewCount'],
+                    ShareCount:data['ShareCount'],
+                    keywords:data['keywords'],
+                    exactDate:data['exactDate'],
+                    readingTime:data['readingTime']
+                }
+                this.ShareCount=+this.blog.ShareCount
+                this.ViewCount=+(this.blog.ViewCount)
+                this.sendViewCount()
+                this.Keywords=this.blog.keywords;
+                this.getRelatedBlogs()
+                this.setMetaTags();
+            }
+        )
+    }
 
-    loadBlog(){
+
+    loadBlogFromUrl(){
         this.load.dataOfsingleBlog(this.blogID).subscribe(
             res=>{
                 const data=res[0]
@@ -200,7 +199,7 @@ export class BlogOpenComponent implements OnInit {
                 window.scrollTo(0,0)
                 this.getRelatedBlogs()
                 this.setMetaTags();
-               // console.log(this.blogDataRecieved,"  true")
+              
             }
         )
        
@@ -254,7 +253,7 @@ export class BlogOpenComponent implements OnInit {
         this.blog.bloggerImage="/assets/images/user.png"
     }
 
-    initialBloagImage(){
+    removeInitalImage(){
         this.loading=false
     }
     setDefaultBlogImage(){
@@ -391,7 +390,6 @@ export class BlogOpenComponent implements OnInit {
     }
     
     getRelatedBlogs(){
-        console.log(this.blog.keywords," true")
         this.getRelated.blogData(1,this.blog.keywords[this.blog.keywords.length-1]).subscribe(
             data=>{
                 this.dataRecived=true;
@@ -414,13 +412,13 @@ export class BlogOpenComponent implements OnInit {
                       }
                     )
                 }
+                console.log(this.relatedBlogDetails," checkarticle")
             }
         )
     }
     
     getblogs(event){
         let key=event.toElement.innerText
-        //console.log(event.toElement.innerText,"   clicked")
         this.router.navigate(['/'+key])
         this.sendKey.ofBlogCard.next(key)
         

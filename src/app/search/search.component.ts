@@ -57,31 +57,11 @@ export class SearchComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.recieveHeight.ofHeader.subscribe(
-      margin=>{
-      this.topMargin=margin
-      }
-    )
-    this.renderer.setStyle(this.searchPage.nativeElement,'margin-top',this.topMargin+"px")
+    this.setTopMargin()
    
-    this.recievedKey=this.route.snapshot.url[0].path.replace(/-/g, " ")
-    console.log(this.recievedKey, "key")
-    this.route.params.subscribe(
-      (params)=>{
-        console.log(params, " params")
-        this.recievedKey=params.tag.replace(/-/g, " ")
-        
-        
-      }
-    )
-    console.log(this.recievedKey, "keyParams")
-    if(window.innerWidth<700){
-     this.mobileView=true;
-    }
-    else{
-      this.mobileView=false;
-    }
-   
+    this.recievekeyFromUrl()
+     
+    this.setMobileView()
    
     this.pageNumber=JSON.parse(sessionStorage.getItem('pageNumber'))
     if(this.pageNumber==null){
@@ -97,6 +77,9 @@ export class SearchComponent implements OnInit {
         }
         else{
           this.haveData=false
+        }
+        if(data.length==0 && this.pageNumber==1){
+
         }
         this.show=true;
         this.dataRecieved=true;
@@ -130,14 +113,29 @@ export class SearchComponent implements OnInit {
     }
     
     }
-
-   /*  reloadPage() { 
-      this.zone.runOutsideAngular(() => {
-          location.reload();
-      });
-    } */
-
-
+    
+    recievekeyFromUrl(){
+      this.recievedKey=this.route.snapshot.url[0].path.replace(/-/g, " ")
+      this.route.params.subscribe(
+        (params)=>{
+          console.log(params, " params")
+          this.recievedKey=params.tag.replace(/-/g, " ")
+          
+          
+        }
+      )
+    }
+    
+    setMobileView(){
+      if(window.innerWidth<700){
+        this.mobileView=true;
+       }
+       else{
+         this.mobileView=false;
+       }
+      
+    }
+    
     timeToRead(s:string){
       let words = s.split(" ");
       let time=Math.round(words.length/180)
@@ -148,10 +146,12 @@ export class SearchComponent implements OnInit {
         return "1 min read"
       }
     }
+    
     ExactDate(i:number){
       let writtenDate=new Date(i);
       return writtenDate.toDateString()
     }
+    
     timePassed(i:string){
       let writtenDate=new Date(i);
       let presentDate=new Date();
@@ -172,30 +172,29 @@ export class SearchComponent implements OnInit {
         return presentDate.getFullYear()-writtenDate.getFullYear() + " year ago"
       }
     
-  }
-    ngAfterViewInit(){
+    }
+    
+    
+    setTopMargin(){
       this.recieveHeight.ofHeader.subscribe(
         margin=>{
         this.topMargin=margin
         }
       ) 
       this.renderer.setStyle(this.searchPage.nativeElement,'margin-top',this.topMargin+"px")
+    }
     
+    ngAfterViewInit(){
+      this.setTopMargin()
     }
+    
     @HostListener('window:resize',[])onresize(){
-      this.recieveHeight.ofHeader.subscribe(
-        margin=>{
-        this.topMargin=margin
-        }
-    )
-    this.renderer.setStyle(this.searchPage.nativeElement,'margin-top',this.topMargin+"px")
-    if(window.innerWidth<700){
-      this.mobileView=true;
+      this.setTopMargin()
+      
+      this.setMobileView()
     }
-    else{
-      this.mobileView=false;
-    }
-    }
+    
+    
     nextPage(){
       this.pageNumber++;
       this.dataRecieved=false;

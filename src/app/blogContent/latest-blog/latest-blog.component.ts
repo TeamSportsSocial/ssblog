@@ -5,7 +5,8 @@ import {
   HostListener,
   ElementRef,
   Renderer2,
-  ViewChild
+  ViewChild,
+  NgZone
 } from '@angular/core';
 import {PropertyService} from "../../services/property.service";
 import {PostService} from "../../services/post.service";
@@ -46,7 +47,8 @@ export class LatestBlogComponent implements OnInit {
     exactDate:string,
     readingTime:string
   }
-
+  
+  isloading:boolean=true;
   @ViewChild('Desc') Desc;
   @ViewChild('latestTitle') latestTitle;
   @ViewChild('latestDesc') latestDesc;
@@ -56,7 +58,8 @@ export class LatestBlogComponent implements OnInit {
   constructor(
     private Send: PropertyService,
     private renderer:Renderer2,
-    private post: PostService
+    private post: PostService,
+    private zone :NgZone
   ) { }
 
   ngOnInit() {
@@ -98,8 +101,21 @@ export class LatestBlogComponent implements OnInit {
     
      
   }
+  
+  removeInitialImage(){
+    this.isloading=false
+  }
+   
+  setDefault(){
+    this.blogImage="/assets/images/default-image.png"
+  }
+  reloadPage() { 
+    this.zone.runOutsideAngular(() => {
+        location.reload();
+    });
+  }
   send(){
-      console.log(this.blog, "lates")
+      this.reloadPage()
       this.Send.detailsofBlog.next(this.blog)
       window.scrollTo(0,0)
   }
