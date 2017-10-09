@@ -108,19 +108,34 @@ export class BlogOpenComponent implements OnInit {
     }
     
     setMetaTags(){
-        this.metaService.addTags([
-            {name: 'twitter:title', content:this.blog.heading},
-            {property:'fb:app_id' , content:'1750709328507665'},
-            {property: 'og:url' ,content:'https://www.chaseyoursport.com/'+this.route.snapshot.url[0].path+'/'+this.route.snapshot.url[1].path+'/'+this.route.snapshot.url[2].path},
-            {property:'og:type',content:'website'},
-            {property:'og:title' , content:this.blog.heading},
-            {property: 'og:description' ,content:this.blog.Content},
-            {property:'og:image' , content:this.blog.blogImage},
-            {name: 'twitter:image', content:this.blog.blogImage},
-          
-            
-        ])
-
+       this.metaService.updateTag({
+           content:this.blog.heading
+       },
+       'property="og:title"')
+       this.metaService.updateTag({
+           content:this.blog.Content
+       },
+       'property="og:description"')
+       this.metaService.updateTag({
+        content:this.blog.blogImage
+        },
+       'property="og:image"')
+       this.metaService.updateTag({
+        content:"https://www.chaseyoursport.com/"+this.route.snapshot.url[0].path+"/"+this.route.snapshot.url[1].path+"/"+this.route.snapshot.url[2].path+"/"
+        },
+       'property="og:url"')
+       this.metaService.updateTag({
+        content:this.blog.heading
+        },
+       'property="twitter:title"')
+       this.metaService.updateTag({
+        content:this.blog.Content
+        },
+       'property="twitter:description"')
+       this.metaService.updateTag({
+        content:this.blog.blogImage
+        },
+       'property="twitter:image"')
     }
     
     loadBlogFromSendData(){
