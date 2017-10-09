@@ -25,20 +25,7 @@ export class SearchComponent implements OnInit {
     pageNumber:number
   }
   tempBlogDetails;
-  blogDetails:{
-    blogId:string;
-    blogImage:string;
-    bloggerName:string,
-    bloggerImage:string,
-    heading:string,
-    Content:string,
-    insertedDate:string,
-    ViewCount:string,
-    ShareCount:string,
-    keywords:string[],
-    exactDate:string;
-    readingTime:string
-  }[]=[];
+  blogDetails;
 
   pageNumber=1;
   recievedKey;
@@ -63,14 +50,15 @@ export class SearchComponent implements OnInit {
      
     this.setMobileView()
    
-    this.pageNumber=JSON.parse(sessionStorage.getItem('pageNumber'))
+    /* this.pageNumber=JSON.parse(sessionStorage.getItem('pageNumber'))
     if(this.pageNumber==null){
       this.pageNumber=1
-    }
-    console.log(this.recievedKey,this.pageNumber, "rt")
+    } */
+   /// console.log(this.recievedKey,this.pageNumber, "search")
    
-    if(this.pageNumber==1){
-      this.get.blogData(this.pageNumber,this.recievedKey).subscribe(
+    /* if(this.pageNumber==1){
+      console.log(this.recievedKey,this.pageNumber, "search")
+      /* this.get.blogData(this.pageNumber,this.recievedKey).subscribe(
       (data)=>{ 
         if(data.length>0){
           this.haveData=true
@@ -101,9 +89,9 @@ export class SearchComponent implements OnInit {
               }
             )
           }
-        console.log(this.blogDetails)
+        console.log(this.blogDetails, " search")
         }
-      )
+      ) 
     }
     else{
       this.show=true;
@@ -111,19 +99,79 @@ export class SearchComponent implements OnInit {
       this.blogDetails=JSON.parse(sessionStorage.getItem('searchedBlog'))
       console.log(this.blogDetails," vtds")
     }
-    
+ */    
+    }
+    ngAfterViewInit(){
+      this.setTopMargin()
+      this.recievekeyFromUrl()
     }
     
+    
+    getBlogs(){
+      //console.log(this.pageNumber, " next page")
+      let blogDetails:{
+        blogId:string;
+        blogImage:string;
+        bloggerName:string,
+        bloggerImage:string,
+        heading:string,
+        Content:string,
+        insertedDate:string,
+        ViewCount:string,
+        ShareCount:string,
+        keywords:string[],
+        exactDate:string;
+        readingTime:string
+      }[]=[];
+      this.get.blogData(this.pageNumber,this.recievedKey).subscribe(
+        (data)=>{ 
+          if(data.length>0){
+            this.haveData=true
+          }
+          else{
+            this.haveData=false
+          }
+          if(data.length==0 && this.pageNumber==1){
+  
+          }
+          this.show=true;
+          this.dataRecieved=true;
+          for(let i in data){
+              blogDetails.push(
+                {
+                  blogId:data[i].blogId,
+                  blogImage:data[i].blogImage,
+                  bloggerName:data[i].bloggerName,
+                  bloggerImage:data[i].bloggerImage,
+                  heading:data[i].heading,
+                  Content:data[i].Content,
+                  insertedDate:this.timePassed(data[i].insertedDate),
+                  ViewCount:data[i].ViewCount,
+                  ShareCount:data[i].ShareCount,
+                  keywords:data[i].keywords.split(","),
+                  exactDate:this.ExactDate(data[i].insertedDate),
+                  readingTime:this.timeToRead(data[i].Content)
+                }
+              )
+            }
+         // console.log(blogDetails, " search")
+          this.blogDetails=blogDetails
+          }
+        )
+    }
     recievekeyFromUrl(){
+     
       this.recievedKey=this.route.snapshot.url[0].path.replace(/-/g, " ")
       this.route.params.subscribe(
         (params)=>{
-          console.log(params, " params")
+          this.pageNumber=1
+          //console.log(params, " params")
           this.recievedKey=params.tag.replace(/-/g, " ")
-          
+          this.getBlogs()
           
         }
       )
+      
     }
     
     setMobileView(){
@@ -184,10 +232,7 @@ export class SearchComponent implements OnInit {
       this.renderer.setStyle(this.searchPage.nativeElement,'margin-top',this.topMargin+"px")
     }
     
-    ngAfterViewInit(){
-      this.setTopMargin()
-    }
-    
+   
     @HostListener('window:resize',[])onresize(){
       this.setTopMargin()
       
@@ -198,6 +243,7 @@ export class SearchComponent implements OnInit {
     nextPage(){
       this.pageNumber++;
       this.dataRecieved=false;
+     // console.log(this.recievedKey,this.pageNumber,"next")
       this.get.blogData(this.pageNumber,this.recievedKey).subscribe(
         data=>{
           console.log(data, " nm")

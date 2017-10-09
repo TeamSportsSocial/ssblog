@@ -18,6 +18,7 @@
         placeholder="Search here the latest topics & trends in sports" 
         (valueChanged)="valueChanged($event)"
         [max-num-list]="10"
+        [open-on-focus]="false"
         (keypress)="sendData($event)"
         #searchBox>  
     </li>
@@ -62,6 +63,7 @@
           (valueChanged)="valueChanged($event)"
           [max-num-list]="10"
           (keypress)="sendData($event)"
+          [open-on-focus]="false"
           #searchBox >
           <button (click)="searchSportSocial()">Search</button>
       </div>

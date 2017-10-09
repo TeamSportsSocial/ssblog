@@ -397,7 +397,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blog-header/blog-header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header #Header>\n  <ul class=\"left\" #left>\n    <a href=\"/\">\n      <li class=\"brand-image\">\n        <img src=\"/assets/images/sports-social-logo.png\" alt=\"Sports Social logo\">\n      </li>\n      <li class=\"brand-title\">\n        <span>Sports</span> <span>Social</span> <span>Blog</span>\n        <p>Chase your Sport</p>\n      </li>\n    </a>\n    <li  *ngIf=\"!mobileView\">\n      <input \n        ngui-auto-complete\n        [source]=\"keywords\"\n        [list-formatter]=\"autocompleListFormatter\"\n        type=\"text\" \n        placeholder=\"Search here the latest topics & trends in sports\" \n        (valueChanged)=\"valueChanged($event)\"\n        [max-num-list]=\"10\"\n        (keypress)=\"sendData($event)\"\n        #searchBox>  \n    </li>\n  </ul>\n  <ul class=\"right\" *ngIf=\"!mobileView\">\n    <li >\n      <a \n        href=\"http://testweb.sportsocial.in\" \n        target=\"_blank\" \n        class=\" websiteLink\" \n        (mouseover)=\"hover($event)\"\n        (mouseout)=\"removehoverColor($event)\">\n        <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"sports-social-link-blue-symbol\" #linkImage>\n        Go to Website \n      </a>\n    </li>\n  </ul>\n  <div class=\"mobileView \" *ngIf=\"mobileView\">\n     <div class=\"menuImageHolder\">\n       <img src=\"/assets/images/sports-social-menu.png\" role=\"button\" (click)=\"openDropDown()\" alt=\"sports-social-menu\">\n     </div>\n     <div *ngIf=\"open\" class=\"dropDown\">\n        <img src=\"/assets/images/sports-social-cancel-black.png\" role=\"button\" (click)=\"closeDropDown()\" class=\"Close\" alt=\"sports-social-cancel-black\">\n        <p> \n          <a \n            href=\"http://testweb.sportsocial.in\" \n            target=\"_blank\" \n            class=\" websiteLink\" \n            (mouseover)=\"hover($event)\"\n            (mouseout)=\"removehoverColor($event)\">\n            <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"\" #linkImage>\n            Go to Website \n         </a>\n        </p>\n      <div class=\"search\">\n         <input \n          ngui-auto-complete\n          [source]=\"keywords\"\n          [list-formatter]=\"autocompleListFormatter\"\n          type=\"text\" \n          placeholder=\"Search \" \n          (valueChanged)=\"valueChanged($event)\"\n          [max-num-list]=\"10\"\n          (keypress)=\"sendData($event)\"\n          #searchBox >\n          <button (click)=\"searchSportSocial()\">Search</button>\n      </div>\n      \n    </div>\n  </div> \n</header>\n"
+module.exports = "<header #Header>\n  <ul class=\"left\" #left>\n    <a href=\"/\">\n      <li class=\"brand-image\">\n        <img src=\"/assets/images/sports-social-logo.png\" alt=\"Sports Social logo\">\n      </li>\n      <li class=\"brand-title\">\n        <span>Sports</span> <span>Social</span> <span>Blog</span>\n        <p>Chase your Sport</p>\n      </li>\n    </a>\n    <li  *ngIf=\"!mobileView\">\n      <input \n        ngui-auto-complete\n        [source]=\"keywords\"\n        [list-formatter]=\"autocompleListFormatter\"\n        type=\"text\" \n        placeholder=\"Search here the latest topics & trends in sports\" \n        (valueChanged)=\"valueChanged($event)\"\n        [max-num-list]=\"10\"\n        [open-on-focus]=\"false\"\n        (keypress)=\"sendData($event)\"\n        #searchBox>  \n    </li>\n  </ul>\n  <ul class=\"right\" *ngIf=\"!mobileView\">\n    <li >\n      <a \n        href=\"http://testweb.sportsocial.in\" \n        target=\"_blank\" \n        class=\" websiteLink\" \n        (mouseover)=\"hover($event)\"\n        (mouseout)=\"removehoverColor($event)\">\n        <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"sports-social-link-blue-symbol\" #linkImage>\n        Go to Website \n      </a>\n    </li>\n  </ul>\n  <div class=\"mobileView \" *ngIf=\"mobileView\">\n     <div class=\"menuImageHolder\">\n       <img src=\"/assets/images/sports-social-menu.png\" role=\"button\" (click)=\"openDropDown()\" alt=\"sports-social-menu\">\n     </div>\n     <div *ngIf=\"open\" class=\"dropDown\">\n        <img src=\"/assets/images/sports-social-cancel-black.png\" role=\"button\" (click)=\"closeDropDown()\" class=\"Close\" alt=\"sports-social-cancel-black\">\n        <p> \n          <a \n            href=\"http://testweb.sportsocial.in\" \n            target=\"_blank\" \n            class=\" websiteLink\" \n            (mouseover)=\"hover($event)\"\n            (mouseout)=\"removehoverColor($event)\">\n            <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"\" #linkImage>\n            Go to Website \n         </a>\n        </p>\n      <div class=\"search\">\n         <input \n          ngui-auto-complete\n          [source]=\"keywords\"\n          [list-formatter]=\"autocompleListFormatter\"\n          type=\"text\" \n          placeholder=\"Search \" \n          (valueChanged)=\"valueChanged($event)\"\n          [max-num-list]=\"10\"\n          (keypress)=\"sendData($event)\"\n          [open-on-focus]=\"false\"\n          #searchBox >\n          <button (click)=\"searchSportSocial()\">Search</button>\n      </div>\n      \n    </div>\n  </div> \n</header>\n"
 
 /***/ }),
 
@@ -496,7 +496,7 @@ var BlogHeaderComponent = /** @class */ (function () {
         this.open = false;
         this.router.navigate(['/' + newVal]);
         this.searchBox.nativeElement.value = "";
-        this.reloadPage();
+        //this.reloadPage()
     };
     BlogHeaderComponent.prototype.searchSportSocial = function () {
         this.search = true;
@@ -508,7 +508,7 @@ var BlogHeaderComponent = /** @class */ (function () {
             this.open = false;
             this.router.navigate(['/' + input]);
             this.searchBox.nativeElement.value = "";
-            this.reloadPage();
+            //this.reloadPage()
         }
     };
     BlogHeaderComponent.prototype.hover = function (event) {
@@ -3353,65 +3353,111 @@ var SearchComponent = /** @class */ (function () {
         this.dataRecieved = false;
         this.show = false;
         this.tempBlog = [];
-        this.blogDetails = [];
         this.pageNumber = 1;
         this.mobileView = false;
         this.haveData = true;
     }
     SearchComponent.prototype.ngOnInit = function () {
-        var _this = this;
         this.setTopMargin();
         this.recievekeyFromUrl();
         this.setMobileView();
-        this.pageNumber = JSON.parse(sessionStorage.getItem('pageNumber'));
-        if (this.pageNumber == null) {
-            this.pageNumber = 1;
+        /* this.pageNumber=JSON.parse(sessionStorage.getItem('pageNumber'))
+        if(this.pageNumber==null){
+          this.pageNumber=1
+        } */
+        /// console.log(this.recievedKey,this.pageNumber, "search")
+        /* if(this.pageNumber==1){
+          console.log(this.recievedKey,this.pageNumber, "search")
+          /* this.get.blogData(this.pageNumber,this.recievedKey).subscribe(
+          (data)=>{
+            if(data.length>0){
+              this.haveData=true
+            }
+            else{
+              this.haveData=false
+            }
+            if(data.length==0 && this.pageNumber==1){
+    
+            }
+            this.show=true;
+            this.dataRecieved=true;
+            for(let i in data){
+                this.blogDetails.push(
+                  {
+                    blogId:data[i].blogId,
+                    blogImage:data[i].blogImage,
+                    bloggerName:data[i].bloggerName,
+                    bloggerImage:data[i].bloggerImage,
+                    heading:data[i].heading,
+                    Content:data[i].Content,
+                    insertedDate:this.timePassed(data[i].insertedDate),
+                    ViewCount:data[i].ViewCount,
+                    ShareCount:data[i].ShareCount,
+                    keywords:data[i].keywords.split(","),
+                    exactDate:this.ExactDate(data[i].insertedDate),
+                    readingTime:this.timeToRead(data[i].Content)
+                  }
+                )
+              }
+            console.log(this.blogDetails, " search")
+            }
+          )
         }
-        console.log(this.recievedKey, this.pageNumber, "rt");
-        if (this.pageNumber == 1) {
-            this.get.blogData(this.pageNumber, this.recievedKey).subscribe(function (data) {
-                if (data.length > 0) {
-                    _this.haveData = true;
-                }
-                else {
-                    _this.haveData = false;
-                }
-                if (data.length == 0 && _this.pageNumber == 1) {
-                }
-                _this.show = true;
-                _this.dataRecieved = true;
-                for (var i in data) {
-                    _this.blogDetails.push({
-                        blogId: data[i].blogId,
-                        blogImage: data[i].blogImage,
-                        bloggerName: data[i].bloggerName,
-                        bloggerImage: data[i].bloggerImage,
-                        heading: data[i].heading,
-                        Content: data[i].Content,
-                        insertedDate: _this.timePassed(data[i].insertedDate),
-                        ViewCount: data[i].ViewCount,
-                        ShareCount: data[i].ShareCount,
-                        keywords: data[i].keywords.split(","),
-                        exactDate: _this.ExactDate(data[i].insertedDate),
-                        readingTime: _this.timeToRead(data[i].Content)
-                    });
-                }
-                console.log(_this.blogDetails);
-            });
+        else{
+          this.show=true;
+          this.dataRecieved=true;
+          this.blogDetails=JSON.parse(sessionStorage.getItem('searchedBlog'))
+          console.log(this.blogDetails," vtds")
         }
-        else {
-            this.show = true;
-            this.dataRecieved = true;
-            this.blogDetails = JSON.parse(sessionStorage.getItem('searchedBlog'));
-            console.log(this.blogDetails, " vtds");
-        }
+     */
+    };
+    SearchComponent.prototype.ngAfterViewInit = function () {
+        this.setTopMargin();
+        this.recievekeyFromUrl();
+    };
+    SearchComponent.prototype.getBlogs = function () {
+        var _this = this;
+        //console.log(this.pageNumber, " next page")
+        var blogDetails = [];
+        this.get.blogData(this.pageNumber, this.recievedKey).subscribe(function (data) {
+            if (data.length > 0) {
+                _this.haveData = true;
+            }
+            else {
+                _this.haveData = false;
+            }
+            if (data.length == 0 && _this.pageNumber == 1) {
+            }
+            _this.show = true;
+            _this.dataRecieved = true;
+            for (var i in data) {
+                blogDetails.push({
+                    blogId: data[i].blogId,
+                    blogImage: data[i].blogImage,
+                    bloggerName: data[i].bloggerName,
+                    bloggerImage: data[i].bloggerImage,
+                    heading: data[i].heading,
+                    Content: data[i].Content,
+                    insertedDate: _this.timePassed(data[i].insertedDate),
+                    ViewCount: data[i].ViewCount,
+                    ShareCount: data[i].ShareCount,
+                    keywords: data[i].keywords.split(","),
+                    exactDate: _this.ExactDate(data[i].insertedDate),
+                    readingTime: _this.timeToRead(data[i].Content)
+                });
+            }
+            // console.log(blogDetails, " search")
+            _this.blogDetails = blogDetails;
+        });
     };
     SearchComponent.prototype.recievekeyFromUrl = function () {
         var _this = this;
         this.recievedKey = this.route.snapshot.url[0].path.replace(/-/g, " ");
         this.route.params.subscribe(function (params) {
-            console.log(params, " params");
+            _this.pageNumber = 1;
+            //console.log(params, " params")
             _this.recievedKey = params.tag.replace(/-/g, " ");
+            _this.getBlogs();
         });
     };
     SearchComponent.prototype.setMobileView = function () {
@@ -3463,9 +3509,6 @@ var SearchComponent = /** @class */ (function () {
         });
         this.renderer.setStyle(this.searchPage.nativeElement, 'margin-top', this.topMargin + "px");
     };
-    SearchComponent.prototype.ngAfterViewInit = function () {
-        this.setTopMargin();
-    };
     SearchComponent.prototype.onresize = function () {
         this.setTopMargin();
         this.setMobileView();
@@ -3474,6 +3517,7 @@ var SearchComponent = /** @class */ (function () {
         var _this = this;
         this.pageNumber++;
         this.dataRecieved = false;
+        // console.log(this.recievedKey,this.pageNumber,"next")
         this.get.blogData(this.pageNumber, this.recievedKey).subscribe(function (data) {
             console.log(data, " nm");
             _this.dataRecieved = true;

@@ -84,7 +84,7 @@ export class BlogHeaderComponent implements OnInit {
         location.reload();
     });
   }
-
+  
   @HostListener('window:resize',[]) onresize(){
     this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
     if(window.innerWidth<=750){
@@ -107,7 +107,7 @@ export class BlogHeaderComponent implements OnInit {
     this.open=false;
     this.router.navigate(['/'+newVal])
     this.searchBox.nativeElement.value=""
-    this.reloadPage()
+    //this.reloadPage()
   }
   searchSportSocial(){
     this.search=true
@@ -120,7 +120,7 @@ export class BlogHeaderComponent implements OnInit {
       this.open=false;
       this.router.navigate(['/'+input])
       this.searchBox.nativeElement.value=""
-      this.reloadPage()
+      //this.reloadPage()
     }
   }
   autocompleListFormatter = (data: any) => {
