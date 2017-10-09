@@ -572,7 +572,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/blog-open/blog-open.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=openBlog>\n  <p #openBlog class=\"Catagory\">\n    <span role=\"button\" (click)=\"getblogs($event)\">{{Keywords[0]}}</span>\n    <span  *ngIf=\"blogDataRecieved\">|</span>\n    <span>{{blog.readingTime}}</span>\n  </p>\n  <div class=\"blogImageHolder\">\n    <img class=\"blogImage\" alt=\"blogImage\" src=\"{{blog.blogImage}}\"  (error)=\"setDefaultBlogImage()\" (load)=\"removeInitalImage()\" *ngIf=\"blogDataRecieved\" >\n    <img class=\"blogImage\"  alt=\"InitialblogImage\" src=\"/assets/images/default-image.png\"  *ngIf=\"loading\">\n    <img src=\"/assets/images/sports-social-zoom-out-orange.png\" alt=\"sports-social-zoom-out-orange\" role=\"button\" (click)=\"openfullImage()\"  class=\"zoom\">\n  </div>\n  \n  <div class=\"content\">\n    \n    <div class=\"blogInfo\" #BlogInfo>\n      <p [innerHtml]=\"blog.heading\"class=\"title\"></p>\n      <div class=\"bloggerImage\">\n        <img src=\"{{blog.bloggerImage}}\" alt=\"bloggerImage\" (error)=\"setDefault()\" >\n      </div>\n      <div class=\"blogger\" *ngIf=\"blogDataRecieved\">\n        <p  class=\"bloggerName\">Written by <span> {{blog.bloggerName}}</span></p>  \n        <p class=\"writtenDate\">\n          {{blog.exactDate}}\n        </p>\n      </div>\n      <div class=\"count\" *ngIf=\"blogDataRecieved\">\n        <span>\n          <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\">\n          <span>{{blog.ViewCount}}</span>\n        </span>\n        <span>\n          <img src=\"/assets/images/sports-social-share-orange.png\" alt=\"sports-social-share-orange\">\n          <span>{{blog.ShareCount}}</span>\n        </span>\n      </div>\n      \n      <div class=\"shareOn\" *ngIf=\"blogDataRecieved\">\n        Share on \n        <img src=\"/assets/images/sports-social-facebook-logo-black.png\" role=\"button\" (click)=\"shareOnFacebook()\" class=\"facebook\" alt=\"sports-social-facebook-logo-black\">\n        <a href=\"https://twitter.com/share\" (click)=\"shareOnTwitter()\" #popup class=\"twitter\">\n          <img src=\"/assets/images/sports-social-twitter-logo-black.png\"  class=\"twitterButton\" alt=\"sports-social-twitter-logo-black\">\n        </a> \n      </div>\n      <p [innerHtml]=\"blog.Content\" class=\"desc\" *ngIf=\"blogDataRecieved\">\n      </p>\n      <div class=\"tags\" *ngIf=\"blogDataRecieved\" >\n        <div class=\"tagHolder\">\n          <img src=\"/assets/images/sports-social-tag.png\" alt=\"sports-social-tag\">\n        </div>\n        <a *ngFor=\"let key of Keywords;let i=index\" role=\"button\" (click)=\"getblogs($event)\">{{key}}</a>\n      </div>\n      <p class=\"shareOn\" *ngIf=\"blogDataRecieved\">\n        Share on \n        \n        <img src=\"/assets/images/sports-social-facebook-logo-black.png\" role=\"button\" (click)=\"shareOnFacebook()\" class=\"facebook\" alt=\"sports-social-facebook-logo-black\">\n        <a href=\"http://twitter.com/share\" (click)=\"shareOnTwitter()\" #popup class=\"twitter\">\n          <img src=\"/assets/images/sports-social-twitter-logo-black.png\"  class=\"twitterButton\" alt=\"sports-social-twitter-logo-black\">\n        </a> \n      </p>\n    </div>\n    <div class=\"social\" *ngIf=\"!removeSocial\">\n      <div class=\"follow\">\n        <p *ngIf=\"blogDataRecieved\">Follow us</p>\n        <a href=\"https://www.facebook.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">\n          <img src=\"/assets/images/sports-social-facebook-logo-blue.png\" alt=\"sports-social-facebook-logo-blue\">\n        </a> \n        <a href=\"https://www.instagram.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\"> \n          <img src=\"/assets/images/sports-social-instagram-logo-blue.png\" alt=\"sports-social-instagram-logo-blue\">\n        </a>\n        <a href=\"https://www.twitter.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-twitter-logo-blue.png\" alt=\"sports-social-twitter-logo-blue\">\n        </a>\n        <a href=\"https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-youtube-logo-blue.png\" alt=\"sports-social-youtube-logo-blue\">\n        </a>\n        <a href=\"https://www.pinterest.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-pinterest-logo-blue.png\" alt=\"sports-social-pinterest-logo-blue\">\n        </a>\n        <a href=\" https://in.linkedin.com/company/sports-social\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-linkedin-logo-blue.png\" alt=\"sports-social-linkedin-logo-blue\">\n        </a>\n        <a href=\"https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-quora-logo-blue.png\" alt=\"sports-social-quora-logo-blue\">\n        </a>\n      </div>\n      <div class=\"twitter\">\n        <p>\n          <img src=\"/assets/images/sports-social-twitter-logo-blue.png\" alt=\"sports-social-twitter-logo-blue\">\n          Tweets by @chaseyoursport</p>\n        <a \n          class=\"twitter-timeline\" \n          href=\"https://twitter.com/chaseyoursport\"\n          data-width=\"450\"\n          data-height=\"700\"\n          data-chrome=\"noheader nofooter\">\n          Tweets by chaseyoursport\n        </a>\n        </div>\n    </div>\n  </div>\n  <div class=\"comments\" *ngIf=\"blogDataRecieved\">\n    <SportSocial-comments\n      [BlogId]=\"blogID\">\n    </SportSocial-comments>\n  </div>\n  <!-- <div>\n    <div  *ngIf=\"!mobileView\" class=\"relatedBlog\">\n      <p *ngIf=\"blogDataRecieved\">Related Articles</p>\n      <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\" >\n      <div TabViewAvailable class=\"col-4\" *ngFor=\"let data of relatedBlogDetails;let i=index\">\n        <SportSocial-normal-blog \n          [blogId]=\"data.blogId\"\n          [blogImage]=\"data.blogImage\"\n          [bloggerImage]=\"data.bloggerImage\"\n          [bloggerName]=\"data.bloggerName\"\n          [insertedDate]=\"data.insertedDate\"\n          [heading]=\"data.heading\"\n          [Content]=\"data.Content\"\n          [ViewCount]=\"data.ViewCount\"\n          [ShareCount]=\"data.ShareCount\"\n          [keywords]=\"data.keywords\"\n          [exactDate]=\"data.exactDate\"\n          [readingTime]=\"data.readingTime\">\n        </SportSocial-normal-blog>\n      </div>\n    </div>\n    <div *ngIf=\"mobileView\" class=\"mobileView relatedBlog\">\n      <p *ngIf=\"blogDataRecieved\">Related Articles</p>\n      <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\">\n      <div class=\"col-4\" *ngFor=\"let data of relatedBlogDetails;let i=index\">\n        <SportSocial-normal-blog \n            [blogId]=\"data.blogId\"\n            [blogImage]=\"data.blogImage\"\n            [bloggerImage]=\"data.bloggerImage\"\n            [bloggerName]=\"data.bloggerName\"\n            [insertedDate]=\"data.insertedDate\"\n            [heading]=\"data.heading\"\n            [Content]=\"data.Content\"\n            [ViewCount]=\"data.ViewCount\"\n            [ShareCount]=\"data.ShareCount\"\n            [keywords]=\"data.keywords\"\n            [exactDate]=\"data.exactDate\"\n            [readingTime]=\"data.readingTime\">\n        </SportSocial-normal-blog>\n    </div>\n    </div>\n  </div>\n -->  \n<SportSocial-related-blogs></SportSocial-related-blogs>\n  \n</div> \n<SportSocial-blog-footer></SportSocial-blog-footer>\n\n<div class=\"fullImage\" #fullImage *ngIf=\"openFullImage\">\n  <img \n   src=\"/assets/images/sports-social-cancel-white.png\" \n   class=\"cancel\" role=\"button\" (click)=\"closeFullImage()\">   \n   \n </div>\n <div class=\"fullImageHolder\" *ngIf=\"openFullImage\" #fullImageHolder>\n   <img src=\"{{blog.blogImage}}\" >\n </div>"
+module.exports = "<div class=openBlog>\n  <p #openBlog class=\"Catagory\">\n    <span role=\"button\" (click)=\"getblogs($event)\">{{Keywords[0]}}</span>\n    <span  *ngIf=\"blogDataRecieved\">|</span>\n    <span>{{blog.readingTime}}</span>\n  </p>\n  <div class=\"blogImageHolder\">\n    <img class=\"blogImage\" alt=\"blogImage\" src=\"{{blog.blogImage}}\"  (error)=\"setDefaultBlogImage()\" (load)=\"removeInitalImage()\" *ngIf=\"blogDataRecieved\" >\n    <img class=\"blogImage\"  alt=\"InitialblogImage\" src=\"/assets/images/default-image.png\"  *ngIf=\"loading\">\n    <img src=\"/assets/images/sports-social-zoom-out-orange.png\" alt=\"sports-social-zoom-out-orange\" role=\"button\" (click)=\"openfullImage()\"  class=\"zoom\">\n  </div>\n  \n  <div class=\"content\">\n    \n    <div class=\"blogInfo\" #BlogInfo>\n      <p [innerHtml]=\"blog.heading\"class=\"title\"></p>\n      <div class=\"bloggerImage\">\n        <img src=\"{{blog.bloggerImage}}\"  (error)=\"setDefault()\" >\n      </div>\n      <div class=\"blogger\" *ngIf=\"blogDataRecieved\">\n        <p  class=\"bloggerName\">Written by <span> {{blog.bloggerName}}</span></p>  \n        <p class=\"writtenDate\">\n          {{blog.exactDate}}\n        </p>\n      </div>\n      <div class=\"count\" *ngIf=\"blogDataRecieved\">\n        <span>\n          <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\">\n          <span>{{blog.ViewCount}}</span>\n        </span>\n        <span>\n          <img src=\"/assets/images/sports-social-share-orange.png\" alt=\"sports-social-share-orange\">\n          <span>{{blog.ShareCount}}</span>\n        </span>\n      </div>\n      \n      <div class=\"shareOn\" *ngIf=\"blogDataRecieved\">\n        Share on \n        <img src=\"/assets/images/sports-social-facebook-logo-black.png\" role=\"button\" (click)=\"shareOnFacebook()\" class=\"facebook\" alt=\"sports-social-facebook-logo-black\">\n        <a href=\"https://twitter.com/share\" (click)=\"shareOnTwitter()\" #popup class=\"twitter\">\n          <img src=\"/assets/images/sports-social-twitter-logo-black.png\"  class=\"twitterButton\" alt=\"sports-social-twitter-logo-black\">\n        </a> \n      </div>\n      <p [innerHtml]=\"blog.Content\" class=\"desc\" *ngIf=\"blogDataRecieved\">\n      </p>\n      <div class=\"tags\" *ngIf=\"blogDataRecieved\" >\n        <div class=\"tagHolder\">\n          <img src=\"/assets/images/sports-social-tag.png\" alt=\"sports-social-tag\">\n        </div>\n        <a *ngFor=\"let key of Keywords;let i=index\" role=\"button\" (click)=\"getblogs($event)\">{{key}}</a>\n      </div>\n      <p class=\"shareOn\" *ngIf=\"blogDataRecieved\">\n        Share on \n        \n        <img src=\"/assets/images/sports-social-facebook-logo-black.png\" role=\"button\" (click)=\"shareOnFacebook()\" class=\"facebook\" alt=\"sports-social-facebook-logo-black\">\n        <a href=\"http://twitter.com/share\" (click)=\"shareOnTwitter()\" #popup class=\"twitter\">\n          <img src=\"/assets/images/sports-social-twitter-logo-black.png\"  class=\"twitterButton\" alt=\"sports-social-twitter-logo-black\">\n        </a> \n      </p>\n    </div>\n    <div class=\"social\" *ngIf=\"!removeSocial\">\n      <div class=\"follow\">\n        <p *ngIf=\"blogDataRecieved\">Follow us</p>\n        <a href=\"https://www.facebook.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">\n          <img src=\"/assets/images/sports-social-facebook-logo-blue.png\" alt=\"sports-social-facebook-logo-blue\">\n        </a> \n        <a href=\"https://www.instagram.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\"> \n          <img src=\"/assets/images/sports-social-instagram-logo-blue.png\" alt=\"sports-social-instagram-logo-blue\">\n        </a>\n        <a href=\"https://www.twitter.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-twitter-logo-blue.png\" alt=\"sports-social-twitter-logo-blue\">\n        </a>\n        <a href=\"https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-youtube-logo-blue.png\" alt=\"sports-social-youtube-logo-blue\">\n        </a>\n        <a href=\"https://www.pinterest.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-pinterest-logo-blue.png\" alt=\"sports-social-pinterest-logo-blue\">\n        </a>\n        <a href=\" https://in.linkedin.com/company/sports-social\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-linkedin-logo-blue.png\" alt=\"sports-social-linkedin-logo-blue\">\n        </a>\n        <a href=\"https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-quora-logo-blue.png\" alt=\"sports-social-quora-logo-blue\">\n        </a>\n      </div>\n      <div class=\"twitter\">\n        <p>\n          <img src=\"/assets/images/sports-social-twitter-logo-blue.png\" alt=\"sports-social-twitter-logo-blue\">\n          Tweets by @chaseyoursport</p>\n        <a \n          class=\"twitter-timeline\" \n          href=\"https://twitter.com/chaseyoursport\"\n          data-width=\"450\"\n          data-height=\"700\"\n          data-chrome=\"noheader nofooter\">\n          Tweets by chaseyoursport\n        </a>\n        </div>\n    </div>\n  </div>\n  <div class=\"comments\" *ngIf=\"blogDataRecieved\">\n    <SportSocial-comments\n      [BlogId]=\"blogID\">\n    </SportSocial-comments>\n  </div>\n  <!-- <div>\n    <div  *ngIf=\"!mobileView\" class=\"relatedBlog\">\n      <p *ngIf=\"blogDataRecieved\">Related Articles</p>\n      <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\" >\n      <div TabViewAvailable class=\"col-4\" *ngFor=\"let data of relatedBlogDetails;let i=index\">\n        <SportSocial-normal-blog \n          [blogId]=\"data.blogId\"\n          [blogImage]=\"data.blogImage\"\n          [bloggerImage]=\"data.bloggerImage\"\n          [bloggerName]=\"data.bloggerName\"\n          [insertedDate]=\"data.insertedDate\"\n          [heading]=\"data.heading\"\n          [Content]=\"data.Content\"\n          [ViewCount]=\"data.ViewCount\"\n          [ShareCount]=\"data.ShareCount\"\n          [keywords]=\"data.keywords\"\n          [exactDate]=\"data.exactDate\"\n          [readingTime]=\"data.readingTime\">\n        </SportSocial-normal-blog>\n      </div>\n    </div>\n    <div *ngIf=\"mobileView\" class=\"mobileView relatedBlog\">\n      <p *ngIf=\"blogDataRecieved\">Related Articles</p>\n      <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\">\n      <div class=\"col-4\" *ngFor=\"let data of relatedBlogDetails;let i=index\">\n        <SportSocial-normal-blog \n            [blogId]=\"data.blogId\"\n            [blogImage]=\"data.blogImage\"\n            [bloggerImage]=\"data.bloggerImage\"\n            [bloggerName]=\"data.bloggerName\"\n            [insertedDate]=\"data.insertedDate\"\n            [heading]=\"data.heading\"\n            [Content]=\"data.Content\"\n            [ViewCount]=\"data.ViewCount\"\n            [ShareCount]=\"data.ShareCount\"\n            [keywords]=\"data.keywords\"\n            [exactDate]=\"data.exactDate\"\n            [readingTime]=\"data.readingTime\">\n        </SportSocial-normal-blog>\n    </div>\n    </div>\n  </div>\n -->  \n<SportSocial-related-blogs></SportSocial-related-blogs>\n  \n</div> \n<SportSocial-blog-footer></SportSocial-blog-footer>\n\n<div class=\"fullImage\" #fullImage *ngIf=\"openFullImage\">\n  <img \n   src=\"/assets/images/sports-social-cancel-white.png\" \n   class=\"cancel\" role=\"button\" (click)=\"closeFullImage()\">   \n   \n </div>\n <div class=\"fullImageHolder\" *ngIf=\"openFullImage\" #fullImageHolder>\n   <img src=\"{{blog.blogImage}}\" >\n </div>"
 
 /***/ }),
 
@@ -1364,10 +1364,15 @@ var LatestBlogComponent = /** @class */ (function () {
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.1em');
         }
-        if (window.innerWidth < 600) {
+        if (window.innerWidth < 600 && window.innerWidth > 400) {
             this.renderer.setStyle(this.Desc.nativeElement, 'height', '75%');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.6em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.3em');
+        }
+        if (window.innerWidth < 400) {
+            this.renderer.setStyle(this.Desc.nativeElement, 'height', '80%');
+            this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.3em');
+            this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
         }
         if (this.blogImage) {
             this.dataRecieved = true;
@@ -1426,8 +1431,13 @@ var LatestBlogComponent = /** @class */ (function () {
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.1em');
         }
-        if (window.innerWidth < 600) {
+        if (window.innerWidth < 600 && window.innerWidth > 400) {
             this.renderer.setStyle(this.Desc.nativeElement, 'height', '75%');
+            this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.6em');
+            this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.3em');
+        }
+        if (window.innerWidth < 400) {
+            this.renderer.setStyle(this.Desc.nativeElement, 'height', '80%');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.1em');
         }
@@ -2463,9 +2473,9 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
         if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className == 'col-12 latestBlog') {
             this.height = -(.631555929660 * (this.width)) + this.width;
         }
-        /* if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
-          this.renderer.setStyle(this.elRef.nativeElement,'max-height','500px')
-        } */
+        if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className == 'col-4') {
+            this.renderer.setStyle(this.elRef.nativeElement, 'max-height', '500px');
+        }
         if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth < 950) {
             this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
             this.width = this.elRef.nativeElement.getBoundingClientRect().width;
@@ -2476,39 +2486,40 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
         }
         this.renderer.setStyle(this.elRef.nativeElement, 'height', this.height + "px");
     };
-    MaintainHeightWidthRatioDirective.prototype.ngAfterViewChecked = function () {
-        this.width = this.elRef.nativeElement.getBoundingClientRect().width;
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-8') {
-            this.height = -(.536231884057 * (this.width)) + this.width;
+    /* ngAfterViewChecked(){
+       this.width=this.elRef.nativeElement.getBoundingClientRect().width;
+       
+       if(this.elRef.nativeElement.parentNode.parentNode.className=='col-8'){
+         this.height=-(.536231884057*(this.width))+this.width
+       }
+       if(this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
+         this.height=-(.063889538965*(this.width))+this.width
+       }
+       if(this.elRef.nativeElement.parentNode.parentNode.className=='col-6'){
+         this.height=-(.048751486325*(this.width))+this.width
+       }
+       if(this.elRef.nativeElement.parentNode.parentNode.className=='col-12'){
+         this.height=-(.531555929660*(this.width))+this.width
+       }
+       if(this.elRef.nativeElement.parentNode.parentNode.className=='trendingBlogs'){
+         this.height=(.9193700617283*(this.width))+this.width
+       }
+       if(this.elRef.nativeElement.className=='latest'   && this.elRef.nativeElement.parentNode.parentNode.className=='col-12 latestBlog'){
+         this.height=-(.631555929660*(this.width))+this.width
+       }
+       if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
+         this.renderer.setStyle(this.elRef.nativeElement,'max-height','500px')
         }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-4') {
-            this.height = -(.063889538965 * (this.width)) + this.width;
-        }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-6') {
-            this.height = -(.048751486325 * (this.width)) + this.width;
-        }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-12') {
-            this.height = -(.531555929660 * (this.width)) + this.width;
-        }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'trendingBlogs') {
-            this.height = (.9193700617283 * (this.width)) + this.width;
-        }
-        if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className == 'col-12 latestBlog') {
-            this.height = -(.631555929660 * (this.width)) + this.width;
-        }
-        /* if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
-          this.renderer.setStyle(this.elRef.nativeElement,'max-height','500px')
-         } */
-        if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth < 950) {
-            this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
-            this.width = this.elRef.nativeElement.getBoundingClientRect().width;
-            this.height = -(.548751486325 * (this.width)) + this.width;
-        }
-        if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth >= 950) {
-            this.renderer.setStyle(this.elRef.nativeElement, 'height', "23.5%");
-        }
-        this.renderer.setStyle(this.elRef.nativeElement, 'height', this.height + "px");
-    };
+       if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth<950){
+         this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
+         this.width=this.elRef.nativeElement.getBoundingClientRect().width
+         this.height=-(.548751486325*(this.width))+this.width
+       }
+       if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth>=950){
+         this.renderer.setStyle(this.elRef.nativeElement,'height',"23.5%")
+       }
+       this.renderer.setStyle(this.elRef.nativeElement,'height',this.height+"px")
+     } */
     MaintainHeightWidthRatioDirective.prototype.onresize = function () {
         this.width = this.elRef.nativeElement.getBoundingClientRect().width;
         if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-8') {

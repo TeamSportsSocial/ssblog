@@ -15,7 +15,7 @@
     <div class="blogInfo" #BlogInfo>
       <p [innerHtml]="blog.heading"class="title"></p>
       <div class="bloggerImage">
-        <img src="{{blog.bloggerImage}}" alt="bloggerImage" (error)="setDefault()" >
+        <img src="{{blog.bloggerImage}}"  (error)="setDefault()" >
       </div>
       <div class="blogger" *ngIf="blogDataRecieved">
         <p  class="bloggerName">Written by <span> {{blog.bloggerName}}</span></p>  

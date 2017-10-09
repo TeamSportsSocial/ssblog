@@ -9,7 +9,7 @@ import {
 @Directive({
   selector: '[MaintainHeightWidthRatio]'
 })
-export class MaintainHeightWidthRatioDirective implements AfterViewInit {
+export class MaintainHeightWidthRatioDirective {
   height;
   width;
   constructor(private elRef:ElementRef,private renderer:Renderer2) {
@@ -47,7 +47,7 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
     }
     this.renderer.setStyle(this.elRef.nativeElement,'height',this.height+"px")
   }
-  ngAfterViewInit(){
+   ngAfterViewInit(){
     this.width=this.elRef.nativeElement.getBoundingClientRect().width;
     
     if(this.elRef.nativeElement.parentNode.parentNode.className=='col-8' ){
@@ -68,9 +68,9 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
     if(this.elRef.nativeElement.className=='latest'  && this.elRef.nativeElement.parentNode.parentNode.className=='col-12 latestBlog'){
       this.height=-(.631555929660*(this.width))+this.width
     }
-    /* if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
+    if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
       this.renderer.setStyle(this.elRef.nativeElement,'max-height','500px')
-    } */
+    }
     if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth<950){
       this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
       this.width=this.elRef.nativeElement.getBoundingClientRect().width
@@ -81,7 +81,7 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
     }
     this.renderer.setStyle(this.elRef.nativeElement,'height',this.height+"px")
   }
-  ngAfterViewChecked(){
+ /* ngAfterViewChecked(){
     this.width=this.elRef.nativeElement.getBoundingClientRect().width;
     
     if(this.elRef.nativeElement.parentNode.parentNode.className=='col-8'){
@@ -102,9 +102,9 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
     if(this.elRef.nativeElement.className=='latest'   && this.elRef.nativeElement.parentNode.parentNode.className=='col-12 latestBlog'){
       this.height=-(.631555929660*(this.width))+this.width
     }
-    /* if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
+    if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
       this.renderer.setStyle(this.elRef.nativeElement,'max-height','500px')
-     } */
+     }
     if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth<950){
       this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
       this.width=this.elRef.nativeElement.getBoundingClientRect().width
@@ -114,7 +114,7 @@ export class MaintainHeightWidthRatioDirective implements AfterViewInit {
       this.renderer.setStyle(this.elRef.nativeElement,'height',"23.5%")
     }
     this.renderer.setStyle(this.elRef.nativeElement,'height',this.height+"px")
-  }
+  } */
   @HostListener('window:resize',[])onresize(){
     this.width=this.elRef.nativeElement.getBoundingClientRect().width; 
     if(this.elRef.nativeElement.parentNode.parentNode.className=='col-8'){

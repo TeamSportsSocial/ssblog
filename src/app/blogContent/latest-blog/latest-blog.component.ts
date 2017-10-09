@@ -94,10 +94,15 @@ export class LatestBlogComponent implements OnInit {
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }
-    if(window.innerWidth<600 ){
+    if(window.innerWidth<600 && window.innerWidth>400 ){
       this.renderer.setStyle(this.Desc.nativeElement,'height','75%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.6em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.3em')
+    }
+    if(window.innerWidth<400){
+      this.renderer.setStyle(this.Desc.nativeElement,'height','80%')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.3em')
+      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
     }
     if(this.blogImage){
       this.dataRecieved=true
@@ -158,8 +163,13 @@ export class LatestBlogComponent implements OnInit {
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }
-    if(window.innerWidth<600 ){
+    if(window.innerWidth<600 && window.innerWidth>400 ){
       this.renderer.setStyle(this.Desc.nativeElement,'height','75%')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.6em')
+      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.3em')
+    }
+    if(window.innerWidth<400){
+      this.renderer.setStyle(this.Desc.nativeElement,'height','80%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }
