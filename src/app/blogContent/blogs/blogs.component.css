@@ -1,6 +1,7 @@
 
 .blog{
     padding: 0.3% 1.5% 1.5% 1.5%;
+    font-family: 'Roboto',sans-serif;
 }
 .col-6{
     width: 50%;
@@ -39,7 +40,6 @@
 }
 .suscribeCard{
     border: 1px solid #bbbbbb;
-    box-shadow: 3px 3px #fafafa;
     border-radius: 4px;
 }
 button{
@@ -49,7 +49,7 @@ button{
     background-color: #ffa600;
     border:none;
     color: #ffffff;
-    font-family: 'Roboto',sans-serif;
+    
     font-weight: 700;
     font-size: 1.2em;
     padding: 0.5%;

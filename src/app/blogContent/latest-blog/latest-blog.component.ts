@@ -60,11 +60,9 @@ export class LatestBlogComponent implements OnInit {
     private Send: PropertyService,
     private renderer:Renderer2,
     private post: PostService,
-    private zone :NgZone
   ) { }
 
   ngOnInit() {
-    //console.log(this.latest)
     this.blog={
       blogId:this.blogId,
       blogImage:this.blogImage,
@@ -106,7 +104,6 @@ export class LatestBlogComponent implements OnInit {
     }
     if(this.blogImage){
       this.dataRecieved=true
-      console.log("blogImage")
     }
      
   }
@@ -114,7 +111,7 @@ export class LatestBlogComponent implements OnInit {
     this.heightOfInitialImage();
     if(this.blogImage){
       this.dataRecieved=true
-      console.log("blogImage")
+      
     }
   }
   removeInitialImage(){
@@ -123,11 +120,6 @@ export class LatestBlogComponent implements OnInit {
    
   setDefault(){
     this.blogImage="/assets/images/default-image.png"
-  }
-  reloadPage() { 
-    this.zone.runOutsideAngular(() => {
-        location.reload();
-    });
   }
   send(){
       this.Send.detailsofBlog.next(this.blog)

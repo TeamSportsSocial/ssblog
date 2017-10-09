@@ -23,8 +23,6 @@
     border-bottom: 1px solid #bbbbbb;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-   /*  background-image: url('/assets/images/default-image.png');
-    background-repeat: no-repeat */
 }
 .blogImageHolder img{
     width: 100%;
@@ -103,7 +101,6 @@ a:hover{
     top:0%;
     left:0%;
     z-index: 50;
-    box-shadow: 1px 1px #bbbbbb;
     border: 1px solid #bbbbbb;
     background-color: black;
     opacity: 0.8;

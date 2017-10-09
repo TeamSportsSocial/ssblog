@@ -3,7 +3,6 @@ div{
     height: 800px;
     border: 1px solid  #bbbbbb;
     border-radius: 5px;
-    box-shadow: 3px 3px #fafafa
 }
 p:last-child{
     text-align: right;
