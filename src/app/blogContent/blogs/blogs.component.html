@@ -1,6 +1,6 @@
 <SportSocialBlog-keywords></SportSocialBlog-keywords>
-<div class="blog" #blog *ngIf="!mobileView">
-    <div class="col-12 latestBlog" *ngFor="let data of latestBlogDetails;let i=index">
+<div class="blog" #blog *ngIf="!mobileView" >
+    <div class="latestBlog"  *ngFor="let data of latestBlogDetails;let i=index">
         <SportSocial-latest-blog 
             [blogId]="data.blogId"
             [blogImage]="data.blogImage"
@@ -61,7 +61,7 @@
 </div> 
         
 <div class="blog mobileView" *ngIf="mobileView" #blog>
-    <div  *ngFor="let data of latestBlogDetails;let i=index" >
+    <div class="latestBlog col-4" *ngFor="let data of latestBlogDetails;let i=index" >
         <SportSocial-latest-blog
             [blogId]="data.blogId"
             [blogImage]="data.blogImage"

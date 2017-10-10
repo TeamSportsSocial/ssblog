@@ -109,14 +109,14 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       this.mobileView=true;
     }
     this.nextPageNumber=JSON.parse(sessionStorage.getItem('blogPageNumber'))
-    console.log(this.nextPageNumber," try")
+    //console.log(this.nextPageNumber," try")
     if(this.nextPageNumber==null){
       this.nextPageNumber=1
     }
     if(this.nextPageNumber==1){
     this.get.blogData(this.nextPageNumber,this.defaultKey).subscribe(
       (data)=>{ 
-        console.log(data ,"coreect")
+       // console.log(data ,"coreect")
         this.show=true;
         this.dataRecived=true;
         for(let i in data){
@@ -137,7 +137,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               }
             )
         }
-        console.log(this.blogDetails, " tfd")
+        //console.log(this.blogDetails, " nadeem")
         this.latestBlogDetails.push(
           {
             blogId:this.blogDetails[0].blogId,
@@ -324,6 +324,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
   }
   timeToRead(s:string){
     let words = s.split(" ");
+    //console.log(words,words.length,this.blog.blogId)
     let time=Math.round(words.length/180)
     if(time>0){
       return time + " min read"

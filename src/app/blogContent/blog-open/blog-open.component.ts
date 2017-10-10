@@ -109,7 +109,11 @@ export class BlogOpenComponent implements OnInit {
     
     setMetaTags(){
         this.metaService.updateTag({
-            content:"https://www.chaseyoursport.com/"+this.route.snapshot.url[0].path+"/"+this.route.snapshot.url[1].path+"/"+this.route.snapshot.url[2].path+"/"
+            content:"article"
+            },
+        'property="og:type"')
+        this.metaService.updateTag({
+            href:"https://www.chaseyoursport.com/"+this.route.snapshot.url[0].path+"/"+this.route.snapshot.url[1].path+"/"+this.route.snapshot.url[2].path+"/"
             },
         'rel="canonical"')
         this.metaService.updateTag({
@@ -186,7 +190,7 @@ export class BlogOpenComponent implements OnInit {
                 const data=res[0]
                 console.log(data," t")
                 this.blogDataRecieved=true;
-                console.log(this.blogDataRecieved,"  true")
+               // console.log(this.blogDataRecieved,"  true")
                 this.blog={
                     blogId:data.blogId,
                     blogImage:data.blogImage,
@@ -220,6 +224,7 @@ export class BlogOpenComponent implements OnInit {
     
     timeToRead(s:string){
         let words = s.split(" ");
+        //console.log(s,words,words.length,this.blogID,"nadeem")
         let time=Math.round(words.length/180)
         if(time>0){
           return time + " min read"

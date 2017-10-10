@@ -119,6 +119,7 @@ export class NormalBlogComponent implements OnInit {
   send(){
     //this.reloadPage()
     this.Send.detailsofBlog.next(this.blog)
+    //console.log(this.blog.Content,this.blog.Content.split(" ").length," nadeem")
     window.scrollTo(0,0)
   }
   

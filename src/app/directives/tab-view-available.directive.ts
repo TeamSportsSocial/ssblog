@@ -20,7 +20,7 @@ export class TabViewAvailableDirective {
       if(this.className=='col-8'){
         this.renderer.removeClass(this.elRef.nativeElement,this.className)
         this.renderer.addClass(this.elRef.nativeElement,'col-12')
-        this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
+        //this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
       }
       if(this.className=='col-4'){
         this.renderer.removeClass(this.elRef.nativeElement,this.className)
@@ -35,7 +35,7 @@ export class TabViewAvailableDirective {
       if(this.className=='col-8'){
         this.renderer.removeClass(this.elRef.nativeElement,this.className)
         this.renderer.addClass(this.elRef.nativeElement,'col-12')
-        this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
+        //this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
       }
       if(this.className=='col-4'){
         this.renderer.removeClass(this.elRef.nativeElement,this.className)
@@ -51,7 +51,7 @@ export class TabViewAvailableDirective {
       if(this.className=='col-8'){
         this.renderer.removeClass(this.elRef.nativeElement,this.className)
         this.renderer.addClass(this.elRef.nativeElement,'col-12')
-        this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
+        //this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
       }
       if(this.className=='col-4'){
         this.renderer.removeClass(this.elRef.nativeElement,this.className)
@@ -80,7 +80,7 @@ export class TabViewAvailableDirective {
       if(this.className=='col-8'){
         this.renderer.removeClass(this.elRef.nativeElement,this.className)
         this.renderer.addClass(this.elRef.nativeElement,'col-12')
-        this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
+       // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
       }
       if(this.className=='col-4'){
         this.renderer.removeClass(this.elRef.nativeElement,this.className)

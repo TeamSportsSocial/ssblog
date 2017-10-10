@@ -1,38 +1,53 @@
 
+*{
+    margin: 0px;
+    padding: 0px;
+}
 .blog{
-    padding: 0.3% 1.5% 1.5% 1.5%;
     font-family: 'Roboto',sans-serif;
 }
 .col-6{
     width: 50%;
     display: inline-block;
     vertical-align: top;
-    padding:0% 1.5% 2% 1.5%;
+    padding: 0px 20px 0px 20px
 }
 .col-12{
     width: 100%;
     display: inline-block;
     vertical-align: top;
-    padding: 0% 0.5% 0% 0.5%
-   
+    padding: 0px 20px 0px 20px
 }
 .latestBlog{
-    padding: 0% 2% 0% 2%;
+    padding: 0px 25px 0px 30px
+}
+.col-4{
+    padding: 0px 20px 0px 20px
+}
+.col-8 >.col-6, .col-8 >.col-12, .col-12>.col-6 ,.col-12>.col-12{
+    padding: 0px 10px 0px 10px !important
+}
+.trendingBlogs{
+    padding-right: 20px;
 }
 .col-4,.trendingBlogs{
-    width: 33%;
+    width: 33.33%;
     display: inline-block;
     vertical-align: top;
-    padding: 1%;
+}
+.topBlogs{
+    width: 66.2%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0px 10px 0px 10px
 }
 .col-8{
     width: 66.2%;
     display: inline-block;
     vertical-align: top;
-    padding: 1%;
-    
+    padding: 0px 20px 0px 20px
 }
-.mobileView>.latest{
+.mobileView>.latestBlog{
     height: auto !important
 }
 .mobileView .col-4{
@@ -41,6 +56,7 @@
 .suscribeCard{
     border: 1px solid #bbbbbb;
     border-radius: 4px;
+    margin-bottom: 20px;
 }
 button{
     display: block;
