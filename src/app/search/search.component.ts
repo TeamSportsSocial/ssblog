@@ -6,6 +6,7 @@ import {
   HostListener,
   NgZone 
 } from '@angular/core';
+import { Meta,Title } from '@angular/platform-browser';
 import {PropertyService} from "../services/property.service";
 import {PostService} from "../services/post.service";
 import {ActivatedRoute} from "@angular/router";
@@ -40,7 +41,9 @@ export class SearchComponent implements OnInit {
     private recievekey: PropertyService,
     private get: PostService,
     private route:  ActivatedRoute,
-    private zone: NgZone
+    private zone: NgZone,
+    private titleService:Title,
+    private metaService:Meta
   ) { }
 
   ngOnInit() {
@@ -106,6 +109,9 @@ export class SearchComponent implements OnInit {
       this.recievekeyFromUrl()
     }
     
+    setTitle(){
+      this.titleService.setTitle(this.recievedKey+","+"Read the latest articles, blogs, news and other informations related to "+this.recievedKey)
+    }
     
     getBlogs(){
       //console.log(this.pageNumber, " next page")
@@ -167,6 +173,7 @@ export class SearchComponent implements OnInit {
           this.pageNumber=1
           //console.log(params, " params")
           this.recievedKey=params.tag.replace(/-/g, " ")
+          this.setTitle()
           this.getBlogs()
           
         }

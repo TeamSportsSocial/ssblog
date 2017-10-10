@@ -5,8 +5,8 @@
     <span>{{blog.readingTime}}</span>
   </p>
   <div class="blogImageHolder">
-    <img class="blogImage" alt="blogImage" src="{{blog.blogImage}}"  (error)="setDefaultBlogImage()" (load)="removeInitalImage()" *ngIf="blogDataRecieved" >
-    <img class="blogImage"  alt="InitialblogImage" src="/assets/images/default-image.png"  *ngIf="loading">
+    <img class="blogImage" alt="blogImage" src="{{blog.blogImage}}"  (error)="setDefaultBlogImage()" (load)="removeInitalImage()" role="button" *ngIf="blogDataRecieved" (click)="openfullImage()">
+    <img class="blogImage"  alt="InitialblogImage" src="/assets/images/default-image.png"  *ngIf="loading" (click)="openfullImage()" role="button">
     <img src="/assets/images/sports-social-zoom-out-orange.png" alt="sports-social-zoom-out-orange" role="button" (click)="openfullImage()"  class="zoom">
   </div>
   
@@ -103,60 +103,17 @@
       [BlogId]="blogID">
     </SportSocial-comments>
   </div>
-  <!-- <div>
-    <div  *ngIf="!mobileView" class="relatedBlog">
-      <p *ngIf="blogDataRecieved">Related Articles</p>
-      <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading" >
-      <div TabViewAvailable class="col-4" *ngFor="let data of relatedBlogDetails;let i=index">
-        <SportSocial-normal-blog 
-          [blogId]="data.blogId"
-          [blogImage]="data.blogImage"
-          [bloggerImage]="data.bloggerImage"
-          [bloggerName]="data.bloggerName"
-          [insertedDate]="data.insertedDate"
-          [heading]="data.heading"
-          [Content]="data.Content"
-          [ViewCount]="data.ViewCount"
-          [ShareCount]="data.ShareCount"
-          [keywords]="data.keywords"
-          [exactDate]="data.exactDate"
-          [readingTime]="data.readingTime">
-        </SportSocial-normal-blog>
-      </div>
-    </div>
-    <div *ngIf="mobileView" class="mobileView relatedBlog">
-      <p *ngIf="blogDataRecieved">Related Articles</p>
-      <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
-      <div class="col-4" *ngFor="let data of relatedBlogDetails;let i=index">
-        <SportSocial-normal-blog 
-            [blogId]="data.blogId"
-            [blogImage]="data.blogImage"
-            [bloggerImage]="data.bloggerImage"
-            [bloggerName]="data.bloggerName"
-            [insertedDate]="data.insertedDate"
-            [heading]="data.heading"
-            [Content]="data.Content"
-            [ViewCount]="data.ViewCount"
-            [ShareCount]="data.ShareCount"
-            [keywords]="data.keywords"
-            [exactDate]="data.exactDate"
-            [readingTime]="data.readingTime">
-        </SportSocial-normal-blog>
-    </div>
-    </div>
-  </div>
- -->  
 <SportSocial-related-blogs></SportSocial-related-blogs>
   
 </div> 
 <SportSocial-blog-footer></SportSocial-blog-footer>
 
-<div class="fullImage" #fullImage *ngIf="openFullImage">
+<div class="fullImage"  *ngIf="openFullImage" >
   <img 
    src="/assets/images/sports-social-cancel-white.png" 
-   class="cancel" role="button" (click)="closeFullImage()">   
+   class="cancel" role="button" (click)="closeFullImage()" >   
    
  </div>
- <div class="fullImageHolder" *ngIf="openFullImage" #fullImageHolder>
-   <img src="{{blog.blogImage}}" >
+ <div class="fullImageHolder" *ngIf="openFullImage" #fullImage>
+   <img src="{{blog.blogImage}}" (load)="onFullImageload()">
  </div>

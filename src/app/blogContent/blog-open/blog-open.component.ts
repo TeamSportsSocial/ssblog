@@ -7,7 +7,7 @@ import {
     NgZone
 } from '@angular/core';
 import {Http} from "@angular/http";
-import { Meta } from '@angular/platform-browser';
+import { Meta,Title } from '@angular/platform-browser';
 import {PropertyService} from "../../services/property.service";
 import {SaveService} from "../../services/save.service";
 import {PostService} from "../../services/post.service";
@@ -74,7 +74,8 @@ export class BlogOpenComponent implements OnInit {
         private send:PostService,
         private metaService: Meta,
         private load:PostService,
-        private zone :NgZone
+        private zone :NgZone,
+        private titleService:Title
     ) { 
         this.blogID=this.route.snapshot.url[2].path
         this.scriptOfTwitter()
@@ -106,7 +107,9 @@ export class BlogOpenComponent implements OnInit {
             }
         )
     }
-    
+    setTitle(){
+        this.titleService.setTitle(this.blog.heading)
+    }
     setMetaTags(){
         this.metaService.updateTag({
             content:"article"
@@ -179,6 +182,7 @@ export class BlogOpenComponent implements OnInit {
                 this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length-1])
                 // this.getRelatedBlogs()
                 this.setMetaTags();
+                this.setTitle()
             }
         )
     }
@@ -215,6 +219,7 @@ export class BlogOpenComponent implements OnInit {
                 window.scrollTo(0,0)
                 this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length-1])
                 this.setMetaTags();
+                this.setTitle()
               
             }
         )
@@ -324,6 +329,9 @@ export class BlogOpenComponent implements OnInit {
         this.scriptOfTwitter();
         this.setMobileView()
         this.setTopMargin() 
+        if( this.openFullImage==true){
+            this.onFullImageload()
+        }
     }
     
     
@@ -335,7 +343,12 @@ export class BlogOpenComponent implements OnInit {
     openfullImage(){
         this.openFullImage=true;   
     }
-    
+    onFullImageload(){
+        let height= this.fullImage.nativeElement.getBoundingClientRect().height
+       // console.log(height,window.innerHeight, "loaded")
+        let top=(window.innerHeight-height)/2;
+        this.renderer.setStyle(this.fullImage.nativeElement,"top",top+"px")
+    }
     closeFullImage(){
         this.openFullImage=false;
     }
@@ -406,40 +419,15 @@ export class BlogOpenComponent implements OnInit {
     return false;
     }
     
-    /* getRelatedBlogs(){
-        this.getRelated.blogData(1,this.blog.keywords[this.blog.keywords.length-1]).subscribe(
-            data=>{
-                this.dataRecived=true;
-                console.log(data, " related")
-                for(let i=0;i<3;i++){
-                    this.relatedBlogDetails.push(
-                      {
-                        blogId:data[i].blogId,
-                        blogImage:data[i].blogImage,
-                        bloggerName:data[i].bloggerName,
-                        bloggerImage:data[i].bloggerImage,
-                        heading:data[i].heading,
-                        Content:data[i].Content,
-                        insertedDate:this.timePassed(data[i].insertedDate),
-                        ViewCount:data[i].ViewCount,
-                        ShareCount:data[i].ShareCount,
-                        keywords:data[i].keywords.split(","),
-                        exactDate:this.ExactDate(data[i].insertedDate),
-                        readingTime:this.timeToRead(data[i].Content)
-                      }
-                    )
-                }
-                console.log(this.relatedBlogDetails," checkarticle")
-            }
-        )
-    }
-     */
+    
     getblogs(event){
         let key=event.toElement.innerText
         this.router.navigate(['/'+key])
         this.sendKey.ofBlogCard.next(key)
         
     }
+
+    
     
     
 }
