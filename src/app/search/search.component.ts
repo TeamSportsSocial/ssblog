@@ -196,12 +196,12 @@ export class SearchComponent implements OnInit {
     }
     
     ExactDate(i:number){
-      let writtenDate=new Date(i);
+      let writtenDate=new Date(i*1000);
       return writtenDate.toDateString()
     }
     
     timePassed(i:string){
-      let writtenDate=new Date(i);
+      let writtenDate=new Date(parseInt(i)*1000);
       let presentDate=new Date();
       if(writtenDate.getFullYear()==presentDate.getFullYear()){
         if(writtenDate.getMonth()==presentDate.getMonth()){

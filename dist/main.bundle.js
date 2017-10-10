@@ -649,26 +649,35 @@ var BlogOpenComponent = /** @class */ (function () {
     };
     BlogOpenComponent.prototype.setMetaTags = function () {
         this.metaService.updateTag({
-            content: this.blog.heading
+            content: "https://www.chaseyoursport.com/" + this.route.snapshot.url[0].path + "/" + this.route.snapshot.url[1].path + "/" + this.route.snapshot.url[2].path + "/"
+        }, 'rel="canonical"');
+        this.metaService.updateTag({
+            content: this.blog.heading.substr(0, 139)
+        }, 'name="title"');
+        this.metaService.updateTag({
+            content: this.blog.heading.substr(0, 139)
         }, 'property="og:title"');
         this.metaService.updateTag({
-            content: this.blog.Content
+            content: this.blog.Content.substring(0, 139)
+        }, 'name="description"');
+        this.metaService.updateTag({
+            content: this.blog.Content.substring(0, 139)
         }, 'property="og:description"');
         this.metaService.updateTag({
             content: this.blog.blogImage
         }, 'property="og:image"');
         this.metaService.updateTag({
-            content: "https://www.chaseyoursport.com/" + this.route.snapshot.url[0].path + "/" + this.route.snapshot.url[1].path + "/" + this.route.snapshot.url[2].path + "/"
+            content: "https://www.chaseyoursport.com/" + this.route.snapshot.url[0].path + "/" + this.route.snapshot.url[1].path + "/" + this.route.snapshot.url[2].path
         }, 'property="og:url"');
         this.metaService.updateTag({
-            content: this.blog.heading
-        }, 'property="twitter:title"');
+            content: this.blog.heading.substring(0, 139)
+        }, 'name="twitter:title"');
         this.metaService.updateTag({
-            content: this.blog.Content
-        }, 'property="twitter:description"');
+            content: this.blog.Content.substring(0, 139)
+        }, 'name="twitter:description"');
         this.metaService.updateTag({
             content: this.blog.blogImage
-        }, 'property="twitter:image"');
+        }, 'name="twitter:image:src"');
     };
     BlogOpenComponent.prototype.loadBlogFromSendData = function () {
         var _this = this;
@@ -738,9 +747,9 @@ var BlogOpenComponent = /** @class */ (function () {
         }
     };
     BlogOpenComponent.prototype.timePassed = function (i) {
-        var writtenDate = new Date(i);
+        var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
-        console.log(writtenDate.getDate(), presentDate.getDate(), " Date");
+        // console.log(writtenDate.getDate(),presentDate.getDate(), " Date")
         if (writtenDate.getFullYear() == presentDate.getFullYear()) {
             if (writtenDate.getMonth() == presentDate.getMonth()) {
                 if (writtenDate.getDate() == presentDate.getDate()) {
@@ -759,7 +768,7 @@ var BlogOpenComponent = /** @class */ (function () {
         }
     };
     BlogOpenComponent.prototype.ExactDate = function (i) {
-        var writtenDate = new Date(i);
+        var writtenDate = new Date(i * 1000);
         //console.log(writtenDate," wDate")
         return writtenDate.toDateString();
     };
@@ -1032,7 +1041,7 @@ var BlogsComponent = /** @class */ (function () {
         }
         if (this.nextPageNumber == 1) {
             this.get.blogData(this.nextPageNumber, this.defaultKey).subscribe(function (data) {
-                // console.log(data)
+                console.log(data, "coreect");
                 _this.show = true;
                 _this.dataRecived = true;
                 for (var i_1 in data) {
@@ -1051,7 +1060,7 @@ var BlogsComponent = /** @class */ (function () {
                         readingTime: _this.timeToRead(data[i_1].Content)
                     });
                 }
-                //console.log(this.blogDetails, " tfd")
+                console.log(_this.blogDetails, " tfd");
                 _this.latestBlogDetails.push({
                     blogId: _this.blogDetails[0].blogId,
                     blogImage: _this.blogDetails[0].blogImage,
@@ -1192,9 +1201,9 @@ var BlogsComponent = /** @class */ (function () {
         }
     };
     BlogsComponent.prototype.timePassed = function (i) {
-        var writtenDate = new Date(i);
+        var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
-        // console.log(writtenDate.getDate(),presentDate.getDate() ," date")
+        //console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
         if (writtenDate.getFullYear() == presentDate.getFullYear()) {
             if (writtenDate.getMonth() == presentDate.getMonth()) {
                 if (writtenDate.getDate() == presentDate.getDate()) {
@@ -1213,8 +1222,8 @@ var BlogsComponent = /** @class */ (function () {
         }
     };
     BlogsComponent.prototype.ExactDate = function (i) {
-        var writtenDate = new Date(i);
-        //console.log(i, writtenDate,writtenDate.toDateString())
+        var writtenDate = new Date(i * 1000);
+        // console.log(i, writtenDate,writtenDate.toDateString())
         return writtenDate.toDateString();
     };
     BlogsComponent.prototype.timeToRead = function (s) {
@@ -2198,7 +2207,7 @@ var CommentsComponent = /** @class */ (function () {
             .catch(console.error.bind(console));
     };
     CommentsComponent.prototype.getDate = function (i) {
-        var commentDate = new Date(i);
+        var commentDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
         // console.log('p: ',"y= ",presentDate.getFullYear(),"mon= ",presentDate.getMonth(),"d= ",presentDate.getDate(),"h= ",presentDate.getHours(),"s= ",presentDate.getSeconds(),'t= ',presentDate.toDateString())
         //console.log('c: ',"y= ",commentDate.getFullYear(),"mon= ",commentDate.getMonth(),"d= ",commentDate.getDate(),"h= ",commentDate.getHours(),"s= ",commentDate.getSeconds(),'t= ',commentDate.toDateString())
@@ -3492,11 +3501,11 @@ var SearchComponent = /** @class */ (function () {
         }
     };
     SearchComponent.prototype.ExactDate = function (i) {
-        var writtenDate = new Date(i);
+        var writtenDate = new Date(i * 1000);
         return writtenDate.toDateString();
     };
     SearchComponent.prototype.timePassed = function (i) {
-        var writtenDate = new Date(i);
+        var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
         if (writtenDate.getFullYear() == presentDate.getFullYear()) {
             if (writtenDate.getMonth() == presentDate.getMonth()) {

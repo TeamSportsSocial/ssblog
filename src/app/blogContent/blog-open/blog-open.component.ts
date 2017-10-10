@@ -108,34 +108,46 @@ export class BlogOpenComponent implements OnInit {
     }
     
     setMetaTags(){
-       this.metaService.updateTag({
-           content:this.blog.heading
-       },
-       'property="og:title"')
-       this.metaService.updateTag({
-           content:this.blog.Content
-       },
-       'property="og:description"')
-       this.metaService.updateTag({
-        content:this.blog.blogImage
-        },
-       'property="og:image"')
-       this.metaService.updateTag({
-        content:"https://www.chaseyoursport.com/"+this.route.snapshot.url[0].path+"/"+this.route.snapshot.url[1].path+"/"+this.route.snapshot.url[2].path+"/"
-        },
-       'property="og:url"')
-       this.metaService.updateTag({
-        content:this.blog.heading
-        },
-       'property="twitter:title"')
-       this.metaService.updateTag({
-        content:this.blog.Content
-        },
-       'property="twitter:description"')
-       this.metaService.updateTag({
-        content:this.blog.blogImage
-        },
-       'property="twitter:image"')
+        this.metaService.updateTag({
+            content:"https://www.chaseyoursport.com/"+this.route.snapshot.url[0].path+"/"+this.route.snapshot.url[1].path+"/"+this.route.snapshot.url[2].path+"/"
+            },
+        'rel="canonical"')
+        this.metaService.updateTag({
+            content:this.blog.heading.substr(0,139)
+            },
+        'name="title"')
+        this.metaService.updateTag({
+           content:this.blog.heading.substr(0,139)
+            },
+        'property="og:title"')
+        this.metaService.updateTag({
+            content:this.blog.Content.substring(0,139)
+            },
+        'name="description"')
+        this.metaService.updateTag({
+            content:this.blog.Content.substring(0,139)
+            },
+        'property="og:description"')
+        this.metaService.updateTag({
+            content:this.blog.blogImage
+            },
+        'property="og:image"')
+        this.metaService.updateTag({
+            content:"https://www.chaseyoursport.com/"+this.route.snapshot.url[0].path+"/"+this.route.snapshot.url[1].path+"/"+this.route.snapshot.url[2].path
+            },
+        'property="og:url"')
+        this.metaService.updateTag({
+            content:this.blog.heading.substring(0,139)
+            },
+        'name="twitter:title"')
+        this.metaService.updateTag({
+            content:this.blog.Content.substring(0,139)
+            },
+        'name="twitter:description"')
+        this.metaService.updateTag({
+            content:this.blog.blogImage
+            },
+        'name="twitter:image:src"')
     }
     
     loadBlogFromSendData(){
@@ -218,9 +230,9 @@ export class BlogOpenComponent implements OnInit {
     }
     
     timePassed(i:string){
-        let writtenDate=new Date(i);
+        let writtenDate=new Date(parseInt(i)*1000);
         let presentDate=new Date();
-        console.log(writtenDate.getDate(),presentDate.getDate(), " Date")
+       // console.log(writtenDate.getDate(),presentDate.getDate(), " Date")
         if(writtenDate.getFullYear()==presentDate.getFullYear()){
           if(writtenDate.getMonth()==presentDate.getMonth()){
             if(writtenDate.getDate()==presentDate.getDate()){
@@ -242,7 +254,7 @@ export class BlogOpenComponent implements OnInit {
     
     
     ExactDate(i:number){
-      let writtenDate=new Date(i);
+      let writtenDate=new Date(i*1000);
       //console.log(writtenDate," wDate")
       return writtenDate.toDateString()
     }

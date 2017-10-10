@@ -116,7 +116,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     if(this.nextPageNumber==1){
     this.get.blogData(this.nextPageNumber,this.defaultKey).subscribe(
       (data)=>{ 
-       // console.log(data)
+        console.log(data ,"coreect")
         this.show=true;
         this.dataRecived=true;
         for(let i in data){
@@ -137,7 +137,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               }
             )
         }
-        //console.log(this.blogDetails, " tfd")
+        console.log(this.blogDetails, " tfd")
         this.latestBlogDetails.push(
           {
             blogId:this.blogDetails[0].blogId,
@@ -295,9 +295,10 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     }
   }
   timePassed(i:string){
-      let writtenDate=new Date(i);
+    
+      let writtenDate=new Date(parseInt(i)*1000);
       let presentDate=new Date();
-     // console.log(writtenDate.getDate(),presentDate.getDate() ," date")
+      //console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
       if(writtenDate.getFullYear()==presentDate.getFullYear()){
         if(writtenDate.getMonth()==presentDate.getMonth()){
           if(writtenDate.getDate()==presentDate.getDate()){
@@ -317,9 +318,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
      
   }
   ExactDate(i:number){
-    let writtenDate=new Date(i);
-    //console.log(i, writtenDate,writtenDate.toDateString())
-    return writtenDate.toDateString()
+    let writtenDate=new Date(i*1000);
+   // console.log(i, writtenDate,writtenDate.toDateString())
+    return  writtenDate.toDateString()
   }
   timeToRead(s:string){
     let words = s.split(" ");
