@@ -20,6 +20,7 @@ export class EditorPanelComponent implements OnInit {
   @ViewChild('bloggerImage') bloggerImage;
   @ViewChild('blogImage') blogImage;
   @ViewChild('form') panel;
+  @ViewChild('desc') desc;
   filesToUpload: Array<File>;
   files=[]
   topMargin;
@@ -44,7 +45,9 @@ ngOnInit(){
   )
   this.renderer.setStyle(this.panel.nativeElement,'margin-top',this.topMargin+10+"px")
 }
-
+writeDesc(){
+  console.log(this.desc.nativeElement.text)
+}
 makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
   this.imageName=["bloggerImage","blogImage"]
   return new Promise((resolve, reject) => {

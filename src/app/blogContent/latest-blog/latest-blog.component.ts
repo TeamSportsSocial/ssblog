@@ -144,6 +144,7 @@ export class LatestBlogComponent implements OnInit {
       this.renderer.setStyle(this.Desc.nativeElement,'height','70%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','2.2em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
+      //this.renderer.setStyle(this.latestDesc.nativeElement,'height','25%')
      }
      if(window.innerWidth>800 && window.innerWidth<1000){
       this.renderer.setStyle(this.Desc.nativeElement,'height','75%')
