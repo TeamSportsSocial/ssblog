@@ -96,6 +96,7 @@ export class BlogOpenComponent implements OnInit {
        
         this.setTopMargin()
         this.setMobileView()
+        //console.log(window.location.href,"url")
         
     }
     
@@ -116,7 +117,7 @@ export class BlogOpenComponent implements OnInit {
             },
         'property="og:type"')
         this.metaService.updateTag({
-            href:"https://www.chaseyoursport.com/"+this.route.snapshot.url[0].path+"/"+this.route.snapshot.url[1].path+"/"+this.route.snapshot.url[2].path+"/"
+            href:window.location.href
             },
         'rel="canonical"')
         this.metaService.updateTag({
@@ -140,7 +141,7 @@ export class BlogOpenComponent implements OnInit {
             },
         'property="og:image"')
         this.metaService.updateTag({
-            content:"https://www.chaseyoursport.com/"+this.route.snapshot.url[0].path+"/"+this.route.snapshot.url[1].path+"/"+this.route.snapshot.url[2].path
+            content:window.location.href
             },
         'property="og:url"')
         this.metaService.updateTag({

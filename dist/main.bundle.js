@@ -642,6 +642,7 @@ var BlogOpenComponent = /** @class */ (function () {
         }
         this.setTopMargin();
         this.setMobileView();
+        //console.log(window.location.href,"url")
     };
     BlogOpenComponent.prototype.sendViewCount = function () {
         this.send.viewCountOfBlog(this.blogID, this.ViewCount).subscribe(function (data) {
@@ -656,7 +657,7 @@ var BlogOpenComponent = /** @class */ (function () {
             content: "article"
         }, 'property="og:type"');
         this.metaService.updateTag({
-            href: "https://www.chaseyoursport.com/" + this.route.snapshot.url[0].path + "/" + this.route.snapshot.url[1].path + "/" + this.route.snapshot.url[2].path + "/"
+            href: window.location.href
         }, 'rel="canonical"');
         this.metaService.updateTag({
             content: this.blog.heading.substr(0, 139)
@@ -674,7 +675,7 @@ var BlogOpenComponent = /** @class */ (function () {
             content: this.blog.blogImage
         }, 'property="og:image"');
         this.metaService.updateTag({
-            content: "https://www.chaseyoursport.com/" + this.route.snapshot.url[0].path + "/" + this.route.snapshot.url[1].path + "/" + this.route.snapshot.url[2].path
+            content: window.location.href
         }, 'property="og:url"');
         this.metaService.updateTag({
             content: this.blog.heading.substring(0, 139)
