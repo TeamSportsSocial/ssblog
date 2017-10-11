@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule,Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -36,6 +36,7 @@ import { CommentsComponent } from './comments/comments.component';
 import {UrlSerializer} from '@angular/router';
 
 import { FacebookModule } from 'ngx-facebook';
+import { MetaService } from 'ng2-meta';
 import { NguiAutoCompleteModule } from '@ngui/auto-complete';
 import { MessageComponent } from './message/message.component';
 import { CustomUrlComponent } from './custom-url/custom-url.component';
@@ -80,6 +81,7 @@ import { RelatedBlogsComponent } from './blogContent/related-blogs/related-blogs
     NguiAutoCompleteModule
   ],
   providers: [
+    MetaService,
     PropertyService,
     GetService,
     SaveService,

@@ -12,6 +12,7 @@ import {PropertyService} from "../../services/property.service";
 import {SaveService} from "../../services/save.service";
 import {PostService} from "../../services/post.service";
 import {ActivatedRoute} from "@angular/router";
+import { MetaService } from 'ng2-meta';
 import { 
     FacebookService, 
     LoginResponse, 
@@ -77,6 +78,7 @@ export class BlogOpenComponent implements OnInit {
         private zone :NgZone,
         private titleService:Title
     ) { 
+        this.setMetaTags()
         this.blogID=this.route.snapshot.url[2].path
         this.scriptOfTwitter()
         fb.init({
@@ -113,19 +115,11 @@ export class BlogOpenComponent implements OnInit {
     }
     setMetaTags(){
         this.metaService.updateTag({
-            content:"article"
-            },
-        'property="og:type"')
-        this.metaService.updateTag({
-            href:window.location.href
-            },
-        'rel="canonical"')
-        this.metaService.updateTag({
-            content:this.blog.heading.substr(0,139)
+            content:this.blog.heading.substring(0,139)
             },
         'name="title"')
         this.metaService.updateTag({
-           content:this.blog.heading.substr(0,139)
+           content:this.blog.heading.substring(0,139)
             },
         'property="og:title"')
         this.metaService.updateTag({

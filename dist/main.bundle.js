@@ -109,6 +109,7 @@ module.exports = "<SportSocialBlog-header></SportSocialBlog-header>    \r\n<rout
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -119,8 +120,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(metaService) {
+        this.metaService = metaService;
     }
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -128,9 +131,10 @@ var AppComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/app.component.html"),
             styles: [__webpack_require__("../../../../../src/app/app.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Meta"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Meta"]) === "function" && _a || Object])
     ], AppComponent);
     return AppComponent;
+    var _a;
 }());
 
 //# sourceMappingURL=app.component.js.map
@@ -173,18 +177,21 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__comments_comments_component__ = __webpack_require__("../../../../../src/app/comments/comments.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30_ngx_facebook__ = __webpack_require__("../../../../ngx-facebook/dist/esm/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ngui_auto_complete__ = __webpack_require__("../../../../@ngui/auto-complete/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ngui_auto_complete___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_31__ngui_auto_complete__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__message_message_component__ = __webpack_require__("../../../../../src/app/message/message.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__custom_url_custom_url_component__ = __webpack_require__("../../../../../src/app/custom-url/custom-url.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__open_full_image_open_full_image_component__ = __webpack_require__("../../../../../src/app/open-full-image/open-full-image.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__blogContent_related_blogs_related_blogs_component__ = __webpack_require__("../../../../../src/app/blogContent/related-blogs/related-blogs.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_ng2_meta__ = __webpack_require__("../../../../ng2-meta/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_ng2_meta___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_31_ng2_meta__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ngui_auto_complete__ = __webpack_require__("../../../../@ngui/auto-complete/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ngui_auto_complete___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_32__ngui_auto_complete__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__message_message_component__ = __webpack_require__("../../../../../src/app/message/message.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__custom_url_custom_url_component__ = __webpack_require__("../../../../../src/app/custom-url/custom-url.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__open_full_image_open_full_image_component__ = __webpack_require__("../../../../../src/app/open-full-image/open-full-image.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__blogContent_related_blogs_related_blogs_component__ = __webpack_require__("../../../../../src/app/blogContent/related-blogs/related-blogs.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -246,27 +253,28 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_26__blog_footer_blog_footer_component__["a" /* BlogFooterComponent */],
                 __WEBPACK_IMPORTED_MODULE_27__search_search_component__["a" /* SearchComponent */],
                 __WEBPACK_IMPORTED_MODULE_28__comments_comments_component__["a" /* CommentsComponent */],
-                __WEBPACK_IMPORTED_MODULE_32__message_message_component__["a" /* MessageComponent */],
-                __WEBPACK_IMPORTED_MODULE_33__custom_url_custom_url_component__["a" /* CustomUrlComponent */],
-                __WEBPACK_IMPORTED_MODULE_34__open_full_image_open_full_image_component__["a" /* OpenFullImageComponent */],
-                __WEBPACK_IMPORTED_MODULE_35__blogContent_related_blogs_related_blogs_component__["a" /* RelatedBlogsComponent */]
+                __WEBPACK_IMPORTED_MODULE_33__message_message_component__["a" /* MessageComponent */],
+                __WEBPACK_IMPORTED_MODULE_34__custom_url_custom_url_component__["a" /* CustomUrlComponent */],
+                __WEBPACK_IMPORTED_MODULE_35__open_full_image_open_full_image_component__["a" /* OpenFullImageComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__blogContent_related_blogs_related_blogs_component__["a" /* RelatedBlogsComponent */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["BrowserModule"],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
                 __WEBPACK_IMPORTED_MODULE_25__routing_routing_module__["a" /* RoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_30_ngx_facebook__["a" /* FacebookModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["ReactiveFormsModule"],
-                __WEBPACK_IMPORTED_MODULE_31__ngui_auto_complete__["NguiAutoCompleteModule"]
+                __WEBPACK_IMPORTED_MODULE_32__ngui_auto_complete__["NguiAutoCompleteModule"]
             ],
             providers: [
+                __WEBPACK_IMPORTED_MODULE_31_ng2_meta__["MetaService"],
                 __WEBPACK_IMPORTED_MODULE_18__services_property_service__["a" /* PropertyService */],
                 __WEBPACK_IMPORTED_MODULE_20__services_get_service__["a" /* GetService */],
                 __WEBPACK_IMPORTED_MODULE_21__services_save_service__["a" /* SaveService */],
                 __WEBPACK_IMPORTED_MODULE_22__services_status_service__["a" /* StatusService */],
                 __WEBPACK_IMPORTED_MODULE_19__services_post_service__["a" /* PostService */],
-                { provide: __WEBPACK_IMPORTED_MODULE_29__angular_router__["e" /* UrlSerializer */], useClass: __WEBPACK_IMPORTED_MODULE_33__custom_url_custom_url_component__["a" /* CustomUrlComponent */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_29__angular_router__["UrlSerializer"], useClass: __WEBPACK_IMPORTED_MODULE_34__custom_url_custom_url_component__["a" /* CustomUrlComponent */] }
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
@@ -541,7 +549,7 @@ var BlogHeaderComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/blog-header/blog-header.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blog-header/blog-header.component.css")],
         }),
-        __metadata("design:paramtypes", [typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _o || Object])
+        __metadata("design:paramtypes", [typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["DomSanitizer"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["DomSanitizer"]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["Router"]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _o || Object])
     ], BlogHeaderComponent);
     return BlogHeaderComponent;
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
@@ -627,6 +635,7 @@ var BlogOpenComponent = /** @class */ (function () {
         this.blogDataRecieved = false;
         this.Keywords = [];
         this.loading = true;
+        this.setMetaTags();
         this.blogID = this.route.snapshot.url[2].path;
         this.scriptOfTwitter();
         fb.init({
@@ -654,16 +663,10 @@ var BlogOpenComponent = /** @class */ (function () {
     };
     BlogOpenComponent.prototype.setMetaTags = function () {
         this.metaService.updateTag({
-            content: "article"
-        }, 'property="og:type"');
-        this.metaService.updateTag({
-            href: window.location.href
-        }, 'rel="canonical"');
-        this.metaService.updateTag({
-            content: this.blog.heading.substr(0, 139)
+            content: this.blog.heading.substring(0, 139)
         }, 'name="title"');
         this.metaService.updateTag({
-            content: this.blog.heading.substr(0, 139)
+            content: this.blog.heading.substring(0, 139)
         }, 'property="og:title"');
         this.metaService.updateTag({
             content: this.blog.Content.substring(0, 139)
@@ -936,7 +939,7 @@ var BlogOpenComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/blogContent/blog-open/blog-open.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/blog-open/blog-open.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_ngx_facebook__["b" /* FacebookService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ngx_facebook__["b" /* FacebookService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */]) === "function" && _o || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["ActivatedRoute"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["ActivatedRoute"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_ngx_facebook__["b" /* FacebookService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ngx_facebook__["b" /* FacebookService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["Router"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Meta"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Meta"]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Title"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Title"]) === "function" && _o || Object])
     ], BlogOpenComponent);
     return BlogOpenComponent;
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
@@ -2378,12 +2381,12 @@ var CustomUrlComponent = /** @class */ (function () {
         return path.replace(/\+/g, '%20');
     } */
     CustomUrlComponent.prototype.serialize = function (tree) {
-        var dus = new __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* DefaultUrlSerializer */]();
+        var dus = new __WEBPACK_IMPORTED_MODULE_1__angular_router__["DefaultUrlSerializer"]();
         // Use the default serializer to create a url and replace any spaces with + signs
         return dus.serialize(tree).replace(/%20/g, '-');
     };
     CustomUrlComponent.prototype.parse = function (url) {
-        var dus = new __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* DefaultUrlSerializer */]();
+        var dus = new __WEBPACK_IMPORTED_MODULE_1__angular_router__["DefaultUrlSerializer"]();
         // Change plus signs to encoded spaces
         url = url.replace(/\+/g, '%20');
         // Use the default serializer that you can import to just do the 
@@ -2676,7 +2679,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/editor-panel/editor-panel.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" #form>\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\r\n      <form  #f=\"ngForm\">\r\n        <div id=\"blog-data\" ngModelGroup=\"blogData\" #userData=\"ngModelGroup\">\r\n          <div class=\"form-group\">\r\n            <label for=\"username\">Name</label>\r\n            <input type=\"text\" id=\"username\" class=\"form-control\" ngModel name=\"name\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"bloggerImage\">Blogger Image</label>\r\n            <input type=\"file\" id=\"bloggerImage\" class=\"form-control\" ngModel name=\"bloggerImage\" #bloggerImage>\r\n            <div class=\"imgTest\"></div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"date\">Date </label>\r\n            <input type=\"date\" id=\"datetime\" class=\"form-control\" ngModel name=\"date\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"Title\">Title</label>\r\n            <input type=\"text\" id=\"title\" class=\"form-control\" ngModel name=\"Title\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"keywords\">Keywords</label>\r\n            <input type=\"text\" id=\"keywords\" class=\"form-control\" ngModel name=\"keywords\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"blogImage\">Blog Image</label>\r\n            <input type=\"file\" id=\"blogImage\" class=\"form-control\" ngModel name=\"blogMainImage\" #blogImage>\r\n            <div class=\"imgTest\"></div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"desc\">Desc  </label>\r\n            <textarea rows=\"50\" id=\"desc\" class=\"form-control\" ngModel name=\"desc\" required (keypress)=\"writeDesc()\">\r\n            </textarea>\r\n          </div>\r\n        </div>\r\n\r\n        <button class=\"btn btn-primary\" (click)=\"upload()\" [disabled]=\"isDisabled\" >Upload</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n</div>"
+module.exports = "<div class=\"container\" #form>\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\r\n      <form  #f=\"ngForm\">\r\n        <div id=\"blog-data\" ngModelGroup=\"blogData\" #userData=\"ngModelGroup\">\r\n          <div class=\"form-group\">\r\n            <label for=\"username\">Name</label>\r\n            <input type=\"text\" id=\"username\" class=\"form-control\" ngModel name=\"name\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"bloggerImage\">Blogger Image</label>\r\n            <input type=\"file\" id=\"bloggerImage\" class=\"form-control\" ngModel name=\"bloggerImage\" #bloggerImage>\r\n            <div class=\"imgTest\"></div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"date\">Date </label>\r\n            <input type=\"date\" id=\"datetime\" class=\"form-control\" ngModel name=\"date\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"Title\">Title</label>\r\n            <input type=\"text\" id=\"title\" class=\"form-control\" ngModel name=\"Title\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"keywords\">Keywords</label>\r\n            <input type=\"text\" id=\"keywords\" class=\"form-control\" ngModel name=\"keywords\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"blogImage\">Blog Image</label>\r\n            <input type=\"file\" id=\"blogImage\" class=\"form-control\" ngModel name=\"blogMainImage\" #blogImage>\r\n            <div class=\"imgTest\"></div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"desc\">Desc  </label>\r\n            <textarea rows=\"50\" id=\"desc\" class=\"form-control\" ngModel name=\"desc\" required  #desc>\r\n            </textarea>\r\n          </div>\r\n        </div>\r\n\r\n        <button class=\"btn btn-primary\" (click)=\"upload()\" [disabled]=\"isDisabled\" >Upload</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n</div>"
 
 /***/ }),
 
@@ -2719,8 +2722,39 @@ var EditorPanelComponent = /** @class */ (function () {
         });
         this.renderer.setStyle(this.panel.nativeElement, 'margin-top', this.topMargin + 10 + "px");
     };
-    EditorPanelComponent.prototype.writeDesc = function () {
-        console.log(this.desc.nativeElement.text);
+    EditorPanelComponent.prototype.handleKeyboardEvent = function (event) {
+        var length = this.desc.nativeElement.value.length;
+        var curPos = this.desc.nativeElement.selectionStart;
+        console.log(event, this.desc.nativeElement.selectionStart);
+        if (event.code == "Enter") {
+            var textBefore = this.desc.nativeElement.value.substring(0, curPos);
+            var textAfter = this.desc.nativeElement.value.substring(curPos, length);
+            this.desc.nativeElement.value = textBefore + "</br>" + textAfter;
+            this.desc.nativeElement.selectionEnd = curPos + 5;
+            //console.log(this.desc.nativeElement.value)
+        }
+        if (event.code == "KeyB" && event.ctrlKey == true) {
+            var startCurPos = this.desc.nativeElement.selectionStart;
+            var endCurPos = this.desc.nativeElement.selectionEnd;
+            console.log("true", this.desc.nativeElement.selectionStart, this.desc.nativeElement.selectionEnd);
+            var textBefore = this.desc.nativeElement.value.substring(0, startCurPos);
+            var textMiddle = this.desc.nativeElement.value.substring(startCurPos, endCurPos);
+            var textAfter = this.desc.nativeElement.value.substring(endCurPos, length);
+            // console.log("before: ", textBefore,"middle:", textMiddle, "after: " ,textAfter)
+            this.desc.nativeElement.value = textBefore + "<b>" + textMiddle + "</b>" + textAfter;
+            this.desc.nativeElement.selectionEnd = endCurPos + 5;
+        }
+        if (event.code == "KeyI" && event.ctrlKey == true) {
+            var startCurPos = this.desc.nativeElement.selectionStart;
+            var endCurPos = this.desc.nativeElement.selectionEnd;
+            //console.log("true",this.desc.nativeElement.selectionStart,this.desc.nativeElement.selectionEnd)
+            var textBefore = this.desc.nativeElement.value.substring(0, startCurPos);
+            var textMiddle = this.desc.nativeElement.value.substring(startCurPos, endCurPos);
+            var textAfter = this.desc.nativeElement.value.substring(endCurPos, length);
+            //console.log("before: ", textBefore,"middle:", textMiddle, "after: " ,textAfter)
+            this.desc.nativeElement.value = textBefore + "<i>" + textMiddle + "</i>" + textAfter;
+            this.desc.nativeElement.selectionEnd = endCurPos + 5;
+        }
     };
     EditorPanelComponent.prototype.makeFileRequest = function (url, params, files) {
         var _this = this;
@@ -2799,6 +2833,12 @@ var EditorPanelComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('desc'),
         __metadata("design:type", Object)
     ], EditorPanelComponent.prototype, "desc", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('document:keypress', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], EditorPanelComponent.prototype, "handleKeyboardEvent", null);
     EditorPanelComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'SportSocialBlog-editor-panel',
@@ -3016,7 +3056,7 @@ var KeywordsComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/keywords/keywords.component.html"),
             styles: [__webpack_require__("../../../../../src/app/keywords/keywords.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */]) === "function" && _j || Object])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["Router"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */]) === "function" && _j || Object])
     ], KeywordsComponent);
     return KeywordsComponent;
     var _a, _b, _c, _d, _e, _f, _g, _h, _j;
@@ -3272,9 +3312,9 @@ var RoutingModule = /** @class */ (function () {
     RoutingModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             imports: [
-                __WEBPACK_IMPORTED_MODULE_5__angular_router__["d" /* RouterModule */].forRoot(appRoute)
+                __WEBPACK_IMPORTED_MODULE_5__angular_router__["RouterModule"].forRoot(appRoute)
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_5__angular_router__["d" /* RouterModule */]]
+            exports: [__WEBPACK_IMPORTED_MODULE_5__angular_router__["RouterModule"]]
         })
     ], RoutingModule);
     return RoutingModule;
@@ -3566,7 +3606,7 @@ var SearchComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/search/search.component.html"),
             styles: [__webpack_require__("../../../../../src/app/search/search.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _j || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["ActivatedRoute"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["ActivatedRoute"]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Title"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Title"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Meta"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Meta"]) === "function" && _j || Object])
     ], SearchComponent);
     return SearchComponent;
     var _a, _b, _c, _d, _e, _f, _g, _h, _j;
