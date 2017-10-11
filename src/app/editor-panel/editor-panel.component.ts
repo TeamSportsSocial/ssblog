@@ -50,7 +50,7 @@ ngOnInit(){
 handleKeyboardEvent(event: KeyboardEvent) {
   let length=this.desc.nativeElement.value.length
   let curPos=this.desc.nativeElement.selectionStart
-  console.log(event,this.desc.nativeElement.selectionStart);
+ // console.log(event,this.desc.nativeElement.selectionStart);
   if(event.code=="Enter"){
     let textBefore= this.desc.nativeElement.value.substring(0,curPos)
     let textAfter= this.desc.nativeElement.value.substring(curPos, length)

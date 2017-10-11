@@ -78,7 +78,6 @@ export class BlogOpenComponent implements OnInit {
         private zone :NgZone,
         private titleService:Title
     ) { 
-        this.setMetaTags()
         this.blogID=this.route.snapshot.url[2].path
         this.scriptOfTwitter()
         fb.init({

@@ -635,7 +635,6 @@ var BlogOpenComponent = /** @class */ (function () {
         this.blogDataRecieved = false;
         this.Keywords = [];
         this.loading = true;
-        this.setMetaTags();
         this.blogID = this.route.snapshot.url[2].path;
         this.scriptOfTwitter();
         fb.init({
@@ -2725,7 +2724,7 @@ var EditorPanelComponent = /** @class */ (function () {
     EditorPanelComponent.prototype.handleKeyboardEvent = function (event) {
         var length = this.desc.nativeElement.value.length;
         var curPos = this.desc.nativeElement.selectionStart;
-        console.log(event, this.desc.nativeElement.selectionStart);
+        // console.log(event,this.desc.nativeElement.selectionStart);
         if (event.code == "Enter") {
             var textBefore = this.desc.nativeElement.value.substring(0, curPos);
             var textAfter = this.desc.nativeElement.value.substring(curPos, length);
