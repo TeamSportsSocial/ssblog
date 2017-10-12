@@ -302,7 +302,22 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       if(writtenDate.getFullYear()==presentDate.getFullYear()){
         if(writtenDate.getMonth()==presentDate.getMonth()){
           if(writtenDate.getDate()==presentDate.getDate()){
-              return "Today"
+              if(writtenDate.getHours()==presentDate.getHours()){
+                if(writtenDate.getMinutes()==presentDate.getMinutes()){
+                  if(writtenDate.getSeconds()-presentDate.getSeconds()){
+                    return "Just Now"
+                  }
+                  else{
+                    return presentDate.getSeconds()-writtenDate.getSeconds()+" sec ago"
+                  }
+                }
+                else{
+                  return presentDate.getMinutes()-writtenDate.getMinutes()+" min ago"
+                }
+              }
+              else{
+                return presentDate.getHours()-writtenDate.getHours()+" hrs ago"
+              }
           }
           else{
             return presentDate.getDate()-writtenDate.getDate() + " day ago"

@@ -1,0 +1,18 @@
+<div class="panel">
+  <div class="blogImage">
+    <img src="{{blogImage}}" alt="">
+  </div>
+  <div class="blogInfo">
+    <p class="heading">{{heading}}</p>
+    <p class="desc">{{Content}}</p>
+    <p class="keywords" >{{keywords}}</p>
+    <p class="bloggerName">
+      <img src="/assets/images/sports-social-blogger-black.png" alt="">
+      {{bloggerName}}
+    </p>
+    <div class="btn">
+      <button (click)="editBlog()">Edit</button>
+      <button (click)="deleteBlog()">Delete</button>
+    </div>
+  </div>
+</div>

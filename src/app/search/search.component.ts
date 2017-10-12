@@ -114,7 +114,6 @@ export class SearchComponent implements OnInit {
     }
     
     getBlogs(){
-      //console.log(this.pageNumber, " next page")
       let blogDetails:{
         blogId:string;
         blogImage:string;
@@ -160,7 +159,6 @@ export class SearchComponent implements OnInit {
                 }
               )
             }
-         // console.log(blogDetails, " search")
           this.blogDetails=blogDetails
           }
         )
@@ -208,25 +206,42 @@ export class SearchComponent implements OnInit {
     }
     
     timePassed(i:string){
-      let writtenDate=new Date(parseInt(i)*1000);
-      let presentDate=new Date();
-      if(writtenDate.getFullYear()==presentDate.getFullYear()){
-        if(writtenDate.getMonth()==presentDate.getMonth()){
-          if(writtenDate.getDate()==presentDate.getDate()){
-              return "Today"
+      
+        let writtenDate=new Date(parseInt(i)*1000);
+        let presentDate=new Date();
+        //console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
+        if(writtenDate.getFullYear()==presentDate.getFullYear()){
+          if(writtenDate.getMonth()==presentDate.getMonth()){
+            if(writtenDate.getDate()==presentDate.getDate()){
+                if(writtenDate.getHours()==presentDate.getHours()){
+                  if(writtenDate.getMinutes()==presentDate.getMinutes()){
+                    if(writtenDate.getSeconds()-presentDate.getSeconds()){
+                      return "Just Now"
+                    }
+                    else{
+                      return presentDate.getSeconds()-writtenDate.getSeconds()+" sec ago"
+                    }
+                  }
+                  else{
+                    return presentDate.getMinutes()-writtenDate.getMinutes()+" min ago"
+                  }
+                }
+                else{
+                  return presentDate.getHours()-writtenDate.getHours()+" hrs ago"
+                }
+            }
+            else{
+              return presentDate.getDate()-writtenDate.getDate() + " day ago"
+            }
           }
           else{
-            return presentDate.getDate()-writtenDate.getDate() + " day ago"
+            return presentDate.getMonth()-writtenDate.getMonth() + " month ago"
           }
         }
         else{
-          return presentDate.getMonth()-writtenDate.getMonth() + " month ago"
+          return presentDate.getFullYear()-writtenDate.getFullYear() + " year ago"
         }
-      }
-      else{
-        return presentDate.getFullYear()-writtenDate.getFullYear() + " year ago"
-      }
-    
+       
     }
     
     
@@ -250,7 +265,6 @@ export class SearchComponent implements OnInit {
     nextPage(){
       this.pageNumber++;
       this.dataRecieved=false;
-     // console.log(this.recievedKey,this.pageNumber,"next")
       this.get.blogData(this.pageNumber,this.recievedKey).subscribe(
         data=>{
           console.log(data, " nm")

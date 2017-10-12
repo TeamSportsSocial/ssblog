@@ -1,6 +1,6 @@
 <div>
   <div  *ngIf="!mobileView" class="relatedBlog">
-    <p *ngIf="blogDataRecieved">Related Articles</p>
+    <p >Related Articles</p>
     <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading" >
     <div TabViewAvailable class="col-4" *ngFor="let data of relatedBlogDetails;let i=index">
       <SportSocial-normal-blog 
@@ -20,7 +20,7 @@
     </div>
   </div>
   <div *ngIf="mobileView" class="mobileView relatedBlog">
-    <p *ngIf="blogDataRecieved">Related Articles</p>
+    <p>Related Articles</p>
     <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
     <div class="col-4" *ngFor="let data of relatedBlogDetails;let i=index">
       <SportSocial-normal-blog 

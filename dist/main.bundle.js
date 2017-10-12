@@ -25,7 +25,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "*{\r\n    margin:0px;\r\n    padding:0px;\r\n}\r\n.panel{\r\n    margin:2% 5% 2% 5%;\r\n    font-family: 'Roboto',sans-serif; \r\n}\r\n.loading{\r\n    display: block;\r\n    margin: auto;\r\n}\r\nbutton{\r\n    display: block;\r\n    margin: 1% auto;\r\n    width: 30%;\r\n    background-color: #ffa600;\r\n    border:none;\r\n    color: #ffffff;\r\n    outline: none;\r\n    font-weight: 700;\r\n    font-size: 1.2em;\r\n    padding: 0.5%;\r\n}\r\n.noMoreData{\r\n    width: 100%;\r\n    color: #024771;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1.5em;\r\n    font-weight: 500;\r\n    text-align: center;\r\n}", ""]);
 
 // exports
 
@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/admin-panel/admin-panel.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  admin-panel works!\n</p>\n"
+module.exports = "<div class=\"panel\" #panel>\n  <SportSocial-single-panel *ngFor=\"let blog of blogDetails;let i=index\"\n    [blogId]=\"blog.blogId\"\n    [blogImage]=\"blog.blogImage\"\n    [bloggerImage]=\"blog.bloggerImage\"\n    [bloggerName]=\"blog.bloggerName\"\n    [heading]=\"blog.heading\"\n    [Content]=\"blog.Content\"\n    [keywords]=\"blog.keywords\"\n  ></SportSocial-single-panel>\n</div>\n<div *ngIf=\"haveData\">\n  <button (click)=\"nextPage()\" *ngIf=\"dataRecieved\">Load More</button>\n  <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecieved\" class=\"loading\">\n</div>\n<p *ngIf=\"!haveData\" class=\"noMoreData\" >No More Data !!!</p>         \n<SportSocial-blog-footer *ngIf=\"show\"></SportSocial-blog-footer> \n"
 
 /***/ }),
 
@@ -48,6 +48,8 @@ module.exports = "<p>\n  admin-panel works!\n</p>\n"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminPanelComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,23 +60,377 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var AdminPanelComponent = /** @class */ (function () {
-    function AdminPanelComponent() {
+    function AdminPanelComponent(recieveHeight, renderer, get) {
+        this.recieveHeight = recieveHeight;
+        this.renderer = renderer;
+        this.get = get;
+        this.pageNumber = 1;
+        this.defaultKey = "dfg";
+        this.dataRecieved = false;
+        this.show = false;
+        this.haveData = true;
     }
     AdminPanelComponent.prototype.ngOnInit = function () {
+        this.setTopMargin();
+        this.getBlogData();
     };
+    AdminPanelComponent.prototype.setTopMargin = function () {
+        var _this = this;
+        this.recieveHeight.ofHeader.subscribe(function (margin) {
+            _this.topMargin = margin;
+        });
+        this.renderer.setStyle(this.panel.nativeElement, 'margin-top', this.topMargin + 10 + "px");
+    };
+    AdminPanelComponent.prototype.getBlogData = function () {
+        var _this = this;
+        console.log("true");
+        var blogDetails = [];
+        this.get.blogData(this.pageNumber, this.defaultKey).subscribe(function (data) {
+            console.log(data);
+            if (data.length > 0) {
+                _this.haveData = true;
+            }
+            else {
+                _this.haveData = false;
+            }
+            _this.show = true;
+            _this.dataRecieved = true;
+            for (var i in data) {
+                blogDetails.push({
+                    blogId: data[i].blogId,
+                    blogImage: data[i].blogImage,
+                    bloggerName: data[i].bloggerName,
+                    bloggerImage: data[i].bloggerImage,
+                    heading: data[i].heading,
+                    Content: data[i].Content,
+                    keywords: data[i].keywords,
+                });
+            }
+            _this.blogDetails = blogDetails;
+        });
+    };
+    AdminPanelComponent.prototype.onresize = function () {
+        this.setTopMargin();
+    };
+    AdminPanelComponent.prototype.nextPage = function () {
+        var _this = this;
+        this.pageNumber++;
+        this.get.blogData(this.pageNumber, this.defaultKey).subscribe(function (data) {
+            if (data.length > 0) {
+                _this.haveData = true;
+            }
+            else {
+                _this.haveData = false;
+            }
+            _this.dataRecieved = true;
+            for (var i in data) {
+                _this.blogDetails.push({
+                    blogId: data[i].blogId,
+                    blogImage: data[i].blogImage,
+                    bloggerName: data[i].bloggerName,
+                    bloggerImage: data[i].bloggerImage,
+                    heading: data[i].heading,
+                    Content: data[i].Content,
+                    keywords: data[i].keywords,
+                });
+            }
+        });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('panel'),
+        __metadata("design:type", Object)
+    ], AdminPanelComponent.prototype, "panel", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], AdminPanelComponent.prototype, "onresize", null);
     AdminPanelComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'SportSocialBlog-admin-panel',
             template: __webpack_require__("../../../../../src/app/admin-panel/admin-panel.component.html"),
             styles: [__webpack_require__("../../../../../src/app/admin-panel/admin-panel.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object])
     ], AdminPanelComponent);
     return AdminPanelComponent;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=admin-panel.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/admin-panel/edit-blog/edit-blog.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/admin-panel/edit-blog/edit-blog.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\" #editBlog>\n    <div class=\"row\">\n      <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\n        <form  #f=\"ngForm\">\n          <div id=\"blog-data\" ngModelGroup=\"blogData\" #userData=\"ngModelGroup\">\n            <div class=\"form-group\">\n              <label for=\"username\">Name</label>\n              <input type=\"text\" id=\"username\" class=\"form-control\"  name=\"name\" required #name>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"bloggerImage\">Blogger Image</label>\n              <input type=\"file\" id=\"bloggerImage\" class=\"form-control\" ngModel name=\"bloggerImage\" #bloggerImage>\n              <div class=\"imgTest\"></div>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"Title\">Title</label>\n              <input type=\"text\" id=\"title\" class=\"form-control\" name=\"Title\"  #title>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"keywords\">Keywords</label>\n              <input type=\"text\" id=\"keywords\" class=\"form-control\"  name=\"keywords\" required #keywords>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"blogImage\">Blog Image</label>\n              <input type=\"file\" id=\"blogImage\" class=\"form-control\"  name=\"blogMainImage\" #blogImage>\n              <div class=\"imgTest\"></div>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"desc\">Desc  </label>\n              <textarea rows=\"50\" id=\"desc\" class=\"form-control\"  name=\"desc\" required  #desc>\n              </textarea>\n            </div>\n          </div>\n  \n          <button class=\"btn btn-primary\" (click)=\"upload()\" [disabled]=\"isDisabled\" >Update</button>\n        </form>\n      </div>\n    </div>\n    <hr>\n  </div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/admin-panel/edit-blog/edit-blog.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditBlogComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var EditBlogComponent = /** @class */ (function () {
+    function EditBlogComponent(recieveHeight, renderer, recieve) {
+        this.recieveHeight = recieveHeight;
+        this.renderer = renderer;
+        this.recieve = recieve;
+    }
+    EditBlogComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        console.log(this.editBlog);
+        this.setTopMargin();
+        this.recieve.detailsofBlog.subscribe(function (data) {
+            console.log(data['bloggerName']);
+            _this.title.nativeElement.value = data['heading'];
+            _this.desc.nativeElement.value = data['Content'];
+            _this.name.nativeElement.value = data['bloggerName'];
+            _this.keywords.nativeElement.value = data['keywords'];
+            //console.log(this.title, this.title.nativeElement.value)
+        });
+    };
+    EditBlogComponent.prototype.setTopMargin = function () {
+        var _this = this;
+        this.recieveHeight.ofHeader.subscribe(function (margin) {
+            _this.topMargin = margin;
+        });
+        this.renderer.setStyle(this.editBlog.nativeElement, 'margin-top', this.topMargin + 10 + "px");
+    };
+    EditBlogComponent.prototype.onresize = function () {
+        this.setTopMargin();
+    };
+    EditBlogComponent.prototype.handleKeyboardEvent = function (event) {
+        var length = this.desc.nativeElement.value.length;
+        var curPos = this.desc.nativeElement.selectionStart;
+        // console.log(event,this.desc.nativeElement.selectionStart);
+        if (event.code == "Enter") {
+            var textBefore = this.desc.nativeElement.value.substring(0, curPos);
+            var textAfter = this.desc.nativeElement.value.substring(curPos, length);
+            this.desc.nativeElement.value = textBefore + "</br>" + textAfter;
+            this.desc.nativeElement.selectionEnd = curPos + 5;
+            //console.log(this.desc.nativeElement.value)
+        }
+        if (event.code == "KeyB" && event.ctrlKey == true) {
+            var startCurPos = this.desc.nativeElement.selectionStart;
+            var endCurPos = this.desc.nativeElement.selectionEnd;
+            console.log("true", this.desc.nativeElement.selectionStart, this.desc.nativeElement.selectionEnd);
+            var textBefore = this.desc.nativeElement.value.substring(0, startCurPos);
+            var textMiddle = this.desc.nativeElement.value.substring(startCurPos, endCurPos);
+            var textAfter = this.desc.nativeElement.value.substring(endCurPos, length);
+            // console.log("before: ", textBefore,"middle:", textMiddle, "after: " ,textAfter)
+            this.desc.nativeElement.value = textBefore + "<b>" + textMiddle + "</b>" + textAfter;
+            this.desc.nativeElement.selectionEnd = endCurPos + 5;
+        }
+        if (event.code == "KeyI" && event.ctrlKey == true) {
+            var startCurPos = this.desc.nativeElement.selectionStart;
+            var endCurPos = this.desc.nativeElement.selectionEnd;
+            //console.log("true",this.desc.nativeElement.selectionStart,this.desc.nativeElement.selectionEnd)
+            var textBefore = this.desc.nativeElement.value.substring(0, startCurPos);
+            var textMiddle = this.desc.nativeElement.value.substring(startCurPos, endCurPos);
+            var textAfter = this.desc.nativeElement.value.substring(endCurPos, length);
+            //console.log("before: ", textBefore,"middle:", textMiddle, "after: " ,textAfter)
+            this.desc.nativeElement.value = textBefore + "<i>" + textMiddle + "</i>" + textAfter;
+            this.desc.nativeElement.selectionEnd = endCurPos + 5;
+        }
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('editBlog'),
+        __metadata("design:type", Object)
+    ], EditBlogComponent.prototype, "editBlog", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('f'),
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["NgForm"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["NgForm"]) === "function" && _a || Object)
+    ], EditBlogComponent.prototype, "editBlogForm", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('desc'),
+        __metadata("design:type", Object)
+    ], EditBlogComponent.prototype, "desc", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('title'),
+        __metadata("design:type", Object)
+    ], EditBlogComponent.prototype, "title", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('name'),
+        __metadata("design:type", Object)
+    ], EditBlogComponent.prototype, "name", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('keywords'),
+        __metadata("design:type", Object)
+    ], EditBlogComponent.prototype, "keywords", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], EditBlogComponent.prototype, "onresize", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('document:keypress', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], EditBlogComponent.prototype, "handleKeyboardEvent", null);
+    EditBlogComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-edit-blog',
+            template: __webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.css")]
+        }),
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object])
+    ], EditBlogComponent);
+    return EditBlogComponent;
+    var _a, _b, _c, _d;
+}());
+
+//# sourceMappingURL=edit-blog.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/admin-panel/single-panel/single-panel.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".panel{\r\n    width:100%;\r\n    height: 200px;\r\n    font-family: 'Roboto',sans-serif;\r\n    color: black;\r\n    border: 1px solid black;\r\n    position: relative;\r\n}\r\n.blogImage{\r\n    border: 1px solid black;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    width: 30%;\r\n    height: 100%;\r\n    overflow: hidden;\r\n}\r\n.blogImage>img{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.blogInfo{\r\n    display: -webkit-inline-box;\r\n    display: -ms-inline-flexbox;\r\n    display: inline-flex;\r\n    vertical-align: top;\r\n    width: 69%;\r\n    height: 100%;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    \r\n}\r\n.heading,.desc,.keywords{\r\n    width: 100%;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    height: 20%;\r\n    padding: 1%;\r\n}\r\n.bloggerName{\r\n    width: 30%;\r\n    height: 20%;\r\n    padding: 1%;\r\n}\r\n.bloggerName>img{\r\n    width: 15px;\r\n    height: 15px;\r\n}\r\n.btn{\r\n    width: 50%;\r\n    position: absolute;\r\n    right: 1%;\r\n    bottom: 4.5%;\r\n    text-align: right;\r\n}\r\nbutton{\r\n    width: 20%;\r\n    padding: 1%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    color: white;\r\n    background-color: #ffa600;\r\n    outline: none;\r\n    border: none;\r\n    border-radius: 4px;\r\n    margin-right: 2%;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/admin-panel/single-panel/single-panel.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"panel\">\n  <div class=\"blogImage\">\n    <img src=\"{{blogImage}}\" alt=\"\">\n  </div>\n  <div class=\"blogInfo\">\n    <p class=\"heading\">{{heading}}</p>\n    <p class=\"desc\">{{Content}}</p>\n    <p class=\"keywords\" >{{keywords}}</p>\n    <p class=\"bloggerName\">\n      <img src=\"/assets/images/sports-social-blogger-black.png\" alt=\"\">\n      {{bloggerName}}\n    </p>\n    <div class=\"btn\">\n      <button (click)=\"editBlog()\">Edit</button>\n      <button (click)=\"deleteBlog()\">Delete</button>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/admin-panel/single-panel/single-panel.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SinglePanelComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SinglePanelComponent = /** @class */ (function () {
+    function SinglePanelComponent(route, send) {
+        this.route = route;
+        this.send = send;
+    }
+    SinglePanelComponent.prototype.ngOnInit = function () {
+        this.blog = {
+            blogId: this.blogId,
+            blogImage: this.blogImage,
+            bloggerName: this.bloggerName,
+            bloggerImage: this.bloggerImage,
+            heading: this.heading,
+            Content: this.Content,
+            keywords: this.keywords
+        };
+    };
+    SinglePanelComponent.prototype.editBlog = function () {
+        this.route.navigate(['/' + this.blogId + '/edit']);
+        this.send.detailsofBlog.next(this.blog);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], SinglePanelComponent.prototype, "blogId", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], SinglePanelComponent.prototype, "blogImage", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], SinglePanelComponent.prototype, "bloggerImage", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], SinglePanelComponent.prototype, "bloggerName", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], SinglePanelComponent.prototype, "heading", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], SinglePanelComponent.prototype, "Content", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], SinglePanelComponent.prototype, "keywords", void 0);
+    SinglePanelComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'SportSocial-single-panel',
+            template: __webpack_require__("../../../../../src/app/admin-panel/single-panel/single-panel.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/admin-panel/single-panel/single-panel.component.css")]
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object])
+    ], SinglePanelComponent);
+    return SinglePanelComponent;
+    var _a, _b;
+}());
+
+//# sourceMappingURL=single-panel.component.js.map
 
 /***/ }),
 
@@ -185,12 +541,16 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__custom_url_custom_url_component__ = __webpack_require__("../../../../../src/app/custom-url/custom-url.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__open_full_image_open_full_image_component__ = __webpack_require__("../../../../../src/app/open-full-image/open-full-image.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__blogContent_related_blogs_related_blogs_component__ = __webpack_require__("../../../../../src/app/blogContent/related-blogs/related-blogs.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__admin_panel_single_panel_single_panel_component__ = __webpack_require__("../../../../../src/app/admin-panel/single-panel/single-panel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__admin_panel_edit_blog_edit_blog_component__ = __webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -256,7 +616,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_33__message_message_component__["a" /* MessageComponent */],
                 __WEBPACK_IMPORTED_MODULE_34__custom_url_custom_url_component__["a" /* CustomUrlComponent */],
                 __WEBPACK_IMPORTED_MODULE_35__open_full_image_open_full_image_component__["a" /* OpenFullImageComponent */],
-                __WEBPACK_IMPORTED_MODULE_36__blogContent_related_blogs_related_blogs_component__["a" /* RelatedBlogsComponent */]
+                __WEBPACK_IMPORTED_MODULE_36__blogContent_related_blogs_related_blogs_component__["a" /* RelatedBlogsComponent */],
+                __WEBPACK_IMPORTED_MODULE_37__admin_panel_single_panel_single_panel_component__["a" /* SinglePanelComponent */],
+                __WEBPACK_IMPORTED_MODULE_38__admin_panel_edit_blog_edit_blog_component__["a" /* EditBlogComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["BrowserModule"],
@@ -1211,7 +1573,22 @@ var BlogsComponent = /** @class */ (function () {
         if (writtenDate.getFullYear() == presentDate.getFullYear()) {
             if (writtenDate.getMonth() == presentDate.getMonth()) {
                 if (writtenDate.getDate() == presentDate.getDate()) {
-                    return "Today";
+                    if (writtenDate.getHours() == presentDate.getHours()) {
+                        if (writtenDate.getMinutes() == presentDate.getMinutes()) {
+                            if (writtenDate.getSeconds() - presentDate.getSeconds()) {
+                                return "Just Now";
+                            }
+                            else {
+                                return presentDate.getSeconds() - writtenDate.getSeconds() + " sec ago";
+                            }
+                        }
+                        else {
+                            return presentDate.getMinutes() - writtenDate.getMinutes() + " min ago";
+                        }
+                    }
+                    else {
+                        return presentDate.getHours() - writtenDate.getHours() + " hrs ago";
+                    }
                 }
                 else {
                     return presentDate.getDate() - writtenDate.getDate() + " day ago";
@@ -1802,7 +2179,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/related-blogs/related-blogs.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <div  *ngIf=\"!mobileView\" class=\"relatedBlog\">\n    <p *ngIf=\"blogDataRecieved\">Related Articles</p>\n    <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\" >\n    <div TabViewAvailable class=\"col-4\" *ngFor=\"let data of relatedBlogDetails;let i=index\">\n      <SportSocial-normal-blog \n        [blogId]=\"data.blogId\"\n        [blogImage]=\"data.blogImage\"\n        [bloggerImage]=\"data.bloggerImage\"\n        [bloggerName]=\"data.bloggerName\"\n        [insertedDate]=\"data.insertedDate\"\n        [heading]=\"data.heading\"\n        [Content]=\"data.Content\"\n        [ViewCount]=\"data.ViewCount\"\n        [ShareCount]=\"data.ShareCount\"\n        [keywords]=\"data.keywords\"\n        [exactDate]=\"data.exactDate\"\n        [readingTime]=\"data.readingTime\">\n      </SportSocial-normal-blog>\n    </div>\n  </div>\n  <div *ngIf=\"mobileView\" class=\"mobileView relatedBlog\">\n    <p *ngIf=\"blogDataRecieved\">Related Articles</p>\n    <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\">\n    <div class=\"col-4\" *ngFor=\"let data of relatedBlogDetails;let i=index\">\n      <SportSocial-normal-blog \n          [blogId]=\"data.blogId\"\n          [blogImage]=\"data.blogImage\"\n          [bloggerImage]=\"data.bloggerImage\"\n          [bloggerName]=\"data.bloggerName\"\n          [insertedDate]=\"data.insertedDate\"\n          [heading]=\"data.heading\"\n          [Content]=\"data.Content\"\n          [ViewCount]=\"data.ViewCount\"\n          [ShareCount]=\"data.ShareCount\"\n          [keywords]=\"data.keywords\"\n          [exactDate]=\"data.exactDate\"\n          [readingTime]=\"data.readingTime\">\n      </SportSocial-normal-blog>\n  </div>\n  </div>\n</div>\n"
+module.exports = "<div>\n  <div  *ngIf=\"!mobileView\" class=\"relatedBlog\">\n    <p >Related Articles</p>\n    <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\" >\n    <div TabViewAvailable class=\"col-4\" *ngFor=\"let data of relatedBlogDetails;let i=index\">\n      <SportSocial-normal-blog \n        [blogId]=\"data.blogId\"\n        [blogImage]=\"data.blogImage\"\n        [bloggerImage]=\"data.bloggerImage\"\n        [bloggerName]=\"data.bloggerName\"\n        [insertedDate]=\"data.insertedDate\"\n        [heading]=\"data.heading\"\n        [Content]=\"data.Content\"\n        [ViewCount]=\"data.ViewCount\"\n        [ShareCount]=\"data.ShareCount\"\n        [keywords]=\"data.keywords\"\n        [exactDate]=\"data.exactDate\"\n        [readingTime]=\"data.readingTime\">\n      </SportSocial-normal-blog>\n    </div>\n  </div>\n  <div *ngIf=\"mobileView\" class=\"mobileView relatedBlog\">\n    <p>Related Articles</p>\n    <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\">\n    <div class=\"col-4\" *ngFor=\"let data of relatedBlogDetails;let i=index\">\n      <SportSocial-normal-blog \n          [blogId]=\"data.blogId\"\n          [blogImage]=\"data.blogImage\"\n          [bloggerImage]=\"data.bloggerImage\"\n          [bloggerName]=\"data.bloggerName\"\n          [insertedDate]=\"data.insertedDate\"\n          [heading]=\"data.heading\"\n          [Content]=\"data.Content\"\n          [ViewCount]=\"data.ViewCount\"\n          [ShareCount]=\"data.ShareCount\"\n          [keywords]=\"data.keywords\"\n          [exactDate]=\"data.exactDate\"\n          [readingTime]=\"data.readingTime\">\n      </SportSocial-normal-blog>\n  </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -2213,10 +2590,11 @@ var CommentsComponent = /** @class */ (function () {
             .catch(console.error.bind(console));
     };
     CommentsComponent.prototype.getDate = function (i) {
+        console.log(i);
         var commentDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
-        // console.log('p: ',"y= ",presentDate.getFullYear(),"mon= ",presentDate.getMonth(),"d= ",presentDate.getDate(),"h= ",presentDate.getHours(),"s= ",presentDate.getSeconds(),'t= ',presentDate.toDateString())
-        //console.log('c: ',"y= ",commentDate.getFullYear(),"mon= ",commentDate.getMonth(),"d= ",commentDate.getDate(),"h= ",commentDate.getHours(),"s= ",commentDate.getSeconds(),'t= ',commentDate.toDateString())
+        console.log('p: ', "y= ", presentDate.getFullYear(), "mon= ", presentDate.getMonth(), "d= ", presentDate.getDate(), "h= ", presentDate.getHours(), "s= ", presentDate.getSeconds(), 't= ', presentDate.toDateString());
+        console.log('c: ', "y= ", commentDate.getFullYear(), "mon= ", commentDate.getMonth(), "d= ", commentDate.getDate(), "h= ", commentDate.getHours(), "s= ", commentDate.getSeconds(), 't= ', commentDate.toDateString());
         if (commentDate.getFullYear() == presentDate.getFullYear()) {
             if (commentDate.getMonth() == presentDate.getMonth()) {
                 if (presentDate.getDate() == commentDate.getDate()) {
@@ -3294,8 +3672,10 @@ var OpenFullImageComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blogContent_blogs_blogs_component__ = __webpack_require__("../../../../../src/app/blogContent/blogs/blogs.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__blogContent_blog_open_blog_open_component__ = __webpack_require__("../../../../../src/app/blogContent/blog-open/blog-open.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__editor_panel_editor_panel_component__ = __webpack_require__("../../../../../src/app/editor-panel/editor-panel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__search_search_component__ = __webpack_require__("../../../../../src/app/search/search.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__admin_panel_admin_panel_component__ = __webpack_require__("../../../../../src/app/admin-panel/admin-panel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__search_search_component__ = __webpack_require__("../../../../../src/app/search/search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_panel_edit_blog_edit_blog_component__ = __webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3308,10 +3688,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var appRoute = [
     { path: "", component: __WEBPACK_IMPORTED_MODULE_1__blogContent_blogs_blogs_component__["a" /* BlogsComponent */] },
     { path: "editorPanel", component: __WEBPACK_IMPORTED_MODULE_3__editor_panel_editor_panel_component__["a" /* EditorPanelComponent */] },
-    { path: ":tag", component: __WEBPACK_IMPORTED_MODULE_4__search_search_component__["a" /* SearchComponent */] },
+    { path: 'adminPanel', component: __WEBPACK_IMPORTED_MODULE_4__admin_panel_admin_panel_component__["a" /* AdminPanelComponent */] },
+    { path: ":tag", component: __WEBPACK_IMPORTED_MODULE_5__search_search_component__["a" /* SearchComponent */] },
+    { path: ":blogId/edit", component: __WEBPACK_IMPORTED_MODULE_6__admin_panel_edit_blog_edit_blog_component__["a" /* EditBlogComponent */] },
     { path: ':tag/:title/:blogId', component: __WEBPACK_IMPORTED_MODULE_2__blogContent_blog_open_blog_open_component__["a" /* BlogOpenComponent */] },
     { path: '**', redirectTo: '' }
 ];
@@ -3321,9 +3705,9 @@ var RoutingModule = /** @class */ (function () {
     RoutingModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             imports: [
-                __WEBPACK_IMPORTED_MODULE_5__angular_router__["RouterModule"].forRoot(appRoute)
+                __WEBPACK_IMPORTED_MODULE_7__angular_router__["RouterModule"].forRoot(appRoute)
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_5__angular_router__["RouterModule"]]
+            exports: [__WEBPACK_IMPORTED_MODULE_7__angular_router__["RouterModule"]]
         })
     ], RoutingModule);
     return RoutingModule;
@@ -3463,7 +3847,6 @@ var SearchComponent = /** @class */ (function () {
     };
     SearchComponent.prototype.getBlogs = function () {
         var _this = this;
-        //console.log(this.pageNumber, " next page")
         var blogDetails = [];
         this.get.blogData(this.pageNumber, this.recievedKey).subscribe(function (data) {
             if (data.length > 0) {
@@ -3492,7 +3875,6 @@ var SearchComponent = /** @class */ (function () {
                     readingTime: _this.timeToRead(data[i].Content)
                 });
             }
-            // console.log(blogDetails, " search")
             _this.blogDetails = blogDetails;
         });
     };
@@ -3532,10 +3914,26 @@ var SearchComponent = /** @class */ (function () {
     SearchComponent.prototype.timePassed = function (i) {
         var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
+        //console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
         if (writtenDate.getFullYear() == presentDate.getFullYear()) {
             if (writtenDate.getMonth() == presentDate.getMonth()) {
                 if (writtenDate.getDate() == presentDate.getDate()) {
-                    return "Today";
+                    if (writtenDate.getHours() == presentDate.getHours()) {
+                        if (writtenDate.getMinutes() == presentDate.getMinutes()) {
+                            if (writtenDate.getSeconds() - presentDate.getSeconds()) {
+                                return "Just Now";
+                            }
+                            else {
+                                return presentDate.getSeconds() - writtenDate.getSeconds() + " sec ago";
+                            }
+                        }
+                        else {
+                            return presentDate.getMinutes() - writtenDate.getMinutes() + " min ago";
+                        }
+                    }
+                    else {
+                        return presentDate.getHours() - writtenDate.getHours() + " hrs ago";
+                    }
                 }
                 else {
                     return presentDate.getDate() - writtenDate.getDate() + " day ago";
@@ -3564,7 +3962,6 @@ var SearchComponent = /** @class */ (function () {
         var _this = this;
         this.pageNumber++;
         this.dataRecieved = false;
-        // console.log(this.recievedKey,this.pageNumber,"next")
         this.get.blogData(this.pageNumber, this.recievedKey).subscribe(function (data) {
             console.log(data, " nm");
             _this.dataRecieved = true;

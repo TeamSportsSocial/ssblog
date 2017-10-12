@@ -1,0 +1,32 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.panel{
+    margin:2% 5% 2% 5%;
+    font-family: 'Roboto',sans-serif; 
+}
+.loading{
+    display: block;
+    margin: auto;
+}
+button{
+    display: block;
+    margin: 1% auto;
+    width: 30%;
+    background-color: #ffa600;
+    border:none;
+    color: #ffffff;
+    outline: none;
+    font-weight: 700;
+    font-size: 1.2em;
+    padding: 0.5%;
+}
+.noMoreData{
+    width: 100%;
+    color: #024771;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.5em;
+    font-weight: 500;
+    text-align: center;
+}

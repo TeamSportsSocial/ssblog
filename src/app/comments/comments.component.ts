@@ -110,10 +110,11 @@ export class CommentsComponent implements OnInit {
   
   
   getDate(i:string){
+    console.log(i)
     let commentDate=new Date(parseInt(i)*1000)
     let presentDate=new Date();
-   // console.log('p: ',"y= ",presentDate.getFullYear(),"mon= ",presentDate.getMonth(),"d= ",presentDate.getDate(),"h= ",presentDate.getHours(),"s= ",presentDate.getSeconds(),'t= ',presentDate.toDateString())
-    //console.log('c: ',"y= ",commentDate.getFullYear(),"mon= ",commentDate.getMonth(),"d= ",commentDate.getDate(),"h= ",commentDate.getHours(),"s= ",commentDate.getSeconds(),'t= ',commentDate.toDateString())
+    console.log('p: ',"y= ",presentDate.getFullYear(),"mon= ",presentDate.getMonth(),"d= ",presentDate.getDate(),"h= ",presentDate.getHours(),"s= ",presentDate.getSeconds(),'t= ',presentDate.toDateString())
+    console.log('c: ',"y= ",commentDate.getFullYear(),"mon= ",commentDate.getMonth(),"d= ",commentDate.getDate(),"h= ",commentDate.getHours(),"s= ",commentDate.getSeconds(),'t= ',commentDate.toDateString())
     if(commentDate.getFullYear()==presentDate.getFullYear()){
       if(commentDate.getMonth()==presentDate.getMonth()){
          if(presentDate.getDate()==commentDate.getDate()){

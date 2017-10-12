@@ -42,6 +42,8 @@ import { MessageComponent } from './message/message.component';
 import { CustomUrlComponent } from './custom-url/custom-url.component';
 import { OpenFullImageComponent } from './open-full-image/open-full-image.component';
 import { RelatedBlogsComponent } from './blogContent/related-blogs/related-blogs.component';
+import { SinglePanelComponent } from './admin-panel/single-panel/single-panel.component';
+import { EditBlogComponent } from './admin-panel/edit-blog/edit-blog.component';
 
 
 
@@ -69,7 +71,9 @@ import { RelatedBlogsComponent } from './blogContent/related-blogs/related-blogs
     MessageComponent,
     CustomUrlComponent,
     OpenFullImageComponent,
-    RelatedBlogsComponent
+    RelatedBlogsComponent,
+    SinglePanelComponent,
+    EditBlogComponent
   ],
   imports: [
     BrowserModule,
