@@ -16,7 +16,8 @@ import {
    {path:"" ,component:BlogsComponent},
    {path:"editorPanel" , component: EditorPanelComponent},
    {path:":tag" ,component:SearchComponent},
-   {path:':tag/:title/:blogId',component: BlogOpenComponent }
+   {path:':tag/:title/:blogId',component: BlogOpenComponent },
+   {path:'**',redirectTo:''}
    
  ]
 @NgModule({

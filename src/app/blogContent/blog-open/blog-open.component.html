@@ -2,23 +2,38 @@
   <p #openBlog class="Catagory">
     <span role="button" (click)="getblogs($event)">{{Keywords[0]}}</span>
     <span  *ngIf="blogDataRecieved">|</span>
-    <span>{{blog.readingTime}}</span>
+    <span *ngIf="blog">{{blog.readingTime}}</span>
   </p>
   <div class="blogImageHolder">
-    <img class="blogImage" alt="blogImage" src="{{blog.blogImage}}"  (error)="setDefaultBlogImage()" (load)="removeInitalImage()" role="button" *ngIf="blogDataRecieved" (click)="openfullImage()">
-    <img class="blogImage"  alt="InitialblogImage" src="/assets/images/default-image.png"  *ngIf="loading" (click)="openfullImage()" role="button">
+    <img 
+      class="blogImage" 
+      alt="blogImage" 
+      src="{{blog.blogImage}}"  
+      (error)="setDefaultBlogImage()" 
+      (load)="removeInitalImage($event)"
+      (progress)="showprogress($event)" 
+      role="button" 
+      *ngIf="blogDataRecieved"
+      (click)="openfullImage()">
+    <img 
+      class="blogImage"  
+      alt="InitialblogImage" 
+      src="/assets/images/default-image.png"  
+      *ngIf="loading" 
+      (click)="openfullImage()" 
+      role="button">
     <img src="/assets/images/sports-social-zoom-out-orange.png" alt="sports-social-zoom-out-orange" role="button" (click)="openfullImage()"  class="zoom">
   </div>
   
   <div class="content">
     
     <div class="blogInfo" #BlogInfo>
-      <p [innerHtml]="blog.heading"class="title"></p>
+      <p *ngIf="blog" [innerHtml]="blog.heading"class="title"></p>
       <div class="bloggerImage">
-        <img src="{{blog.bloggerImage}}"  (error)="setDefault()" >
+        <img *ngIf="blog" src="{{blog.bloggerImage}}"  (error)="setDefault()" >
       </div>
       <div class="blogger" *ngIf="blogDataRecieved">
-        <p  class="bloggerName">Written by <span> {{blog.bloggerName}}</span></p>  
+        <p  class="bloggerName">Written by <span > {{blog.bloggerName}}</span></p>  
         <p class="writtenDate">
           {{blog.exactDate}}
         </p>
@@ -106,7 +121,7 @@
 <SportSocial-related-blogs></SportSocial-related-blogs>
   
 </div> 
-<SportSocial-blog-footer></SportSocial-blog-footer>
+<SportSocial-blog-footer *ngIf="blogDataRecieved"></SportSocial-blog-footer>
 
 <div class="fullImage"  *ngIf="openFullImage" >
   <img 

@@ -63,6 +63,7 @@ export class BlogOpenComponent implements OnInit {
     @ViewChild('BlogInfo') BlogInfo;
     @ViewChild('popup') popup;
     @ViewChild('fullImage') fullImage;
+    @ViewChild('BlogImage') BlogImage;
     constructor(
         private recieve:PropertyService ,
         private recieveHeight:PropertyService,
@@ -97,10 +98,13 @@ export class BlogOpenComponent implements OnInit {
        
         this.setTopMargin()
         this.setMobileView()
-        //console.log(window.location.href,"url")
+
         
     }
     
+    ngAfterViewInit(){
+        
+    }
     sendViewCount(){
         this.send.viewCountOfBlog(this.blogID,this.ViewCount).subscribe(
             data=>{
@@ -152,7 +156,8 @@ export class BlogOpenComponent implements OnInit {
     }
     
     loadBlogFromSendData(){
-        this.recieve.detailsofBlog.subscribe(
+        this.recieve.detailsofBlog
+        .subscribe(
             data=>{
                 this.blogDataRecieved=true;
                 this.blog={
@@ -174,7 +179,6 @@ export class BlogOpenComponent implements OnInit {
                 this.sendViewCount()
                 this.Keywords=this.blog.keywords;
                 this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length-1])
-                // this.getRelatedBlogs()
                 this.setMetaTags();
                 this.setTitle()
             }
@@ -186,9 +190,12 @@ export class BlogOpenComponent implements OnInit {
         this.load.dataOfsingleBlog(this.blogID).subscribe(
             res=>{
                 const data=res[0]
-                console.log(data," t")
-                this.blogDataRecieved=true;
-               // console.log(this.blogDataRecieved,"  true")
+                if(data==undefined){
+                    this.router.navigate(['/'])
+                }
+                else{
+                    this.blogDataRecieved=true;
+                }
                 this.blog={
                     blogId:data.blogId,
                     blogImage:data.blogImage,
@@ -223,7 +230,6 @@ export class BlogOpenComponent implements OnInit {
     
     timeToRead(s:string){
         let words = s.split(" ");
-        //console.log(s,words,words.length,this.blogID,"nadeem")
         let time=Math.round(words.length/180)
         if(time>0){
           return time + " min read"
@@ -236,7 +242,6 @@ export class BlogOpenComponent implements OnInit {
     timePassed(i:string){
         let writtenDate=new Date(parseInt(i)*1000);
         let presentDate=new Date();
-       // console.log(writtenDate.getDate(),presentDate.getDate(), " Date")
         if(writtenDate.getFullYear()==presentDate.getFullYear()){
           if(writtenDate.getMonth()==presentDate.getMonth()){
             if(writtenDate.getDate()==presentDate.getDate()){
@@ -259,7 +264,6 @@ export class BlogOpenComponent implements OnInit {
     
     ExactDate(i:number){
       let writtenDate=new Date(i*1000);
-      //console.log(writtenDate," wDate")
       return writtenDate.toDateString()
     }
     
@@ -269,19 +273,25 @@ export class BlogOpenComponent implements OnInit {
         this.blog.bloggerImage="/assets/images/user.png"
     }
 
-    removeInitalImage(){
-        this.loading=false
+    removeInitalImage(event){
+        console.log(event.returnValue," load")
+        if(event.returnValue){
+            this.loading=false
+        }
+    }
+    showprogress(event){
+        console.log(event, 'progress')
     }
     setDefaultBlogImage(){
         this.blog.blogImage="/assets/images/default-image.png"
     }
     setMobileView(){
-        if(window.innerWidth>950){
+        if(window.innerWidth>950 ){
             this.mobileView=false;
             this.removeSocial=false;
             this.renderer.setStyle(this.BlogInfo.nativeElement,'width','68%')
         }
-        if(window.innerWidth<=950 && window.innerWidth>700){
+        if(window.innerWidth<=950 && window.innerWidth>700 ){
            this.removeSocial=true; 
            this.mobileView=false;
            this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%');
