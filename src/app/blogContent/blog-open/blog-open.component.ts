@@ -114,6 +114,7 @@ export class BlogOpenComponent implements OnInit {
         )
     }
     setTitle(){
+        if(this.route.snapshot.url[0].path!='sportsocialblog' || this.route.snapshot.url[1].path!='page')
         this.titleService.setTitle(this.blog.heading)
     }
     setMetaTags(){
@@ -190,7 +191,7 @@ export class BlogOpenComponent implements OnInit {
         this.load.dataOfsingleBlog(this.blogID).subscribe(
             res=>{
                 const data=res[0]
-                if(data==undefined){
+                if(data==undefined  || this.route.snapshot.url[0].path=='sportsocialblog' || this.route.snapshot.url[1].path=='page'){
                     this.router.navigate(['/'])
                 }
                 else{
@@ -349,7 +350,6 @@ export class BlogOpenComponent implements OnInit {
     }
     onFullImageload(){
         let height= this.fullImage.nativeElement.getBoundingClientRect().height
-       // console.log(height,window.innerHeight, "loaded")
         let top=(window.innerHeight-height)/2;
         this.renderer.setStyle(this.fullImage.nativeElement,"top",top+"px")
     }
@@ -394,8 +394,6 @@ export class BlogOpenComponent implements OnInit {
             method: 'share',
             href: 'https://www.chaseyoursport.com/'+this.route.snapshot.url[0].path+'/'+this.route.snapshot.url[1].path+'/'+this.route.snapshot.url[2].path
           };
-       
-          //console.log(this.isConnectedWithFacebook)
        
           this.fb.ui(options)
             .then((res: UIResponse) => {
