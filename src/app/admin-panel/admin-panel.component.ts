@@ -88,6 +88,7 @@ export class AdminPanelComponent implements OnInit {
      this.setTopMargin()
    }
    nextPage(){
+    this.dataRecieved=false;
      this.pageNumber++;
      this.get.blogData(this.pageNumber,this.defaultKey).subscribe(
        data=>{

@@ -8,6 +8,8 @@ import { AdminPanelComponent } from '../admin-panel/admin-panel.component';
 import { SearchComponent } from '../search/search.component';
 import { EditBlogComponent } from '../admin-panel/edit-blog/edit-blog.component';
 
+import { AuthGuard } from '../services/auth-gaurd.service';
+
 import {
   Routes,
   RouterModule,
@@ -16,8 +18,14 @@ import {
 
  const appRoute:Routes=[
    {path:"" ,component:BlogsComponent},
-   {path:"editorPanel" , component: EditorPanelComponent},
-   {path:'adminPanel' , component:AdminPanelComponent},
+   {path:"editorPanel" , 
+    canActivate: [AuthGuard],
+    component: EditorPanelComponent},
+   {path:'login', 
+    component:LoginPageComponent},
+   {path:'adminPanel' ,
+    canActivate: [AuthGuard],
+    component:AdminPanelComponent},
    {path:":tag" ,component:SearchComponent},
    {path:":blogId/edit" ,component:EditBlogComponent},
    {path:':tag/:title/:blogId',component: BlogOpenComponent },

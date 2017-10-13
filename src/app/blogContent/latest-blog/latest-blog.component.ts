@@ -50,10 +50,10 @@ export class LatestBlogComponent implements OnInit {
   
   isloading:boolean=true;
   dataRecieved:boolean=false;
-  @ViewChild('Desc') Desc;
+  @ViewChild('DescChild') DescChild;
   @ViewChild('latestTitle') latestTitle;
   @ViewChild('latestDesc') latestDesc;
-  @ViewChild('blogImage') blogimage;
+  @ViewChild('blogimage') blogimage;
   @ViewChild('latest') latest;
   @ViewChild('initialImage') initialImage;
   constructor(
@@ -78,27 +78,23 @@ export class LatestBlogComponent implements OnInit {
       readingTime:this.readingTime
      }
      if(window.innerWidth>=1000){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','70%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','2.2em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
      }
      if(window.innerWidth>800 && window.innerWidth<1000){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','75%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.8em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
     }
     if(window.innerWidth<800 && window.innerWidth>=600){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','85%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }
     if(window.innerWidth<600 && window.innerWidth>400 ){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','75%')
+      this.renderer.setStyle(this.DescChild.nativeElement,'margin','20% auto')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.6em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.3em')
     }
     if(window.innerWidth<400){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','80%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.3em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
     }
@@ -111,11 +107,11 @@ export class LatestBlogComponent implements OnInit {
     this.heightOfInitialImage();
     if(this.blogImage){
       this.dataRecieved=true
-      
     }
   }
   removeInitialImage(){
     this.isloading=false
+   
   }
    
   setDefault(){
@@ -133,36 +129,32 @@ export class LatestBlogComponent implements OnInit {
   }
   heightOfInitialImage(){
     if(window.innerWidth<=600){
-    let width=this.initialImage.nativeElement.getBoundingClientRect().width
-    let height=.75*width
-    this.renderer.setStyle(this.initialImage.nativeElement,'height',height+ 'px')
+      let width=this.initialImage.nativeElement.getBoundingClientRect().width
+      let height=.72*width
+      this.renderer.setStyle(this.initialImage.nativeElement,'height',height+ 'px')
     }
   }
   @HostListener('window:resize',[])onresize(){
     this.heightOfInitialImage();
     if(window.innerWidth>=1000){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','70%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','2.2em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
       //this.renderer.setStyle(this.latestDesc.nativeElement,'height','25%')
      }
      if(window.innerWidth>800 && window.innerWidth<1000){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','75%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.8em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
     }
     if(window.innerWidth<800 && window.innerWidth>=600){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','85%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }
     if(window.innerWidth<600 && window.innerWidth>400 ){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','75%')
+      this.renderer.setStyle(this.DescChild.nativeElement,'margin','20% auto')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.6em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.3em')
     }
     if(window.innerWidth<400){
-      this.renderer.setStyle(this.Desc.nativeElement,'height','80%')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }

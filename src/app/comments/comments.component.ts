@@ -154,11 +154,10 @@ export class CommentsComponent implements OnInit {
     this.fb.api('/me', "get",{fields: 'email,name'})
       .then((res: any) => {
         console.log('Got the users profile', res);
-        this.profilePicture='http://graph.facebook.com/'+res.id+'/picture?type=large'
+        this.profilePicture='https://graph.facebook.com/'+res.id+'/picture?type=large'
         this.sendUserInfo.ofFacebookUser(res.id,res.name,res.email,this.profilePicture).subscribe(
           res=>{
             console.log(res," login")
-            //console.log(res[0].UserId)
             this.userId=res[0].UserId
           }
         )

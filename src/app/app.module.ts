@@ -25,6 +25,8 @@ import {PutService} from "./services/put.service";
 import {GetService} from "./services/get.service";
 import {SaveService} from "./services/save.service";
 import {StatusService} from "./services/status.service";
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth-gaurd.service';
 
 import { MaintainHeightWidthRatioDirective } from './directives/maintain-height-width-ratio.directive';
 import { TabViewAvailableDirective } from './directives/tab-view-available.directive';
@@ -73,7 +75,7 @@ import { EditBlogComponent } from './admin-panel/edit-blog/edit-blog.component';
     OpenFullImageComponent,
     RelatedBlogsComponent,
     SinglePanelComponent,
-    EditBlogComponent
+    EditBlogComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,6 +93,8 @@ import { EditBlogComponent } from './admin-panel/edit-blog/edit-blog.component';
     SaveService,
     StatusService,
     PostService,
+    AuthService, 
+    AuthGuard,
     { provide: UrlSerializer, useClass: CustomUrlComponent }
   ],
   bootstrap: [AppComponent]

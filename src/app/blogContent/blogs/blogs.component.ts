@@ -92,31 +92,18 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     private get: PostService,
   ) { }
   ngOnInit(){
-    sessionStorage.removeItem('Blog')
-    sessionStorage.removeItem('pageNumber')
-    sessionStorage.removeItem('searchedBlog')
-    sessionStorage.removeItem('key')
-    if(window.innerWidth>950){
-      this.removeTrendingBlock=false;
-      this.mobileView=false;
-    }
-    if(window.innerWidth>600 && window.innerWidth<=950){
-      this.removeTrendingBlock=true;
-      this.mobileView=false;
-    }
-    if(window.innerWidth<=600 ){
-      this.removeTrendingBlock=true;
-      this.mobileView=true;
-    }
-    this.nextPageNumber=JSON.parse(sessionStorage.getItem('blogPageNumber'))
-    //console.log(this.nextPageNumber," try")
-    if(this.nextPageNumber==null){
-      this.nextPageNumber=1
-    }
-    if(this.nextPageNumber==1){
+    //sessionStorage.removeItem('Blog')
+    //sessionStorage.removeItem('pageNumber')
+    //sessionStorage.removeItem('searchedBlog')
+    //sessionStorage.removeItem('key')
+    
+    this.setMobileView()
+    this.getBlog()
+  }
+  
+  getBlog(){
     this.get.blogData(this.nextPageNumber,this.defaultKey).subscribe(
-      (data)=>{ 
-       // console.log(data ,"coreect")
+      (data)=>{
         this.show=true;
         this.dataRecived=true;
         for(let i in data){
@@ -137,7 +124,6 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               }
             )
         }
-        //console.log(this.blogDetails, " nadeem")
         this.latestBlogDetails.push(
           {
             blogId:this.blogDetails[0].blogId,
@@ -193,65 +179,20 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       }
     )
   }
-  else{
-    this.blogDetails=JSON.parse(sessionStorage.getItem('blogData'))
-   // console.log(this.blogDetails," mus")
-    this.latestBlogDetails.push(
-      {
-        blogId:this.blogDetails[0].blogId,
-        blogImage:this.blogDetails[0].blogImage,
-        bloggerName:this.blogDetails[0].bloggerName,
-        bloggerImage:this.blogDetails[0].bloggerImage,
-        heading:this.blogDetails[0].heading,
-        Content:this.blogDetails[0].Content,
-        insertedDate:this.blogDetails[0].insertedDate,
-        ViewCount:this.blogDetails[0].ViewCount,
-        ShareCount:this.blogDetails[0].ShareCount,
-        keywords:this.blogDetails[0].keywords,
-        exactDate:this.blogDetails[0].exactDate,
-        readingTime:this.blogDetails[0].readingTime
-      }
-    )
-    for(var i=1; i<4;i++){
-      this.topBlogDetails.push(
-        {
-          blogId:this.blogDetails[i].blogId,
-          blogImage:this.blogDetails[i].blogImage,
-          bloggerName:this.blogDetails[i].bloggerName,
-          bloggerImage:this.blogDetails[i].bloggerImage,
-          heading:this.blogDetails[i].heading,
-          Content:this.blogDetails[i].Content,
-          insertedDate:this.blogDetails[i].insertedDate,
-          ViewCount:this.blogDetails[i].ViewCount,
-          ShareCount:this.blogDetails[i].ShareCount,
-          keywords:this.blogDetails[i].keywords,
-          exactDate:this.blogDetails[i].exactDate,
-          readingTime:this.blogDetails[i].readingTime
-        }
-      )
+  setMobileView(){
+    if(window.innerWidth>600 ){
+      this.mobileView=false;
     }
-   for(var i=4;i<this.blogDetails.length;i++){
-    this.restBlogDetails.push(
-      {
-        blogId:this.blogDetails[i].blogId,
-        blogImage:this.blogDetails[i].blogImage,
-        bloggerName:this.blogDetails[i].bloggerName,
-        bloggerImage:this.blogDetails[i].bloggerImage,
-        heading:this.blogDetails[i].heading,
-        Content:this.blogDetails[i].Content,
-        insertedDate:this.blogDetails[i].insertedDate,
-        ViewCount:this.blogDetails[i].ViewCount,
-        ShareCount:this.blogDetails[i].ShareCount,
-        keywords:this.blogDetails[i].keywords,
-        exactDate:this.blogDetails[i].exactDate,
-        readingTime:this.blogDetails[i].readingTime
-      }
-    )
+    else{
+      this.mobileView=true;
+    }
   }
-  this.show=true;
-  this.dataRecived=true;
-  } 
    
+  setTopMargin(){
+    this.reciveHeight.ofKeyWords.subscribe(
+      (margin)=>this.topMargin=margin
+    ) 
+    this.renderer.setStyle(this.blog.nativeElement,'margin-top',this.topMargin+"px")
   }
   showTrendingBlock(){
     if(this.blogDetails.length==0 || window.innerWidth<950){
@@ -262,10 +203,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     }
   }
   ngAfterViewInit(){
-    this.reciveHeight.ofKeyWords.subscribe(
-      (margin)=>this.topMargin=margin
-    ) 
-    this.renderer.setStyle(this.blog.nativeElement,'margin-top',this.topMargin+"px")
+    this.setTopMargin()
   }
   ngAfterViewChecked(){
     this.reciveHeight.ofKeyWords.subscribe(
@@ -274,22 +212,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     this.renderer.setStyle(this.blog.nativeElement,'margin-top',this.topMargin+"px")
   }
   @HostListener('window:resize',[]) onresize(){
-    this.reciveHeight.ofKeyWords.subscribe(
-      (margin)=>this.topMargin=margin
-    )
-    this.renderer.setStyle(this.blog.nativeElement,'margin-top',this.topMargin+"px");
-    if(window.innerWidth>950){
-      this.removeTrendingBlock=false;
-      this.mobileView=false;
-    }
-    if(window.innerWidth>600 && window.innerWidth<=950){
-      this.removeTrendingBlock=true;
-      this.mobileView=false;
-    }
-    if(window.innerWidth<=600 ){
-      this.removeTrendingBlock=true;
-      this.mobileView=true;
-    }
+    this.setTopMargin();
+    this.showTrendingBlock();
+    this.setMobileView()
     if(this.blogDetails.length>0){
       this.show=true
     }
@@ -298,13 +223,12 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     
       let writtenDate=new Date(parseInt(i)*1000);
       let presentDate=new Date();
-      //console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
       if(writtenDate.getFullYear()==presentDate.getFullYear()){
         if(writtenDate.getMonth()==presentDate.getMonth()){
           if(writtenDate.getDate()==presentDate.getDate()){
               if(writtenDate.getHours()==presentDate.getHours()){
                 if(writtenDate.getMinutes()==presentDate.getMinutes()){
-                  if(writtenDate.getSeconds()-presentDate.getSeconds()){
+                  if(writtenDate.getSeconds()==presentDate.getSeconds()){
                     return "Just Now"
                   }
                   else{
@@ -381,12 +305,12 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             )
            }
            //console.log(this.restBlogDetails.concat(this.topBlogDetails).concat(this.latestBlogDetails),"  hr")
-           sessionStorage.setItem('blogData',JSON.stringify((this.latestBlogDetails).concat(this.topBlogDetails).concat(this.restBlogDetails)))
+           //sessionStorage.setItem('blogData',JSON.stringify((this.latestBlogDetails).concat(this.topBlogDetails).concat(this.restBlogDetails)))
         }
       )
     }
    
-    sessionStorage.setItem('blogPageNumber',JSON.stringify(this.nextPageNumber))
+    //sessionStorage.setItem('blogPageNumber',JSON.stringify(this.nextPageNumber))
   }
 
 }

@@ -102,15 +102,11 @@ export class BlogOpenComponent implements OnInit {
         
     }
     
-    ngAfterViewInit(){
-        
-    }
     sendViewCount(){
         this.send.viewCountOfBlog(this.blogID,this.ViewCount).subscribe(
             data=>{
               //console.log(data, " view")
-              
-            }
+              }
         )
     }
     setTitle(){
@@ -175,8 +171,8 @@ export class BlogOpenComponent implements OnInit {
                     exactDate:data['exactDate'],
                     readingTime:data['readingTime']
                 }
-                this.ShareCount=+this.blog.ShareCount
-                this.ViewCount=+(this.blog.ViewCount)
+                this.ShareCount=parseInt(this.blog.ShareCount)
+                this.ViewCount=parseInt(this.blog.ViewCount)
                 this.sendViewCount()
                 this.Keywords=this.blog.keywords;
                 this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length-1])

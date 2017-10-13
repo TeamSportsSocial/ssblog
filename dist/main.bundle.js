@@ -117,6 +117,7 @@ var AdminPanelComponent = /** @class */ (function () {
     };
     AdminPanelComponent.prototype.nextPage = function () {
         var _this = this;
+        this.dataRecieved = false;
         this.pageNumber++;
         this.get.blogData(this.pageNumber, this.defaultKey).subscribe(function (data) {
             if (data.length > 0) {
@@ -525,30 +526,34 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_get_service__ = __webpack_require__("../../../../../src/app/services/get.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_save_service__ = __webpack_require__("../../../../../src/app/services/save.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_status_service__ = __webpack_require__("../../../../../src/app/services/status.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__directives_maintain_height_width_ratio_directive__ = __webpack_require__("../../../../../src/app/directives/maintain-height-width-ratio.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__directives_tab_view_available_directive__ = __webpack_require__("../../../../../src/app/directives/tab-view-available.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__routing_routing_module__ = __webpack_require__("../../../../../src/app/routing/routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__blog_footer_blog_footer_component__ = __webpack_require__("../../../../../src/app/blog-footer/blog-footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__search_search_component__ = __webpack_require__("../../../../../src/app/search/search.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__comments_comments_component__ = __webpack_require__("../../../../../src/app/comments/comments.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30_ngx_facebook__ = __webpack_require__("../../../../ngx-facebook/dist/esm/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_ng2_meta__ = __webpack_require__("../../../../ng2-meta/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_ng2_meta___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_31_ng2_meta__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ngui_auto_complete__ = __webpack_require__("../../../../@ngui/auto-complete/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ngui_auto_complete___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_32__ngui_auto_complete__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__message_message_component__ = __webpack_require__("../../../../../src/app/message/message.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__custom_url_custom_url_component__ = __webpack_require__("../../../../../src/app/custom-url/custom-url.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__open_full_image_open_full_image_component__ = __webpack_require__("../../../../../src/app/open-full-image/open-full-image.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__blogContent_related_blogs_related_blogs_component__ = __webpack_require__("../../../../../src/app/blogContent/related-blogs/related-blogs.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__admin_panel_single_panel_single_panel_component__ = __webpack_require__("../../../../../src/app/admin-panel/single-panel/single-panel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__admin_panel_edit_blog_edit_blog_component__ = __webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_auth_gaurd_service__ = __webpack_require__("../../../../../src/app/services/auth-gaurd.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__directives_maintain_height_width_ratio_directive__ = __webpack_require__("../../../../../src/app/directives/maintain-height-width-ratio.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__directives_tab_view_available_directive__ = __webpack_require__("../../../../../src/app/directives/tab-view-available.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__routing_routing_module__ = __webpack_require__("../../../../../src/app/routing/routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__blog_footer_blog_footer_component__ = __webpack_require__("../../../../../src/app/blog-footer/blog-footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__search_search_component__ = __webpack_require__("../../../../../src/app/search/search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__comments_comments_component__ = __webpack_require__("../../../../../src/app/comments/comments.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_ngx_facebook__ = __webpack_require__("../../../../ngx-facebook/dist/esm/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33_ng2_meta__ = __webpack_require__("../../../../ng2-meta/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33_ng2_meta___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_33_ng2_meta__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__ngui_auto_complete__ = __webpack_require__("../../../../@ngui/auto-complete/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__ngui_auto_complete___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_34__ngui_auto_complete__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__message_message_component__ = __webpack_require__("../../../../../src/app/message/message.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__custom_url_custom_url_component__ = __webpack_require__("../../../../../src/app/custom-url/custom-url.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__open_full_image_open_full_image_component__ = __webpack_require__("../../../../../src/app/open-full-image/open-full-image.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__blogContent_related_blogs_related_blogs_component__ = __webpack_require__("../../../../../src/app/blogContent/related-blogs/related-blogs.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__admin_panel_single_panel_single_panel_component__ = __webpack_require__("../../../../../src/app/admin-panel/single-panel/single-panel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__admin_panel_edit_blog_edit_blog_component__ = __webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -608,35 +613,37 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_15__blogContent_normal_blog_normal_blog_component__["a" /* NormalBlogComponent */],
                 __WEBPACK_IMPORTED_MODULE_16__blogContent_blogs_blogs_component__["a" /* BlogsComponent */],
                 __WEBPACK_IMPORTED_MODULE_17__blogContent_blog_open_blog_open_component__["a" /* BlogOpenComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__directives_maintain_height_width_ratio_directive__["a" /* MaintainHeightWidthRatioDirective */],
-                __WEBPACK_IMPORTED_MODULE_24__directives_tab_view_available_directive__["a" /* TabViewAvailableDirective */],
-                __WEBPACK_IMPORTED_MODULE_26__blog_footer_blog_footer_component__["a" /* BlogFooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_27__search_search_component__["a" /* SearchComponent */],
-                __WEBPACK_IMPORTED_MODULE_28__comments_comments_component__["a" /* CommentsComponent */],
-                __WEBPACK_IMPORTED_MODULE_33__message_message_component__["a" /* MessageComponent */],
-                __WEBPACK_IMPORTED_MODULE_34__custom_url_custom_url_component__["a" /* CustomUrlComponent */],
-                __WEBPACK_IMPORTED_MODULE_35__open_full_image_open_full_image_component__["a" /* OpenFullImageComponent */],
-                __WEBPACK_IMPORTED_MODULE_36__blogContent_related_blogs_related_blogs_component__["a" /* RelatedBlogsComponent */],
-                __WEBPACK_IMPORTED_MODULE_37__admin_panel_single_panel_single_panel_component__["a" /* SinglePanelComponent */],
-                __WEBPACK_IMPORTED_MODULE_38__admin_panel_edit_blog_edit_blog_component__["a" /* EditBlogComponent */]
+                __WEBPACK_IMPORTED_MODULE_25__directives_maintain_height_width_ratio_directive__["a" /* MaintainHeightWidthRatioDirective */],
+                __WEBPACK_IMPORTED_MODULE_26__directives_tab_view_available_directive__["a" /* TabViewAvailableDirective */],
+                __WEBPACK_IMPORTED_MODULE_28__blog_footer_blog_footer_component__["a" /* BlogFooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_29__search_search_component__["a" /* SearchComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__comments_comments_component__["a" /* CommentsComponent */],
+                __WEBPACK_IMPORTED_MODULE_35__message_message_component__["a" /* MessageComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__custom_url_custom_url_component__["a" /* CustomUrlComponent */],
+                __WEBPACK_IMPORTED_MODULE_37__open_full_image_open_full_image_component__["a" /* OpenFullImageComponent */],
+                __WEBPACK_IMPORTED_MODULE_38__blogContent_related_blogs_related_blogs_component__["a" /* RelatedBlogsComponent */],
+                __WEBPACK_IMPORTED_MODULE_39__admin_panel_single_panel_single_panel_component__["a" /* SinglePanelComponent */],
+                __WEBPACK_IMPORTED_MODULE_40__admin_panel_edit_blog_edit_blog_component__["a" /* EditBlogComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["BrowserModule"],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-                __WEBPACK_IMPORTED_MODULE_25__routing_routing_module__["a" /* RoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_30_ngx_facebook__["a" /* FacebookModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_27__routing_routing_module__["a" /* RoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_32_ngx_facebook__["a" /* FacebookModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["ReactiveFormsModule"],
-                __WEBPACK_IMPORTED_MODULE_32__ngui_auto_complete__["NguiAutoCompleteModule"]
+                __WEBPACK_IMPORTED_MODULE_34__ngui_auto_complete__["NguiAutoCompleteModule"]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_31_ng2_meta__["MetaService"],
+                __WEBPACK_IMPORTED_MODULE_33_ng2_meta__["MetaService"],
                 __WEBPACK_IMPORTED_MODULE_18__services_property_service__["a" /* PropertyService */],
                 __WEBPACK_IMPORTED_MODULE_20__services_get_service__["a" /* GetService */],
                 __WEBPACK_IMPORTED_MODULE_21__services_save_service__["a" /* SaveService */],
                 __WEBPACK_IMPORTED_MODULE_22__services_status_service__["a" /* StatusService */],
                 __WEBPACK_IMPORTED_MODULE_19__services_post_service__["a" /* PostService */],
-                { provide: __WEBPACK_IMPORTED_MODULE_29__angular_router__["UrlSerializer"], useClass: __WEBPACK_IMPORTED_MODULE_34__custom_url_custom_url_component__["a" /* CustomUrlComponent */] }
+                __WEBPACK_IMPORTED_MODULE_23__services_auth_service__["a" /* AuthService */],
+                __WEBPACK_IMPORTED_MODULE_24__services_auth_gaurd_service__["a" /* AuthGuard */],
+                { provide: __WEBPACK_IMPORTED_MODULE_31__angular_router__["UrlSerializer"], useClass: __WEBPACK_IMPORTED_MODULE_36__custom_url_custom_url_component__["a" /* CustomUrlComponent */] }
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
@@ -929,7 +936,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    margin: 0px;\r\n    padding: 0px;\r\n    font-family:'Roboto',sans-serif;\r\n}\r\n\r\n.Catagory{\r\n    width: 90%;\r\n    margin: auto;\r\n    padding: 1.5% 0% 0% 0%;\r\n}\r\n.Catagory>span:first-child{\r\n    font-weight: 500\r\n}\r\n.Catagory>span:first-child:hover{\r\n    font-weight: 700\r\n}\r\n.blogImageHolder{\r\n    position: relative;\r\n    width:90%;\r\n    margin: 1% auto;\r\n    max-height:400px;\r\n    box-shadow: 3px 3px #fafafa;\r\n    overflow: hidden;\r\n    background-image: url('')\r\n}\r\n\r\n.blogImage{\r\n    width:100%;\r\n}\r\n.zoom{\r\n    position: absolute;\r\n    bottom: 2%;\r\n    right: 2%;\r\n    widows: 20px;\r\n    height: 20px;\r\n}\r\n.count img{\r\n    width:15px;\r\n    height: 15px;\r\n}\r\n.title{\r\n    font-size: 2.2em;\r\n    font-weight: 900;\r\n    color: black;\r\n    margin-bottom: 1%\r\n}\r\n.facebook{\r\n    width:20px;\r\n    height: 20px;\r\n    margin: 1% 1% 1% 1%;\r\n}\r\n.twitterButton{\r\n    width:20px;\r\n    height:20px;\r\n    margin: 1% 1% 1% 1%;\r\n}\r\n.content{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    padding-top:2% \r\n}\r\n.blogInfo{\r\n    width:65%;\r\n    display: inline-block;\r\n    margin-right: 3.5%;\r\n    margin-top: -0.6%;\r\n}\r\n\r\n.bloggerImage{\r\n    \r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width:45px;\r\n    height: 45px;\r\n    border: 1px solid #bbbbbb;\r\n    border-radius: 50%;\r\n    background-image: url('/assets/images/user.png');\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n}\r\n\r\n.bloggerImage>img{\r\n    width:100%;\r\n    height: 100%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.blogger{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width:52%;\r\n    font-family: 'Roboto',Cambria, Cochin, Georgia, Times, Times New Roman, serif\r\n}\r\n.bloggerName>span{\r\n    font-weight:700\r\n}\r\n.writtenDate{\r\n    font-size: 0.9em;\r\n    font-weight: 700\r\n}\r\n.count{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    text-align: right;\r\n    width:38%;\r\n    padding: 1% 2% 1% 2%;\r\n}\r\n.count>span{\r\n    margin-left: 5%\r\n}\r\n.count>span>span{\r\n    color: #ffa600;\r\n    font-size: 1.1em\r\n}\r\n.count>span>img{\r\n    margin-right: 3%\r\n}\r\n\r\n.shareOn{\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1em;\r\n    font-weight: 700;\r\n    padding: 2% 0% 2% 0%;\r\n}\r\n.desc{\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1.2em;\r\n    font-weight: 400;\r\n    line-height: 2em;\r\n    color: black;\r\n    padding-bottom: 2%;\r\n}\r\n.tags{\r\n    width:100%;\r\n}\r\n.tagHolder{\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n}\r\n.tagHolder>img{\r\n    width: 100%;\r\n    height: 100%\r\n}\r\n.tags>a{\r\n    color: #ffa600;\r\n    padding: 0% 1% 0% 2% ;\r\n    text-decoration: underline\r\n}\r\n.social{\r\n    width: 28%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n}\r\n.follow{\r\n    padding: 5%;\r\n    border: 1px solid #bbbbbb;\r\n}\r\n.follow >p{\r\n    text-align: center;\r\n    color: #024771;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-weight: 500;\r\n}\r\n.follow img{\r\n    width:8%;\r\n    height:8%;\r\n    margin: 2.3%\r\n}\r\n/* .col-6{\r\n    width: 50%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding:0% 1.5% 2% 1.5%;\r\n} */\r\n.social> .twitter{\r\n    border: 1px solid #bbbbbb;\r\n    margin-top:2%;\r\n}\r\n.twitter{\r\n    min-height: 700px\r\n}\r\n.twitter p{\r\n    padding: 1% 1% 1% 4%;\r\n    color: #024771;\r\n    font-size: 1em;\r\n    font-weight: 700;\r\n}\r\n.twitter img{\r\n    width:20px;\r\n    height: 20px;\r\n}\r\n.comments{\r\n    width: 90%;\r\n    margin-left: 5%;\r\n    border-top: 1px solid #444444;\r\n    padding: 2% 0% 2% 0%\r\n\r\n}\r\n/* .col-4{\r\n    width: 33%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 1%;\r\n}\r\n.mobileView .col-4{\r\n    width: 100%;\r\n} */\r\n/* .relatedBlog{\r\n    width:90%;\r\n    min-height: 400px;\r\n    margin: 2% auto;\r\n    padding-top:4%;\r\n    border-top: 2px solid #024771\r\n}\r\n.relatedBlog>p{\r\n    width: 90%;\r\n    margin: auto;\r\n    margin-bottom: 2%;\r\n    text-align: center;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 2em;\r\n    color: #024771;\r\n    font-weight: 400;\r\n} */\r\n.loading{\r\n    display: block;\r\n    margin: auto;\r\n}\r\n.fullImage{\r\n    width: 100%;\r\n    height: 100%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:0%;\r\n    left:0%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n    background-color: black;\r\n    opacity: 0.7;\r\n    background-repeat: no-repeat;\r\n    background-position: center\r\n}\r\n.fullImageHolder{\r\n    position: fixed;\r\n    width: 70%;\r\n    left: 15%;\r\n    top:0%;\r\n    z-index: 100;\r\n}\r\n.fullImageHolder>img{\r\n    display: block;\r\n    padding: 10%;\r\n    text-align: center;\r\n    max-width: 100%;\r\n    max-height: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600px){\r\n    .fullImageHolder{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}\r\n@media (max-width:600px) and (min-width:500px){\r\n    .fullImageHolder{\r\n        width: 95%;\r\n        left: 2.5%;\r\n    }\r\n    .blogger{\r\n        width:50%;\r\n    }\r\n    .title{\r\n        font-size: 2em\r\n    }\r\n}\r\n@media (max-width:500px) and (min-width:360px) {\r\n    .fullImageHolder{\r\n        width: 95%;\r\n        left: 2.5%;\r\n    }\r\n    .blogger{\r\n        width:45%;\r\n    }\r\n    .title{\r\n        font-size: 1.8em\r\n    }\r\n}\r\n@media (max-width:360px) {\r\n    .fullImageHolder{\r\n        width: 95%;\r\n        left: 2.5%;\r\n    }\r\n    .blogger{\r\n        width:42%;\r\n    }\r\n    .title{\r\n        font-size: 1.6em\r\n    }\r\n}", ""]);
+exports.push([module.i, "*{\r\n    margin: 0px;\r\n    padding: 0px;\r\n    font-family:'Roboto',sans-serif;\r\n}\r\n\r\n.Catagory{\r\n    width: 90%;\r\n    margin: auto;\r\n    padding: 1.5% 0% 0% 0%;\r\n}\r\n.Catagory>span:first-child{\r\n    font-weight: 500\r\n}\r\n.Catagory>span:first-child:hover{\r\n    font-weight: 700\r\n}\r\n.blogImageHolder{\r\n    position: relative;\r\n    width:90%;\r\n    min-height: 350px;\r\n    margin: 1% auto;\r\n    max-height:400px;\r\n    box-shadow: 3px 3px #fafafa;\r\n    overflow: hidden;\r\n    background-image: url('')\r\n}\r\n\r\n.blogImage{\r\n    width:100%;\r\n}\r\n.zoom{\r\n    position: absolute;\r\n    bottom: 2%;\r\n    right: 2%;\r\n    widows: 20px;\r\n    height: 20px;\r\n}\r\n.count img{\r\n    width:15px;\r\n    height: 15px;\r\n}\r\n.title{\r\n    font-size: 2.2em;\r\n    font-weight: 900;\r\n    color: black;\r\n    margin-bottom: 1%\r\n}\r\n.facebook{\r\n    width:20px;\r\n    height: 20px;\r\n    margin: 1% 1% 1% 1%;\r\n}\r\n.twitterButton{\r\n    width:20px;\r\n    height:20px;\r\n    margin: 1% 1% 1% 1%;\r\n}\r\n.content{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    padding-top:2% ;\r\n    min-height:1000px;\r\n}\r\n.blogInfo{\r\n    width:65%;\r\n    display: inline-block;\r\n    margin-right: 3.5%;\r\n    margin-top: -0.6%;\r\n}\r\n\r\n.bloggerImage{\r\n    \r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width:45px;\r\n    height: 45px;\r\n    border: 1px solid #bbbbbb;\r\n    border-radius: 50%;\r\n    background-image: url('/assets/images/user.png');\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n}\r\n\r\n.bloggerImage>img{\r\n    width:100%;\r\n    height: 100%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.blogger{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width:52%;\r\n    font-family: 'Roboto',Cambria, Cochin, Georgia, Times, Times New Roman, serif\r\n}\r\n.bloggerName>span{\r\n    font-weight:700\r\n}\r\n.writtenDate{\r\n    font-size: 0.9em;\r\n    font-weight: 700\r\n}\r\n.count{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    text-align: right;\r\n    width:38%;\r\n    padding: 1% 2% 1% 2%;\r\n}\r\n.count>span{\r\n    margin-left: 5%\r\n}\r\n.count>span>span{\r\n    color: #ffa600;\r\n    font-size: 1.1em\r\n}\r\n.count>span>img{\r\n    margin-right: 3%\r\n}\r\n\r\n.shareOn{\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1em;\r\n    font-weight: 700;\r\n    padding: 2% 0% 2% 0%;\r\n}\r\n.desc{\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1.2em;\r\n    font-weight: 400;\r\n    line-height: 2em;\r\n    color: black;\r\n    padding-bottom: 2%;\r\n}\r\n.tags{\r\n    width:100%;\r\n}\r\n.tagHolder{\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n}\r\n.tagHolder>img{\r\n    width: 100%;\r\n    height: 100%\r\n}\r\n.tags>a{\r\n    color: #ffa600;\r\n    padding: 0% 1% 0% 2% ;\r\n    text-decoration: underline\r\n}\r\n.social{\r\n    width: 28%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n}\r\n.follow{\r\n    padding: 5%;\r\n    border: 1px solid #bbbbbb;\r\n}\r\n.follow >p{\r\n    text-align: center;\r\n    color: #024771;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-weight: 500;\r\n}\r\n.follow img{\r\n    width:8%;\r\n    height:8%;\r\n    margin: 2.3%\r\n}\r\n/* .col-6{\r\n    width: 50%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding:0% 1.5% 2% 1.5%;\r\n} */\r\n.social> .twitter{\r\n    border: 1px solid #bbbbbb;\r\n    margin-top:2%;\r\n}\r\n.twitter{\r\n    min-height: 700px\r\n}\r\n.twitter p{\r\n    padding: 1% 1% 1% 4%;\r\n    color: #024771;\r\n    font-size: 1em;\r\n    font-weight: 700;\r\n}\r\n.twitter img{\r\n    width:20px;\r\n    height: 20px;\r\n}\r\n.comments{\r\n    width: 90%;\r\n    margin-left: 5%;\r\n    border-top: 1px solid #444444;\r\n    padding: 2% 0% 2% 0%\r\n\r\n}\r\n/* .col-4{\r\n    width: 33%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 1%;\r\n}\r\n.mobileView .col-4{\r\n    width: 100%;\r\n} */\r\n/* .relatedBlog{\r\n    width:90%;\r\n    min-height: 400px;\r\n    margin: 2% auto;\r\n    padding-top:4%;\r\n    border-top: 2px solid #024771\r\n}\r\n.relatedBlog>p{\r\n    width: 90%;\r\n    margin: auto;\r\n    margin-bottom: 2%;\r\n    text-align: center;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 2em;\r\n    color: #024771;\r\n    font-weight: 400;\r\n} */\r\n.loading{\r\n    display: block;\r\n    margin: auto;\r\n}\r\n.fullImage{\r\n    width: 100%;\r\n    height: 100%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:0%;\r\n    left:0%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n    background-color: black;\r\n    opacity: 0.7;\r\n    background-repeat: no-repeat;\r\n    background-position: center\r\n}\r\n.fullImageHolder{\r\n    position: fixed;\r\n    width: 70%;\r\n    left: 15%;\r\n    top:0%;\r\n    z-index: 100;\r\n}\r\n.fullImageHolder>img{\r\n    display: block;\r\n    padding: 10%;\r\n    text-align: center;\r\n    max-width: 100%;\r\n    max-height: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600px){\r\n    .fullImageHolder{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}\r\n@media (max-width:600px) and (min-width:500px){\r\n    .fullImageHolder{\r\n        width: 95%;\r\n        left: 2.5%;\r\n    }\r\n    .blogger{\r\n        width:50%;\r\n    }\r\n    .title{\r\n        font-size: 2em\r\n    }\r\n}\r\n@media (max-width:500px) and (min-width:360px) {\r\n    .fullImageHolder{\r\n        width: 95%;\r\n        left: 2.5%;\r\n    }\r\n    .blogger{\r\n        width:45%;\r\n    }\r\n    .title{\r\n        font-size: 1.8em\r\n    }\r\n}\r\n@media (max-width:360px) {\r\n    .fullImageHolder{\r\n        width: 95%;\r\n        left: 2.5%;\r\n    }\r\n    .blogger{\r\n        width:42%;\r\n    }\r\n    .title{\r\n        font-size: 1.6em\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -1013,8 +1020,6 @@ var BlogOpenComponent = /** @class */ (function () {
         this.setTopMargin();
         this.setMobileView();
     };
-    BlogOpenComponent.prototype.ngAfterViewInit = function () {
-    };
     BlogOpenComponent.prototype.sendViewCount = function () {
         this.send.viewCountOfBlog(this.blogID, this.ViewCount).subscribe(function (data) {
             //console.log(data, " view")
@@ -1072,8 +1077,8 @@ var BlogOpenComponent = /** @class */ (function () {
                 exactDate: data['exactDate'],
                 readingTime: data['readingTime']
             };
-            _this.ShareCount = +_this.blog.ShareCount;
-            _this.ViewCount = +(_this.blog.ViewCount);
+            _this.ShareCount = parseInt(_this.blog.ShareCount);
+            _this.ViewCount = parseInt(_this.blog.ViewCount);
             _this.sendViewCount();
             _this.Keywords = _this.blog.keywords;
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
@@ -1383,150 +1388,94 @@ var BlogsComponent = /** @class */ (function () {
         this.haveData = true;
     }
     BlogsComponent.prototype.ngOnInit = function () {
+        //sessionStorage.removeItem('Blog')
+        //sessionStorage.removeItem('pageNumber')
+        //sessionStorage.removeItem('searchedBlog')
+        //sessionStorage.removeItem('key')
+        this.setMobileView();
+        this.getBlog();
+    };
+    BlogsComponent.prototype.getBlog = function () {
         var _this = this;
-        sessionStorage.removeItem('Blog');
-        sessionStorage.removeItem('pageNumber');
-        sessionStorage.removeItem('searchedBlog');
-        sessionStorage.removeItem('key');
-        if (window.innerWidth > 950) {
-            this.removeTrendingBlock = false;
-            this.mobileView = false;
-        }
-        if (window.innerWidth > 600 && window.innerWidth <= 950) {
-            this.removeTrendingBlock = true;
-            this.mobileView = false;
-        }
-        if (window.innerWidth <= 600) {
-            this.removeTrendingBlock = true;
-            this.mobileView = true;
-        }
-        this.nextPageNumber = JSON.parse(sessionStorage.getItem('blogPageNumber'));
-        //console.log(this.nextPageNumber," try")
-        if (this.nextPageNumber == null) {
-            this.nextPageNumber = 1;
-        }
-        if (this.nextPageNumber == 1) {
-            this.get.blogData(this.nextPageNumber, this.defaultKey).subscribe(function (data) {
-                // console.log(data ,"coreect")
-                _this.show = true;
-                _this.dataRecived = true;
-                for (var i_1 in data) {
-                    _this.blogDetails.push({
-                        blogId: data[i_1].blogId,
-                        blogImage: data[i_1].blogImage,
-                        bloggerName: data[i_1].bloggerName,
-                        bloggerImage: data[i_1].bloggerImage,
-                        heading: data[i_1].heading,
-                        Content: data[i_1].Content,
-                        insertedDate: _this.timePassed(data[i_1].insertedDate),
-                        ViewCount: data[i_1].ViewCount,
-                        ShareCount: data[i_1].ShareCount,
-                        keywords: data[i_1].keywords.split(","),
-                        exactDate: _this.ExactDate(data[i_1].insertedDate),
-                        readingTime: _this.timeToRead(data[i_1].Content)
-                    });
-                }
-                //console.log(this.blogDetails, " nadeem")
-                _this.latestBlogDetails.push({
-                    blogId: _this.blogDetails[0].blogId,
-                    blogImage: _this.blogDetails[0].blogImage,
-                    bloggerName: _this.blogDetails[0].bloggerName,
-                    bloggerImage: _this.blogDetails[0].bloggerImage,
-                    heading: _this.blogDetails[0].heading,
-                    Content: _this.blogDetails[0].Content,
-                    insertedDate: _this.blogDetails[0].insertedDate,
-                    ViewCount: _this.blogDetails[0].ViewCount,
-                    ShareCount: _this.blogDetails[0].ShareCount,
-                    keywords: _this.blogDetails[0].keywords,
-                    exactDate: _this.blogDetails[0].exactDate,
-                    readingTime: _this.blogDetails[0].readingTime
+        this.get.blogData(this.nextPageNumber, this.defaultKey).subscribe(function (data) {
+            _this.show = true;
+            _this.dataRecived = true;
+            for (var i_1 in data) {
+                _this.blogDetails.push({
+                    blogId: data[i_1].blogId,
+                    blogImage: data[i_1].blogImage,
+                    bloggerName: data[i_1].bloggerName,
+                    bloggerImage: data[i_1].bloggerImage,
+                    heading: data[i_1].heading,
+                    Content: data[i_1].Content,
+                    insertedDate: _this.timePassed(data[i_1].insertedDate),
+                    ViewCount: data[i_1].ViewCount,
+                    ShareCount: data[i_1].ShareCount,
+                    keywords: data[i_1].keywords.split(","),
+                    exactDate: _this.ExactDate(data[i_1].insertedDate),
+                    readingTime: _this.timeToRead(data[i_1].Content)
                 });
-                for (var i = 1; i < 4; i++) {
-                    _this.topBlogDetails.push({
-                        blogId: _this.blogDetails[i].blogId,
-                        blogImage: _this.blogDetails[i].blogImage,
-                        bloggerName: _this.blogDetails[i].bloggerName,
-                        bloggerImage: _this.blogDetails[i].bloggerImage,
-                        heading: _this.blogDetails[i].heading,
-                        Content: _this.blogDetails[i].Content,
-                        insertedDate: _this.blogDetails[i].insertedDate,
-                        ViewCount: _this.blogDetails[i].ViewCount,
-                        ShareCount: _this.blogDetails[i].ShareCount,
-                        keywords: _this.blogDetails[i].keywords,
-                        exactDate: _this.blogDetails[i].exactDate,
-                        readingTime: _this.blogDetails[i].readingTime
-                    });
-                }
-                for (var i = 4; i < _this.blogDetails.length; i++) {
-                    _this.restBlogDetails.push({
-                        blogId: _this.blogDetails[i].blogId,
-                        blogImage: _this.blogDetails[i].blogImage,
-                        bloggerName: _this.blogDetails[i].bloggerName,
-                        bloggerImage: _this.blogDetails[i].bloggerImage,
-                        heading: _this.blogDetails[i].heading,
-                        Content: _this.blogDetails[i].Content,
-                        insertedDate: _this.blogDetails[i].insertedDate,
-                        ViewCount: _this.blogDetails[i].ViewCount,
-                        ShareCount: _this.blogDetails[i].ShareCount,
-                        keywords: _this.blogDetails[i].keywords,
-                        exactDate: _this.blogDetails[i].exactDate,
-                        readingTime: _this.blogDetails[i].readingTime
-                    });
-                }
-            });
-        }
-        else {
-            this.blogDetails = JSON.parse(sessionStorage.getItem('blogData'));
-            // console.log(this.blogDetails," mus")
-            this.latestBlogDetails.push({
-                blogId: this.blogDetails[0].blogId,
-                blogImage: this.blogDetails[0].blogImage,
-                bloggerName: this.blogDetails[0].bloggerName,
-                bloggerImage: this.blogDetails[0].bloggerImage,
-                heading: this.blogDetails[0].heading,
-                Content: this.blogDetails[0].Content,
-                insertedDate: this.blogDetails[0].insertedDate,
-                ViewCount: this.blogDetails[0].ViewCount,
-                ShareCount: this.blogDetails[0].ShareCount,
-                keywords: this.blogDetails[0].keywords,
-                exactDate: this.blogDetails[0].exactDate,
-                readingTime: this.blogDetails[0].readingTime
+            }
+            _this.latestBlogDetails.push({
+                blogId: _this.blogDetails[0].blogId,
+                blogImage: _this.blogDetails[0].blogImage,
+                bloggerName: _this.blogDetails[0].bloggerName,
+                bloggerImage: _this.blogDetails[0].bloggerImage,
+                heading: _this.blogDetails[0].heading,
+                Content: _this.blogDetails[0].Content,
+                insertedDate: _this.blogDetails[0].insertedDate,
+                ViewCount: _this.blogDetails[0].ViewCount,
+                ShareCount: _this.blogDetails[0].ShareCount,
+                keywords: _this.blogDetails[0].keywords,
+                exactDate: _this.blogDetails[0].exactDate,
+                readingTime: _this.blogDetails[0].readingTime
             });
             for (var i = 1; i < 4; i++) {
-                this.topBlogDetails.push({
-                    blogId: this.blogDetails[i].blogId,
-                    blogImage: this.blogDetails[i].blogImage,
-                    bloggerName: this.blogDetails[i].bloggerName,
-                    bloggerImage: this.blogDetails[i].bloggerImage,
-                    heading: this.blogDetails[i].heading,
-                    Content: this.blogDetails[i].Content,
-                    insertedDate: this.blogDetails[i].insertedDate,
-                    ViewCount: this.blogDetails[i].ViewCount,
-                    ShareCount: this.blogDetails[i].ShareCount,
-                    keywords: this.blogDetails[i].keywords,
-                    exactDate: this.blogDetails[i].exactDate,
-                    readingTime: this.blogDetails[i].readingTime
+                _this.topBlogDetails.push({
+                    blogId: _this.blogDetails[i].blogId,
+                    blogImage: _this.blogDetails[i].blogImage,
+                    bloggerName: _this.blogDetails[i].bloggerName,
+                    bloggerImage: _this.blogDetails[i].bloggerImage,
+                    heading: _this.blogDetails[i].heading,
+                    Content: _this.blogDetails[i].Content,
+                    insertedDate: _this.blogDetails[i].insertedDate,
+                    ViewCount: _this.blogDetails[i].ViewCount,
+                    ShareCount: _this.blogDetails[i].ShareCount,
+                    keywords: _this.blogDetails[i].keywords,
+                    exactDate: _this.blogDetails[i].exactDate,
+                    readingTime: _this.blogDetails[i].readingTime
                 });
             }
-            for (var i = 4; i < this.blogDetails.length; i++) {
-                this.restBlogDetails.push({
-                    blogId: this.blogDetails[i].blogId,
-                    blogImage: this.blogDetails[i].blogImage,
-                    bloggerName: this.blogDetails[i].bloggerName,
-                    bloggerImage: this.blogDetails[i].bloggerImage,
-                    heading: this.blogDetails[i].heading,
-                    Content: this.blogDetails[i].Content,
-                    insertedDate: this.blogDetails[i].insertedDate,
-                    ViewCount: this.blogDetails[i].ViewCount,
-                    ShareCount: this.blogDetails[i].ShareCount,
-                    keywords: this.blogDetails[i].keywords,
-                    exactDate: this.blogDetails[i].exactDate,
-                    readingTime: this.blogDetails[i].readingTime
+            for (var i = 4; i < _this.blogDetails.length; i++) {
+                _this.restBlogDetails.push({
+                    blogId: _this.blogDetails[i].blogId,
+                    blogImage: _this.blogDetails[i].blogImage,
+                    bloggerName: _this.blogDetails[i].bloggerName,
+                    bloggerImage: _this.blogDetails[i].bloggerImage,
+                    heading: _this.blogDetails[i].heading,
+                    Content: _this.blogDetails[i].Content,
+                    insertedDate: _this.blogDetails[i].insertedDate,
+                    ViewCount: _this.blogDetails[i].ViewCount,
+                    ShareCount: _this.blogDetails[i].ShareCount,
+                    keywords: _this.blogDetails[i].keywords,
+                    exactDate: _this.blogDetails[i].exactDate,
+                    readingTime: _this.blogDetails[i].readingTime
                 });
             }
-            this.show = true;
-            this.dataRecived = true;
+        });
+    };
+    BlogsComponent.prototype.setMobileView = function () {
+        if (window.innerWidth > 600) {
+            this.mobileView = false;
         }
+        else {
+            this.mobileView = true;
+        }
+    };
+    BlogsComponent.prototype.setTopMargin = function () {
+        var _this = this;
+        this.reciveHeight.ofKeyWords.subscribe(function (margin) { return _this.topMargin = margin; });
+        this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + "px");
     };
     BlogsComponent.prototype.showTrendingBlock = function () {
         if (this.blogDetails.length == 0 || window.innerWidth < 950) {
@@ -1537,9 +1486,7 @@ var BlogsComponent = /** @class */ (function () {
         }
     };
     BlogsComponent.prototype.ngAfterViewInit = function () {
-        var _this = this;
-        this.reciveHeight.ofKeyWords.subscribe(function (margin) { return _this.topMargin = margin; });
-        this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + "px");
+        this.setTopMargin();
     };
     BlogsComponent.prototype.ngAfterViewChecked = function () {
         var _this = this;
@@ -1547,21 +1494,9 @@ var BlogsComponent = /** @class */ (function () {
         this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + "px");
     };
     BlogsComponent.prototype.onresize = function () {
-        var _this = this;
-        this.reciveHeight.ofKeyWords.subscribe(function (margin) { return _this.topMargin = margin; });
-        this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + "px");
-        if (window.innerWidth > 950) {
-            this.removeTrendingBlock = false;
-            this.mobileView = false;
-        }
-        if (window.innerWidth > 600 && window.innerWidth <= 950) {
-            this.removeTrendingBlock = true;
-            this.mobileView = false;
-        }
-        if (window.innerWidth <= 600) {
-            this.removeTrendingBlock = true;
-            this.mobileView = true;
-        }
+        this.setTopMargin();
+        this.showTrendingBlock();
+        this.setMobileView();
         if (this.blogDetails.length > 0) {
             this.show = true;
         }
@@ -1569,13 +1504,12 @@ var BlogsComponent = /** @class */ (function () {
     BlogsComponent.prototype.timePassed = function (i) {
         var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
-        //console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
         if (writtenDate.getFullYear() == presentDate.getFullYear()) {
             if (writtenDate.getMonth() == presentDate.getMonth()) {
                 if (writtenDate.getDate() == presentDate.getDate()) {
                     if (writtenDate.getHours() == presentDate.getHours()) {
                         if (writtenDate.getMinutes() == presentDate.getMinutes()) {
-                            if (writtenDate.getSeconds() - presentDate.getSeconds()) {
+                            if (writtenDate.getSeconds() == presentDate.getSeconds()) {
                                 return "Just Now";
                             }
                             else {
@@ -1649,10 +1583,10 @@ var BlogsComponent = /** @class */ (function () {
                     });
                 }
                 //console.log(this.restBlogDetails.concat(this.topBlogDetails).concat(this.latestBlogDetails),"  hr")
-                sessionStorage.setItem('blogData', JSON.stringify((_this.latestBlogDetails).concat(_this.topBlogDetails).concat(_this.restBlogDetails)));
+                //sessionStorage.setItem('blogData',JSON.stringify((this.latestBlogDetails).concat(this.topBlogDetails).concat(this.restBlogDetails)))
             });
         }
-        sessionStorage.setItem('blogPageNumber', JSON.stringify(this.nextPageNumber));
+        //sessionStorage.setItem('blogPageNumber',JSON.stringify(this.nextPageNumber))
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('blog'),
@@ -1688,7 +1622,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    font-size: 100%;\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n.latest{\r\n    width: 100%;\r\n    position: relative;\r\n    background-color: #000000;\r\n    overflow: hidden;\r\n    border-radius: 5px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.blogImg{\r\n    opacity: 0.5\r\n}\r\nimg{\r\n    width: 100%;\r\n}\r\n.desc{\r\n    width: 100%;\r\n    height:70%;\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left:0px;\r\n}\r\n.desc>div{\r\n    width: 71%;\r\n    height: auto;\r\n    margin:5px auto;\r\n}\r\n.desc>div>div{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\n.desc span{\r\n    color: white;\r\n    font-size: 0.9em;\r\n    padding: 0.8%;\r\n    font-weight: 400;\r\n}\r\n.count{\r\n    position: absolute;\r\n    top:5%;\r\n    right: 2%;\r\n    width:100%;\r\n    text-align: right\r\n}\r\n.count>img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-left: 1%\r\n}\r\n.count>span{\r\n    display: inline-block;\r\n    color: white;\r\n    font-size: 0.9em\r\n}\r\n.desc>p {\r\n    width: 70%;\r\n    height: auto;\r\n    margin:5px auto;\r\n}\r\n.heading{\r\n    margin: auto;\r\n    max-width:70%;\r\n    color: #ffffff;\r\n    font-size: 2.2em;\r\n    text-align: left;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    font-weight: 700\r\n   \r\n}\r\n.bloggerImage{\r\n    display: inline-block;\r\n    padding: 0px;\r\n    width: 20px !important;\r\n    height: 20px !important;\r\n    margin-right: 5px;\r\n}\r\n.bloggerImage >img{\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n    margin: 0px;\r\n}\r\n.bloggerName{\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: middle;\r\n    color: white;\r\n    font-size: 0.9em;\r\n    font-weight: 700;\r\n}\r\n.Blogger{\r\n    padding: 1% 0% 1%  0%;\r\n}\r\n.smallDesc{\r\n    color: white;\r\n    font-size: 1.2em;\r\n    text-align: left;\r\n    font-weight: 500;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    padding: 1% 0% 1%  0%;\r\n}\r\n\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 40%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:13%;\r\n    left:30%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n}\r\n.fullImageHolder{\r\n    width: 100%;\r\n    position: relative;\r\n}\r\n.fullImageHolder>img{\r\n    max-width: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600){\r\n    .fullImage{\r\n        width: 70%;\r\n        left: 15%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImage{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
+exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    font-size: 100%;\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n.latest{\r\n    width: 100%;\r\n    position: relative;\r\n    overflow: hidden;\r\n    border-radius: 5px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\nimg{\r\n    width: 100%;\r\n}\r\n.desc{\r\n    width: 100%;\r\n    height:100%;\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left:0px;\r\n   /*  background: rgb(0, 0, 0); /* fallback color */ \r\n    background: rgba(0, 0, 0, 0.5);\r\n}\r\n.desc>div{\r\n    width:80%;\r\n    margin: 10% auto;\r\n}\r\n.desc>div>div:nth-of-type(2){\r\n    margin-bottom: 2%;\r\n}\r\n.desc span{\r\n    color: white;\r\n    font-size: 0.9em;\r\n    padding: 0.8%;\r\n    font-weight: 400;\r\n   \r\n}\r\n.count{\r\n    position: absolute;\r\n    top:5%;\r\n    right: 2%;\r\n    width:100%;\r\n    text-align: right\r\n}\r\n.count>img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-left: 1%\r\n}\r\n.count>span{\r\n    display: inline-block;\r\n    color: white;\r\n    font-size: 0.9em\r\n}\r\n\r\n.heading{\r\n    width:100%;\r\n    color: #ffffff;\r\n    font-size: 2.2em;\r\n    text-align: left;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    font-weight: 700;\r\n    margin-bottom:2%; \r\n   \r\n}\r\n.bloggerImage{\r\n    display: inline-block;\r\n    padding: 0px;\r\n    width: 20px !important;\r\n    height: 20px !important;\r\n    margin-right: 5px;\r\n}\r\n.bloggerImage >img{\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n    margin: 0px;\r\n}\r\n.bloggerName{\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: middle;\r\n    color: white;\r\n    font-size: 0.9em;\r\n    font-weight: 700;\r\n}\r\n.Blogger{\r\n    margin-bottom:2%; \r\n}\r\n.smallDesc{\r\n    color: white;\r\n    font-size: 1.2em;\r\n    text-align: left;\r\n    font-weight: 500;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    margin-bottom:2%; \r\n}\r\n\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 40%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:13%;\r\n    left:30%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n}\r\n.fullImageHolder{\r\n    width: 100%;\r\n    position: relative;\r\n}\r\n.fullImageHolder>img{\r\n    max-width: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600){\r\n    .fullImage{\r\n        width: 70%;\r\n        left: 15%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImage{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -1701,7 +1635,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/latest-blog/latest-blog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"latest\" MaintainHeightWidthRatio #latest>\n  <a routerLink=\"/{{keywords[0]}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\n    <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\n    <img src=\"{{blogImage}}\" class=\"blogImg\" (error)=\"setDefault()\" (load)=\"removeInitialImage()\" *ngIf=\"dataRecieved\">\n    \n    <div class=\"count\">\n      <img src=\"/assets/images/sports-social-view-white.png\" alt=\"sports-social-view-white\">\n      <span>{{ViewCount}}</span> \n      <img src=\"/assets/images/sports-social-share-white.png\" alt=\"sports-social-share-white\">\n      <span>{{ShareCount}}</span>\n    </div> \n    <div class=\"desc\" #Desc>\n      <div>\n        <span>{{insertedDate}}</span>\n        <span>|</span>\n        <span>{{readingTime}}</span>\n        <span>{{keywords[0]}}</span>\n      </div>\n      <p class=\"heading\" [innerHtml]=\"heading\" #latestTitle> </p>\n      <p  class=\"smallDesc\" #latestDesc>{{Content}}</p>\n      <div class=\"Blogger\">\n        <div class=\"bloggerImage\" #BloggerImage>\n            <img src=\"/assets/images/sports-social-blogger-white.png\" alt=\"sports-social-blogger-white\" >\n        </div>  \n        <p class=\"bloggerName\">{{bloggerName}}</p>\n      </div>\n      \n    </div>\n  </a>\n</div>\n"
+module.exports = "\n<div class=\"latest\" MaintainHeightWidthRatio #latest>\n  <a routerLink=\"/{{keywords[0]}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\n    <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\n    <img src=\"{{blogImage}}\" (load)=\"removeInitialImage()\"  (error)=\"setDefault()\" alt=\"blogImage\"  *ngIf=\"dataRecieved\" #blogimage>\n    \n    \n    <div class=\"desc\" #Desc>\n      <div #DescChild>\n        <div class=\"count\">\n          <img src=\"/assets/images/sports-social-view-white.png\" alt=\"sports-social-view-white\">\n          <span>{{ViewCount}}</span> \n          <img src=\"/assets/images/sports-social-share-white.png\" alt=\"sports-social-share-white\">\n          <span>{{ShareCount}}</span>\n        </div> \n        <div >\n          <span>{{insertedDate}}</span>\n          <span>|</span>\n          <span>{{readingTime}}</span>\n          <span>{{keywords[0]}}</span>\n        </div>\n        <p class=\"heading\" [innerHtml]=\"heading\" #latestTitle> </p>\n        <p  class=\"smallDesc\" #latestDesc>{{Content}}</p>\n        <div class=\"Blogger\">\n          <div class=\"bloggerImage\" #BloggerImage>\n              <img src=\"/assets/images/sports-social-blogger-white.png\" alt=\"sports-social-blogger-white\" >\n          </div>  \n          <p class=\"bloggerName\">{{bloggerName}}</p>\n        </div>\n      </div>\n    </div>\n  </a>\n</div>\n"
 
 /***/ }),
 
@@ -1750,27 +1684,23 @@ var LatestBlogComponent = /** @class */ (function () {
             readingTime: this.readingTime
         };
         if (window.innerWidth >= 1000) {
-            this.renderer.setStyle(this.Desc.nativeElement, 'height', '70%');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '2.2em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.2em');
         }
         if (window.innerWidth > 800 && window.innerWidth < 1000) {
-            this.renderer.setStyle(this.Desc.nativeElement, 'height', '75%');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.8em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.2em');
         }
         if (window.innerWidth < 800 && window.innerWidth >= 600) {
-            this.renderer.setStyle(this.Desc.nativeElement, 'height', '85%');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.1em');
         }
         if (window.innerWidth < 600 && window.innerWidth > 400) {
-            this.renderer.setStyle(this.Desc.nativeElement, 'height', '75%');
+            this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '20% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.6em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.3em');
         }
         if (window.innerWidth < 400) {
-            this.renderer.setStyle(this.Desc.nativeElement, 'height', '80%');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.3em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
         }
@@ -1803,35 +1733,31 @@ var LatestBlogComponent = /** @class */ (function () {
     LatestBlogComponent.prototype.heightOfInitialImage = function () {
         if (window.innerWidth <= 600) {
             var width = this.initialImage.nativeElement.getBoundingClientRect().width;
-            var height = .75 * width;
+            var height = .72 * width;
             this.renderer.setStyle(this.initialImage.nativeElement, 'height', height + 'px');
         }
     };
     LatestBlogComponent.prototype.onresize = function () {
         this.heightOfInitialImage();
         if (window.innerWidth >= 1000) {
-            this.renderer.setStyle(this.Desc.nativeElement, 'height', '70%');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '2.2em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.2em');
             //this.renderer.setStyle(this.latestDesc.nativeElement,'height','25%')
         }
         if (window.innerWidth > 800 && window.innerWidth < 1000) {
-            this.renderer.setStyle(this.Desc.nativeElement, 'height', '75%');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.8em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.2em');
         }
         if (window.innerWidth < 800 && window.innerWidth >= 600) {
-            this.renderer.setStyle(this.Desc.nativeElement, 'height', '85%');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.1em');
         }
         if (window.innerWidth < 600 && window.innerWidth > 400) {
-            this.renderer.setStyle(this.Desc.nativeElement, 'height', '75%');
+            this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '20% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.6em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.3em');
         }
         if (window.innerWidth < 400) {
-            this.renderer.setStyle(this.Desc.nativeElement, 'height', '80%');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.1em');
         }
@@ -1885,9 +1811,9 @@ var LatestBlogComponent = /** @class */ (function () {
         __metadata("design:type", String)
     ], LatestBlogComponent.prototype, "readingTime", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('Desc'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('DescChild'),
         __metadata("design:type", Object)
-    ], LatestBlogComponent.prototype, "Desc", void 0);
+    ], LatestBlogComponent.prototype, "DescChild", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('latestTitle'),
         __metadata("design:type", Object)
@@ -1897,7 +1823,7 @@ var LatestBlogComponent = /** @class */ (function () {
         __metadata("design:type", Object)
     ], LatestBlogComponent.prototype, "latestDesc", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('blogImage'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('blogimage'),
         __metadata("design:type", Object)
     ], LatestBlogComponent.prototype, "blogimage", void 0);
     __decorate([
@@ -2632,10 +2558,9 @@ var CommentsComponent = /** @class */ (function () {
         this.fb.api('/me', "get", { fields: 'email,name' })
             .then(function (res) {
             console.log('Got the users profile', res);
-            _this.profilePicture = 'http://graph.facebook.com/' + res.id + '/picture?type=large';
+            _this.profilePicture = 'https://graph.facebook.com/' + res.id + '/picture?type=large';
             _this.sendUserInfo.ofFacebookUser(res.id, res.name, res.email, _this.profilePicture).subscribe(function (res) {
                 console.log(res, " login");
-                //console.log(res[0].UserId)
                 _this.userId = res[0].UserId;
             });
         })
@@ -2868,9 +2793,10 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
         if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className != "latestBlog col-4") {
             this.height = -(.631555929660 * (this.width)) + this.width;
         }
-        /*  if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
-           this.renderer.setStyle(this.elRef.nativeElement,'max-height','500px')
-         } */
+        /* if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='latestBlog col-4'){
+          //this.height=-(.063889538965*(this.width))+this.width
+          this.renderer.setStyle(this.elRef.nativeElement,'height','auto')
+        } */
         if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth < 950) {
             this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
             this.width = this.elRef.nativeElement.getBoundingClientRect().width;
@@ -3460,7 +3386,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".login{\r\n    margin: 20% auto;\r\n    border: 1px  solid #bbbbbb;\r\n    background-color: #fafafa;\r\n    width: 30%;\r\n}\r\np{\r\n    display: inline-block;\r\n    width: 20%;\r\n    margin: 1%;\r\n}\r\ninput{\r\n    display:inline-block;\r\n    margin: 1%;\r\n    border-radius:25px;\r\n    background-color: #fafafa;\r\n    width: 70%;\r\n    padding-left: 2%;\r\n    outline: none;\r\n}\r\n", ""]);
+exports.push([module.i, ".login{\r\n    margin: 12% auto;\r\n   box-shadow: 1px 1px #bbbbbb;\r\n    background-color: #fafafa;\r\n    width: 40%;\r\n    padding: 2%;\r\n    font-family: 'Roboto',sans-serif\r\n}\r\n\r\ninput{\r\n    margin: 1%;\r\n    border-radius:25px;\r\n    background-color: #ffffff;\r\n    padding-left: 2%;\r\n    outline: none;\r\n    border: none;\r\n}\r\nbutton{\r\n    display: block;\r\n    margin: 2% auto;\r\n    margin-bottom: 0%;\r\n    background-color: #ffa600;\r\n    color: white;\r\n    border: none;\r\n    outline: none;\r\n    padding: 2% 4% 2% 4%;\r\n    border-radius: 4px;\r\n}\r\n\r\n.wrongPassword{\r\n    width:100%;\r\n    text-align: center;\r\n    padding: 1%;\r\n    color: #b33a3a;\r\n    font-weight: 500;\r\n}", ""]);
 
 // exports
 
@@ -3473,7 +3399,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/login-page/login-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"login\">\n  <p>User Name:</p> <input type=\"text\" name=\"userName\" id=\"#uname\">\n  <p>Password:</p> <input type=\"password\" name=\"password\" id=\"#password\">\n</div>\n"
+module.exports = "<div class=\"login\">\n  <p *ngIf=\"wrongPassword\" class=\"wrongPassword\">Enter Correct credentials!!!</p>\n  <div class=\"form-group\">\n    <label for=\"username\">UserName</label>\n    <input type=\"text\" id=\"userName\" class=\"form-control\"  name=\"UserName\" #userName>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"Title\">Password</label>\n    <input type=\"password\" id=\"password\" class=\"form-control\" ngModel name=\"password\" #password>\n  </div>\n  <button (click)=\"checkLogin()\" [disabled]=\"\">Login </button>\n</div>\n"
 
 /***/ }),
 
@@ -3483,6 +3409,8 @@ module.exports = "<div class=\"login\">\n  <p>User Name:</p> <input type=\"text\
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPageComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3493,20 +3421,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var LoginPageComponent = /** @class */ (function () {
-    function LoginPageComponent() {
+    function LoginPageComponent(route, router, authService) {
+        this.route = route;
+        this.router = router;
+        this.authService = authService;
+        this.wrongPassword = false;
+        this.loading = false;
     }
     LoginPageComponent.prototype.ngOnInit = function () {
+        this.authService.logout();
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     };
+    LoginPageComponent.prototype.checkLogin = function () {
+        var UserName = this.userName.nativeElement.value;
+        var Password = this.password.nativeElement.value;
+        console.log(typeof (UserName), typeof (Password));
+        if (UserName == "sportsocial" && Password == "cys") {
+            this.wrongPassword = false;
+            this.authService.login();
+            this.router.navigate(['/' + this.returnUrl]);
+        }
+        else {
+            this.wrongPassword = true;
+        }
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('userName'),
+        __metadata("design:type", Object)
+    ], LoginPageComponent.prototype, "userName", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('password'),
+        __metadata("design:type", Object)
+    ], LoginPageComponent.prototype, "password", void 0);
     LoginPageComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'SportSocialBlog-login-page',
             template: __webpack_require__("../../../../../src/app/login-page/login-page.component.html"),
             styles: [__webpack_require__("../../../../../src/app/login-page/login-page.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["ActivatedRoute"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["ActivatedRoute"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _c || Object])
     ], LoginPageComponent);
     return LoginPageComponent;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=login-page.component.js.map
@@ -3671,11 +3630,13 @@ var OpenFullImageComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blogContent_blogs_blogs_component__ = __webpack_require__("../../../../../src/app/blogContent/blogs/blogs.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__blogContent_blog_open_blog_open_component__ = __webpack_require__("../../../../../src/app/blogContent/blog-open/blog-open.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__editor_panel_editor_panel_component__ = __webpack_require__("../../../../../src/app/editor-panel/editor-panel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__admin_panel_admin_panel_component__ = __webpack_require__("../../../../../src/app/admin-panel/admin-panel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__search_search_component__ = __webpack_require__("../../../../../src/app/search/search.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_panel_edit_blog_edit_blog_component__ = __webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_page_login_page_component__ = __webpack_require__("../../../../../src/app/login-page/login-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__editor_panel_editor_panel_component__ = __webpack_require__("../../../../../src/app/editor-panel/editor-panel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_panel_admin_panel_component__ = __webpack_require__("../../../../../src/app/admin-panel/admin-panel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__search_search_component__ = __webpack_require__("../../../../../src/app/search/search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__admin_panel_edit_blog_edit_blog_component__ = __webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_auth_gaurd_service__ = __webpack_require__("../../../../../src/app/services/auth-gaurd.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3690,12 +3651,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var appRoute = [
     { path: "", component: __WEBPACK_IMPORTED_MODULE_1__blogContent_blogs_blogs_component__["a" /* BlogsComponent */] },
-    { path: "editorPanel", component: __WEBPACK_IMPORTED_MODULE_3__editor_panel_editor_panel_component__["a" /* EditorPanelComponent */] },
-    { path: 'adminPanel', component: __WEBPACK_IMPORTED_MODULE_4__admin_panel_admin_panel_component__["a" /* AdminPanelComponent */] },
-    { path: ":tag", component: __WEBPACK_IMPORTED_MODULE_5__search_search_component__["a" /* SearchComponent */] },
-    { path: ":blogId/edit", component: __WEBPACK_IMPORTED_MODULE_6__admin_panel_edit_blog_edit_blog_component__["a" /* EditBlogComponent */] },
+    { path: "editorPanel",
+        canActivate: [__WEBPACK_IMPORTED_MODULE_8__services_auth_gaurd_service__["a" /* AuthGuard */]],
+        component: __WEBPACK_IMPORTED_MODULE_4__editor_panel_editor_panel_component__["a" /* EditorPanelComponent */] },
+    { path: 'login',
+        component: __WEBPACK_IMPORTED_MODULE_3__login_page_login_page_component__["a" /* LoginPageComponent */] },
+    { path: 'adminPanel',
+        canActivate: [__WEBPACK_IMPORTED_MODULE_8__services_auth_gaurd_service__["a" /* AuthGuard */]],
+        component: __WEBPACK_IMPORTED_MODULE_5__admin_panel_admin_panel_component__["a" /* AdminPanelComponent */] },
+    { path: ":tag", component: __WEBPACK_IMPORTED_MODULE_6__search_search_component__["a" /* SearchComponent */] },
+    { path: ":blogId/edit", component: __WEBPACK_IMPORTED_MODULE_7__admin_panel_edit_blog_edit_blog_component__["a" /* EditBlogComponent */] },
     { path: ':tag/:title/:blogId', component: __WEBPACK_IMPORTED_MODULE_2__blogContent_blog_open_blog_open_component__["a" /* BlogOpenComponent */] },
     { path: '**', redirectTo: '' }
 ];
@@ -3705,9 +3674,9 @@ var RoutingModule = /** @class */ (function () {
     RoutingModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             imports: [
-                __WEBPACK_IMPORTED_MODULE_7__angular_router__["RouterModule"].forRoot(appRoute)
+                __WEBPACK_IMPORTED_MODULE_9__angular_router__["RouterModule"].forRoot(appRoute)
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_7__angular_router__["RouterModule"]]
+            exports: [__WEBPACK_IMPORTED_MODULE_9__angular_router__["RouterModule"]]
         })
     ], RoutingModule);
     return RoutingModule;
@@ -3988,9 +3957,9 @@ var SearchComponent = /** @class */ (function () {
                     readingTime: _this.timeToRead(data[i].Content)
                 });
             }
-            sessionStorage.setItem('searchedBlog', JSON.stringify(_this.blogDetails));
+            //sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
         });
-        sessionStorage.setItem('pageNumber', JSON.stringify(this.pageNumber));
+        //sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('searchPage'),
@@ -4019,6 +3988,110 @@ var SearchComponent = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=search.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/auth-gaurd.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AuthGuard = /** @class */ (function () {
+    function AuthGuard(authService, router) {
+        this.authService = authService;
+        this.router = router;
+    }
+    AuthGuard.prototype.canActivate = function (route, state) {
+        var _this = this;
+        return this.authService.isAuthenticated()
+            .then(function (authenticated) {
+            console.log(authenticated, " init");
+            if (authenticated) {
+                return true;
+            }
+            else {
+                _this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+            }
+        });
+    };
+    /* canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+      this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
+      return false;
+    } */
+    AuthGuard.prototype.canActivateChild = function (route, state) {
+        return this.canActivate(route, state);
+    };
+    AuthGuard = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["Router"]) === "function" && _b || Object])
+    ], AuthGuard);
+    return AuthGuard;
+    var _a, _b;
+}());
+
+//# sourceMappingURL=auth-gaurd.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/auth.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AuthService = /** @class */ (function () {
+    function AuthService() {
+        this.loggedIn = false;
+    }
+    AuthService.prototype.isAuthenticated = function () {
+        var _this = this;
+        var promise = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve(_this.loggedIn);
+            }, 800);
+        });
+        return promise;
+    };
+    AuthService.prototype.login = function () {
+        this.loggedIn = true;
+        console.log(this.loggedIn, " login");
+    };
+    AuthService.prototype.logout = function () {
+        this.loggedIn = false;
+    };
+    AuthService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [])
+    ], AuthService);
+    return AuthService;
+}());
+
+//# sourceMappingURL=auth.service.js.map
 
 /***/ }),
 

@@ -294,10 +294,10 @@ export class SearchComponent implements OnInit {
               }
             )
          }
-         sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
+         //sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
         }
       )
-      sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
+      //sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
     }
 
 }
