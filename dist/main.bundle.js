@@ -1622,7 +1622,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    font-size: 100%;\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n.latest{\r\n    width: 100%;\r\n    position: relative;\r\n    overflow: hidden;\r\n    border-radius: 5px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\nimg{\r\n    width: 100%;\r\n}\r\n.desc{\r\n    width: 100%;\r\n    height:100%;\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left:0px;\r\n   /*  background: rgb(0, 0, 0); /* fallback color */ \r\n    background: rgba(0, 0, 0, 0.5);\r\n}\r\n.desc>div{\r\n    width:80%;\r\n    margin: 10% auto;\r\n}\r\n.desc>div>div:nth-of-type(2){\r\n    margin-bottom: 2%;\r\n}\r\n.desc span{\r\n    color: white;\r\n    font-size: 0.9em;\r\n    padding: 0.8%;\r\n    font-weight: 400;\r\n   \r\n}\r\n.count{\r\n    position: absolute;\r\n    top:5%;\r\n    right: 2%;\r\n    width:100%;\r\n    text-align: right\r\n}\r\n.count>img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-left: 1%\r\n}\r\n.count>span{\r\n    display: inline-block;\r\n    color: white;\r\n    font-size: 0.9em\r\n}\r\n\r\n.heading{\r\n    width:100%;\r\n    color: #ffffff;\r\n    font-size: 2.2em;\r\n    text-align: left;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    font-weight: 700;\r\n    margin-bottom:2%; \r\n   \r\n}\r\n.bloggerImage{\r\n    display: inline-block;\r\n    padding: 0px;\r\n    width: 20px !important;\r\n    height: 20px !important;\r\n    margin-right: 5px;\r\n}\r\n.bloggerImage >img{\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n    margin: 0px;\r\n}\r\n.bloggerName{\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: middle;\r\n    color: white;\r\n    font-size: 0.9em;\r\n    font-weight: 700;\r\n}\r\n.Blogger{\r\n    margin-bottom:2%; \r\n}\r\n.smallDesc{\r\n    color: white;\r\n    font-size: 1.2em;\r\n    text-align: left;\r\n    font-weight: 500;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    margin-bottom:2%; \r\n}\r\n\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 40%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:13%;\r\n    left:30%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n}\r\n.fullImageHolder{\r\n    width: 100%;\r\n    position: relative;\r\n}\r\n.fullImageHolder>img{\r\n    max-width: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600){\r\n    .fullImage{\r\n        width: 70%;\r\n        left: 15%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImage{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
+exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    font-size: 100%;\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n.latest{\r\n    width: 100%;\r\n    position: relative;\r\n    overflow: hidden;\r\n    border-radius: 5px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\nimg{\r\n    width: 100%;\r\n}\r\n.desc{\r\n    width: 100%;\r\n    height:100%;\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left:0px;\r\n    background: rgba(0, 0, 0, 0.7);\r\n    \r\n}\r\n.desc>div{\r\n    width:80%;\r\n    margin: 10% auto;\r\n}\r\n.desc>div>div:nth-of-type(2){\r\n    margin-bottom: 2%;\r\n}\r\n.desc span{\r\n    color: white;\r\n    font-size: 0.9em;\r\n    padding: 0.8%;\r\n    font-weight: 400;\r\n   \r\n}\r\n.count{\r\n    position: absolute;\r\n    top:5%;\r\n    right: 2%;\r\n    width:100%;\r\n    text-align: right\r\n}\r\n.count>img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-left: 1%\r\n}\r\n.count>span{\r\n    display: inline-block;\r\n    color: white;\r\n    font-size: 0.9em\r\n}\r\n\r\n.heading{\r\n    width:100%;\r\n    color: #ffffff;\r\n    font-size: 2.2em;\r\n    text-align: left;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    font-weight: 700;\r\n    margin-bottom:2%; \r\n   \r\n}\r\n.bloggerImage{\r\n    display: inline-block;\r\n    padding: 0px;\r\n    width: 20px !important;\r\n    height: 20px !important;\r\n    margin-right: 5px;\r\n}\r\n.bloggerImage >img{\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n    margin: 0px;\r\n}\r\n.bloggerName{\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: middle;\r\n    color: white;\r\n    font-size: 0.9em;\r\n    font-weight: 700;\r\n}\r\n.Blogger{\r\n    margin-bottom:2%; \r\n}\r\n.smallDesc{\r\n    color: white;\r\n    font-size: 1.2em;\r\n    text-align: left;\r\n    font-weight: 500;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    margin-bottom:2%; \r\n}\r\n\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 40%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:13%;\r\n    left:30%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n}\r\n.fullImageHolder{\r\n    width: 100%;\r\n    position: relative;\r\n}\r\n.fullImageHolder>img{\r\n    max-width: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600){\r\n    .fullImage{\r\n        width: 70%;\r\n        left: 15%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImage{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -1738,11 +1738,9 @@ var LatestBlogComponent = /** @class */ (function () {
         }
     };
     LatestBlogComponent.prototype.onresize = function () {
-        this.heightOfInitialImage();
         if (window.innerWidth >= 1000) {
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '2.2em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.2em');
-            //this.renderer.setStyle(this.latestDesc.nativeElement,'height','25%')
         }
         if (window.innerWidth > 800 && window.innerWidth < 1000) {
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.8em');
@@ -1756,6 +1754,7 @@ var LatestBlogComponent = /** @class */ (function () {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '20% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.6em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.3em');
+            //this.renderer.setStyle(this.Desc.nativeElement,' background','rgba(0, 0, 0, 0.5)')
         }
         if (window.innerWidth < 400) {
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
@@ -1834,6 +1833,10 @@ var LatestBlogComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('initialImage'),
         __metadata("design:type", Object)
     ], LatestBlogComponent.prototype, "initialImage", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('Desc'),
+        __metadata("design:type", Object)
+    ], LatestBlogComponent.prototype, "Desc", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
         __metadata("design:type", Function),
@@ -2760,9 +2763,9 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
             this.height = -(.631555929660 * (this.width)) + this.width;
             //console.log("hello", this.elRef)
         }
-        /* if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
-          this.renderer.setStyle(this.elRef.nativeElement,'max-height','500px')
-         } */
+        if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className == 'latestBlog col-4') {
+            this.height = (0.64) * (this.width);
+        }
         if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth < 950) {
             this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
             this.width = this.elRef.nativeElement.getBoundingClientRect().width;
@@ -2793,10 +2796,9 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
         if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className != "latestBlog col-4") {
             this.height = -(.631555929660 * (this.width)) + this.width;
         }
-        /* if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='latestBlog col-4'){
-          //this.height=-(.063889538965*(this.width))+this.width
-          this.renderer.setStyle(this.elRef.nativeElement,'height','auto')
-        } */
+        if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className == 'latestBlog col-4') {
+            this.height = (0.64) * (this.width);
+        }
         if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth < 950) {
             this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
             this.width = this.elRef.nativeElement.getBoundingClientRect().width;
@@ -2827,9 +2829,9 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
         if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className != "latestBlog col-4") {
             this.height = -(.631555929660 * (this.width)) + this.width;
         }
-        /* if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
-          this.renderer.setStyle(this.elRef.nativeElement,'max-height','500px')
-         } */
+        if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className == 'latestBlog col-4') {
+            this.height = (0.64) * (this.width);
+        }
         if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth < 950) {
             this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
             this.width = this.elRef.nativeElement.getBoundingClientRect().width;
