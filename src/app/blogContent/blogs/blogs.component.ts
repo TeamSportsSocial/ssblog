@@ -85,6 +85,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
   show:boolean=false;
   dataRecived:boolean=false;
   haveData:boolean=true
+  count=0;
   @ViewChild('blog') blog;
   constructor(
     private reciveHeight:PropertyService,
@@ -123,7 +124,15 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 readingTime:this.timeToRead(data[i].Content)
               }
             )
+           // console.log(this.blogDetails[i].blogId, this.blogDetails[i].Content)
         }
+
+       
+        /* for(var i=0;i<=this.blogDetails[0].Content.length;i++){
+          if(this.blogDetails[0].Content[i]=='"'){
+            console.log(this.blogDetails[0].Content[i],this.count++,this.blogDetails[0].Content[i+1]+this.blogDetails[0].Content[i+2]+this.blogDetails[0].Content[i+3]+this.blogDetails[0].Content[i+4])
+          }
+        } */
         this.latestBlogDetails.push(
           {
             blogId:this.blogDetails[0].blogId,
@@ -279,7 +288,6 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       this.get.blogData((this.nextPageNumber),this.defaultKey).subscribe(
         (data)=>{
           this.dataRecived=true;
-          // console.log(data.length)
            if(data.length==0){
              this.haveData=false;
            }

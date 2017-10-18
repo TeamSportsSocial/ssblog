@@ -425,7 +425,7 @@ var SinglePanelComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/admin-panel/single-panel/single-panel.component.html"),
             styles: [__webpack_require__("../../../../../src/app/admin-panel/single-panel/single-panel.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object])
     ], SinglePanelComponent);
     return SinglePanelComponent;
     var _a, _b;
@@ -488,7 +488,7 @@ var AppComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/app.component.html"),
             styles: [__webpack_require__("../../../../../src/app/app.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Meta"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Meta"]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _a || Object])
     ], AppComponent);
     return AppComponent;
     var _a;
@@ -536,16 +536,15 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__comments_comments_component__ = __webpack_require__("../../../../../src/app/comments/comments.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_ngx_facebook__ = __webpack_require__("../../../../ngx-facebook/dist/esm/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33_ng2_meta__ = __webpack_require__("../../../../ng2-meta/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33_ng2_meta___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_33_ng2_meta__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__ngui_auto_complete__ = __webpack_require__("../../../../@ngui/auto-complete/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__ngui_auto_complete___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_34__ngui_auto_complete__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__message_message_component__ = __webpack_require__("../../../../../src/app/message/message.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__custom_url_custom_url_component__ = __webpack_require__("../../../../../src/app/custom-url/custom-url.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__open_full_image_open_full_image_component__ = __webpack_require__("../../../../../src/app/open-full-image/open-full-image.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__blogContent_related_blogs_related_blogs_component__ = __webpack_require__("../../../../../src/app/blogContent/related-blogs/related-blogs.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__admin_panel_single_panel_single_panel_component__ = __webpack_require__("../../../../../src/app/admin-panel/single-panel/single-panel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__admin_panel_edit_blog_edit_blog_component__ = __webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ngui_auto_complete__ = __webpack_require__("../../../../@ngui/auto-complete/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ngui_auto_complete___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_33__ngui_auto_complete__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__message_message_component__ = __webpack_require__("../../../../../src/app/message/message.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__custom_url_custom_url_component__ = __webpack_require__("../../../../../src/app/custom-url/custom-url.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__open_full_image_open_full_image_component__ = __webpack_require__("../../../../../src/app/open-full-image/open-full-image.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__blogContent_related_blogs_related_blogs_component__ = __webpack_require__("../../../../../src/app/blogContent/related-blogs/related-blogs.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__admin_panel_single_panel_single_panel_component__ = __webpack_require__("../../../../../src/app/admin-panel/single-panel/single-panel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__admin_panel_edit_blog_edit_blog_component__ = __webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__editor_panel_blog_preview_blog_preview_component__ = __webpack_require__("../../../../../src/app/editor-panel/blog-preview/blog-preview.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -618,24 +617,24 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_28__blog_footer_blog_footer_component__["a" /* BlogFooterComponent */],
                 __WEBPACK_IMPORTED_MODULE_29__search_search_component__["a" /* SearchComponent */],
                 __WEBPACK_IMPORTED_MODULE_30__comments_comments_component__["a" /* CommentsComponent */],
-                __WEBPACK_IMPORTED_MODULE_35__message_message_component__["a" /* MessageComponent */],
-                __WEBPACK_IMPORTED_MODULE_36__custom_url_custom_url_component__["a" /* CustomUrlComponent */],
-                __WEBPACK_IMPORTED_MODULE_37__open_full_image_open_full_image_component__["a" /* OpenFullImageComponent */],
-                __WEBPACK_IMPORTED_MODULE_38__blogContent_related_blogs_related_blogs_component__["a" /* RelatedBlogsComponent */],
-                __WEBPACK_IMPORTED_MODULE_39__admin_panel_single_panel_single_panel_component__["a" /* SinglePanelComponent */],
-                __WEBPACK_IMPORTED_MODULE_40__admin_panel_edit_blog_edit_blog_component__["a" /* EditBlogComponent */],
+                __WEBPACK_IMPORTED_MODULE_34__message_message_component__["a" /* MessageComponent */],
+                __WEBPACK_IMPORTED_MODULE_35__custom_url_custom_url_component__["a" /* CustomUrlComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__open_full_image_open_full_image_component__["a" /* OpenFullImageComponent */],
+                __WEBPACK_IMPORTED_MODULE_37__blogContent_related_blogs_related_blogs_component__["a" /* RelatedBlogsComponent */],
+                __WEBPACK_IMPORTED_MODULE_38__admin_panel_single_panel_single_panel_component__["a" /* SinglePanelComponent */],
+                __WEBPACK_IMPORTED_MODULE_39__admin_panel_edit_blog_edit_blog_component__["a" /* EditBlogComponent */],
+                __WEBPACK_IMPORTED_MODULE_40__editor_panel_blog_preview_blog_preview_component__["a" /* BlogPreviewComponent */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["BrowserModule"],
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
                 __WEBPACK_IMPORTED_MODULE_27__routing_routing_module__["a" /* RoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_32_ngx_facebook__["a" /* FacebookModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["ReactiveFormsModule"],
-                __WEBPACK_IMPORTED_MODULE_34__ngui_auto_complete__["NguiAutoCompleteModule"]
+                __WEBPACK_IMPORTED_MODULE_33__ngui_auto_complete__["NguiAutoCompleteModule"]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_33_ng2_meta__["MetaService"],
                 __WEBPACK_IMPORTED_MODULE_18__services_property_service__["a" /* PropertyService */],
                 __WEBPACK_IMPORTED_MODULE_20__services_get_service__["a" /* GetService */],
                 __WEBPACK_IMPORTED_MODULE_21__services_save_service__["a" /* SaveService */],
@@ -643,7 +642,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_19__services_post_service__["a" /* PostService */],
                 __WEBPACK_IMPORTED_MODULE_23__services_auth_service__["a" /* AuthService */],
                 __WEBPACK_IMPORTED_MODULE_24__services_auth_gaurd_service__["a" /* AuthGuard */],
-                { provide: __WEBPACK_IMPORTED_MODULE_31__angular_router__["UrlSerializer"], useClass: __WEBPACK_IMPORTED_MODULE_36__custom_url_custom_url_component__["a" /* CustomUrlComponent */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_31__angular_router__["e" /* UrlSerializer */], useClass: __WEBPACK_IMPORTED_MODULE_35__custom_url_custom_url_component__["a" /* CustomUrlComponent */] }
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
@@ -761,7 +760,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    width: 100%;\r\n    \r\n}\r\nheader{\r\n    width: 100%;\r\n    background-color: #ffffff;\r\n    position: fixed;\r\n    top:0px;\r\n    z-index: 10;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    font-family: 'Roboto',sans-serif;\r\n}\r\n.left{\r\n    display: inline-block;\r\n    width:80%;\r\n    vertical-align: middle;\r\n}\r\n\r\nli{\r\n    display: inline-block;\r\n    list-style: none;\r\n    width: auto;\r\n    margin: 0.2% 0.1% 0.2% 0%;\r\n    vertical-align: top;\r\n   \r\n}\r\n.left>li{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: 60%;\r\n    margin-left:3%;\r\n}\r\n.brand-image{\r\n    width: 40px;\r\n    height: 40px;\r\n    margin-left:2%;\r\n    display: inline-block;\r\n    vertical-align: middle\r\n}\r\nimg{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.brand-title{\r\n   font-size: 1.4em;\r\n   font-weight: 700;\r\n   display: inline-block;\r\n   vertical-align: middle\r\n}\r\n.brand-title>span:first-child{\r\n    color: #024770;\r\n}\r\n.brand-title>span:nth-child(2){\r\n    color: #ffa600;\r\n}\r\n.brand-title>span:nth-child(3){\r\n    font-size: 60%;\r\n    color: black;\r\n    font-weight: 700;\r\n}\r\n.brand-title>p{\r\n    font-size: 55%;\r\n    color: #024770;\r\n    font-weight: 400;\r\n    text-align: left;\r\n    font-style: italic;\r\n    padding-left: 9%;\r\n}\r\n.right{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    text-align: right;\r\n    width:19%;\r\n}\r\n\r\ninput{\r\n    height: 35px;\r\n    background-image: url('/assets/images/sports-social-search.png');\r\n    border: none;\r\n    background-repeat: no-repeat;\r\n    background-position-y: 50%;\r\n    background-position-x: 2%;\r\n    background-size: 15px;\r\n    outline: #fafafa;\r\n    border-radius: 25px;\r\n    background-color: #e5e5e5;\r\n    text-align: center;\r\n    box-shadow: 1px 1px #bbbbbb\r\n}\r\n.mobileView{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: auto;\r\n    float: right;\r\n    padding: 1% ;\r\n}\r\n.menuImageHolder{\r\n    width: 30px;\r\n    height: 30px;   \r\n}\r\n.menuImageHolder img{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.dropDown{\r\n  width: 80%;\r\n  background-color: #ffffff;\r\n  padding: 1% 1% 0% 1%;\r\n  position: fixed;\r\n  z-index: 50;\r\n  top:10%;\r\n  left:10%;\r\n}\r\n.dropDown .Close{\r\n    float: right;\r\n    width: 12px;\r\n    height: 12px;\r\n    padding:0.5% 1% 0% 0%;\r\n}\r\n.websiteLink{\r\n    display: block;\r\n    color: #024770;\r\n    text-align: center;\r\n    margin: 1%;\r\n}\r\n\r\n.search input{\r\n    display: inline-block;\r\n    border-radius: 0px;\r\n    border: none;\r\n    background-image: none;\r\n    width: 100%;\r\n   \r\n}\r\n.search button{\r\n    display: block;\r\n    width: 70%;\r\n    margin: 2% auto;\r\n    border-radius: 4px;\r\n    background-color: #ffa600;\r\n    color: #ffffff;\r\n    border: none;\r\n    padding: 1%\r\n}\r\n\r\n::-webkit-input-placeholder {\r\n    text-align: center;\r\n }\r\n \r\n :-moz-placeholder { \r\n    text-align: center;  \r\n }\r\n \r\n ::-moz-placeholder {  \r\n    text-align: center;  \r\n }\r\n \r\n :-ms-input-placeholder {  \r\n    text-align: center; \r\n }\r\n .suggestion{\r\n     position: absolute;\r\n     top: 45px;\r\n     width:51%;\r\n     background-color:white\r\n }\r\n .suggestion ul{\r\n     display: block;\r\n     border: 1px solid #bbbbbb;\r\n }\r\n .suggestion li {\r\n     padding: 1%;\r\n     display: block;\r\n     border-bottom: 1px solid   #bbbbbb\r\n }\r\n .mobileView .suggestion{\r\n     top:65px;\r\n     width: 100%;\r\n }\r\n \r\n  a:hover{\r\n      text-decoration: none;\r\n  }\r\n  .websiteLink{\r\n      color: #024771;\r\n      font-weight: 700;\r\n  }\r\n .websiteLink>img{\r\n     width: 20px;\r\n     height: 20px;\r\n     padding: 1%\r\n}\r\n  .websiteLink:hover{\r\n      color: #ffa600;\r\n  }\r\n  .dropDown p{\r\n      width: 60%;\r\n      margin: auto\r\n  }", ""]);
+exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    width: 100%;\r\n    \r\n}\r\nheader{\r\n    width: 100%;\r\n    background-color: #ffffff;\r\n    position: fixed;\r\n    top:0px;\r\n    z-index: 10;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    font-family: 'Roboto',sans-serif;\r\n}\r\n.left{\r\n    display: inline-block;\r\n    width:80%;\r\n    vertical-align: middle;\r\n}\r\n\r\nli{\r\n    display: inline-block;\r\n    list-style: none;\r\n    width: auto;\r\n    margin: 0.2% 0.1% 0.2% 0%;\r\n    vertical-align: top;\r\n   \r\n}\r\n.left>li{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: 60%;\r\n    margin-left:3%;\r\n}\r\n.brand-image{\r\n    width: 40px;\r\n    height: 40px;\r\n    margin-left:2%;\r\n    display: inline-block;\r\n    vertical-align: middle\r\n}\r\nimg{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.brand-title{\r\n   font-size: 1.4em;\r\n   font-weight: 700;\r\n   display: inline-block;\r\n   vertical-align: middle\r\n}\r\n.brand-title>span:first-child{\r\n    color: #024770;\r\n}\r\n.brand-title>span:nth-child(2){\r\n    color: #ffa600;\r\n}\r\n.brand-title>span:nth-child(3){\r\n    font-size: 60%;\r\n    color: black;\r\n    font-weight: 700;\r\n}\r\n.brand-title>p{\r\n    font-size: 55%;\r\n    color: #024770;\r\n    font-weight: 400;\r\n    text-align: left;\r\n    font-style: italic;\r\n    padding-left: 9%;\r\n}\r\n.right{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    text-align: right;\r\n    width:19%;\r\n}\r\n\r\ninput{\r\n    height: 35px;\r\n    background-image: url('/assets/images/sports-social-search.png');\r\n    border: none;\r\n    background-repeat: no-repeat;\r\n    background-position-y: 50%;\r\n    background-position-x: 2%;\r\n    background-size: 15px;\r\n    outline: #fafafa;\r\n    border-radius: 25px;\r\n    background-color: #e5e5e5;\r\n    text-align: center;\r\n    box-shadow: 1px 1px #bbbbbb\r\n}\r\n.mobileView{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: auto;\r\n    float: right;\r\n    padding: 1% 3% 1% 1%;\r\n}\r\n.menuImageHolder{\r\n    width: 30px;\r\n    height: 30px;   \r\n}\r\n.menuImageHolder img{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.dropDown{\r\n  width: 80%;\r\n  background-color: #ffffff;\r\n  padding: 1% 1% 0% 1%;\r\n  position: fixed;\r\n  z-index: 50;\r\n  top:10%;\r\n  left:10%;\r\n}\r\n.dropDown .Close{\r\n    float: right;\r\n    width: 12px;\r\n    height: 12px;\r\n    padding:0.5% 1% 0% 0%;\r\n}\r\n.websiteLink{\r\n    display: block;\r\n    color: #024770;\r\n    text-align: center;\r\n    margin: 1%;\r\n}\r\n\r\n.search input{\r\n    display: inline-block;\r\n    border-radius: 0px;\r\n    border: none;\r\n    background-image: none;\r\n    width: 100%;\r\n   \r\n}\r\n.search button{\r\n    display: block;\r\n    width: 70%;\r\n    margin: 2% auto;\r\n    border-radius: 4px;\r\n    background-color: #ffa600;\r\n    color: #ffffff;\r\n    border: none;\r\n    padding: 1%\r\n}\r\n\r\n::-webkit-input-placeholder {\r\n    text-align: center;\r\n }\r\n \r\n :-moz-placeholder { \r\n    text-align: center;  \r\n }\r\n \r\n ::-moz-placeholder {  \r\n    text-align: center;  \r\n }\r\n \r\n :-ms-input-placeholder {  \r\n    text-align: center; \r\n }\r\n .suggestion{\r\n     position: absolute;\r\n     top: 45px;\r\n     width:51%;\r\n     background-color:white\r\n }\r\n .suggestion ul{\r\n     display: block;\r\n     border: 1px solid #bbbbbb;\r\n }\r\n .suggestion li {\r\n     padding: 1%;\r\n     display: block;\r\n     border-bottom: 1px solid   #bbbbbb\r\n }\r\n .mobileView .suggestion{\r\n     top:65px;\r\n     width: 100%;\r\n }\r\n \r\n  a:hover{\r\n      text-decoration: none;\r\n  }\r\n  .websiteLink{\r\n      color: #024771;\r\n      font-weight: 700;\r\n  }\r\n .websiteLink>img{\r\n     width: 20px;\r\n     height: 20px;\r\n     padding: 1%\r\n}\r\n  .websiteLink:hover{\r\n      color: #ffa600;\r\n  }\r\n  .dropDown p{\r\n      width: 60%;\r\n      margin: auto\r\n  }", ""]);
 
 // exports
 
@@ -918,7 +917,7 @@ var BlogHeaderComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/blog-header/blog-header.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blog-header/blog-header.component.css")],
         }),
-        __metadata("design:paramtypes", [typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["DomSanitizer"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["DomSanitizer"]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["Router"]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _o || Object])
+        __metadata("design:paramtypes", [typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _o || Object])
     ], BlogHeaderComponent);
     return BlogHeaderComponent;
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
@@ -1084,6 +1083,7 @@ var BlogOpenComponent = /** @class */ (function () {
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
             _this.setMetaTags();
             _this.setTitle();
+            console.log(_this.blog.Content, " latest");
         });
     };
     BlogOpenComponent.prototype.loadBlogFromUrl = function () {
@@ -1118,6 +1118,7 @@ var BlogOpenComponent = /** @class */ (function () {
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
             _this.setMetaTags();
             _this.setTitle();
+            console.log(_this.blog.Content, " latest");
         });
     };
     BlogOpenComponent.prototype.timeToRead = function (s) {
@@ -1315,7 +1316,7 @@ var BlogOpenComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/blogContent/blog-open/blog-open.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/blog-open/blog-open.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["ActivatedRoute"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["ActivatedRoute"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_ngx_facebook__["b" /* FacebookService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ngx_facebook__["b" /* FacebookService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["Router"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Meta"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Meta"]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Title"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Title"]) === "function" && _o || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_ngx_facebook__["b" /* FacebookService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ngx_facebook__["b" /* FacebookService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */]) === "function" && _o || Object])
     ], BlogOpenComponent);
     return BlogOpenComponent;
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
@@ -1333,7 +1334,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\r\n*{\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n.blog{\r\n    font-family: 'Roboto',sans-serif;\r\n}\r\n.col-6{\r\n    width: 50%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.col-12{\r\n    width: 100%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.latestBlog{\r\n    padding: 0px 25px 0px 30px\r\n}\r\n.col-4{\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.col-8 >.col-6, .col-8 >.col-12, .col-12>.col-6 ,.col-12>.col-12{\r\n    padding: 0px 10px 0px 10px !important\r\n}\r\n.trendingBlogs{\r\n    padding-right: 20px;\r\n}\r\n.col-4,.trendingBlogs{\r\n    width: 33.33%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n}\r\n.topBlogs{\r\n    width: 66.2%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 10px 0px 10px\r\n}\r\n.col-8{\r\n    width: 66.2%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.mobileView>.latestBlog{\r\n    height: auto !important\r\n}\r\n.mobileView .col-4{\r\n    width: 100%;\r\n}\r\n.suscribeCard{\r\n    border: 1px solid #bbbbbb;\r\n    border-radius: 4px;\r\n    margin-bottom: 20px;\r\n}\r\nbutton{\r\n    display: block;\r\n    margin: 1% auto;\r\n    width: 30%;\r\n    background-color: #ffa600;\r\n    border:none;\r\n    color: #ffffff;\r\n    \r\n    font-weight: 700;\r\n    font-size: 1.2em;\r\n    padding: 0.5%;\r\n}\r\n.loading{\r\n    display: block;\r\n    margin: auto;\r\n}\r\n.noMoreData{\r\n    width: 100%;\r\n    color: #024771;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1.5em;\r\n    font-weight: 500;\r\n    text-align: center;\r\n}\r\n", ""]);
+exports.push([module.i, "\r\n*{\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n.blog{\r\n    font-family: 'Roboto',sans-serif;\r\n}\r\n.col-6{\r\n    width: 50%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.col-12{\r\n    width: 100%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.latestBlog{\r\n    padding: 0px 25px 0px 30px\r\n}\r\n.col-4{\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.col-8 >.col-6, .col-8 >.col-12, .col-12>.col-6 ,.col-12>.col-12{\r\n    padding: 0px 10px 0px 10px !important\r\n}\r\n.trendingBlogs{\r\n    padding-right: 20px;\r\n}\r\n.col-4,.trendingBlogs{\r\n    width: 33.33%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n}\r\n.topBlogs{\r\n    width: 66.2%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 10px 0px 10px\r\n}\r\n.col-8{\r\n    width: 66.2%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.mobileView>.latestBlog{\r\n    height: auto !important\r\n}\r\n.mobileView .col-4{\r\n    width: 100%;\r\n}\r\n.suscribeCard{\r\n    border: 1px solid #bbbbbb;\r\n    border-radius: 4px;\r\n    margin: 0px 20px 15px 20px !important\r\n}\r\nbutton{\r\n    display: block;\r\n    margin: 1% auto;\r\n    width: 30%;\r\n    background-color: #ffa600;\r\n    border:none;\r\n    color: #ffffff;\r\n    \r\n    font-weight: 700;\r\n    font-size: 1.2em;\r\n    padding: 0.5%;\r\n}\r\n.loading{\r\n    display: block;\r\n    margin: auto;\r\n}\r\n.noMoreData{\r\n    width: 100%;\r\n    color: #024771;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1.5em;\r\n    font-weight: 500;\r\n    text-align: center;\r\n}\r\n", ""]);
 
 // exports
 
@@ -1386,6 +1387,7 @@ var BlogsComponent = /** @class */ (function () {
         this.show = false;
         this.dataRecived = false;
         this.haveData = true;
+        this.count = 0;
     }
     BlogsComponent.prototype.ngOnInit = function () {
         //sessionStorage.removeItem('Blog')
@@ -1415,7 +1417,13 @@ var BlogsComponent = /** @class */ (function () {
                     exactDate: _this.ExactDate(data[i_1].insertedDate),
                     readingTime: _this.timeToRead(data[i_1].Content)
                 });
+                // console.log(this.blogDetails[i].blogId, this.blogDetails[i].Content)
             }
+            /* for(var i=0;i<=this.blogDetails[0].Content.length;i++){
+              if(this.blogDetails[0].Content[i]=='"'){
+                console.log(this.blogDetails[0].Content[i],this.count++,this.blogDetails[0].Content[i+1]+this.blogDetails[0].Content[i+2]+this.blogDetails[0].Content[i+3]+this.blogDetails[0].Content[i+4])
+              }
+            } */
             _this.latestBlogDetails.push({
                 blogId: _this.blogDetails[0].blogId,
                 blogImage: _this.blogDetails[0].blogImage,
@@ -1559,7 +1567,6 @@ var BlogsComponent = /** @class */ (function () {
         if (this.nextPageNumber > 1) {
             this.get.blogData((this.nextPageNumber), this.defaultKey).subscribe(function (data) {
                 _this.dataRecived = true;
-                // console.log(data.length)
                 if (data.length == 0) {
                     _this.haveData = false;
                 }
@@ -1867,7 +1874,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n}\r\n.blog{\r\n    width: 100%;\r\n    height: 400px;\r\n    border-radius: 5px;\r\n    margin-bottom: 20px;\r\n    font-family: 'Roboto', sans-serif;\r\n    font-size: 100%;\r\n    border: 1px solid #bbbbbb;\r\n    position: relative;\r\n    \r\n}\r\n\r\n.blogImageHolder{\r\n    width: 100%;\r\n    max-height:72%;\r\n    min-height: 60%;\r\n    overflow: hidden;\r\n    border-radius: 5px;   \r\n    border-bottom: 1px solid #bbbbbb;\r\n    border-bottom-left-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n}\r\n.blogImageHolder img{\r\n    width: 100%;\r\n    border-radius: 5px;   \r\n    border-bottom-left-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n}\r\n.blogFooter{\r\n   \r\n    min-height: 28%;\r\n    border-radius: 5px;\r\n    border-top-left-radius: 0px;\r\n    border-top-right-radius: 0px;\r\n}\r\n.blogFooter p{\r\n    width: 95%;\r\n    margin:0.8% auto;\r\n}\r\n.blogFooter>p:first-child{\r\n    font-size: 0.8em;\r\n    font-weight: 400;\r\n    color: black;\r\n    text-align: left;\r\n    width: 95%;\r\n}\r\nspan >img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-right: 2%;\r\n}\r\n.blogFooter>p:first-child>span{\r\n    padding-right: 4px;\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: top;\r\n}\r\n.blogFooter>p:first-child>span:last-child{\r\n    width: 20%;\r\n    float: right;\r\n    text-align: right;\r\n    padding-right: 5px;\r\n    color: #ffa600;\r\n    font-weight: 500\r\n}\r\n.blogFooter>p:nth-of-type(2){\r\n    text-align: left;\r\n    margin: 1% auto;\r\n    overflow: hidden;\r\n    font-weight: 700;\r\n    font-size:1.2em;\r\n    text-overflow: ellipsis;\r\n    color: black;\r\n    white-space: nowrap;\r\n}\r\n.blogFooter>p:last-child{\r\n    position:absolute ;\r\n    bottom:2%;\r\n    left: 2.5%;\r\n    color: #444444;\r\n    font-weight: 500;\r\n    font-size:0.8em;\r\n}\r\np>img{\r\n  width: 12px;\r\n  height: 12px;\r\n  margin-right: 2%;\r\n}\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 100%;\r\n    height: 100%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:0%;\r\n    left:0%;\r\n    z-index: 50;\r\n    border: 1px solid #bbbbbb;\r\n    background-color: black;\r\n    opacity: 0.8;\r\n}\r\n.fullImageHolder{\r\n    position: fixed;\r\n    width: 70%;\r\n    left: 15%;\r\n    top:0%;\r\n    z-index: 100;\r\n}\r\n.fullImageHolder>img{\r\n    display: block;\r\n    text-align: center;\r\n    padding: 5%;\r\n    max-width: 100%;\r\n    max-height: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600px){\r\n    .fullImageHolder{\r\n        width: 80%;\r\n        left: 10%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImageHolder{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
+exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n}\r\n.blog{\r\n    width: 100%;\r\n    height: 400px;\r\n    border-radius: 5px;\r\n    margin-bottom: 20px;\r\n    font-family: 'Roboto', sans-serif;\r\n    font-size: 100%;\r\n    border: 1px solid #bbbbbb;\r\n    position: relative;\r\n    \r\n}\r\n\r\n.blogImageHolder{\r\n    width: 100%;\r\n    max-height:72%;\r\n    min-height: 68%;\r\n    overflow: hidden;\r\n    border-radius: 5px;   \r\n    border-bottom: 1px solid #bbbbbb;\r\n    border-bottom-left-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n}\r\n.blogImageHolder img{\r\n    width: 100%;\r\n    border-radius: 5px;   \r\n    border-bottom-left-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n}\r\n.blogFooter{\r\n    margin: 0px;\r\n    min-height: 28%;\r\n    border-radius: 5px;\r\n    border-top-left-radius: 0px;\r\n    border-top-right-radius: 0px;\r\n}\r\n.blogFooter p{\r\n    width: 95%;\r\n    margin:0.8% auto;\r\n}\r\n.blogFooter>p:first-child{\r\n    font-size: 0.8em;\r\n    font-weight: 400;\r\n    color: black;\r\n    text-align: left;\r\n    width: 95%;\r\n}\r\nspan >img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-right: 2%;\r\n}\r\n.blogFooter>p:first-child>span{\r\n    padding-right: 4px;\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: top;\r\n}\r\n.blogFooter>p:first-child>span:last-child{\r\n    width: 20%;\r\n    float: right;\r\n    text-align: right;\r\n    padding-right: 5px;\r\n    color: #ffa600;\r\n    font-weight: 500\r\n}\r\n.blogFooter>p:nth-of-type(2){\r\n    \r\n    text-align: left;\r\n    margin: 1% auto;\r\n    overflow: hidden;\r\n    font-weight: 700;\r\n    font-size:1.2em;\r\n    text-overflow: ellipsis;\r\n    color: black;\r\n    white-space: nowrap;\r\n}\r\n.blogFooter>p:last-child{\r\n    position:absolute ;\r\n    bottom:4px;\r\n    left: 2.5%;\r\n    color: #444444;\r\n    font-weight: 500;\r\n    font-size:0.8em;\r\n}\r\np>img{\r\n  width: 12px;\r\n  height: 12px;\r\n  margin-right: 2%;\r\n}\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 100%;\r\n    height: 100%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:0%;\r\n    left:0%;\r\n    z-index: 50;\r\n    border: 1px solid #bbbbbb;\r\n    background-color: black;\r\n    opacity: 0.8;\r\n}\r\n.fullImageHolder{\r\n    position: fixed;\r\n    width: 70%;\r\n    left: 15%;\r\n    top:0%;\r\n    z-index: 100;\r\n}\r\n.fullImageHolder>img{\r\n    display: block;\r\n    text-align: center;\r\n    padding: 5%;\r\n    max-width: 100%;\r\n    max-height: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600px){\r\n    .fullImageHolder{\r\n        width: 80%;\r\n        left: 10%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImageHolder{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -1880,7 +1887,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/normal-blog/normal-blog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n  <div class=\"blog\" MaintainHeightWidthRatio >\n    <a routerLink=\"/{{keywords[0]}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\n        <div class=\"blogImageHolder\" #holder>\n          <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\n          <img src=\"{{blogImage}}\" (load)=\"removeInitialImage()\"  (error)=\"setDefault()\" alt=\"blogImage\"  *ngIf=\"dataRecieved\" >\n        </div>\n        <div class=\"blogFooter\">\n          <p>\n            <span>{{insertedDate}}</span>\n            <span>|</span>\n            <span>{{readingTime}}</span>\n            <span>\n              <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\" >\n              {{ViewCount}}\n            </span>\n          </p>\n          <p [innerHtml]=\"heading\" #blogTitle></p>\n  \n          <p>\n            <img src=\"/assets/images/sports-social-blogger-black.png\"  alt=\"sports-social-blogger-black\">\n            {{bloggerName}}\n          </p>\n        </div>\n      </a>\n  </div>\n\n <!--  <div class=\"fullImage\" #fullImage *ngIf=\"openFullImage\">\n   <img \n    src=\"/assets/images/sports-social-cancel-white.png\" \n    class=\"cancel\" role=\"button\" (click)=\"closeFullImage()\">   \n    \n  </div>\n  <div class=\"fullImageHolder\" *ngIf=\"openFullImage\">\n    <img src=\"{{blogImage}}\" >\n  </div>\n -->\n"
+module.exports = "\n  <div class=\"blog\" MaintainHeightWidthRatio #blog >\n    <a routerLink=\"/{{keywords[0]}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\n        <div class=\"blogImageHolder\" #holder>\n          <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\n          <img src=\"{{blogImage}}\" (load)=\"removeInitialImage()\"  (error)=\"setDefault()\" alt=\"blogImage\"  *ngIf=\"dataRecieved\" >\n        </div>\n        <div class=\"blogFooter\" #footer>\n          <p>\n            <span>{{insertedDate}}</span>\n            <span>|</span>\n            <span>{{readingTime}}</span>\n            <span>\n              <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\" >\n              {{ViewCount}}\n            </span>\n          </p>\n          <p [innerHtml]=\"heading\" #blogTitle></p>\n  \n          <p>\n            <img src=\"/assets/images/sports-social-blogger-black.png\"  alt=\"sports-social-blogger-black\">\n            {{bloggerName}}\n          </p>\n        </div>\n      </a>\n  </div>\n\n <!--  <div class=\"fullImage\" #fullImage *ngIf=\"openFullImage\">\n   <img \n    src=\"/assets/images/sports-social-cancel-white.png\" \n    class=\"cancel\" role=\"button\" (click)=\"closeFullImage()\">   \n    \n  </div>\n  <div class=\"fullImageHolder\" *ngIf=\"openFullImage\">\n    <img src=\"{{blogImage}}\" >\n  </div>\n -->\n"
 
 /***/ }),
 
@@ -1929,30 +1936,7 @@ var NormalBlogComponent = /** @class */ (function () {
             exactDate: this.exactDate,
             readingTime: this.readingTime
         };
-        if (window.innerWidth > 1100) {
-            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
-        }
-        if (window.innerWidth < 1100 && window.innerWidth > 1000) {
-            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
-        }
-        if (window.innerWidth < 1000 && window.innerWidth > 950) {
-            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.25em');
-        }
-        if (window.innerWidth > 700 && window.innerWidth < 950) {
-            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.25em');
-        }
-        if (window.innerWidth > 600 && window.innerWidth < 700) {
-            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
-        }
-        if (window.innerWidth > 600 && window.innerWidth < 500) {
-            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
-        }
-        if (window.innerWidth > 500 && window.innerWidth < 600) {
-            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
-        }
-        if (window.innerWidth > 300 && window.innerWidth < 400) {
-            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
-        }
+        this.setVariableFont();
         if (this.blogImage) {
             this.dataRecieved = true;
         }
@@ -1967,19 +1951,27 @@ var NormalBlogComponent = /** @class */ (function () {
             location.reload();
         });
     };
-    NormalBlogComponent.prototype.send = function () {
-        //this.reloadPage()
-        this.Send.detailsofBlog.next(this.blog);
-        //console.log(this.blog.Content,this.blog.Content.split(" ").length," nadeem")
-        window.scrollTo(0, 0);
-    };
-    NormalBlogComponent.prototype.setDefault = function (event) {
-        this.blogImage = "/assets/images/default-image.png";
-    };
-    NormalBlogComponent.prototype.removeInitialImage = function () {
-        this.isloading = false;
-    };
-    NormalBlogComponent.prototype.onresize = function () {
+    NormalBlogComponent.prototype.setVariableFont = function () {
+        /* let heightOfTitle=this.blogTitle.nativeElement.getBoundingClientRect().height
+        let char=this.blog.heading.length
+        let font;
+        console.log(this.blog.heading,heightOfTitle,this.blogTitle)
+        if(char>100){
+          font=0.9
+        }
+        if(char>75 && char<=100){
+          font=1.1
+        }
+        if(char>50 && char<=75){
+          font=1.2
+        }
+        if(char<=50 && char>40){
+          font=1.25
+        }
+        if(char<=40){
+          font=1.3
+        }
+        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size',font+"em") */
         if (window.innerWidth > 1100) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
         }
@@ -2004,6 +1996,31 @@ var NormalBlogComponent = /** @class */ (function () {
         if (window.innerWidth > 300 && window.innerWidth < 400) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
         }
+    };
+    NormalBlogComponent.prototype.setHeightOfTitle = function () {
+        var heightofBlog = this.Blog.nativeElement.getBoundingClientRect().height;
+        var heightofHolder = this.holder.nativeElement.getBoundingClientRect().height;
+        var heightofFooter = heightofBlog - heightofHolder;
+        var heightofFirstChild = this.footer.nativeElement.children[0].offsetHeight;
+        var heightofThirdChild = this.footer.nativeElement.children[2].offsetHeight;
+        var heightOfTitle = heightofFooter - heightofFirstChild - heightofThirdChild - 18;
+        this.renderer.setStyle(this.blogTitle.nativeElement, 'height', heightOfTitle + 'px');
+        var topMargin = (heightofFooter - heightofFirstChild - heightOfTitle - heightofThirdChild) / 2;
+        //this.renderer.setStyle(this.blogTitle.nativeElement,'margin-top',topMargin+"px")
+        //console.log(this.blog.heading,heightofFooter,heightofFirstChild,heightOfTitle,heightofThirdChild,this.blog.heading.length)
+    };
+    NormalBlogComponent.prototype.send = function () {
+        this.Send.detailsofBlog.next(this.blog);
+        window.scrollTo(0, 0);
+    };
+    NormalBlogComponent.prototype.setDefault = function (event) {
+        this.blogImage = "/assets/images/default-image.png";
+    };
+    NormalBlogComponent.prototype.removeInitialImage = function () {
+        this.isloading = false;
+    };
+    NormalBlogComponent.prototype.onresize = function () {
+        this.setVariableFont();
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
@@ -2065,6 +2082,14 @@ var NormalBlogComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('fullImage'),
         __metadata("design:type", Object)
     ], NormalBlogComponent.prototype, "fullImage", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('blog'),
+        __metadata("design:type", Object)
+    ], NormalBlogComponent.prototype, "Blog", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('footer'),
+        __metadata("design:type", Object)
+    ], NormalBlogComponent.prototype, "footer", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
         __metadata("design:type", Function),
@@ -2695,12 +2720,12 @@ var CustomUrlComponent = /** @class */ (function () {
         return path.replace(/\+/g, '%20');
     } */
     CustomUrlComponent.prototype.serialize = function (tree) {
-        var dus = new __WEBPACK_IMPORTED_MODULE_1__angular_router__["DefaultUrlSerializer"]();
+        var dus = new __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* DefaultUrlSerializer */]();
         // Use the default serializer to create a url and replace any spaces with + signs
         return dus.serialize(tree).replace(/%20/g, '-');
     };
     CustomUrlComponent.prototype.parse = function (url) {
-        var dus = new __WEBPACK_IMPORTED_MODULE_1__angular_router__["DefaultUrlSerializer"]();
+        var dus = new __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* DefaultUrlSerializer */]();
         // Change plus signs to encoded spaces
         url = url.replace(/\+/g, '%20');
         // Use the default serializer that you can import to just do the 
@@ -2972,6 +2997,74 @@ var TabViewAvailableDirective = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/editor-panel/blog-preview/blog-preview.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".preview{\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    width: 60%;\r\n    left: 20%;\r\n    z-index: 50;\r\n    box-shadow: 2px 2px #bbbbbb;\r\n    background-color: #ffffff;\r\n    overflow-y:scroll;\r\n    overflow-x:hidden;\r\n    font-family: 'Roboto',sans-serif\r\n}\r\n\r\n\r\n.cancel{\r\n    width: 30px;\r\n    height: 30px;\r\n    float: right;\r\n    padding: 1%;\r\n}\r\n.title{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    font-size: 2.2em;\r\n    font-weight: 700;\r\n}\r\n.blogger{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    font-size: 1em;\r\n    font-weight: 500;\r\n}\r\n.bloggerName{\r\n    margin-left: 2%;\r\n}\r\n.desc{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    font-size: 1.2em;\r\n    font-weight: 400;\r\n}\r\n.tags{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    font-size: 1em;\r\n    font-weight: 400;\r\n    color: #ffa600\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/editor-panel/blog-preview/blog-preview.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"preview\" >\n    <img class=\"cancel\" role=\"button\" (click)=\"closePreview()\" src=\"/assets/images/sports-social-cancel-black.png\" alt=\"\">\n    <div class=\"blogImage\">\n      <img  alt=\"\" [src]=\"previewBlogImage\">\n    </div>\n    <p class=\"title\" ></p>\n    <div class=\"blogger\">\n      <img class=\"bloggerImage\"  alt=\"\" >\n      <span class=\"bloggerName\"></span>\n    </div>\n    <p class=\"desc\" ></p>\n    <p class=\"tags\" ></p>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/editor-panel/blog-preview/blog-preview.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BlogPreviewComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BlogPreviewComponent = /** @class */ (function () {
+    function BlogPreviewComponent() {
+        this.Preview = true;
+    }
+    BlogPreviewComponent.prototype.ngOnInit = function () {
+    };
+    BlogPreviewComponent.prototype.closePreview = function () {
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], BlogPreviewComponent.prototype, "Preview", void 0);
+    BlogPreviewComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'sportsocial-blog-preview',
+            template: __webpack_require__("../../../../../src/app/editor-panel/blog-preview/blog-preview.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/editor-panel/blog-preview/blog-preview.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], BlogPreviewComponent);
+    return BlogPreviewComponent;
+}());
+
+//# sourceMappingURL=blog-preview.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/editor-panel/editor-panel.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2980,7 +3073,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "button:last-child{\r\n    float: right\r\n}\r\n.preview{\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    width: 60%;\r\n    left: 20%;\r\n    z-index: 50;\r\n    box-shadow: 2px 2px #bbbbbb;\r\n    background-color: #ffffff;\r\n    overflow-y:scroll;\r\n    overflow-x:hidden;\r\n    font-family: 'Roboto',sans-serif\r\n}\r\n\r\n\r\n.cancel{\r\n    width: 30px;\r\n    height: 30px;\r\n    float: right;\r\n    padding: 1%;\r\n}\r\n.title{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    font-size: 2.2em;\r\n    font-weight: 700;\r\n}\r\n.blogger{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    font-size: 1em;\r\n    font-weight: 500;\r\n}\r\n.bloggerName{\r\n    margin-left: 2%;\r\n}\r\n.desc{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    font-size: 1.2em;\r\n    font-weight: 400;\r\n}\r\n.tags{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    font-size: 1em;\r\n    font-weight: 400;\r\n    color: #ffa600\r\n}", ""]);
 
 // exports
 
@@ -2993,7 +3086,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/editor-panel/editor-panel.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" #form>\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\r\n      <form  #f=\"ngForm\">\r\n        <div id=\"blog-data\" ngModelGroup=\"blogData\" #userData=\"ngModelGroup\">\r\n          <div class=\"form-group\">\r\n            <label for=\"username\">Name</label>\r\n            <input type=\"text\" id=\"username\" class=\"form-control\" ngModel name=\"name\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"bloggerImage\">Blogger Image</label>\r\n            <input type=\"file\" id=\"bloggerImage\" class=\"form-control\" ngModel name=\"bloggerImage\" #bloggerImage>\r\n            <div class=\"imgTest\"></div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"date\">Date </label>\r\n            <input type=\"date\" id=\"datetime\" class=\"form-control\" ngModel name=\"date\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"Title\">Title</label>\r\n            <input type=\"text\" id=\"title\" class=\"form-control\" ngModel name=\"Title\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"keywords\">Keywords</label>\r\n            <input type=\"text\" id=\"keywords\" class=\"form-control\" ngModel name=\"keywords\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"blogImage\">Blog Image</label>\r\n            <input type=\"file\" id=\"blogImage\" class=\"form-control\" ngModel name=\"blogMainImage\" #blogImage>\r\n            <div class=\"imgTest\"></div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"desc\">Desc  </label>\r\n            <textarea rows=\"50\" id=\"desc\" class=\"form-control\" ngModel name=\"desc\" required  #desc>\r\n            </textarea>\r\n          </div>\r\n        </div>\r\n\r\n        <button class=\"btn btn-primary\" (click)=\"upload()\" [disabled]=\"isDisabled\" >Upload</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n</div>"
+module.exports = "<div class=\"container\" #form>\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\r\n      <form  #f=\"ngForm\">\r\n        <div id=\"blog-data\" ngModelGroup=\"blogData\" #userData=\"ngModelGroup\">\r\n          <div class=\"form-group\">\r\n            <label for=\"username\">Name</label>\r\n            <input type=\"text\" id=\"username\" class=\"form-control\" ngModel name=\"name\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"bloggerImage\">Blogger Image</label>\r\n            <input type=\"file\" id=\"bloggerImage\" class=\"form-control\" ngModel name=\"bloggerImage\" #bloggerImage>\r\n            <div class=\"imgTest\"></div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"date\">Date </label>\r\n            <input type=\"date\" id=\"datetime\" class=\"form-control\" ngModel name=\"date\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"Title\">Title</label>\r\n            <input type=\"text\" id=\"title\" class=\"form-control\" ngModel name=\"Title\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"keywords\">Keywords</label>\r\n            <input type=\"text\" id=\"keywords\" class=\"form-control\" ngModel name=\"keywords\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"blogImage\">Blog Image</label>\r\n            <input type=\"file\" id=\"blogImage\" class=\"form-control\" ngModel name=\"blogMainImage\" #blogImage>\r\n            <div class=\"imgTest\"></div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"desc\">Desc  </label>\r\n            <textarea rows=\"50\" id=\"desc\" class=\"form-control\" ngModel name=\"desc\" required  #desc>\r\n            </textarea>\r\n          </div>\r\n        </div>\r\n\r\n        <button class=\"btn btn-primary\" (click)=\"upload()\" [disabled]=\"isDisabled\" >Upload</button>\r\n        <button class=\"btn btn-primary\" (click)=\"preview()\">Preview</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n</div>\r\n\r\n<div class=\"preview\"  *ngIf=\"Preview\" >\r\n  <img class=\"cancel\" role=\"button\" (click)=\"closePreview()\" src=\"/assets/images/sports-social-cancel-black.png\" alt=\"\">\r\n  <!-- <div class=\"blogImage\">\r\n    <img  alt=\"\" [src]=\"previewBlogImage\">\r\n  </div> -->\r\n  <p class=\"title\" [innerHtml]=\"blog.blogTitle\"></p>\r\n  <div class=\"blogger\">\r\n    <!-- <img class=\"bloggerImage\"  alt=\"\" [src]=\"previewBloggerImage\"> -->\r\n    <span class=\"bloggerName\">{{blog.bloggerName}}</span>\r\n  </div>\r\n  <p class=\"desc\"  [innerHtml]=\"blog.blogDesc\"></p>\r\n  <p class=\"tags\" >{{blog.keywords}}</p>\r\n</div>"
 
 /***/ }),
 
@@ -3006,6 +3099,8 @@ module.exports = "<div class=\"container\" #form>\r\n  <div class=\"row\">\r\n  
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3019,14 +3114,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var EditorPanelComponent = /** @class */ (function () {
-    function EditorPanelComponent(http, recieveHeight, renderer) {
+    function EditorPanelComponent(http, recieveHeight, renderer, route, sanitizer) {
         this.http = http;
         this.recieveHeight = recieveHeight;
         this.renderer = renderer;
+        this.route = route;
+        this.sanitizer = sanitizer;
         this.files = [];
         this.imageName = [];
         this.isDisabled = false;
+        this.Preview = false;
         this.filesToUpload = [];
     }
     EditorPanelComponent.prototype.ngOnInit = function () {
@@ -3037,26 +3137,27 @@ var EditorPanelComponent = /** @class */ (function () {
         this.renderer.setStyle(this.panel.nativeElement, 'margin-top', this.topMargin + 10 + "px");
     };
     EditorPanelComponent.prototype.handleKeyboardEvent = function (event) {
+        //console.log(event.code)
         var length = this.desc.nativeElement.value.length;
         var curPos = this.desc.nativeElement.selectionStart;
         // console.log(event,this.desc.nativeElement.selectionStart);
         if (event.code == "Enter") {
             var textBefore = this.desc.nativeElement.value.substring(0, curPos);
             var textAfter = this.desc.nativeElement.value.substring(curPos, length);
-            this.desc.nativeElement.value = textBefore + "</br>" + textAfter;
-            this.desc.nativeElement.selectionEnd = curPos + 5;
+            this.desc.nativeElement.value = textBefore + "<br>" + textAfter;
+            this.desc.nativeElement.selectionEnd = curPos + 4;
             //console.log(this.desc.nativeElement.value)
         }
         if (event.code == "KeyB" && event.ctrlKey == true) {
             var startCurPos = this.desc.nativeElement.selectionStart;
             var endCurPos = this.desc.nativeElement.selectionEnd;
-            console.log("true", this.desc.nativeElement.selectionStart, this.desc.nativeElement.selectionEnd);
+            //console.log("true",this.desc.nativeElement.selectionStart,this.desc.nativeElement.selectionEnd)
             var textBefore = this.desc.nativeElement.value.substring(0, startCurPos);
             var textMiddle = this.desc.nativeElement.value.substring(startCurPos, endCurPos);
             var textAfter = this.desc.nativeElement.value.substring(endCurPos, length);
             // console.log("before: ", textBefore,"middle:", textMiddle, "after: " ,textAfter)
             this.desc.nativeElement.value = textBefore + "<b>" + textMiddle + "</b>" + textAfter;
-            this.desc.nativeElement.selectionEnd = endCurPos + 5;
+            this.desc.nativeElement.selectionEnd = endCurPos + 7;
         }
         if (event.code == "KeyI" && event.ctrlKey == true) {
             var startCurPos = this.desc.nativeElement.selectionStart;
@@ -3067,7 +3168,7 @@ var EditorPanelComponent = /** @class */ (function () {
             var textAfter = this.desc.nativeElement.value.substring(endCurPos, length);
             //console.log("before: ", textBefore,"middle:", textMiddle, "after: " ,textAfter)
             this.desc.nativeElement.value = textBefore + "<i>" + textMiddle + "</i>" + textAfter;
-            this.desc.nativeElement.selectionEnd = endCurPos + 5;
+            this.desc.nativeElement.selectionEnd = endCurPos + 7;
         }
     };
     EditorPanelComponent.prototype.makeFileRequest = function (url, params, files) {
@@ -3106,7 +3207,7 @@ var EditorPanelComponent = /** @class */ (function () {
             bloggerName: this.signupForm.value.blogData.name,
             blogDate: this.signupForm.value.blogData.date,
             blogTitle: this.signupForm.value.blogData.Title,
-            blogDesc: this.signupForm.value.blogData.desc,
+            blogDesc: this.desc.nativeElement.value,
             keywords: this.signupForm.value.blogData.keywords.split(",")
         };
         this.imageName = ["bloggerImage", "blogImage"];
@@ -3126,6 +3227,30 @@ var EditorPanelComponent = /** @class */ (function () {
                 _this.isDisabled = false;
             }
         });
+    };
+    EditorPanelComponent.prototype.preview = function () {
+        this.files = [this.bloggerImage.nativeElement.files[0], this.blogImage.nativeElement.files[0]];
+        /*    let reader = new FileReader()
+           console.log(event)
+           reader.onload=function(e){
+              
+           }
+           reader.readAsDataURL(this.bloggerImage.nativeElement.files[0]) */
+        //this.previewBloggerImage=this.sanitizer.bypassSecurityTrustUrl(this.bloggerImage.nativeElement.value)
+        this.blog = {
+            bloggerName: this.signupForm.value.blogData.name,
+            blogDate: this.signupForm.value.blogData.date,
+            blogTitle: this.signupForm.value.blogData.Title,
+            blogDesc: this.desc.nativeElement.value,
+            keywords: this.signupForm.value.blogData.keywords.split(",")
+        };
+        this.Preview = true;
+    };
+    EditorPanelComponent.prototype.closePreview = function () {
+        this.Preview = false;
+    };
+    EditorPanelComponent.prototype.something = function () {
+        console.log("true");
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('f'),
@@ -3148,6 +3273,14 @@ var EditorPanelComponent = /** @class */ (function () {
         __metadata("design:type", Object)
     ], EditorPanelComponent.prototype, "desc", void 0);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('imageblog'),
+        __metadata("design:type", Object)
+    ], EditorPanelComponent.prototype, "imageblog", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('imageblogger'),
+        __metadata("design:type", Object)
+    ], EditorPanelComponent.prototype, "imageblogger", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('document:keypress', ['$event']),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object]),
@@ -3159,10 +3292,10 @@ var EditorPanelComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/editor-panel/editor-panel.component.html"),
             styles: [__webpack_require__("../../../../../src/app/editor-panel/editor-panel.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _f || Object])
     ], EditorPanelComponent);
     return EditorPanelComponent;
-    var _a, _b, _c, _d;
+    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=editor-panel.component.js.map
@@ -3370,7 +3503,7 @@ var KeywordsComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/keywords/keywords.component.html"),
             styles: [__webpack_require__("../../../../../src/app/keywords/keywords.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["Router"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */]) === "function" && _j || Object])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */]) === "function" && _j || Object])
     ], KeywordsComponent);
     return KeywordsComponent;
     var _a, _b, _c, _d, _e, _f, _g, _h, _j;
@@ -3437,6 +3570,11 @@ var LoginPageComponent = /** @class */ (function () {
         this.authService.logout();
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     };
+    LoginPageComponent.prototype.handleKeyboardEvent = function (event) {
+        if (event.code == "Enter") {
+            this.checkLogin();
+        }
+    };
     LoginPageComponent.prototype.checkLogin = function () {
         var UserName = this.userName.nativeElement.value;
         var Password = this.password.nativeElement.value;
@@ -3458,13 +3596,19 @@ var LoginPageComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('password'),
         __metadata("design:type", Object)
     ], LoginPageComponent.prototype, "password", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('document:keypress', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], LoginPageComponent.prototype, "handleKeyboardEvent", null);
     LoginPageComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'SportSocialBlog-login-page',
             template: __webpack_require__("../../../../../src/app/login-page/login-page.component.html"),
             styles: [__webpack_require__("../../../../../src/app/login-page/login-page.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["ActivatedRoute"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["ActivatedRoute"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _c || Object])
     ], LoginPageComponent);
     return LoginPageComponent;
     var _a, _b, _c;
@@ -3676,9 +3820,9 @@ var RoutingModule = /** @class */ (function () {
     RoutingModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             imports: [
-                __WEBPACK_IMPORTED_MODULE_9__angular_router__["RouterModule"].forRoot(appRoute)
+                __WEBPACK_IMPORTED_MODULE_9__angular_router__["d" /* RouterModule */].forRoot(appRoute)
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_9__angular_router__["RouterModule"]]
+            exports: [__WEBPACK_IMPORTED_MODULE_9__angular_router__["d" /* RouterModule */]]
         })
     ], RoutingModule);
     return RoutingModule;
@@ -3983,7 +4127,7 @@ var SearchComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/search/search.component.html"),
             styles: [__webpack_require__("../../../../../src/app/search/search.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["ActivatedRoute"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["ActivatedRoute"]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Title"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Title"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Meta"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["Meta"]) === "function" && _j || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _j || Object])
     ], SearchComponent);
     return SearchComponent;
     var _a, _b, _c, _d, _e, _f, _g, _h, _j;
@@ -4040,7 +4184,7 @@ var AuthGuard = /** @class */ (function () {
     };
     AuthGuard = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["Router"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["Router"]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* Router */]) === "function" && _b || Object])
     ], AuthGuard);
     return AuthGuard;
     var _a, _b;

@@ -12,7 +12,6 @@ import {PropertyService} from "../../services/property.service";
 import {SaveService} from "../../services/save.service";
 import {PostService} from "../../services/post.service";
 import {ActivatedRoute} from "@angular/router";
-import { MetaService } from 'ng2-meta';
 import { 
     FacebookService, 
     LoginResponse, 
@@ -178,6 +177,7 @@ export class BlogOpenComponent implements OnInit {
                 this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length-1])
                 this.setMetaTags();
                 this.setTitle()
+                console.log(this.blog.Content," latest")
             }
         )
     }
@@ -218,7 +218,7 @@ export class BlogOpenComponent implements OnInit {
                 this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length-1])
                 this.setMetaTags();
                 this.setTitle()
-              
+                console.log(this.blog.Content," latest")
             }
         )
        

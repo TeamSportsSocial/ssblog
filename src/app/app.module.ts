@@ -38,7 +38,6 @@ import { CommentsComponent } from './comments/comments.component';
 import {UrlSerializer} from '@angular/router';
 
 import { FacebookModule } from 'ngx-facebook';
-import { MetaService } from 'ng2-meta';
 import { NguiAutoCompleteModule } from '@ngui/auto-complete';
 import { MessageComponent } from './message/message.component';
 import { CustomUrlComponent } from './custom-url/custom-url.component';
@@ -46,6 +45,7 @@ import { OpenFullImageComponent } from './open-full-image/open-full-image.compon
 import { RelatedBlogsComponent } from './blogContent/related-blogs/related-blogs.component';
 import { SinglePanelComponent } from './admin-panel/single-panel/single-panel.component';
 import { EditBlogComponent } from './admin-panel/edit-blog/edit-blog.component';
+import { BlogPreviewComponent } from './editor-panel/blog-preview/blog-preview.component';
 
 
 
@@ -76,6 +76,7 @@ import { EditBlogComponent } from './admin-panel/edit-blog/edit-blog.component';
     RelatedBlogsComponent,
     SinglePanelComponent,
     EditBlogComponent,
+    BlogPreviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +88,6 @@ import { EditBlogComponent } from './admin-panel/edit-blog/edit-blog.component';
     NguiAutoCompleteModule
   ],
   providers: [
-    MetaService,
     PropertyService,
     GetService,
     SaveService,

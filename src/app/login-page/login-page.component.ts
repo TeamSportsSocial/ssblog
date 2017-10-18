@@ -1,7 +1,8 @@
 import { 
   Component, 
   OnInit,
-  ViewChild
+  ViewChild,
+  HostListener
  } from '@angular/core';
 import {Router,ActivatedRoute} from "@angular/router";
 import { AuthGuard } from '../services/auth-gaurd.service';
@@ -26,6 +27,12 @@ export class LoginPageComponent implements OnInit {
   ngOnInit() {
     this.authService.logout();
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/'
+  }
+  @HostListener('document:keypress', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent){
+    if(event.code=="Enter"){
+      this.checkLogin()
+    }
   }
   checkLogin(){
     let UserName=this.userName.nativeElement.value

@@ -8,6 +8,7 @@ import { AdminPanelComponent } from '../admin-panel/admin-panel.component';
 import { SearchComponent } from '../search/search.component';
 import { EditBlogComponent } from '../admin-panel/edit-blog/edit-blog.component';
 
+import { BlogPreviewComponent } from '../editor-panel/blog-preview/blog-preview.component';
 import { AuthGuard } from '../services/auth-gaurd.service';
 
 import {
