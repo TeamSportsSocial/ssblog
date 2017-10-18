@@ -13,6 +13,9 @@
     max-width: 100%;
     margin: 2px auto;
 }
-.keywords div::-webkit-scrollbar{
+::-webkit-scrollbar{
    display: none;
+}
+::-moz-scrollbar{
+    display: none;
 }

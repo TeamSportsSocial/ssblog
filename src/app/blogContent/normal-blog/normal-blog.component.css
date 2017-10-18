@@ -17,7 +17,7 @@
 .blogImageHolder{
     width: 100%;
     max-height:72%;
-    min-height: 68%;
+    min-height: 60%;
     overflow: hidden;
     border-radius: 5px;   
     border-bottom: 1px solid #bbbbbb;

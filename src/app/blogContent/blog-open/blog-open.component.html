@@ -62,7 +62,7 @@
         <div class="tagHolder">
           <img src="/assets/images/sports-social-tag.png" alt="sports-social-tag">
         </div>
-        <a *ngFor="let key of Keywords;let i=index" role="button" (click)="getblogs($event)">{{key}}</a>
+        <a *ngFor="let key of Keywords;let i=index" role="button" routerLink="/{{key}}" (click)="getblogs($event)">{{key}}</a>
       </div>
       <p class="shareOn" *ngIf="blogDataRecieved">
         Share on 

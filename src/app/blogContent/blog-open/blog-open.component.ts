@@ -420,7 +420,8 @@ export class BlogOpenComponent implements OnInit {
     
     getblogs(event){
         let key=event.toElement.innerText
-        this.router.navigate(['/'+key])
+        console.log(key," navigate")
+       // this.router.navigate(['/'+key])
         this.sendKey.ofBlogCard.next(key)
         
     }

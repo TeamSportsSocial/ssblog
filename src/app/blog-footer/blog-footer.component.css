@@ -190,7 +190,7 @@ button{
  @media  (max-width:1000px) and (min-width:800px) {
     .followUs img{
         width: 28px;
-        height: 28px%;
+        height: 28px;
         margin-left: 1.5%;
      }
      .subscriptionBox{

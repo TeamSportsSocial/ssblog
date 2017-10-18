@@ -3,7 +3,7 @@
     <img src="{{profilePicture}}" (error)="setDefault()">
   </div>
   <div class="commentBox ">
-    <textarea   class="text" ngModel name="desc" required placeholder="Add a Comment..." #textArea></textarea>
+    <textarea  class="text" ngModel name="desc" required placeholder="Add a Comment..." #textArea></textarea>
     <div class="commentButton">
       <button (click)="post()"> {{isConnected ? 'Comment' : 'Login to Comment'}}</button>
     </div>
