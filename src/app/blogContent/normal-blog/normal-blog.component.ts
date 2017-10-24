@@ -1,5 +1,5 @@
 import {
-  Component, 
+  Component,
   OnInit,
   Input,
   HostListener,
@@ -17,7 +17,7 @@ import {PostService} from "../../services/post.service";
 })
 export class NormalBlogComponent implements OnInit {
   
-  @Input()  blogId:string  
+  @Input()  blogId:string
   @Input()  blogImage:string
   @Input()  bloggerImage:string
   @Input()  bloggerName:string
@@ -31,8 +31,8 @@ export class NormalBlogComponent implements OnInit {
   @Input()  readingTime:string
   
   blog:{
-    blogId:string;
-    blogImage:string;
+    blogId:string,
+    blogImage:string,
     bloggerName:string,
     bloggerImage:string,
     heading:string,
@@ -55,7 +55,7 @@ export class NormalBlogComponent implements OnInit {
   constructor(
     private Send: PropertyService,
     private renderer:Renderer2,
-    private post :PostService,
+    private post:PostService,
     private zone:NgZone
   ) { }
 
@@ -74,11 +74,11 @@ export class NormalBlogComponent implements OnInit {
     exactDate:this.exactDate,
     readingTime:this.readingTime
   }
-  this.setVariableFont()
+   this.setVariableFont()
    if(this.blogImage){
     this.dataRecieved=true
    }
-   
+   //console.log(this.blogTitle)
 
   }
   
@@ -94,41 +94,25 @@ export class NormalBlogComponent implements OnInit {
     });
   }
   
+
   setVariableFont(){
-    /* let heightOfTitle=this.blogTitle.nativeElement.getBoundingClientRect().height
-    let char=this.blog.heading.length
-    let font;
-    console.log(this.blog.heading,heightOfTitle,this.blogTitle)
-    if(char>100){
-      font=0.9
-    }
-    if(char>75 && char<=100){
-      font=1.1
-    }
-    if(char>50 && char<=75){
-      font=1.2
-    }
-    if(char<=50 && char>40){
-      font=1.25
-    }
-    if(char<=40){
-      font=1.3
-    }
-    this.renderer.setStyle(this.blogTitle.nativeElement,'font-size',font+"em") */
-    if(window.innerWidth>1100){
+    if(window.innerWidth>1200){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em')
     }
+    if(window.innerWidth>1100 && window.innerWidth<1200){
+      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
+    }
     if(window.innerWidth<1100 && window.innerWidth>1000){
-     this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em')
+     this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
     }
     if(window.innerWidth<1000 && window.innerWidth>950){
-     this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.25em')
+     this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.15em')
     }
     if(window.innerWidth>700 && window.innerWidth<950){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.25em')
      }
      if(window.innerWidth>600 && window.innerWidth<700){
-      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
+      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.1em')
      }
      if(window.innerWidth>600 && window.innerWidth<500){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em')
@@ -136,8 +120,11 @@ export class NormalBlogComponent implements OnInit {
      if(window.innerWidth>500 && window.innerWidth<600){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
      }
-     if(window.innerWidth>300 && window.innerWidth<400){
+     if(window.innerWidth>320 && window.innerWidth<400){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.1em')
+     }
+     if(window.innerWidth<320){
+      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','0.9em')
      }
   }
   setHeightOfTitle(){

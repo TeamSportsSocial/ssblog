@@ -3,7 +3,22 @@
     <a href="#" class="popular">
        Most Popular >>
     </a>
-    <SportSocial-trending-blog-card></SportSocial-trending-blog-card>
-    <SportSocial-trending-blog-card></SportSocial-trending-blog-card>
-    <SportSocial-trending-blog-card></SportSocial-trending-blog-card>
+    <ng-container
+        *ngFor="let data of blogDetails;let i=index">
+    <SportSocial-trending-blog-card
+        [blogId]="data.blogId"
+        [blogImage]="data.blogImage"
+        [bloggerImage]="data.bloggerImage"
+        [bloggerName]="data.bloggerName"
+        [insertedDate]="data.insertedDate"
+        [heading]="data.heading"
+        [Content]="data.Content"
+        [ViewCount]="data.ViewCount"
+        [ShareCount]="data.ShareCount"
+        [keywords]="data.keywords"
+        [exactDate]="data.exactDate"
+        [readingTime]="data.readingTime">
+    </SportSocial-trending-blog-card>
+    </ng-container>
+   
 </div>

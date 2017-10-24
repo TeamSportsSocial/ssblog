@@ -19,7 +19,8 @@
     padding: 0px 20px 0px 20px
 }
 .latestBlog{
-    padding: 10px 25px 0px 30px
+    padding: 10px 25px 0px 30px;
+    padding-top: 10px !important
 }
 .col-4{
     padding: 0px 20px 0px 20px

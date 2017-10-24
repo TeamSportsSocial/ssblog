@@ -26,15 +26,18 @@ img{
     
 }
 .desc>div{
-    width:80%;
-    margin: 10% auto;
+    width:90%;
+    margin: 8% auto;
 }
 .desc>div>div:nth-of-type(2){
     margin-bottom: 2%;
 }
+.desc>div>div:nth-of-type(2)>span{
+    margin-left: -0.5%
+}
 .desc span{
     color: white;
-    font-size: 0.9em;
+    font-size: 0.8em;
     padding: 0.8%;
     font-weight: 400;
    
@@ -49,7 +52,7 @@ img{
 .count>img{
     width: 14px;
     height: 14px;
-    margin-left: 1%
+    margin-left: 0%
 }
 .count>span{
     display: inline-block;
@@ -60,14 +63,39 @@ img{
 .heading{
     width:100%;
     color: #ffffff;
-    font-size: 2.2em;
+    font-size: 2em;
     text-align: left;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    position: relative; 
+    /* use this value to count block height */
+    line-height: 1.3em;
+    /* max-height = line-height (1.2) * lines max number (3) */
+    margin-right: -1em;
+    padding-right: 1em;
+    max-height: 2.6em; 
     font-weight: 700;
     margin-bottom:2%; 
    
+}
+.heading::after{
+    content: '';
+    /* absolute position */
+    position: absolute;
+    /* set position to right bottom corner of text */
+    right: 0;
+    /* set width and height */
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+}
+.heading:before{
+    /* points in the end */
+  content: '...';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of block */
+  right: 0;
+  bottom: 0;
 }
 .bloggerImage{
     display: inline-block;
@@ -78,8 +106,8 @@ img{
 }
 .bloggerImage >img{
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     margin: 0px;
 }
 .bloggerName{
@@ -88,14 +116,13 @@ img{
     vertical-align: middle;
     color: white;
     font-size: 0.9em;
-    font-weight: 700;
 }
 .Blogger{
     margin-bottom:2%; 
 }
 .smallDesc{
     color: white;
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-align: left;
     font-weight: 500;
     white-space: nowrap;

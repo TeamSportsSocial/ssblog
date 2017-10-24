@@ -89,17 +89,24 @@ export class LatestBlogComponent implements OnInit {
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
     }
     if(window.innerWidth<800 && window.innerWidth>=600){
+      this.renderer.setStyle(this.DescChild.nativeElement,'margin','4% auto')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }
     if(window.innerWidth<600 && window.innerWidth>400 ){
-      this.renderer.setStyle(this.DescChild.nativeElement,'margin','20% auto')
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.6em')
-      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.3em')
+      this.renderer.setStyle(this.DescChild.nativeElement,'margin','15% auto')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
+      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
     }
-    if(window.innerWidth<400){
+    if(window.innerWidth<400 && window.innerWidth>340){
+      this.renderer.setStyle(this.DescChild.nativeElement,'margin','15% auto')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.3em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
+    }
+    if(window.innerWidth<340){
+      this.renderer.setStyle(this.DescChild.nativeElement,'margin','15% auto')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.1em')
+      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','0.9em')
     }
     if(this.blogImage){
       this.dataRecieved=true
@@ -152,18 +159,25 @@ export class LatestBlogComponent implements OnInit {
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
     }
     if(window.innerWidth<800 && window.innerWidth>=600){
+      this.renderer.setStyle(this.DescChild.nativeElement,'margin','4% auto')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }
     if(window.innerWidth<600 && window.innerWidth>400 ){
-      this.renderer.setStyle(this.DescChild.nativeElement,'margin','20% auto')
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.6em')
-      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.3em')
+      this.renderer.setStyle(this.DescChild.nativeElement,'margin','15% auto')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
+      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
       //this.renderer.setStyle(this.Desc.nativeElement,' background','rgba(0, 0, 0, 0.5)')
     }
-    if(window.innerWidth<400){
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
-      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
+    if(window.innerWidth<400 && window.innerWidth>340){
+      this.renderer.setStyle(this.DescChild.nativeElement,'margin','15% auto')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.3em')
+      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
+    }
+    if(window.innerWidth<340){
+      this.renderer.setStyle(this.DescChild.nativeElement,'margin','15% auto')
+      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.2em')
+      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
     }
     
   }

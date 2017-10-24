@@ -760,7 +760,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    width: 100%;\r\n    \r\n}\r\nheader{\r\n    width: 100%;\r\n    background-color: #ffffff;\r\n    position: fixed;\r\n    top:0px;\r\n    z-index: 10;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    font-family: 'Roboto',sans-serif;\r\n}\r\n.left{\r\n    display: inline-block;\r\n    width:80%;\r\n    vertical-align: middle;\r\n}\r\n\r\nli{\r\n    display: inline-block;\r\n    list-style: none;\r\n    width: auto;\r\n    margin: 0.2% 0.1% 0.2% 0%;\r\n    vertical-align: top;\r\n   \r\n}\r\n.left>li{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: 60%;\r\n    margin-left:3%;\r\n}\r\n.brand-image{\r\n    width: 40px;\r\n    height: 40px;\r\n    margin-left:2%;\r\n    display: inline-block;\r\n    vertical-align: middle\r\n}\r\nimg{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.brand-title{\r\n   font-size: 1.4em;\r\n   font-weight: 700;\r\n   display: inline-block;\r\n   vertical-align: middle\r\n}\r\n.brand-title>span:first-child{\r\n    color: #024770;\r\n}\r\n.brand-title>span:nth-child(2){\r\n    color: #ffa600;\r\n}\r\n.brand-title>span:nth-child(3){\r\n    font-size: 60%;\r\n    color: black;\r\n    font-weight: 700;\r\n}\r\n.brand-title>p{\r\n    font-size: 55%;\r\n    color: #024770;\r\n    font-weight: 400;\r\n    text-align: left;\r\n    font-style: italic;\r\n    padding-left: 9%;\r\n}\r\n.right{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    text-align: right;\r\n    width:19%;\r\n}\r\n\r\ninput{\r\n    height: 35px;\r\n    background-image: url('/assets/images/sports-social-search.png');\r\n    border: none;\r\n    background-repeat: no-repeat;\r\n    background-position-y: 50%;\r\n    background-position-x: 2%;\r\n    background-size: 15px;\r\n    outline: #fafafa;\r\n    border-radius: 25px;\r\n    background-color: #e5e5e5;\r\n    text-align: center;\r\n    box-shadow: 1px 1px #bbbbbb\r\n}\r\n.mobileView{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: auto;\r\n    float: right;\r\n    padding: 1% 3% 1% 1%;\r\n}\r\n.menuImageHolder{\r\n    width: 30px;\r\n    height: 30px;   \r\n}\r\n.menuImageHolder img{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.dropDown{\r\n  width: 80%;\r\n  background-color: #ffffff;\r\n  padding: 1% 1% 0% 1%;\r\n  position: fixed;\r\n  z-index: 50;\r\n  top:10%;\r\n  left:10%;\r\n  box-shadow: 1px 1px 2px #eeeeee\r\n}\r\n.dropDown .Close{\r\n    float: right;\r\n    width: 12px;\r\n    height: 12px;\r\n    padding:0.5% 1% 0% 0%;\r\n}\r\n.websiteLink{\r\n    display: block;\r\n    color: #024770;\r\n    text-align: center;\r\n    margin: 1%;\r\n}\r\n\r\n.search input{\r\n    display: inline-block;\r\n    border-radius: 0px;\r\n    border: none;\r\n    background-image: none;\r\n    width: 100%;\r\n   \r\n}\r\n.search button{\r\n    display: block;\r\n    width: 70%;\r\n    margin: 2% auto;\r\n    border-radius: 4px;\r\n    background-color: #ffa600;\r\n    color: #ffffff;\r\n    border: none;\r\n    padding: 1%\r\n}\r\n\r\n::-webkit-input-placeholder {\r\n    text-align: center;\r\n }\r\n \r\n :-moz-placeholder { \r\n    text-align: center;  \r\n }\r\n \r\n ::-moz-placeholder {  \r\n    text-align: center;  \r\n }\r\n \r\n :-ms-input-placeholder {  \r\n    text-align: center; \r\n }\r\n .suggestion{\r\n     position: absolute;\r\n     top: 45px;\r\n     width:51%;\r\n     background-color:white\r\n }\r\n .suggestion ul{\r\n     display: block;\r\n     border: 1px solid #bbbbbb;\r\n }\r\n .suggestion li {\r\n     padding: 1%;\r\n     display: block;\r\n     border-bottom: 1px solid   #bbbbbb\r\n }\r\n .mobileView .suggestion{\r\n     top:65px;\r\n     width: 100%;\r\n }\r\n \r\n  a:hover{\r\n      text-decoration: none;\r\n  }\r\n  .websiteLink{\r\n      color: #024771;\r\n      font-weight: 700;\r\n  }\r\n .websiteLink>img{\r\n     width: 20px;\r\n     height: 20px;\r\n     padding: 1%\r\n}\r\n  .websiteLink:hover{\r\n      color: #ffa600;\r\n  }\r\n  .dropDown p{\r\n      width: 60%;\r\n      margin: auto\r\n  }", ""]);
+exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    width: 100%;\r\n    \r\n}\r\nheader{\r\n    width: 100%;\r\n    background-color: #ffffff;\r\n    position: fixed;\r\n    top:0px;\r\n    z-index: 10;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    font-family: 'Roboto',sans-serif;\r\n}\r\n.left{\r\n    display: inline-block;\r\n    width:80%;\r\n    vertical-align: middle;\r\n}\r\n\r\nli{\r\n    display: inline-block;\r\n    list-style: none;\r\n    width: auto;\r\n    margin: 0.2% 0.1% 0.2% 0%;\r\n    vertical-align: top;\r\n   \r\n}\r\n.left>li{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: 60%;\r\n    margin-left:3%;\r\n}\r\n.brand-image{\r\n    width: 40px;\r\n    height: 40px;\r\n    margin-left:2%;\r\n    display: inline-block;\r\n    vertical-align: middle\r\n}\r\nimg{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.brand-title{\r\n   font-size: 1.4em;\r\n   font-weight: 700;\r\n   display: inline-block;\r\n   vertical-align: middle\r\n}\r\n.brand-title>span:first-child{\r\n    color: #024770;\r\n}\r\n.brand-title>span:nth-child(2){\r\n    color: #ffa600;\r\n}\r\n.brand-title>span:nth-child(3){\r\n    font-size: 60%;\r\n    color: black;\r\n    font-weight: 700;\r\n}\r\n.brand-title>p{\r\n    font-size: 55%;\r\n    color: #024770;\r\n    font-weight: 400;\r\n    text-align: left;\r\n    font-style: italic;\r\n    padding-left: 9%;\r\n}\r\n.right{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    text-align: right;\r\n    width:19%;\r\n}\r\n\r\ninput{\r\n    height: 35px;\r\n    background-image: url('/assets/images/sports-social-search.png');\r\n    border: none;\r\n    background-repeat: no-repeat;\r\n    background-position-y: 50%;\r\n    background-position-x: 2%;\r\n    background-size: 15px;\r\n    outline: #fafafa;\r\n    border-radius: 25px;\r\n    background-color: #e5e5e5;\r\n    text-align: center;\r\n    box-shadow: 1px 1px #bbbbbb\r\n}\r\n.mobileView{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: auto;\r\n    float: right;\r\n    padding: 1.5% 3% 1.5% 1%;\r\n}\r\n.menuImageHolder{\r\n    width: 30px;\r\n    height: 30px;   \r\n}\r\n.menuImageHolder img{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.dropDown{\r\n  width: 80%;\r\n  background-color: #ffffff;\r\n  padding: 1% 1% 0% 1%;\r\n  position: fixed;\r\n  z-index: 50;\r\n  top:10%;\r\n  left:10%;\r\n  box-shadow: 1px 1px 2px #eeeeee\r\n}\r\n.dropDown .Close{\r\n    float: right;\r\n    width: 12px;\r\n    height: 12px;\r\n    padding:0.5% 1% 0% 0%;\r\n}\r\n.websiteLink{\r\n    display: block;\r\n    color: #024770;\r\n    text-align: center;\r\n    margin: 1%;\r\n}\r\n\r\n.search input{\r\n    display: inline-block;\r\n    border-radius: 0px;\r\n    border: none;\r\n    background-image: none;\r\n    width: 100%;\r\n   \r\n}\r\n.search button{\r\n    display: block;\r\n    width: 70%;\r\n    margin: 2% auto;\r\n    border-radius: 4px;\r\n    background-color: #ffa600;\r\n    color: #ffffff;\r\n    border: none;\r\n    padding: 1%\r\n}\r\n\r\n::-webkit-input-placeholder {\r\n    text-align: center;\r\n }\r\n \r\n :-moz-placeholder { \r\n    text-align: center;  \r\n }\r\n \r\n ::-moz-placeholder {  \r\n    text-align: center;  \r\n }\r\n \r\n :-ms-input-placeholder {  \r\n    text-align: center; \r\n }\r\n .suggestion{\r\n     position: absolute;\r\n     top: 45px;\r\n     width:51%;\r\n     background-color:white\r\n }\r\n .suggestion ul{\r\n     display: block;\r\n     border: 1px solid #bbbbbb;\r\n }\r\n .suggestion li {\r\n     padding: 1%;\r\n     display: block;\r\n     border-bottom: 1px solid   #bbbbbb\r\n }\r\n .mobileView .suggestion{\r\n     top:65px;\r\n     width: 100%;\r\n }\r\n \r\n  a:hover{\r\n      text-decoration: none;\r\n  }\r\n  .websiteLink{\r\n      color: #024771;\r\n      font-weight: 700;\r\n  }\r\n .websiteLink>img{\r\n     width: 20px;\r\n     height: 20px;\r\n     padding: 1%\r\n}\r\n  .websiteLink:hover{\r\n      color: #ffa600;\r\n  }\r\n  .dropDown p{\r\n      width: 60%;\r\n      margin: auto\r\n  }", ""]);
 
 // exports
 
@@ -773,7 +773,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blog-header/blog-header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header #Header>\n  <ul class=\"left\" #left>\n    <a href=\"/\">\n      <li class=\"brand-image\">\n        <img src=\"/assets/images/sports-social-logo.png\" alt=\"Sports Social logo\">\n      </li>\n      <li class=\"brand-title\">\n        <span>Sports</span> <span>Social</span> <span>Blog</span>\n        <p>Chase your Sport</p>\n      </li>\n    </a>\n    <li  *ngIf=\"!mobileView\">\n      <input \n        ngui-auto-complete\n        [source]=\"keywords\"\n        [list-formatter]=\"autocompleListFormatter\"\n        type=\"text\" \n        placeholder=\"Search here the latest topics & trends in sports\" \n        (valueChanged)=\"valueChanged($event)\"\n        [max-num-list]=\"10\"\n        [open-on-focus]=\"false\"\n        (keypress)=\"sendData($event)\"\n        #searchBox>  \n    </li>\n  </ul>\n  <ul class=\"right\" *ngIf=\"!mobileView\">\n    <li >\n      <a \n        href=\"http://www.sportsocial.in\" \n        target=\"_blank\" \n        class=\" websiteLink\" \n        (mouseover)=\"hover($event)\"\n        (mouseout)=\"removehoverColor($event)\">\n        <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"sports-social-link-blue-symbol\" #linkImage>\n        Go to Website \n      </a>\n    </li>\n  </ul>\n  <div class=\"mobileView \" *ngIf=\"mobileView\">\n     <div class=\"menuImageHolder\">\n       <img src=\"/assets/images/sports-social-menu.png\" role=\"button\" (click)=\"openDropDown()\" alt=\"sports-social-menu\">\n     </div>\n     <div *ngIf=\"open\" class=\"dropDown\">\n        <img src=\"/assets/images/sports-social-cancel-black.png\" role=\"button\" (click)=\"closeDropDown()\" class=\"Close\" alt=\"sports-social-cancel-black\">\n        <p> \n          <a \n            href=\"http://testweb.sportsocial.in\" \n            target=\"_blank\" \n            class=\" websiteLink\" \n            (mouseover)=\"hover($event)\"\n            (mouseout)=\"removehoverColor($event)\">\n            <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"\" #linkImage>\n            Go to Website \n         </a>\n        </p>\n      <div class=\"search\">\n         <input \n          ngui-auto-complete\n          [source]=\"keywords\"\n          [list-formatter]=\"autocompleListFormatter\"\n          type=\"text\" \n          placeholder=\"Search \" \n          (valueChanged)=\"valueChanged($event)\"\n          [max-num-list]=\"10\"\n          (keypress)=\"sendData($event)\"\n          [open-on-focus]=\"false\"\n          #searchBox >\n          <button (click)=\"searchSportSocial()\">Search</button>\n      </div>\n      \n    </div>\n  </div> \n</header>\n"
+module.exports = "<header #Header>\n  <ul class=\"left\" #left>\n    <a href=\"/\">\n      <li class=\"brand-image\">\n        <img src=\"/assets/images/sports-social-logo.png\" alt=\"Sports Social logo\">\n      </li>\n      <li class=\"brand-title\">\n        <span>Sports</span> <span>Social</span> <span>Blog</span>\n        <p>Chase your Sport</p>\n      </li>\n    </a>\n    <li  *ngIf=\"!mobileView\">\n      <input \n        ngui-auto-complete\n        [source]=\"keywords\"\n        [list-formatter]=\"autocompleListFormatter\"\n        type=\"text\" \n        placeholder=\"Search here the latest topics & trends in sports\" \n        (valueChanged)=\"valueChanged($event)\"\n        [max-num-list]=\"10\"\n        [open-on-focus]=\"false\"\n        (keypress)=\"sendData($event)\"\n        #searchBox>  \n    </li>\n  </ul>\n  <ul class=\"right\" *ngIf=\"!mobileView\">\n    <li >\n      <a \n        href=\"https://www.sportsocial.in\" \n        target=\"_blank\" \n        class=\" websiteLink\" \n        (mouseover)=\"hover($event)\"\n        (mouseout)=\"removehoverColor($event)\">\n        <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"sports-social-link-blue-symbol\" #linkImage>\n        Go to Website \n      </a>\n    </li>\n  </ul>\n  <div class=\"mobileView \" *ngIf=\"mobileView\">\n     <div class=\"menuImageHolder\">\n       <img src=\"/assets/images/sports-social-menu.png\" role=\"button\" (click)=\"openDropDown()\" alt=\"sports-social-menu\">\n     </div>\n     <div *ngIf=\"open\" class=\"dropDown\">\n        <img src=\"/assets/images/sports-social-cancel-black.png\" role=\"button\" (click)=\"closeDropDown()\" class=\"Close\" alt=\"sports-social-cancel-black\">\n        <p> \n          <a \n            href=\"https://www.sportsocial.in\" \n            target=\"_blank\" \n            class=\" websiteLink\" \n            (mouseover)=\"hover($event)\"\n            (mouseout)=\"removehoverColor($event)\">\n            <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"\" #linkImage>\n            Go to Website \n         </a>\n        </p>\n      <div class=\"search\">\n         <input \n          ngui-auto-complete\n          [source]=\"keywords\"\n          [list-formatter]=\"autocompleListFormatter\"\n          type=\"text\" \n          placeholder=\"Search \" \n          (valueChanged)=\"valueChanged($event)\"\n          [max-num-list]=\"10\"\n          (keypress)=\"sendData($event)\"\n          [open-on-focus]=\"false\"\n          #searchBox >\n          <button (click)=\"searchSportSocial()\">Search</button>\n      </div>\n      \n    </div>\n  </div> \n</header>\n"
 
 /***/ }),
 
@@ -1335,7 +1335,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\r\n*{\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n.blog{\r\n    font-family: 'Roboto',sans-serif;\r\n}\r\n.col-6{\r\n    width: 50%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.col-12{\r\n    width: 100%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.latestBlog{\r\n    padding: 10px 25px 0px 30px\r\n}\r\n.col-4{\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.col-8 >.col-6, .col-8 >.col-12, .col-12>.col-6 ,.col-12>.col-12{\r\n    padding: 0px 10px 0px 10px !important\r\n}\r\n.trendingBlogs{\r\n    padding-right: 20px;\r\n}\r\n.col-4,.trendingBlogs{\r\n    width: 33.33%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n}\r\n.topBlogs{\r\n    width: 66.2%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 10px 0px 10px\r\n}\r\n.col-8{\r\n    width: 66.2%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.mobileView>.latestBlog{\r\n    height: auto !important\r\n}\r\n.mobileView .col-4{\r\n    width: 100%;\r\n}\r\n.suscribeCard{\r\n    border: 1px solid #bbbbbb;\r\n    border-radius: 4px;\r\n    margin: 0px 20px 15px 20px !important\r\n}\r\nbutton{\r\n    display: block;\r\n    margin: 1% auto;\r\n    width: 30%;\r\n    background-color: #ffa600;\r\n    border:none;\r\n    color: #ffffff;\r\n    \r\n    font-weight: 700;\r\n    font-size: 1.2em;\r\n    padding: 0.5%;\r\n}\r\n.loading{\r\n    display: block;\r\n    margin: auto;\r\n}\r\n.noMoreData{\r\n    width: 100%;\r\n    color: #024771;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1.5em;\r\n    font-weight: 500;\r\n    text-align: center;\r\n}\r\n", ""]);
+exports.push([module.i, "\r\n*{\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n.blog{\r\n    font-family: 'Roboto',sans-serif;\r\n}\r\n.col-6{\r\n    width: 50%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.col-12{\r\n    width: 100%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.latestBlog{\r\n    padding: 10px 25px 0px 30px;\r\n    padding-top: 10px !important\r\n}\r\n.col-4{\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.col-8 >.col-6, .col-8 >.col-12, .col-12>.col-6 ,.col-12>.col-12{\r\n    padding: 0px 10px 0px 10px !important\r\n}\r\n.trendingBlogs{\r\n    padding-right: 20px;\r\n}\r\n.col-4,.trendingBlogs{\r\n    width: 33.33%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n}\r\n.topBlogs{\r\n    width: 66.2%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 10px 0px 10px\r\n}\r\n.col-8{\r\n    width: 66.2%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 0px 20px 0px 20px\r\n}\r\n.mobileView>.latestBlog{\r\n    height: auto !important\r\n}\r\n.mobileView .col-4{\r\n    width: 100%;\r\n}\r\n.suscribeCard{\r\n    border: 1px solid #bbbbbb;\r\n    border-radius: 4px;\r\n    margin: 0px 20px 15px 20px !important\r\n}\r\nbutton{\r\n    display: block;\r\n    margin: 1% auto;\r\n    width: 30%;\r\n    background-color: #ffa600;\r\n    border:none;\r\n    color: #ffffff;\r\n    \r\n    font-weight: 700;\r\n    font-size: 1.2em;\r\n    padding: 0.5%;\r\n}\r\n.loading{\r\n    display: block;\r\n    margin: auto;\r\n}\r\n.noMoreData{\r\n    width: 100%;\r\n    color: #024771;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1.5em;\r\n    font-weight: 500;\r\n    text-align: center;\r\n}\r\n", ""]);
 
 // exports
 
@@ -1630,7 +1630,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    font-size: 100%;\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n.latest{\r\n    width: 100%;\r\n    position: relative;\r\n    overflow: hidden;\r\n    border-radius: 5px;\r\n    margin-bottom: 20px;\r\n    box-shadow: 1px 1px 2px #bbbbbb\r\n}\r\n\r\nimg{\r\n    width: 100%;\r\n}\r\n.desc{\r\n    width: 100%;\r\n    height:100%;\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left:0px;\r\n    background: rgba(0, 0, 0, 0.7);\r\n    \r\n}\r\n.desc>div{\r\n    width:80%;\r\n    margin: 10% auto;\r\n}\r\n.desc>div>div:nth-of-type(2){\r\n    margin-bottom: 2%;\r\n}\r\n.desc span{\r\n    color: white;\r\n    font-size: 0.9em;\r\n    padding: 0.8%;\r\n    font-weight: 400;\r\n   \r\n}\r\n.count{\r\n    position: absolute;\r\n    top:5%;\r\n    right: 2%;\r\n    width:100%;\r\n    text-align: right\r\n}\r\n.count>img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-left: 1%\r\n}\r\n.count>span{\r\n    display: inline-block;\r\n    color: white;\r\n    font-size: 0.9em\r\n}\r\n\r\n.heading{\r\n    width:100%;\r\n    color: #ffffff;\r\n    font-size: 2.2em;\r\n    text-align: left;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    font-weight: 700;\r\n    margin-bottom:2%; \r\n   \r\n}\r\n.bloggerImage{\r\n    display: inline-block;\r\n    padding: 0px;\r\n    width: 20px !important;\r\n    height: 20px !important;\r\n    margin-right: 5px;\r\n}\r\n.bloggerImage >img{\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n    margin: 0px;\r\n}\r\n.bloggerName{\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: middle;\r\n    color: white;\r\n    font-size: 0.9em;\r\n    font-weight: 700;\r\n}\r\n.Blogger{\r\n    margin-bottom:2%; \r\n}\r\n.smallDesc{\r\n    color: white;\r\n    font-size: 1.2em;\r\n    text-align: left;\r\n    font-weight: 500;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    margin-bottom:2%; \r\n}\r\n\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 40%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:13%;\r\n    left:30%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n}\r\n.fullImageHolder{\r\n    width: 100%;\r\n    position: relative;\r\n}\r\n.fullImageHolder>img{\r\n    max-width: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600){\r\n    .fullImage{\r\n        width: 70%;\r\n        left: 15%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImage{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
+exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    font-size: 100%;\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n.latest{\r\n    width: 100%;\r\n    position: relative;\r\n    overflow: hidden;\r\n    border-radius: 5px;\r\n    margin-bottom: 20px;\r\n    box-shadow: 1px 1px 2px #bbbbbb\r\n}\r\n\r\nimg{\r\n    width: 100%;\r\n}\r\n.desc{\r\n    width: 100%;\r\n    height:100%;\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left:0px;\r\n    background: rgba(0, 0, 0, 0.7);\r\n    \r\n}\r\n.desc>div{\r\n    width:90%;\r\n    margin: 8% auto;\r\n}\r\n.desc>div>div:nth-of-type(2){\r\n    margin-bottom: 2%;\r\n}\r\n.desc>div>div:nth-of-type(2)>span{\r\n    margin-left: -0.5%\r\n}\r\n.desc span{\r\n    color: white;\r\n    font-size: 0.8em;\r\n    padding: 0.8%;\r\n    font-weight: 400;\r\n   \r\n}\r\n.count{\r\n    position: absolute;\r\n    top:5%;\r\n    right: 2%;\r\n    width:100%;\r\n    text-align: right\r\n}\r\n.count>img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-left: 0%\r\n}\r\n.count>span{\r\n    display: inline-block;\r\n    color: white;\r\n    font-size: 0.9em\r\n}\r\n\r\n.heading{\r\n    width:100%;\r\n    color: #ffffff;\r\n    font-size: 2em;\r\n    text-align: left;\r\n    overflow: hidden;\r\n    position: relative; \r\n    /* use this value to count block height */\r\n    line-height: 1.3em;\r\n    /* max-height = line-height (1.2) * lines max number (3) */\r\n    margin-right: -1em;\r\n    padding-right: 1em;\r\n    max-height: 2.6em; \r\n    font-weight: 700;\r\n    margin-bottom:2%; \r\n   \r\n}\r\n.heading::after{\r\n    content: '';\r\n    /* absolute position */\r\n    position: absolute;\r\n    /* set position to right bottom corner of text */\r\n    right: 0;\r\n    /* set width and height */\r\n    width: 1em;\r\n    height: 1em;\r\n    margin-top: 0.2em;\r\n}\r\n.heading:before{\r\n    /* points in the end */\r\n  content: '...';\r\n  /* absolute position */\r\n  position: absolute;\r\n  /* set position to right bottom corner of block */\r\n  right: 0;\r\n  bottom: 0;\r\n}\r\n.bloggerImage{\r\n    display: inline-block;\r\n    padding: 0px;\r\n    width: 20px !important;\r\n    height: 20px !important;\r\n    margin-right: 5px;\r\n}\r\n.bloggerImage >img{\r\n    display: inline-block;\r\n    width: 15px;\r\n    height: 15px;\r\n    margin: 0px;\r\n}\r\n.bloggerName{\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: middle;\r\n    color: white;\r\n    font-size: 0.9em;\r\n}\r\n.Blogger{\r\n    margin-bottom:2%; \r\n}\r\n.smallDesc{\r\n    color: white;\r\n    font-size: 1.1em;\r\n    text-align: left;\r\n    font-weight: 500;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n    overflow: hidden;\r\n    margin-bottom:2%; \r\n}\r\n\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 40%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:13%;\r\n    left:30%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n}\r\n.fullImageHolder{\r\n    width: 100%;\r\n    position: relative;\r\n}\r\n.fullImageHolder>img{\r\n    max-width: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600){\r\n    .fullImage{\r\n        width: 70%;\r\n        left: 15%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImage{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -1701,17 +1701,24 @@ var LatestBlogComponent = /** @class */ (function () {
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.2em');
         }
         if (window.innerWidth < 800 && window.innerWidth >= 600) {
+            this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '4% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.1em');
         }
         if (window.innerWidth < 600 && window.innerWidth > 400) {
-            this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '20% auto');
-            this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.6em');
-            this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.3em');
+            this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
+            this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
+            this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
         }
-        if (window.innerWidth < 400) {
+        if (window.innerWidth < 400 && window.innerWidth > 340) {
+            this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.3em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
+        }
+        if (window.innerWidth < 340) {
+            this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
+            this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.1em');
+            this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '0.9em');
         }
         if (this.blogImage) {
             this.dataRecieved = true;
@@ -1756,18 +1763,25 @@ var LatestBlogComponent = /** @class */ (function () {
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.2em');
         }
         if (window.innerWidth < 800 && window.innerWidth >= 600) {
+            this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '4% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.1em');
         }
         if (window.innerWidth < 600 && window.innerWidth > 400) {
-            this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '20% auto');
-            this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.6em');
-            this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.3em');
+            this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
+            this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
+            this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
             //this.renderer.setStyle(this.Desc.nativeElement,' background','rgba(0, 0, 0, 0.5)')
         }
-        if (window.innerWidth < 400) {
-            this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
-            this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.1em');
+        if (window.innerWidth < 400 && window.innerWidth > 340) {
+            this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
+            this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.3em');
+            this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
+        }
+        if (window.innerWidth < 340) {
+            this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
+            this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.2em');
+            this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
         }
     };
     __decorate([
@@ -1876,7 +1890,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n}\r\n.blog{\r\n    width: 100%;\r\n    height: 400px;\r\n    border-radius: 5px;\r\n    margin-bottom: 20px;\r\n    font-family: 'Roboto', sans-serif;\r\n    font-size: 100%;\r\n    box-shadow: 1px 1px 4px #bbbbbb;\r\n    position: relative;\r\n    \r\n}\r\n\r\n.blogImageHolder{\r\n    width: 100%;\r\n    max-height:72%;\r\n    min-height: 60%;\r\n    overflow: hidden;\r\n    border-radius: 5px;   \r\n    border-bottom: 1px solid #bbbbbb;\r\n    border-bottom-left-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n}\r\n.blogImageHolder img{\r\n    width: 100%;\r\n    border-radius: 5px;   \r\n    border-bottom-left-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n}\r\n.blogFooter{\r\n    margin: 0px;\r\n    min-height: 28%;\r\n    border-radius: 5px;\r\n    border-top-left-radius: 0px;\r\n    border-top-right-radius: 0px;\r\n}\r\n.blogFooter p{\r\n    width: 95%;\r\n    margin:0.8% auto;\r\n}\r\n.blogFooter>p:first-child{\r\n    font-size: 0.8em;\r\n    font-weight: 400;\r\n    color: black;\r\n    text-align: left;\r\n    width: 95%;\r\n}\r\nspan >img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-right: 2%;\r\n}\r\n.blogFooter>p:first-child>span{\r\n    padding-right: 4px;\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: top;\r\n}\r\n.blogFooter>p:first-child>span:last-child{\r\n    width: 20%;\r\n    float: right;\r\n    text-align: right;\r\n    padding-right: 5px;\r\n    color: #ffa600;\r\n    font-weight: 500\r\n}\r\n.blogFooter>p:nth-of-type(2){\r\n    \r\n    text-align: left;\r\n    margin: 1% auto;\r\n    overflow: hidden;\r\n    font-weight: 700;\r\n    font-size:1.2em;\r\n    text-overflow: ellipsis;\r\n    color: black;\r\n    white-space: nowrap;\r\n}\r\n.blogFooter>p:last-child{\r\n    position:absolute ;\r\n    bottom:4px;\r\n    left: 2.5%;\r\n    color: #444444;\r\n    font-weight: 500;\r\n    font-size:0.8em;\r\n}\r\np>img{\r\n  width: 12px;\r\n  height: 12px;\r\n  margin-right: 2%;\r\n}\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 100%;\r\n    height: 100%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:0%;\r\n    left:0%;\r\n    z-index: 50;\r\n    border: 1px solid #bbbbbb;\r\n    background-color: black;\r\n    opacity: 0.8;\r\n}\r\n.fullImageHolder{\r\n    position: fixed;\r\n    width: 70%;\r\n    left: 15%;\r\n    top:0%;\r\n    z-index: 100;\r\n}\r\n.fullImageHolder>img{\r\n    display: block;\r\n    text-align: center;\r\n    padding: 5%;\r\n    max-width: 100%;\r\n    max-height: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600px){\r\n    .fullImageHolder{\r\n        width: 80%;\r\n        left: 10%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImageHolder{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
+exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n}\r\n.blog{\r\n    width: 100%;\r\n    border-radius: 5px;\r\n    margin-bottom: 20px;\r\n    font-family: 'Roboto', sans-serif;\r\n    font-size: 100%;\r\n    box-shadow: 1px 1px 4px #bbbbbb;\r\n    position: relative;\r\n    \r\n}\r\n\r\n.blogImageHolder{\r\n    width: 100%;\r\n    max-height:66%;\r\n    min-height: 60%;\r\n    overflow: hidden;\r\n    border-radius: 5px;   \r\n    border-bottom: 1px solid #bbbbbb;\r\n    border-bottom-left-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n}\r\n.blogImageHolder img{\r\n    width: 100%;\r\n    border-radius: 5px;   \r\n    border-bottom-left-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n}\r\n.blogFooter{\r\n    margin: 0px;\r\n    min-height: 34%;\r\n    border-radius: 5px;\r\n    border-top-left-radius: 0px;\r\n    border-top-right-radius: 0px;\r\n}\r\n.blogFooter p{\r\n    width: 95%;\r\n    margin:0.8% auto;\r\n}\r\n.blogFooter>p:first-child{\r\n    font-size: 0.8em;\r\n    font-weight: 400;\r\n    color: black;\r\n    text-align: left;\r\n    width: 95%;\r\n}\r\nspan >img{\r\n    width: 14px;\r\n    height: 14px;\r\n    margin-right: 2%;\r\n}\r\n.blogFooter>p:first-child>span{\r\n    padding-right: 4px;\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: top;\r\n}\r\n.blogFooter>p:first-child>span:last-child{\r\n    width: 20%;\r\n    float: right;\r\n    text-align: right;\r\n    padding-right: 5px;\r\n    color: #ffa600;\r\n    font-weight: 500\r\n}\r\n.blogFooter>p:nth-of-type(2){ \r\n    color: black;\r\n    font-weight: 700;\r\n   /* hide text if it more than N lines  */\r\n  overflow: hidden;\r\n  /* for set '...' in absolute position */\r\n  position: relative; \r\n  /* use this value to count block height */\r\n  line-height: 1.3em;\r\n  /* max-height = line-height (1.2) * lines max number (3) */\r\n  max-height: 2.6em; \r\n  /* fix problem when last visible word doesn't adjoin right side  */\r\n  text-align: left;  \r\n  /* place for '...' */\r\n  padding-right: 1em;\r\n\r\n}\r\n/* create the ... */\r\n.blogFooter>p:nth-of-type(2):before {\r\n  /* points in the end */\r\n  content: '...';\r\n  /* absolute position */\r\n  position: absolute;\r\n  /* set position to right bottom corner of block */\r\n  right: 0;\r\n  bottom: 0;\r\n}\r\n/* hide ... if we have text, which is less than or equal to max lines */\r\n.blogFooter>p:nth-of-type(2):after {\r\n  /* points in the end */\r\n  content: '';\r\n  /* absolute position */\r\n  position: absolute;\r\n  /* set position to right bottom corner of text */\r\n  right: 0;\r\n  /* set width and height */\r\n  width: 1em;\r\n  height: 1em;\r\n  margin-top: 0.2em;\r\n  /* bg color = bg color under block */\r\n  background: white;\r\n}\r\n.blogFooter>p:last-child{\r\n    position:absolute ;\r\n    bottom:4px;\r\n    left: 2.5%;\r\n    color: #444444;\r\n    font-weight: 500;\r\n    font-size:0.8em;\r\n}\r\np>img{\r\n  width: 12px;\r\n  height: 12px;\r\n  margin-right: 2%;\r\n}\r\na:hover{\r\n    text-decoration: none;\r\n}\r\n.fullImage{\r\n    width: 100%;\r\n    height: 100%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:0%;\r\n    left:0%;\r\n    z-index: 50;\r\n    border: 1px solid #bbbbbb;\r\n    background-color: black;\r\n    opacity: 0.8;\r\n}\r\n.fullImageHolder{\r\n    position: fixed;\r\n    width: 70%;\r\n    left: 15%;\r\n    top:0%;\r\n    z-index: 100;\r\n}\r\n.fullImageHolder>img{\r\n    display: block;\r\n    text-align: center;\r\n    padding: 5%;\r\n    max-width: 100%;\r\n    max-height: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600px){\r\n    .fullImageHolder{\r\n        width: 80%;\r\n        left: 10%;\r\n    }\r\n}\r\n@media (max-width:600px){\r\n    .fullImageHolder{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -1889,7 +1903,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/normal-blog/normal-blog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n  <div class=\"blog\" MaintainHeightWidthRatio #blog >\n    <a routerLink=\"/{{keywords[0]}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\n        <div class=\"blogImageHolder\" #holder>\n          <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\n          <img src=\"{{blogImage}}\" (load)=\"removeInitialImage()\"  (error)=\"setDefault()\" alt=\"blogImage\"  *ngIf=\"dataRecieved\" >\n        </div>\n        <div class=\"blogFooter\" #footer>\n          <p>\n            <span>{{insertedDate}}</span>\n            <span>|</span>\n            <span>{{readingTime}}</span>\n            <span>\n              <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\" >\n              {{ViewCount}}\n            </span>\n          </p>\n          <p [innerHtml]=\"heading\" #blogTitle></p>\n  \n          <p>\n            <img src=\"/assets/images/sports-social-blogger-black.png\"  alt=\"sports-social-blogger-black\">\n            {{bloggerName}}\n          </p>\n        </div>\n      </a>\n  </div>\n\n <!--  <div class=\"fullImage\" #fullImage *ngIf=\"openFullImage\">\n   <img \n    src=\"/assets/images/sports-social-cancel-white.png\" \n    class=\"cancel\" role=\"button\" (click)=\"closeFullImage()\">   \n    \n  </div>\n  <div class=\"fullImageHolder\" *ngIf=\"openFullImage\">\n    <img src=\"{{blogImage}}\" >\n  </div>\n -->\n"
+module.exports = "\n  <div class=\"blog\" MaintainHeightWidthRatio #blog >\n    <a routerLink=\"/{{keywords[0]}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\n        <div class=\"blogImageHolder\" #holder>\n          <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\n          <img src=\"{{blogImage}}\" (load)=\"removeInitialImage()\"  (error)=\"setDefault()\" alt=\"blogImage\"  *ngIf=\"dataRecieved\" >\n        </div>\n        <div class=\"blogFooter\" #footer>\n          <p>\n            <span>{{insertedDate}}</span>\n            <span>|</span>\n            <span>{{readingTime}}</span>\n            <span>\n              <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\" >\n              {{ViewCount}}\n            </span>\n          </p>\n          <p  [innerHtml]=\"heading\" #blogTitle></p>\n  \n          <p>\n            <img src=\"/assets/images/sports-social-blogger-black.png\"  alt=\"sports-social-blogger-black\">\n            {{bloggerName}}\n          </p>\n        </div>\n      </a>\n  </div>\n\n <!--  <div class=\"fullImage\" #fullImage *ngIf=\"openFullImage\">\n   <img \n    src=\"/assets/images/sports-social-cancel-white.png\" \n    class=\"cancel\" role=\"button\" (click)=\"closeFullImage()\">   \n    \n  </div>\n  <div class=\"fullImageHolder\" *ngIf=\"openFullImage\">\n    <img src=\"{{blogImage}}\" >\n  </div>\n -->\n"
 
 /***/ }),
 
@@ -1942,6 +1956,7 @@ var NormalBlogComponent = /** @class */ (function () {
         if (this.blogImage) {
             this.dataRecieved = true;
         }
+        //console.log(this.blogTitle)
     };
     NormalBlogComponent.prototype.ngAfterViewInit = function () {
         if (this.blogImage) {
@@ -1954,40 +1969,23 @@ var NormalBlogComponent = /** @class */ (function () {
         });
     };
     NormalBlogComponent.prototype.setVariableFont = function () {
-        /* let heightOfTitle=this.blogTitle.nativeElement.getBoundingClientRect().height
-        let char=this.blog.heading.length
-        let font;
-        console.log(this.blog.heading,heightOfTitle,this.blogTitle)
-        if(char>100){
-          font=0.9
-        }
-        if(char>75 && char<=100){
-          font=1.1
-        }
-        if(char>50 && char<=75){
-          font=1.2
-        }
-        if(char<=50 && char>40){
-          font=1.25
-        }
-        if(char<=40){
-          font=1.3
-        }
-        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size',font+"em") */
-        if (window.innerWidth > 1100) {
+        if (window.innerWidth > 1200) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
+        }
+        if (window.innerWidth > 1100 && window.innerWidth < 1200) {
+            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
         }
         if (window.innerWidth < 1100 && window.innerWidth > 1000) {
-            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
+            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
         }
         if (window.innerWidth < 1000 && window.innerWidth > 950) {
-            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.25em');
+            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.15em');
         }
         if (window.innerWidth > 700 && window.innerWidth < 950) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.25em');
         }
         if (window.innerWidth > 600 && window.innerWidth < 700) {
-            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
+            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
         }
         if (window.innerWidth > 600 && window.innerWidth < 500) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
@@ -1995,8 +1993,11 @@ var NormalBlogComponent = /** @class */ (function () {
         if (window.innerWidth > 500 && window.innerWidth < 600) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
         }
-        if (window.innerWidth > 300 && window.innerWidth < 400) {
+        if (window.innerWidth > 320 && window.innerWidth < 400) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
+        }
+        if (window.innerWidth < 320) {
+            this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '0.9em');
         }
     };
     NormalBlogComponent.prototype.setHeightOfTitle = function () {
@@ -2283,7 +2284,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".trending{\r\n    width: 96%;\r\n    height: 23.5%;\r\n    margin:1% auto;\r\n    background-color: #000000;\r\n    position: relative;\r\n    font-family: 'Roboto',sans-serif;\r\n    color: white;\r\n    border-radius: 7px;\r\n    overflow: hidden;\r\n    box-shadow: 3px 3px #fafafa\r\n}\r\n.blogImg{\r\n    opacity: 0.5;\r\n    border-radius: 7px;\r\n}\r\nimg{\r\n    width: 100%;\r\n}\r\n.desc{\r\n    width: 100%;\r\n    height: 40%;\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left:0px;\r\n}\r\n.desc>a>p{\r\n    width: 90%;\r\n    margin: auto;\r\n    text-align: left;\r\n    color: #ffffff\r\n}\r\nspan>img{\r\n    width: 16px;\r\n    height: 16px;\r\n}\r\n.desc>p:last-child{\r\n    text-align: right;\r\n    padding-right: 2%;\r\n}", ""]);
+exports.push([module.i, ".trending{\r\n    width: 96%;\r\n    height: 23.5%;\r\n    margin:1% auto;\r\n    \r\n    position: relative;\r\n    font-family: 'Roboto',sans-serif;\r\n    color: white;\r\n    border-radius: 7px;\r\n    overflow: hidden;\r\n}\r\n.blogImg{\r\n    border-radius: 7px;\r\n}\r\nimg{\r\n    width: 100%;\r\n}\r\n.desc{\r\n    background: rgba(0, 0, 0, 0.7);\r\n    width: 100%;\r\n    height: 52%;\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left:0px;\r\n    padding: 1%;\r\n}\r\n.desc>p:last-child{\r\n    width: 90%;\r\n    margin: auto;\r\n    text-align: left;\r\n    color: #ffffff;\r\n}\r\nspan>img{\r\n    width: 14px;\r\n    height: 14px;\r\n}\r\n.desc>p:first-child{\r\n    width: 95%;\r\n    margin:0.5% auto;\r\n    text-align: right;\r\n}\r\n.desc>p:first-child>span{\r\n    color: #ffffff;\r\n    margin-left: 2%;\r\n}\r\n.desc>p:first-child img{\r\n   margin-right: 1%; \r\n}", ""]);
 
 // exports
 
@@ -2296,7 +2297,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/trending-blog/trending-blog-card/trending-blog-card.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"trending\">\n  <img src=\"/assets/images/2.jpg\" class=\"blogImg\" alt=\"blogImage\">\n  <div class=\"desc\">\n    <a routerLink=\"/blogOpen\">\n      <p>The passion will kept me driving through my journey from banking to cycling</p>\n    </a>\n    <p>\n      <span class=\"views\">\n        <img src=\"/assets/images/sports-social-view-white.png\" alt=\"sports-social-view-white\">\n        340\n      </span>\n      <span class=\"share\">\n        <img src=\"/assets/images/sports-social-share-white.png\" alt=\"sports-social-share-white\"  >\n        340\n      </span>\n    </p>\n  </div>\n</div>\n"
+module.exports = "<div class=\"trending\">\n  <a routerLink=\"/{{keywords[0]}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\n    <div class=\"blogImageHolder\" #holder>\n        <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\n        <img src=\"{{blogImage}}\" (load)=\"removeInitialImage()\"  (error)=\"setDefault()\" alt=\"blogImage\"  *ngIf=\"dataRecieved\" >\n    </div>\n  <div class=\"desc\">\n    \n    <p >\n      <span class=\"views\">\n        <img src=\"/assets/images/sports-social-view-white.png\" alt=\"sports-social-view-white\">\n        <span>{{ViewCount}}</span> \n      </span>\n      <span class=\"share\">\n        <img src=\"/assets/images/sports-social-share-white.png\" alt=\"sports-social-share-white\"  >\n        <span>{{ShareCount}}</span>\n      </span>\n    </p>\n    <p [innerHtml]=\"heading\"></p>\n  </div>\n  </a>\n</div>\n"
 
 /***/ }),
 
@@ -2306,6 +2307,7 @@ module.exports = "<div class=\"trending\">\n  <img src=\"/assets/images/2.jpg\" 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrendingBlogCardComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2316,10 +2318,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var TrendingBlogCardComponent = /** @class */ (function () {
-    function TrendingBlogCardComponent() {
+    function TrendingBlogCardComponent(Send) {
+        this.Send = Send;
+        this.isloading = true;
     }
     TrendingBlogCardComponent.prototype.ngOnInit = function () {
+        this.blog = {
+            blogId: this.blogId,
+            blogImage: this.blogImage,
+            bloggerName: this.bloggerName,
+            bloggerImage: this.bloggerImage,
+            heading: this.heading,
+            Content: this.Content,
+            insertedDate: this.insertedDate,
+            ViewCount: this.ViewCount,
+            ShareCount: this.ShareCount,
+            keywords: this.keywords,
+            exactDate: this.exactDate,
+            readingTime: this.readingTime
+        };
+    };
+    TrendingBlogCardComponent.prototype.send = function () {
+        this.Send.detailsofBlog.next(this.blog);
+        window.scrollTo(0, 0);
+    };
+    TrendingBlogCardComponent.prototype.setDefault = function (event) {
+        this.blogImage = "/assets/images/default-image.png";
+    };
+    TrendingBlogCardComponent.prototype.removeInitialImage = function () {
+        this.isloading = false;
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
@@ -2365,15 +2394,20 @@ var TrendingBlogCardComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", String)
     ], TrendingBlogCardComponent.prototype, "exactDate", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", String)
+    ], TrendingBlogCardComponent.prototype, "readingTime", void 0);
     TrendingBlogCardComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'SportSocial-trending-blog-card',
             template: __webpack_require__("../../../../../src/app/blogContent/trending-blog/trending-blog-card/trending-blog-card.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/trending-blog/trending-blog-card/trending-blog-card.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object])
     ], TrendingBlogCardComponent);
     return TrendingBlogCardComponent;
+    var _a;
 }());
 
 //# sourceMappingURL=trending-blog-card.component.js.map
@@ -2401,7 +2435,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/trending-blog/trending-blog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div MaintainHeightWidthRatio>\n    <SportSocial-subscribe-card></SportSocial-subscribe-card>\n    <a href=\"#\" class=\"popular\">\n       Most Popular >>\n    </a>\n    <SportSocial-trending-blog-card></SportSocial-trending-blog-card>\n    <SportSocial-trending-blog-card></SportSocial-trending-blog-card>\n    <SportSocial-trending-blog-card></SportSocial-trending-blog-card>\n</div>"
+module.exports = "<div MaintainHeightWidthRatio>\n    <SportSocial-subscribe-card></SportSocial-subscribe-card>\n    <a href=\"#\" class=\"popular\">\n       Most Popular >>\n    </a>\n    <ng-container\n        *ngFor=\"let data of blogDetails;let i=index\">\n    <SportSocial-trending-blog-card\n        [blogId]=\"data.blogId\"\n        [blogImage]=\"data.blogImage\"\n        [bloggerImage]=\"data.bloggerImage\"\n        [bloggerName]=\"data.bloggerName\"\n        [insertedDate]=\"data.insertedDate\"\n        [heading]=\"data.heading\"\n        [Content]=\"data.Content\"\n        [ViewCount]=\"data.ViewCount\"\n        [ShareCount]=\"data.ShareCount\"\n        [keywords]=\"data.keywords\"\n        [exactDate]=\"data.exactDate\"\n        [readingTime]=\"data.readingTime\">\n    </SportSocial-trending-blog-card>\n    </ng-container>\n   \n</div>"
 
 /***/ }),
 
@@ -2411,7 +2445,7 @@ module.exports = "<div MaintainHeightWidthRatio>\n    <SportSocial-subscribe-car
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrendingBlogComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_get_service__ = __webpack_require__("../../../../../src/app/services/get.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2429,6 +2463,81 @@ var TrendingBlogComponent = /** @class */ (function () {
         this.blogDetails = [];
     }
     TrendingBlogComponent.prototype.ngOnInit = function () {
+        this.getBlog();
+    };
+    TrendingBlogComponent.prototype.getBlog = function () {
+        var _this = this;
+        this.get.blogData(2, 'dfg').subscribe(function (data) {
+            for (var i = 0; i < 3; i++) {
+                _this.blogDetails.push({
+                    blogId: data[i].blogId,
+                    blogImage: data[i].blogImage,
+                    bloggerName: data[i].bloggerName,
+                    bloggerImage: data[i].bloggerImage,
+                    heading: data[i].heading,
+                    Content: data[i].Content,
+                    insertedDate: _this.timePassed(data[i].insertedDate),
+                    ViewCount: data[i].ViewCount,
+                    ShareCount: data[i].ShareCount,
+                    keywords: data[i].keywords.split(","),
+                    exactDate: _this.ExactDate(data[i].insertedDate),
+                    readingTime: _this.timeToRead(data[i].Content)
+                });
+                //console.log(this.blogDetails," h")
+                // console.log(this.blogDetails[i].blogId, this.blogDetails[i].Content)
+            }
+        });
+    };
+    TrendingBlogComponent.prototype.timePassed = function (i) {
+        var writtenDate = new Date(parseInt(i) * 1000);
+        var presentDate = new Date();
+        if (writtenDate.getFullYear() == presentDate.getFullYear()) {
+            if (writtenDate.getMonth() == presentDate.getMonth()) {
+                if (writtenDate.getDate() == presentDate.getDate()) {
+                    if (writtenDate.getHours() == presentDate.getHours()) {
+                        if (writtenDate.getMinutes() == presentDate.getMinutes()) {
+                            if (writtenDate.getSeconds() == presentDate.getSeconds()) {
+                                return "Just Now";
+                            }
+                            else {
+                                return presentDate.getSeconds() - writtenDate.getSeconds() + " sec ago";
+                            }
+                        }
+                        else {
+                            return presentDate.getMinutes() - writtenDate.getMinutes() + " min ago";
+                        }
+                    }
+                    else {
+                        return presentDate.getHours() - writtenDate.getHours() + " hrs ago";
+                    }
+                }
+                else {
+                    return presentDate.getDate() - writtenDate.getDate() + " day ago";
+                }
+            }
+            else {
+                return presentDate.getMonth() - writtenDate.getMonth() + " month ago";
+            }
+        }
+        else {
+            return presentDate.getFullYear() - writtenDate.getFullYear() + " year ago";
+        }
+    };
+    TrendingBlogComponent.prototype.ExactDate = function (i) {
+        var writtenDate = new Date(i * 1000);
+        // console.log(i, writtenDate,writtenDate.toDateString())
+        return writtenDate.toDateString();
+    };
+    TrendingBlogComponent.prototype.timeToRead = function (s) {
+        var words = s.split(" ");
+        //console.log(words,words.length,this.blog.blogId)
+        var time = Math.round(words.length / 180);
+        if (time > 0) {
+            return time + " min read";
+        }
+        else {
+            return "1 min read";
+        }
     };
     TrendingBlogComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -2436,7 +2545,7 @@ var TrendingBlogComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/blogContent/trending-blog/trending-blog.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/trending-blog/trending-blog.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_get_service__["a" /* GetService */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */]) === "function" && _a || Object])
     ], TrendingBlogComponent);
     return TrendingBlogComponent;
     var _a;
@@ -2769,74 +2878,111 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
     function MaintainHeightWidthRatioDirective(elRef, renderer) {
         this.elRef = elRef;
         this.renderer = renderer;
-        this.width = this.elRef.nativeElement.getBoundingClientRect().width;
-        // console.log(this.elRef.nativeElement.parentNode.className)
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-8') {
-            this.height = -(.536231884057 * (this.width)) + this.width;
+        this.setHeight();
+        /* this.width=this.elRef.nativeElement.getBoundingClientRect().width;
+       // console.log(this.elRef.nativeElement.parentNode.className)
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='col-8'){
+          this.height=-(.536231884057*(this.width))+this.width
         }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-4') {
-            this.height = -(.063889538965 * (this.width)) + this.width;
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
+          this.height=-(.063889538965*(this.width))+this.width
         }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-6') {
-            this.height = -(.048751486325 * (this.width)) + this.width;
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='col-6'){
+          this.height=-(.048751486325*(this.width))+this.width
         }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-12') {
-            this.height = -(.531555929660 * (this.width)) + this.width;
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='col-12'){
+          this.height=-(.531555929660*(this.width))+this.width
         }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'trendingBlogs') {
-            this.height = (.8718700617283 * (this.width)) + this.width;
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='trendingBlogs'){
+          this.height=(.8718700617283*(this.width))+this.width
         }
-        if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className != "latestBlog col-4") {
-            this.height = -(.631555929660 * (this.width)) + this.width;
-            //console.log("hello", this.elRef)
+        if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className!="latestBlog col-4"){
+          this.height=-(.631555929660*(this.width))+this.width
+          //console.log("hello", this.elRef)
         }
-        if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className == 'latestBlog col-4') {
-            this.height = (0.64) * (this.width);
+        if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='latestBlog col-4'){
+          this.height=(0.64)*(this.width)
         }
-        if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth < 950) {
-            this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
-            this.width = this.elRef.nativeElement.getBoundingClientRect().width;
-            this.height = -(.548751486325 * (this.width)) + this.width;
+        if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth<950){
+          this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
+          this.width=this.elRef.nativeElement.getBoundingClientRect().width
+          this.height=-(.548751486325*(this.width))+this.width
         }
-        if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth >= 950) {
-            this.renderer.setStyle(this.elRef.nativeElement, 'height', "23.5%");
+        if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth>=950){
+          this.renderer.setStyle(this.elRef.nativeElement,'height',"23.5%")
         }
-        this.renderer.setStyle(this.elRef.nativeElement, 'height', this.height + "px");
+        this.renderer.setStyle(this.elRef.nativeElement,'height',this.height+"px") */
     }
     MaintainHeightWidthRatioDirective.prototype.ngAfterViewInit = function () {
-        this.width = this.elRef.nativeElement.getBoundingClientRect().width;
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-8') {
-            this.height = -(.536231884057 * (this.width)) + this.width;
+        this.setHeight();
+        /* this.width=this.elRef.nativeElement.getBoundingClientRect().width;
+        
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='col-8' ){
+          this.height=-(.536231884057*(this.width))+this.width
         }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-4') {
-            this.height = -(.063889538965 * (this.width)) + this.width;
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
+          this.height=-(.063889538965*(this.width))+this.width
         }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-6') {
-            this.height = -(.048751486325 * (this.width)) + this.width;
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='col-6'){
+          this.height=-(.048751486325*(this.width))+this.width
         }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-12') {
-            this.height = -(.531555929660 * (this.width)) + this.width;
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='col-12'){
+          this.height=-(.531555929660*(this.width))+this.width
         }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'trendingBlogs') {
-            this.height = (.8718700617283 * (this.width)) + this.width;
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='trendingBlogs'){
+          this.height=(.8718700617283*(this.width))+this.width
         }
-        if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className != "latestBlog col-4") {
-            this.height = -(.631555929660 * (this.width)) + this.width;
+        if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className!="latestBlog col-4"){
+          this.height=-(.631555929660*(this.width))+this.width
         }
-        if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className == 'latestBlog col-4') {
-            this.height = (0.64) * (this.width);
+        if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='latestBlog col-4'){
+           this.height=(0.64)*(this.width)
         }
-        if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth < 950) {
-            this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
-            this.width = this.elRef.nativeElement.getBoundingClientRect().width;
-            this.height = -(.548751486325 * (this.width)) + this.width;
+        if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth<950){
+          this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
+          this.width=this.elRef.nativeElement.getBoundingClientRect().width
+          this.height=-(.548751486325*(this.width))+this.width
         }
-        if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth >= 950) {
-            this.renderer.setStyle(this.elRef.nativeElement, 'height', "23.5%");
+        if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth>=950){
+          this.renderer.setStyle(this.elRef.nativeElement,'height',"23.5%")
         }
-        this.renderer.setStyle(this.elRef.nativeElement, 'height', this.height + "px");
+        this.renderer.setStyle(this.elRef.nativeElement,'height',this.height+"px") */
     };
     MaintainHeightWidthRatioDirective.prototype.onresize = function () {
+        this.setHeight();
+        /* this.width=this.elRef.nativeElement.getBoundingClientRect().width;
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='col-8'){
+           this.height=-(.536231884057*(this.width))+this.width
+         }
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='col-4'){
+           this.height=-(.063889538965*(this.width))+this.width
+        }
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='col-6'){
+           this.height=-(.048751486325*(this.width))+this.width
+        }
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='col-12'){
+           this.height=-(.531555929660*(this.width))+this.width
+        }
+        if(this.elRef.nativeElement.parentNode.parentNode.className=='trendingBlogs'){
+          this.height=(.8718700617283*(this.width))+this.width
+        }
+        if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className!="latestBlog col-4" ){
+          this.height=-(.631555929660*(this.width))+this.width
+        }
+        if(this.elRef.nativeElement.className=='latest' && this.elRef.nativeElement.parentNode.parentNode.className=='latestBlog col-4'){
+          this.height=(0.64)*(this.width)
+        }
+        if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth<950){
+          this.renderer.setStyle(this.elRef.nativeElement,'width','100%')
+          this.width=this.elRef.nativeElement.getBoundingClientRect().width
+          this.height=-(.548751486325*(this.width))+this.width
+        }
+        if(this.elRef.nativeElement.className=='subscribeCard' && window.innerWidth>=950){
+          this.renderer.setStyle(this.elRef.nativeElement,'height',"23.5%")
+        }
+        this.renderer.setStyle(this.elRef.nativeElement,'height',this.height+"px") */
+    };
+    MaintainHeightWidthRatioDirective.prototype.setHeight = function () {
         this.width = this.elRef.nativeElement.getBoundingClientRect().width;
         if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-8') {
             this.height = -(.536231884057 * (this.width)) + this.width;
@@ -2854,7 +3000,7 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
             this.height = (.8718700617283 * (this.width)) + this.width;
         }
         if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className != "latestBlog col-4") {
-            this.height = -(.631555929660 * (this.width)) + this.width;
+            this.height = -(.691555929660 * (this.width)) + this.width;
         }
         if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className == 'latestBlog col-4') {
             this.height = (0.64) * (this.width);
@@ -3312,7 +3458,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    font-family: 'Roboto',sans-serif\r\n}\r\n.keyword{\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: top;\r\n    border: 1px solid #024771;\r\n    border-radius: 4px;\r\n    margin: 0.5% 0.15% 0.5% 0.15%;\r\n     \r\n}\r\n.image{\r\n    background-repeat:no-repeat ;\r\n    background-size: 100%;\r\n}\r\n.title{\r\n   \r\n    display: inline-block;\r\n    width: auto;       \r\n}\r\n.title p{\r\n    padding: 6px 14px 6px 14px;\r\n    display: inline-block;\r\n    width: auto;\r\n    font-size: 0.9em;\r\n    color: #024771;\r\n    text-align: left;\r\n    font-weight: 500;\r\n}\r\n.keyword:hover{\r\n    background-color: #024771;\r\n    border:none;\r\n    \r\n}\r\n.title p:hover{\r\n    color: white\r\n}\r\n", ""]);
+exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    font-family: 'Roboto',sans-serif\r\n}\r\n.keyword{\r\n    display: inline-block;\r\n    width: auto;\r\n    vertical-align: top;\r\n    border: 1px solid #024771;\r\n    border-radius: 4px;\r\n    margin: 0.8% 0.15% 0.8% 0.15%;\r\n     \r\n}\r\n.image{\r\n    background-repeat:no-repeat ;\r\n    background-size: 100%;\r\n}\r\n.title{\r\n   \r\n    display: inline-block;\r\n    width: auto;       \r\n}\r\n.title p{\r\n    padding: 6px 14px 6px 14px;\r\n    display: inline-block;\r\n    width: auto;\r\n    font-size: 0.9em;\r\n    color: #024771;\r\n    text-align: left;\r\n    font-weight: 500;\r\n}\r\n.keyword:hover{\r\n    background-color: #024771;\r\n    border:none;\r\n    \r\n}\r\n.title p:hover{\r\n    color: white\r\n}\r\n", ""]);
 
 // exports
 
