@@ -2323,6 +2323,7 @@ var TrendingBlogCardComponent = /** @class */ (function () {
     function TrendingBlogCardComponent(Send) {
         this.Send = Send;
         this.isloading = true;
+        this.dataRecieved = false;
     }
     TrendingBlogCardComponent.prototype.ngOnInit = function () {
         this.blog = {
@@ -2339,6 +2340,14 @@ var TrendingBlogCardComponent = /** @class */ (function () {
             exactDate: this.exactDate,
             readingTime: this.readingTime
         };
+        if (this.blogImage) {
+            this.dataRecieved = true;
+        }
+    };
+    TrendingBlogCardComponent.prototype.ngAfterViewInit = function () {
+        if (this.blogImage) {
+            this.dataRecieved = true;
+        }
     };
     TrendingBlogCardComponent.prototype.send = function () {
         this.Send.detailsofBlog.next(this.blog);

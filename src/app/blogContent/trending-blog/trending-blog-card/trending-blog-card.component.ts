@@ -25,7 +25,7 @@ export class TrendingBlogCardComponent implements OnInit {
   @Input()  readingTime:string
   
   isloading:boolean=true;
-
+  dataRecieved:boolean=false;
   blog:{
     blogId:string,
     blogImage:string,
@@ -56,6 +56,17 @@ export class TrendingBlogCardComponent implements OnInit {
       keywords:this.keywords,
       exactDate:this.exactDate,
       readingTime:this.readingTime
+    }
+    if(this.blogImage){
+      this.dataRecieved=true
+     
+    }
+  }
+  ngAfterViewInit(){
+   
+    if(this.blogImage){
+      this.dataRecieved=true
+     
     }
   }
   send(){
