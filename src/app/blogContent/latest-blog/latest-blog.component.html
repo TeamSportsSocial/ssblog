@@ -1,4 +1,5 @@
 
+
 <div class="latest" MaintainHeightWidthRatio #latest>
   <a routerLink="/{{keywords[0]}}/{{heading}}/{{blogId}}" (click)="send()">
     <img #initialImage src="/assets/images/default-image.png" alt="InitialblogImage" *ngIf="isloading">
@@ -20,7 +21,8 @@
           <span>{{keywords[0]}}</span>
         </div>
         <p class="heading" [innerHtml]="heading" #latestTitle> </p>
-        <p  class="smallDesc" #latestDesc>{{Content}}</p>
+        <!-- <p  class="smallDesc" #latestDesc>{{Content}}</p> -->
+        <p  class="smallDesc" #latestDesc>{{content}}</p>
         <div class="Blogger">
           <div class="bloggerImage" #BloggerImage>
               <img src="/assets/images/sports-social-blogger-white.png" alt="sports-social-blogger-white" >

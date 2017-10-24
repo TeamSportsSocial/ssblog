@@ -19,7 +19,7 @@ import {PostService} from "../../services/post.service";
 export class LatestBlogComponent implements OnInit {
    
   openFullImage:boolean=false;
-
+  content:string;
   @Input()  blogId:string
   @Input()  blogImage:string
   @Input()  bloggerName:string
@@ -64,6 +64,7 @@ export class LatestBlogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.content=this.Content.replace(/<br>/g,'').replace(/<b>/g,'').replace(/<\/b>/g,'').replace(/<i>/g,'').replace(/<\/i>/g,'')
     this.blog={
       blogId:this.blogId,
       blogImage:this.blogImage,
