@@ -1,6 +1,6 @@
-import { BrowserModule,Title } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 
@@ -19,19 +19,19 @@ import { NormalBlogComponent } from './blogContent/normal-blog/normal-blog.compo
 import { BlogsComponent } from './blogContent/blogs/blogs.component';
 import { BlogOpenComponent } from './blogContent/blog-open/blog-open.component';
 
-import {PropertyService} from "./services/property.service";
-import {PostService} from "./services/post.service";
-import {PutService} from "./services/put.service";
-import {GetService} from "./services/get.service";
-import {SaveService} from "./services/save.service";
-import {StatusService} from "./services/status.service";
+import {PropertyService} from './services/property.service';
+import {PostService} from './services/post.service';
+import {PutService} from './services/put.service';
+import {GetService} from './services/get.service';
+import {SaveService} from './services/save.service';
+import {StatusService} from './services/status.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-gaurd.service';
 
 import { MaintainHeightWidthRatioDirective } from './directives/maintain-height-width-ratio.directive';
 import { TabViewAvailableDirective } from './directives/tab-view-available.directive';
 
-import {RoutingModule} from "./routing/routing.module";
+import {RoutingModule} from './routing/routing.module';
 import { BlogFooterComponent } from './blog-footer/blog-footer.component';
 import { SearchComponent } from './search/search.component';
 import { CommentsComponent } from './comments/comments.component';
@@ -93,10 +93,10 @@ import { BlogPreviewComponent } from './editor-panel/blog-preview/blog-preview.c
     SaveService,
     StatusService,
     PostService,
-    AuthService, 
+    AuthService,
     AuthGuard,
     { provide: UrlSerializer, useClass: CustomUrlComponent }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule  { }

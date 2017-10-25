@@ -15,7 +15,7 @@
 
 .blogImageHolder{
     width: 100%;
-    max-height:60%;
+    max-height:65%;
     min-height: 55%;
     overflow: hidden;
     border-radius: 5px;   
@@ -31,7 +31,7 @@
 }
 .blogFooter{
     margin: 0px;
-    min-height: 40%;
+    min-height: 35%;
     border-radius: 5px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
@@ -132,4 +132,60 @@ p>img{
 }
 a:hover{
     text-decoration: none;
+}
+@media (max-width:1200px) and (min-width:1060px){
+    .blogImageHolder{
+        max-height: 60%;
+    }
+    .blogFooter{
+        min-height: 40%;
+    }
+}
+@media (max-width:1060px) and (min-width:950px){
+    .blogImageHolder{
+        max-height: 58%;
+    }
+    .blogFooter{
+        min-height: 42%;
+    }
+}
+@media (max-width:950px) and (min-width:850px){
+    .blogImageHolder{
+        max-height: 65%;
+    }
+    .blogFooter{
+        min-height: 35%;
+    }
+}
+@media (max-width:850px) and (min-width:750px){
+    .blogImageHolder{
+        max-height: 62%;
+    }
+    .blogFooter{
+        min-height: 38%;
+    }
+}
+@media (max-width:750px) and (min-width:600px){
+    .blogImageHolder{
+        max-height: 58%;
+    }
+    .blogFooter{
+        min-height: 42%;
+    }
+}
+@media (max-width:600px)and(min-width:350px) {
+    .blogImageHolder{
+        max-height: 70%;
+    }
+    .blogFooter{
+        min-height: 30%;
+    }
+}
+@media (max-width:350px) {
+    .blogImageHolder{
+        max-height: 60%;
+    }
+    .blogFooter{
+        min-height: 40%;
+    }
 }

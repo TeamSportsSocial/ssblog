@@ -17,26 +17,26 @@ import {
   RouterLink,
 } from '@angular/router';
 
- const appRoute:Routes=[
-   {path:"" ,component:BlogsComponent},
-   {path:"editorPanel" , 
+ const appRoute: Routes = [
+   {path: '' , component: BlogsComponent},
+   {path: 'editorPanel',
     canActivate: [AuthGuard],
     component: EditorPanelComponent},
-   {path:'login', 
-    component:LoginPageComponent},
-   {path:'adminPanel' ,
+   {path: 'login',
+    component: LoginPageComponent},
+   {path: 'adminPanel' ,
     canActivate: [AuthGuard],
-    component:AdminPanelComponent},
-   {path:":tag" ,component:SearchComponent},
-   {path:":blogId/edit" ,component:EditBlogComponent},
-   {path:':tag/:title/:blogId',component: BlogOpenComponent },
-   {path:'**',redirectTo:''}
-   
- ]
+    component: AdminPanelComponent},
+   {path: ':tag' , component: SearchComponent},
+   {path: ':blogId/edit' , component: EditBlogComponent},
+   {path: ':tag/:title/:blogId', component: BlogOpenComponent },
+   {path: '**', redirectTo: ''}
+
+ ];
 @NgModule({
   imports: [
     RouterModule.forRoot(appRoute)
   ],
-  exports:[RouterModule]
+  exports: [RouterModule]
 })
 export class RoutingModule { }
