@@ -18,6 +18,8 @@ import {PostService} from ".././services/post.service"
 export class BlogFooterComponent implements OnInit {
   showSubscriptionBox:boolean=false;
   errorMessage:boolean=false
+  @ViewChild('followUs') followUs;
+  @ViewChild('copyright') copyright;
   @ViewChild('subscriber') subscriber;
   constructor(
     private sendEmail:PostService,
@@ -26,7 +28,7 @@ export class BlogFooterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-   
+    this.setMobileView()
   }
   Subscribe(){
     if(this.subscriber.nativeElement.validity.valid==true && this.subscriber.nativeElement.value){
@@ -51,6 +53,23 @@ export class BlogFooterComponent implements OnInit {
   close(){
     this.showSubscriptionBox=false;
     //console.log(this.showSubscriptionBox)
+   }
+   setMobileView(){
+     if(window.innerWidth<600){
+       this.renderer.setStyle(this.copyright.nativeElement,'width','100%')
+      this.renderer.setStyle(this.followUs.nativeElement,'width','100%')
+      this.renderer.setStyle(this.followUs.nativeElement,'text-align','center')
+      this.renderer.setStyle(this.copyright.nativeElement,'text-align','center')
+     }
+     else{
+      this.renderer.setStyle(this.followUs.nativeElement,'width','60%')
+      this.renderer.setStyle(this.followUs.nativeElement,'text-align','right')
+      this.renderer.setStyle(this.copyright.nativeElement,'width','35%')
+      this.renderer.setStyle(this.copyright.nativeElement,'text-align','left')
+     }
+   }
+   @HostListener('window:resize',[])onresize(){
+     this.setMobileView()
    }
   
 }

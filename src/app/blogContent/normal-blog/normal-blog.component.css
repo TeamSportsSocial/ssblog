@@ -15,8 +15,8 @@
 
 .blogImageHolder{
     width: 100%;
-    max-height:66%;
-    min-height: 60%;
+    max-height:60%;
+    min-height: 55%;
     overflow: hidden;
     border-radius: 5px;   
     border-bottom: 1px solid #bbbbbb;
@@ -31,7 +31,7 @@
 }
 .blogFooter{
     margin: 0px;
-    min-height: 34%;
+    min-height: 40%;
     border-radius: 5px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
@@ -74,9 +74,9 @@ span >img{
   /* for set '...' in absolute position */
   position: relative; 
   /* use this value to count block height */
-  line-height: 1.3em;
+  line-height: 1.2em;
   /* max-height = line-height (1.2) * lines max number (3) */
-  max-height: 2.6em; 
+  max-height: 2.4em; 
   /* fix problem when last visible word doesn't adjoin right side  */
   text-align: left;  
   /* place for '...' */
@@ -108,7 +108,16 @@ span >img{
   /* bg color = bg color under block */
   background: white;
 }
-.blogFooter>p:last-child{
+.content{
+    overflow: hidden;
+    margin: 1.2% auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: black;
+    font-size: 0.95em;
+    font-weight: 500
+}
+.bloggerName{
     position:absolute ;
     bottom:4px;
     left: 2.5%;
@@ -123,50 +132,4 @@ p>img{
 }
 a:hover{
     text-decoration: none;
-}
-.fullImage{
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    position: fixed;
-    top:0%;
-    left:0%;
-    z-index: 50;
-    border: 1px solid #bbbbbb;
-    background-color: black;
-    opacity: 0.8;
-}
-.fullImageHolder{
-    position: fixed;
-    width: 70%;
-    left: 15%;
-    top:0%;
-    z-index: 100;
-}
-.fullImageHolder>img{
-    display: block;
-    text-align: center;
-    padding: 5%;
-    max-width: 100%;
-    max-height: 100%;
-}
-.cancel{
-    position: absolute;
-    top:1%;
-    right:1%;
-    width: 20px;
-    height: 20px;
-    z-index: 150
-}
-@media (max-width:800px) and (min-width:600px){
-    .fullImageHolder{
-        width: 80%;
-        left: 10%;
-    }
-}
-@media (max-width:600px){
-    .fullImageHolder{
-        width: 90%;
-        left: 5%;
-    }
 }

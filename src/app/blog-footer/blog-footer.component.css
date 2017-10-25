@@ -92,15 +92,7 @@ button{
      font-size: 1.1em;
      font-weight: 500;
  }
- .copyright{
-    display: inline-block;
-    vertical-align: middle;
-    width: 35%;
-    color: #ffffff;
-    font-family: 'Roboto',sans-serif;
-    font-size: 1em;
-    font-weight: 500;
- }
+ 
  .copyright>img{
      width: 20px;
      height: 20px;
@@ -114,6 +106,15 @@ button{
      font-size: 1.1em;
      font-weight: 500;
  }
+ .copyright{
+    display: inline-block;
+    vertical-align: middle;
+    width: 35%;
+    color: #ffffff;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+ }
  .followUs{
      text-align: right;
      float: right;
@@ -126,8 +127,8 @@ button{
      font-weight: 500;
  }
  .followUs img{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin-left: 1.5%;
  }
  
@@ -189,8 +190,8 @@ button{
 
  @media  (max-width:1000px) and (min-width:800px) {
     .followUs img{
-        width: 28px;
-        height: 28px;
+        width: 20px;
+        height: 20px;
         margin-left: 1.5%;
      }
      .subscriptionBox{
@@ -205,10 +206,10 @@ button{
         width: calc(100% - 230px);
     }
  }
- @media  (max-width:800px) and (min-width:650px) {
+ @media  (max-width:800px) and (min-width:600px) {
     .followUs img{
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         margin-left: 1.5%;
      }
      .about{
@@ -240,10 +241,18 @@ button{
     }
  }
  
- @media  (max-width:650px) and (min-width:520px){
+ @media  (max-width:600px) and (min-width:520px){
+    .copyright>img{
+        width: 15px;
+        height: 15px;
+    }
+     .followUs{
+         margin-bottom: 2%;
+         font-size: 1em
+     }
     .followUs img{
-        width: 25px;
-        height: 25px;
+        width: 15px;
+        height: 15px;
         margin-left: 1.5%;
      }
      .about{
@@ -276,9 +285,17 @@ button{
  }
 
  @media  (max-width:520px) and (min-width:450px) {
+    .copyright>img{
+        width: 15px;
+        height: 15px;
+    }
+    .followUs{
+        margin-bottom: 2%;
+        font-size: 1em
+    }
     .followUs img{
-        width: 25px;
-        height: 25px;
+        width: 15px;
+        height: 15px;
         margin-left: 1.5%;
      }
      .about{
@@ -314,10 +331,18 @@ button{
     }
  }
  @media (max-width:450px) {
+    .copyright>img{
+        width: 15px;
+        height: 15px;
+    }
+    .followUs{
+        margin-bottom: 2%;
+        font-size: 0.9em
+    }
     .followUs img{
-        width: 6%;
-        height: 6%;
-        margin-left: 0%;
+        width: 15px;
+        height: 15px;
+        margin-left: 1.5%;
      }
      .about{
          width: 100%;

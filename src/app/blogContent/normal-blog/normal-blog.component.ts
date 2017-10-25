@@ -30,6 +30,7 @@ export class NormalBlogComponent implements OnInit {
   @Input()  exactDate:string
   @Input()  readingTime:string
   
+  content:string;
   blog:{
     blogId:string,
     blogImage:string,
@@ -60,6 +61,7 @@ export class NormalBlogComponent implements OnInit {
   ) { }
 
   ngOnInit() {  
+    this.content=this.Content.replace(/<br>/g,'').replace(/<b>/g,'').replace(/<\/b>/g,'').replace(/<i>/g,'').replace(/<\/i>/g,'')
    this.blog={
     blogId:this.blogId,
     blogImage:this.blogImage,

@@ -1,6 +1,6 @@
 <div class=openBlog>
   <p #openBlog class="Catagory">
-    <span role="button" (click)="getblogs($event)">{{Keywords[0]}}</span>
+    <span role="button" routerLink="/{{Keywords[0]}}" (click)="getblogs($event)">{{Keywords[0]}}</span>
     <span  *ngIf="blogDataRecieved">|</span>
     <span *ngIf="blog">{{blog.readingTime}}</span>
   </p>

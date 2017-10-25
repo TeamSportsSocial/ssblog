@@ -79,35 +79,7 @@ export class LatestBlogComponent implements OnInit {
       exactDate:this.exactDate,
       readingTime:this.readingTime
      }
-     
-     if(window.innerWidth>=1000){
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','2.2em')
-      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
-     }
-     if(window.innerWidth>800 && window.innerWidth<1000){
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.8em')
-      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
-    }
-    if(window.innerWidth<800 && window.innerWidth>=600){
-      this.renderer.setStyle(this.DescChild.nativeElement,'margin','4% auto')
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
-      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
-    }
-    if(window.innerWidth<600 && window.innerWidth>400 ){
-      this.renderer.setStyle(this.DescChild.nativeElement,'margin','15% auto')
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
-      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
-    }
-    if(window.innerWidth<400 && window.innerWidth>340){
-      this.renderer.setStyle(this.DescChild.nativeElement,'margin','15% auto')
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.3em')
-      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
-    }
-    if(window.innerWidth<340){
-      this.renderer.setStyle(this.DescChild.nativeElement,'margin','15% auto')
-      this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.1em')
-      this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','0.9em')
-    }
+     this.responsiveDesign()
     if(this.blogImage){
       this.dataRecieved=true
      
@@ -149,12 +121,17 @@ export class LatestBlogComponent implements OnInit {
   }
   
   @HostListener('window:resize',[])onresize(){
-   
+    this.responsiveDesign()  
+  }
+
+  responsiveDesign(){
     if(window.innerWidth>=1000){
+      this.renderer.setStyle(this.DescChild.nativeElement,'margin','8% auto')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','2.2em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
      }
      if(window.innerWidth>800 && window.innerWidth<1000){
+      this.renderer.setStyle(this.DescChild.nativeElement,'margin','8% auto')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.8em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
     }
@@ -179,7 +156,6 @@ export class LatestBlogComponent implements OnInit {
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.2em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
     }
-    
   }
   
 

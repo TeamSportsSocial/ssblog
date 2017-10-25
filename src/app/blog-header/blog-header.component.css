@@ -12,6 +12,7 @@ header{
     z-index: 10;
     box-shadow: 1px 1px #bbbbbb;
     font-family: 'Roboto',sans-serif;
+    padding: 0.2%;
 }
 .left{
     display: inline-block;
@@ -36,9 +37,9 @@ li{
 .brand-image{
     width: 40px;
     height: 40px;
-    margin-left:2%;
+    margin-left:1.8%;
     display: inline-block;
-    vertical-align: middle
+    vertical-align: middle;
 }
 img{
     width: 100%;
@@ -48,7 +49,7 @@ img{
    font-size: 1.4em;
    font-weight: 700;
    display: inline-block;
-   vertical-align: middle
+   vertical-align: middle;
 }
 .brand-title>span:first-child{
     color: #024770;
@@ -75,7 +76,9 @@ img{
     text-align: right;
     width:19%;
 }
-
+.right>li{
+    margin-right: 5%;
+}
 input{
     height: 35px;
     background-image: url('/assets/images/sports-social-search.png');
@@ -92,14 +95,12 @@ input{
 }
 .mobileView{
     display: inline-block;
-    vertical-align: middle;
     width: auto;
-    float: right;
-    padding: 1.5% 3% 1.5% 1%;
 }
 .menuImageHolder{
     width: 30px;
-    height: 30px;   
+    height: 30px;
+    text-align: right !important;   
 }
 .menuImageHolder img{
     width: 100%;
@@ -114,6 +115,11 @@ input{
   top:10%;
   left:10%;
   box-shadow: 1px 1px 2px #eeeeee
+}
+
+.website{
+    width: 95% !important;
+    border-bottom: 1px solid #bbbbbb
 }
 .dropDown .Close{
     float: right;
@@ -200,4 +206,37 @@ input{
   .dropDown p{
       width: 60%;
       margin: auto
+  }
+
+  @media (max-width:750px) and (min-width:600px){
+      .left{
+          width: 92%
+      }
+      header{
+          padding: 0.4%;
+      }
+  }
+  @media (max-width:600px) and (min-width:450px) {
+    .left{
+        width: 90%
+    }
+    header{
+        padding: 0.5%;
+    }
+  }
+  @media (max-width:450px) and (min-width:350px) {
+      .left{
+          width: 88%;
+      }
+      header{
+        padding: 0.6%;
+    }
+  }
+  @media (max-width:350px) {
+      .left{
+          width: 86%;
+      }
+      header{
+        padding: 0.6%;
+    }
   }

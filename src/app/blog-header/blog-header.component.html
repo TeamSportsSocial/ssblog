@@ -28,11 +28,18 @@
       <a 
         href="https://www.sportsocial.in" 
         target="_blank" 
-        class=" websiteLink" 
-        (mouseover)="hover($event)"
-        (mouseout)="removehoverColor($event)">
-        <img src="/assets/images/sports-social-link-blue-symbol.png" alt="sports-social-link-blue-symbol" #linkImage>
-        Go to Website 
+        class=" websiteLink" >
+        <!-- <img src="/assets/images/sports-social-link-blue-symbol.png" alt="sports-social-link-blue-symbol" #linkImage> -->
+        Website 
+      </a>
+    </li>
+    <li >
+      <a 
+        href="https://goo.gl/qrgCz5" 
+        target="_blank" 
+        class=" websiteLink" >
+        <!-- <img src="/assets/images/sports-social-link-blue-symbol.png" alt="sports-social-link-blue-symbol" #linkImage> -->
+        App
       </a>
     </li>
   </ul>
@@ -42,15 +49,22 @@
      </div>
      <div *ngIf="open" class="dropDown">
         <img src="/assets/images/sports-social-cancel-black.png" role="button" (click)="closeDropDown()" class="Close" alt="sports-social-cancel-black">
-        <p> 
+        <p class="website"> 
           <a 
             href="https://www.sportsocial.in" 
             target="_blank" 
-            class=" websiteLink" 
-            (mouseover)="hover($event)"
-            (mouseout)="removehoverColor($event)">
-            <img src="/assets/images/sports-social-link-blue-symbol.png" alt="" #linkImage>
-            Go to Website 
+            class=" websiteLink">
+            <!-- <img src="/assets/images/sports-social-link-blue-symbol.png" alt="" #linkImage> -->
+             Website 
+         </a>
+        </p>
+        <p> 
+          <a 
+            href="https://goo.gl/qrgCz5" 
+            target="_blank" 
+            class=" websiteLink">
+            <!-- <img src="/assets/images/sports-social-link-blue-symbol.png" alt="" #linkImage> -->
+            App
          </a>
         </p>
       <div class="search">
