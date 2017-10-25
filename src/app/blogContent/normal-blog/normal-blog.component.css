@@ -110,7 +110,6 @@ span >img{
 }
 .content{
     overflow: hidden;
-    margin: 1.2% auto;
     white-space: nowrap;
     text-overflow: ellipsis;
     color: black;
