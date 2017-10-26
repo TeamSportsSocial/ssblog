@@ -29,7 +29,7 @@ import {
     component: AdminPanelComponent},
    {path: ':tag' , component: SearchComponent},
    {path: ':blogId/edit' , component: EditBlogComponent},
-   {path: ':tag/:title/:blogId', component: BlogOpenComponent },
+   {path: ':tag/:title/:blogId', component: BlogOpenComponent  },
    {path: '**', redirectTo: ''}
 
  ];

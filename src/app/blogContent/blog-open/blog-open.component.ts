@@ -1,26 +1,26 @@
-import { 
-    Component, 
+import {
+    Component,
     OnInit,
     ViewChild,
     Renderer2,
     HostListener,
     NgZone
 } from '@angular/core';
-import {Http} from "@angular/http";
+import {Http} from '@angular/http';
 import { Meta,Title } from '@angular/platform-browser';
-import {PropertyService} from "../../services/property.service";
-import {SaveService} from "../../services/save.service";
-import {PostService} from "../../services/post.service";
-import {ActivatedRoute} from "@angular/router";
-import { 
-    FacebookService, 
-    LoginResponse, 
-    LoginOptions, 
-    UIResponse, 
-    UIParams, 
-    FBVideoComponent 
+import {PropertyService} from '../../services/property.service';
+import {SaveService} from '../../services/save.service';
+import {PostService} from '../../services/post.service';
+import {ActivatedRoute} from '@angular/router';
+import {
+    FacebookService,
+    LoginResponse,
+    LoginOptions,
+    UIResponse,
+    UIParams,
+    FBVideoComponent
 } from 'ngx-facebook';
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'SportSocial-blog-open',
@@ -52,11 +52,11 @@ export class BlogOpenComponent implements OnInit {
     relatedArticles:boolean=false;
     blogDataRecieved:boolean=false;
     blogID;
-    Keywords=[]
+    Keywords=[];
     ViewCount:number;
     ShareCount:number;
     loading:boolean=true;
-   
+
     @ViewChild('openBlog') openBlog;
     @ViewChild('Social') Social;
     @ViewChild('BlogInfo') BlogInfo;
@@ -64,10 +64,10 @@ export class BlogOpenComponent implements OnInit {
     @ViewChild('fullImage') fullImage;
     @ViewChild('BlogImage') BlogImage;
     constructor(
-        private recieve:PropertyService ,
-        private recieveHeight:PropertyService,
-        private renderer :Renderer2,
-        private route :ActivatedRoute,
+        private recieve: PropertyService ,
+        private recieveHeight: PropertyService,
+        private renderer: Renderer2,
+        private route: ActivatedRoute,
         private fb: FacebookService,
         private sendKey:PropertyService,
         private router:Router,
@@ -75,11 +75,11 @@ export class BlogOpenComponent implements OnInit {
         private send:PostService,
         private metaService: Meta,
         private load:PostService,
-        private zone :NgZone,
-        private titleService:Title
-    ) { 
-        this.blogID=this.route.snapshot.url[2].path
-        this.scriptOfTwitter()
+        private zone: NgZone,
+        private titleService:Title,
+    ) {
+        this.blogID = this.route.snapshot.url[2].path;
+        this.scriptOfTwitter();
         fb.init({
             appId: '1750709328507665',
             version: 'v2.10'
@@ -87,33 +87,33 @@ export class BlogOpenComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.scriptOfTwitter()
-        
-        this.loadBlogFromSendData()
+        this.scriptOfTwitter();
 
-        if(this.blog==undefined){
-            this.loadBlogFromUrl()
+        this.loadBlogFromSendData();
+
+        if(this.blog==undefined) {
+            this.loadBlogFromUrl();
         }
-       
-        this.setTopMargin()
-        this.setMobileView()
 
-        
+        this.setTopMargin();
+        this.setMobileView();
+
     }
-    
-    sendViewCount(){
+
+    sendViewCount() {
         this.send.viewCountOfBlog(this.blogID,this.ViewCount).subscribe(
-            data=>{
+            data => {
               //console.log(data, " view")
               }
-        )
+        );
     }
-    setTitle(){
-        if(this.route.snapshot.url[0].path!='sportsocialblog' || this.route.snapshot.url[1].path!='page')
-        this.titleService.setTitle(this.blog.heading)
+    setTitle() {
+        if(this.route.snapshot.url[0].path != 'sportsocialblog' || this.route.snapshot.url[1].path != 'page') {
+            this.titleService.setTitle(this.blog.heading);
+        }
     }
-    setMetaTags(){
-        this.metaService.updateTag({
+    setMetaTags() {
+        /* this.metaService.updateTag({
             content:this.blog.heading.substring(0,139)
             },
         'name="title"')
@@ -148,212 +148,212 @@ export class BlogOpenComponent implements OnInit {
         this.metaService.updateTag({
             content:this.blog.blogImage
             },
-        'name="twitter:image:src"')
+        'name="twitter:image:src"') */
     }
-    
-    loadBlogFromSendData(){
+
+    loadBlogFromSendData() {
         this.recieve.detailsofBlog
         .subscribe(
-            data=>{
-                this.blogDataRecieved=true;
-                this.blog={
-                    blogId:data['blogId'],
-                    blogImage:data['blogImage'],
-                    bloggerName:data['bloggerName'],
-                    bloggerImage:data['bloggerImage'],
-                    heading:data['heading'],
-                    Content:data['Content'],
-                    insertedDate:data['insertedDate'],
-                    ViewCount:data['ViewCount'],
-                    ShareCount:data['ShareCount'],
-                    keywords:data['keywords'],
-                    exactDate:data['exactDate'],
-                    readingTime:data['readingTime']
-                }
-                this.ShareCount=parseInt(this.blog.ShareCount)
-                this.ViewCount=parseInt(this.blog.ViewCount)
-                this.sendViewCount()
-                this.Keywords=this.blog.keywords;
-                this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length-1])
+            data => {
+                this.blogDataRecieved = true;
+                this.blog = {
+                    blogId: data['blogId'],
+                    blogImage: data['blogImage'],
+                    bloggerName: data['bloggerName'],
+                    bloggerImage: data['bloggerImage'],
+                    heading: data['heading'],
+                    Content: data['Content'],
+                    insertedDate: data['insertedDate'],
+                    ViewCount: data['ViewCount'],
+                    ShareCount: data['ShareCount'],
+                    keywords: data['keywords'],
+                    exactDate: data['exactDate'],
+                    readingTime: data['readingTime']
+                };
+                this.ShareCount = parseInt(this.blog.ShareCount);
+                this.ViewCount = parseInt(this.blog.ViewCount);
+                this.sendViewCount();
+                this.Keywords = this.blog.keywords;
+                this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length - 1]);
                 this.setMetaTags();
-                this.setTitle()
-                console.log(this.blog.Content," latest")
+                this.setTitle();
+                //console.log(this.blog.Content, 'latest');
             }
-        )
+        );
     }
 
 
-    loadBlogFromUrl(){
+    loadBlogFromUrl() {
         this.load.dataOfsingleBlog(this.blogID).subscribe(
-            res=>{
-                const data=res[0]
-                if(data==undefined  || this.route.snapshot.url[0].path=='sportsocialblog' || this.route.snapshot.url[1].path=='page'){
-                    this.router.navigate(['/'])
+            res => {
+                const data = res[0];
+                if (data == undefined  || this.route.snapshot.url[0].path == 'sportsocialblog' || this.route.snapshot.url[1].path=='page'){
+                    this.router.navigate(['/']);
                 }
-                else{
-                    this.blogDataRecieved=true;
+                else {
+                    this.blogDataRecieved = true;
                 }
-                this.blog={
-                    blogId:data.blogId,
-                    blogImage:data.blogImage,
-                    bloggerName:data.bloggerName,
-                    bloggerImage:data.bloggerImage,
-                    heading:data.heading,
-                    Content:data.Content,
-                    insertedDate:this.timePassed(data.insertedDate),
-                    ViewCount:data.ViewCount,
-                    ShareCount:data.ShareCount,
-                    keywords:data.keys.split(","),
-                    exactDate:this.ExactDate(data.insertedDate),
-                    readingTime:this.timeToRead(data.Content)
+                this.blog = {
+                    blogId: data.blogId,
+                    blogImage: data.blogImage,
+                    bloggerName: data.bloggerName,
+                    bloggerImage: data.bloggerImage,
+                    heading: data.heading,
+                    Content: data.Content,
+                    insertedDate: this.timePassed(data.insertedDate),
+                    ViewCount: data.ViewCount,
+                    ShareCount: data.ShareCount,
+                    keywords: data.keys.split(','),
+                    exactDate: this.ExactDate(data.insertedDate),
+                    readingTime: this.timeToRead(data.Content)
                 }
-               
-                this.ShareCount=+this.blog.ShareCount
-                this.ViewCount=+(this.blog.ViewCount)
-               
-                this.sendViewCount()
-                this.Keywords=this.blog.keywords;
-                
-                window.scrollTo(0,0)
-                this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length-1])
+
+                this.ShareCount = + this.blog.ShareCount;
+                this.ViewCount = + (this.blog.ViewCount);
+
+                this.sendViewCount();
+                this.Keywords = this.blog.keywords;
+
+                window.scrollTo(0, 0);
+                this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length - 1]);
                 this.setMetaTags();
-                this.setTitle()
-                console.log(this.blog.Content," latest")
+                this.setTitle();
+                console.log(this.blog.Content, 'latest');
             }
-        )
-       
-        
-    }
-    
-    timeToRead(s:string){
-        let words = s.split(" ");
-        let time=Math.round(words.length/180)
-        if(time>0){
-          return time + " min read"
-        }
-        else{
-          return "1 min read"
-        }
-    }
-    
-    timePassed(i:string){
-        let writtenDate=new Date(parseInt(i)*1000);
-        let presentDate=new Date();
-        if(writtenDate.getFullYear()==presentDate.getFullYear()){
-          if(writtenDate.getMonth()==presentDate.getMonth()){
-            if(writtenDate.getDate()==presentDate.getDate()){
-                return "Today"
-            }
-            else{
-              return presentDate.getDate()-writtenDate.getDate() + " day ago"
-            }
-          }
-          else{
-            return presentDate.getMonth()-writtenDate.getMonth() + " month ago"
-          }
-        }
-        else{
-          return presentDate.getFullYear()-writtenDate.getFullYear() + " year ago"
-        }
-       
-    }
-    
-    
-    ExactDate(i:number){
-      let writtenDate=new Date(i*1000);
-      return writtenDate.toDateString()
-    }
-    
-    
-    
-    setDefault(event){
-        this.blog.bloggerImage="/assets/images/user.png"
+        );
+
+
     }
 
-    removeInitalImage(event){
-        console.log(event.returnValue," load")
-        if(event.returnValue){
-            this.loading=false
+    timeToRead(s: string) {
+        const words = s.split(' ');
+        const time = Math.round(words.length / 180);
+        if (time > 1) {
+          return time + ' min read';
+        }
+        else{
+          return '2 min read';
         }
     }
-    showprogress(event){
-        console.log(event, 'progress')
+
+    timePassed(i: string){
+        const writtenDate = new Date(parseInt(i)*1000);
+        const presentDate = new Date();
+        if (writtenDate.getFullYear() == presentDate.getFullYear()) {
+          if (writtenDate.getMonth() == presentDate.getMonth()) {
+            if (writtenDate.getDate() == presentDate.getDate()) {
+                return 'Today';
+            }
+            else {
+              return presentDate.getDate() - writtenDate.getDate() + ' day ago';
+            }
+          }
+          else {
+            return presentDate.getMonth() - writtenDate.getMonth() + ' month ago';
+          }
+        }
+        else{
+          return presentDate.getFullYear() - writtenDate.getFullYear() + ' year ago';
+        }
+
     }
-    setDefaultBlogImage(){
-        this.blog.blogImage="/assets/images/default-image.png"
+
+
+    ExactDate(i: number) {
+      const writtenDate = new Date(i * 1000);
+      return writtenDate.toDateString();
+    }
+
+
+
+    setDefault(event) {
+        this.blog.bloggerImage = '/assets/images/user.png';
+    }
+
+    removeInitalImage(event) {
+        console.log(event.returnValue, 'load');
+        if (event.returnValue) {
+            this.loading = false;
+        }
+    }
+    showprogress(event) {
+        console.log(event, 'progress');
+    }
+    setDefaultBlogImage() {
+        this.blog.blogImage = '/assets/images/default-image.png';
     }
     setMobileView(){
-        if(window.innerWidth>950 ){
-            this.mobileView=false;
-            this.removeSocial=false;
-            this.renderer.setStyle(this.BlogInfo.nativeElement,'width','68%')
+        if(window.innerWidth > 950 ){
+            this.mobileView = false;
+            this.removeSocial = false;
+            this.renderer.setStyle(this.BlogInfo.nativeElement,'width','68%');
         }
-        if(window.innerWidth<=950 && window.innerWidth>700 ){
-           this.removeSocial=true; 
-           this.mobileView=false;
+        if(window.innerWidth <= 950 && window.innerWidth > 700 ){
+           this.removeSocial = true;
+           this.mobileView = false;
            this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%');
-           
+
         }
-        if(window.innerWidth<700){
-            this.removeSocial=true;
-            this.mobileView=true;
-            this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%')
+        if(window.innerWidth < 700){
+            this.removeSocial = true;
+            this.mobileView = true;
+            this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%');
         }
-        
+
     }
-    
-    scriptOfTwitter(){
-        !function(d,s,id){
-            var js: any,
-                fjs=d.getElementsByTagName(s)[0],
-                p='https';
+
+    scriptOfTwitter() {
+        !function(d,s,id) {
+            let js: any,
+                fjs =d.getElementsByTagName(s)[0],
+                p ='https';
             if(!d.getElementById(id)){
-                js=d.createElement(s);
-                js.id=id;
-                js.src=p+"://platform.twitter.com/widgets.js";
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
                 fjs.parentNode.insertBefore(js,fjs);
             }
         }
-        (document,"script","twitter-wjs");
+        (document,'script','twitter-wjs');
     }
 
     setTopMargin(){
         this.recieveHeight.ofHeader.subscribe(
-            margin=>{
-              this.topMargin=margin
+            margin => {
+              this.topMargin = margin
             }
-        )
-        this.renderer.setStyle(this.openBlog.nativeElement,"margin-top",this.topMargin+"px")
+        );
+        this.renderer.setStyle(this.openBlog.nativeElement,'margin-top',this.topMargin + 'px');
     }
-    
+
     @HostListener('window:resize',[]) onresize(){
         this.scriptOfTwitter();
-        this.setMobileView()
-        this.setTopMargin() 
-        if( this.openFullImage==true){
-            this.onFullImageload()
+        this.setMobileView();
+        this.setTopMargin();
+        if( this.openFullImage == true){
+            this.onFullImageload();
         }
     }
-    
-    
+
+
     private handleError(error) {
         console.error('Error processing action', error);
     }
-    
-    
+
+
     openfullImage(){
-        this.openFullImage=true;   
+        this.openFullImage = true;
     }
     onFullImageload(){
-        let height= this.fullImage.nativeElement.getBoundingClientRect().height
-        let top=(window.innerHeight-height)/2;
-        this.renderer.setStyle(this.fullImage.nativeElement,"top",top+"px")
+        const height = this.fullImage.nativeElement.getBoundingClientRect().height;
+        const top =(window.innerHeight - height) / 2;
+        this.renderer.setStyle(this.fullImage.nativeElement,'top',top + 'px');
     }
     closeFullImage(){
-        this.openFullImage=false;
+        this.openFullImage = false;
     }
-    
-    
+
+
     loginOnFacebook() {
         this.fb.login()
           .then((res: LoginResponse) => {
@@ -361,46 +361,46 @@ export class BlogOpenComponent implements OnInit {
           })
           .catch(this.handleError);
     }
-    
-    
+
+
     getLoginStatusofFacebook() {
         this.fb.getLoginStatus()
-          .then((res)=>{
-            if(res.status=="connected"){
-                this.isConnectedWithFacebook=true;
+          .then((res) => {
+            if(res.status == 'connected'){
+                this.isConnectedWithFacebook = true;
             }
             else{
                 this.loginOnFacebook();
-                this.isConnectedWithFacebook=true;
+                this.isConnectedWithFacebook = true;
             }
           })
           .catch(console.error.bind(console));
     }
-    
+
     sendShareCount(){
         this.post.shareCountOfBlog(this.blog.blogId,this.ShareCount).subscribe(
-            data=>{
+            data => {
                 //console.log(data, "sharedOnFacebook")
             }
-        )
+        );
     }
     shareOnFacebook(){
-        this.sendShareCount()
+        this.sendShareCount();
         const options: UIParams = {
             method: 'share',
-            href: 'https://www.chaseyoursport.com/'+this.route.snapshot.url[0].path+'/'+this.route.snapshot.url[1].path+'/'+this.route.snapshot.url[2].path
+            href: 'https://www.chaseyoursport.com/'+this.route.snapshot.url[0].path+'/'+this.route.snapshot.url[1].path + '/' + this.route.snapshot.url[2].path
           };
-       
+
           this.fb.ui(options)
             .then((res: UIResponse) => {
               //console.log('Got the users profile', res);
             })
             .catch(this.handleError);
     }
-    
-    
+
+
     shareOnTwitter(){
-        this.sendShareCount()
+        this.sendShareCount();
         var width  = 575,
         height = 400,
         left   = (window.innerWidth  - width)  / 2,
@@ -411,22 +411,22 @@ export class BlogOpenComponent implements OnInit {
                  ',height=' + height +
                  ',top='    + top    +
                  ',left='   + left;
-    
+
     window.open(url, 'twitter', opts);
- 
+
     return false;
     }
-    
-    
+
+
     getblogs(event){
-        let key=event.toElement.innerText
-        console.log(key," navigate")
+        const key = event.toElement.innerText;
+        console.log(key, ' navigate');
        // this.router.navigate(['/'+key])
-        this.sendKey.ofBlogCard.next(key)
-        
+        this.sendKey.ofBlogCard.next(key);
+
     }
 
-    
-    
-    
+
+
+
 }

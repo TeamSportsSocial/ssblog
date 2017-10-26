@@ -10,7 +10,7 @@ header{
     position: fixed;
     top:0px;
     z-index: 10;
-    box-shadow: 1px 1px #bbbbbb;
+    box-shadow: 1px 1px  #bbbbbb;
     font-family: 'Roboto',sans-serif;
     padding: 0.2%;
 }
@@ -91,7 +91,7 @@ input{
     border-radius: 25px;
     background-color: #e5e5e5;
     text-align: center;
-    box-shadow: 1px 1px #bbbbbb
+    box-shadow: 1px 1px 2px #bbbbbb
 }
 .mobileView{
     display: inline-block;

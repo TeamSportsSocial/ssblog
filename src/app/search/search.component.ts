@@ -192,11 +192,11 @@ export class SearchComponent implements OnInit {
     timeToRead(s:string){
       let words = s.split(" ");
       let time=Math.round(words.length/180)
-      if(time>0){
+      if(time>1){
         return time + " min read"
       }
       else{
-        return "1 min read"
+        return "2 min read"
       }
     }
     

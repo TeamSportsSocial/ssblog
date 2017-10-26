@@ -48,7 +48,6 @@ import { EditBlogComponent } from './admin-panel/edit-blog/edit-blog.component';
 import { BlogPreviewComponent } from './editor-panel/blog-preview/blog-preview.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

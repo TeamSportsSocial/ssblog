@@ -466,7 +466,6 @@ module.exports = "<SportSocialBlog-header></SportSocialBlog-header>    \r\n<rout
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -477,10 +476,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
 var AppComponent = /** @class */ (function () {
-    function AppComponent(metaService) {
-        this.metaService = metaService;
+    function AppComponent() {
     }
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -488,10 +485,9 @@ var AppComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/app.component.html"),
             styles: [__webpack_require__("../../../../../src/app/app.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [])
     ], AppComponent);
     return AppComponent;
-    var _a;
 }());
 
 //# sourceMappingURL=app.component.js.map
@@ -662,7 +658,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n}\r\nfooter{\r\n    z-index: 1;\r\n    background-color: #024771;\r\n    width:100%;\r\n    padding: 0.8%;\r\n}\r\n.subscribe{\r\n    width: 70%;\r\n    margin: 0.4% auto;\r\n    background-color: #e5e5e5;\r\n    padding: 0.4%;\r\n}\r\n.subscribe>p{\r\n    width:100px;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    color: #ffa600;\r\n    font-family: 'Roboto',sans-serif;\r\n    border-right: 1px solid #ffa600;\r\n    font-size: 1.2em;\r\n    font-weight:700;\r\n    padding: 0.5%;\r\n    padding-right: 2%;\r\n    padding-left:1%;\r\n    \r\n}\r\n.subscribe>input{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: calc(100% - 238px);\r\n    height: 35px;\r\n    margin-left: 2%;\r\n    text-align: center;\r\n}\r\nbutton{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width:100px;\r\n    border:none;\r\n    background-color: #ffa600;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1.1em;\r\n    color: white;\r\n    height: 33px;\r\n    padding: 0.5% 0% 0.5% 0%;\r\n    margin:0% 0% 0% 1%\r\n}\r\n::-webkit-input-placeholder {\r\n    text-align: center;\r\n    font-size: 0.9em;\r\n}\r\n \r\n:-moz-placeholder { \r\n    text-align: center;  \r\n    font-size: 0.9em;\r\n}\r\n \r\n ::-moz-placeholder {  \r\n    text-align: center; \r\n    font-size: 0.9em; \r\n }\r\n \r\n :-ms-input-placeholder {  \r\n    text-align: center; \r\n    font-size: 0.9em;\r\n }\r\n \r\n .blogName{\r\n     text-align: center;\r\n     font-family: 'Roboto',sans-serif;\r\n     font-size: 1.6em;\r\n     color: #ffffff;\r\n     font-weight: 900;\r\n }\r\n .tagline{\r\n    text-align: center;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1em;\r\n    color: #ffffff;\r\n    font-weight: 400;\r\n }\r\n .about{\r\n     text-align: center;\r\n     width:65%;\r\n     margin: 1% auto;\r\n     font-family: 'Roboto',sans-serif;\r\n     color: #ffffff;\r\n     font-size: 1.1em;\r\n     font-weight: 500;\r\n }\r\n \r\n .copyright>img{\r\n     width: 20px;\r\n     height: 20px;\r\n }\r\n .contactUs{\r\n     margin: 1% auto;\r\n     text-align: center;\r\n     width:50%;\r\n     font-family: 'Roboto',sans-serif;\r\n     color: #ffffff;\r\n     font-size: 1.1em;\r\n     font-weight: 500;\r\n }\r\n .copyright{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: 35%;\r\n    color: #ffffff;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1em;\r\n    font-weight: 500;\r\n }\r\n .followUs{\r\n     text-align: right;\r\n     float: right;\r\n     display: inline-block;\r\n     vertical-align: middle;\r\n     width: 60%;\r\n     color: #ffffff;\r\n     font-family: 'Roboto',sans-serif;\r\n     font-size: 1.1em;\r\n     font-weight: 500;\r\n }\r\n .followUs img{\r\n    width: 20px;\r\n    height: 20px;\r\n    margin-left: 1.5%;\r\n }\r\n \r\n .editor{\r\n     text-align: center;\r\n     width: 50%;\r\n    margin: auto;\r\n }\r\n .editor a{\r\n     color: white\r\n }\r\n .subscriptionBox{\r\n    width: 40%;\r\n    height: 200px;\r\n    z-index: 50;\r\n    position: fixed;\r\n    top:20%;\r\n    left: 30%;\r\n    background-color: #ffffff;\r\n    border: 1px solid #888888;\r\n\r\n }\r\n .subscriptionBox>.top{\r\n     width:100%;\r\n     height: 60%;\r\n     background-image: url('/assets/images/sports-social-correct-symbol-white.png');\r\n     background-repeat: no-repeat;\r\n     background-position: center;\r\n     background-size: 60px;\r\n }\r\n .subscriptionBox>.bottom>p:first-child{\r\n    color: black;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    font-size: 1.5em;\r\n    padding: 0.5%\r\n }\r\n .subscriptionBox>.bottom>p:last-child{\r\n    font-family: 'Roboto',sans-serif;\r\n    font-weight: 500;\r\n    color: #024771;\r\n    text-align: center;\r\n }\r\n .closeMessage{\r\n    width: 20px;\r\n    height: 20px;\r\n    float: right;\r\n    padding: 1%;\r\n}\r\n.errorMessage{\r\n    width: 100%;\r\n    text-align: center;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1em;\r\n    font-weight: 500;\r\n    color: #b33a3a\r\n}\r\n\r\n @media  (max-width:1000px) and (min-width:800px) {\r\n    .followUs img{\r\n        width: 20px;\r\n        height: 20px;\r\n        margin-left: 1.5%;\r\n     }\r\n     .subscriptionBox{\r\n         width: 60%;\r\n         left: 20%;\r\n     }\r\n     button{\r\n         height: 30px\r\n     }\r\n     .subscribe>input{\r\n        height: 32px;\r\n        width: calc(100% - 230px);\r\n    }\r\n }\r\n @media  (max-width:800px) and (min-width:600px) {\r\n    .followUs img{\r\n        width: 20px;\r\n        height: 20px;\r\n        margin-left: 1.5%;\r\n     }\r\n     .about{\r\n        width: 80%;\r\n        font-size: 1em;\r\n    }\r\n    .contactUs{\r\n        font-size: 1em;\r\n    }\r\n    .blogName{\r\n        font-size: 1.5em\r\n    }\r\n    .tagline{\r\n        font-size: 0.95em\r\n    }\r\n    .subscribe{\r\n        width: 85%;\r\n    }\r\n    button{\r\n        height: 30px;\r\n    }\r\n    .subscribe>input{\r\n        height: 32px;\r\n        width: calc(100% - 230px);\r\n    }\r\n    .subscriptionBox{\r\n        width: 70%;\r\n        left: 15%;\r\n    }\r\n }\r\n \r\n @media  (max-width:600px) and (min-width:520px){\r\n    .copyright>img{\r\n        width: 15px;\r\n        height: 15px;\r\n    }\r\n     .followUs{\r\n         margin-bottom: 2%;\r\n         font-size: 1em\r\n     }\r\n    .followUs img{\r\n        width: 15px;\r\n        height: 15px;\r\n        margin-left: 1.5%;\r\n     }\r\n     .about{\r\n        width: 100%;\r\n    }\r\n    .contactUs{\r\n        font-size: 0.9em;\r\n    }\r\n    .blogName{\r\n        font-size: 1.3em\r\n    }\r\n    .tagline{\r\n        font-size: 0.9em\r\n    }\r\n    .subscribe{\r\n        width: 90%;\r\n    }\r\n    .subscribe>input{\r\n        height: 30px;\r\n        width: calc(100% - 230px);\r\n    }\r\n    button{\r\n        height: 28px;\r\n    }\r\n    .subscriptionBox{\r\n        width: 74%;\r\n        left: 13%;\r\n    }\r\n    \r\n }\r\n\r\n @media  (max-width:520px) and (min-width:450px) {\r\n    .copyright>img{\r\n        width: 15px;\r\n        height: 15px;\r\n    }\r\n    .followUs{\r\n        margin-bottom: 2%;\r\n        font-size: 1em\r\n    }\r\n    .followUs img{\r\n        width: 15px;\r\n        height: 15px;\r\n        margin-left: 1.5%;\r\n     }\r\n     .about{\r\n         width: 100%;\r\n         font-size: 0.9em\r\n     }\r\n     .contactUs{\r\n         font-size: 0.9em;\r\n     }\r\n     .blogName{\r\n         font-size: 1.3em\r\n     }\r\n     .tagline{\r\n         font-size: 0.85em\r\n     }\r\n     .subscribe{\r\n        width: 100%;\r\n    }\r\n    .subscribe>p{\r\n        width: 85px\r\n    }\r\n    button{\r\n        height: 25px;\r\n        width: 75px\r\n    }\r\n     .subscribe>input{\r\n         height: 25px;\r\n         width: calc(100% - 190px);\r\n     }\r\n     .subscriptionBox{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n }\r\n @media (max-width:450px) {\r\n    .copyright>img{\r\n        width: 15px;\r\n        height: 15px;\r\n    }\r\n    .followUs{\r\n        margin-bottom: 2%;\r\n        font-size: 0.9em\r\n    }\r\n    .followUs img{\r\n        width: 15px;\r\n        height: 15px;\r\n        margin-left: 1.5%;\r\n     }\r\n     .about{\r\n         width: 100%;\r\n         font-size: 0.9em\r\n     }\r\n     .contactUs{\r\n         font-size: 0.9em;\r\n     }\r\n     .blogName{\r\n         font-size: 1.3em\r\n     }\r\n     .tagline{\r\n         font-size: 0.85em\r\n     }\r\n    .subscribe{\r\n        width: 100%;\r\n    }\r\n    .subscribe>p{\r\n        width: 85px\r\n    }\r\n    button{\r\n        height: 25px;\r\n        width: 75px\r\n    }\r\n     .subscribe>input{\r\n         height: 25px;\r\n         width: calc(100% - 182px);\r\n     }\r\n     .subscriptionBox{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n }", ""]);
+exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n}\r\nfooter{\r\n    z-index: 1;\r\n    background-color: #024771;\r\n    width:100%;\r\n    padding: 0.8%;\r\n}\r\n.subscribe{\r\n    width: 70%;\r\n    margin: 0.4% auto;\r\n    background-color: #e5e5e5;\r\n    padding: 0.4%;\r\n}\r\n.subscribe>p{\r\n    width:100px;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    color: #ffa600;\r\n    font-family: 'Roboto',sans-serif;\r\n    border-right: 1px solid #ffa600;\r\n    font-size: 1.2em;\r\n    font-weight:700;\r\n    padding: 0.5%;\r\n    padding-right: 2%;\r\n    padding-left:1%;\r\n    \r\n}\r\n.subscribe>input{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: calc(100% - 238px);\r\n    height: 35px;\r\n    margin-left: 2%;\r\n    text-align: center;\r\n}\r\nbutton{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width:100px;\r\n    border:none;\r\n    background-color: #ffa600;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1.1em;\r\n    color: white;\r\n    height: 33px;\r\n    padding: 0.5% 0% 0.5% 0%;\r\n    margin:0% 0% 0% 1%\r\n}\r\n::-webkit-input-placeholder {\r\n    text-align: center;\r\n    font-size: 0.9em;\r\n}\r\n \r\n:-moz-placeholder { \r\n    text-align: center;  \r\n    font-size: 0.9em;\r\n}\r\n \r\n ::-moz-placeholder {  \r\n    text-align: center; \r\n    font-size: 0.9em; \r\n }\r\n \r\n :-ms-input-placeholder {  \r\n    text-align: center; \r\n    font-size: 0.9em;\r\n }\r\n \r\n .blogName{\r\n     text-align: center;\r\n     font-family: 'Roboto',sans-serif;\r\n     font-size: 1.6em;\r\n     color: #ffffff;\r\n     font-weight: 900;\r\n }\r\n .tagline{\r\n    text-align: center;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1em;\r\n    color: #ffffff;\r\n    font-weight: 400;\r\n }\r\n .about{\r\n     text-align: center;\r\n     width:65%;\r\n     margin: 1% auto;\r\n     font-family: 'Roboto',sans-serif;\r\n     color: #ffffff;\r\n     font-size: 1.1em;\r\n     font-weight: 500;\r\n }\r\n \r\n .copyright>img{\r\n     width: 15px;\r\n     height: 15px;\r\n }\r\n .contactUs{\r\n     margin: 1% auto;\r\n     text-align: center;\r\n     width:50%;\r\n     font-family: 'Roboto',sans-serif;\r\n     color: #ffffff;\r\n     font-size: 1.1em;\r\n     font-weight: 500;\r\n }\r\n .copyright{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: 43%;\r\n    color: #ffffff;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1em;\r\n    font-weight: 500;\r\n }\r\n .followUs{\r\n     text-align: right;\r\n     float: right;\r\n     display: inline-block;\r\n     vertical-align: middle;\r\n     width: 60%;\r\n     color: #ffffff;\r\n     font-family: 'Roboto',sans-serif;\r\n     font-size: 1.1em;\r\n     font-weight: 500;\r\n }\r\n .followUs img{\r\n    width: 20px;\r\n    height: 20px;\r\n    margin-left: 1.5%;\r\n }\r\n \r\n .editor{\r\n     text-align: center;\r\n     width: 50%;\r\n    margin: auto;\r\n }\r\n .editor a{\r\n     color: white\r\n }\r\n .subscriptionBox{\r\n    width: 40%;\r\n    height: 200px;\r\n    z-index: 50;\r\n    position: fixed;\r\n    top:20%;\r\n    left: 30%;\r\n    background-color: #ffffff;\r\n    border: 1px solid #888888;\r\n\r\n }\r\n .subscriptionBox>.top{\r\n     width:100%;\r\n     height: 60%;\r\n     background-image: url('/assets/images/sports-social-correct-symbol-white.png');\r\n     background-repeat: no-repeat;\r\n     background-position: center;\r\n     background-size: 60px;\r\n }\r\n .subscriptionBox>.bottom>p:first-child{\r\n    color: black;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-weight: 700;\r\n    text-align: center;\r\n    font-size: 1.5em;\r\n    padding: 0.5%\r\n }\r\n .subscriptionBox>.bottom>p:last-child{\r\n    font-family: 'Roboto',sans-serif;\r\n    font-weight: 500;\r\n    color: #024771;\r\n    text-align: center;\r\n }\r\n .closeMessage{\r\n    width: 20px;\r\n    height: 20px;\r\n    float: right;\r\n    padding: 1%;\r\n}\r\n.errorMessage{\r\n    width: 100%;\r\n    text-align: center;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1em;\r\n    font-weight: 500;\r\n    color: #b33a3a\r\n}\r\n\r\n @media  (max-width:1000px) and (min-width:800px) {\r\n    .followUs img{\r\n        width: 20px;\r\n        height: 20px;\r\n        margin-left: 1.5%;\r\n     }\r\n     .subscriptionBox{\r\n         width: 60%;\r\n         left: 20%;\r\n     }\r\n     button{\r\n         height: 30px\r\n     }\r\n     .subscribe>input{\r\n        height: 32px;\r\n        width: calc(100% - 230px);\r\n    }\r\n }\r\n @media  (max-width:800px) and (min-width:600px) {\r\n    .followUs img{\r\n        width: 20px;\r\n        height: 20px;\r\n        margin-left: 1.5%;\r\n     }\r\n     .about{\r\n        width: 80%;\r\n        font-size: 1em;\r\n    }\r\n    .contactUs{\r\n        font-size: 1em;\r\n    }\r\n    .blogName{\r\n        font-size: 1.5em\r\n    }\r\n    .tagline{\r\n        font-size: 0.95em\r\n    }\r\n    .subscribe{\r\n        width: 85%;\r\n    }\r\n    button{\r\n        height: 30px;\r\n    }\r\n    .subscribe>input{\r\n        height: 32px;\r\n        width: calc(100% - 230px);\r\n    }\r\n    .subscriptionBox{\r\n        width: 70%;\r\n        left: 15%;\r\n    }\r\n }\r\n \r\n @media  (max-width:600px) and (min-width:520px){\r\n    .copyright>img{\r\n        width: 15px;\r\n        height: 15px;\r\n    }\r\n     .followUs{\r\n         margin-bottom: 2%;\r\n         font-size: 1em\r\n     }\r\n    .followUs img{\r\n        width: 15px;\r\n        height: 15px;\r\n        margin-left: 1.5%;\r\n     }\r\n     .about{\r\n        width: 100%;\r\n    }\r\n    .contactUs{\r\n        font-size: 0.9em;\r\n    }\r\n    .blogName{\r\n        font-size: 1.3em\r\n    }\r\n    .tagline{\r\n        font-size: 0.9em\r\n    }\r\n    .subscribe{\r\n        width: 90%;\r\n    }\r\n    .subscribe>input{\r\n        height: 30px;\r\n        width: calc(100% - 230px);\r\n    }\r\n    button{\r\n        height: 28px;\r\n    }\r\n    .subscriptionBox{\r\n        width: 74%;\r\n        left: 13%;\r\n    }\r\n    \r\n }\r\n\r\n @media  (max-width:520px) and (min-width:450px) {\r\n    .copyright>img{\r\n        width: 15px;\r\n        height: 15px;\r\n    }\r\n    .followUs{\r\n        margin-bottom: 2%;\r\n        font-size: 1em\r\n    }\r\n    .followUs img{\r\n        width: 15px;\r\n        height: 15px;\r\n        margin-left: 1.5%;\r\n     }\r\n     .about{\r\n         width: 100%;\r\n         font-size: 0.9em\r\n     }\r\n     .contactUs{\r\n         font-size: 0.9em;\r\n     }\r\n     .blogName{\r\n         font-size: 1.3em\r\n     }\r\n     .tagline{\r\n         font-size: 0.85em\r\n     }\r\n     .subscribe{\r\n        width: 100%;\r\n    }\r\n    .subscribe>p{\r\n        width: 85px\r\n    }\r\n    button{\r\n        height: 25px;\r\n        width: 75px\r\n    }\r\n     .subscribe>input{\r\n         height: 25px;\r\n         width: calc(100% - 190px);\r\n     }\r\n     .subscriptionBox{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n }\r\n @media (max-width:450px) {\r\n    .copyright>img{\r\n        width: 15px;\r\n        height: 15px;\r\n    }\r\n    .followUs{\r\n        margin-bottom: 2%;\r\n        font-size: 0.9em\r\n    }\r\n    .followUs img{\r\n        width: 15px;\r\n        height: 15px;\r\n        margin-left: 1.5%;\r\n     }\r\n     .about{\r\n         width: 100%;\r\n         font-size: 0.9em\r\n     }\r\n     .contactUs{\r\n         font-size: 0.9em;\r\n     }\r\n     .blogName{\r\n         font-size: 1.3em\r\n     }\r\n     .tagline{\r\n         font-size: 0.85em\r\n     }\r\n    .subscribe{\r\n        width: 100%;\r\n    }\r\n    .subscribe>p{\r\n        width: 85px\r\n    }\r\n    button{\r\n        height: 25px;\r\n        width: 75px\r\n    }\r\n     .subscribe>input{\r\n         height: 25px;\r\n         width: calc(100% - 182px);\r\n     }\r\n     .subscriptionBox{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n }", ""]);
 
 // exports
 
@@ -675,7 +671,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blog-footer/blog-footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<footer >\n  <div class=\"subscribe\" >\n    <p>\n      Subscribe\n    </p>\n    <input type=\"email\" placeholder=\"Enter your Email\" #subscriber  email>\n    <button  (click)=\"Subscribe()\">Submit</button>\n  </div>\n  <p  class=\"errorMessage\" *ngIf=\"errorMessage\">Email is Inavlid!!! Please enter correct Email</p>\n  <p class=\"blogName\" #blogName>Chase Your Sport</p>\n  <p class=\"tagline\" #tagline>The Sports Social Blog</p>\n  <p class=\"about\" #about> \n    'Chase Your Sport' blog provides Health, Fitness and\n     Sport information and other useful information to help everyone\n     to keep them active, healthy and fit .<br>\n     We are here to help you to follow your passion for sports. \n  </p>\n  <p class=\"contactUs\" #contactUs>\n    Contact Us: letstalk@sportsocial.in\n  </p>\n  <!-- <p class=\"editor\"> <a routerLink=\"/editorPanel\">Editor</a></p> -->\n  \n  <p class=\"followUs\" #followUs>\n    Follow us on \n    <a href=\"https://www.facebook.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">\n        <img src=\"/assets/images/sports-social-facebook-logo-white.png\" alt=\"facebook_Logo\" >\n    </a> \n    <a href=\"https://www.twitter.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">\n        <img src=\"/assets/images/sports-social-twitter-logo-white.png\" alt=\"twitter_Logo\"  >\n    </a>\n    <a href=\"https://www.instagram.com/chaseyoursport\" target=\"_blank\" rel=\"noopener\">\n        <img src=\"/assets/images/sports-social-instagram-logo-white.png\" alt=\"insta_Logo\" >\n    </a>\n    <a href=\"https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network\" target=\"_blank\" rel=\"noopener\">\n        <img src=\"/assets/images/sports-social-quora-logo-white.png\" alt=\"quora_Logo\">\n    </a>\n    <a href=\"https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ\" target=\"_blank\" rel=\"noopener\">\n        <img src=\"/assets/images/sports-social-youtube-logo-white.png\" alt=\"youtube_Logo\">\n    </a>\n    <a href=\"https://www.pinterest.com/chaseyoursport\" target=\"_blank\" rel=\"noopener\">\n        <img src=\"/assets/images/sports-social-pinterest-logo-white.png\" alt=\"pintrest_Logo\">\n    </a>\n    \n  </p>\n  <p class=\"copyright\" #copyright>\n    <img src=\"/assets/images/copyright.png\"> Sports Social \n  </p>\n</footer>\n\n\n<div class=\"subscriptionBox\" #subscriptionBox *ngIf=\"showSubscriptionBox\">\n    <div class=\"top\">\n        <img src=\"/assets/images/sports-social-cancel-black.png\" role=\"button\" class=\"closeMessage\"  (click)=\"close()\">\n    </div>\n    <div class=\"bottom\">\n        <p>Great</p>\n        <p>\n            You have Subscribed for our Newsletter and Blog updates.\n        </p>\n    </div>\n</div>\n"
+module.exports = "<footer >\n  <div class=\"subscribe\" >\n    <p>\n      Subscribe\n    </p>\n    <input type=\"email\" placeholder=\"Enter your Email\" #subscriber  email>\n    <button  (click)=\"Subscribe()\">Submit</button>\n  </div>\n  <p  class=\"errorMessage\" *ngIf=\"errorMessage\">Email is Inavlid!!! Please enter correct Email</p>\n  <p class=\"blogName\" #blogName>Chase Your Sport</p>\n  <p class=\"tagline\" #tagline>The Sports Social Blog</p>\n  <p class=\"about\" #about> \n    'Chase Your Sport' blog provides Health, Fitness and\n     Sport information and other useful information to help everyone\n     to keep them active, healthy and fit .<br>\n     We are here to help you to follow your passion for sports. \n  </p>\n  <p class=\"contactUs\" #contactUs>\n    Contact Us: letstalk@sportsocial.in\n  </p>\n  <!-- <p class=\"editor\"> <a routerLink=\"/editorPanel\">Editor</a></p> -->\n  \n  <p class=\"followUs\" #followUs>\n    Follow us on \n    <a href=\"https://www.facebook.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">\n        <img src=\"/assets/images/sports-social-facebook-logo-white.png\" alt=\"facebook_Logo\" >\n    </a> \n    <a href=\"https://www.twitter.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">\n        <img src=\"/assets/images/sports-social-twitter-logo-white.png\" alt=\"twitter_Logo\"  >\n    </a>\n    <a href=\"https://www.instagram.com/chaseyoursport\" target=\"_blank\" rel=\"noopener\">\n        <img src=\"/assets/images/sports-social-instagram-logo-white.png\" alt=\"insta_Logo\" >\n    </a>\n    <a href=\"https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network\" target=\"_blank\" rel=\"noopener\">\n        <img src=\"/assets/images/sports-social-quora-logo-white.png\" alt=\"quora_Logo\">\n    </a>\n    <a href=\"https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ\" target=\"_blank\" rel=\"noopener\">\n        <img src=\"/assets/images/sports-social-youtube-logo-white.png\" alt=\"youtube_Logo\">\n    </a>\n    <a href=\"https://www.pinterest.com/chaseyoursport\" target=\"_blank\" rel=\"noopener\">\n        <img src=\"/assets/images/sports-social-pinterest-logo-white.png\" alt=\"pintrest_Logo\">\n    </a>\n    \n  </p>\n  <p class=\"copyright\" #copyright>\n    Copyright <img src=\"/assets/images/copyright.png\"> 2017 CnP Sports Services Private Limited | All Rights Reserved\n  </p>\n</footer>\n\n\n<div class=\"subscriptionBox\" #subscriptionBox *ngIf=\"showSubscriptionBox\">\n    <div class=\"top\">\n        <img src=\"/assets/images/sports-social-cancel-black.png\" role=\"button\" class=\"closeMessage\"  (click)=\"close()\">\n    </div>\n    <div class=\"bottom\">\n        <p>Great</p>\n        <p>\n            You have Subscribed for our Newsletter and Blog updates.\n        </p>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -734,16 +730,16 @@ var BlogFooterComponent = /** @class */ (function () {
         //console.log(this.showSubscriptionBox)
     };
     BlogFooterComponent.prototype.setMobileView = function () {
-        if (window.innerWidth < 600) {
+        if (window.innerWidth < 850) {
             this.renderer.setStyle(this.copyright.nativeElement, 'width', '100%');
             this.renderer.setStyle(this.followUs.nativeElement, 'width', '100%');
             this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'center');
             this.renderer.setStyle(this.copyright.nativeElement, 'text-align', 'center');
         }
         else {
-            this.renderer.setStyle(this.followUs.nativeElement, 'width', '60%');
+            this.renderer.setStyle(this.followUs.nativeElement, 'width', '40%');
             this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'right');
-            this.renderer.setStyle(this.copyright.nativeElement, 'width', '35%');
+            this.renderer.setStyle(this.copyright.nativeElement, 'width', '60%');
             this.renderer.setStyle(this.copyright.nativeElement, 'text-align', 'left');
         }
     };
@@ -792,7 +788,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    width: 100%;\r\n    \r\n}\r\nheader{\r\n    width: 100%;\r\n    background-color: #ffffff;\r\n    position: fixed;\r\n    top:0px;\r\n    z-index: 10;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    font-family: 'Roboto',sans-serif;\r\n    padding: 0.2%;\r\n}\r\n.left{\r\n    display: inline-block;\r\n    width:80%;\r\n    vertical-align: middle;\r\n}\r\n\r\nli{\r\n    display: inline-block;\r\n    list-style: none;\r\n    width: auto;\r\n    margin: 0.2% 0.1% 0.2% 0%;\r\n    vertical-align: top;\r\n   \r\n}\r\n.left>li{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: 60%;\r\n    margin-left:3%;\r\n}\r\n.brand-image{\r\n    width: 40px;\r\n    height: 40px;\r\n    margin-left:1.8%;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\nimg{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.brand-title{\r\n   font-size: 1.4em;\r\n   font-weight: 700;\r\n   display: inline-block;\r\n   vertical-align: middle;\r\n}\r\n.brand-title>span:first-child{\r\n    color: #024770;\r\n}\r\n.brand-title>span:nth-child(2){\r\n    color: #ffa600;\r\n}\r\n.brand-title>span:nth-child(3){\r\n    font-size: 60%;\r\n    color: black;\r\n    font-weight: 700;\r\n}\r\n.brand-title>p{\r\n    font-size: 55%;\r\n    color: #024770;\r\n    font-weight: 400;\r\n    text-align: left;\r\n    font-style: italic;\r\n    padding-left: 9%;\r\n}\r\n.right{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    text-align: right;\r\n    width:19%;\r\n}\r\n.right>li{\r\n    margin-right: 5%;\r\n}\r\ninput{\r\n    height: 35px;\r\n    background-image: url('/assets/images/sports-social-search.png');\r\n    border: none;\r\n    background-repeat: no-repeat;\r\n    background-position-y: 50%;\r\n    background-position-x: 2%;\r\n    background-size: 15px;\r\n    outline: #fafafa;\r\n    border-radius: 25px;\r\n    background-color: #e5e5e5;\r\n    text-align: center;\r\n    box-shadow: 1px 1px #bbbbbb\r\n}\r\n.mobileView{\r\n    display: inline-block;\r\n    width: auto;\r\n}\r\n.menuImageHolder{\r\n    width: 30px;\r\n    height: 30px;\r\n    text-align: right !important;   \r\n}\r\n.menuImageHolder img{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.dropDown{\r\n  width: 80%;\r\n  background-color: #ffffff;\r\n  padding: 1% 1% 0% 1%;\r\n  position: fixed;\r\n  z-index: 50;\r\n  top:10%;\r\n  left:10%;\r\n  box-shadow: 1px 1px 2px #eeeeee\r\n}\r\n\r\n.website{\r\n    width: 95% !important;\r\n    border-bottom: 1px solid #bbbbbb\r\n}\r\n.dropDown .Close{\r\n    float: right;\r\n    width: 12px;\r\n    height: 12px;\r\n    padding:0.5% 1% 0% 0%;\r\n}\r\n.websiteLink{\r\n    display: block;\r\n    color: #024770;\r\n    text-align: center;\r\n    margin: 1%;\r\n}\r\n\r\n.search input{\r\n    display: inline-block;\r\n    border-radius: 0px;\r\n    border: none;\r\n    background-image: none;\r\n    width: 100%;\r\n   \r\n}\r\n.search button{\r\n    display: block;\r\n    width: 70%;\r\n    margin: 2% auto;\r\n    border-radius: 4px;\r\n    background-color: #ffa600;\r\n    color: #ffffff;\r\n    border: none;\r\n    padding: 1%\r\n}\r\n\r\n::-webkit-input-placeholder {\r\n    text-align: center;\r\n }\r\n \r\n :-moz-placeholder { \r\n    text-align: center;  \r\n }\r\n \r\n ::-moz-placeholder {  \r\n    text-align: center;  \r\n }\r\n \r\n :-ms-input-placeholder {  \r\n    text-align: center; \r\n }\r\n .suggestion{\r\n     position: absolute;\r\n     top: 45px;\r\n     width:51%;\r\n     background-color:white\r\n }\r\n .suggestion ul{\r\n     display: block;\r\n     border: 1px solid #bbbbbb;\r\n }\r\n .suggestion li {\r\n     padding: 1%;\r\n     display: block;\r\n     border-bottom: 1px solid   #bbbbbb\r\n }\r\n .mobileView .suggestion{\r\n     top:65px;\r\n     width: 100%;\r\n }\r\n \r\n  a:hover{\r\n      text-decoration: none;\r\n  }\r\n  .websiteLink{\r\n      color: #024771;\r\n      font-weight: 700;\r\n  }\r\n .websiteLink>img{\r\n     width: 20px;\r\n     height: 20px;\r\n     padding: 1%\r\n}\r\n  .websiteLink:hover{\r\n      color: #ffa600;\r\n  }\r\n  .dropDown p{\r\n      width: 60%;\r\n      margin: auto\r\n  }\r\n\r\n  @media (max-width:750px) and (min-width:600px){\r\n      .left{\r\n          width: 92%\r\n      }\r\n      header{\r\n          padding: 0.4%;\r\n      }\r\n  }\r\n  @media (max-width:600px) and (min-width:450px) {\r\n    .left{\r\n        width: 90%\r\n    }\r\n    header{\r\n        padding: 0.5%;\r\n    }\r\n  }\r\n  @media (max-width:450px) and (min-width:350px) {\r\n      .left{\r\n          width: 88%;\r\n      }\r\n      header{\r\n        padding: 0.6%;\r\n    }\r\n  }\r\n  @media (max-width:350px) {\r\n      .left{\r\n          width: 86%;\r\n      }\r\n      header{\r\n        padding: 0.6%;\r\n    }\r\n  }", ""]);
+exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    width: 100%;\r\n    \r\n}\r\nheader{\r\n    width: 100%;\r\n    background-color: #ffffff;\r\n    position: fixed;\r\n    top:0px;\r\n    z-index: 10;\r\n    box-shadow: 1px 1px  #bbbbbb;\r\n    font-family: 'Roboto',sans-serif;\r\n    padding: 0.2%;\r\n}\r\n.left{\r\n    display: inline-block;\r\n    width:80%;\r\n    vertical-align: middle;\r\n}\r\n\r\nli{\r\n    display: inline-block;\r\n    list-style: none;\r\n    width: auto;\r\n    margin: 0.2% 0.1% 0.2% 0%;\r\n    vertical-align: top;\r\n   \r\n}\r\n.left>li{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: 60%;\r\n    margin-left:3%;\r\n}\r\n.brand-image{\r\n    width: 40px;\r\n    height: 40px;\r\n    margin-left:1.8%;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\nimg{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.brand-title{\r\n   font-size: 1.4em;\r\n   font-weight: 700;\r\n   display: inline-block;\r\n   vertical-align: middle;\r\n}\r\n.brand-title>span:first-child{\r\n    color: #024770;\r\n}\r\n.brand-title>span:nth-child(2){\r\n    color: #ffa600;\r\n}\r\n.brand-title>span:nth-child(3){\r\n    font-size: 60%;\r\n    color: black;\r\n    font-weight: 700;\r\n}\r\n.brand-title>p{\r\n    font-size: 55%;\r\n    color: #024770;\r\n    font-weight: 400;\r\n    text-align: left;\r\n    font-style: italic;\r\n    padding-left: 9%;\r\n}\r\n.right{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    text-align: right;\r\n    width:19%;\r\n}\r\n.right>li{\r\n    margin-right: 5%;\r\n}\r\ninput{\r\n    height: 35px;\r\n    background-image: url('/assets/images/sports-social-search.png');\r\n    border: none;\r\n    background-repeat: no-repeat;\r\n    background-position-y: 50%;\r\n    background-position-x: 2%;\r\n    background-size: 15px;\r\n    outline: #fafafa;\r\n    border-radius: 25px;\r\n    background-color: #e5e5e5;\r\n    text-align: center;\r\n    box-shadow: 1px 1px 2px #bbbbbb\r\n}\r\n.mobileView{\r\n    display: inline-block;\r\n    width: auto;\r\n}\r\n.menuImageHolder{\r\n    width: 30px;\r\n    height: 30px;\r\n    text-align: right !important;   \r\n}\r\n.menuImageHolder img{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.dropDown{\r\n  width: 80%;\r\n  background-color: #ffffff;\r\n  padding: 1% 1% 0% 1%;\r\n  position: fixed;\r\n  z-index: 50;\r\n  top:10%;\r\n  left:10%;\r\n  box-shadow: 1px 1px 2px #eeeeee\r\n}\r\n\r\n.website{\r\n    width: 95% !important;\r\n    border-bottom: 1px solid #bbbbbb\r\n}\r\n.dropDown .Close{\r\n    float: right;\r\n    width: 12px;\r\n    height: 12px;\r\n    padding:0.5% 1% 0% 0%;\r\n}\r\n.websiteLink{\r\n    display: block;\r\n    color: #024770;\r\n    text-align: center;\r\n    margin: 1%;\r\n}\r\n\r\n.search input{\r\n    display: inline-block;\r\n    border-radius: 0px;\r\n    border: none;\r\n    background-image: none;\r\n    width: 100%;\r\n   \r\n}\r\n.search button{\r\n    display: block;\r\n    width: 70%;\r\n    margin: 2% auto;\r\n    border-radius: 4px;\r\n    background-color: #ffa600;\r\n    color: #ffffff;\r\n    border: none;\r\n    padding: 1%\r\n}\r\n\r\n::-webkit-input-placeholder {\r\n    text-align: center;\r\n }\r\n \r\n :-moz-placeholder { \r\n    text-align: center;  \r\n }\r\n \r\n ::-moz-placeholder {  \r\n    text-align: center;  \r\n }\r\n \r\n :-ms-input-placeholder {  \r\n    text-align: center; \r\n }\r\n .suggestion{\r\n     position: absolute;\r\n     top: 45px;\r\n     width:51%;\r\n     background-color:white\r\n }\r\n .suggestion ul{\r\n     display: block;\r\n     border: 1px solid #bbbbbb;\r\n }\r\n .suggestion li {\r\n     padding: 1%;\r\n     display: block;\r\n     border-bottom: 1px solid   #bbbbbb\r\n }\r\n .mobileView .suggestion{\r\n     top:65px;\r\n     width: 100%;\r\n }\r\n \r\n  a:hover{\r\n      text-decoration: none;\r\n  }\r\n  .websiteLink{\r\n      color: #024771;\r\n      font-weight: 700;\r\n  }\r\n .websiteLink>img{\r\n     width: 20px;\r\n     height: 20px;\r\n     padding: 1%\r\n}\r\n  .websiteLink:hover{\r\n      color: #ffa600;\r\n  }\r\n  .dropDown p{\r\n      width: 60%;\r\n      margin: auto\r\n  }\r\n\r\n  @media (max-width:750px) and (min-width:600px){\r\n      .left{\r\n          width: 92%\r\n      }\r\n      header{\r\n          padding: 0.4%;\r\n      }\r\n  }\r\n  @media (max-width:600px) and (min-width:450px) {\r\n    .left{\r\n        width: 90%\r\n    }\r\n    header{\r\n        padding: 0.5%;\r\n    }\r\n  }\r\n  @media (max-width:450px) and (min-width:350px) {\r\n      .left{\r\n          width: 88%;\r\n      }\r\n      header{\r\n        padding: 0.6%;\r\n    }\r\n  }\r\n  @media (max-width:350px) {\r\n      .left{\r\n          width: 86%;\r\n      }\r\n      header{\r\n        padding: 0.6%;\r\n    }\r\n  }", ""]);
 
 // exports
 
@@ -1057,37 +1053,47 @@ var BlogOpenComponent = /** @class */ (function () {
         });
     };
     BlogOpenComponent.prototype.setTitle = function () {
-        if (this.route.snapshot.url[0].path != 'sportsocialblog' || this.route.snapshot.url[1].path != 'page')
+        if (this.route.snapshot.url[0].path != 'sportsocialblog' || this.route.snapshot.url[1].path != 'page') {
             this.titleService.setTitle(this.blog.heading);
+        }
     };
     BlogOpenComponent.prototype.setMetaTags = function () {
+        /* this.metaService.updateTag({
+            content:this.blog.heading.substring(0,139)
+            },
+        'name="title"')
         this.metaService.updateTag({
-            content: this.blog.heading.substring(0, 139)
-        }, 'name="title"');
+           content:this.blog.heading.substring(0,139)
+            },
+        'property="og:title"')
         this.metaService.updateTag({
-            content: this.blog.heading.substring(0, 139)
-        }, 'property="og:title"');
+            content:this.blog.Content.substring(0,139)
+            },
+        'name="description"')
         this.metaService.updateTag({
-            content: this.blog.Content.substring(0, 139)
-        }, 'name="description"');
+            content:this.blog.Content.substring(0,139)
+            },
+        'property="og:description"')
         this.metaService.updateTag({
-            content: this.blog.Content.substring(0, 139)
-        }, 'property="og:description"');
+            content:this.blog.blogImage
+            },
+        'property="og:image"')
         this.metaService.updateTag({
-            content: this.blog.blogImage
-        }, 'property="og:image"');
+            content:window.location.href
+            },
+        'property="og:url"')
         this.metaService.updateTag({
-            content: window.location.href
-        }, 'property="og:url"');
+            content:this.blog.heading.substring(0,139)
+            },
+        'name="twitter:title"')
         this.metaService.updateTag({
-            content: this.blog.heading.substring(0, 139)
-        }, 'name="twitter:title"');
+            content:this.blog.Content.substring(0,139)
+            },
+        'name="twitter:description"')
         this.metaService.updateTag({
-            content: this.blog.Content.substring(0, 139)
-        }, 'name="twitter:description"');
-        this.metaService.updateTag({
-            content: this.blog.blogImage
-        }, 'name="twitter:image:src"');
+            content:this.blog.blogImage
+            },
+        'name="twitter:image:src"') */
     };
     BlogOpenComponent.prototype.loadBlogFromSendData = function () {
         var _this = this;
@@ -1115,7 +1121,7 @@ var BlogOpenComponent = /** @class */ (function () {
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
             _this.setMetaTags();
             _this.setTitle();
-            console.log(_this.blog.Content, " latest");
+            //console.log(this.blog.Content, 'latest');
         });
     };
     BlogOpenComponent.prototype.loadBlogFromUrl = function () {
@@ -1138,7 +1144,7 @@ var BlogOpenComponent = /** @class */ (function () {
                 insertedDate: _this.timePassed(data.insertedDate),
                 ViewCount: data.ViewCount,
                 ShareCount: data.ShareCount,
-                keywords: data.keys.split(","),
+                keywords: data.keys.split(','),
                 exactDate: _this.ExactDate(data.insertedDate),
                 readingTime: _this.timeToRead(data.Content)
             };
@@ -1150,17 +1156,17 @@ var BlogOpenComponent = /** @class */ (function () {
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
             _this.setMetaTags();
             _this.setTitle();
-            console.log(_this.blog.Content, " latest");
+            console.log(_this.blog.Content, 'latest');
         });
     };
     BlogOpenComponent.prototype.timeToRead = function (s) {
-        var words = s.split(" ");
+        var words = s.split(' ');
         var time = Math.round(words.length / 180);
-        if (time > 0) {
-            return time + " min read";
+        if (time > 1) {
+            return time + ' min read';
         }
         else {
-            return "1 min read";
+            return '2 min read';
         }
     };
     BlogOpenComponent.prototype.timePassed = function (i) {
@@ -1169,18 +1175,18 @@ var BlogOpenComponent = /** @class */ (function () {
         if (writtenDate.getFullYear() == presentDate.getFullYear()) {
             if (writtenDate.getMonth() == presentDate.getMonth()) {
                 if (writtenDate.getDate() == presentDate.getDate()) {
-                    return "Today";
+                    return 'Today';
                 }
                 else {
-                    return presentDate.getDate() - writtenDate.getDate() + " day ago";
+                    return presentDate.getDate() - writtenDate.getDate() + ' day ago';
                 }
             }
             else {
-                return presentDate.getMonth() - writtenDate.getMonth() + " month ago";
+                return presentDate.getMonth() - writtenDate.getMonth() + ' month ago';
             }
         }
         else {
-            return presentDate.getFullYear() - writtenDate.getFullYear() + " year ago";
+            return presentDate.getFullYear() - writtenDate.getFullYear() + ' year ago';
         }
     };
     BlogOpenComponent.prototype.ExactDate = function (i) {
@@ -1188,10 +1194,10 @@ var BlogOpenComponent = /** @class */ (function () {
         return writtenDate.toDateString();
     };
     BlogOpenComponent.prototype.setDefault = function (event) {
-        this.blog.bloggerImage = "/assets/images/user.png";
+        this.blog.bloggerImage = '/assets/images/user.png';
     };
     BlogOpenComponent.prototype.removeInitalImage = function (event) {
-        console.log(event.returnValue, " load");
+        console.log(event.returnValue, 'load');
         if (event.returnValue) {
             this.loading = false;
         }
@@ -1200,7 +1206,7 @@ var BlogOpenComponent = /** @class */ (function () {
         console.log(event, 'progress');
     };
     BlogOpenComponent.prototype.setDefaultBlogImage = function () {
-        this.blog.blogImage = "/assets/images/default-image.png";
+        this.blog.blogImage = '/assets/images/default-image.png';
     };
     BlogOpenComponent.prototype.setMobileView = function () {
         if (window.innerWidth > 950) {
@@ -1225,17 +1231,17 @@ var BlogOpenComponent = /** @class */ (function () {
             if (!d.getElementById(id)) {
                 js = d.createElement(s);
                 js.id = id;
-                js.src = p + "://platform.twitter.com/widgets.js";
+                js.src = p + '://platform.twitter.com/widgets.js';
                 fjs.parentNode.insertBefore(js, fjs);
             }
-        }(document, "script", "twitter-wjs");
+        }(document, 'script', 'twitter-wjs');
     };
     BlogOpenComponent.prototype.setTopMargin = function () {
         var _this = this;
         this.recieveHeight.ofHeader.subscribe(function (margin) {
             _this.topMargin = margin;
         });
-        this.renderer.setStyle(this.openBlog.nativeElement, "margin-top", this.topMargin + "px");
+        this.renderer.setStyle(this.openBlog.nativeElement, 'margin-top', this.topMargin + 'px');
     };
     BlogOpenComponent.prototype.onresize = function () {
         this.scriptOfTwitter();
@@ -1254,7 +1260,7 @@ var BlogOpenComponent = /** @class */ (function () {
     BlogOpenComponent.prototype.onFullImageload = function () {
         var height = this.fullImage.nativeElement.getBoundingClientRect().height;
         var top = (window.innerHeight - height) / 2;
-        this.renderer.setStyle(this.fullImage.nativeElement, "top", top + "px");
+        this.renderer.setStyle(this.fullImage.nativeElement, 'top', top + 'px');
     };
     BlogOpenComponent.prototype.closeFullImage = function () {
         this.openFullImage = false;
@@ -1270,7 +1276,7 @@ var BlogOpenComponent = /** @class */ (function () {
         var _this = this;
         this.fb.getLoginStatus()
             .then(function (res) {
-            if (res.status == "connected") {
+            if (res.status == 'connected') {
                 _this.isConnectedWithFacebook = true;
             }
             else {
@@ -1309,7 +1315,7 @@ var BlogOpenComponent = /** @class */ (function () {
     };
     BlogOpenComponent.prototype.getblogs = function (event) {
         var key = event.toElement.innerText;
-        console.log(key, " navigate");
+        console.log(key, ' navigate');
         // this.router.navigate(['/'+key])
         this.sendKey.ofBlogCard.next(key);
     };
@@ -1586,11 +1592,11 @@ var BlogsComponent = /** @class */ (function () {
         var words = s.split(" ");
         //console.log(words,words.length,this.blog.blogId)
         var time = Math.round(words.length / 180);
-        if (time > 0) {
+        if (time > 1) {
             return time + " min read";
         }
         else {
-            return "1 min read";
+            return "2 min read";
         }
     };
     BlogsComponent.prototype.nextPage = function () {
@@ -2222,11 +2228,11 @@ var RelatedBlogsComponent = /** @class */ (function () {
     RelatedBlogsComponent.prototype.timeToRead = function (s) {
         var words = s.split(" ");
         var time = Math.round(words.length / 180);
-        if (time > 0) {
+        if (time > 1) {
             return time + " min read";
         }
         else {
-            return "1 min read";
+            return "2 min read";
         }
     };
     RelatedBlogsComponent.prototype.timePassed = function (i) {
@@ -2552,11 +2558,11 @@ var TrendingBlogComponent = /** @class */ (function () {
         var words = s.split(" ");
         //console.log(words,words.length,this.blog.blogId)
         var time = Math.round(words.length / 180);
-        if (time > 0) {
+        if (time > 1) {
             return time + " min read";
         }
         else {
-            return "1 min read";
+            return "2 min read";
         }
     };
     TrendingBlogComponent = __decorate([
@@ -3453,7 +3459,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".keywords{\r\n   \r\n    width: 100%;\r\n    z-index: 1;\r\n    background-color: #ffffff;\r\n    white-space: nowrap !important;\r\n    box-shadow: 2px 2px 2px #bbbbbb\r\n    \r\n    \r\n}\r\n.keywords div{\r\n    text-align: center;\r\n    overflow-x: scroll;\r\n    max-width: 100%;\r\n    margin: 2px auto;\r\n}\r\n::-webkit-scrollbar{\r\n   display: none;\r\n}\r\n::-moz-scrollbar{\r\n    display: none;\r\n}\r\n", ""]);
+exports.push([module.i, ".keywords{\r\n   \r\n    width: 100%;\r\n    z-index: 1;\r\n    background-color: #ffffff;\r\n    white-space: nowrap !important;\r\n    box-shadow: 2px 2px 4px #bbbbbb\r\n    \r\n    \r\n}\r\n.keywords div{\r\n    text-align: center;\r\n    overflow-x: scroll;\r\n    max-width: 100%;\r\n    margin: 2px auto;\r\n}\r\n::-webkit-scrollbar{\r\n   display: none;\r\n}\r\n::-moz-scrollbar{\r\n    display: none;\r\n}\r\n", ""]);
 
 // exports
 
@@ -4087,11 +4093,11 @@ var SearchComponent = /** @class */ (function () {
     SearchComponent.prototype.timeToRead = function (s) {
         var words = s.split(" ");
         var time = Math.round(words.length / 180);
-        if (time > 0) {
+        if (time > 1) {
             return time + " min read";
         }
         else {
-            return "1 min read";
+            return "2 min read";
         }
     };
     SearchComponent.prototype.ExactDate = function (i) {

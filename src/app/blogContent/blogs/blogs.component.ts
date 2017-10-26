@@ -274,11 +274,11 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     let words = s.split(" ");
     //console.log(words,words.length,this.blog.blogId)
     let time=Math.round(words.length/180)
-    if(time>0){
+    if(time>1){
       return time + " min read"
     }
     else{
-      return "1 min read"
+      return "2 min read"
     }
   }
   nextPage(){

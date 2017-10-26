@@ -50,26 +50,26 @@ export class BlogFooterComponent implements OnInit {
       this.errorMessage=true
     }
   }
-  close(){
-    this.showSubscriptionBox=false;
+  close() {
+    this.showSubscriptionBox = false;
     //console.log(this.showSubscriptionBox)
    }
    setMobileView(){
-     if(window.innerWidth<600){
-       this.renderer.setStyle(this.copyright.nativeElement,'width','100%')
-      this.renderer.setStyle(this.followUs.nativeElement,'width','100%')
-      this.renderer.setStyle(this.followUs.nativeElement,'text-align','center')
-      this.renderer.setStyle(this.copyright.nativeElement,'text-align','center')
+     if(window.innerWidth<850){
+       this.renderer.setStyle(this.copyright.nativeElement, 'width', '100%');
+      this.renderer.setStyle(this.followUs.nativeElement, 'width', '100%');
+      this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'center');
+      this.renderer.setStyle(this.copyright.nativeElement, 'text-align', 'center');
      }
      else{
-      this.renderer.setStyle(this.followUs.nativeElement,'width','60%')
-      this.renderer.setStyle(this.followUs.nativeElement,'text-align','right')
-      this.renderer.setStyle(this.copyright.nativeElement,'width','35%')
+      this.renderer.setStyle(this.followUs.nativeElement, 'width', '40%');
+      this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'right');
+      this.renderer.setStyle(this.copyright.nativeElement,'width','60%')
       this.renderer.setStyle(this.copyright.nativeElement,'text-align','left')
      }
    }
-   @HostListener('window:resize',[])onresize(){
-     this.setMobileView()
+   @HostListener('window:resize', [])onresize() {
+     this.setMobileView();
    }
   
 }

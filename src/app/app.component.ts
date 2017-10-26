@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import {  Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,6 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private metaService: Meta) {
+  constructor() {
   }
 }
