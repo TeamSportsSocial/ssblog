@@ -30,12 +30,13 @@ export class TrendingBlogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getBlog()
+    this.getBlog();
   }
-   getBlog(){
-    this.get.blogData(2,'dfg').subscribe(
-      data=>{
-        for(let i=0;i<3;i++){
+
+   getBlog() {
+    this.get.blogData(2, 'dfg').subscribe(
+      data => {
+        for (let i = 0 ; i < 3 ; i++) {
           this.blogDetails.push(
             {
               blogId:data[i].blogId,
@@ -52,46 +53,48 @@ export class TrendingBlogComponent implements OnInit {
               readingTime:this.timeToRead(data[i].Content)
             }
           )
-          //console.log(this.blogDetails," h")
-         // console.log(this.blogDetails[i].blogId, this.blogDetails[i].Content)
        }
       }
     )
    }
-   timePassed(i:string){
+   timePassed(i: string){
     
-      let writtenDate=new Date(parseInt(i)*1000);
-      let presentDate=new Date();
-      if(writtenDate.getFullYear()==presentDate.getFullYear()){
-        if(writtenDate.getMonth()==presentDate.getMonth()){
-          if(writtenDate.getDate()==presentDate.getDate()){
-              if(writtenDate.getHours()==presentDate.getHours()){
-                if(writtenDate.getMinutes()==presentDate.getMinutes()){
-                  if(writtenDate.getSeconds()==presentDate.getSeconds()){
-                    return "Just Now"
+      let writtenDate = new Date(parseInt(i) * 1000);
+      let presentDate = new Date();
+      if (writtenDate.getFullYear() === presentDate.getFullYear()) {
+        if (writtenDate.getMonth() === presentDate.getMonth() || writtenDate.getDate() > presentDate.getDate()) {
+          if (writtenDate.getDate() === presentDate.getDate()) {
+              if (writtenDate.getHours() === presentDate.getHours()) {
+                if (writtenDate.getMinutes() === presentDate.getMinutes()) {
+                  if (writtenDate.getSeconds() === presentDate.getSeconds()) {
+                    return 'Just Now'
                   }
                   else{
-                    return presentDate.getSeconds()-writtenDate.getSeconds()+" sec ago"
+                    return presentDate.getSeconds() - writtenDate.getSeconds() + ' sec ago';
                   }
                 }
                 else{
-                  return presentDate.getMinutes()-writtenDate.getMinutes()+" min ago"
+                  return presentDate.getMinutes() - writtenDate.getMinutes() + ' min ago'
                 }
               }
               else{
-                return presentDate.getHours()-writtenDate.getHours()+" hrs ago"
+                return presentDate.getHours() - writtenDate.getHours() + ' hrs ago'
               }
           }
           else{
-            return presentDate.getDate()-writtenDate.getDate() + " day ago"
+            let date = (presentDate.getDate() - writtenDate.getDate());
+            if (date < 0) {
+              date += 30;
+            }
+            return date + ' day ago';
           }
         }
         else{
-          return presentDate.getMonth()-writtenDate.getMonth() + " month ago"
+          return presentDate.getMonth() - writtenDate.getMonth() + ' month ago';
         }
       }
       else{
-        return presentDate.getFullYear()-writtenDate.getFullYear() + " year ago"
+        return presentDate.getFullYear() - writtenDate.getFullYear() + ' year ago'
       }
      
   }

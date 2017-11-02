@@ -1,15 +1,16 @@
-import { 
-  Component, 
+import {
+  Component,
   OnInit,
   ViewChild,
   Renderer2,
   HostListener,
-  NgZone 
+  NgZone
 } from '@angular/core';
 import { Meta,Title } from '@angular/platform-browser';
-import {PropertyService} from "../services/property.service";
-import {PostService} from "../services/post.service";
-import {ActivatedRoute} from "@angular/router";
+import {PropertyService} from '../services/property.service';
+import {PostService} from '../services/post.service';
+import {ActivatedRoute} from '@angular/router';
+import { WindowRefService } from '../services/window-ref.service';
 
 @Component({
   selector: 'app-search',
@@ -43,80 +44,61 @@ export class SearchComponent implements OnInit {
     private route:  ActivatedRoute,
     private zone: NgZone,
     private titleService:Title,
-    private metaService:Meta
-  ) { }
+    private metaService:Meta,
+    private winRef: WindowRefService
+  ) {
+    metaService.addTags([
+      { name: 'author',   content: 'Coursetro.com'},
+      { name: 'keywords', content: 'angular seo, angular 4 universal, etc'},
+      { name: 'description', content: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa' }
+    ]);
+  }
 
   ngOnInit() {
-    this.setTopMargin()
-   
-    this.recievekeyFromUrl()
-     
-    this.setMobileView()
-   
-    /* this.pageNumber=JSON.parse(sessionStorage.getItem('pageNumber'))
-    if(this.pageNumber==null){
-      this.pageNumber=1
-    } */
-   /// console.log(this.recievedKey,this.pageNumber, "search")
-   
-    /* if(this.pageNumber==1){
-      console.log(this.recievedKey,this.pageNumber, "search")
-      /* this.get.blogData(this.pageNumber,this.recievedKey).subscribe(
-      (data)=>{ 
-        if(data.length>0){
-          this.haveData=true
-        }
-        else{
-          this.haveData=false
-        }
-        if(data.length==0 && this.pageNumber==1){
+    this.setTopMargin();
 
-        }
-        this.show=true;
-        this.dataRecieved=true;
-        for(let i in data){
-            this.blogDetails.push(
-              {
-                blogId:data[i].blogId,
-                blogImage:data[i].blogImage,
-                bloggerName:data[i].bloggerName,
-                bloggerImage:data[i].bloggerImage,
-                heading:data[i].heading,
-                Content:data[i].Content,
-                insertedDate:this.timePassed(data[i].insertedDate),
-                ViewCount:data[i].ViewCount,
-                ShareCount:data[i].ShareCount,
-                keywords:data[i].keywords.split(","),
-                exactDate:this.ExactDate(data[i].insertedDate),
-                readingTime:this.timeToRead(data[i].Content)
-              }
-            )
-          }
-        console.log(this.blogDetails, " search")
-        }
-      ) 
+    this.recievekeyFromUrl();
+
+    this.setMobileView();
+
     }
-    else{
-      this.show=true;
-      this.dataRecieved=true;
-      this.blogDetails=JSON.parse(sessionStorage.getItem('searchedBlog'))
-      console.log(this.blogDetails," vtds")
+    ngAfterViewInit() {
+      this.setTopMargin();
+      this.recievekeyFromUrl();
     }
- */    
+
+    setTitle() {
+      this.titleService.setTitle(this.recievedKey + ',' +
+                  'Read the latest articles, blogs, news and other informations related to '
+                  + this.recievedKey);
     }
-    ngAfterViewInit(){
-      this.setTopMargin()
-      this.recievekeyFromUrl()
+    setMetaTags() {
+      this.metaService.addTags([
+        { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-')},
+        { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to '
+          + this.recievedKey },
+        { name: 'title', content: this.recievedKey + 'Blogs'},
+        { name: 'theme-color', content: '#4327a0'},
+        { property: 'og:title', content: this.recievedKey + 'Blogs' },
+        { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to '
+           + this.recievedKey},
+        { property: 'og:url', content:  'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-')},
+        { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
+        { property: 'og:site_name', content: 'Chase Your Sport' },
+        { property: 'fb:app_id', content: '1750709328507665'},
+        { name: 'twitter:card', content: 'summary_large_image'},
+        { name: 'twitter:site', content: '@Chaseyoursport'},
+        { name: 'twitter:creator', content: '@NadeemKhan'},
+        { name: 'twitter:title', content: this.recievedKey + 'Blogs'},
+        { name: 'twitter:description', content: 'Read the latest articles, blogs, news and other informations related to '
+          + this.recievedKey},
+        { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
+      ]);
     }
-    
-    setTitle(){
-      this.titleService.setTitle(this.recievedKey+","+"Read the latest articles, blogs, news and other informations related to "+this.recievedKey)
-    }
-    
-    getBlogs(){
-      let blogDetails:{
-        blogId:string;
-        blogImage:string;
+    getBlogs() {
+      const blogDetails: {
+        blogId: string;
+        blogImage: string;
         bloggerName:string,
         bloggerImage:string,
         heading:string,
@@ -127,147 +109,150 @@ export class SearchComponent implements OnInit {
         keywords:string[],
         exactDate:string;
         readingTime:string
-      }[]=[];
+      }[] = [];
       this.get.blogData(this.pageNumber,this.recievedKey).subscribe(
-        (data)=>{ 
-          if(data.length>0){
-            this.haveData=true
-          }
-          else{
-            this.haveData=false
+        (data) => {
+          if(data.length > 0) {
+            this.haveData = true;
+          } else {
+            this.haveData = false;
           }
           if(data.length==0 && this.pageNumber==1){
-  
+
           }
           this.show=true;
           this.dataRecieved=true;
           for(let i in data){
               blogDetails.push(
                 {
-                  blogId:data[i].blogId,
-                  blogImage:data[i].blogImage,
-                  bloggerName:data[i].bloggerName,
-                  bloggerImage:data[i].bloggerImage,
-                  heading:data[i].heading,
-                  Content:data[i].Content,
-                  insertedDate:this.timePassed(data[i].insertedDate),
-                  ViewCount:data[i].ViewCount,
-                  ShareCount:data[i].ShareCount,
-                  keywords:data[i].keywords.split(","),
-                  exactDate:this.ExactDate(data[i].insertedDate),
-                  readingTime:this.timeToRead(data[i].Content)
+                  blogId: data[i].blogId,
+                  blogImage: data[i].blogImage,
+                  bloggerName: data[i].bloggerName,
+                  bloggerImage: data[i].bloggerImage,
+                  heading: data[i].heading,
+                  Content: data[i].Content,
+                  insertedDate: this.timePassed(data[i].insertedDate),
+                  ViewCount: data[i].ViewCount,
+                  ShareCount: data[i].ShareCount,
+                  keywords: data[i].keywords.split(','),
+                  exactDate: this.ExactDate(data[i].insertedDate),
+                  readingTime: this.timeToRead(data[i].Content)
                 }
               )
             }
-          this.blogDetails=blogDetails
+          this.blogDetails = blogDetails;
           }
         )
+        this.setMetaTags();
     }
-    recievekeyFromUrl(){
-     
-      this.recievedKey=this.route.snapshot.url[0].path.replace(/-/g, " ")
+    recievekeyFromUrl() {
+
+      this.recievedKey=this.route.snapshot.url[0].path.replace(/-/g, ' ')
       this.route.params.subscribe(
         (params)=>{
           this.pageNumber=1
-          //console.log(params, " params")
-          this.recievedKey=params.tag.replace(/-/g, " ")
+          // console.log(params, " params")
+          this.recievedKey=params.tag.replace(/-/g, ' ')
           this.setTitle()
           this.getBlogs()
-          
+
         }
       )
-      
+
     }
-    
+
     setMobileView(){
-      if(window.innerWidth<700){
+      if(this.winRef.nativeWindow.innerWidth<700){
         this.mobileView=true;
        }
        else{
          this.mobileView=false;
        }
-      
+
     }
-    
+
     timeToRead(s:string){
-      let words = s.split(" ");
+      let words = s.split(' ');
       let time=Math.round(words.length/180)
       if(time>1){
-        return time + " min read"
+        return time + ' min read'
       }
       else{
-        return "2 min read"
+        return '2 min read'
       }
     }
-    
+
     ExactDate(i:number){
       let writtenDate=new Date(i*1000);
       return writtenDate.toDateString()
     }
-    
-    timePassed(i:string){
+
+    timePassed(i: string){
       
-        let writtenDate=new Date(parseInt(i)*1000);
-        let presentDate=new Date();
-        //console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
-        if(writtenDate.getFullYear()==presentDate.getFullYear()){
-          if(writtenDate.getMonth()==presentDate.getMonth()){
-            if(writtenDate.getDate()==presentDate.getDate()){
-                if(writtenDate.getHours()==presentDate.getHours()){
-                  if(writtenDate.getMinutes()==presentDate.getMinutes()){
-                    if(writtenDate.getSeconds()-presentDate.getSeconds()){
-                      return "Just Now"
+        let writtenDate = new Date(parseInt(i) * 1000);
+        let presentDate = new Date();
+        if (writtenDate.getFullYear() === presentDate.getFullYear()) {
+          if (writtenDate.getMonth() === presentDate.getMonth() || writtenDate.getDate() > presentDate.getDate()) {
+            if (writtenDate.getDate() === presentDate.getDate()) {
+                if (writtenDate.getHours() === presentDate.getHours()) {
+                  if (writtenDate.getMinutes() === presentDate.getMinutes()) {
+                    if (writtenDate.getSeconds() === presentDate.getSeconds()) {
+                      return 'Just Now'
                     }
                     else{
-                      return presentDate.getSeconds()-writtenDate.getSeconds()+" sec ago"
+                      return presentDate.getSeconds() - writtenDate.getSeconds() + ' sec ago';
                     }
                   }
                   else{
-                    return presentDate.getMinutes()-writtenDate.getMinutes()+" min ago"
+                    return presentDate.getMinutes() - writtenDate.getMinutes() + ' min ago'
                   }
                 }
                 else{
-                  return presentDate.getHours()-writtenDate.getHours()+" hrs ago"
+                  return presentDate.getHours() - writtenDate.getHours() + ' hrs ago'
                 }
             }
             else{
-              return presentDate.getDate()-writtenDate.getDate() + " day ago"
+              let date = (presentDate.getDate() - writtenDate.getDate());
+              if (date < 0) {
+                date += 30;
+              }
+              return date + ' day ago';
             }
           }
           else{
-            return presentDate.getMonth()-writtenDate.getMonth() + " month ago"
+            return presentDate.getMonth() - writtenDate.getMonth() + ' month ago';
           }
         }
         else{
-          return presentDate.getFullYear()-writtenDate.getFullYear() + " year ago"
+          return presentDate.getFullYear() - writtenDate.getFullYear() + ' year ago'
         }
        
     }
-    
-    
+
+
     setTopMargin(){
       this.recieveHeight.ofHeader.subscribe(
         margin=>{
         this.topMargin=margin
         }
-      ) 
-      this.renderer.setStyle(this.searchPage.nativeElement,'margin-top',this.topMargin+"px")
+      )
+      this.renderer.setStyle(this.searchPage.nativeElement,'margin-top',this.topMargin+'px')
     }
-    
-   
+
+
     @HostListener('window:resize',[])onresize(){
       this.setTopMargin()
-      
+
       this.setMobileView()
     }
-    
-    
+
+
     nextPage(){
       this.pageNumber++;
       this.dataRecieved=false;
       this.get.blogData(this.pageNumber,this.recievedKey).subscribe(
         data=>{
-          console.log(data, " nm")
+          console.log(data, ' nm')
           this.dataRecieved=true;
           if(data.length>0){
             this.haveData=true
@@ -288,7 +273,7 @@ export class SearchComponent implements OnInit {
                 insertedDate:this.timePassed(data[i].insertedDate),
                 ViewCount:data[i].ViewCount,
                 ShareCount:data[i].ShareCount,
-                keywords:data[i].keywords.split(","),
+                keywords:data[i].keywords.split(','),
                 exactDate:this.ExactDate(data[i].insertedDate),
                 readingTime:this.timeToRead(data[i].Content)
               }

@@ -49,4 +49,7 @@ export class SinglePanelComponent implements OnInit {
     this.route.navigate(['/'+this.blogId+'/edit'])
     this.send.detailsofBlog.next(this.blog)
   }
+  deleteBlog() {
+
+  }
 }

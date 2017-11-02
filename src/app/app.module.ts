@@ -27,6 +27,8 @@ import {SaveService} from './services/save.service';
 import {StatusService} from './services/status.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-gaurd.service';
+import { FacebookService } from './services/facebook.service';
+import { WindowRefService } from './services/window-ref.service';
 
 import { MaintainHeightWidthRatioDirective } from './directives/maintain-height-width-ratio.directive';
 import { TabViewAvailableDirective } from './directives/tab-view-available.directive';
@@ -37,8 +39,6 @@ import { SearchComponent } from './search/search.component';
 import { CommentsComponent } from './comments/comments.component';
 import {UrlSerializer} from '@angular/router';
 
-import { FacebookModule } from 'ngx-facebook';
-import { NguiAutoCompleteModule } from '@ngui/auto-complete';
 import { MessageComponent } from './message/message.component';
 import { CustomUrlComponent } from './custom-url/custom-url.component';
 import { OpenFullImageComponent } from './open-full-image/open-full-image.component';
@@ -78,13 +78,11 @@ import { BlogPreviewComponent } from './editor-panel/blog-preview/blog-preview.c
     BlogPreviewComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'blogist'}),
     FormsModule,
     HttpModule,
     RoutingModule,
-    FacebookModule.forRoot(),
     ReactiveFormsModule,
-    NguiAutoCompleteModule
   ],
   providers: [
     PropertyService,
@@ -94,6 +92,8 @@ import { BlogPreviewComponent } from './editor-panel/blog-preview/blog-preview.c
     PostService,
     AuthService,
     AuthGuard,
+    FacebookService,
+    WindowRefService,
     { provide: UrlSerializer, useClass: CustomUrlComponent }
   ],
   bootstrap: [AppComponent]

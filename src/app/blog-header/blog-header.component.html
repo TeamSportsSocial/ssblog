@@ -11,16 +11,17 @@
     </a>
     <li  *ngIf="!mobileView">
       <input 
-        ngui-auto-complete
-        [source]="keywords"
-        [list-formatter]="autocompleListFormatter"
         type="text" 
         placeholder="Search here the latest topics & trends in sports" 
-        (valueChanged)="valueChanged($event)"
-        [max-num-list]="10"
-        [open-on-focus]="false"
-        (keypress)="sendData($event)"
-        #searchBox>  
+        (keyup)="sendData($event)"
+        #searchBox> 
+        <ul class="searchResult" *ngIf="haveresult" #resultBox>
+          <li *ngFor="let result of results | slice:0:9">
+            <a routerLink="/{{result}}" >
+              {{ result }}
+            </a>
+          </li>
+        </ul> 
     </li>
   </ul>
   <ul class="right" *ngIf="!mobileView">
@@ -69,16 +70,17 @@
         </p>
       <div class="search">
          <input 
-          ngui-auto-complete
-          [source]="keywords"
-          [list-formatter]="autocompleListFormatter"
           type="text" 
           placeholder="Search " 
-          (valueChanged)="valueChanged($event)"
-          [max-num-list]="10"
-          (keypress)="sendData($event)"
-          [open-on-focus]="false"
+          (keyup)="sendData($event)"
           #searchBox >
+          <ul class="searchResult" *ngIf="haveresult" #resultBox>
+              <li *ngFor="let result of results | slice:0:9" >
+                <a routerLink="/{{result}}" (click)="navigate()" >
+                  {{ result }}
+                </a>
+              </li>
+          </ul> 
           <button (click)="searchSportSocial()">Search</button>
       </div>
       

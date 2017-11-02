@@ -3,7 +3,9 @@ import {
   OnInit,
   Input 
 } from '@angular/core';
-import {PropertyService} from "../../../services/property.service";
+import {PropertyService} from '../../../services/property.service';
+
+import { WindowRefService } from '../../../services/window-ref.service';
 
 @Component({
   selector: 'SportSocial-trending-blog-card',
@@ -40,7 +42,7 @@ export class TrendingBlogCardComponent implements OnInit {
     exactDate:string,
     readingTime:string
   }
-  constructor(private Send: PropertyService) { }
+  constructor(private Send: PropertyService, private winRef: WindowRefService) { }
 
   ngOnInit() {
     this.blog={
@@ -71,10 +73,10 @@ export class TrendingBlogCardComponent implements OnInit {
   }
   send(){
     this.Send.detailsofBlog.next(this.blog)
-    window.scrollTo(0,0)
+    this.winRef.nativeWindow.scrollTo(0,0)
   }
   setDefault(event){
-    this.blogImage="/assets/images/default-image.png"
+    this.blogImage='/assets/images/default-image.png'
   }
   
   

@@ -6,7 +6,8 @@
     "module": "es2015",
     "types": []
   },
-  "exclude": [
+  "exclude": [ 
+    "server.ts",
     "test.ts",
     "**/*.spec.ts"
   ]

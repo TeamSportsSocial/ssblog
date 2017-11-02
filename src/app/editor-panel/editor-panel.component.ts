@@ -1,16 +1,17 @@
-import { 
+
+import {
   Component,
-  OnInit, 
+  OnInit,
   ViewChild,
   ElementRef,
   Input,
   Renderer2,
   HostListener
-}from '@angular/core';
-import {Http,HttpModule} from '@angular/http';
-import {NgForm} from "@angular/forms";
-import {PropertyService} from "../services/property.service";
-import {Router} from "@angular/router";
+} from '@angular/core';
+import {Http, HttpModule} from '@angular/http';
+import {NgForm} from '@angular/forms';
+import {PropertyService} from '../services/property.service';
+import {Router} from '@angular/router';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
@@ -19,160 +20,490 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   styleUrls: ['./editor-panel.component.css']
 })
 export class EditorPanelComponent implements OnInit {
-  @ViewChild('f') signupForm: NgForm;
-  @ViewChild('bloggerImage') bloggerImage;
-  @ViewChild('blogImage') blogImage;
-  @ViewChild('form') panel;
+
+  fontSize = [];
+  @ViewChild('title') title;
   @ViewChild('desc') desc;
-  @ViewChild('imageblog') imageblog;
-  @ViewChild('imageblogger') imageblogger;
- 
-  
+  @ViewChild('url') URL;
+  @ViewChild('YoutubeUrl') youtubeURL;
+  @ViewChild('PluginUrl') pluginURL;
+  @ViewChild('keys') keys;
+  @ViewChild('text') Text;
+  @ViewChild('editorPanel') editorPanel;
+  @ViewChild('panel') panel;
+  @ViewChild('linkpopup') linkpopup;
+  @ViewChild('youtubeLinkPopup') youtubeLinkPopup;
+  @ViewChild('pluginLinkPopup') pluginLinkPopup;
+  blogimageSrc;
+  bloggerimageSrc;
+  imageSrc;
+  bloggerimageLoaded:boolean = false;
+  blogimageLoaded:boolean = false;
+  text:string = '';
+  FontSize;
+  embeddFont;
+  FontSizeArray;
+  linkUrl;
+  linkText;
+  youtubeUrl;
+  pluginUrl;
+  isKeywordButtonClicked:boolean = false;
+  keywordAdded:boolean = false;
+  linkAdded:boolean = true;
+  linkCount = 0;
+  youtubeVideoAdded:boolean= false;
+  Keypress:boolean = false;
+  Keys;
+  keywordArray;
+  initialActiveElement: {key, Element};
+  beforePopupActiveElement;
+  initialSelectedELement;
+  initialCurPos;
+  beforePopupSelectedElement;
+  beforePopupCurPos;
+  selectedText:string='';
+  selctedLink;
+  blogDetails: {
+    heading: string;
+    blogImage: string;
+    keywords: string;
+    bloggerName: string;
+    content: string;
+  };
+  blogImage;
+  bloggerImage;
   filesToUpload: Array<File>;
-  files=[]
+  files = [];
   topMargin;
   Result;
-  imageName=[];
-  isDisabled:boolean=false;
-  Preview:boolean=false;
-  blog:{
-    bloggerName:any,
-    blogDate:any,
-    blogTitle:any,
-    blogDesc:any,
-    keywords:any[]
-}
+  imageName = [];
+  isDisabled:boolean = false;
+  Preview:boolean = false;
+  blog: {
+    bloggerName: any,
+    blogTitle: any,
+    blogDesc: any,
+    keywords: any
+};
+blogPreview: {
+  bloggerName: any,
+  heading: any,
+  content: any,
+  keywords: string[],
+  blogImage: any,
+  bloggerImage: any,
+  readingTime: any
+};
 constructor(
-  private http:Http,
-  private recieveHeight:PropertyService,
-  private renderer:Renderer2,
-  private route:Router,
+  private http: Http,
+  private recieveHeight: PropertyService,
+  private renderer: Renderer2,
+  private route: Router,
   private sanitizer: DomSanitizer
-){
+) {
   this.filesToUpload = [];
 }
-ngOnInit(){
+ngOnInit() {
   this.recieveHeight.ofHeader.subscribe(
-    margin=>{
-      this.topMargin=margin
+    margin => {
+      this.topMargin = margin;
     }
-  )
-  this.renderer.setStyle(this.panel.nativeElement,'margin-top',this.topMargin+10+"px")
+  );
+  this.renderer.setStyle(this.panel.nativeElement, 'margin-top', this.topMargin + 10 + 'px');
+  for (let i = 4 ; i <= 28 ; i += 4) {
+    this.fontSize.push(i);
+  }
+  this.title.nativeElement.focus();
+  this.initialActiveElement = {
+    key: 'hello',
+    Element: document.activeElement
+  };
 }
-@HostListener('document:keypress', ['$event'])
-handleKeyboardEvent(event: KeyboardEvent) {
-  //console.log(event.code)
-  let length=this.desc.nativeElement.value.length
-  let curPos=this.desc.nativeElement.selectionStart
- // console.log(event,this.desc.nativeElement.selectionStart);
-  if(event.code=="Enter"){
-    let textBefore= this.desc.nativeElement.value.substring(0,curPos)
-    let textAfter= this.desc.nativeElement.value.substring(curPos, length)
-    this.desc.nativeElement.value=textBefore+"<br>"+textAfter
-    this.desc.nativeElement.selectionEnd=curPos+4
-    //console.log(this.desc.nativeElement.value)
-  }
-  if(event.code=="KeyB" && event.ctrlKey==true){
-    let startCurPos=this.desc.nativeElement.selectionStart
-    let endCurPos=this.desc.nativeElement.selectionEnd
-    //console.log("true",this.desc.nativeElement.selectionStart,this.desc.nativeElement.selectionEnd)
-    let textBefore=this.desc.nativeElement.value.substring(0,startCurPos)
-    let textMiddle= this.desc.nativeElement.value.substring(startCurPos,endCurPos)
-    let textAfter=this.desc.nativeElement.value.substring(endCurPos,length) 
-   // console.log("before: ", textBefore,"middle:", textMiddle, "after: " ,textAfter)
-    this.desc.nativeElement.value=textBefore+"<b>"+textMiddle+"</b>"+textAfter
-    this.desc.nativeElement.selectionEnd=endCurPos+7
-  }
-  if(event.code=="KeyI" && event.ctrlKey==true){
-    let startCurPos=this.desc.nativeElement.selectionStart
-    let endCurPos=this.desc.nativeElement.selectionEnd
-    //console.log("true",this.desc.nativeElement.selectionStart,this.desc.nativeElement.selectionEnd)
-    let textBefore=this.desc.nativeElement.value.substring(0,startCurPos)
-    let textMiddle= this.desc.nativeElement.value.substring(startCurPos,endCurPos)
-    let textAfter=this.desc.nativeElement.value.substring(endCurPos,length) 
-    //console.log("before: ", textBefore,"middle:", textMiddle, "after: " ,textAfter)
-    this.desc.nativeElement.value=textBefore+"<i>"+textMiddle+"</i>"+textAfter
-    this.desc.nativeElement.selectionEnd=endCurPos+7
+startDesc() {
+  if (this.desc.nativeElement.innerHTML) {
+    this.Keypress = true;
+  } else {
+    this.Keypress = false;
   }
 }
+@HostListener('mousedown', ['$event'])onmousedown(event){
+
+}
+@HostListener('keyup', ['$event'])onkeyup(event) {
+  this.initialActiveElement = {
+    key: 'hello',
+    Element: document.activeElement
+  };
+}
+
+bold(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('bold', false, null);
+  if (event.target.className === 'not-selected'){
+    this.renderer.removeClass(event.target, 'not-selected');
+    this.renderer.addClass(event.target, 'selected');
+  } else {
+    this.renderer.removeClass(event.target, 'selected');
+    this.renderer.addClass(event.target, 'not-selected');
+  }
+}
+
+italic(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('italic', false, null);
+  if (event.target.className === 'not-selected'){
+    this.renderer.removeClass(event.target, 'not-selected');
+    this.renderer.addClass(event.target, 'selected');
+  } else {
+    this.renderer.removeClass(event.target, 'selected');
+    this.renderer.addClass(event.target, 'not-selected');
+  }
+}
+
+underline(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('underline', false, null);
+  if (event.target.className === 'not-selected') {
+    this.renderer.removeClass(event.target, 'not-selected');
+    this.renderer.addClass(event.target, 'selected');
+  } else {
+    this.renderer.removeClass(event.target, 'selected');
+    this.renderer.addClass(event.target, 'not-selected');
+  }
+}
+
+leftAlign(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('justifyLeft', false, null);
+}
+
+rightAlign(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('justifyRight', false, null);
+}
+
+centerAlign(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('justifyCenter', false, null);
+}
+
+justify(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('justifyFull', false, null);
+}
+
+undo(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('undo', false, null);
+}
+
+
+redo(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('redo', false, null);
+}
+
+
+
+indent(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('indent', false, null);
+}
+outdent(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('outdent', false, null);
+}
+
+subscript(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('subscript', false, null);
+}
+superscript(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('superscript', false, null);
+}
+
+
+listWithNumbers(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('insertOrderedList', false, null);
+}
+
+listWithDots(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('insertUnorderedList', false, null);
+}
+
+removeCss(event) {
+  console.log(document.execCommand('removeFormat', false, null));
+  document.execCommand('removeFormat', false, null);
+}
+
+addParagraph(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('insertParagraph', false, null);
+}
+
+selectTextColor(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('foreColor', false, event.target.value);
+}
+
+selectBackgroundColor(event) {
+  this.initialActiveElement.Element.focus();
+ document.execCommand('styleWithCSS', false, true);
+  document.execCommand('backColor', false, event.target.value);
+}
+
+selectFontSize(event) {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('fontSize', false, (event.target.value) / 4);
+
+}
+preventdefault(event) {
+  event.target.focus();
+  event.preventDefault();
+}
+test(){
+  console.log(this.beforePopupSelectedElement, this.beforePopupActiveElement, this.beforePopupCurPos);
+}
+restoreCaret(){
+  this.beforePopupActiveElement.focus();
+  console.log(this.beforePopupSelectedElement, this.beforePopupActiveElement, this.beforePopupCurPos);
+  const sel = window.getSelection();
+  sel.collapse(this.beforePopupSelectedElement, this.beforePopupCurPos);
+}
+addLink(event) {
+  this.selectedText =  document.getSelection().toString();
+  console.log(this.selectedText);
+  if (this.selectedText != '') {
+    this.Text.nativeElement.value = this.selectedText;
+    document.execCommand('cut', false, null);
+  }
+  this.initialActiveElement.Element.focus();
+  this.renderer.setStyle(this.linkpopup.nativeElement, 'display', 'block');
+  this.beforePopupActiveElement = this.initialActiveElement.Element;
+  this.initialSelectedELement = document.getSelection();
+  this.beforePopupSelectedElement = this.initialSelectedELement.focusNode;
+  this.beforePopupCurPos = this.initialSelectedELement.focusOffset;
+}
+unLink() {
+  this.selctedLink = document.getSelection();
+  console.log(this.selctedLink);
+}
+linkOk(event) {
+  this.linkUrl = this.URL.nativeElement.value;
+  this.linkText = this.Text.nativeElement.value;
+  const embed = `<a class="link" href="` + this.linkUrl +
+    `"target="_blank">` + ' ' + this.linkText + `</a>`;
+  if (this.linkUrl && this.linkText) {
+    document.execCommand('insertHTML', false, embed);
+  }
+  this.renderer.setStyle(this.linkpopup.nativeElement, 'display', 'none');
+  this.beforePopupActiveElement.focus();
+
+}
+linkCancel() {
+  event.preventDefault();
+  document.execCommand('insertHTML', false, '');
+  this.renderer.setStyle(this.linkpopup.nativeElement, 'display', 'none');
+  this.beforePopupActiveElement.focus();
+}
+
+
+addYoutubevideo() {
+  this.renderer.setStyle(this.youtubeLinkPopup.nativeElement, 'display', 'block');
+  this.beforePopupActiveElement = this.initialActiveElement.Element;
+  this.initialSelectedELement = document.getSelection();
+  this.beforePopupSelectedElement = this.initialSelectedELement.focusNode;
+  this.beforePopupCurPos = this.initialSelectedELement.focusOffset;
+}
+youtubeLinkOk(event) {
+  this.youtubeUrl = this.youtubeURL.nativeElement.value.replace('watch?v=', 'embed/') ;
+  console.log(this.youtubeUrl);
+  if (this.youtubeURL.nativeElement.value) {
+  document.execCommand('insertHTML', false, `
+      <div style="position: relative;
+      padding-bottom: 56.25%;
+      width:90%;
+      padding-top: 25px;
+      height: 0;"><iframe style="position: absolute;
+      top: 0;
+      left: 5%;
+      width: 100%;
+      height: 100%;" src="` + this.youtubeUrl
+      + `"   frameborder="0" allowfullscreen></iframe></div><br><br>`);
+
+  }
+  this.renderer.setStyle(this.youtubeLinkPopup.nativeElement, 'display', 'none');
+  this.beforePopupActiveElement.focus();
+}
+youtubeLinkCancel() {
+  document.execCommand('insertHTML', false, '');
+  this.renderer.setStyle(this.youtubeLinkPopup.nativeElement, 'display', 'none');
+  this.beforePopupActiveElement.focus();
+}
+addQuote(event) {
+  this.initialActiveElement.Element.focus();
+   document.execCommand('formatBlock', false, 'blockquote');
+}
+selectImage(event) {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = this._handleReaderLoaded.bind(this);
+  reader.readAsDataURL(file);
+}
+_handleReaderLoaded(event) {
+  const reader = event.target;
+  this.imageSrc = reader.result;
+  console.log(this.imageSrc);
+  document.execCommand('insertHTML', false, `<div style="max-width:100%;height:auto;" ><img style="max-width:100%;max-height:100%;" src="`
+  + this.imageSrc + `"></div>`);
+}
+
+
+selectGif(event) {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = this._handleGifReaderLoaded.bind(this);
+  reader.readAsDataURL(file);
+}
+_handleGifReaderLoaded(event) {
+  const reader = event.target;
+  this.imageSrc = reader.result;
+  document.execCommand('insertImage', false, this.imageSrc);
+}
+
+
+selectBloggerImage(event) {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = this._handleBloggerReaderLoaded.bind(this);
+  reader.readAsDataURL(file);
+  this.bloggerimageLoaded = true;
+}
+_handleBloggerReaderLoaded(event) {
+  const reader = event.target;
+  this.bloggerimageSrc = reader.result;
+}
+
+
+selectBlogImage(event) {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = this._handleBlogReaderLoaded.bind(this);
+  reader.readAsDataURL(file);
+  this.blogimageLoaded = true;
+}
+_handleBlogReaderLoaded(event) {
+  const reader = event.target;
+  this.blogimageSrc = reader.result;
+
+}
+openAddKeywordPopup() {
+  this.isKeywordButtonClicked = true;
+  if (this.Keys) {
+    this.Keys = this.keywordArray.toString();
+  }
+}
+addKeywords() {
+  this.Keys = this.keys.nativeElement.textContent;
+  this.keywordArray = (this.Keys.split(','));
+  this.isKeywordButtonClicked = false;
+  if (this.Keys) {
+    this.keywordAdded = true;
+  } else {
+    this.keywordAdded = false;
+  }
+}
+addKeywordsCancel() {
+  this.isKeywordButtonClicked = false;
+  this.keywordAdded = false;
+}
+deleteKeyword(i: number) {
+  this.keywordArray.splice(i, 1);
+}
+
 makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
-  this.imageName=["bloggerImage","blogImage"]
+  this.imageName = ['blogImage', 'bloggerImage'];
   return new Promise((resolve, reject) => {
-      var formData: any = new FormData();
-      var xhr = new XMLHttpRequest();
-      for(var i = 0; i < files.length; i++) {
-          formData.append(this.imageName[i],files[i]);
+      const formData: any = new FormData();
+      const xhr = new XMLHttpRequest();
+      for (let i = 0; i < files.length; i++) {
+          formData.append(this.imageName[i], files[i]);
       }
-      formData.append("bloggerName",this.blog.bloggerName)
-      formData.append("blogrTitle",this.blog.blogTitle)
-      formData.append("blogDesc",this.blog.blogDesc)
-      formData.append("blogDate",this.blog.blogDate)
-      formData.append("keywords",this.blog.keywords)
+      formData.append('bloggerName', this.blog.bloggerName);
+      formData.append('blogrTitle', this.blog.blogTitle);
+      formData.append('blogDesc', this.blog.blogDesc);
+      formData.append('keywords', this.blog.keywords);
       xhr.onreadystatechange = function () {
-          if (xhr.readyState == 4) {
-              if (xhr.status == 200) {
+          if (xhr.readyState === 4) {
+              if (xhr.status === 200) {
                   resolve(JSON.parse(xhr.response));
               } else {
                   reject(xhr.response);
               }
           }
-      }
-      xhr.open("POST", url, true);
+      };
+      xhr.open('POST', url, true);
       xhr.send(formData);
   });
 }
-upload(){
-  this.isDisabled=true;
-  this.files=[this.bloggerImage,this.blogImage]
-  this.blog={
-    bloggerName:this.signupForm.value.blogData.name,
-    blogDate:this.signupForm.value.blogData.date,
-    blogTitle:this.signupForm.value.blogData.Title,
-    blogDesc:this.desc.nativeElement.value,
-    keywords:this.signupForm.value.blogData.keywords.split(",")
+upload() {
+  console.log(this.panel);
+  this.blogImage = this.panel.nativeElement.children[0].children[1].files[0];
+  this.bloggerImage = this.panel.nativeElement.children[2].children[0].children[1].files[0];
+  this.files = [ this.blogImage, this.bloggerImage];
+  console.log(this.files);
+  this.isDisabled = true;
+  this.blog = {
+    bloggerName: this.panel.nativeElement.children[2].children[1].innerText,
+    blogTitle: this.panel.nativeElement.children[1].innerText,
+    blogDesc: this.panel.nativeElement.children[4].innerHTML,
+    keywords: this.Keys
+  };
+  console.log(this.blog);
+  this.imageName = ['blogImage', 'bloggerImage'];
+  for (let i = 0 ; i < this.files.length; i++ ) {
+    this.filesToUpload.push(<File> this.files[i]);
   }
-  this.imageName=["bloggerImage","blogImage"]
-  for(var i=0;i<this.files.length;i++){
-    this.filesToUpload.push(<File> this.files[i].nativeElement.files[0]);
-  }
-  this.makeFileRequest("https://admin.chaseyoursport.com/blog/saveNewBlog", [], this.filesToUpload)
+  this.makeFileRequest('https://test.sportsocial.in/poc/saveNewBlog', [], this.filesToUpload)
   .then((result) => {
-    this.Result=result
+    this.Result = result;
     console.log(result);
-    if(this.Result.Status=="Success"){
-      this.isDisabled=false;
+    if (this.Result.Status === 'Success') {
+      this.isDisabled = false;
     }
   }, (error) => {
     console.error(error);
-    if(error){
-      this.isDisabled=false
+    if (error) {
+      this.isDisabled = false;
     }
   });
-  
-  
+
+
  }
-  preview(){
-    this.files=[this.bloggerImage.nativeElement.files[0],this.blogImage.nativeElement.files[0]]
- /*    let reader = new FileReader()
-    console.log(event)
-    reader.onload=function(e){
-       
-    }
-    reader.readAsDataURL(this.bloggerImage.nativeElement.files[0]) */
-   //this.previewBloggerImage=this.sanitizer.bypassSecurityTrustUrl(this.bloggerImage.nativeElement.value)
-    this.blog={
-      bloggerName:this.signupForm.value.blogData.name,
-      blogDate:this.signupForm.value.blogData.date,
-      blogTitle:this.signupForm.value.blogData.Title,
-      blogDesc:this.desc.nativeElement.value,
-      keywords:this.signupForm.value.blogData.keywords.split(",")
-    }
-    this.Preview=true;
-  }
-  closePreview(){
-    this.Preview=false
-  }
-  something(){
-    console.log("true")
-  }
+ preview() {
+  this.Preview = true;
+  console.log(this.panel);
+  this.blogImage = this.panel.nativeElement.children[0].children[1].files[0];
+  this.bloggerImage = this.panel.nativeElement.children[2].children[0].children[1].files[0];
+  this.files = [this.blogImage, this.bloggerImage];
+  console.log(this.files);
+  this.isDisabled = true;
+  this.blogPreview = {
+    bloggerName: this.panel.nativeElement.children[2].children[1].innerText,
+    heading: this.panel.nativeElement.children[1].innerText,
+    content: this.sanitizer.bypassSecurityTrustHtml( this.panel.nativeElement.children[4].innerHTML),
+    keywords: this.keywordArray,
+    blogImage: this.blogimageSrc,
+    bloggerImage: this.bloggerimageSrc,
+    readingTime: '2 min read '
+  };
+  console.log(this.blogPreview);
+ }
+ closePreview() {
+  this.Preview = false;
+ }
+
 }

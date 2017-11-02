@@ -141,22 +141,22 @@ var AdminPanelComponent = /** @class */ (function () {
         });
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('panel'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('panel'),
         __metadata("design:type", Object)
     ], AdminPanelComponent.prototype, "panel", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], AdminPanelComponent.prototype, "onresize", null);
     AdminPanelComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocialBlog-admin-panel',
             template: __webpack_require__("../../../../../src/app/admin-panel/admin-panel.component.html"),
             styles: [__webpack_require__("../../../../../src/app/admin-panel/admin-panel.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object])
     ], AdminPanelComponent);
     return AdminPanelComponent;
     var _a, _b, _c;
@@ -187,7 +187,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/admin-panel/edit-blog/edit-blog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" #editBlog>\n    <div class=\"row\">\n      <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\n        <form  #f=\"ngForm\">\n          <div id=\"blog-data\" ngModelGroup=\"blogData\" #userData=\"ngModelGroup\">\n            <div class=\"form-group\">\n              <label for=\"username\">Name</label>\n              <input type=\"text\" id=\"username\" class=\"form-control\"  name=\"name\" required #name>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"bloggerImage\">Blogger Image</label>\n              <input type=\"file\" id=\"bloggerImage\" class=\"form-control\" ngModel name=\"bloggerImage\" #bloggerImage>\n              <div class=\"imgTest\"></div>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"Title\">Title</label>\n              <input type=\"text\" id=\"title\" class=\"form-control\" name=\"Title\"  #title>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"keywords\">Keywords</label>\n              <input type=\"text\" id=\"keywords\" class=\"form-control\"  name=\"keywords\" required #keywords>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"blogImage\">Blog Image</label>\n              <input type=\"file\" id=\"blogImage\" class=\"form-control\"  name=\"blogMainImage\" #blogImage>\n              <div class=\"imgTest\"></div>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"desc\">Desc  </label>\n              <textarea rows=\"50\" id=\"desc\" class=\"form-control\"  name=\"desc\" required  #desc>\n              </textarea>\n            </div>\n          </div>\n  \n          <button class=\"btn btn-primary\" (click)=\"upload()\" [disabled]=\"isDisabled\" >Update</button>\n        </form>\n      </div>\n    </div>\n    <hr>\n  </div>"
+module.exports = "<div class=\"container\" #editBlog>\n    <div class=\"row\">\n      <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\n        <form  #f=\"ngForm\">\n          <div id=\"blog-data\" ngModelGroup=\"blogData\" #userData=\"ngModelGroup\">\n            <div class=\"form-group\">\n              <label for=\"username\">Name</label>\n              <input type=\"text\" id=\"username\" class=\"form-control\"  name=\"name\" required #name>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"bloggerImage\">Blogger Image</label>\n              <input type=\"file\" id=\"bloggerImage\" class=\"form-control\" ngModel name=\"bloggerImage\" #bloggerImage>\n              <div class=\"imgTest\"></div>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"Title\">Title</label>\n              <input type=\"text\" id=\"title\" class=\"form-control\" name=\"Title\"  #title>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"keywords\">Keywords</label>\n              <input type=\"text\" id=\"keywords\" class=\"form-control\"  name=\"keywords\" required #keywords>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"blogImage\">Blog Image</label>\n              <input type=\"file\" id=\"blogImage\" class=\"form-control\"  name=\"blogMainImage\" #blogImage>\n              <div class=\"imgTest\"></div>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"desc\">Desc  </label>\n              <textarea rows=\"50\" id=\"desc\" class=\"form-control\"  name=\"desc\" required  #desc>\n              </textarea>\n            </div>\n          </div>\n  \n        </form>\n      </div>\n    </div>\n    <hr>\n  </div>"
 
 /***/ }),
 
@@ -240,83 +240,43 @@ var EditBlogComponent = /** @class */ (function () {
     EditBlogComponent.prototype.onresize = function () {
         this.setTopMargin();
     };
-    EditBlogComponent.prototype.handleKeyboardEvent = function (event) {
-        var length = this.desc.nativeElement.value.length;
-        var curPos = this.desc.nativeElement.selectionStart;
-        // console.log(event,this.desc.nativeElement.selectionStart);
-        if (event.code == "Enter") {
-            var textBefore = this.desc.nativeElement.value.substring(0, curPos);
-            var textAfter = this.desc.nativeElement.value.substring(curPos, length);
-            this.desc.nativeElement.value = textBefore + "</br>" + textAfter;
-            this.desc.nativeElement.selectionEnd = curPos + 5;
-            //console.log(this.desc.nativeElement.value)
-        }
-        if (event.code == "KeyB" && event.ctrlKey == true) {
-            var startCurPos = this.desc.nativeElement.selectionStart;
-            var endCurPos = this.desc.nativeElement.selectionEnd;
-            console.log("true", this.desc.nativeElement.selectionStart, this.desc.nativeElement.selectionEnd);
-            var textBefore = this.desc.nativeElement.value.substring(0, startCurPos);
-            var textMiddle = this.desc.nativeElement.value.substring(startCurPos, endCurPos);
-            var textAfter = this.desc.nativeElement.value.substring(endCurPos, length);
-            // console.log("before: ", textBefore,"middle:", textMiddle, "after: " ,textAfter)
-            this.desc.nativeElement.value = textBefore + "<b>" + textMiddle + "</b>" + textAfter;
-            this.desc.nativeElement.selectionEnd = endCurPos + 5;
-        }
-        if (event.code == "KeyI" && event.ctrlKey == true) {
-            var startCurPos = this.desc.nativeElement.selectionStart;
-            var endCurPos = this.desc.nativeElement.selectionEnd;
-            //console.log("true",this.desc.nativeElement.selectionStart,this.desc.nativeElement.selectionEnd)
-            var textBefore = this.desc.nativeElement.value.substring(0, startCurPos);
-            var textMiddle = this.desc.nativeElement.value.substring(startCurPos, endCurPos);
-            var textAfter = this.desc.nativeElement.value.substring(endCurPos, length);
-            //console.log("before: ", textBefore,"middle:", textMiddle, "after: " ,textAfter)
-            this.desc.nativeElement.value = textBefore + "<i>" + textMiddle + "</i>" + textAfter;
-            this.desc.nativeElement.selectionEnd = endCurPos + 5;
-        }
-    };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('editBlog'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('editBlog'),
         __metadata("design:type", Object)
     ], EditBlogComponent.prototype, "editBlog", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('f'),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["NgForm"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["NgForm"]) === "function" && _a || Object)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('f'),
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */]) === "function" && _a || Object)
     ], EditBlogComponent.prototype, "editBlogForm", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('desc'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('desc'),
         __metadata("design:type", Object)
     ], EditBlogComponent.prototype, "desc", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('title'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('title'),
         __metadata("design:type", Object)
     ], EditBlogComponent.prototype, "title", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('name'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('name'),
         __metadata("design:type", Object)
     ], EditBlogComponent.prototype, "name", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('keywords'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('keywords'),
         __metadata("design:type", Object)
     ], EditBlogComponent.prototype, "keywords", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], EditBlogComponent.prototype, "onresize", null);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('document:keypress', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], EditBlogComponent.prototype, "handleKeyboardEvent", null);
     EditBlogComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'app-edit-blog',
             template: __webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.html"),
             styles: [__webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object])
     ], EditBlogComponent);
     return EditBlogComponent;
     var _a, _b, _c, _d;
@@ -391,36 +351,38 @@ var SinglePanelComponent = /** @class */ (function () {
         this.route.navigate(['/' + this.blogId + '/edit']);
         this.send.detailsofBlog.next(this.blog);
     };
+    SinglePanelComponent.prototype.deleteBlog = function () {
+    };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], SinglePanelComponent.prototype, "blogId", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], SinglePanelComponent.prototype, "blogImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], SinglePanelComponent.prototype, "bloggerImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], SinglePanelComponent.prototype, "bloggerName", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], SinglePanelComponent.prototype, "heading", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], SinglePanelComponent.prototype, "Content", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", Object)
     ], SinglePanelComponent.prototype, "keywords", void 0);
     SinglePanelComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocial-single-panel',
             template: __webpack_require__("../../../../../src/app/admin-panel/single-panel/single-panel.component.html"),
             styles: [__webpack_require__("../../../../../src/app/admin-panel/single-panel/single-panel.component.css")]
@@ -480,7 +442,7 @@ var AppComponent = /** @class */ (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'app-root',
             template: __webpack_require__("../../../../../src/app/app.component.html"),
             styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -524,16 +486,15 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_status_service__ = __webpack_require__("../../../../../src/app/services/status.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_auth_gaurd_service__ = __webpack_require__("../../../../../src/app/services/auth-gaurd.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__directives_maintain_height_width_ratio_directive__ = __webpack_require__("../../../../../src/app/directives/maintain-height-width-ratio.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__directives_tab_view_available_directive__ = __webpack_require__("../../../../../src/app/directives/tab-view-available.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__routing_routing_module__ = __webpack_require__("../../../../../src/app/routing/routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__blog_footer_blog_footer_component__ = __webpack_require__("../../../../../src/app/blog-footer/blog-footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__search_search_component__ = __webpack_require__("../../../../../src/app/search/search.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__comments_comments_component__ = __webpack_require__("../../../../../src/app/comments/comments.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_ngx_facebook__ = __webpack_require__("../../../../ngx-facebook/dist/esm/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ngui_auto_complete__ = __webpack_require__("../../../../@ngui/auto-complete/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ngui_auto_complete___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_33__ngui_auto_complete__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_facebook_service__ = __webpack_require__("../../../../../src/app/services/facebook.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__directives_maintain_height_width_ratio_directive__ = __webpack_require__("../../../../../src/app/directives/maintain-height-width-ratio.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__directives_tab_view_available_directive__ = __webpack_require__("../../../../../src/app/directives/tab-view-available.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__routing_routing_module__ = __webpack_require__("../../../../../src/app/routing/routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__blog_footer_blog_footer_component__ = __webpack_require__("../../../../../src/app/blog-footer/blog-footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__search_search_component__ = __webpack_require__("../../../../../src/app/search/search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__comments_comments_component__ = __webpack_require__("../../../../../src/app/comments/comments.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__message_message_component__ = __webpack_require__("../../../../../src/app/message/message.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__custom_url_custom_url_component__ = __webpack_require__("../../../../../src/app/custom-url/custom-url.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__open_full_image_open_full_image_component__ = __webpack_require__("../../../../../src/app/open-full-image/open-full-image.component.ts");
@@ -592,7 +553,7 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_5__editor_panel_editor_panel_component__["a" /* EditorPanelComponent */],
@@ -608,11 +569,11 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_15__blogContent_normal_blog_normal_blog_component__["a" /* NormalBlogComponent */],
                 __WEBPACK_IMPORTED_MODULE_16__blogContent_blogs_blogs_component__["a" /* BlogsComponent */],
                 __WEBPACK_IMPORTED_MODULE_17__blogContent_blog_open_blog_open_component__["a" /* BlogOpenComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__directives_maintain_height_width_ratio_directive__["a" /* MaintainHeightWidthRatioDirective */],
-                __WEBPACK_IMPORTED_MODULE_26__directives_tab_view_available_directive__["a" /* TabViewAvailableDirective */],
-                __WEBPACK_IMPORTED_MODULE_28__blog_footer_blog_footer_component__["a" /* BlogFooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_29__search_search_component__["a" /* SearchComponent */],
-                __WEBPACK_IMPORTED_MODULE_30__comments_comments_component__["a" /* CommentsComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__directives_maintain_height_width_ratio_directive__["a" /* MaintainHeightWidthRatioDirective */],
+                __WEBPACK_IMPORTED_MODULE_28__directives_tab_view_available_directive__["a" /* TabViewAvailableDirective */],
+                __WEBPACK_IMPORTED_MODULE_30__blog_footer_blog_footer_component__["a" /* BlogFooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_31__search_search_component__["a" /* SearchComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__comments_comments_component__["a" /* CommentsComponent */],
                 __WEBPACK_IMPORTED_MODULE_34__message_message_component__["a" /* MessageComponent */],
                 __WEBPACK_IMPORTED_MODULE_35__custom_url_custom_url_component__["a" /* CustomUrlComponent */],
                 __WEBPACK_IMPORTED_MODULE_36__open_full_image_open_full_image_component__["a" /* OpenFullImageComponent */],
@@ -622,13 +583,11 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_40__editor_panel_blog_preview_blog_preview_component__["a" /* BlogPreviewComponent */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
-                __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-                __WEBPACK_IMPORTED_MODULE_27__routing_routing_module__["a" /* RoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_32_ngx_facebook__["a" /* FacebookModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["ReactiveFormsModule"],
-                __WEBPACK_IMPORTED_MODULE_33__ngui_auto_complete__["NguiAutoCompleteModule"]
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */].withServerTransition({ appId: 'blogist' }),
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_29__routing_routing_module__["a" /* RoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_18__services_property_service__["a" /* PropertyService */],
@@ -638,7 +597,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_19__services_post_service__["a" /* PostService */],
                 __WEBPACK_IMPORTED_MODULE_23__services_auth_service__["a" /* AuthService */],
                 __WEBPACK_IMPORTED_MODULE_24__services_auth_gaurd_service__["a" /* AuthGuard */],
-                { provide: __WEBPACK_IMPORTED_MODULE_31__angular_router__["e" /* UrlSerializer */], useClass: __WEBPACK_IMPORTED_MODULE_35__custom_url_custom_url_component__["a" /* CustomUrlComponent */] }
+                __WEBPACK_IMPORTED_MODULE_25__services_facebook_service__["a" /* FacebookService */],
+                __WEBPACK_IMPORTED_MODULE_26__services_window_ref_service__["a" /* WindowRefService */],
+                { provide: __WEBPACK_IMPORTED_MODULE_33__angular_router__["e" /* UrlSerializer */], useClass: __WEBPACK_IMPORTED_MODULE_35__custom_url_custom_url_component__["a" /* CustomUrlComponent */] }
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
@@ -683,6 +644,7 @@ module.exports = "<footer >\n  <div class=\"subscribe\" >\n    <p>\n      Subscr
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_status_service__ = __webpack_require__("../../../../../src/app/services/status.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -695,11 +657,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var BlogFooterComponent = /** @class */ (function () {
-    function BlogFooterComponent(sendEmail, renderer, status) {
+    function BlogFooterComponent(sendEmail, renderer, status, winRef) {
         this.sendEmail = sendEmail;
         this.renderer = renderer;
         this.status = status;
+        this.winRef = winRef;
         this.showSubscriptionBox = false;
         this.errorMessage = false;
     }
@@ -712,16 +676,16 @@ var BlogFooterComponent = /** @class */ (function () {
             this.sendEmail.ofUser(this.subscriber.nativeElement.value)
                 .subscribe(function (res) {
                 //console.log(res.Status)
-                if (res.Status == "Success") {
+                if (res.Status == 'Success') {
                     _this.showSubscriptionBox = true;
                     //console.log(this.showSubscriptionBox)
-                    _this.subscriber.nativeElement.value = "";
+                    _this.subscriber.nativeElement.value = '';
                     _this.errorMessage = false;
                 }
             });
         }
         else {
-            this.subscriber.nativeElement.value = "";
+            this.subscriber.nativeElement.value = '';
             this.errorMessage = true;
         }
     };
@@ -730,7 +694,7 @@ var BlogFooterComponent = /** @class */ (function () {
         //console.log(this.showSubscriptionBox)
     };
     BlogFooterComponent.prototype.setMobileView = function () {
-        if (window.innerWidth < 850) {
+        if (this.winRef.nativeWindow.innerWidth < 850) {
             this.renderer.setStyle(this.copyright.nativeElement, 'width', '100%');
             this.renderer.setStyle(this.followUs.nativeElement, 'width', '100%');
             this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'center');
@@ -747,33 +711,33 @@ var BlogFooterComponent = /** @class */ (function () {
         this.setMobileView();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('followUs'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('followUs'),
         __metadata("design:type", Object)
     ], BlogFooterComponent.prototype, "followUs", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('copyright'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('copyright'),
         __metadata("design:type", Object)
     ], BlogFooterComponent.prototype, "copyright", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('subscriber'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('subscriber'),
         __metadata("design:type", Object)
     ], BlogFooterComponent.prototype, "subscriber", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], BlogFooterComponent.prototype, "onresize", null);
     BlogFooterComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocial-blog-footer',
             template: __webpack_require__("../../../../../src/app/blog-footer/blog-footer.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blog-footer/blog-footer.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_status_service__["a" /* StatusService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_status_service__["a" /* StatusService */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_status_service__["a" /* StatusService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_status_service__["a" /* StatusService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _d || Object])
     ], BlogFooterComponent);
     return BlogFooterComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=blog-footer.component.js.map
@@ -788,7 +752,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    width: 100%;\r\n    \r\n}\r\nheader{\r\n    width: 100%;\r\n    background-color: #ffffff;\r\n    position: fixed;\r\n    top:0px;\r\n    z-index: 10;\r\n    box-shadow: 1px 1px  #bbbbbb;\r\n    font-family: 'Roboto',sans-serif;\r\n    padding: 0.2%;\r\n}\r\n.left{\r\n    display: inline-block;\r\n    width:80%;\r\n    vertical-align: middle;\r\n}\r\n\r\nli{\r\n    display: inline-block;\r\n    list-style: none;\r\n    width: auto;\r\n    margin: 0.2% 0.1% 0.2% 0%;\r\n    vertical-align: top;\r\n   \r\n}\r\n.left>li{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: 60%;\r\n    margin-left:3%;\r\n}\r\n.brand-image{\r\n    width: 40px;\r\n    height: 40px;\r\n    margin-left:1.8%;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\nimg{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.brand-title{\r\n   font-size: 1.4em;\r\n   font-weight: 700;\r\n   display: inline-block;\r\n   vertical-align: middle;\r\n}\r\n.brand-title>span:first-child{\r\n    color: #024770;\r\n}\r\n.brand-title>span:nth-child(2){\r\n    color: #ffa600;\r\n}\r\n.brand-title>span:nth-child(3){\r\n    font-size: 60%;\r\n    color: black;\r\n    font-weight: 700;\r\n}\r\n.brand-title>p{\r\n    font-size: 55%;\r\n    color: #024770;\r\n    font-weight: 400;\r\n    text-align: left;\r\n    font-style: italic;\r\n    padding-left: 9%;\r\n}\r\n.right{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    text-align: right;\r\n    width:19%;\r\n}\r\n.right>li{\r\n    margin-right: 5%;\r\n}\r\ninput{\r\n    height: 35px;\r\n    background-image: url('/assets/images/sports-social-search.png');\r\n    border: none;\r\n    background-repeat: no-repeat;\r\n    background-position-y: 50%;\r\n    background-position-x: 2%;\r\n    background-size: 15px;\r\n    outline: #fafafa;\r\n    border-radius: 25px;\r\n    background-color: #e5e5e5;\r\n    text-align: center;\r\n    box-shadow: 1px 1px 2px #bbbbbb\r\n}\r\n.mobileView{\r\n    display: inline-block;\r\n    width: auto;\r\n}\r\n.menuImageHolder{\r\n    width: 30px;\r\n    height: 30px;\r\n    text-align: right !important;   \r\n}\r\n.menuImageHolder img{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.dropDown{\r\n  width: 80%;\r\n  background-color: #ffffff;\r\n  padding: 1% 1% 0% 1%;\r\n  position: fixed;\r\n  z-index: 50;\r\n  top:10%;\r\n  left:10%;\r\n  box-shadow: 1px 1px 2px #eeeeee\r\n}\r\n\r\n.website{\r\n    width: 95% !important;\r\n    border-bottom: 1px solid #bbbbbb\r\n}\r\n.dropDown .Close{\r\n    float: right;\r\n    width: 12px;\r\n    height: 12px;\r\n    padding:0.5% 1% 0% 0%;\r\n}\r\n.websiteLink{\r\n    display: block;\r\n    color: #024770;\r\n    text-align: center;\r\n    margin: 1%;\r\n}\r\n\r\n.search input{\r\n    display: inline-block;\r\n    border-radius: 0px;\r\n    border: none;\r\n    background-image: none;\r\n    width: 100%;\r\n   \r\n}\r\n.search button{\r\n    display: block;\r\n    width: 70%;\r\n    margin: 2% auto;\r\n    border-radius: 4px;\r\n    background-color: #ffa600;\r\n    color: #ffffff;\r\n    border: none;\r\n    padding: 1%\r\n}\r\n\r\n::-webkit-input-placeholder {\r\n    text-align: center;\r\n }\r\n \r\n :-moz-placeholder { \r\n    text-align: center;  \r\n }\r\n \r\n ::-moz-placeholder {  \r\n    text-align: center;  \r\n }\r\n \r\n :-ms-input-placeholder {  \r\n    text-align: center; \r\n }\r\n .suggestion{\r\n     position: absolute;\r\n     top: 45px;\r\n     width:51%;\r\n     background-color:white\r\n }\r\n .suggestion ul{\r\n     display: block;\r\n     border: 1px solid #bbbbbb;\r\n }\r\n .suggestion li {\r\n     padding: 1%;\r\n     display: block;\r\n     border-bottom: 1px solid   #bbbbbb\r\n }\r\n .mobileView .suggestion{\r\n     top:65px;\r\n     width: 100%;\r\n }\r\n \r\n  a:hover{\r\n      text-decoration: none;\r\n  }\r\n  .websiteLink{\r\n      color: #024771;\r\n      font-weight: 700;\r\n  }\r\n .websiteLink>img{\r\n     width: 20px;\r\n     height: 20px;\r\n     padding: 1%\r\n}\r\n  .websiteLink:hover{\r\n      color: #ffa600;\r\n  }\r\n  .dropDown p{\r\n      width: 60%;\r\n      margin: auto\r\n  }\r\n\r\n  @media (max-width:750px) and (min-width:600px){\r\n      .left{\r\n          width: 92%\r\n      }\r\n      header{\r\n          padding: 0.4%;\r\n      }\r\n  }\r\n  @media (max-width:600px) and (min-width:450px) {\r\n    .left{\r\n        width: 90%\r\n    }\r\n    header{\r\n        padding: 0.5%;\r\n    }\r\n  }\r\n  @media (max-width:450px) and (min-width:350px) {\r\n      .left{\r\n          width: 88%;\r\n      }\r\n      header{\r\n        padding: 0.6%;\r\n    }\r\n  }\r\n  @media (max-width:350px) {\r\n      .left{\r\n          width: 86%;\r\n      }\r\n      header{\r\n        padding: 0.6%;\r\n    }\r\n  }", ""]);
+exports.push([module.i, "*{\r\n    padding: 0px;\r\n    margin: 0px;\r\n    width: 100%;\r\n    \r\n}\r\nheader{\r\n    width: 100%;\r\n    background-color: #ffffff;\r\n    position: fixed;\r\n    top:0px;\r\n    z-index: 10;\r\n    box-shadow: 1px 1px  #bbbbbb;\r\n    font-family: 'Roboto',sans-serif;\r\n    padding: 0.2%;\r\n}\r\n.left{\r\n    display: inline-block;\r\n    width:80%;\r\n    vertical-align: middle;\r\n}\r\n\r\nli{\r\n    display: inline-block;\r\n    list-style: none;\r\n    width: auto;\r\n    margin: 0.2% 0.1% 0.2% 0%;\r\n    vertical-align: top;\r\n   \r\n}\r\n.left>li{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: 60%;\r\n    margin-left:3%;\r\n}\r\n.brand-image{\r\n    width: 40px;\r\n    height: 40px;\r\n    margin-left:1.8%;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n}\r\nimg{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.brand-title{\r\n   font-size: 1.4em;\r\n   font-weight: 700;\r\n   display: inline-block;\r\n   vertical-align: middle;\r\n}\r\n.brand-title>span:first-child{\r\n    color: #024770;\r\n}\r\n.brand-title>span:nth-child(2){\r\n    color: #ffa600;\r\n}\r\n.brand-title>span:nth-child(3){\r\n    font-size: 60%;\r\n    color: black;\r\n    font-weight: 700;\r\n}\r\n.brand-title>p{\r\n    font-size: 55%;\r\n    color: #024770;\r\n    font-weight: 400;\r\n    text-align: left;\r\n    font-style: italic;\r\n    padding-left: 9%;\r\n}\r\n.right{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    text-align: right;\r\n    width:19%;\r\n}\r\n.right>li{\r\n    margin-right: 5%;\r\n}\r\ninput{\r\n    height: 35px;\r\n    background-image: url('/assets/images/sports-social-search.png');\r\n    border: none;\r\n    background-repeat: no-repeat;\r\n    background-position-y: 50%;\r\n    background-position-x: 2%;\r\n    background-size: 15px;\r\n    outline: #fafafa;\r\n    border-radius: 25px;\r\n    background-color: #e5e5e5;\r\n    text-align: center;\r\n    box-shadow: 1px 1px 2px #bbbbbb\r\n}\r\n.mobileView{\r\n    display: inline-block;\r\n    width: auto;\r\n}\r\n.menuImageHolder{\r\n    width: 30px;\r\n    height: 30px;\r\n    text-align: right !important;   \r\n}\r\n.menuImageHolder img{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.dropDown{\r\n  width: 80%;\r\n  background-color: #ffffff;\r\n  padding: 1% 1% 0% 1%;\r\n  position: fixed;\r\n  z-index: 50;\r\n  top:10%;\r\n  left:10%;\r\n  box-shadow: 1px 1px 2px #eeeeee\r\n}\r\n\r\n.website{\r\n    width: 95% !important;\r\n    border-bottom: 1px solid #bbbbbb\r\n}\r\n.dropDown .Close{\r\n    float: right;\r\n    width: 12px;\r\n    height: 12px;\r\n    padding:0.5% 1% 0% 0%;\r\n}\r\n.websiteLink{\r\n    display: block;\r\n    color: #024770;\r\n    text-align: center;\r\n    margin: 1%;\r\n}\r\n\r\n.search input{\r\n    display: inline-block;\r\n    border-radius: 0px;\r\n    border: none;\r\n    background-image: none;\r\n    width: 100%;\r\n   \r\n}\r\n.search button{\r\n    display: block;\r\n    width: 70%;\r\n    margin: 2% auto;\r\n    border-radius: 4px;\r\n    background-color: #ffa600;\r\n    color: #ffffff;\r\n    border: none;\r\n    padding: 1%\r\n}\r\n\r\n::-webkit-input-placeholder {\r\n    text-align: center;\r\n }\r\n \r\n :-moz-placeholder { \r\n    text-align: center;  \r\n }\r\n \r\n ::-moz-placeholder {  \r\n    text-align: center;  \r\n }\r\n \r\n :-ms-input-placeholder {  \r\n    text-align: center; \r\n }\r\n .suggestion{\r\n     position: absolute;\r\n     top: 45px;\r\n     width:51%;\r\n     background-color:white\r\n }\r\n .suggestion ul{\r\n     display: block;\r\n     border: 1px solid #bbbbbb;\r\n }\r\n .suggestion li {\r\n     padding: 1%;\r\n     display: block;\r\n     border-bottom: 1px solid   #bbbbbb\r\n }\r\n .mobileView .suggestion{\r\n     top:65px;\r\n     width: 100%;\r\n }\r\n \r\n  a:hover{\r\n      text-decoration: none;\r\n  }\r\n  .websiteLink{\r\n      color: #024771;\r\n      font-weight: 700;\r\n  }\r\n .websiteLink>img{\r\n     width: 20px;\r\n     height: 20px;\r\n     padding: 1%\r\n}\r\n  .websiteLink:hover{\r\n      color: #ffa600;\r\n  }\r\n  .dropDown p{\r\n      width: 60%;\r\n      margin: auto\r\n  }\r\n  .searchResult{\r\n      z-index: 50;\r\n      background-color: #ffffff;\r\n      display: block;\r\n      border-radius: 5px;\r\n      position: absolute;\r\n      box-shadow: 1px 1px 4px #ffffff;\r\n      padding: 4px;\r\n      padding-top:0px !important;\r\n  }\r\n  .searchResult> li{\r\n      display: block;\r\n      \r\n      text-align: center;\r\n      border-bottom: 1px solid #e5e5e5;\r\n      font-size: 1.2em;\r\n     \r\n  }\r\n   .searchResult a{\r\n       padding: 5px;\r\n       display: block;\r\n       width:100%;\r\n       color: black;\r\n   }\r\n  .searchResult a:hover {\r\n    background-color: #024771;\r\n    color: #ffffff;\r\n    font-weight: 500;\r\n  }\r\n\r\n  @media (max-width:750px) and (min-width:600px){\r\n      .left{\r\n          width: 92%\r\n      }\r\n      header{\r\n          padding: 0.4%;\r\n      }\r\n  }\r\n  @media (max-width:600px) and (min-width:450px) {\r\n    .left{\r\n        width: 90%\r\n    }\r\n    header{\r\n        padding: 0.5%;\r\n    }\r\n  }\r\n  @media (max-width:450px) and (min-width:350px) {\r\n      .left{\r\n          width: 88%;\r\n      }\r\n      header{\r\n        padding: 0.6%;\r\n    }\r\n  }\r\n  @media (max-width:350px) {\r\n      .left{\r\n          width: 86%;\r\n      }\r\n      header{\r\n        padding: 0.6%;\r\n    }\r\n  }", ""]);
 
 // exports
 
@@ -801,7 +765,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blog-header/blog-header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header #Header>\n  <ul class=\"left\" #left>\n    <a href=\"/\">\n      <li class=\"brand-image\">\n        <img src=\"/assets/images/sports-social-logo.png\" alt=\"Sports Social logo\">\n      </li>\n      <li class=\"brand-title\">\n        <span>Sports</span> <span>Social</span> <span>Blog</span>\n        <p>Chase your Sport</p>\n      </li>\n    </a>\n    <li  *ngIf=\"!mobileView\">\n      <input \n        ngui-auto-complete\n        [source]=\"keywords\"\n        [list-formatter]=\"autocompleListFormatter\"\n        type=\"text\" \n        placeholder=\"Search here the latest topics & trends in sports\" \n        (valueChanged)=\"valueChanged($event)\"\n        [max-num-list]=\"10\"\n        [open-on-focus]=\"false\"\n        (keypress)=\"sendData($event)\"\n        #searchBox>  \n    </li>\n  </ul>\n  <ul class=\"right\" *ngIf=\"!mobileView\">\n    <li >\n      <a \n        href=\"https://www.sportsocial.in\" \n        target=\"_blank\" \n        class=\" websiteLink\" >\n        <!-- <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"sports-social-link-blue-symbol\" #linkImage> -->\n        Website \n      </a>\n    </li>\n    <li >\n      <a \n        href=\"https://goo.gl/qrgCz5\" \n        target=\"_blank\" \n        class=\" websiteLink\" >\n        <!-- <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"sports-social-link-blue-symbol\" #linkImage> -->\n        App\n      </a>\n    </li>\n  </ul>\n  <div class=\"mobileView \" *ngIf=\"mobileView\">\n     <div class=\"menuImageHolder\">\n       <img src=\"/assets/images/sports-social-menu.png\" role=\"button\" (click)=\"openDropDown()\" alt=\"sports-social-menu\">\n     </div>\n     <div *ngIf=\"open\" class=\"dropDown\">\n        <img src=\"/assets/images/sports-social-cancel-black.png\" role=\"button\" (click)=\"closeDropDown()\" class=\"Close\" alt=\"sports-social-cancel-black\">\n        <p class=\"website\"> \n          <a \n            href=\"https://www.sportsocial.in\" \n            target=\"_blank\" \n            class=\" websiteLink\">\n            <!-- <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"\" #linkImage> -->\n             Website \n         </a>\n        </p>\n        <p> \n          <a \n            href=\"https://goo.gl/qrgCz5\" \n            target=\"_blank\" \n            class=\" websiteLink\">\n            <!-- <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"\" #linkImage> -->\n            App\n         </a>\n        </p>\n      <div class=\"search\">\n         <input \n          ngui-auto-complete\n          [source]=\"keywords\"\n          [list-formatter]=\"autocompleListFormatter\"\n          type=\"text\" \n          placeholder=\"Search \" \n          (valueChanged)=\"valueChanged($event)\"\n          [max-num-list]=\"10\"\n          (keypress)=\"sendData($event)\"\n          [open-on-focus]=\"false\"\n          #searchBox >\n          <button (click)=\"searchSportSocial()\">Search</button>\n      </div>\n      \n    </div>\n  </div> \n</header>\n"
+module.exports = "<header #Header>\n  <ul class=\"left\" #left>\n    <a href=\"/\">\n      <li class=\"brand-image\">\n        <img src=\"/assets/images/sports-social-logo.png\" alt=\"Sports Social logo\">\n      </li>\n      <li class=\"brand-title\">\n        <span>Sports</span> <span>Social</span> <span>Blog</span>\n        <p>Chase your Sport</p>\n      </li>\n    </a>\n    <li  *ngIf=\"!mobileView\">\n      <input \n        type=\"text\" \n        placeholder=\"Search here the latest topics & trends in sports\" \n        (keyup)=\"sendData($event)\"\n        #searchBox> \n        <ul class=\"searchResult\" *ngIf=\"haveresult\" #resultBox>\n          <li *ngFor=\"let result of results | slice:0:9\">\n            <a routerLink=\"/{{result}}\" >\n              {{ result }}\n            </a>\n          </li>\n        </ul> \n    </li>\n  </ul>\n  <ul class=\"right\" *ngIf=\"!mobileView\">\n    <li >\n      <a \n        href=\"https://www.sportsocial.in\" \n        target=\"_blank\" \n        class=\" websiteLink\" >\n        <!-- <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"sports-social-link-blue-symbol\" #linkImage> -->\n        Website \n      </a>\n    </li>\n    <li >\n      <a \n        href=\"https://goo.gl/qrgCz5\" \n        target=\"_blank\" \n        class=\" websiteLink\" >\n        <!-- <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"sports-social-link-blue-symbol\" #linkImage> -->\n        App\n      </a>\n    </li>\n  </ul>\n  <div class=\"mobileView \" *ngIf=\"mobileView\">\n     <div class=\"menuImageHolder\">\n       <img src=\"/assets/images/sports-social-menu.png\" role=\"button\" (click)=\"openDropDown()\" alt=\"sports-social-menu\">\n     </div>\n     <div *ngIf=\"open\" class=\"dropDown\">\n        <img src=\"/assets/images/sports-social-cancel-black.png\" role=\"button\" (click)=\"closeDropDown()\" class=\"Close\" alt=\"sports-social-cancel-black\">\n        <p class=\"website\"> \n          <a \n            href=\"https://www.sportsocial.in\" \n            target=\"_blank\" \n            class=\" websiteLink\">\n            <!-- <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"\" #linkImage> -->\n             Website \n         </a>\n        </p>\n        <p> \n          <a \n            href=\"https://goo.gl/qrgCz5\" \n            target=\"_blank\" \n            class=\" websiteLink\">\n            <!-- <img src=\"/assets/images/sports-social-link-blue-symbol.png\" alt=\"\" #linkImage> -->\n            App\n         </a>\n        </p>\n      <div class=\"search\">\n         <input \n          type=\"text\" \n          placeholder=\"Search \" \n          (keyup)=\"sendData($event)\"\n          #searchBox >\n          <ul class=\"searchResult\" *ngIf=\"haveresult\" #resultBox>\n              <li *ngFor=\"let result of results | slice:0:9\" >\n                <a routerLink=\"/{{result}}\" (click)=\"navigate()\" >\n                  {{ result }}\n                </a>\n              </li>\n          </ul> \n          <button (click)=\"searchSportSocial()\">Search</button>\n      </div>\n      \n    </div>\n  </div> \n</header>\n"
 
 /***/ }),
 
@@ -816,6 +780,9 @@ module.exports = "<header #Header>\n  <ul class=\"left\" #left>\n    <a href=\"/
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_ReplaySubject__ = __webpack_require__("../../../../rxjs/ReplaySubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_ReplaySubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_ReplaySubject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -831,9 +798,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var BlogHeaderComponent = /** @class */ (function () {
-    function BlogHeaderComponent(sendHeight, renderer, send, get, elRef, _sanitizer, searchKeyword, router, sendKey, zone) {
-        var _this = this;
+    function BlogHeaderComponent(sendHeight, renderer, send, get, elRef, _sanitizer, searchKeyword, router, sendKey, zone, winRef) {
         this.sendHeight = sendHeight;
         this.renderer = renderer;
         this.send = send;
@@ -844,16 +812,16 @@ var BlogHeaderComponent = /** @class */ (function () {
         this.router = router;
         this.sendKey = sendKey;
         this.zone = zone;
+        this.winRef = winRef;
         this.keywords = [];
         this.pageNumber = 1;
         this.mobileView = false;
         this.searchedTextPresent = false;
         this.open = false;
         this.search = false;
-        this.autocompleListFormatter = function (data) {
-            var html = "<span style='font-size:1.2em'>" + data + "</span>";
-            return _this._sanitizer.bypassSecurityTrustHtml(html);
-        };
+        this.results = [];
+        this.haveresult = false;
+        this.searchKey = new __WEBPACK_IMPORTED_MODULE_6_rxjs_ReplaySubject__["ReplaySubject"]();
     }
     BlogHeaderComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -879,7 +847,16 @@ var BlogHeaderComponent = /** @class */ (function () {
             location.reload();
         });
     };
+    BlogHeaderComponent.prototype.onclick = function () {
+        this.haveresult = false;
+        if (this.searchBox) {
+            this.searchBox.nativeElement.value = '';
+        }
+    };
     BlogHeaderComponent.prototype.onresize = function () {
+        if (this.resultBox) {
+            this.setStyleOfResultBox();
+        }
         this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
         if (window.innerWidth <= 750) {
             this.mobileView = true;
@@ -894,61 +871,107 @@ var BlogHeaderComponent = /** @class */ (function () {
     BlogHeaderComponent.prototype.closeDropDown = function () {
         this.open = false;
     };
-    BlogHeaderComponent.prototype.valueChanged = function (newVal) {
-        this.searchedTextPresent = true;
-        //console.log("Case 2: value is changed to ", newVal );
-        this.open = false;
-        this.router.navigate(['/' + newVal]);
-        this.searchBox.nativeElement.value = "";
-        //this.reloadPage()
-    };
     BlogHeaderComponent.prototype.searchSportSocial = function () {
-        this.search = true;
-    };
-    BlogHeaderComponent.prototype.sendData = function (key) {
         var input = this.searchBox.nativeElement.value;
-        if (key.code == "Enter" || this.search == true) {
-            // console.log(input)
+        this.open = false;
+        this.router.navigate(['/' + input]);
+        this.searchBox.nativeElement.value = '';
+        this.haveresult = false;
+    };
+    BlogHeaderComponent.prototype.sendData = function (event) {
+        var _this = this;
+        console.clear();
+        console.log(event);
+        if (event.target.value !== '') {
+            this.haveresult = true;
+        }
+        if (event.target.value === '') {
+            this.haveresult = false;
+        }
+        this.searchKey.
+            next(event.target.value);
+        this.SearchKey = this.searchKey
+            .debounceTime(100)
+            .distinctUntilChanged()
+            .subscribe(function (res) {
+            var str = res.toLowerCase();
+            console.log(res, 'conect');
+            _this.results = _this.keywords.filter(function (data) {
+                return data.toLowerCase().indexOf(str) !== -1 && str !== '';
+            });
+            if (_this.resultBox) {
+                _this.setStyleOfResultBox();
+            }
+            console.log(_this.results, ' conect');
+        });
+        var input = this.searchBox.nativeElement.value;
+        if (event.code === 'Enter') {
             this.open = false;
             this.router.navigate(['/' + input]);
-            this.searchBox.nativeElement.value = "";
-            //this.reloadPage()
+            this.searchBox.nativeElement.value = '';
+            this.haveresult = false;
         }
     };
+    BlogHeaderComponent.prototype.navigate = function () {
+        this.open = false;
+    };
     BlogHeaderComponent.prototype.hover = function (event) {
-        this.linkImage.nativeElement.src = "/assets/images/sports-social-link-orange-symbol.png";
+        this.linkImage.nativeElement.src = '/assets/images/sports-social-link-orange-symbol.png';
     };
     BlogHeaderComponent.prototype.removehoverColor = function (event) {
-        this.linkImage.nativeElement.src = "/assets/images/sports-social-link-blue-symbol.png";
+        this.linkImage.nativeElement.src = '/assets/images/sports-social-link-blue-symbol.png';
+    };
+    BlogHeaderComponent.prototype.setStyleOfResultBox = function () {
+        var prop = this.searchBox.nativeElement.getBoundingClientRect();
+        this.renderer.setStyle(this.resultBox.nativeElement, 'width', prop.width + 'px');
+        if (!this.mobileView) {
+            this.renderer.setStyle(this.resultBox.nativeElement, 'top', prop.bottom + 2 + 'px');
+        }
+        else {
+            this.renderer.setStyle(this.resultBox.nativeElement, 'top', prop.top - 22 + 'px');
+            if (this.results.toString() === '') {
+                this.haveresult = false;
+            }
+        }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('Header'),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('Header'),
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object)
     ], BlogHeaderComponent.prototype, "Header", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('searchBox'),
-        __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _b || Object)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('searchBox'),
+        __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _b || Object)
     ], BlogHeaderComponent.prototype, "searchBox", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('linkImage'),
-        __metadata("design:type", typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _c || Object)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('resultBox'),
+        __metadata("design:type", typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _c || Object)
+    ], BlogHeaderComponent.prototype, "resultBox", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('linkImage'),
+        __metadata("design:type", typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _d || Object)
     ], BlogHeaderComponent.prototype, "linkImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:click', []),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], BlogHeaderComponent.prototype, "onclick", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], BlogHeaderComponent.prototype, "onresize", null);
     BlogHeaderComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocialBlog-header',
             template: __webpack_require__("../../../../../src/app/blog-header/blog-header.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blog-header/blog-header.component.css")],
         }),
-        __metadata("design:paramtypes", [typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _o || Object])
+        __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_7__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _q || Object])
     ], BlogHeaderComponent);
     return BlogHeaderComponent;
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
 }());
 
 //# sourceMappingURL=blog-header.component.js.map
@@ -963,7 +986,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "*{\r\n    margin: 0px;\r\n    padding: 0px;\r\n    font-family:'Roboto',sans-serif;\r\n}\r\n\r\n.Catagory{\r\n    width: 90%;\r\n    margin: auto;\r\n    padding: 1.5% 0% 0% 0%;\r\n}\r\n.Catagory>span:first-child{\r\n    font-weight: 500\r\n}\r\n.Catagory>span:first-child:hover{\r\n    font-weight: 700\r\n}\r\n.blogImageHolder{\r\n    position: relative;\r\n    width:90%;\r\n    margin: 1% auto;\r\n    max-height:400px;\r\n    box-shadow: 3px 3px #fafafa;\r\n    overflow: hidden;\r\n    background-image: url('')\r\n}\r\n\r\n.blogImage{\r\n    width:100%;\r\n}\r\n.zoom{\r\n    position: absolute;\r\n    bottom: 2%;\r\n    right: 2%;\r\n    widows: 20px;\r\n    height: 20px;\r\n}\r\n.count img{\r\n    width:15px;\r\n    height: 15px;\r\n}\r\n.title{\r\n    font-size: 2.2em;\r\n    font-weight: 900;\r\n    color: black;\r\n    margin-bottom: 1%\r\n}\r\n.facebook{\r\n    width:20px;\r\n    height: 20px;\r\n    margin: 1% 1% 1% 1%;\r\n}\r\n.twitterButton{\r\n    width:20px;\r\n    height:20px;\r\n    margin: 1% 1% 1% 1%;\r\n}\r\n.content{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    padding-top:2% ;\r\n    min-height:1000px;\r\n}\r\n.blogInfo{\r\n    width:65%;\r\n    display: inline-block;\r\n    margin-right: 3.5%;\r\n    margin-top: -0.6%;\r\n}\r\n\r\n.bloggerImage{\r\n    \r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width:45px;\r\n    height: 45px;\r\n    border: 1px solid #bbbbbb;\r\n    border-radius: 50%;\r\n    background-image: url('/assets/images/user.png');\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n}\r\n\r\n.bloggerImage>img{\r\n    width:100%;\r\n    height: 100%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.blogger{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width:52%;\r\n    font-family: 'Roboto',Cambria, Cochin, Georgia, Times, Times New Roman, serif\r\n}\r\n.bloggerName>span{\r\n    font-weight:700\r\n}\r\n.writtenDate{\r\n    font-size: 0.9em;\r\n    font-weight: 700\r\n}\r\n.count{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    text-align: right;\r\n    width:38%;\r\n    padding: 1% 2% 1% 2%;\r\n}\r\n.count>span{\r\n    margin-left: 5%\r\n}\r\n.count>span>span{\r\n    color: #ffa600;\r\n    font-size: 1.1em\r\n}\r\n.count>span>img{\r\n    margin-right: 3%\r\n}\r\n\r\n.shareOn{\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1em;\r\n    font-weight: 700;\r\n    padding: 2% 0% 2% 0%;\r\n}\r\n.desc{\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1.2em;\r\n    font-weight: 400;\r\n    line-height: 2em;\r\n    color: black;\r\n    padding-bottom: 2%;\r\n}\r\n.tags{\r\n    width:100%;\r\n}\r\n.tagHolder{\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n}\r\n.tagHolder>img{\r\n    width: 100%;\r\n    height: 100%\r\n}\r\n.tags>a{\r\n    color: #ffa600;\r\n    padding: 0% 1% 0% 2% ;\r\n    text-decoration: underline\r\n}\r\n.social{\r\n    width: 28%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n}\r\n.follow{\r\n    padding: 5%;\r\n    border: 1px solid #bbbbbb;\r\n}\r\n.follow >p{\r\n    text-align: center;\r\n    color: #024771;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-weight: 500;\r\n}\r\n.follow img{\r\n    width:8%;\r\n    height:8%;\r\n    margin: 2.3%\r\n}\r\n/* .col-6{\r\n    width: 50%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding:0% 1.5% 2% 1.5%;\r\n} */\r\n.social> .twitter{\r\n    border: 1px solid #bbbbbb;\r\n    margin-top:2%;\r\n}\r\n.twitter{\r\n    min-height: 700px\r\n}\r\n.twitter p{\r\n    padding: 1% 1% 1% 4%;\r\n    color: #024771;\r\n    font-size: 1em;\r\n    font-weight: 700;\r\n}\r\n.twitter img{\r\n    width:20px;\r\n    height: 20px;\r\n}\r\n.comments{\r\n    width: 90%;\r\n    margin-left: 5%;\r\n    border-top: 1px solid #444444;\r\n    padding: 2% 0% 2% 0%\r\n\r\n}\r\n/* .col-4{\r\n    width: 33%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    padding: 1%;\r\n}\r\n.mobileView .col-4{\r\n    width: 100%;\r\n} */\r\n/* .relatedBlog{\r\n    width:90%;\r\n    min-height: 400px;\r\n    margin: 2% auto;\r\n    padding-top:4%;\r\n    border-top: 2px solid #024771\r\n}\r\n.relatedBlog>p{\r\n    width: 90%;\r\n    margin: auto;\r\n    margin-bottom: 2%;\r\n    text-align: center;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 2em;\r\n    color: #024771;\r\n    font-weight: 400;\r\n} */\r\n.loading{\r\n    display: block;\r\n    margin: auto;\r\n}\r\n.fullImage{\r\n    width: 100%;\r\n    height: 100%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:0%;\r\n    left:0%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n    background-color: black;\r\n    opacity: 0.7;\r\n    background-repeat: no-repeat;\r\n    background-position: center\r\n}\r\n.fullImageHolder{\r\n    position: fixed;\r\n    width: 70%;\r\n    left: 15%;\r\n    top:0%;\r\n    z-index: 100;\r\n}\r\n.fullImageHolder>img{\r\n    display: block;\r\n    padding: 10%;\r\n    text-align: center;\r\n    max-width: 100%;\r\n    max-height: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600px){\r\n    .fullImageHolder{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}\r\n@media (max-width:600px) and (min-width:500px){\r\n    .fullImageHolder{\r\n        width: 95%;\r\n        left: 2.5%;\r\n    }\r\n    .blogger{\r\n        width:50%;\r\n    }\r\n    .title{\r\n        font-size: 2em\r\n    }\r\n}\r\n@media (max-width:500px) and (min-width:360px) {\r\n    .fullImageHolder{\r\n        width: 95%;\r\n        left: 2.5%;\r\n    }\r\n    .blogger{\r\n        width:45%;\r\n    }\r\n    .title{\r\n        font-size: 1.8em\r\n    }\r\n}\r\n@media (max-width:360px) {\r\n    .fullImageHolder{\r\n        width: 95%;\r\n        left: 2.5%;\r\n    }\r\n    .blogger{\r\n        width:42%;\r\n    }\r\n    .title{\r\n        font-size: 1.6em\r\n    }\r\n}", ""]);
+exports.push([module.i, "*{\r\n    margin: 0px;\r\n    padding: 0px;\r\n    font-family:'Roboto',sans-serif;\r\n}\r\n\r\n.Catagory{\r\n    width: 90%;\r\n    margin: auto;\r\n    padding: 1.5% 0% 0% 0%;\r\n}\r\n.Catagory>span:first-child{\r\n    font-weight: 500\r\n}\r\n.Catagory>span:first-child:hover{\r\n    font-weight: 700\r\n}\r\n.blogImageHolder{\r\n    position: relative;\r\n    width:90%;\r\n    margin: 1% auto;\r\n    max-height:400px;\r\n    box-shadow: 3px 3px #fafafa;\r\n    overflow: hidden;\r\n    background-image: url('')\r\n}\r\n\r\n.blogImage{\r\n    width:100%;\r\n}\r\n.zoom{\r\n    position: absolute;\r\n    bottom: 2%;\r\n    right: 2%;\r\n    widows: 20px;\r\n    height: 20px;\r\n}\r\n.count img{\r\n    width:15px;\r\n    height: 15px;\r\n}\r\n.title{\r\n    font-size: 2.2em;\r\n    font-weight: 900;\r\n    color: black;\r\n    margin-bottom: 1%\r\n}\r\n.facebook{\r\n    width:20px;\r\n    height: 20px;\r\n    margin: 1% 1% 1% 1%;\r\n}\r\n.twitterButton{\r\n    width:20px;\r\n    height:20px;\r\n    margin: 1% 1% 1% 1%;\r\n}\r\n.content{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    padding-top:2% ;\r\n    min-height:1000px;\r\n}\r\n.blogInfo{\r\n    width:65%;\r\n    display: inline-block;\r\n    margin-right: 3.5%;\r\n    margin-top: -0.6%;\r\n}\r\n\r\n.bloggerImage{\r\n    \r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width:45px;\r\n    height: 45px;\r\n    border: 1px solid #bbbbbb;\r\n    border-radius: 50%;\r\n    background-image: url('/assets/images/user.png');\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n}\r\n\r\n.bloggerImage>img{\r\n    width:100%;\r\n    height: 100%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.blogger{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width:52%;\r\n    font-family: 'Roboto',Cambria, Cochin, Georgia, Times, Times New Roman, serif\r\n}\r\n.bloggerName>span{\r\n    font-weight:700\r\n}\r\n.writtenDate{\r\n    font-size: 0.9em;\r\n    font-weight: 700\r\n}\r\n.count{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    text-align: right;\r\n    width:38%;\r\n    padding: 1% 2% 1% 2%;\r\n}\r\n.count>span{\r\n    margin-left: 5%\r\n}\r\n.count>span>span{\r\n    color: #ffa600;\r\n    font-size: 1.1em\r\n}\r\n.count>span>img{\r\n    margin-right: 3%\r\n}\r\n\r\n.shareOn{\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1em;\r\n    font-weight: 700;\r\n    padding: 2% 0% 2% 0%;\r\n}\r\n.desc{\r\n    font-family: 'Roboto',sans-serif;\r\n    font-size: 1.2em;\r\n    font-weight: 400;\r\n    line-height: 2em;\r\n    color: black;\r\n    padding-bottom: 2%;\r\n}\r\n.tags{\r\n    width:100%;\r\n}\r\n.tagHolder{\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n}\r\n.tagHolder>img{\r\n    width: 100%;\r\n    height: 100%\r\n}\r\n.tags>a{\r\n    color: #ffa600;\r\n    padding: 0% 1% 0% 2% ;\r\n    text-decoration: underline\r\n}\r\n.social{\r\n    width: 28%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n}\r\n.follow{\r\n    padding: 5%;\r\n    border: 1px solid #bbbbbb;\r\n}\r\n.follow >p{\r\n    text-align: center;\r\n    color: #024771;\r\n    font-family: 'Roboto',sans-serif;\r\n    font-weight: 500;\r\n}\r\n.follow img{\r\n    width:8%;\r\n    height:8%;\r\n    margin: 2.3%\r\n}\r\n.social> .twitter{\r\n    border: 1px solid #bbbbbb;\r\n    margin-top:2%;\r\n}\r\n.twitter{\r\n    min-height: 700px\r\n}\r\n.twitter p{\r\n    padding: 1% 1% 1% 4%;\r\n    color: #024771;\r\n    font-size: 1em;\r\n    font-weight: 700;\r\n}\r\n.twitter img{\r\n    width:20px;\r\n    height: 20px;\r\n}\r\n.comments{\r\n    width: 90%;\r\n    margin-left: 5%;\r\n    border-top: 1px solid #444444;\r\n    padding: 2% 0% 2% 0%\r\n\r\n}\r\n.loading{\r\n    display: block;\r\n    margin: auto;\r\n}\r\n.fullImage{\r\n    width: 100%;\r\n    height: 100%;\r\n    display: inline-block;\r\n    position: fixed;\r\n    top:0%;\r\n    left:0%;\r\n    z-index: 50;\r\n    box-shadow: 1px 1px #bbbbbb;\r\n    border: 1px solid #bbbbbb;\r\n    background-color: black;\r\n    opacity: 0.7;\r\n    background-repeat: no-repeat;\r\n    background-position: center\r\n}\r\n.fullImageHolder{\r\n    position: fixed;\r\n    width: 70%;\r\n    left: 15%;\r\n    top:0%;\r\n    z-index: 100;\r\n}\r\n.fullImageHolder>img{\r\n    display: block;\r\n    padding: 10%;\r\n    text-align: center;\r\n    max-width: 100%;\r\n    max-height: 100%;\r\n}\r\n.cancel{\r\n    position: absolute;\r\n    top:1%;\r\n    right:1%;\r\n    width: 20px;\r\n    height: 20px;\r\n    z-index: 150\r\n}\r\n@media (max-width:800px) and (min-width:600px){\r\n    .fullImageHolder{\r\n        width: 90%;\r\n        left: 5%;\r\n    }\r\n}\r\n@media (max-width:600px) and (min-width:500px){\r\n    .fullImageHolder{\r\n        width: 95%;\r\n        left: 2.5%;\r\n    }\r\n    .blogger{\r\n        width:50%;\r\n    }\r\n    .title{\r\n        font-size: 2em\r\n    }\r\n}\r\n@media (max-width:500px) and (min-width:360px) {\r\n    .fullImageHolder{\r\n        width: 95%;\r\n        left: 2.5%;\r\n    }\r\n    .blogger{\r\n        width:45%;\r\n    }\r\n    .title{\r\n        font-size: 1.8em\r\n    }\r\n}\r\n@media (max-width:360px) {\r\n    .fullImageHolder{\r\n        width: 95%;\r\n        left: 2.5%;\r\n    }\r\n    .blogger{\r\n        width:42%;\r\n    }\r\n    .title{\r\n        font-size: 1.6em\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -976,7 +999,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/blog-open/blog-open.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=openBlog>\n  <p #openBlog class=\"Catagory\">\n    <span role=\"button\" routerLink=\"/{{Keywords[0]}}\" (click)=\"getblogs($event)\">{{Keywords[0]}}</span>\n    <span  *ngIf=\"blogDataRecieved\">|</span>\n    <span *ngIf=\"blog\">{{blog.readingTime}}</span>\n  </p>\n  <div class=\"blogImageHolder\">\n    <img \n      class=\"blogImage\" \n      alt=\"blogImage\" \n      src=\"{{blog.blogImage}}\"  \n      (error)=\"setDefaultBlogImage()\" \n      (load)=\"removeInitalImage($event)\"\n      (progress)=\"showprogress($event)\" \n      role=\"button\" \n      *ngIf=\"blogDataRecieved\"\n      (click)=\"openfullImage()\">\n    <img \n      class=\"blogImage\"  \n      alt=\"InitialblogImage\" \n      src=\"/assets/images/default-image.png\"  \n      *ngIf=\"loading\" \n      (click)=\"openfullImage()\" \n      role=\"button\">\n    <img src=\"/assets/images/sports-social-zoom-out-orange.png\" alt=\"sports-social-zoom-out-orange\" role=\"button\" (click)=\"openfullImage()\"  class=\"zoom\">\n  </div>\n  \n  <div class=\"content\">\n    \n    <div class=\"blogInfo\" #BlogInfo>\n      <p *ngIf=\"blog\" [innerHtml]=\"blog.heading\"class=\"title\"></p>\n      <div class=\"bloggerImage\">\n        <img *ngIf=\"blog\" src=\"{{blog.bloggerImage}}\"  (error)=\"setDefault()\" >\n      </div>\n      <div class=\"blogger\" *ngIf=\"blogDataRecieved\">\n        <p  class=\"bloggerName\">Written by <span > {{blog.bloggerName}}</span></p>  \n        <p class=\"writtenDate\">\n          {{blog.exactDate}}\n        </p>\n      </div>\n      <div class=\"count\" *ngIf=\"blogDataRecieved\">\n        <span>\n          <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\">\n          <span>{{blog.ViewCount}}</span>\n        </span>\n        <span>\n          <img src=\"/assets/images/sports-social-share-orange.png\" alt=\"sports-social-share-orange\">\n          <span>{{blog.ShareCount}}</span>\n        </span>\n      </div>\n      \n      <div class=\"shareOn\" *ngIf=\"blogDataRecieved\">\n        Share on \n        <img src=\"/assets/images/sports-social-facebook-logo-black.png\" role=\"button\" (click)=\"shareOnFacebook()\" class=\"facebook\" alt=\"sports-social-facebook-logo-black\">\n        <a href=\"https://twitter.com/share\" (click)=\"shareOnTwitter()\" #popup class=\"twitter\">\n          <img src=\"/assets/images/sports-social-twitter-logo-black.png\"  class=\"twitterButton\" alt=\"sports-social-twitter-logo-black\">\n        </a> \n      </div>\n      <p [innerHtml]=\"blog.Content\" class=\"desc\" *ngIf=\"blogDataRecieved\">\n      </p>\n      <div class=\"tags\" *ngIf=\"blogDataRecieved\" >\n        <div class=\"tagHolder\">\n          <img src=\"/assets/images/sports-social-tag.png\" alt=\"sports-social-tag\">\n        </div>\n        <a *ngFor=\"let key of Keywords;let i=index\" role=\"button\" routerLink=\"/{{key}}\" (click)=\"getblogs($event)\">{{key}}</a>\n      </div>\n      <p class=\"shareOn\" *ngIf=\"blogDataRecieved\">\n        Share on \n        \n        <img src=\"/assets/images/sports-social-facebook-logo-black.png\" role=\"button\" (click)=\"shareOnFacebook()\" class=\"facebook\" alt=\"sports-social-facebook-logo-black\">\n        <a href=\"http://twitter.com/share\" (click)=\"shareOnTwitter()\" #popup class=\"twitter\">\n          <img src=\"/assets/images/sports-social-twitter-logo-black.png\"  class=\"twitterButton\" alt=\"sports-social-twitter-logo-black\">\n        </a> \n      </p>\n    </div>\n    <div class=\"social\" *ngIf=\"!removeSocial\">\n      <div class=\"follow\">\n        <p *ngIf=\"blogDataRecieved\">Follow us</p>\n        <a href=\"https://www.facebook.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">\n          <img src=\"/assets/images/sports-social-facebook-logo-blue.png\" alt=\"sports-social-facebook-logo-blue\">\n        </a> \n        <a href=\"https://www.instagram.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\"> \n          <img src=\"/assets/images/sports-social-instagram-logo-blue.png\" alt=\"sports-social-instagram-logo-blue\">\n        </a>\n        <a href=\"https://www.twitter.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-twitter-logo-blue.png\" alt=\"sports-social-twitter-logo-blue\">\n        </a>\n        <a href=\"https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-youtube-logo-blue.png\" alt=\"sports-social-youtube-logo-blue\">\n        </a>\n        <a href=\"https://www.pinterest.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-pinterest-logo-blue.png\" alt=\"sports-social-pinterest-logo-blue\">\n        </a>\n        <a href=\" https://in.linkedin.com/company/sports-social\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-linkedin-logo-blue.png\" alt=\"sports-social-linkedin-logo-blue\">\n        </a>\n        <a href=\"https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-quora-logo-blue.png\" alt=\"sports-social-quora-logo-blue\">\n        </a>\n      </div>\n      <div class=\"twitter\">\n        <p>\n          <img src=\"/assets/images/sports-social-twitter-logo-blue.png\" alt=\"sports-social-twitter-logo-blue\">\n          Tweets by @chaseyoursport</p>\n        <a \n          class=\"twitter-timeline\" \n          href=\"https://twitter.com/chaseyoursport\"\n          data-width=\"450\"\n          data-height=\"700\"\n          data-chrome=\"noheader nofooter\">\n          Tweets by chaseyoursport\n        </a>\n        </div>\n    </div>\n  </div>\n  <div class=\"comments\" *ngIf=\"blogDataRecieved\">\n    <SportSocial-comments\n      [BlogId]=\"blogID\">\n    </SportSocial-comments>\n  </div>\n<SportSocial-related-blogs></SportSocial-related-blogs>\n  \n</div> \n<SportSocial-blog-footer *ngIf=\"blogDataRecieved\"></SportSocial-blog-footer>\n\n<div class=\"fullImage\"  *ngIf=\"openFullImage\" >\n  <img \n   src=\"/assets/images/sports-social-cancel-white.png\" \n   class=\"cancel\" role=\"button\" (click)=\"closeFullImage()\" >   \n   \n </div>\n <div class=\"fullImageHolder\" *ngIf=\"openFullImage\" #fullImage>\n   <img src=\"{{blog.blogImage}}\" (load)=\"onFullImageload()\">\n </div>"
+module.exports = "<div class=openBlog  #openBlog>\n  <p class=\"Catagory\">\n    <span role=\"button\" routerLink=\"/{{Keywords[0]}}\" (click)=\"getblogs($event)\">{{Keywords[0]}}</span>\n    <span  *ngIf=\"blogDataRecieved\">|</span>\n    <span *ngIf=\"blog\">{{blog.readingTime}}</span>\n  </p>\n  <div class=\"blogImageHolder\">\n    <img \n      class=\"blogImage\" \n      alt=\"blogImage\" \n      src=\"{{blog.blogImage}}\"  \n      (error)=\"setDefaultBlogImage()\" \n      (load)=\"removeInitalImage($event)\"\n      role=\"button\" \n      *ngIf=\"blogDataRecieved\"\n      (click)=\"openfullImage()\">\n    <img \n      class=\"blogImage\"  \n      alt=\"InitialblogImage\" \n      src=\"/assets/images/default-image.png\"  \n      *ngIf=\"loading\" \n      (click)=\"openfullImage()\" \n      role=\"button\">\n    <img src=\"/assets/images/sports-social-zoom-out-orange.png\" alt=\"sports-social-zoom-out-orange\" role=\"button\" (click)=\"openfullImage()\"  class=\"zoom\">\n  </div>\n  \n  <div class=\"content\">\n    \n    <div class=\"blogInfo\" #BlogInfo>\n      <p *ngIf=\"blog\" [innerHtml]=\"blog.heading\"class=\"title\"></p>\n      <div class=\"bloggerImage\">\n        <img *ngIf=\"blog\" src=\"{{blog.bloggerImage}}\"  (error)=\"setDefault()\" >\n      </div>\n      <div class=\"blogger\" *ngIf=\"blogDataRecieved\">\n        <p  class=\"bloggerName\">Written by <span > {{blog.bloggerName}}</span></p>  \n        <p class=\"writtenDate\">\n          {{blog.exactDate}}\n        </p>\n      </div>\n      <div class=\"count\" *ngIf=\"blogDataRecieved\">\n        <span>\n          <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\">\n          <span>{{blog.ViewCount}}</span>\n        </span>\n        <span>\n          <img src=\"/assets/images/sports-social-share-orange.png\" alt=\"sports-social-share-orange\">\n          <span>{{blog.ShareCount}}</span>\n        </span>\n      </div>\n      \n      <div class=\"shareOn\" *ngIf=\"blogDataRecieved\">\n        Share on \n        <img src=\"/assets/images/sports-social-facebook-logo-black.png\" role=\"button\" (click)=\"shareOnFacebook()\" class=\"facebook\" alt=\"sports-social-facebook-logo-black\">\n        <a href=\"https://twitter.com/share\" (click)=\"shareOnTwitter()\" #popup class=\"twitter\">\n          <img src=\"/assets/images/sports-social-twitter-logo-black.png\"  class=\"twitterButton\" alt=\"sports-social-twitter-logo-black\">\n        </a> \n      </div>\n      <p [innerHtml]=\"content\" class=\"desc\" *ngIf=\"blogDataRecieved\">\n      </p>\n      <div class=\"tags\" *ngIf=\"blogDataRecieved\" >\n        <div class=\"tagHolder\">\n          <img src=\"/assets/images/sports-social-tag.png\" alt=\"sports-social-tag\">\n        </div>\n        <a *ngFor=\"let key of Keywords;let i=index\" role=\"button\" routerLink=\"/{{key}}\" (click)=\"getblogs($event)\">{{key}}</a>\n      </div>\n      <p class=\"shareOn\" *ngIf=\"blogDataRecieved\">\n        Share on \n        \n        <img src=\"/assets/images/sports-social-facebook-logo-black.png\" role=\"button\" (click)=\"shareOnFacebook()\" class=\"facebook\" alt=\"sports-social-facebook-logo-black\">\n        <a href=\"http://twitter.com/share\" (click)=\"shareOnTwitter()\" #popup class=\"twitter\">\n          <img src=\"/assets/images/sports-social-twitter-logo-black.png\"  class=\"twitterButton\" alt=\"sports-social-twitter-logo-black\">\n        </a> \n      </p>\n    </div>\n    <div class=\"social\" *ngIf=\"!removeSocial\">\n      <div class=\"follow\">\n        <p *ngIf=\"blogDataRecieved\">Follow us</p>\n        <a href=\"https://www.facebook.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">\n          <img src=\"/assets/images/sports-social-facebook-logo-blue.png\" alt=\"sports-social-facebook-logo-blue\">\n        </a> \n        <a href=\"https://www.instagram.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\"> \n          <img src=\"/assets/images/sports-social-instagram-logo-blue.png\" alt=\"sports-social-instagram-logo-blue\">\n        </a>\n        <a href=\"https://www.twitter.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-twitter-logo-blue.png\" alt=\"sports-social-twitter-logo-blue\">\n        </a>\n        <a href=\"https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-youtube-logo-blue.png\" alt=\"sports-social-youtube-logo-blue\">\n        </a>\n        <a href=\"https://www.pinterest.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-pinterest-logo-blue.png\" alt=\"sports-social-pinterest-logo-blue\">\n        </a>\n        <a href=\" https://in.linkedin.com/company/sports-social\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-linkedin-logo-blue.png\" alt=\"sports-social-linkedin-logo-blue\">\n        </a>\n        <a href=\"https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network\" target=\"_blank\"  rel=\"noopener\">  \n          <img src=\"/assets/images/sports-social-quora-logo-blue.png\" alt=\"sports-social-quora-logo-blue\">\n        </a>\n      </div>\n      <div class=\"twitter\">\n        <p>\n          <img src=\"/assets/images/sports-social-twitter-logo-blue.png\" alt=\"sports-social-twitter-logo-blue\">\n          Tweets by @chaseyoursport</p>\n          <a class=\"twitter-timeline\" \n          data-width=\"450\"\n          data-height=\"700\"\n          data-chrome=\"noheader nofooter\"\n          href=\"https://twitter.com/chaseyoursport?ref_src=twsrc%5Etfw\">\n          Tweets by chaseyoursport\n        </a> \n        <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n        </div>\n    </div>\n  </div>\n  <div class=\"comments\" *ngIf=\"blogDataRecieved\">\n    <SportSocial-comments\n      [BlogId]=\"blogID\">\n    </SportSocial-comments>\n  </div>\n<SportSocial-related-blogs></SportSocial-related-blogs>\n  \n</div> \n<SportSocial-blog-footer *ngIf=\"blogDataRecieved\"></SportSocial-blog-footer>\n\n<div class=\"fullImage\"  *ngIf=\"openFullImage\" >\n  <img \n   src=\"/assets/images/sports-social-cancel-white.png\" \n   class=\"cancel\" role=\"button\" (click)=\"closeFullImage()\" >   \n   \n </div>\n <div class=\"fullImageHolder\" *ngIf=\"openFullImage\" #fullImage>\n   <img src=\"{{blog.blogImage}}\" (load)=\"onFullImageload()\">\n </div>"
 
 /***/ }),
 
@@ -990,7 +1013,8 @@ module.exports = "<div class=openBlog>\n  <p #openBlog class=\"Catagory\">\n    
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_facebook__ = __webpack_require__("../../../../ngx-facebook/dist/esm/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_facebook_service__ = __webpack_require__("../../../../../src/app/services/facebook.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1007,13 +1031,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var BlogOpenComponent = /** @class */ (function () {
-    function BlogOpenComponent(recieve, recieveHeight, renderer, route, fb, sendKey, router, post, send, metaService, load, zone, titleService) {
+    function BlogOpenComponent(recieve, recieveHeight, renderer, route, Fb, sendKey, router, post, send, metaService, load, zone, titleService, sanitizer, winRef) {
         this.recieve = recieve;
         this.recieveHeight = recieveHeight;
         this.renderer = renderer;
         this.route = route;
-        this.fb = fb;
+        this.Fb = Fb;
         this.sendKey = sendKey;
         this.router = router;
         this.post = post;
@@ -1022,6 +1048,8 @@ var BlogOpenComponent = /** @class */ (function () {
         this.load = load;
         this.zone = zone;
         this.titleService = titleService;
+        this.sanitizer = sanitizer;
+        this.winRef = winRef;
         this.removeSocial = false;
         this.isConnectedWithFacebook = false;
         this.mobileView = false;
@@ -1031,69 +1059,70 @@ var BlogOpenComponent = /** @class */ (function () {
         this.blogDataRecieved = false;
         this.Keywords = [];
         this.loading = true;
+        Fb.init();
         this.blogID = this.route.snapshot.url[2].path;
-        this.scriptOfTwitter();
-        fb.init({
-            appId: '1750709328507665',
-            version: 'v2.10'
-        });
     }
     BlogOpenComponent.prototype.ngOnInit = function () {
-        this.scriptOfTwitter();
-        this.loadBlogFromSendData();
-        if (this.blog == undefined) {
-            this.loadBlogFromUrl();
-        }
+        this.recieveBlogIdFromUrl();
         this.setTopMargin();
         this.setMobileView();
     };
-    BlogOpenComponent.prototype.sendViewCount = function () {
-        this.send.viewCountOfBlog(this.blogID, this.ViewCount).subscribe(function (data) {
-            //console.log(data, " view")
-        });
+    BlogOpenComponent.prototype.ngAfterViewInit = function () {
+        this.scriptOfTwitter();
+        // this.recieveBlogIdFromUrl();
     };
     BlogOpenComponent.prototype.setTitle = function () {
-        if (this.route.snapshot.url[0].path != 'sportsocialblog' || this.route.snapshot.url[1].path != 'page') {
+        if (this.route.snapshot.url[0].path !== 'sportsocialblog' || this.route.snapshot.url[1].path !== 'page') {
             this.titleService.setTitle(this.blog.heading);
         }
     };
+    BlogOpenComponent.prototype.sendViewCount = function () {
+        this.send.viewCountOfBlog(this.blogID, this.ViewCount).subscribe(function (data) {
+            // console.log(data, " view")
+        });
+    };
+    BlogOpenComponent.prototype.strip = function (html) {
+        var tmp = document.createElement('DIV');
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || '';
+    };
+    BlogOpenComponent.prototype.removePreviousTags = function () {
+        this.metaService.removeTag("rel= 'canonical'");
+        this.metaService.removeTag("property= 'og:site_name'");
+        this.metaService.removeTag("property= 'og:image'");
+        this.metaService.removeTag("property= 'og:url'");
+        this.metaService.removeTag("property= 'og:description'");
+        this.metaService.removeTag("property= 'og:title'");
+        this.metaService.removeTag("name= 'theme-color'");
+        this.metaService.removeTag("name= 'title'");
+        this.metaService.removeTag("name= 'description'");
+        this.metaService.removeTag("name= 'twitter:image:src'");
+        this.metaService.removeTag("name= 'twitter:description'");
+        this.metaService.removeTag("name= 'twitter:title'");
+        this.metaService.removeTag("name= 'twitter:creator'");
+        this.metaService.removeTag("name= 'twitter:site'");
+        this.metaService.removeTag("name= 'twitter:card'");
+        this.metaService.removeTag("property= 'fb:app_id'");
+    };
     BlogOpenComponent.prototype.setMetaTags = function () {
-        /* this.metaService.updateTag({
-            content:this.blog.heading.substring(0,139)
-            },
-        'name="title"')
-        this.metaService.updateTag({
-           content:this.blog.heading.substring(0,139)
-            },
-        'property="og:title"')
-        this.metaService.updateTag({
-            content:this.blog.Content.substring(0,139)
-            },
-        'name="description"')
-        this.metaService.updateTag({
-            content:this.blog.Content.substring(0,139)
-            },
-        'property="og:description"')
-        this.metaService.updateTag({
-            content:this.blog.blogImage
-            },
-        'property="og:image"')
-        this.metaService.updateTag({
-            content:window.location.href
-            },
-        'property="og:url"')
-        this.metaService.updateTag({
-            content:this.blog.heading.substring(0,139)
-            },
-        'name="twitter:title"')
-        this.metaService.updateTag({
-            content:this.blog.Content.substring(0,139)
-            },
-        'name="twitter:description"')
-        this.metaService.updateTag({
-            content:this.blog.blogImage
-            },
-        'name="twitter:image:src"') */
+        this.metaService.addTags([
+            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' },
+            { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to ' },
+            { name: 'title', content: this.blog.heading },
+            { name: 'theme-color', content: '#4327a0' },
+            { property: 'og:title', content: this.blog.heading },
+            { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to ' },
+            { property: 'og:url', content: 'https://www.chaseyoursport.com/' },
+            { property: 'og:image', content: this.blog.blogImage },
+            { property: 'og:site_name', content: 'Chase Your Sport' },
+            { property: 'fb:app_id', content: '1750709328507665' },
+            { name: 'twitter:card', content: 'summary_large_image' },
+            { name: 'twitter:site', content: '@Chaseyoursport' },
+            { name: 'twitter:creator', content: '@NadeemKhan' },
+            { name: 'twitter:title', content: this.blog.heading },
+            { name: 'twitter:description', content: 'Read the latest articles, blogs, news and other informations related to ' },
+            { name: 'twitter:image:src', content: this.blog.blogImage },
+        ]);
     };
     BlogOpenComponent.prototype.loadBlogFromSendData = function () {
         var _this = this;
@@ -1105,8 +1134,8 @@ var BlogOpenComponent = /** @class */ (function () {
                 blogImage: data['blogImage'],
                 bloggerName: data['bloggerName'],
                 bloggerImage: data['bloggerImage'],
-                heading: data['heading'],
-                Content: data['Content'],
+                heading: (data['heading']),
+                Content: _this.sanitizer.bypassSecurityTrustHtml(data['Content']),
                 insertedDate: data['insertedDate'],
                 ViewCount: data['ViewCount'],
                 ShareCount: data['ShareCount'],
@@ -1114,27 +1143,31 @@ var BlogOpenComponent = /** @class */ (function () {
                 exactDate: data['exactDate'],
                 readingTime: data['readingTime']
             };
-            _this.ShareCount = parseInt(_this.blog.ShareCount);
-            _this.ViewCount = parseInt(_this.blog.ViewCount);
-            _this.sendViewCount();
-            _this.Keywords = _this.blog.keywords;
-            _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
-            _this.setMetaTags();
-            _this.setTitle();
-            //console.log(this.blog.Content, 'latest');
         });
     };
-    BlogOpenComponent.prototype.loadBlogFromUrl = function () {
+    BlogOpenComponent.prototype.recieveBlogIdFromUrl = function () {
         var _this = this;
+        this.blogID = this.route.snapshot.url[2].path;
+        this.route.params.subscribe(function (params) {
+            _this.blogID = params.blogId;
+            console.clear();
+            console.log(_this.blogID);
+            _this.getBlogDetails();
+        });
+    };
+    BlogOpenComponent.prototype.getBlogDetails = function () {
+        var _this = this;
+        this.removePreviousTags();
+        var blog;
         this.load.dataOfsingleBlog(this.blogID).subscribe(function (res) {
             var data = res[0];
-            if (data == undefined || _this.route.snapshot.url[0].path == 'sportsocialblog' || _this.route.snapshot.url[1].path == 'page') {
+            if (data === undefined) {
                 _this.router.navigate(['/']);
             }
             else {
                 _this.blogDataRecieved = true;
             }
-            _this.blog = {
+            blog = {
                 blogId: data.blogId,
                 blogImage: data.blogImage,
                 bloggerName: data.bloggerName,
@@ -1148,15 +1181,16 @@ var BlogOpenComponent = /** @class */ (function () {
                 exactDate: _this.ExactDate(data.insertedDate),
                 readingTime: _this.timeToRead(data.Content)
             };
-            _this.ShareCount = +_this.blog.ShareCount;
-            _this.ViewCount = +(_this.blog.ViewCount);
-            _this.sendViewCount();
-            _this.Keywords = _this.blog.keywords;
-            window.scrollTo(0, 0);
-            _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
+            _this.blog = blog;
+            _this.content = _this.sanitizer.bypassSecurityTrustHtml(data['Content']);
             _this.setMetaTags();
+            _this.ShareCount = +blog.ShareCount;
+            _this.ViewCount = +(blog.ViewCount);
+            _this.sendViewCount();
+            _this.Keywords = blog.keywords;
+            // window.scrollTo(0, 0);
+            _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
             _this.setTitle();
-            console.log(_this.blog.Content, 'latest');
         });
     };
     BlogOpenComponent.prototype.timeToRead = function (s) {
@@ -1172,9 +1206,9 @@ var BlogOpenComponent = /** @class */ (function () {
     BlogOpenComponent.prototype.timePassed = function (i) {
         var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
-        if (writtenDate.getFullYear() == presentDate.getFullYear()) {
-            if (writtenDate.getMonth() == presentDate.getMonth()) {
-                if (writtenDate.getDate() == presentDate.getDate()) {
+        if (writtenDate.getFullYear() === presentDate.getFullYear()) {
+            if (writtenDate.getMonth() === presentDate.getMonth()) {
+                if (writtenDate.getDate() === presentDate.getDate()) {
                     return 'Today';
                 }
                 else {
@@ -1193,7 +1227,7 @@ var BlogOpenComponent = /** @class */ (function () {
         var writtenDate = new Date(i * 1000);
         return writtenDate.toDateString();
     };
-    BlogOpenComponent.prototype.setDefault = function (event) {
+    BlogOpenComponent.prototype.setDefault = function () {
         this.blog.bloggerImage = '/assets/images/user.png';
     };
     BlogOpenComponent.prototype.removeInitalImage = function (event) {
@@ -1209,17 +1243,17 @@ var BlogOpenComponent = /** @class */ (function () {
         this.blog.blogImage = '/assets/images/default-image.png';
     };
     BlogOpenComponent.prototype.setMobileView = function () {
-        if (window.innerWidth > 950) {
+        if (this.winRef.nativeWindow.innerWidth > 950) {
             this.mobileView = false;
             this.removeSocial = false;
             this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '68%');
         }
-        if (window.innerWidth <= 950 && window.innerWidth > 700) {
+        if (this.winRef.nativeWindow.innerWidth <= 950 && window.innerWidth > 700) {
             this.removeSocial = true;
             this.mobileView = false;
             this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
         }
-        if (window.innerWidth < 700) {
+        if (this.winRef.nativeWindow.innerWidth < 700) {
             this.removeSocial = true;
             this.mobileView = true;
             this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
@@ -1244,15 +1278,11 @@ var BlogOpenComponent = /** @class */ (function () {
         this.renderer.setStyle(this.openBlog.nativeElement, 'margin-top', this.topMargin + 'px');
     };
     BlogOpenComponent.prototype.onresize = function () {
-        this.scriptOfTwitter();
         this.setMobileView();
         this.setTopMargin();
-        if (this.openFullImage == true) {
+        if (this.openFullImage === true) {
             this.onFullImageload();
         }
-    };
-    BlogOpenComponent.prototype.handleError = function (error) {
-        console.error('Error processing action', error);
     };
     BlogOpenComponent.prototype.openfullImage = function () {
         this.openFullImage = true;
@@ -1265,43 +1295,30 @@ var BlogOpenComponent = /** @class */ (function () {
     BlogOpenComponent.prototype.closeFullImage = function () {
         this.openFullImage = false;
     };
-    BlogOpenComponent.prototype.loginOnFacebook = function () {
-        this.fb.login()
-            .then(function (res) {
-            //console.log('Logged in', res);
-        })
-            .catch(this.handleError);
-    };
-    BlogOpenComponent.prototype.getLoginStatusofFacebook = function () {
-        var _this = this;
-        this.fb.getLoginStatus()
-            .then(function (res) {
-            if (res.status == 'connected') {
-                _this.isConnectedWithFacebook = true;
-            }
-            else {
-                _this.loginOnFacebook();
-                _this.isConnectedWithFacebook = true;
-            }
-        })
-            .catch(console.error.bind(console));
-    };
     BlogOpenComponent.prototype.sendShareCount = function () {
         this.post.shareCountOfBlog(this.blog.blogId, this.ShareCount).subscribe(function (data) {
-            //console.log(data, "sharedOnFacebook")
+            // console.log(data, "sharedOnFacebook")
         });
     };
     BlogOpenComponent.prototype.shareOnFacebook = function () {
         this.sendShareCount();
-        var options = {
-            method: 'share',
-            href: 'https://www.chaseyoursport.com/' + this.route.snapshot.url[0].path + '/' + this.route.snapshot.url[1].path + '/' + this.route.snapshot.url[2].path
-        };
-        this.fb.ui(options)
-            .then(function (res) {
-            //console.log('Got the users profile', res);
-        })
-            .catch(this.handleError);
+        FB.ui({
+            method: 'share_open_graph',
+            action_type: 'og.shares',
+            action_properties: JSON.stringify({
+                object: {
+                    'og:url': 'https://www.chaseyoursport.com/' + this.Keywords[0].replace(/ /g, '-')
+                        + '/' + this.blog.heading.replace(/ /g, '-') + '/' + this.blogID,
+                    'og:title': this.blog.heading,
+                    'og:description': this.strip(this.blog.Content),
+                    'og:image': this.blog.blogImage,
+                    'og:image:width': '180',
+                    'og:image:height': '110'
+                }
+            })
+        }, 
+        // callback
+        function (response) { });
     };
     BlogOpenComponent.prototype.shareOnTwitter = function () {
         this.sendShareCount();
@@ -1320,45 +1337,45 @@ var BlogOpenComponent = /** @class */ (function () {
         this.sendKey.ofBlogCard.next(key);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('openBlog'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('openBlog'),
         __metadata("design:type", Object)
     ], BlogOpenComponent.prototype, "openBlog", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('Social'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('Social'),
         __metadata("design:type", Object)
     ], BlogOpenComponent.prototype, "Social", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('BlogInfo'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('BlogInfo'),
         __metadata("design:type", Object)
     ], BlogOpenComponent.prototype, "BlogInfo", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('popup'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('popup'),
         __metadata("design:type", Object)
     ], BlogOpenComponent.prototype, "popup", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('fullImage'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('fullImage'),
         __metadata("design:type", Object)
     ], BlogOpenComponent.prototype, "fullImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('BlogImage'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('BlogImage'),
         __metadata("design:type", Object)
     ], BlogOpenComponent.prototype, "BlogImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], BlogOpenComponent.prototype, "onresize", null);
     BlogOpenComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocial-blog-open',
             template: __webpack_require__("../../../../../src/app/blogContent/blog-open/blog-open.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/blog-open/blog-open.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_ngx_facebook__["b" /* FacebookService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ngx_facebook__["b" /* FacebookService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */]) === "function" && _o || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__services_facebook_service__["a" /* FacebookService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_facebook_service__["a" /* FacebookService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_6__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _q || Object])
     ], BlogOpenComponent);
     return BlogOpenComponent;
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
 }());
 
 //# sourceMappingURL=blog-open.component.js.map
@@ -1398,6 +1415,8 @@ module.exports = "<SportSocialBlog-keywords></SportSocialBlog-keywords>\n<div cl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1410,11 +1429,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var BlogsComponent = /** @class */ (function () {
-    function BlogsComponent(reciveHeight, renderer, get) {
+    function BlogsComponent(reciveHeight, renderer, get, metaService, winRef) {
         this.reciveHeight = reciveHeight;
         this.renderer = renderer;
         this.get = get;
+        this.metaService = metaService;
+        this.winRef = winRef;
         this.latestBlogDetails = [];
         this.blogDetails = [];
         this.topBlogDetails = [];
@@ -1422,20 +1445,57 @@ var BlogsComponent = /** @class */ (function () {
         this.removeTrendingBlock = false;
         this.mobileView = false;
         this.nextPageNumber = 1;
-        this.defaultKey = "dfg";
+        this.defaultKey = 'dfg';
         this.show = false;
         this.dataRecived = false;
         this.haveData = true;
         this.count = 0;
+        metaService.addTags([
+            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' },
+            { name: 'description', content: "chase your sports provides a better & sustainable\n      platform for the sports analytics and latest national as well as international\n      sports news & update for better engagement with the sports-friendly environment &\n      future aspects in INDIA...." },
+            { name: 'keywords', content: "best sports social media, best sports social campaigns, extreme sports social network,\n      sports social network in india launch, sports social network india, action sports blog,\n      adventure sports blog, blog sports vent, indian sports blog, sports analytics blog,\n      all sports news, best college sports news network, best online sports news, best sports news channel,\n      cricket sports news, current sports news, daily sports news, indian sports news today, latest updates in sports in india\n      indian sports analysis group, indian sports analysis jobs, indian sports analysis news,\n      indian sports analysis questions, indian sports analysis report, international sports news & analysis report,\n      international news of sports, international sports breaking news, international sports news articles,\n      international sports news basketball, international sports news india, international sports news latest,\n      international sports news soccer, football sports news, latest international news about sports,\n      latest international sports news, latest national and international sports news" },
+            { name: 'title', content: 'Chase Your Sport: The Sports Social Blog' },
+            { name: 'theme-color', content: '#4327a0' },
+            { property: 'og:title', content: 'Chase Your Sport: The Sports Social Blog' },
+            { property: 'og:description', content: "chase your sports provides a better & sustainable\n      platform for the sports analytics and latest national as well as international\n      sports news & update for better engagement with the sports-friendly environment &\n      future aspects in INDIA...." },
+            { property: 'og:url', content: 'https://www.chaseyoursport.com/' },
+            { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
+            { property: 'og:site_name', content: 'Chase Your Sport' },
+            { property: 'fb:app_id', content: '1750709328507665' },
+            { name: 'twitter:card', content: 'summary_large_image' },
+            { name: 'twitter:site', content: '@Chaseyoursport' },
+            { name: 'twitter:creator', content: '@NadeemKhan' },
+            { name: 'twitter:title', content: 'Chase Your Sport:The Sports Social Blog' },
+            { name: 'twitter:description', content: "chase your sports provides a better & sustainable\n      platform for the sports analytics and latest national as well as international\n      sports news & update for better engagement with the sports-friendly environment &\n      future aspects in INDIA...." },
+            { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
+        ]);
     }
     BlogsComponent.prototype.ngOnInit = function () {
-        //sessionStorage.removeItem('Blog')
-        //sessionStorage.removeItem('pageNumber')
-        //sessionStorage.removeItem('searchedBlog')
-        //sessionStorage.removeItem('key')
         this.setMobileView();
         this.getBlog();
     };
+    /* setMetaTags() {
+      this.metaService.addTags([
+        { rel: 'canonical' , href: 'https://wwww.chaseoursport.com'},
+        { name: 'author',   content: 'Coursetro.com'},
+        { name: 'keywords', content: 'angular seo, angular 4 universal, etc'},
+        { name: 'description', content: 'Welcome to Sports Social Blog. Here you will get all latest update regarding sports.' },
+        { name: 'title', content: 'Chase Your Sport: The Sports Social Blog'},
+        { name: 'theme-color', content: '#4327a0'},
+        { property: 'og:title', content: 'Chase Your Sport: The Sports Social Blog' },
+        { property: 'og:description', content:  'Welcome to Sports Social Blog. Here you will get all latest update regarding sports.'},
+        { property: 'og:url', content:  'https://wwww.chaseoursport.com' },
+        { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
+        { property: 'og:site_name', content: 'Chase Your Sport' },
+        { property: 'fb:app_id', content: '1750709328507665'},
+        { name: 'twitter:card', content: 'summary_large_image'},
+        { name: 'twitter:site', content: '@Chaseyoursport'},
+        { name: 'twitter:creator', content: '@NadeemKhan'},
+        { name: 'twitter:title', content: 'Chase Your Sport:The Sports Social Blog'},
+        { name: 'twitter:description', content: 'Welcome to Sports Social Blog. Here you will get all latest update regarding sports.'},
+        { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
+      ]);
+    } */
     BlogsComponent.prototype.getBlog = function () {
         var _this = this;
         this.get.blogData(this.nextPageNumber, this.defaultKey).subscribe(function (data) {
@@ -1452,17 +1512,11 @@ var BlogsComponent = /** @class */ (function () {
                     insertedDate: _this.timePassed(data[i_1].insertedDate),
                     ViewCount: data[i_1].ViewCount,
                     ShareCount: data[i_1].ShareCount,
-                    keywords: data[i_1].keywords.split(","),
+                    keywords: data[i_1].keywords.split(','),
                     exactDate: _this.ExactDate(data[i_1].insertedDate),
                     readingTime: _this.timeToRead(data[i_1].Content)
                 });
-                // console.log(this.blogDetails[i].blogId, this.blogDetails[i].Content)
             }
-            /* for(var i=0;i<=this.blogDetails[0].Content.length;i++){
-              if(this.blogDetails[0].Content[i]=='"'){
-                console.log(this.blogDetails[0].Content[i],this.count++,this.blogDetails[0].Content[i+1]+this.blogDetails[0].Content[i+2]+this.blogDetails[0].Content[i+3]+this.blogDetails[0].Content[i+4])
-              }
-            } */
             _this.latestBlogDetails.push({
                 blogId: _this.blogDetails[0].blogId,
                 blogImage: _this.blogDetails[0].blogImage,
@@ -1512,7 +1566,7 @@ var BlogsComponent = /** @class */ (function () {
         });
     };
     BlogsComponent.prototype.setMobileView = function () {
-        if (window.innerWidth > 600) {
+        if (this.winRef.nativeWindow.innerWidth > 600) {
             this.mobileView = false;
         }
         else {
@@ -1522,10 +1576,10 @@ var BlogsComponent = /** @class */ (function () {
     BlogsComponent.prototype.setTopMargin = function () {
         var _this = this;
         this.reciveHeight.ofKeyWords.subscribe(function (margin) { return _this.topMargin = margin; });
-        this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + "px");
+        this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + 'px');
     };
     BlogsComponent.prototype.showTrendingBlock = function () {
-        if (this.blogDetails.length == 0 || window.innerWidth < 950) {
+        if (this.blogDetails.length === 0 || window.innerWidth < 950) {
             return false;
         }
         if (this.blogDetails.length >= 0 && window.innerWidth > 950) {
@@ -1538,7 +1592,7 @@ var BlogsComponent = /** @class */ (function () {
     BlogsComponent.prototype.ngAfterViewChecked = function () {
         var _this = this;
         this.reciveHeight.ofKeyWords.subscribe(function (margin) { return _this.topMargin = margin; });
-        this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + "px");
+        this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + 'px');
     };
     BlogsComponent.prototype.onresize = function () {
         this.setTopMargin();
@@ -1551,36 +1605,40 @@ var BlogsComponent = /** @class */ (function () {
     BlogsComponent.prototype.timePassed = function (i) {
         var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
-        if (writtenDate.getFullYear() == presentDate.getFullYear()) {
-            if (writtenDate.getMonth() == presentDate.getMonth()) {
-                if (writtenDate.getDate() == presentDate.getDate()) {
-                    if (writtenDate.getHours() == presentDate.getHours()) {
-                        if (writtenDate.getMinutes() == presentDate.getMinutes()) {
-                            if (writtenDate.getSeconds() == presentDate.getSeconds()) {
-                                return "Just Now";
+        if (writtenDate.getFullYear() === presentDate.getFullYear()) {
+            if (writtenDate.getMonth() === presentDate.getMonth() || writtenDate.getDate() > presentDate.getDate()) {
+                if (writtenDate.getDate() === presentDate.getDate()) {
+                    if (writtenDate.getHours() === presentDate.getHours()) {
+                        if (writtenDate.getMinutes() === presentDate.getMinutes()) {
+                            if (writtenDate.getSeconds() === presentDate.getSeconds()) {
+                                return 'Just Now';
                             }
                             else {
-                                return presentDate.getSeconds() - writtenDate.getSeconds() + " sec ago";
+                                return presentDate.getSeconds() - writtenDate.getSeconds() + ' sec ago';
                             }
                         }
                         else {
-                            return presentDate.getMinutes() - writtenDate.getMinutes() + " min ago";
+                            return presentDate.getMinutes() - writtenDate.getMinutes() + ' min ago';
                         }
                     }
                     else {
-                        return presentDate.getHours() - writtenDate.getHours() + " hrs ago";
+                        return presentDate.getHours() - writtenDate.getHours() + ' hrs ago';
                     }
                 }
                 else {
-                    return presentDate.getDate() - writtenDate.getDate() + " day ago";
+                    var date = (presentDate.getDate() - writtenDate.getDate());
+                    if (date < 0) {
+                        date += 30;
+                    }
+                    return date + ' day ago';
                 }
             }
             else {
-                return presentDate.getMonth() - writtenDate.getMonth() + " month ago";
+                return presentDate.getMonth() - writtenDate.getMonth() + ' month ago';
             }
         }
         else {
-            return presentDate.getFullYear() - writtenDate.getFullYear() + " year ago";
+            return presentDate.getFullYear() - writtenDate.getFullYear() + ' year ago';
         }
     };
     BlogsComponent.prototype.ExactDate = function (i) {
@@ -1589,14 +1647,14 @@ var BlogsComponent = /** @class */ (function () {
         return writtenDate.toDateString();
     };
     BlogsComponent.prototype.timeToRead = function (s) {
-        var words = s.split(" ");
+        var words = s.split(' ');
         //console.log(words,words.length,this.blog.blogId)
         var time = Math.round(words.length / 180);
         if (time > 1) {
-            return time + " min read";
+            return time + ' min read';
         }
         else {
-            return "2 min read";
+            return '2 min read';
         }
     };
     BlogsComponent.prototype.nextPage = function () {
@@ -1621,39 +1679,36 @@ var BlogsComponent = /** @class */ (function () {
                         heading: data[i].heading,
                         Content: data[i].Content,
                         insertedDate: _this.timePassed(data[i].insertedDate),
-                        ViewCount: data[i].ViewCount,
-                        ShareCount: data[i].ShareCount,
-                        keywords: data[i].keywords.split(","),
+                        ViewCount: '50',
+                        ShareCount: '50',
+                        keywords: data[i].keywords.split(','),
                         exactDate: _this.ExactDate(data[i].insertedDate),
                         readingTime: _this.timeToRead(data[i].Content)
                     });
                 }
-                //console.log(this.restBlogDetails.concat(this.topBlogDetails).concat(this.latestBlogDetails),"  hr")
-                //sessionStorage.setItem('blogData',JSON.stringify((this.latestBlogDetails).concat(this.topBlogDetails).concat(this.restBlogDetails)))
             });
         }
-        //sessionStorage.setItem('blogPageNumber',JSON.stringify(this.nextPageNumber))
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('blog'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('blog'),
         __metadata("design:type", Object)
     ], BlogsComponent.prototype, "blog", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], BlogsComponent.prototype, "onresize", null);
     BlogsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocial-blogs',
             template: __webpack_require__("../../../../../src/app/blogContent/blogs/blogs.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/blogs/blogs.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* Meta */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _e || Object])
     ], BlogsComponent);
     return BlogsComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=blogs.component.js.map
@@ -1693,6 +1748,7 @@ module.exports = "\n\n<div class=\"latest\" MaintainHeightWidthRatio #latest>\n 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1705,11 +1761,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var LatestBlogComponent = /** @class */ (function () {
-    function LatestBlogComponent(Send, renderer, post) {
+    function LatestBlogComponent(Send, renderer, post, winRef) {
         this.Send = Send;
         this.renderer = renderer;
         this.post = post;
+        this.winRef = winRef;
         this.openFullImage = false;
         this.isloading = true;
         this.dataRecieved = false;
@@ -1758,7 +1816,7 @@ var LatestBlogComponent = /** @class */ (function () {
         this.openFullImage = false;
     };
     LatestBlogComponent.prototype.heightOfInitialImage = function () {
-        if (window.innerWidth <= 600) {
+        if (this.winRef.nativeWindow.innerWidth <= 600) {
             var width = this.initialImage.nativeElement.getBoundingClientRect().width;
             var height = .72 * width;
             this.renderer.setStyle(this.initialImage.nativeElement, 'height', height + 'px');
@@ -1768,130 +1826,130 @@ var LatestBlogComponent = /** @class */ (function () {
         this.responsiveDesign();
     };
     LatestBlogComponent.prototype.responsiveDesign = function () {
-        if (window.innerWidth >= 1000) {
+        if (this.winRef.nativeWindow.innerWidth >= 1000) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '8% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '2.2em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.2em');
         }
-        if (window.innerWidth > 800 && window.innerWidth < 1000) {
+        if (this.winRef.nativeWindow.innerWidth > 800 && this.winRef.nativeWindow.innerWidth < 1000) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '8% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.8em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.2em');
         }
-        if (window.innerWidth < 800 && window.innerWidth >= 600) {
+        if (this.winRef.nativeWindow.innerWidth < 800 && this.winRef.nativeWindow.innerWidth >= 600) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '4% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.1em');
         }
-        if (window.innerWidth < 600 && window.innerWidth > 400) {
+        if (this.winRef.nativeWindow.innerWidth < 600 && this.winRef.nativeWindow.innerWidth > 400) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
             //this.renderer.setStyle(this.Desc.nativeElement,' background','rgba(0, 0, 0, 0.5)')
         }
-        if (window.innerWidth < 400 && window.innerWidth > 340) {
+        if (this.winRef.nativeWindow.innerWidth < 400 && this.winRef.nativeWindow.innerWidth > 340) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.3em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
         }
-        if (window.innerWidth < 340) {
+        if (this.winRef.nativeWindow.innerWidth < 340) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.2em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], LatestBlogComponent.prototype, "blogId", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], LatestBlogComponent.prototype, "blogImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], LatestBlogComponent.prototype, "bloggerName", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], LatestBlogComponent.prototype, "bloggerImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], LatestBlogComponent.prototype, "heading", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], LatestBlogComponent.prototype, "Content", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], LatestBlogComponent.prototype, "insertedDate", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], LatestBlogComponent.prototype, "ViewCount", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], LatestBlogComponent.prototype, "ShareCount", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", Array)
     ], LatestBlogComponent.prototype, "keywords", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], LatestBlogComponent.prototype, "exactDate", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], LatestBlogComponent.prototype, "readingTime", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('DescChild'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('DescChild'),
         __metadata("design:type", Object)
     ], LatestBlogComponent.prototype, "DescChild", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('latestTitle'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('latestTitle'),
         __metadata("design:type", Object)
     ], LatestBlogComponent.prototype, "latestTitle", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('latestDesc'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('latestDesc'),
         __metadata("design:type", Object)
     ], LatestBlogComponent.prototype, "latestDesc", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('blogimage'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('blogimage'),
         __metadata("design:type", Object)
     ], LatestBlogComponent.prototype, "blogimage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('latest'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('latest'),
         __metadata("design:type", Object)
     ], LatestBlogComponent.prototype, "latest", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('initialImage'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('initialImage'),
         __metadata("design:type", Object)
     ], LatestBlogComponent.prototype, "initialImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('Desc'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('Desc'),
         __metadata("design:type", Object)
     ], LatestBlogComponent.prototype, "Desc", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], LatestBlogComponent.prototype, "onresize", null);
     LatestBlogComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocial-latest-blog',
             template: __webpack_require__("../../../../../src/app/blogContent/latest-blog/latest-blog.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/latest-blog/latest-blog.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _d || Object])
     ], LatestBlogComponent);
     return LatestBlogComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=latest-blog.component.js.map
@@ -1931,6 +1989,7 @@ module.exports = "\n  <div class=\"blog\" MaintainHeightWidthRatio #blog >\n    
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1943,18 +2002,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var NormalBlogComponent = /** @class */ (function () {
-    function NormalBlogComponent(Send, renderer, post, zone) {
+    function NormalBlogComponent(Send, renderer, post, zone, winRef) {
         this.Send = Send;
         this.renderer = renderer;
         this.post = post;
         this.zone = zone;
+        this.winRef = winRef;
         this.isloading = true;
         this.openFullImage = false;
         this.dataRecieved = false;
     }
     NormalBlogComponent.prototype.ngOnInit = function () {
-        this.content = this.Content.replace(/<br>/g, '').replace(/<b>/g, '').replace(/<\/b>/g, '').replace(/<i>/g, '').replace(/<\/i>/g, '');
+        this.content = this.strip(this.Content);
         this.blog = {
             blogId: this.blogId,
             blogImage: this.blogImage,
@@ -1975,6 +2036,11 @@ var NormalBlogComponent = /** @class */ (function () {
         }
         //console.log(this.blogTitle)
     };
+    NormalBlogComponent.prototype.strip = function (html) {
+        var tmp = document.createElement('DIV');
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || '';
+    };
     NormalBlogComponent.prototype.ngAfterViewInit = function () {
         if (this.blogImage) {
             this.dataRecieved = true;
@@ -1986,34 +2052,34 @@ var NormalBlogComponent = /** @class */ (function () {
         });
     };
     NormalBlogComponent.prototype.setVariableFont = function () {
-        if (window.innerWidth > 1200) {
+        if (this.winRef.nativeWindow.innerWidth > 1200) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
         }
-        if (window.innerWidth > 1100 && window.innerWidth < 1200) {
+        if (this.winRef.nativeWindow.innerWidth > 1100 && this.winRef.nativeWindow.innerWidth < 1200) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
         }
-        if (window.innerWidth < 1100 && window.innerWidth > 1000) {
+        if (this.winRef.nativeWindow.innerWidth < 1100 && this.winRef.nativeWindow.innerWidth > 1000) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
         }
-        if (window.innerWidth < 1000 && window.innerWidth > 950) {
+        if (this.winRef.nativeWindow.innerWidth < 1000 && this.winRef.nativeWindow.innerWidth > 950) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.15em');
         }
-        if (window.innerWidth > 700 && window.innerWidth < 950) {
+        if (this.winRef.nativeWindow.innerWidth > 700 && this.winRef.nativeWindow.innerWidth < 950) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.25em');
         }
-        if (window.innerWidth > 600 && window.innerWidth < 700) {
+        if (this.winRef.nativeWindow.innerWidth > 600 && this.winRef.nativeWindow.innerWidth < 700) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
         }
-        if (window.innerWidth > 600 && window.innerWidth < 500) {
+        if (this.winRef.nativeWindow.innerWidth > 600 && this.winRef.nativeWindow.innerWidth < 500) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
         }
-        if (window.innerWidth > 500 && window.innerWidth < 600) {
+        if (this.winRef.nativeWindow.innerWidth > 500 && this.winRef.nativeWindow.innerWidth < 600) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
         }
-        if (window.innerWidth > 320 && window.innerWidth < 400) {
+        if (this.winRef.nativeWindow.innerWidth > 320 && this.winRef.nativeWindow.innerWidth < 400) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
         }
-        if (window.innerWidth < 320) {
+        if (this.winRef.nativeWindow.innerWidth < 320) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '0.9em');
         }
     };
@@ -2026,15 +2092,13 @@ var NormalBlogComponent = /** @class */ (function () {
         var heightOfTitle = heightofFooter - heightofFirstChild - heightofThirdChild - 18;
         this.renderer.setStyle(this.blogTitle.nativeElement, 'height', heightOfTitle + 'px');
         var topMargin = (heightofFooter - heightofFirstChild - heightOfTitle - heightofThirdChild) / 2;
-        //this.renderer.setStyle(this.blogTitle.nativeElement,'margin-top',topMargin+"px")
-        //console.log(this.blog.heading,heightofFooter,heightofFirstChild,heightOfTitle,heightofThirdChild,this.blog.heading.length)
     };
     NormalBlogComponent.prototype.send = function () {
         this.Send.detailsofBlog.next(this.blog);
-        window.scrollTo(0, 0);
+        this.winRef.nativeWindow.scrollTo(0, 0);
     };
     NormalBlogComponent.prototype.setDefault = function (event) {
-        this.blogImage = "/assets/images/default-image.png";
+        this.blogImage = '/assets/images/default-image.png';
     };
     NormalBlogComponent.prototype.removeInitialImage = function () {
         this.isloading = false;
@@ -2043,89 +2107,89 @@ var NormalBlogComponent = /** @class */ (function () {
         this.setVariableFont();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], NormalBlogComponent.prototype, "blogId", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], NormalBlogComponent.prototype, "blogImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], NormalBlogComponent.prototype, "bloggerImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], NormalBlogComponent.prototype, "bloggerName", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], NormalBlogComponent.prototype, "heading", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], NormalBlogComponent.prototype, "insertedDate", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], NormalBlogComponent.prototype, "Content", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], NormalBlogComponent.prototype, "ViewCount", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], NormalBlogComponent.prototype, "ShareCount", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", Array)
     ], NormalBlogComponent.prototype, "keywords", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], NormalBlogComponent.prototype, "exactDate", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], NormalBlogComponent.prototype, "readingTime", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('blogTitle'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('blogTitle'),
         __metadata("design:type", Object)
     ], NormalBlogComponent.prototype, "blogTitle", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('holder'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('holder'),
         __metadata("design:type", Object)
     ], NormalBlogComponent.prototype, "holder", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('fullImage'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('fullImage'),
         __metadata("design:type", Object)
     ], NormalBlogComponent.prototype, "fullImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('blog'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('blog'),
         __metadata("design:type", Object)
     ], NormalBlogComponent.prototype, "Blog", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('footer'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('footer'),
         __metadata("design:type", Object)
     ], NormalBlogComponent.prototype, "footer", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], NormalBlogComponent.prototype, "onresize", null);
     NormalBlogComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocial-normal-blog',
             template: __webpack_require__("../../../../../src/app/blogContent/normal-blog/normal-blog.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/normal-blog/normal-blog.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _e || Object])
     ], NormalBlogComponent);
     return NormalBlogComponent;
-    var _a, _b, _c, _d;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=normal-blog.component.js.map
@@ -2165,6 +2229,7 @@ module.exports = "<div>\n  <div  *ngIf=\"!mobileView\" class=\"relatedBlog\">\n 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2177,10 +2242,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var RelatedBlogsComponent = /** @class */ (function () {
-    function RelatedBlogsComponent(getRelated, recieveKey) {
+    function RelatedBlogsComponent(getRelated, recieveKey, winRef) {
         this.getRelated = getRelated;
         this.recieveKey = recieveKey;
+        this.winRef = winRef;
         this.dataRecived = false;
         this.mobileView = false;
     }
@@ -2238,21 +2305,40 @@ var RelatedBlogsComponent = /** @class */ (function () {
     RelatedBlogsComponent.prototype.timePassed = function (i) {
         var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
-        if (writtenDate.getFullYear() == presentDate.getFullYear()) {
-            if (writtenDate.getMonth() == presentDate.getMonth()) {
-                if (writtenDate.getDate() == presentDate.getDate()) {
-                    return "Today";
+        if (writtenDate.getFullYear() === presentDate.getFullYear()) {
+            if (writtenDate.getMonth() === presentDate.getMonth() || writtenDate.getDate() > presentDate.getDate()) {
+                if (writtenDate.getDate() === presentDate.getDate()) {
+                    if (writtenDate.getHours() === presentDate.getHours()) {
+                        if (writtenDate.getMinutes() === presentDate.getMinutes()) {
+                            if (writtenDate.getSeconds() === presentDate.getSeconds()) {
+                                return 'Just Now';
+                            }
+                            else {
+                                return presentDate.getSeconds() - writtenDate.getSeconds() + ' sec ago';
+                            }
+                        }
+                        else {
+                            return presentDate.getMinutes() - writtenDate.getMinutes() + ' min ago';
+                        }
+                    }
+                    else {
+                        return presentDate.getHours() - writtenDate.getHours() + ' hrs ago';
+                    }
                 }
                 else {
-                    return presentDate.getDate() - writtenDate.getDate() + " day ago";
+                    var date = (presentDate.getDate() - writtenDate.getDate());
+                    if (date < 0) {
+                        date += 30;
+                    }
+                    return date + ' day ago';
                 }
             }
             else {
-                return presentDate.getMonth() - writtenDate.getMonth() + " month ago";
+                return presentDate.getMonth() - writtenDate.getMonth() + ' month ago';
             }
         }
         else {
-            return presentDate.getFullYear() - writtenDate.getFullYear() + " year ago";
+            return presentDate.getFullYear() - writtenDate.getFullYear() + ' year ago';
         }
     };
     RelatedBlogsComponent.prototype.ExactDate = function (i) {
@@ -2261,7 +2347,7 @@ var RelatedBlogsComponent = /** @class */ (function () {
         return writtenDate.toDateString();
     };
     RelatedBlogsComponent.prototype.setMobileView = function () {
-        if (window.innerWidth > 950) {
+        if (this.winRef.nativeWindow.innerWidth > 950) {
             this.mobileView = false;
         }
         else {
@@ -2272,21 +2358,21 @@ var RelatedBlogsComponent = /** @class */ (function () {
         this.setMobileView();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], RelatedBlogsComponent.prototype, "onresize", null);
     RelatedBlogsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocial-related-blogs',
             template: __webpack_require__("../../../../../src/app/blogContent/related-blogs/related-blogs.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/related-blogs/related-blogs.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _c || Object])
     ], RelatedBlogsComponent);
     return RelatedBlogsComponent;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=related-blogs.component.js.map
@@ -2325,6 +2411,7 @@ module.exports = "<div class=\"trending\">\n  <a routerLink=\"/{{keywords[0]}}/{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrendingBlogCardComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2336,9 +2423,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var TrendingBlogCardComponent = /** @class */ (function () {
-    function TrendingBlogCardComponent(Send) {
+    function TrendingBlogCardComponent(Send, winRef) {
         this.Send = Send;
+        this.winRef = winRef;
         this.isloading = true;
         this.dataRecieved = false;
     }
@@ -2368,72 +2457,72 @@ var TrendingBlogCardComponent = /** @class */ (function () {
     };
     TrendingBlogCardComponent.prototype.send = function () {
         this.Send.detailsofBlog.next(this.blog);
-        window.scrollTo(0, 0);
+        this.winRef.nativeWindow.scrollTo(0, 0);
     };
     TrendingBlogCardComponent.prototype.setDefault = function (event) {
-        this.blogImage = "/assets/images/default-image.png";
+        this.blogImage = '/assets/images/default-image.png';
     };
     TrendingBlogCardComponent.prototype.removeInitialImage = function () {
         this.isloading = false;
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], TrendingBlogCardComponent.prototype, "blogId", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], TrendingBlogCardComponent.prototype, "blogImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], TrendingBlogCardComponent.prototype, "bloggerImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], TrendingBlogCardComponent.prototype, "bloggerName", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], TrendingBlogCardComponent.prototype, "heading", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], TrendingBlogCardComponent.prototype, "insertedDate", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], TrendingBlogCardComponent.prototype, "Content", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], TrendingBlogCardComponent.prototype, "ViewCount", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], TrendingBlogCardComponent.prototype, "ShareCount", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", Array)
     ], TrendingBlogCardComponent.prototype, "keywords", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], TrendingBlogCardComponent.prototype, "exactDate", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
     ], TrendingBlogCardComponent.prototype, "readingTime", void 0);
     TrendingBlogCardComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocial-trending-blog-card',
             template: __webpack_require__("../../../../../src/app/blogContent/trending-blog/trending-blog-card/trending-blog-card.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/trending-blog/trending-blog-card/trending-blog-card.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _b || Object])
     ], TrendingBlogCardComponent);
     return TrendingBlogCardComponent;
-    var _a;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=trending-blog-card.component.js.map
@@ -2509,44 +2598,46 @@ var TrendingBlogComponent = /** @class */ (function () {
                     exactDate: _this.ExactDate(data[i].insertedDate),
                     readingTime: _this.timeToRead(data[i].Content)
                 });
-                //console.log(this.blogDetails," h")
-                // console.log(this.blogDetails[i].blogId, this.blogDetails[i].Content)
             }
         });
     };
     TrendingBlogComponent.prototype.timePassed = function (i) {
         var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
-        if (writtenDate.getFullYear() == presentDate.getFullYear()) {
-            if (writtenDate.getMonth() == presentDate.getMonth()) {
-                if (writtenDate.getDate() == presentDate.getDate()) {
-                    if (writtenDate.getHours() == presentDate.getHours()) {
-                        if (writtenDate.getMinutes() == presentDate.getMinutes()) {
-                            if (writtenDate.getSeconds() == presentDate.getSeconds()) {
-                                return "Just Now";
+        if (writtenDate.getFullYear() === presentDate.getFullYear()) {
+            if (writtenDate.getMonth() === presentDate.getMonth() || writtenDate.getDate() > presentDate.getDate()) {
+                if (writtenDate.getDate() === presentDate.getDate()) {
+                    if (writtenDate.getHours() === presentDate.getHours()) {
+                        if (writtenDate.getMinutes() === presentDate.getMinutes()) {
+                            if (writtenDate.getSeconds() === presentDate.getSeconds()) {
+                                return 'Just Now';
                             }
                             else {
-                                return presentDate.getSeconds() - writtenDate.getSeconds() + " sec ago";
+                                return presentDate.getSeconds() - writtenDate.getSeconds() + ' sec ago';
                             }
                         }
                         else {
-                            return presentDate.getMinutes() - writtenDate.getMinutes() + " min ago";
+                            return presentDate.getMinutes() - writtenDate.getMinutes() + ' min ago';
                         }
                     }
                     else {
-                        return presentDate.getHours() - writtenDate.getHours() + " hrs ago";
+                        return presentDate.getHours() - writtenDate.getHours() + ' hrs ago';
                     }
                 }
                 else {
-                    return presentDate.getDate() - writtenDate.getDate() + " day ago";
+                    var date = (presentDate.getDate() - writtenDate.getDate());
+                    if (date < 0) {
+                        date += 30;
+                    }
+                    return date + ' day ago';
                 }
             }
             else {
-                return presentDate.getMonth() - writtenDate.getMonth() + " month ago";
+                return presentDate.getMonth() - writtenDate.getMonth() + ' month ago';
             }
         }
         else {
-            return presentDate.getFullYear() - writtenDate.getFullYear() + " year ago";
+            return presentDate.getFullYear() - writtenDate.getFullYear() + ' year ago';
         }
     };
     TrendingBlogComponent.prototype.ExactDate = function (i) {
@@ -2566,7 +2657,7 @@ var TrendingBlogComponent = /** @class */ (function () {
         }
     };
     TrendingBlogComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocial-trending-blog',
             template: __webpack_require__("../../../../../src/app/blogContent/trending-blog/trending-blog.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/trending-blog/trending-blog.component.css")]
@@ -2612,9 +2703,10 @@ module.exports = "<div class=\"comment\" #commentBox>\n  <div class=\"imageHolde
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CommentsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ngx_facebook__ = __webpack_require__("../../../../ngx-facebook/dist/esm/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_facebook_service__ = __webpack_require__("../../../../../src/app/services/facebook.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2628,29 +2720,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CommentsComponent = /** @class */ (function () {
-    function CommentsComponent(renderer, fb, http, sendUserInfo, send, loadComment) {
+    function CommentsComponent(renderer, Fb, http, sendUserInfo, send, loadComment, zone, winRef) {
         this.renderer = renderer;
-        this.fb = fb;
+        this.Fb = Fb;
         this.http = http;
         this.sendUserInfo = sendUserInfo;
         this.send = send;
         this.loadComment = loadComment;
+        this.zone = zone;
+        this.winRef = winRef;
         this.isConnected = false;
+        this.loged = false;
+        this.user = { name: 'Hello' };
         this.recivedComment = [];
-        fb.init({
-            appId: '1750709328507665',
-            version: 'v2.10'
-        });
+        Fb.init();
     }
-    CommentsComponent.prototype.handleError = function (error) {
-        console.error('Error processing action', error);
-    };
     CommentsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.getLoginStatus();
         this.loadComment.ofBlog(this.BlogId).subscribe(function (res) {
-            console.log("aman");
             for (var i in res) {
                 _this.recivedComment.push({
                     userName: res[i].Name,
@@ -2660,138 +2749,143 @@ var CommentsComponent = /** @class */ (function () {
                 });
             }
         });
+        this.getLoginStatus();
     };
-    CommentsComponent.prototype.setDefault = function (event) {
-        this.profilePicture = "/assets/images/user.png";
+    CommentsComponent.prototype.ngAfterViewInit = function () {
+        this.getLoginStatus();
     };
-    CommentsComponent.prototype.getLoginStatus = function () {
-        var _this = this;
-        this.fb.getLoginStatus()
-            .then(function (Log) {
-            console.log(Log);
-            if (Log.status == "unknown" || Log.status == "not_authorized") {
-                _this.isConnected = false;
-                _this.profilePicture = "/assets/images/user.png";
-            }
-            if (Log.status == "connected") {
-                _this.isConnected = true;
-                _this.getProfile();
-            }
-        })
-            .catch(console.error.bind(console));
+    CommentsComponent.prototype.setDefault = function () {
+        this.profilePicture = '/assets/images/user.png';
     };
     CommentsComponent.prototype.getDate = function (i) {
         console.log(i);
         var commentDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
-        console.log('p: ', "y= ", presentDate.getFullYear(), "mon= ", presentDate.getMonth(), "d= ", presentDate.getDate(), "h= ", presentDate.getHours(), "s= ", presentDate.getSeconds(), 't= ', presentDate.toDateString());
-        console.log('c: ', "y= ", commentDate.getFullYear(), "mon= ", commentDate.getMonth(), "d= ", commentDate.getDate(), "h= ", commentDate.getHours(), "s= ", commentDate.getSeconds(), 't= ', commentDate.toDateString());
-        if (commentDate.getFullYear() == presentDate.getFullYear()) {
-            if (commentDate.getMonth() == presentDate.getMonth()) {
-                if (presentDate.getDate() == commentDate.getDate()) {
-                    if (presentDate.getHours() == commentDate.getHours()) {
-                        if (presentDate.getMinutes() == commentDate.getMinutes()) {
-                            if (presentDate.getSeconds() == commentDate.getSeconds()) {
-                                return "Just Now";
+        if (commentDate.getFullYear() === presentDate.getFullYear()) {
+            if (commentDate.getMonth() === presentDate.getMonth()) {
+                if (presentDate.getDate() === commentDate.getDate()) {
+                    if (presentDate.getHours() === commentDate.getHours()) {
+                        if (presentDate.getMinutes() === commentDate.getMinutes()) {
+                            if (presentDate.getSeconds() === commentDate.getSeconds()) {
+                                return 'Just Now';
                             }
                             else {
-                                return presentDate.getSeconds() - commentDate.getSeconds() + " s";
+                                return presentDate.getSeconds() - commentDate.getSeconds() + ' s';
                             }
                         }
                         else {
-                            return presentDate.getMinutes() - commentDate.getMinutes() + " min";
+                            return presentDate.getMinutes() - commentDate.getMinutes() + ' min';
                         }
                     }
                     else {
-                        presentDate.getHours() - commentDate.getHours() + " h";
+                        presentDate.getHours() - commentDate.getHours() + ' h';
                     }
                 }
                 else {
-                    return presentDate.getDate() - commentDate.getDate() + " d";
+                    return presentDate.getDate() - commentDate.getDate() + ' d';
                 }
             }
             else {
-                return presentDate.getMonth() - commentDate.getMonth() + " month";
+                return presentDate.getMonth() - commentDate.getMonth() + ' month';
             }
         }
         else {
-            return presentDate.getFullYear() - commentDate.getFullYear() + " yr";
+            return presentDate.getFullYear() - commentDate.getFullYear() + ' yr';
         }
     };
-    CommentsComponent.prototype.getProfile = function () {
+    CommentsComponent.prototype.getLoginStatus = function () {
+        FB.getLoginStatus(function (response) {
+            console.log(response, ' conect');
+            if (response.status === 'connected') {
+                console.log('conect');
+                this.isConnected = true;
+                this.profilePicture = "https://graph.facebook.com/" + response.authResponse.userID + "/picture?type=large";
+            }
+            else {
+                console.log('logged out');
+            }
+        });
+    };
+    CommentsComponent.prototype.login = function () {
         var _this = this;
-        this.fb.api('/me', "get", { fields: 'email,name' })
-            .then(function (res) {
-            console.log('Got the users profile', res);
-            _this.profilePicture = 'https://graph.facebook.com/' + res.id + '/picture?type=large';
-            _this.sendUserInfo.ofFacebookUser(res.id, res.name, res.email, _this.profilePicture).subscribe(function (res) {
-                console.log(res, " login");
-                _this.userId = res[0].UserId;
-            });
-        })
-            .catch(this.handleError);
+        FB.login(function (response) {
+            if (response.status === 'connected') {
+                _this.loged = true;
+                _this.token = response;
+                _this.isConnected = true;
+                _this.profilePicture = "https://graph.facebook.com/" + response.authResponse.userID + "/picture?type=large";
+                _this.me();
+                console.log(_this.user);
+            }
+            else if (response.status === 'not_authorized') {
+                console.log('conect1');
+            }
+            else {
+                console.log('conect2');
+            }
+        }, { scope: 'user_friends,email' });
+    };
+    CommentsComponent.prototype.me = function () {
+        var _this = this;
+        FB.api('/me?fields=id,name,picture.type(large),email', function (result) {
+            if (result && !result.error) {
+                _this.user = result;
+                console.log(_this.user, 'conect');
+                console.log(_this.profilePicture);
+                _this.sendUserInfo.ofFacebookUser(result.id, result.name, result.email, _this.profilePicture).subscribe(function (res) {
+                    console.log(res, ' login');
+                    _this.userId = res[0].UserId;
+                });
+            }
+            else {
+                console.log(result.error);
+            }
+        });
     };
     CommentsComponent.prototype.post = function () {
         var _this = this;
-        console.log(this.isConnected);
-        console.log(this.textArea);
-        var loginOptions = {
-            enable_profile_selector: true,
-            return_scopes: true,
-            scope: 'public_profile,user_friends,email,pages_show_list'
-        };
-        if (this.isConnected == false) {
-            this.fb.login(loginOptions)
-                .then(function (res) {
-                console.log('Logged in', res);
-                if (res.status == "connected") {
-                    _this.isConnected = true;
-                    _this.getProfile();
-                }
-            })
-                .catch(this.handleError);
+        if (this.isConnected !== true) {
+            this.login();
         }
-        if (this.isConnected == true) {
-            this.send.userComment(this.BlogId, this.userId, this.textArea.nativeElement.value).subscribe(function (res) {
-                console.log(res, "c");
-                _this.textArea.nativeElement.value = "";
-                _this.newComment = {
-                    userName: res[res.length - 1].Name,
-                    image: res[res.length - 1].Image,
-                    comment: res[res.length - 1].Comment,
-                    commentDate: _this.getDate(res[res.length - 1].InsertedDate)
-                };
-                console.log(_this.newComment, " new comment");
-                _this.recivedComment.push(_this.newComment);
-            });
-        }
+        this.send.userComment(this.BlogId, this.userId, this.textArea.nativeElement.value).subscribe(function (res) {
+            console.log(res, 'c');
+            _this.textArea.nativeElement.value = '';
+            _this.newComment = {
+                userName: res[res.length - 1].Name,
+                image: res[res.length - 1].Image,
+                comment: res[res.length - 1].Comment,
+                commentDate: _this.getDate(res[res.length - 1].InsertedDate)
+            };
+            console.log(_this.newComment, ' new comment');
+            _this.recivedComment.push(_this.newComment);
+        });
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('commentBox'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('commentBox'),
         __metadata("design:type", Object)
     ], CommentsComponent.prototype, "commentBox", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('textArea'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('textArea'),
         __metadata("design:type", Object)
     ], CommentsComponent.prototype, "textArea", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('profileImage'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('profileImage'),
         __metadata("design:type", Object)
     ], CommentsComponent.prototype, "profileImage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", Object)
     ], CommentsComponent.prototype, "BlogId", void 0);
     CommentsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocial-comments',
             template: __webpack_require__("../../../../../src/app/comments/comments.component.html"),
             styles: [__webpack_require__("../../../../../src/app/comments/comments.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ngx_facebook__["b" /* FacebookService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ngx_facebook__["b" /* FacebookService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _f || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_facebook_service__["a" /* FacebookService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_facebook_service__["a" /* FacebookService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_4__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _h || Object])
     ], CommentsComponent);
     return CommentsComponent;
-    var _a, _b, _c, _d, _e, _f;
+    var _a, _b, _c, _d, _e, _f, _g, _h;
 }());
 
 //# sourceMappingURL=comments.component.js.map
@@ -2870,7 +2964,7 @@ var CustomUrlComponent = /** @class */ (function () {
         return dus.parse(url);
     };
     CustomUrlComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'app-custom-url',
             template: __webpack_require__("../../../../../src/app/custom-url/custom-url.component.html"),
             styles: [__webpack_require__("../../../../../src/app/custom-url/custom-url.component.css")]
@@ -2946,16 +3040,16 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
         this.renderer.setStyle(this.elRef.nativeElement, 'height', this.height + "px");
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], MaintainHeightWidthRatioDirective.prototype, "onresize", null);
     MaintainHeightWidthRatioDirective = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* Directive */])({
             selector: '[MaintainHeightWidthRatio]'
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object])
     ], MaintainHeightWidthRatioDirective);
     return MaintainHeightWidthRatioDirective;
     var _a, _b;
@@ -2971,6 +3065,7 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabViewAvailableDirective; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2981,70 +3076,71 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var TabViewAvailableDirective = /** @class */ (function () {
-    function TabViewAvailableDirective(elRef, renderer) {
+    function TabViewAvailableDirective(elRef, renderer, winRef) {
         this.elRef = elRef;
         this.renderer = renderer;
-        this.windowWidth = window.innerWidth;
+        this.winRef = winRef;
+        this.windowWidth = winRef.nativeWindow.innerWidth;
         if (this.windowWidth < 950 && this.windowWidth > 600) {
             this.className = this.elRef.nativeElement.className;
-            if (this.className == 'col-8') {
+            if (this.className === 'col-8') {
                 this.renderer.removeClass(this.elRef.nativeElement, this.className);
                 this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                //this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
             }
-            if (this.className == 'col-4') {
+            if (this.className === 'col-4') {
                 this.renderer.removeClass(this.elRef.nativeElement, this.className);
                 this.renderer.addClass(this.elRef.nativeElement, 'col-6');
             }
         }
     }
     TabViewAvailableDirective.prototype.ngAfterViewInit = function () {
-        this.windowWidth = window.innerWidth;
+        this.windowWidth = this.winRef.nativeWindow.innerWidth;
         if (this.windowWidth < 950 && this.windowWidth > 600) {
             this.className = this.elRef.nativeElement.className;
-            if (this.className == 'col-8') {
+            if (this.className === 'col-8') {
                 this.renderer.removeClass(this.elRef.nativeElement, this.className);
                 this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                //this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
+                // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
             }
-            if (this.className == 'col-4') {
+            if (this.className === 'col-4') {
                 this.renderer.removeClass(this.elRef.nativeElement, this.className);
                 this.renderer.addClass(this.elRef.nativeElement, 'col-6');
             }
         }
     };
     TabViewAvailableDirective.prototype.ngAfterContentInit = function () {
-        this.windowWidth = window.innerWidth;
+        this.windowWidth = this.winRef.nativeWindow.innerWidth;
         if (this.windowWidth < 950 && this.windowWidth > 600) {
             this.className = this.elRef.nativeElement.className;
-            if (this.className == 'col-8') {
+            if (this.className === 'col-8') {
                 this.renderer.removeClass(this.elRef.nativeElement, this.className);
                 this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                //this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
+                // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
             }
-            if (this.className == 'col-4') {
+            if (this.className === 'col-4') {
                 this.renderer.removeClass(this.elRef.nativeElement, this.className);
                 this.renderer.addClass(this.elRef.nativeElement, 'col-6');
             }
         }
     };
     TabViewAvailableDirective.prototype.onresize = function () {
-        this.windowWidth = window.innerWidth;
+        this.windowWidth = this.winRef.nativeWindow.innerWidth;
         if (this.windowWidth > 950) {
             this.className = this.elRef.nativeElement.className;
-            if (this.className == 'col-12') {
+            if (this.className === 'col-12') {
                 this.renderer.removeClass(this.elRef.nativeElement, this.className);
                 this.renderer.addClass(this.elRef.nativeElement, 'col-8');
             }
-            if (this.className == 'col-6') {
+            if (this.className === 'col-6') {
                 this.renderer.removeClass(this.elRef.nativeElement, this.className);
                 this.renderer.addClass(this.elRef.nativeElement, 'col-4');
             }
         }
         if (this.windowWidth < 950 && this.windowWidth > 600) {
             this.className = this.elRef.nativeElement.className;
-            if (this.className == 'col-8') {
+            if (this.className === 'col-8') {
                 this.renderer.removeClass(this.elRef.nativeElement, this.className);
                 this.renderer.addClass(this.elRef.nativeElement, 'col-12');
                 // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
@@ -3056,19 +3152,19 @@ var TabViewAvailableDirective = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], TabViewAvailableDirective.prototype, "onresize", null);
     TabViewAvailableDirective = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* Directive */])({
             selector: '[TabViewAvailable]'
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _c || Object])
     ], TabViewAvailableDirective);
     return TabViewAvailableDirective;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=tab-view-available.directive.js.map
@@ -3125,11 +3221,11 @@ var BlogPreviewComponent = /** @class */ (function () {
     BlogPreviewComponent.prototype.closePreview = function () {
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", Boolean)
     ], BlogPreviewComponent.prototype, "Preview", void 0);
     BlogPreviewComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'sportsocial-blog-preview',
             template: __webpack_require__("../../../../../src/app/editor-panel/blog-preview/blog-preview.component.html"),
             styles: [__webpack_require__("../../../../../src/app/editor-panel/blog-preview/blog-preview.component.css")]
@@ -3151,7 +3247,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "button:last-child{\r\n    float: right\r\n}\r\n.preview{\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    width: 60%;\r\n    left: 20%;\r\n    z-index: 50;\r\n    box-shadow: 2px 2px #bbbbbb;\r\n    background-color: #ffffff;\r\n    overflow-y:scroll;\r\n    overflow-x:hidden;\r\n    font-family: 'Roboto',sans-serif\r\n}\r\n\r\n\r\n.cancel{\r\n    width: 30px;\r\n    height: 30px;\r\n    float: right;\r\n    padding: 1%;\r\n}\r\n.title{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    font-size: 2.2em;\r\n    font-weight: 700;\r\n}\r\n.blogger{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    font-size: 1em;\r\n    font-weight: 500;\r\n}\r\n.bloggerName{\r\n    margin-left: 2%;\r\n}\r\n.desc{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    font-size: 1.2em;\r\n    font-weight: 400;\r\n}\r\n.tags{\r\n    width: 90%;\r\n    margin: 1% auto;\r\n    font-size: 1em;\r\n    font-weight: 400;\r\n    color: #ffa600\r\n}", ""]);
+exports.push([module.i, ".editorPanel{\r\n    padding: 2%;\r\n    background-color: #fafafa\r\n}\r\n.toolbar{\r\n    position: fixed;\r\n    width: 90%;\r\n    top:10%;\r\n    left: 5%;\r\n    background-color: #ffffff;\r\n    box-shadow: 2px 2px 4px #bbbbbb;\r\n    z-index: 10\r\n}\r\n.toolbar>div>img{\r\n    margin: 1%;\r\n    padding: 0.5%\r\n}\r\nselect,option{\r\n    border:1px solid #ffa600;\r\n    width: 40px;\r\n    height: 25px;\r\n    outline: none;\r\n}\r\n.file>input{\r\n    display: none;\r\n}\r\n.toolbar>div:first-child{\r\n    text-align: center;\r\n    width: 100%;\r\n}\r\n.toolbar>div:first-child>input{\r\n    border: 1px solid #ffa600;\r\n    outline: none;\r\n}\r\n.toolbar>div:last-child{\r\n    text-align: center;\r\n    width: 100%;\r\n}\r\n.file>input{\r\n    display: none;\r\n}\r\n.file{\r\n    margin: 1.5%;\r\n}\r\n.panel-wrapper{\r\n    width: 90%;\r\n    margin:16% auto;\r\n}\r\n.panel{\r\n    box-shadow: 2px 2px 4px #bbbbbb;\r\n    background-color: #ffffff;\r\n}\r\n[contenteditable=true]:empty:before{\r\n    content: attr(placeholder);\r\n    display: block; /* For Firefox */\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-weight: lighter;\r\n    opacity: 0.4\r\n}\r\n.blog{\r\n    display: block;\r\n    max-width: 90%;\r\n    margin:2% auto;\r\n}\r\n.dummyBlogImage{\r\n    display: block;\r\n    width: 100%;\r\n    height: 400px;\r\n    margin: auto;\r\n}\r\n.BlogImage{\r\n    width: 100%;\r\n    display: block;\r\n    margin: auto;\r\n}\r\n.blogger{\r\n    border: none;\r\n}\r\n.blogger .dummy{\r\n opacity: 0.1\r\n}\r\n.panel>div{\r\n    width: 90%;\r\n    margin: 40px auto;\r\n    height: 100%;\r\n    outline: none;\r\n}\r\n.title{\r\n    font-size: 2em;\r\n}\r\n.BloggerImage{\r\n    width: 50px;\r\n    height: 50px;\r\n    border-radius: 50%;\r\n}\r\n.bloggerName{\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: 35%;\r\n    margin-left: 2%;\r\n    border-bottom: 1px solid #bbbbbb;\r\n    outline: none;\r\n    font-size: 1.3em;\r\n   \r\n}\r\n\r\n.bloggerName,.title,.desc{\r\n    cursor: text;\r\n    padding: 1% 1% 1% 0%;\r\n   \r\n}\r\n.descAbove{\r\n    opacity: 0.5;\r\n    font-size: 1.5em;\r\n}\r\n.desc{\r\n    overflow: auto;\r\n    min-height: 500px;\r\n    font-size: 1.5em;\r\n    border-top:1px solid #bbbbbb\r\n}\r\n.keywords>p{\r\n    width: 90%;\r\n   display: inline-block;\r\n   vertical-align: middle;\r\n   margin-left: 3%;\r\n   font-size: 1.2em;\r\n   outline: none;\r\n}\r\n.key{\r\n    display: inline-block;\r\n    border: 1px solid #bbbbbb;\r\n    margin: 1%;\r\n    padding: 1.5% 2% 1.5% 2%;\r\n    border-radius: 4px;\r\n}\r\n.confirm{\r\n    text-align: center;\r\n    color: #ffa600;\r\n    font-size: 0.9em;\r\n    font-weight: bold\r\n}\r\n.tick{\r\n    text-align: center;\r\n    padding: 1%;\r\n}\r\n.selected{\r\n    border: 1px solid #ffa600;\r\n}\r\n.not-selected{\r\n    border: none;\r\n}\r\n.linkPopup{\r\n    display:none;\r\n    width: 40%;\r\n    z-index: 50;\r\n    background-color: #ffffff;\r\n    box-shadow: 2px 2px 4px #bbbbbb;\r\n    position: fixed;\r\n    top:25%;\r\n    left: 30%;\r\n    padding: 2%;\r\n    padding-bottom: 0px;\r\n}\r\n.keywordPopup{\r\n    width: 50%;\r\n    z-index: 10;\r\n    background-color: #ffffff;\r\n    box-shadow: 2px 2px 4px #bbbbbb;\r\n    position: fixed;\r\n    top:20%;\r\n    left: 25%;\r\n    padding: 2%;\r\n    padding-bottom: 0px;\r\n}\r\n.keywordPopup>.keyword{\r\n    min-height: 200px;\r\n    overflow: auto;\r\n    border: 1px solid #bbbbbb;\r\n    padding: 2%;\r\n    outline: none;\r\n}\r\n.button{\r\n    width: 70%;\r\n    margin: 2% auto;\r\n    text-align: center;\r\n}\r\n.button>button{\r\n    width: 25%;  \r\n    border: none;\r\n    border-radius: 4px;\r\n    padding: 1% 3% 1% 3%;\r\n    color: white;\r\n    background-color: #ffa600;\r\n    outline: none;\r\n}   \r\n.not-selected:active{\r\n    -webkit-transform: scale(1.2,1.2);\r\n            transform: scale(1.2,1.2)\r\n}\r\n.panelButton{\r\n    width: 10%;\r\n    border: none;\r\n    background-color: #ffa600;\r\n    padding: 1%;\r\n    color:white;\r\n    outline: none;\r\n    border-radius: 4px;\r\n    font-family: sans-serif;\r\n    font-size: 1.2em;\r\n    font-weight: bold\r\n}\r\n.panelButton:last-child{\r\n    float: right;\r\n}\r\n.panelButton:disabled{\r\n    cursor: not-allowed;\r\n    background-color: #ffa60023;\r\n}\r\n.preview{\r\n    padding: 2%;\r\n    width:70%;\r\n    position: fixed;\r\n    top:0;\r\n    bottom: 0;\r\n    left:15%;\r\n    box-shadow: 2px 2px 4px #bbbbbb;\r\n    overflow-y:scroll;\r\n    overflow-x:hidden;\r\n    z-index: 50;\r\n    background-color: #fafafa;\r\n    font-family: 'Roboto',sans-serif\r\n}\r\n.close{\r\n    opacity: unset;\r\n    width: 10px;\r\n    height: 10px;\r\n}\r\n.previewCatagory{\r\n    margin-bottom: 2%;\r\n}\r\n.previewCatagory>span{\r\n    font-size: 0.9em;\r\n    color: black;\r\n    font-weight: 500;\r\n    margin-right: 1%;\r\n}\r\n.previewBlogImageHolder{\r\n    width: 100%;\r\n    height:300px;\r\n    overflow: hidden;\r\n    margin-bottom: 2%;\r\n}\r\n.previewBlogImage{\r\n    width:100%;\r\n}\r\n.previewHeading{\r\n    font-size: 1.8em;\r\n    font-weight: 700;\r\n    color: black;\r\n}\r\n.previewBloggerImageHolder{\r\n    width: 50px;\r\n    height: 50px;\r\n    border-radius:50%;\r\n}\r\n.previewBloggerImage{\r\n    width: 100%;\r\n    height: 100%;\r\n    border-radius: 50%;\r\n}\r\n.previewBlogContent{\r\n    font-size: 1.4em;\r\n    color: black;\r\n    margin-bottom: 2%;\r\n}\r\n.previewTagIconHolder{\r\n    width: 25px;\r\n    height: 25px;\r\n}\r\n.previewTagIconHolder{\r\n    height: 100%;\r\n    height: 100%;\r\n}\r\n.previewTags>span{\r\n    margin-right: 2%;\r\n    text-decoration: underline;\r\n    color: #ffa600;\r\n}", ""]);
 
 // exports
 
@@ -3164,7 +3260,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/editor-panel/editor-panel.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" #form>\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\r\n      <form  #f=\"ngForm\">\r\n        <div id=\"blog-data\" ngModelGroup=\"blogData\" #userData=\"ngModelGroup\">\r\n          <div class=\"form-group\">\r\n            <label for=\"username\">Name</label>\r\n            <input type=\"text\" id=\"username\" class=\"form-control\" ngModel name=\"name\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"bloggerImage\">Blogger Image</label>\r\n            <input type=\"file\" id=\"bloggerImage\" class=\"form-control\" ngModel name=\"bloggerImage\" #bloggerImage>\r\n            <div class=\"imgTest\"></div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"date\">Date </label>\r\n            <input type=\"date\" id=\"datetime\" class=\"form-control\" ngModel name=\"date\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"Title\">Title</label>\r\n            <input type=\"text\" id=\"title\" class=\"form-control\" ngModel name=\"Title\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"keywords\">Keywords</label>\r\n            <input type=\"text\" id=\"keywords\" class=\"form-control\" ngModel name=\"keywords\" required>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"blogImage\">Blog Image</label>\r\n            <input type=\"file\" id=\"blogImage\" class=\"form-control\" ngModel name=\"blogMainImage\" #blogImage>\r\n            <div class=\"imgTest\"></div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"desc\">Desc  </label>\r\n            <textarea rows=\"50\" id=\"desc\" class=\"form-control\" ngModel name=\"desc\" required  #desc>\r\n            </textarea>\r\n          </div>\r\n        </div>\r\n\r\n        <button class=\"btn btn-primary\" (click)=\"upload()\" [disabled]=\"isDisabled\" >Upload</button>\r\n        <button class=\"btn btn-primary\" (click)=\"preview()\">Preview</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n</div>\r\n\r\n<div class=\"preview\"  *ngIf=\"Preview\" >\r\n  <img class=\"cancel\" role=\"button\" (click)=\"closePreview()\" src=\"/assets/images/sports-social-cancel-black.png\" alt=\"\">\r\n  <!-- <div class=\"blogImage\">\r\n    <img  alt=\"\" [src]=\"previewBlogImage\">\r\n  </div> -->\r\n  <p class=\"title\" [innerHtml]=\"blog.blogTitle\"></p>\r\n  <div class=\"blogger\">\r\n    <!-- <img class=\"bloggerImage\"  alt=\"\" [src]=\"previewBloggerImage\"> -->\r\n    <span class=\"bloggerName\">{{blog.bloggerName}}</span>\r\n  </div>\r\n  <p class=\"desc\"  [innerHtml]=\"blog.blogDesc\"></p>\r\n  <p class=\"tags\" >{{blog.keywords}}</p>\r\n</div>"
+module.exports = "<div class=\"editorPanel\" #editorPanel>\r\n  <div class=\"toolbar\">\r\n    <div>\r\n      <img src=\"/assets/images/sports-social-undo.png\"  title=\"undo\" role=\"button\" alt=\"\" (click)=\"undo($event)\" class=\"not-selected\" >\r\n      \r\n      <img src=\"/assets/images/sports-social-redo.png\" title=\"redo\"  role=\"button\" alt=\"\" (click)=\"redo($event)\" class=\"not-selected\" >\r\n      \r\n      <img src=\"/assets/images/sports-social-bold.png\" title=\"Bold\" role=\"button\" alt=\"\" (click)=\"bold($event)\" class=\"not-selected\" >\r\n      \r\n      <img src=\"/assets/images/sports-social-italic.png\" title=\"Italic\" role=\"button\" alt=\"\" (click)=\"italic($event)\" class=\"not-selected\">\r\n      \r\n      <img src=\"/assets/images/sports-social-align-left.png\" title=\"left-align\"  role=\"button\" alt=\"\" (click)=\"leftAlign($event)\" class=\"not-selected\">\r\n      \r\n      <img src=\"/assets/images/sports-social-align-center.png\" title=\"center-align\" role=\"button\" alt=\"\" (click)=\"centerAlign($event)\" class=\"not-selected\">\r\n      \r\n      <img src=\"/assets/images/sports-social-align-right.png\" title=\"right-align\"  role=\"button\" alt=\"\" (click)=\"rightAlign($event)\" class=\"not-selected\">\r\n      \r\n      <img src=\"/assets/images/sports-social-text-justify.png\" title=\"justify\"  role=\"button\" alt=\"\" (click)=\"justify($event)\" class=\"not-selected\">\r\n      \r\n      <img src=\"/assets/images/sports-social-underline.png\" title=\"underline\" role=\"button\" alt=\"\" (click)=\"underline($event)\" class=\"not-selected\">\r\n      \r\n      <img src=\"/assets/images/sports-social-list-with-dots.png\" title=\"List with dosts\" role=\"button\" alt=\"\" (click)=\"listWithDots($event)\" class=\"not-selected\" >\r\n      \r\n      <img src=\"/assets/images/sports-social-list-with-numbers.png\" title=\"List with number\" role=\"button\" alt=\"\" (click)=\"listWithNumbers($event)\" class=\"not-selected\" >\r\n      \r\n      <label class=\"file\">\r\n          <img src=\"/assets/images/sports-social-text-color.png\" title=\"Text Color\" role=\"button\" alt=\"\" >\r\n          <input type=\"color\" name=\"textcolor\" id=\"textcolor\"  (change)=\"selectTextColor($event)\">\r\n      </label>\r\n      \r\n      <label class=\"file\">\r\n          <img src=\"/assets/images/sports-social-background-color.png\" title=\"Background Color\" role=\"button\" alt=\"\"  multiple>\r\n          <input type=\"color\" name=\"bcolor\" id=\"bcolor\"  (change)=\"selectBackgroundColor($event)\">\r\n      </label>\r\n      \r\n      <select (change)=\"selectFontSize($event)\" [value]=20>\r\n          <option *ngFor=\"let i of fontSize\" [value]=\"i\" >{{i}}</option>\r\n      </select>\r\n    </div>  \r\n    \r\n    <div>\r\n      \r\n      <label class=\"file\">\r\n        <img src=\"/assets/images/sports-social-indent.png\" title=\"indent\" role=\"button\" alt=\"\" (click)=\"indent($event)\" class=\"not-selected\" >\r\n      </label>\r\n      \r\n      <label class=\"file\">\r\n        <img src=\"/assets/images/sports-social-outdent.png\" title=\" outdent\" role=\"button\" alt=\"\" (click)=\"outdent($event)\" class=\"not-selected\" >\r\n      </label>\r\n      \r\n      <label class=\"file\">\r\n         <img src=\"/assets/images/sports-social-paragraph.png\" title=\"Paragraph\" role=\"button\" alt=\"\" (click)=\"addParagraph($event)\" class=\"not-selected\" >\r\n       </label>\r\n      \r\n      <label class=\"file\">\r\n        <img src=\"/assets/images/sports-social-picture.png\" title=\"Add Image\" role=\"button\" alt=\"\"  class=\"not-selected\" >\r\n        <input type=\"file\" name=\"image\" id=\"image\" accept=\"image/jpeg, image/png\" (change)=\"selectImage($event)\">\r\n      </label>\r\n      \r\n     <!--  <label class=\"file\">\r\n          <img src=\"/assets/images/sports-social-frame-plugin.png\" role=\"button\" class=\"not-selected\" alt=\"\" (click)=\"addPlugin($event)\"  >\r\n      </label> -->\r\n      \r\n      <label class=\"file\">\r\n        <img src=\"/assets/images/sports-social-youtube-video.png\" title=\"Add Youtube Video\" role=\"button\" class=\"not-selected\"  (click)=\"addYoutubevideo()\">\r\n      </label>\r\n      \r\n      <label class=\"file\">\r\n          <img src=\"/assets/images/sports-social-gif.png\" title=\"Add Gif\" role=\"button\" class=\"not-selected\" alt=\"\"  multiple>\r\n          <input type=\"file\" name=\"video\" id=\"video\" accept=\"image/gif image/webp\"  (change)=\"selectGif($event)\">\r\n      </label>\r\n      \r\n      <label class=\"file\">\r\n          <img src=\"/assets/images/sports-social-link.png\" title=\"Add Link\" role=\"button\" alt=\"\" class=\"not-selected\" (click)=\"addLink($event)\">\r\n      </label>\r\n      \r\n     <!--  <label class=\"file\">\r\n        <img src=\"/assets/images/sports-social-unlink.png\" role=\"button\" alt=\"\" class=\"not-selected\" (click)=\"unLink()\">\r\n      </label> -->\r\n      \r\n     <!--  <label class=\"file\">\r\n          <img src=\"/assets/images/sports-social-music.png\" role=\"button\" alt=\"\" class=\"not-selected\" multiple>\r\n          <input type=\"file\" name=\"music\" id=\"music\" accept=\"audio/*\" (change)=\"selectMusic($event)\">\r\n      </label> -->\r\n      \r\n      <label class=\"file\">\r\n        <img src=\"/assets/images/sports-social-remove-css.png\" title=\"Remove Style\" role=\"button\" alt=\"\" (click)=\"removeCss($event)\" class=\"not-selected\" >\r\n      </label>\r\n      \r\n      <label class=\"file\">\r\n        <img src=\"/assets/images/sports-social-subscript.png\" title=\"Subscript\"  role=\"button\" alt=\"\" (click)=\"subscript($event)\" class=\"not-selected\" >\r\n      </label>\r\n      \r\n      <label class=\"file\">\r\n        <img src=\"/assets/images/sports-social-superscript.png\" title=\"Superscript\" role=\"button\" alt=\"\" (click)=\"superscript($event)\" class=\"not-selected\" >\r\n      </label>\r\n      <label class=\"file\">\r\n        <img src=\"/assets/images/sports-social-quote.png\" title=\"Quote\" role=\"button\" alt=\"\" (click)=\"addQuote($event)\" class=\"not-selected\" >\r\n      </label>\r\n    </div>\r\n    </div>\r\n    <div class=\"panel-wrapper\">\r\n        <div class=\"panel\" #panel> \r\n            <label class=\"file blog\">\r\n                <ng-container  *ngIf=\"!blogimageLoaded\">\r\n                    <img src=\"/assets/images/sports-social-temp-blog-image.jpg\" role=\"button\" class=\"dummyBlogImage\">\r\n                </ng-container >\r\n                <ng-container  *ngIf=\"blogimageLoaded\">\r\n                    <img src=\"{{blogimageSrc}}\"  role=\"button\" class=\"BlogImage\">\r\n                </ng-container >                \r\n                <input type=\"file\" name=\"blogImage\"  id=\"blogImage\" accept=\"image/*\" (change)=\"selectBlogImage($event)\">\r\n            </label>   \r\n            <div contenteditable=\"true\" class=\"title\"  placeholder=\"Hii Buddy, Your Title Goes Here\" #title></div>\r\n            <div class=\"blogger\">\r\n                <label class=\"file\">\r\n                    <img src=\"/assets/images/sports-social-user.png\" role=\"button\" class=\"dummy\" *ngIf=\"!bloggerimageLoaded\">\r\n                    <img src=\"{{bloggerimageSrc}}\" *ngIf=\"bloggerimageLoaded\" role=\"button\" class=\"BloggerImage\">\r\n                    <input type=\"file\" name=\"bloggerImage\" id=\"bloggerImage\" accept=\"image/*\" (change)=\"selectBloggerImage($event)\">\r\n                </label>\r\n            <div contenteditable=\"true\" class=\"bloggerName\"  placeholder=\"What's your name??\"></div>\r\n            </div>\r\n            <div class=\"keywords\" >\r\n                <img src=\"/assets/images/sports-social-tags.png\" (click)=\"openAddKeywordPopup()\" role=\"button\" class=\"not-selected\">\r\n                <p contenteditable=\"true\" placeholder=\"Click on tag button to add Keywords\" *ngIf=\"!keywordAdded\"></p>\r\n                <p *ngIf=\"keywordAdded\" >\r\n                    <span *ngFor=\"let key of keywordArray;let i=index\" class=\"key\"> \r\n                        {{key}}\r\n                        <img src=\"/assets/images/sports-social-delete-keyword.png\" role=\"button\" (click)=\"deleteKeyword(i)\">\r\n                    </span>\r\n                </p>\r\n            </div>\r\n            <div class=\"descAbove\" *ngIf=\"!Keypress\">Below the Line you will write the Content of Blog. You can also add Images,Youtube Video,Links</div> \r\n            <div contenteditable=\"true\" class=\"desc\" (keyup)=\"startDesc()\" #desc></div> \r\n        </div>\r\n        <button class=\"panelButton\" (click)=\"upload()\" >Upload </button>\r\n        <button class=\"panelButton\" (click)=\"preview()\" >Preview </button>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"linkPopup\" role=\"dialog\" #linkpopup>\r\n    <p class=\"confirm\">Please Click on tick to Confirm</p>\r\n    <label for=\"URL\">Url</label>\r\n    <input type=\"url\" name=\"URl\" id=\"url\" class=\"form-control\" (click)=\"test()\"  #url>\r\n    <label for=\"text\">Text</label>\r\n    <input type=\"text\" name=\"text\" id=\"text\" class=\"form-control\" #text>\r\n    <div class=\"tick\">\r\n        <img src=\"/assets/images/sports-social-confirmation.png\" role=\"button\" class=\"not-selected\" (click)=\"restoreCaret()\">\r\n    </div>\r\n    <div class=\"button\">\r\n        <button (click)=\"linkOk($event)\">Ok</button>\r\n        <button (click)=\"linkCancel()\">Cancel</button>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"linkPopup\" role=\"dialog\" #youtubeLinkPopup>\r\n    <p class=\"confirm\">Please Click on tick to Confirm</p>\r\n    <label for=\"URL\">Url</label>\r\n    <input type=\"url\" name=\"URl\" id=\"url\" class=\"form-control\" #YoutubeUrl>\r\n    <div class=\"tick\">\r\n        <img src=\"/assets/images/sports-social-confirmation.png\" role=\"button\" class=\"not-selected\" (click)=\"restoreCaret()\">\r\n    </div>\r\n    <div class=\"button\">\r\n        <button (click)=\"youtubeLinkOk($event)\">Ok</button>\r\n        <button (click)=\"youtubeLinkCancel()\">Cancel</button>\r\n    </div>\r\n</div>\r\n\r\n\r\n<div class=\"keywordPopup\" *ngIf=\"isKeywordButtonClicked\" >\r\n    <label >Add Keywords:</label>\r\n    <div contenteditable=\"true\" class=\"keyword\" placeholder=\"Separate keywords by Comma\" #keys>{{Keys}}</div>\r\n    <div class=\"button\">\r\n        <button  (click)=\"addKeywords()\">Add</button>\r\n        <button (click)=\"addKeywordsCancel()\">Cancel</button>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"preview\" *ngIf=\"Preview\">\r\n    <img src=\"/assets/images/sports-social-cancel-black.png\" class=\"close\" role=\"button\" (click)=\"closePreview()\">\r\n    <p  class=\"previewCatagory\">\r\n        <span >{{blogPreview.keywords[0]}}</span>\r\n        <span >|</span>\r\n        <span>{{blogPreview.readingTime}}</span>\r\n    </p>\r\n    <div class=\"previewBlogImageHolder\">\r\n        <img class=\"previewBlogImage\" alt=\"blogImage\" src=\"{{blogPreview.blogImage}}\"  >\r\n    </div>\r\n    <div class=\"previewBlogInfo\">\r\n        <p  [innerHtml]=\"blogPreview.heading\" class=\"previewHeading\"></p>\r\n        <div class=\"previewBloggerImageHolder\">\r\n          <img class=\"previewBloggerImage\"  src=\"{{blogPreview.bloggerImage}}\" >\r\n        </div>\r\n        <div class=\"previewBlogger\">\r\n          <p  class=\"previewBloggerName\">Written by <span > {{blogPreview.bloggerName}}</span></p>  \r\n        </div>\r\n        <p [innerHtml]=\"blogPreview.content\" class=\"prviewBlogContent\"></p>\r\n        <div class=\"previewTags\">\r\n          <div class=\"previewTagIconHolder\">\r\n            <img src=\"/assets/images/sports-social-tag.png\" alt=\"sports-social-tag\">\r\n          </div>\r\n          <span *ngFor=\"let key of blogPreview.keywords;let i=index\">{{key}}</span>\r\n        </div>\r\n    </div>   \r\n</div>"
 
 /***/ }),
 
@@ -3175,10 +3271,9 @@ module.exports = "<div class=\"container\" #form>\r\n  <div class=\"row\">\r\n  
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditorPanelComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3193,7 +3288,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var EditorPanelComponent = /** @class */ (function () {
     function EditorPanelComponent(http, recieveHeight, renderer, route, sanitizer) {
         this.http = http;
@@ -3201,6 +3295,17 @@ var EditorPanelComponent = /** @class */ (function () {
         this.renderer = renderer;
         this.route = route;
         this.sanitizer = sanitizer;
+        this.fontSize = [];
+        this.bloggerimageLoaded = false;
+        this.blogimageLoaded = false;
+        this.text = '';
+        this.isKeywordButtonClicked = false;
+        this.keywordAdded = false;
+        this.linkAdded = true;
+        this.linkCount = 0;
+        this.youtubeVideoAdded = false;
+        this.Keypress = false;
+        this.selectedText = '';
         this.files = [];
         this.imageName = [];
         this.isDisabled = false;
@@ -3212,60 +3317,297 @@ var EditorPanelComponent = /** @class */ (function () {
         this.recieveHeight.ofHeader.subscribe(function (margin) {
             _this.topMargin = margin;
         });
-        this.renderer.setStyle(this.panel.nativeElement, 'margin-top', this.topMargin + 10 + "px");
+        this.renderer.setStyle(this.panel.nativeElement, 'margin-top', this.topMargin + 10 + 'px');
+        for (var i = 4; i <= 28; i += 4) {
+            this.fontSize.push(i);
+        }
+        this.title.nativeElement.focus();
+        this.initialActiveElement = {
+            key: 'hello',
+            Element: document.activeElement
+        };
     };
-    EditorPanelComponent.prototype.handleKeyboardEvent = function (event) {
-        //console.log(event.code)
-        var length = this.desc.nativeElement.value.length;
-        var curPos = this.desc.nativeElement.selectionStart;
-        // console.log(event,this.desc.nativeElement.selectionStart);
-        if (event.code == "Enter") {
-            var textBefore = this.desc.nativeElement.value.substring(0, curPos);
-            var textAfter = this.desc.nativeElement.value.substring(curPos, length);
-            this.desc.nativeElement.value = textBefore + "<br>" + textAfter;
-            this.desc.nativeElement.selectionEnd = curPos + 4;
-            //console.log(this.desc.nativeElement.value)
+    EditorPanelComponent.prototype.startDesc = function () {
+        if (this.desc.nativeElement.innerHTML) {
+            this.Keypress = true;
         }
-        if (event.code == "KeyB" && event.ctrlKey == true) {
-            var startCurPos = this.desc.nativeElement.selectionStart;
-            var endCurPos = this.desc.nativeElement.selectionEnd;
-            //console.log("true",this.desc.nativeElement.selectionStart,this.desc.nativeElement.selectionEnd)
-            var textBefore = this.desc.nativeElement.value.substring(0, startCurPos);
-            var textMiddle = this.desc.nativeElement.value.substring(startCurPos, endCurPos);
-            var textAfter = this.desc.nativeElement.value.substring(endCurPos, length);
-            // console.log("before: ", textBefore,"middle:", textMiddle, "after: " ,textAfter)
-            this.desc.nativeElement.value = textBefore + "<b>" + textMiddle + "</b>" + textAfter;
-            this.desc.nativeElement.selectionEnd = endCurPos + 7;
+        else {
+            this.Keypress = false;
         }
-        if (event.code == "KeyI" && event.ctrlKey == true) {
-            var startCurPos = this.desc.nativeElement.selectionStart;
-            var endCurPos = this.desc.nativeElement.selectionEnd;
-            //console.log("true",this.desc.nativeElement.selectionStart,this.desc.nativeElement.selectionEnd)
-            var textBefore = this.desc.nativeElement.value.substring(0, startCurPos);
-            var textMiddle = this.desc.nativeElement.value.substring(startCurPos, endCurPos);
-            var textAfter = this.desc.nativeElement.value.substring(endCurPos, length);
-            //console.log("before: ", textBefore,"middle:", textMiddle, "after: " ,textAfter)
-            this.desc.nativeElement.value = textBefore + "<i>" + textMiddle + "</i>" + textAfter;
-            this.desc.nativeElement.selectionEnd = endCurPos + 7;
+    };
+    EditorPanelComponent.prototype.onmousedown = function (event) {
+    };
+    EditorPanelComponent.prototype.onkeyup = function (event) {
+        this.initialActiveElement = {
+            key: 'hello',
+            Element: document.activeElement
+        };
+    };
+    EditorPanelComponent.prototype.bold = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('bold', false, null);
+        if (event.target.className === 'not-selected') {
+            this.renderer.removeClass(event.target, 'not-selected');
+            this.renderer.addClass(event.target, 'selected');
         }
+        else {
+            this.renderer.removeClass(event.target, 'selected');
+            this.renderer.addClass(event.target, 'not-selected');
+        }
+    };
+    EditorPanelComponent.prototype.italic = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('italic', false, null);
+        if (event.target.className === 'not-selected') {
+            this.renderer.removeClass(event.target, 'not-selected');
+            this.renderer.addClass(event.target, 'selected');
+        }
+        else {
+            this.renderer.removeClass(event.target, 'selected');
+            this.renderer.addClass(event.target, 'not-selected');
+        }
+    };
+    EditorPanelComponent.prototype.underline = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('underline', false, null);
+        if (event.target.className === 'not-selected') {
+            this.renderer.removeClass(event.target, 'not-selected');
+            this.renderer.addClass(event.target, 'selected');
+        }
+        else {
+            this.renderer.removeClass(event.target, 'selected');
+            this.renderer.addClass(event.target, 'not-selected');
+        }
+    };
+    EditorPanelComponent.prototype.leftAlign = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('justifyLeft', false, null);
+    };
+    EditorPanelComponent.prototype.rightAlign = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('justifyRight', false, null);
+    };
+    EditorPanelComponent.prototype.centerAlign = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('justifyCenter', false, null);
+    };
+    EditorPanelComponent.prototype.justify = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('justifyFull', false, null);
+    };
+    EditorPanelComponent.prototype.undo = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('undo', false, null);
+    };
+    EditorPanelComponent.prototype.redo = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('redo', false, null);
+    };
+    EditorPanelComponent.prototype.indent = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('indent', false, null);
+    };
+    EditorPanelComponent.prototype.outdent = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('outdent', false, null);
+    };
+    EditorPanelComponent.prototype.subscript = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('subscript', false, null);
+    };
+    EditorPanelComponent.prototype.superscript = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('superscript', false, null);
+    };
+    EditorPanelComponent.prototype.listWithNumbers = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('insertOrderedList', false, null);
+    };
+    EditorPanelComponent.prototype.listWithDots = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('insertUnorderedList', false, null);
+    };
+    EditorPanelComponent.prototype.removeCss = function (event) {
+        console.log(document.execCommand('removeFormat', false, null));
+        document.execCommand('removeFormat', false, null);
+    };
+    EditorPanelComponent.prototype.addParagraph = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('insertParagraph', false, null);
+    };
+    EditorPanelComponent.prototype.selectTextColor = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('foreColor', false, event.target.value);
+    };
+    EditorPanelComponent.prototype.selectBackgroundColor = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('styleWithCSS', false, true);
+        document.execCommand('backColor', false, event.target.value);
+    };
+    EditorPanelComponent.prototype.selectFontSize = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('fontSize', false, (event.target.value) / 4);
+    };
+    EditorPanelComponent.prototype.preventdefault = function (event) {
+        event.target.focus();
+        event.preventDefault();
+    };
+    EditorPanelComponent.prototype.test = function () {
+        console.log(this.beforePopupSelectedElement, this.beforePopupActiveElement, this.beforePopupCurPos);
+    };
+    EditorPanelComponent.prototype.restoreCaret = function () {
+        this.beforePopupActiveElement.focus();
+        console.log(this.beforePopupSelectedElement, this.beforePopupActiveElement, this.beforePopupCurPos);
+        var sel = window.getSelection();
+        sel.collapse(this.beforePopupSelectedElement, this.beforePopupCurPos);
+    };
+    EditorPanelComponent.prototype.addLink = function (event) {
+        this.selectedText = document.getSelection().toString();
+        console.log(this.selectedText);
+        if (this.selectedText != '') {
+            this.Text.nativeElement.value = this.selectedText;
+            document.execCommand('cut', false, null);
+        }
+        this.initialActiveElement.Element.focus();
+        this.renderer.setStyle(this.linkpopup.nativeElement, 'display', 'block');
+        this.beforePopupActiveElement = this.initialActiveElement.Element;
+        this.initialSelectedELement = document.getSelection();
+        this.beforePopupSelectedElement = this.initialSelectedELement.focusNode;
+        this.beforePopupCurPos = this.initialSelectedELement.focusOffset;
+    };
+    EditorPanelComponent.prototype.unLink = function () {
+        this.selctedLink = document.getSelection();
+        console.log(this.selctedLink);
+    };
+    EditorPanelComponent.prototype.linkOk = function (event) {
+        this.linkUrl = this.URL.nativeElement.value;
+        this.linkText = this.Text.nativeElement.value;
+        var embed = "<a class=\"link\" href=\"" + this.linkUrl +
+            "\"target=\"_blank\">" + ' ' + this.linkText + "</a>";
+        if (this.linkUrl && this.linkText) {
+            document.execCommand('insertHTML', false, embed);
+        }
+        this.renderer.setStyle(this.linkpopup.nativeElement, 'display', 'none');
+        this.beforePopupActiveElement.focus();
+    };
+    EditorPanelComponent.prototype.linkCancel = function () {
+        event.preventDefault();
+        document.execCommand('insertHTML', false, '');
+        this.renderer.setStyle(this.linkpopup.nativeElement, 'display', 'none');
+        this.beforePopupActiveElement.focus();
+    };
+    EditorPanelComponent.prototype.addYoutubevideo = function () {
+        this.renderer.setStyle(this.youtubeLinkPopup.nativeElement, 'display', 'block');
+        this.beforePopupActiveElement = this.initialActiveElement.Element;
+        this.initialSelectedELement = document.getSelection();
+        this.beforePopupSelectedElement = this.initialSelectedELement.focusNode;
+        this.beforePopupCurPos = this.initialSelectedELement.focusOffset;
+    };
+    EditorPanelComponent.prototype.youtubeLinkOk = function (event) {
+        this.youtubeUrl = this.youtubeURL.nativeElement.value.replace('watch?v=', 'embed/');
+        console.log(this.youtubeUrl);
+        if (this.youtubeURL.nativeElement.value) {
+            document.execCommand('insertHTML', false, "\n      <div style=\"position: relative;\n      padding-bottom: 56.25%;\n      width:90%;\n      padding-top: 25px;\n      height: 0;\"><iframe style=\"position: absolute;\n      top: 0;\n      left: 5%;\n      width: 100%;\n      height: 100%;\" src=\"" + this.youtubeUrl
+                + "\"   frameborder=\"0\" allowfullscreen></iframe></div><br><br>");
+        }
+        this.renderer.setStyle(this.youtubeLinkPopup.nativeElement, 'display', 'none');
+        this.beforePopupActiveElement.focus();
+    };
+    EditorPanelComponent.prototype.youtubeLinkCancel = function () {
+        document.execCommand('insertHTML', false, '');
+        this.renderer.setStyle(this.youtubeLinkPopup.nativeElement, 'display', 'none');
+        this.beforePopupActiveElement.focus();
+    };
+    EditorPanelComponent.prototype.addQuote = function (event) {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('formatBlock', false, 'blockquote');
+    };
+    EditorPanelComponent.prototype.selectImage = function (event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    EditorPanelComponent.prototype._handleReaderLoaded = function (event) {
+        var reader = event.target;
+        this.imageSrc = reader.result;
+        console.log(this.imageSrc);
+        document.execCommand('insertHTML', false, "<div style=\"max-width:100%;height:auto;\" ><img style=\"max-width:100%;max-height:100%;\" src=\""
+            + this.imageSrc + "\"></div>");
+    };
+    EditorPanelComponent.prototype.selectGif = function (event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        reader.onload = this._handleGifReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    EditorPanelComponent.prototype._handleGifReaderLoaded = function (event) {
+        var reader = event.target;
+        this.imageSrc = reader.result;
+        document.execCommand('insertImage', false, this.imageSrc);
+    };
+    EditorPanelComponent.prototype.selectBloggerImage = function (event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        reader.onload = this._handleBloggerReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+        this.bloggerimageLoaded = true;
+    };
+    EditorPanelComponent.prototype._handleBloggerReaderLoaded = function (event) {
+        var reader = event.target;
+        this.bloggerimageSrc = reader.result;
+    };
+    EditorPanelComponent.prototype.selectBlogImage = function (event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        reader.onload = this._handleBlogReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+        this.blogimageLoaded = true;
+    };
+    EditorPanelComponent.prototype._handleBlogReaderLoaded = function (event) {
+        var reader = event.target;
+        this.blogimageSrc = reader.result;
+    };
+    EditorPanelComponent.prototype.openAddKeywordPopup = function () {
+        this.isKeywordButtonClicked = true;
+        if (this.Keys) {
+            this.Keys = this.keywordArray.toString();
+        }
+    };
+    EditorPanelComponent.prototype.addKeywords = function () {
+        this.Keys = this.keys.nativeElement.textContent;
+        this.keywordArray = (this.Keys.split(','));
+        this.isKeywordButtonClicked = false;
+        if (this.Keys) {
+            this.keywordAdded = true;
+        }
+        else {
+            this.keywordAdded = false;
+        }
+    };
+    EditorPanelComponent.prototype.addKeywordsCancel = function () {
+        this.isKeywordButtonClicked = false;
+        this.keywordAdded = false;
+    };
+    EditorPanelComponent.prototype.deleteKeyword = function (i) {
+        this.keywordArray.splice(i, 1);
     };
     EditorPanelComponent.prototype.makeFileRequest = function (url, params, files) {
         var _this = this;
-        this.imageName = ["bloggerImage", "blogImage"];
+        this.imageName = ['blogImage', 'bloggerImage'];
         return new Promise(function (resolve, reject) {
             var formData = new FormData();
             var xhr = new XMLHttpRequest();
             for (var i = 0; i < files.length; i++) {
                 formData.append(_this.imageName[i], files[i]);
             }
-            formData.append("bloggerName", _this.blog.bloggerName);
-            formData.append("blogrTitle", _this.blog.blogTitle);
-            formData.append("blogDesc", _this.blog.blogDesc);
-            formData.append("blogDate", _this.blog.blogDate);
-            formData.append("keywords", _this.blog.keywords);
+            formData.append('bloggerName', _this.blog.bloggerName);
+            formData.append('blogrTitle', _this.blog.blogTitle);
+            formData.append('blogDesc', _this.blog.blogDesc);
+            formData.append('keywords', _this.blog.keywords);
             xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4) {
-                    if (xhr.status == 200) {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
                         resolve(JSON.parse(xhr.response));
                     }
                     else {
@@ -3273,30 +3615,34 @@ var EditorPanelComponent = /** @class */ (function () {
                     }
                 }
             };
-            xhr.open("POST", url, true);
+            xhr.open('POST', url, true);
             xhr.send(formData);
         });
     };
     EditorPanelComponent.prototype.upload = function () {
         var _this = this;
+        console.log(this.panel);
+        this.blogImage = this.panel.nativeElement.children[0].children[1].files[0];
+        this.bloggerImage = this.panel.nativeElement.children[2].children[0].children[1].files[0];
+        this.files = [this.blogImage, this.bloggerImage];
+        console.log(this.files);
         this.isDisabled = true;
-        this.files = [this.bloggerImage, this.blogImage];
         this.blog = {
-            bloggerName: this.signupForm.value.blogData.name,
-            blogDate: this.signupForm.value.blogData.date,
-            blogTitle: this.signupForm.value.blogData.Title,
-            blogDesc: this.desc.nativeElement.value,
-            keywords: this.signupForm.value.blogData.keywords.split(",")
+            bloggerName: this.panel.nativeElement.children[2].children[1].innerText,
+            blogTitle: this.panel.nativeElement.children[1].innerText,
+            blogDesc: this.panel.nativeElement.children[4].innerHTML,
+            keywords: this.Keys
         };
-        this.imageName = ["bloggerImage", "blogImage"];
+        console.log(this.blog);
+        this.imageName = ['blogImage', 'bloggerImage'];
         for (var i = 0; i < this.files.length; i++) {
-            this.filesToUpload.push(this.files[i].nativeElement.files[0]);
+            this.filesToUpload.push(this.files[i]);
         }
-        this.makeFileRequest("https://admin.chaseyoursport.com/blog/saveNewBlog", [], this.filesToUpload)
+        this.makeFileRequest('https://test.sportsocial.in/poc/saveNewBlog', [], this.filesToUpload)
             .then(function (result) {
             _this.Result = result;
             console.log(result);
-            if (_this.Result.Status == "Success") {
+            if (_this.Result.Status === 'Success') {
                 _this.isDisabled = false;
             }
         }, function (error) {
@@ -3307,73 +3653,97 @@ var EditorPanelComponent = /** @class */ (function () {
         });
     };
     EditorPanelComponent.prototype.preview = function () {
-        this.files = [this.bloggerImage.nativeElement.files[0], this.blogImage.nativeElement.files[0]];
-        /*    let reader = new FileReader()
-           console.log(event)
-           reader.onload=function(e){
-              
-           }
-           reader.readAsDataURL(this.bloggerImage.nativeElement.files[0]) */
-        //this.previewBloggerImage=this.sanitizer.bypassSecurityTrustUrl(this.bloggerImage.nativeElement.value)
-        this.blog = {
-            bloggerName: this.signupForm.value.blogData.name,
-            blogDate: this.signupForm.value.blogData.date,
-            blogTitle: this.signupForm.value.blogData.Title,
-            blogDesc: this.desc.nativeElement.value,
-            keywords: this.signupForm.value.blogData.keywords.split(",")
-        };
         this.Preview = true;
+        console.log(this.panel);
+        this.blogImage = this.panel.nativeElement.children[0].children[1].files[0];
+        this.bloggerImage = this.panel.nativeElement.children[2].children[0].children[1].files[0];
+        this.files = [this.blogImage, this.bloggerImage];
+        console.log(this.files);
+        this.isDisabled = true;
+        this.blogPreview = {
+            bloggerName: this.panel.nativeElement.children[2].children[1].innerText,
+            heading: this.panel.nativeElement.children[1].innerText,
+            content: this.sanitizer.bypassSecurityTrustHtml(this.panel.nativeElement.children[4].innerHTML),
+            keywords: this.keywordArray,
+            blogImage: this.blogimageSrc,
+            bloggerImage: this.bloggerimageSrc,
+            readingTime: '2 min read '
+        };
+        console.log(this.blogPreview);
     };
     EditorPanelComponent.prototype.closePreview = function () {
         this.Preview = false;
     };
-    EditorPanelComponent.prototype.something = function () {
-        console.log("true");
-    };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('f'),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["NgForm"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["NgForm"]) === "function" && _a || Object)
-    ], EditorPanelComponent.prototype, "signupForm", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('bloggerImage'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('title'),
         __metadata("design:type", Object)
-    ], EditorPanelComponent.prototype, "bloggerImage", void 0);
+    ], EditorPanelComponent.prototype, "title", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('blogImage'),
-        __metadata("design:type", Object)
-    ], EditorPanelComponent.prototype, "blogImage", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('form'),
-        __metadata("design:type", Object)
-    ], EditorPanelComponent.prototype, "panel", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('desc'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('desc'),
         __metadata("design:type", Object)
     ], EditorPanelComponent.prototype, "desc", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('imageblog'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('url'),
         __metadata("design:type", Object)
-    ], EditorPanelComponent.prototype, "imageblog", void 0);
+    ], EditorPanelComponent.prototype, "URL", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('imageblogger'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('YoutubeUrl'),
         __metadata("design:type", Object)
-    ], EditorPanelComponent.prototype, "imageblogger", void 0);
+    ], EditorPanelComponent.prototype, "youtubeURL", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('document:keypress', ['$event']),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('PluginUrl'),
+        __metadata("design:type", Object)
+    ], EditorPanelComponent.prototype, "pluginURL", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('keys'),
+        __metadata("design:type", Object)
+    ], EditorPanelComponent.prototype, "keys", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('text'),
+        __metadata("design:type", Object)
+    ], EditorPanelComponent.prototype, "Text", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('editorPanel'),
+        __metadata("design:type", Object)
+    ], EditorPanelComponent.prototype, "editorPanel", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('panel'),
+        __metadata("design:type", Object)
+    ], EditorPanelComponent.prototype, "panel", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('linkpopup'),
+        __metadata("design:type", Object)
+    ], EditorPanelComponent.prototype, "linkpopup", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('youtubeLinkPopup'),
+        __metadata("design:type", Object)
+    ], EditorPanelComponent.prototype, "youtubeLinkPopup", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('pluginLinkPopup'),
+        __metadata("design:type", Object)
+    ], EditorPanelComponent.prototype, "pluginLinkPopup", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('mousedown', ['$event']),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", void 0)
-    ], EditorPanelComponent.prototype, "handleKeyboardEvent", null);
+    ], EditorPanelComponent.prototype, "onmousedown", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('keyup', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], EditorPanelComponent.prototype, "onkeyup", null);
     EditorPanelComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocialBlog-editor-panel',
             template: __webpack_require__("../../../../../src/app/editor-panel/editor-panel.component.html"),
             styles: [__webpack_require__("../../../../../src/app/editor-panel/editor-panel.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _f || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _e || Object])
     ], EditorPanelComponent);
     return EditorPanelComponent;
-    var _a, _b, _c, _d, _e, _f;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=editor-panel.component.js.map
@@ -3428,20 +3798,20 @@ var KeywordComponent = /** @class */ (function () {
     KeywordComponent.prototype.ngOnInit = function () {
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", Object)
     ], KeywordComponent.prototype, "title", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('Keyword'),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('Keyword'),
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object)
     ], KeywordComponent.prototype, "Keyword", void 0);
     KeywordComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocialBlog-keyword',
             template: __webpack_require__("../../../../../src/app/keywords/keyword/keyword.component.html"),
             styles: [__webpack_require__("../../../../../src/app/keywords/keyword/keyword.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object])
     ], KeywordComponent);
     return KeywordComponent;
     var _a, _b;
@@ -3566,22 +3936,22 @@ var KeywordsComponent = /** @class */ (function () {
         this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + "px");
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('Keywords'),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('Keywords'),
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object)
     ], KeywordsComponent.prototype, "Keywords", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], KeywordsComponent.prototype, "onresize", null);
     KeywordsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocialBlog-keywords',
             template: __webpack_require__("../../../../../src/app/keywords/keywords.component.html"),
             styles: [__webpack_require__("../../../../../src/app/keywords/keywords.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */]) === "function" && _j || Object])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */]) === "function" && _j || Object])
     ], KeywordsComponent);
     return KeywordsComponent;
     var _a, _b, _c, _d, _e, _f, _g, _h, _j;
@@ -3649,7 +4019,7 @@ var LoginPageComponent = /** @class */ (function () {
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     };
     LoginPageComponent.prototype.handleKeyboardEvent = function (event) {
-        if (event.code == "Enter") {
+        if (event.code === "Enter") {
             this.checkLogin();
         }
     };
@@ -3667,21 +4037,21 @@ var LoginPageComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('userName'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('userName'),
         __metadata("design:type", Object)
     ], LoginPageComponent.prototype, "userName", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('password'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('password'),
         __metadata("design:type", Object)
     ], LoginPageComponent.prototype, "password", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('document:keypress', ['$event']),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('document:keypress', ['$event']),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", void 0)
     ], LoginPageComponent.prototype, "handleKeyboardEvent", null);
     LoginPageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocialBlog-login-page',
             template: __webpack_require__("../../../../../src/app/login-page/login-page.component.html"),
             styles: [__webpack_require__("../../../../../src/app/login-page/login-page.component.css")]
@@ -3755,20 +4125,20 @@ var MessageComponent = /** @class */ (function () {
         console.log(this.showSubscriptionBox);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('subscriptionBox'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('subscriptionBox'),
         __metadata("design:type", Object)
     ], MessageComponent.prototype, "subscriptionBox", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", Object)
     ], MessageComponent.prototype, "showSubscriptionBox", void 0);
     MessageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocial-message',
             template: __webpack_require__("../../../../../src/app/message/message.component.html"),
             styles: [__webpack_require__("../../../../../src/app/message/message.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_status_service__["a" /* StatusService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_status_service__["a" /* StatusService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_status_service__["a" /* StatusService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_status_service__["a" /* StatusService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object])
     ], MessageComponent);
     return MessageComponent;
     var _a, _b;
@@ -3832,7 +4202,7 @@ var OpenFullImageComponent = /** @class */ (function () {
         this.openFullImage = false;
     };
     OpenFullImageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'app-open-full-image',
             template: __webpack_require__("../../../../../src/app/open-full-image/open-full-image.component.html"),
             styles: [__webpack_require__("../../../../../src/app/open-full-image/open-full-image.component.css")]
@@ -3896,7 +4266,7 @@ var RoutingModule = /** @class */ (function () {
     function RoutingModule() {
     }
     RoutingModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
             imports: [
                 __WEBPACK_IMPORTED_MODULE_9__angular_router__["d" /* RouterModule */].forRoot(appRoute)
             ],
@@ -3945,6 +4315,7 @@ module.exports = "<div #searchPage>\n\n  <h2 class=\"topic\">{{recievedKey}} blo
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3959,8 +4330,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SearchComponent = /** @class */ (function () {
-    function SearchComponent(recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService) {
+    function SearchComponent(recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService, winRef) {
         this.recieveHeight = recieveHeight;
         this.renderer = renderer;
         this.recieveData = recieveData;
@@ -3970,73 +4342,55 @@ var SearchComponent = /** @class */ (function () {
         this.zone = zone;
         this.titleService = titleService;
         this.metaService = metaService;
+        this.winRef = winRef;
         this.dataRecieved = false;
         this.show = false;
         this.tempBlog = [];
         this.pageNumber = 1;
         this.mobileView = false;
         this.haveData = true;
+        metaService.addTags([
+            { name: 'author', content: 'Coursetro.com' },
+            { name: 'keywords', content: 'angular seo, angular 4 universal, etc' },
+            { name: 'description', content: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa' }
+        ]);
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.setTopMargin();
         this.recievekeyFromUrl();
         this.setMobileView();
-        /* this.pageNumber=JSON.parse(sessionStorage.getItem('pageNumber'))
-        if(this.pageNumber==null){
-          this.pageNumber=1
-        } */
-        /// console.log(this.recievedKey,this.pageNumber, "search")
-        /* if(this.pageNumber==1){
-          console.log(this.recievedKey,this.pageNumber, "search")
-          /* this.get.blogData(this.pageNumber,this.recievedKey).subscribe(
-          (data)=>{
-            if(data.length>0){
-              this.haveData=true
-            }
-            else{
-              this.haveData=false
-            }
-            if(data.length==0 && this.pageNumber==1){
-    
-            }
-            this.show=true;
-            this.dataRecieved=true;
-            for(let i in data){
-                this.blogDetails.push(
-                  {
-                    blogId:data[i].blogId,
-                    blogImage:data[i].blogImage,
-                    bloggerName:data[i].bloggerName,
-                    bloggerImage:data[i].bloggerImage,
-                    heading:data[i].heading,
-                    Content:data[i].Content,
-                    insertedDate:this.timePassed(data[i].insertedDate),
-                    ViewCount:data[i].ViewCount,
-                    ShareCount:data[i].ShareCount,
-                    keywords:data[i].keywords.split(","),
-                    exactDate:this.ExactDate(data[i].insertedDate),
-                    readingTime:this.timeToRead(data[i].Content)
-                  }
-                )
-              }
-            console.log(this.blogDetails, " search")
-            }
-          )
-        }
-        else{
-          this.show=true;
-          this.dataRecieved=true;
-          this.blogDetails=JSON.parse(sessionStorage.getItem('searchedBlog'))
-          console.log(this.blogDetails," vtds")
-        }
-     */
     };
     SearchComponent.prototype.ngAfterViewInit = function () {
         this.setTopMargin();
         this.recievekeyFromUrl();
     };
     SearchComponent.prototype.setTitle = function () {
-        this.titleService.setTitle(this.recievedKey + "," + "Read the latest articles, blogs, news and other informations related to " + this.recievedKey);
+        this.titleService.setTitle(this.recievedKey + ',' +
+            'Read the latest articles, blogs, news and other informations related to '
+            + this.recievedKey);
+    };
+    SearchComponent.prototype.setMetaTags = function () {
+        this.metaService.addTags([
+            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
+            { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to '
+                    + this.recievedKey },
+            { name: 'title', content: this.recievedKey + 'Blogs' },
+            { name: 'theme-color', content: '#4327a0' },
+            { property: 'og:title', content: this.recievedKey + 'Blogs' },
+            { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to '
+                    + this.recievedKey },
+            { property: 'og:url', content: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
+            { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
+            { property: 'og:site_name', content: 'Chase Your Sport' },
+            { property: 'fb:app_id', content: '1750709328507665' },
+            { name: 'twitter:card', content: 'summary_large_image' },
+            { name: 'twitter:site', content: '@Chaseyoursport' },
+            { name: 'twitter:creator', content: '@NadeemKhan' },
+            { name: 'twitter:title', content: this.recievedKey + 'Blogs' },
+            { name: 'twitter:description', content: 'Read the latest articles, blogs, news and other informations related to '
+                    + this.recievedKey },
+            { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
+        ]);
     };
     SearchComponent.prototype.getBlogs = function () {
         var _this = this;
@@ -4063,27 +4417,28 @@ var SearchComponent = /** @class */ (function () {
                     insertedDate: _this.timePassed(data[i].insertedDate),
                     ViewCount: data[i].ViewCount,
                     ShareCount: data[i].ShareCount,
-                    keywords: data[i].keywords.split(","),
+                    keywords: data[i].keywords.split(','),
                     exactDate: _this.ExactDate(data[i].insertedDate),
                     readingTime: _this.timeToRead(data[i].Content)
                 });
             }
             _this.blogDetails = blogDetails;
         });
+        this.setMetaTags();
     };
     SearchComponent.prototype.recievekeyFromUrl = function () {
         var _this = this;
-        this.recievedKey = this.route.snapshot.url[0].path.replace(/-/g, " ");
+        this.recievedKey = this.route.snapshot.url[0].path.replace(/-/g, ' ');
         this.route.params.subscribe(function (params) {
             _this.pageNumber = 1;
-            //console.log(params, " params")
-            _this.recievedKey = params.tag.replace(/-/g, " ");
+            // console.log(params, " params")
+            _this.recievedKey = params.tag.replace(/-/g, ' ');
             _this.setTitle();
             _this.getBlogs();
         });
     };
     SearchComponent.prototype.setMobileView = function () {
-        if (window.innerWidth < 700) {
+        if (this.winRef.nativeWindow.innerWidth < 700) {
             this.mobileView = true;
         }
         else {
@@ -4091,13 +4446,13 @@ var SearchComponent = /** @class */ (function () {
         }
     };
     SearchComponent.prototype.timeToRead = function (s) {
-        var words = s.split(" ");
+        var words = s.split(' ');
         var time = Math.round(words.length / 180);
         if (time > 1) {
-            return time + " min read";
+            return time + ' min read';
         }
         else {
-            return "2 min read";
+            return '2 min read';
         }
     };
     SearchComponent.prototype.ExactDate = function (i) {
@@ -4107,37 +4462,40 @@ var SearchComponent = /** @class */ (function () {
     SearchComponent.prototype.timePassed = function (i) {
         var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
-        //console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
-        if (writtenDate.getFullYear() == presentDate.getFullYear()) {
-            if (writtenDate.getMonth() == presentDate.getMonth()) {
-                if (writtenDate.getDate() == presentDate.getDate()) {
-                    if (writtenDate.getHours() == presentDate.getHours()) {
-                        if (writtenDate.getMinutes() == presentDate.getMinutes()) {
-                            if (writtenDate.getSeconds() - presentDate.getSeconds()) {
-                                return "Just Now";
+        if (writtenDate.getFullYear() === presentDate.getFullYear()) {
+            if (writtenDate.getMonth() === presentDate.getMonth() || writtenDate.getDate() > presentDate.getDate()) {
+                if (writtenDate.getDate() === presentDate.getDate()) {
+                    if (writtenDate.getHours() === presentDate.getHours()) {
+                        if (writtenDate.getMinutes() === presentDate.getMinutes()) {
+                            if (writtenDate.getSeconds() === presentDate.getSeconds()) {
+                                return 'Just Now';
                             }
                             else {
-                                return presentDate.getSeconds() - writtenDate.getSeconds() + " sec ago";
+                                return presentDate.getSeconds() - writtenDate.getSeconds() + ' sec ago';
                             }
                         }
                         else {
-                            return presentDate.getMinutes() - writtenDate.getMinutes() + " min ago";
+                            return presentDate.getMinutes() - writtenDate.getMinutes() + ' min ago';
                         }
                     }
                     else {
-                        return presentDate.getHours() - writtenDate.getHours() + " hrs ago";
+                        return presentDate.getHours() - writtenDate.getHours() + ' hrs ago';
                     }
                 }
                 else {
-                    return presentDate.getDate() - writtenDate.getDate() + " day ago";
+                    var date = (presentDate.getDate() - writtenDate.getDate());
+                    if (date < 0) {
+                        date += 30;
+                    }
+                    return date + ' day ago';
                 }
             }
             else {
-                return presentDate.getMonth() - writtenDate.getMonth() + " month ago";
+                return presentDate.getMonth() - writtenDate.getMonth() + ' month ago';
             }
         }
         else {
-            return presentDate.getFullYear() - writtenDate.getFullYear() + " year ago";
+            return presentDate.getFullYear() - writtenDate.getFullYear() + ' year ago';
         }
     };
     SearchComponent.prototype.setTopMargin = function () {
@@ -4145,7 +4503,7 @@ var SearchComponent = /** @class */ (function () {
         this.recieveHeight.ofHeader.subscribe(function (margin) {
             _this.topMargin = margin;
         });
-        this.renderer.setStyle(this.searchPage.nativeElement, 'margin-top', this.topMargin + "px");
+        this.renderer.setStyle(this.searchPage.nativeElement, 'margin-top', this.topMargin + 'px');
     };
     SearchComponent.prototype.onresize = function () {
         this.setTopMargin();
@@ -4156,7 +4514,7 @@ var SearchComponent = /** @class */ (function () {
         this.pageNumber++;
         this.dataRecieved = false;
         this.get.blogData(this.pageNumber, this.recievedKey).subscribe(function (data) {
-            console.log(data, " nm");
+            console.log(data, ' nm');
             _this.dataRecieved = true;
             if (data.length > 0) {
                 _this.haveData = true;
@@ -4176,7 +4534,7 @@ var SearchComponent = /** @class */ (function () {
                     insertedDate: _this.timePassed(data[i].insertedDate),
                     ViewCount: data[i].ViewCount,
                     ShareCount: data[i].ShareCount,
-                    keywords: data[i].keywords.split(","),
+                    keywords: data[i].keywords.split(','),
                     exactDate: _this.ExactDate(data[i].insertedDate),
                     readingTime: _this.timeToRead(data[i].Content)
                 });
@@ -4186,29 +4544,29 @@ var SearchComponent = /** @class */ (function () {
         //sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('searchPage'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('searchPage'),
         __metadata("design:type", Object)
     ], SearchComponent.prototype, "searchPage", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('blog'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('blog'),
         __metadata("design:type", Object)
     ], SearchComponent.prototype, "blog", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', []),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], SearchComponent.prototype, "onresize", null);
     SearchComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'app-search',
             template: __webpack_require__("../../../../../src/app/search/search.component.html"),
             styles: [__webpack_require__("../../../../../src/app/search/search.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _j || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_5__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _k || Object])
     ], SearchComponent);
     return SearchComponent;
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 }());
 
 //# sourceMappingURL=search.component.js.map
@@ -4261,7 +4619,7 @@ var AuthGuard = /** @class */ (function () {
         return this.canActivate(route, state);
     };
     AuthGuard = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Injectable */])(),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* Router */]) === "function" && _b || Object])
     ], AuthGuard);
     return AuthGuard;
@@ -4309,13 +4667,98 @@ var AuthService = /** @class */ (function () {
         this.loggedIn = false;
     };
     AuthService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
         __metadata("design:paramtypes", [])
     ], AuthService);
     return AuthService;
 }());
 
 //# sourceMappingURL=auth.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/facebook.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FacebookService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FacebookService = /** @class */ (function () {
+    function FacebookService() {
+        this.connected = false;
+        if (window.FB) {
+            window.FB.XFBML.parse();
+        }
+    }
+    FacebookService.prototype.init = function () {
+        FB.init({
+            appId: '1750709328507665',
+            cookie: false,
+            xfbml: true,
+            version: 'v2.10'
+        });
+    };
+    FacebookService.prototype.getLoginStatus = function () {
+        FB.getLoginStatus(function (response) {
+            console.log(response, ' conect');
+            if (response.status === 'connected') {
+                console.log('login');
+                FB.api('/me?fields=id,name,first_name,gender,picture.type(large),age_range,friends', function (result) {
+                    if (result && !result.error) {
+                        this.user = result;
+                        console.log(this.user, ' conect');
+                    }
+                    else {
+                        console.log(result.error);
+                    }
+                });
+            }
+        });
+    };
+    FacebookService.prototype.login = function () {
+        FB.login(function (response) {
+            if (response.status === 'connected') {
+                // this.me(response.authResponse.userID, response.authResponse.accessToken);
+                // Logged into your app and Facebook.
+            }
+            else if (response.status === 'not_authorized') {
+                // The person is logged into Facebook, but not your app.
+            }
+            else {
+                // The person is not logged into Facebook, so we're not sure if
+                // they are logged into this app or not.
+            }
+        }, { scope: 'user_friends,email' });
+    };
+    FacebookService.prototype.me = function () {
+        FB.api('/me?fields=id,name,first_name,gender,picture.width(150).height(150),age_range,friends', function (result) {
+            if (result && !result.error) {
+                this.user = result;
+                console.log(this.user);
+            }
+            else {
+                console.log(result.error);
+            }
+        });
+    };
+    FacebookService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], FacebookService);
+    return FacebookService;
+}());
+
+//# sourceMappingURL=facebook.service.js.map
 
 /***/ }),
 
@@ -4349,8 +4792,8 @@ var GetService = /** @class */ (function () {
             .map(function (res) { return res.json(); });
     };
     GetService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
     ], GetService);
     return GetService;
     var _a;
@@ -4455,8 +4898,8 @@ var PostService = /** @class */ (function () {
             .map(function (response) { return response.json(); });
     };
     PostService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
     ], PostService);
     return PostService;
     var _a;
@@ -4498,7 +4941,7 @@ var PropertyService = /** @class */ (function () {
         this.ofsearchBlog = new __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__["Subject"]();
     }
     PropertyService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
         __metadata("design:paramtypes", [])
     ], PropertyService);
     return PropertyService;
@@ -4536,7 +4979,7 @@ var SaveService = /** @class */ (function () {
         this.blog = new __WEBPACK_IMPORTED_MODULE_2_rxjs_ReplaySubject__["ReplaySubject"]();
     }
     SaveService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
         __metadata("design:paramtypes", [])
     ], SaveService);
     return SaveService;
@@ -4570,13 +5013,53 @@ var StatusService = /** @class */ (function () {
         this.ofSubscrition = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["ReplaySubject"]();
     }
     StatusService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
         __metadata("design:paramtypes", [])
     ], StatusService);
     return StatusService;
 }());
 
 //# sourceMappingURL=status.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/window-ref.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WindowRefService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+function _window() {
+    return window;
+}
+var WindowRefService = /** @class */ (function () {
+    function WindowRefService() {
+    }
+    Object.defineProperty(WindowRefService.prototype, "nativeWindow", {
+        get: function () {
+            return _window();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    WindowRefService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], WindowRefService);
+    return WindowRefService;
+}());
+
+//# sourceMappingURL=window-ref.service.js.map
 
 /***/ }),
 
@@ -4661,20 +5144,20 @@ var SubscribeCardComponent = /** @class */ (function () {
         console.log(this.showSubscriptionBox);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('subscriber'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('subscriber'),
         __metadata("design:type", Object)
     ], SubscribeCardComponent.prototype, "subscriber", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('button'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('button'),
         __metadata("design:type", Object)
     ], SubscribeCardComponent.prototype, "button", void 0);
     SubscribeCardComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'SportSocial-subscribe-card',
             template: __webpack_require__("../../../../../src/app/subscribe-card/subscribe-card.component.html"),
             styles: [__webpack_require__("../../../../../src/app/subscribe-card/subscribe-card.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_status_service__["a" /* StatusService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_status_service__["a" /* StatusService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_status_service__["a" /* StatusService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_status_service__["a" /* StatusService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _c || Object])
     ], SubscribeCardComponent);
     return SubscribeCardComponent;
     var _a, _b, _c;
@@ -4710,7 +5193,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_23" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map

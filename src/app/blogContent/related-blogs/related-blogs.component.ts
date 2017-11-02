@@ -2,6 +2,8 @@ import { Component, OnInit,HostListener } from '@angular/core';
 import {PostService} from "../../services/post.service";
 import {PropertyService} from "../../services/property.service";
 
+import { WindowRefService } from '../../services/window-ref.service';
+
 @Component({
   selector: 'SportSocial-related-blogs',
   templateUrl: './related-blogs.component.html',
@@ -17,7 +19,8 @@ export class RelatedBlogsComponent implements OnInit {
 
   constructor( 
     private getRelated: PostService,
-    private recieveKey :PropertyService
+    private recieveKey: PropertyService,
+    private winRef: WindowRefService
   ) { }
 
   ngOnInit() {
@@ -90,26 +93,46 @@ timeToRead(s:string){
   }
 }
 
-timePassed(i:string){
-  let writtenDate=new Date(parseInt(i)*1000);
-  let presentDate=new Date();
-  if(writtenDate.getFullYear()==presentDate.getFullYear()){
-    if(writtenDate.getMonth()==presentDate.getMonth()){
-      if(writtenDate.getDate()==presentDate.getDate()){
-          return "Today"
+timePassed(i: string){
+  
+    let writtenDate = new Date(parseInt(i) * 1000);
+    let presentDate = new Date();
+    if (writtenDate.getFullYear() === presentDate.getFullYear()) {
+      if (writtenDate.getMonth() === presentDate.getMonth() || writtenDate.getDate() > presentDate.getDate()) {
+        if (writtenDate.getDate() === presentDate.getDate()) {
+            if (writtenDate.getHours() === presentDate.getHours()) {
+              if (writtenDate.getMinutes() === presentDate.getMinutes()) {
+                if (writtenDate.getSeconds() === presentDate.getSeconds()) {
+                  return 'Just Now'
+                }
+                else{
+                  return presentDate.getSeconds() - writtenDate.getSeconds() + ' sec ago';
+                }
+              }
+              else{
+                return presentDate.getMinutes() - writtenDate.getMinutes() + ' min ago'
+              }
+            }
+            else{
+              return presentDate.getHours() - writtenDate.getHours() + ' hrs ago'
+            }
+        }
+        else{
+          let date = (presentDate.getDate() - writtenDate.getDate());
+          if (date < 0) {
+            date += 30;
+          }
+          return date + ' day ago';
+        }
       }
       else{
-        return presentDate.getDate()-writtenDate.getDate() + " day ago"
+        return presentDate.getMonth() - writtenDate.getMonth() + ' month ago';
       }
     }
     else{
-      return presentDate.getMonth()-writtenDate.getMonth() + " month ago"
+      return presentDate.getFullYear() - writtenDate.getFullYear() + ' year ago'
     }
-  }
-  else{
-    return presentDate.getFullYear()-writtenDate.getFullYear() + " year ago"
-  }
- 
+   
 }
 
 
@@ -119,7 +142,7 @@ let writtenDate=new Date(i*1000);
 return writtenDate.toDateString()
 }
 setMobileView(){
-  if(window.innerWidth>950){
+  if(this.winRef.nativeWindow.innerWidth>950){
       this.mobileView=false;
   }
   else{

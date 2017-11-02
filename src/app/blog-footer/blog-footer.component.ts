@@ -6,9 +6,10 @@ import {
   ElementRef,
   Renderer2
 } from '@angular/core';
-import {Http} from "@angular/http";
-import {StatusService} from ".././services/status.service";
-import {PostService} from ".././services/post.service"
+import {Http} from '@angular/http';
+import {StatusService} from '.././services/status.service';
+import {PostService} from '.././services/post.service'
+import { WindowRefService } from '.././services/window-ref.service';
 
 @Component({
   selector: 'SportSocial-blog-footer',
@@ -25,6 +26,7 @@ export class BlogFooterComponent implements OnInit {
     private sendEmail:PostService,
     private renderer: Renderer2,
     private status:StatusService,
+    private winRef: WindowRefService
   ) { }
 
   ngOnInit() {
@@ -36,17 +38,17 @@ export class BlogFooterComponent implements OnInit {
       .subscribe(
         res=>{
           //console.log(res.Status)
-          if(res.Status=="Success"){
+          if(res.Status=='Success'){
             this.showSubscriptionBox=true;
             //console.log(this.showSubscriptionBox)
-            this.subscriber.nativeElement.value=""
+            this.subscriber.nativeElement.value=''
             this.errorMessage=false;
           }
         }
       )
     }
     else{
-      this.subscriber.nativeElement.value=""
+      this.subscriber.nativeElement.value=''
       this.errorMessage=true
     }
   }
@@ -55,7 +57,7 @@ export class BlogFooterComponent implements OnInit {
     //console.log(this.showSubscriptionBox)
    }
    setMobileView(){
-     if(window.innerWidth<850){
+     if(this.winRef.nativeWindow.innerWidth<850){
        this.renderer.setStyle(this.copyright.nativeElement, 'width', '100%');
       this.renderer.setStyle(this.followUs.nativeElement, 'width', '100%');
       this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'center');

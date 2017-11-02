@@ -29,8 +29,8 @@ export class LoginPageComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/'
   }
   @HostListener('document:keypress', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent){
-    if(event.code=="Enter"){
+  handleKeyboardEvent(event){
+    if(event.code==="Enter"){
       this.checkLogin()
     }
   }

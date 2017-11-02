@@ -7,8 +7,10 @@ import {
   Renderer2,
   NgZone
 } from '@angular/core';
-import {PropertyService} from "../../services/property.service";
-import {PostService} from "../../services/post.service";
+import {PropertyService} from '../../services/property.service';
+import {PostService} from '../../services/post.service';
+
+import { WindowRefService } from '../../services/window-ref.service';
 
 @Component({
   selector: 'SportSocial-normal-blog',
@@ -16,7 +18,7 @@ import {PostService} from "../../services/post.service";
   styleUrls: ['./normal-blog.component.css']
 })
 export class NormalBlogComponent implements OnInit {
-  
+
   @Input()  blogId:string
   @Input()  blogImage:string
   @Input()  bloggerImage:string
@@ -29,7 +31,7 @@ export class NormalBlogComponent implements OnInit {
   @Input()  keywords:string[]
   @Input()  exactDate:string
   @Input()  readingTime:string
-  
+
   content:string;
   blog:{
     blogId:string,
@@ -57,11 +59,12 @@ export class NormalBlogComponent implements OnInit {
     private Send: PropertyService,
     private renderer:Renderer2,
     private post:PostService,
-    private zone:NgZone
+    private zone:NgZone,
+    private winRef: WindowRefService
   ) { }
 
-  ngOnInit() {  
-    this.content=this.Content.replace(/<br>/g,'').replace(/<b>/g,'').replace(/<\/b>/g,'').replace(/<i>/g,'').replace(/<\/i>/g,'')
+  ngOnInit() {
+    this.content = this.strip(this.Content);
    this.blog={
     blogId:this.blogId,
     blogImage:this.blogImage,
@@ -73,102 +76,105 @@ export class NormalBlogComponent implements OnInit {
     ViewCount:this.ViewCount,
     ShareCount:this.ShareCount,
     keywords:this.keywords,
-    exactDate:this.exactDate,
-    readingTime:this.readingTime
+    exactDate: this.exactDate,
+    readingTime: this.readingTime
   }
    this.setVariableFont()
-   if(this.blogImage){
-    this.dataRecieved=true
+   if (this.blogImage) {
+    this.dataRecieved = true;
    }
    //console.log(this.blogTitle)
 
   }
-  
-  ngAfterViewInit(){
-    if(this.blogImage){
-      this.dataRecieved=true
+
+  strip(html) {
+     const tmp = document.createElement('DIV');
+     tmp.innerHTML = html;
+     return tmp.textContent || tmp.innerText || '';
+  }
+
+  ngAfterViewInit() {
+    if (this.blogImage) {
+      this.dataRecieved = true;
     }
   }
-  
-  reloadPage() { 
+
+  reloadPage() {
     this.zone.runOutsideAngular(() => {
         location.reload();
     });
   }
-  
+
 
   setVariableFont(){
-    if(window.innerWidth>1200){
+    if(this.winRef.nativeWindow.innerWidth>1200){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em')
     }
-    if(window.innerWidth>1100 && window.innerWidth<1200){
+    if(this.winRef.nativeWindow.innerWidth>1100 && this.winRef.nativeWindow.innerWidth<1200){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
     }
-    if(window.innerWidth<1100 && window.innerWidth>1000){
+    if(this.winRef.nativeWindow.innerWidth<1100 && this.winRef.nativeWindow.innerWidth>1000){
      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
     }
-    if(window.innerWidth<1000 && window.innerWidth>950){
+    if(this.winRef.nativeWindow.innerWidth<1000 && this.winRef.nativeWindow.innerWidth>950){
      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.15em')
     }
-    if(window.innerWidth>700 && window.innerWidth<950){
+    if(this.winRef.nativeWindow.innerWidth>700 && this.winRef.nativeWindow.innerWidth<950){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.25em')
      }
-     if(window.innerWidth>600 && window.innerWidth<700){
+     if(this.winRef.nativeWindow.innerWidth>600 && this.winRef.nativeWindow.innerWidth<700){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.1em')
      }
-     if(window.innerWidth>600 && window.innerWidth<500){
+     if(this.winRef.nativeWindow.innerWidth>600 && this.winRef.nativeWindow.innerWidth<500){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em')
      }
-     if(window.innerWidth>500 && window.innerWidth<600){
+     if(this.winRef.nativeWindow.innerWidth>500 && this.winRef.nativeWindow.innerWidth<600){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
      }
-     if(window.innerWidth>320 && window.innerWidth<400){
+     if(this.winRef.nativeWindow.innerWidth>320 && this.winRef.nativeWindow.innerWidth<400){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.1em')
      }
-     if(window.innerWidth<320){
+     if(this.winRef.nativeWindow.innerWidth<320){
       this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','0.9em')
      }
   }
   setHeightOfTitle(){
-    
-    let heightofBlog=this.Blog.nativeElement.getBoundingClientRect().height
 
-    let heightofHolder=this.holder.nativeElement.getBoundingClientRect().height
-    
-    let heightofFooter=heightofBlog-heightofHolder
+    const heightofBlog = this.Blog.nativeElement.getBoundingClientRect().height;
 
-    let heightofFirstChild=this.footer.nativeElement.children[0].offsetHeight
+    const heightofHolder = this.holder.nativeElement.getBoundingClientRect().height;
 
-    let heightofThirdChild=this.footer.nativeElement.children[2].offsetHeight
+    const heightofFooter = heightofBlog - heightofHolder;
 
-    let heightOfTitle = heightofFooter-heightofFirstChild-heightofThirdChild-18
+    const heightofFirstChild=this.footer.nativeElement.children[0].offsetHeight
+
+    const heightofThirdChild=this.footer.nativeElement.children[2].offsetHeight
+
+    const heightOfTitle = heightofFooter-heightofFirstChild-heightofThirdChild-18
 
     this.renderer.setStyle(this.blogTitle.nativeElement,'height',heightOfTitle+'px')
 
-    let topMargin=(heightofFooter-heightofFirstChild-heightOfTitle-heightofThirdChild)/2
+    const topMargin=(heightofFooter-heightofFirstChild-heightOfTitle-heightofThirdChild)/2;
 
-    //this.renderer.setStyle(this.blogTitle.nativeElement,'margin-top',topMargin+"px")
-    //console.log(this.blog.heading,heightofFooter,heightofFirstChild,heightOfTitle,heightofThirdChild,this.blog.heading.length)
-   
   }
   send(){
     this.Send.detailsofBlog.next(this.blog)
-    window.scrollTo(0,0)
+    this.winRef.nativeWindow.scrollTo(0,0);
   }
-  
-  
+
+
   setDefault(event){
-    this.blogImage="/assets/images/default-image.png"
+    this.blogImage='/assets/images/default-image.png'
   }
-  
-  
+
+
   removeInitialImage(){
     this.isloading=false;
   }
-  
-  
+
+
   @HostListener('window:resize',[])onresize(){
-    this.setVariableFont()
+    this.setVariableFont();
   }
 
 }

@@ -11,6 +11,8 @@ import {
 import {PropertyService} from "../../services/property.service";
 import {PostService} from "../../services/post.service";
 
+import { WindowRefService } from '../../services/window-ref.service';
+
 @Component({
   selector: 'SportSocial-latest-blog',
   templateUrl: './latest-blog.component.html',
@@ -61,6 +63,7 @@ export class LatestBlogComponent implements OnInit {
     private Send: PropertyService,
     private renderer:Renderer2,
     private post: PostService,
+    private winRef: WindowRefService
   ) { }
 
   ngOnInit() {
@@ -113,7 +116,7 @@ export class LatestBlogComponent implements OnInit {
     this.openFullImage=false;
   }
   heightOfInitialImage(){
-    if(window.innerWidth<=600){
+    if(this.winRef.nativeWindow.innerWidth<=600){
       let width=this.initialImage.nativeElement.getBoundingClientRect().width
       let height=.72*width
       this.renderer.setStyle(this.initialImage.nativeElement,'height',height+ 'px')
@@ -125,33 +128,33 @@ export class LatestBlogComponent implements OnInit {
   }
 
   responsiveDesign(){
-    if(window.innerWidth>=1000){
+    if(this.winRef.nativeWindow.innerWidth >= 1000) {
       this.renderer.setStyle(this.DescChild.nativeElement,'margin','8% auto')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','2.2em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
      }
-     if(window.innerWidth>800 && window.innerWidth<1000){
+     if(this.winRef.nativeWindow.innerWidth>800 && this.winRef.nativeWindow.innerWidth<1000){
       this.renderer.setStyle(this.DescChild.nativeElement,'margin','8% auto')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.8em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.2em')
     }
-    if(window.innerWidth<800 && window.innerWidth>=600){
+    if (this.winRef.nativeWindow.innerWidth<800 && this.winRef.nativeWindow.innerWidth>=600){
       this.renderer.setStyle(this.DescChild.nativeElement,'margin','4% auto')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1.1em')
     }
-    if(window.innerWidth<600 && window.innerWidth>400 ){
+    if (this.winRef.nativeWindow.innerWidth<600 && this.winRef.nativeWindow.innerWidth>400 ){
       this.renderer.setStyle(this.DescChild.nativeElement,'margin','15% auto')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.4em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
       //this.renderer.setStyle(this.Desc.nativeElement,' background','rgba(0, 0, 0, 0.5)')
     }
-    if(window.innerWidth<400 && window.innerWidth>340){
+    if(this.winRef.nativeWindow.innerWidth<400 && this.winRef.nativeWindow.innerWidth>340){
       this.renderer.setStyle(this.DescChild.nativeElement,'margin','15% auto')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.3em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')
     }
-    if(window.innerWidth<340){
+    if(this.winRef.nativeWindow.innerWidth<340){
       this.renderer.setStyle(this.DescChild.nativeElement,'margin','15% auto')
       this.renderer.setStyle(this.latestTitle.nativeElement,'font-size','1.2em')
       this.renderer.setStyle(this.latestDesc.nativeElement,'font-size','1em')

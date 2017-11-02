@@ -207,6 +207,35 @@ input{
       width: 60%;
       margin: auto
   }
+  .searchResult{
+      z-index: 50;
+      background-color: #ffffff;
+      display: block;
+      border-radius: 5px;
+      position: absolute;
+      box-shadow: 1px 1px 4px #ffffff;
+      padding: 4px;
+      padding-top:0px !important;
+  }
+  .searchResult> li{
+      display: block;
+      
+      text-align: center;
+      border-bottom: 1px solid #e5e5e5;
+      font-size: 1.2em;
+     
+  }
+   .searchResult a{
+       padding: 5px;
+       display: block;
+       width:100%;
+       color: black;
+   }
+  .searchResult a:hover {
+    background-color: #024771;
+    color: #ffffff;
+    font-weight: 500;
+  }
 
   @media (max-width:750px) and (min-width:600px){
       .left{

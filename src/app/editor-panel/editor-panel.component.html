@@ -1,59 +1,204 @@
-<div class="container" #form>
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form  #f="ngForm">
-        <div id="blog-data" ngModelGroup="blogData" #userData="ngModelGroup">
-          <div class="form-group">
-            <label for="username">Name</label>
-            <input type="text" id="username" class="form-control" ngModel name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="bloggerImage">Blogger Image</label>
-            <input type="file" id="bloggerImage" class="form-control" ngModel name="bloggerImage" #bloggerImage>
-            <div class="imgTest"></div>
-          </div>
-          <div class="form-group">
-            <label for="date">Date </label>
-            <input type="date" id="datetime" class="form-control" ngModel name="date" required>
-          </div>
-          <div class="form-group">
-            <label for="Title">Title</label>
-            <input type="text" id="title" class="form-control" ngModel name="Title" required>
-          </div>
-          <div class="form-group">
-            <label for="keywords">Keywords</label>
-            <input type="text" id="keywords" class="form-control" ngModel name="keywords" required>
-          </div>
-          <div class="form-group">
-            <label for="blogImage">Blog Image</label>
-            <input type="file" id="blogImage" class="form-control" ngModel name="blogMainImage" #blogImage>
-            <div class="imgTest"></div>
-          </div>
-          <div class="form-group">
-            <label for="desc">Desc  </label>
-            <textarea rows="50" id="desc" class="form-control" ngModel name="desc" required  #desc>
-            </textarea>
-          </div>
-        </div>
-
-        <button class="btn btn-primary" (click)="upload()" [disabled]="isDisabled" >Upload</button>
-        <button class="btn btn-primary" (click)="preview()">Preview</button>
-      </form>
+<div class="editorPanel" #editorPanel>
+  <div class="toolbar">
+    <div>
+      <img src="/assets/images/sports-social-undo.png"  title="undo" role="button" alt="" (click)="undo($event)" class="not-selected" >
+      
+      <img src="/assets/images/sports-social-redo.png" title="redo"  role="button" alt="" (click)="redo($event)" class="not-selected" >
+      
+      <img src="/assets/images/sports-social-bold.png" title="Bold" role="button" alt="" (click)="bold($event)" class="not-selected" >
+      
+      <img src="/assets/images/sports-social-italic.png" title="Italic" role="button" alt="" (click)="italic($event)" class="not-selected">
+      
+      <img src="/assets/images/sports-social-align-left.png" title="left-align"  role="button" alt="" (click)="leftAlign($event)" class="not-selected">
+      
+      <img src="/assets/images/sports-social-align-center.png" title="center-align" role="button" alt="" (click)="centerAlign($event)" class="not-selected">
+      
+      <img src="/assets/images/sports-social-align-right.png" title="right-align"  role="button" alt="" (click)="rightAlign($event)" class="not-selected">
+      
+      <img src="/assets/images/sports-social-text-justify.png" title="justify"  role="button" alt="" (click)="justify($event)" class="not-selected">
+      
+      <img src="/assets/images/sports-social-underline.png" title="underline" role="button" alt="" (click)="underline($event)" class="not-selected">
+      
+      <img src="/assets/images/sports-social-list-with-dots.png" title="List with dosts" role="button" alt="" (click)="listWithDots($event)" class="not-selected" >
+      
+      <img src="/assets/images/sports-social-list-with-numbers.png" title="List with number" role="button" alt="" (click)="listWithNumbers($event)" class="not-selected" >
+      
+      <label class="file">
+          <img src="/assets/images/sports-social-text-color.png" title="Text Color" role="button" alt="" >
+          <input type="color" name="textcolor" id="textcolor"  (change)="selectTextColor($event)">
+      </label>
+      
+      <label class="file">
+          <img src="/assets/images/sports-social-background-color.png" title="Background Color" role="button" alt=""  multiple>
+          <input type="color" name="bcolor" id="bcolor"  (change)="selectBackgroundColor($event)">
+      </label>
+      
+      <select (change)="selectFontSize($event)" [value]=20>
+          <option *ngFor="let i of fontSize" [value]="i" >{{i}}</option>
+      </select>
+    </div>  
+    
+    <div>
+      
+      <label class="file">
+        <img src="/assets/images/sports-social-indent.png" title="indent" role="button" alt="" (click)="indent($event)" class="not-selected" >
+      </label>
+      
+      <label class="file">
+        <img src="/assets/images/sports-social-outdent.png" title=" outdent" role="button" alt="" (click)="outdent($event)" class="not-selected" >
+      </label>
+      
+      <label class="file">
+         <img src="/assets/images/sports-social-paragraph.png" title="Paragraph" role="button" alt="" (click)="addParagraph($event)" class="not-selected" >
+       </label>
+      
+      <label class="file">
+        <img src="/assets/images/sports-social-picture.png" title="Add Image" role="button" alt=""  class="not-selected" >
+        <input type="file" name="image" id="image" accept="image/jpeg, image/png" (change)="selectImage($event)">
+      </label>
+      
+     <!--  <label class="file">
+          <img src="/assets/images/sports-social-frame-plugin.png" role="button" class="not-selected" alt="" (click)="addPlugin($event)"  >
+      </label> -->
+      
+      <label class="file">
+        <img src="/assets/images/sports-social-youtube-video.png" title="Add Youtube Video" role="button" class="not-selected"  (click)="addYoutubevideo()">
+      </label>
+      
+      <label class="file">
+          <img src="/assets/images/sports-social-gif.png" title="Add Gif" role="button" class="not-selected" alt=""  multiple>
+          <input type="file" name="video" id="video" accept="image/gif image/webp"  (change)="selectGif($event)">
+      </label>
+      
+      <label class="file">
+          <img src="/assets/images/sports-social-link.png" title="Add Link" role="button" alt="" class="not-selected" (click)="addLink($event)">
+      </label>
+      
+     <!--  <label class="file">
+        <img src="/assets/images/sports-social-unlink.png" role="button" alt="" class="not-selected" (click)="unLink()">
+      </label> -->
+      
+     <!--  <label class="file">
+          <img src="/assets/images/sports-social-music.png" role="button" alt="" class="not-selected" multiple>
+          <input type="file" name="music" id="music" accept="audio/*" (change)="selectMusic($event)">
+      </label> -->
+      
+      <label class="file">
+        <img src="/assets/images/sports-social-remove-css.png" title="Remove Style" role="button" alt="" (click)="removeCss($event)" class="not-selected" >
+      </label>
+      
+      <label class="file">
+        <img src="/assets/images/sports-social-subscript.png" title="Subscript"  role="button" alt="" (click)="subscript($event)" class="not-selected" >
+      </label>
+      
+      <label class="file">
+        <img src="/assets/images/sports-social-superscript.png" title="Superscript" role="button" alt="" (click)="superscript($event)" class="not-selected" >
+      </label>
+      <label class="file">
+        <img src="/assets/images/sports-social-quote.png" title="Quote" role="button" alt="" (click)="addQuote($event)" class="not-selected" >
+      </label>
     </div>
-  </div>
-  <hr>
+    </div>
+    <div class="panel-wrapper">
+        <div class="panel" #panel> 
+            <label class="file blog">
+                <ng-container  *ngIf="!blogimageLoaded">
+                    <img src="/assets/images/sports-social-temp-blog-image.jpg" role="button" class="dummyBlogImage">
+                </ng-container >
+                <ng-container  *ngIf="blogimageLoaded">
+                    <img src="{{blogimageSrc}}"  role="button" class="BlogImage">
+                </ng-container >                
+                <input type="file" name="blogImage"  id="blogImage" accept="image/*" (change)="selectBlogImage($event)">
+            </label>   
+            <div contenteditable="true" class="title"  placeholder="Hii Buddy, Your Title Goes Here" #title></div>
+            <div class="blogger">
+                <label class="file">
+                    <img src="/assets/images/sports-social-user.png" role="button" class="dummy" *ngIf="!bloggerimageLoaded">
+                    <img src="{{bloggerimageSrc}}" *ngIf="bloggerimageLoaded" role="button" class="BloggerImage">
+                    <input type="file" name="bloggerImage" id="bloggerImage" accept="image/*" (change)="selectBloggerImage($event)">
+                </label>
+            <div contenteditable="true" class="bloggerName"  placeholder="What's your name??"></div>
+            </div>
+            <div class="keywords" >
+                <img src="/assets/images/sports-social-tags.png" (click)="openAddKeywordPopup()" role="button" class="not-selected">
+                <p contenteditable="true" placeholder="Click on tag button to add Keywords" *ngIf="!keywordAdded"></p>
+                <p *ngIf="keywordAdded" >
+                    <span *ngFor="let key of keywordArray;let i=index" class="key"> 
+                        {{key}}
+                        <img src="/assets/images/sports-social-delete-keyword.png" role="button" (click)="deleteKeyword(i)">
+                    </span>
+                </p>
+            </div>
+            <div class="descAbove" *ngIf="!Keypress">Below the Line you will write the Content of Blog. You can also add Images,Youtube Video,Links</div> 
+            <div contenteditable="true" class="desc" (keyup)="startDesc()" #desc></div> 
+        </div>
+        <button class="panelButton" (click)="upload()" >Upload </button>
+        <button class="panelButton" (click)="preview()" >Preview </button>
+    </div>
 </div>
 
-<div class="preview"  *ngIf="Preview" >
-  <img class="cancel" role="button" (click)="closePreview()" src="/assets/images/sports-social-cancel-black.png" alt="">
-  <!-- <div class="blogImage">
-    <img  alt="" [src]="previewBlogImage">
-  </div> -->
-  <p class="title" [innerHtml]="blog.blogTitle"></p>
-  <div class="blogger">
-    <!-- <img class="bloggerImage"  alt="" [src]="previewBloggerImage"> -->
-    <span class="bloggerName">{{blog.bloggerName}}</span>
-  </div>
-  <p class="desc"  [innerHtml]="blog.blogDesc"></p>
-  <p class="tags" >{{blog.keywords}}</p>
+<div class="linkPopup" role="dialog" #linkpopup>
+    <p class="confirm">Please Click on tick to Confirm</p>
+    <label for="URL">Url</label>
+    <input type="url" name="URl" id="url" class="form-control" (click)="test()"  #url>
+    <label for="text">Text</label>
+    <input type="text" name="text" id="text" class="form-control" #text>
+    <div class="tick">
+        <img src="/assets/images/sports-social-confirmation.png" role="button" class="not-selected" (click)="restoreCaret()">
+    </div>
+    <div class="button">
+        <button (click)="linkOk($event)">Ok</button>
+        <button (click)="linkCancel()">Cancel</button>
+    </div>
+</div>
+
+<div class="linkPopup" role="dialog" #youtubeLinkPopup>
+    <p class="confirm">Please Click on tick to Confirm</p>
+    <label for="URL">Url</label>
+    <input type="url" name="URl" id="url" class="form-control" #YoutubeUrl>
+    <div class="tick">
+        <img src="/assets/images/sports-social-confirmation.png" role="button" class="not-selected" (click)="restoreCaret()">
+    </div>
+    <div class="button">
+        <button (click)="youtubeLinkOk($event)">Ok</button>
+        <button (click)="youtubeLinkCancel()">Cancel</button>
+    </div>
+</div>
+
+
+<div class="keywordPopup" *ngIf="isKeywordButtonClicked" >
+    <label >Add Keywords:</label>
+    <div contenteditable="true" class="keyword" placeholder="Separate keywords by Comma" #keys>{{Keys}}</div>
+    <div class="button">
+        <button  (click)="addKeywords()">Add</button>
+        <button (click)="addKeywordsCancel()">Cancel</button>
+    </div>
+</div>
+
+<div class="preview" *ngIf="Preview">
+    <img src="/assets/images/sports-social-cancel-black.png" class="close" role="button" (click)="closePreview()">
+    <p  class="previewCatagory">
+        <span >{{blogPreview.keywords[0]}}</span>
+        <span >|</span>
+        <span>{{blogPreview.readingTime}}</span>
+    </p>
+    <div class="previewBlogImageHolder">
+        <img class="previewBlogImage" alt="blogImage" src="{{blogPreview.blogImage}}"  >
+    </div>
+    <div class="previewBlogInfo">
+        <p  [innerHtml]="blogPreview.heading" class="previewHeading"></p>
+        <div class="previewBloggerImageHolder">
+          <img class="previewBloggerImage"  src="{{blogPreview.bloggerImage}}" >
+        </div>
+        <div class="previewBlogger">
+          <p  class="previewBloggerName">Written by <span > {{blogPreview.bloggerName}}</span></p>  
+        </div>
+        <p [innerHtml]="blogPreview.content" class="prviewBlogContent"></p>
+        <div class="previewTags">
+          <div class="previewTagIconHolder">
+            <img src="/assets/images/sports-social-tag.png" alt="sports-social-tag">
+          </div>
+          <span *ngFor="let key of blogPreview.keywords;let i=index">{{key}}</span>
+        </div>
+    </div>   
 </div>
