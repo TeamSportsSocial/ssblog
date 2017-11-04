@@ -109,6 +109,15 @@ select,option{
     padding: 1% 1% 1% 0%;
    
 }
+.imageDesc, .shortDesc{
+    cursor: text;
+    padding: 1% 1% 1% 0%;
+    font-size:1.2em; 
+}
+.charCount{
+    text-align: right;
+    color: black;
+}
 .descAbove{
     opacity: 0.5;
     font-size: 1.5em;
@@ -214,7 +223,7 @@ select,option{
 }
 .panelButton:disabled{
     cursor: not-allowed;
-    background-color: #ffa60023;
+    background-color: #ffa60054;
 }
 .preview{
     padding: 2%;
@@ -257,6 +266,12 @@ select,option{
     font-size: 1.8em;
     font-weight: 700;
     color: black;
+    margin-bottom: 2%;
+}
+.previewBlogShortDesc{
+    font-size: 1.2em;
+    color: black;
+    text-align: left;
 }
 .previewBloggerImageHolder{
     width: 50px;

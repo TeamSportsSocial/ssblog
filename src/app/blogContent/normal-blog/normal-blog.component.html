@@ -3,13 +3,13 @@
     <a routerLink="/{{keywords[0]}}/{{heading}}/{{blogId}}" (click)="send()">
         <div class="blogImageHolder" #holder>
           <img #initialImage src="/assets/images/default-image.png" alt="InitialblogImage" *ngIf="isloading">
-          <img src="{{blogImage}}" (load)="removeInitialImage()"  (error)="setDefault()" alt="blogImage"  *ngIf="dataRecieved" >
+          <img src="{{blogImage}}" title="{{ImageDesc}}" (load)="removeInitialImage()"  (error)="setDefault()" alt="blogImage"  *ngIf="dataRecieved" >
         </div>
         <div class="blogFooter" #footer>
           <p>
             <span>{{insertedDate}}</span>
             <span>|</span>
-            <span>{{readingTime}}</span>
+            <span>{{keywords[0]}}</span>
             <span>
               <img src="/assets/images/sports-social-view-orange.png" alt="sports-social-view-orange" >
               {{ViewCount}}

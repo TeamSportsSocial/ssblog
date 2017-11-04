@@ -34,6 +34,8 @@ export class LatestBlogComponent implements OnInit {
   @Input()  keywords:string[]
   @Input()  exactDate:string
   @Input()  readingTime:string;
+  @Input()  MetaDesc: string;
+  @Input()  ImageDesc: string
   
   blog:{
     blogId:string;
@@ -47,7 +49,9 @@ export class LatestBlogComponent implements OnInit {
     ShareCount:string,
     keywords:string[],
     exactDate:string,
-    readingTime:string
+    readingTime:string,
+    MetaDesc: string,
+    ImageDesc: string
   }
   
   isloading:boolean=true;
@@ -80,7 +84,9 @@ export class LatestBlogComponent implements OnInit {
       ShareCount:this.ShareCount,
       keywords:this.keywords,
       exactDate:this.exactDate,
-      readingTime:this.readingTime
+      readingTime:this.readingTime,
+      MetaDesc: this.MetaDesc,
+      ImageDesc: this.ImageDesc
      }
      this.responsiveDesign()
     if(this.blogImage){

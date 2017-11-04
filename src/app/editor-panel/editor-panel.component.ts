@@ -24,6 +24,11 @@ export class EditorPanelComponent implements OnInit {
   fontSize = [];
   @ViewChild('title') title;
   @ViewChild('desc') desc;
+  @ViewChild('BlogImage') BlogImage;
+  @ViewChild('BloggerImage') BloggerImage;
+  @ViewChild('blogImageDesc') blogImageDesc;
+  @ViewChild('shortDesc') shortDesc;
+  @ViewChild('BloggerName') BloggerName;
   @ViewChild('url') URL;
   @ViewChild('YoutubeUrl') youtubeURL;
   @ViewChild('PluginUrl') pluginURL;
@@ -34,6 +39,8 @@ export class EditorPanelComponent implements OnInit {
   @ViewChild('linkpopup') linkpopup;
   @ViewChild('youtubeLinkPopup') youtubeLinkPopup;
   @ViewChild('pluginLinkPopup') pluginLinkPopup;
+  @ViewChild('panelButton') panelButton;
+ 
   blogimageSrc;
   bloggerimageSrc;
   imageSrc;
@@ -79,11 +86,14 @@ export class EditorPanelComponent implements OnInit {
   imageName = [];
   isDisabled:boolean = false;
   Preview:boolean = false;
+  charCount = 0;
   blog: {
     bloggerName: any,
     blogTitle: any,
     blogDesc: any,
-    keywords: any
+    keywords: any,
+    metaDesc: any,
+    imageDesc: any
 };
 blogPreview: {
   bloggerName: any,
@@ -92,7 +102,9 @@ blogPreview: {
   keywords: string[],
   blogImage: any,
   bloggerImage: any,
-  readingTime: any
+  readingTime: any,
+  metaDesc: any,
+  imageDesc: any
 };
 constructor(
   private http: Http,
@@ -126,8 +138,14 @@ startDesc() {
     this.Keypress = false;
   }
 }
-@HostListener('mousedown', ['$event'])onmousedown(event){
-
+calCharCount() {
+  this.charCount = this.shortDesc.nativeElement.innerText.length;
+  console.log( this.charCount)
+  if (this.charCount >= 139){
+    this.shortDesc.nativeElement.blur();
+  }else {
+    this.shortDesc.nativeElement.focus();
+  }
 }
 @HostListener('keyup', ['$event'])onkeyup(event) {
   this.initialActiveElement = {
@@ -357,6 +375,7 @@ _handleReaderLoaded(event) {
   const reader = event.target;
   this.imageSrc = reader.result;
   console.log(this.imageSrc);
+  //document.execCommand('insertImage', false, this.imageSrc);
   document.execCommand('insertHTML', false, `<div style="max-width:100%;height:auto;" ><img style="max-width:100%;max-height:100%;" src="`
   + this.imageSrc + `"></div>`);
 }
@@ -436,6 +455,8 @@ makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
       formData.append('blogrTitle', this.blog.blogTitle);
       formData.append('blogDesc', this.blog.blogDesc);
       formData.append('keywords', this.blog.keywords);
+      formData.append('metaDesc', this.blog.metaDesc);
+      formData.append('imageDesc', this.blog.imageDesc);
       xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
               if (xhr.status === 200) {
@@ -450,24 +471,26 @@ makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
   });
 }
 upload() {
-  console.log(this.panel);
-  this.blogImage = this.panel.nativeElement.children[0].children[1].files[0];
-  this.bloggerImage = this.panel.nativeElement.children[2].children[0].children[1].files[0];
+ // console.log(this.BlogImage,this.BloggerImage,this.BloggerName,this.title,this.desc,this.shortDesc,this.blogImageDesc);
+  this.blogImage = this.BlogImage.nativeElement.files[0];
+  this.bloggerImage = this.BloggerImage.nativeElement.files[0];
   this.files = [ this.blogImage, this.bloggerImage];
   console.log(this.files);
   this.isDisabled = true;
   this.blog = {
-    bloggerName: this.panel.nativeElement.children[2].children[1].innerText,
-    blogTitle: this.panel.nativeElement.children[1].innerText,
-    blogDesc: this.panel.nativeElement.children[4].innerHTML,
-    keywords: this.Keys
+    bloggerName: this.BloggerName.nativeElement.innerText,
+    blogTitle: this.title.nativeElement.innerText,
+    blogDesc: this.desc.nativeElement.innerHTML,
+    keywords: this.Keys,
+    metaDesc: this.shortDesc.nativeElement.innerText,
+    imageDesc: this.blogImageDesc.nativeElement.innerText
   };
   console.log(this.blog);
   this.imageName = ['blogImage', 'bloggerImage'];
   for (let i = 0 ; i < this.files.length; i++ ) {
     this.filesToUpload.push(<File> this.files[i]);
   }
-  this.makeFileRequest('https://test.sportsocial.in/poc/saveNewBlog', [], this.filesToUpload)
+  this.makeFileRequest('https://admin.chaseyoursport.com/blog/saveNewBlog', [], this.filesToUpload)
   .then((result) => {
     this.Result = result;
     console.log(result);
@@ -483,22 +506,35 @@ upload() {
 
 
  }
+ strip(html) {
+  const tmp = document.createElement('DIV');
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || '';
+ }
+ timeToRead(s: string) {
+  const words = s.split(' ');
+  const time = Math.round(words.length / 180);
+  if (time > 1) {
+    return time + ' min read';
+  }else {
+    return '2 min read';
+  }
+}
+
  preview() {
   this.Preview = true;
-  console.log(this.panel);
-  this.blogImage = this.panel.nativeElement.children[0].children[1].files[0];
-  this.bloggerImage = this.panel.nativeElement.children[2].children[0].children[1].files[0];
-  this.files = [this.blogImage, this.bloggerImage];
+  const Content = this.desc.nativeElement.innerHTML;
   console.log(this.files);
-  this.isDisabled = true;
   this.blogPreview = {
-    bloggerName: this.panel.nativeElement.children[2].children[1].innerText,
-    heading: this.panel.nativeElement.children[1].innerText,
-    content: this.sanitizer.bypassSecurityTrustHtml( this.panel.nativeElement.children[4].innerHTML),
+    bloggerName: this.BloggerName.nativeElement.innerText,
+    heading: this.title.nativeElement.innerText,
+    content: this.sanitizer.bypassSecurityTrustHtml( this.desc.nativeElement.innerHTML),
     keywords: this.keywordArray,
     blogImage: this.blogimageSrc,
     bloggerImage: this.bloggerimageSrc,
-    readingTime: '2 min read '
+    readingTime: this.timeToRead(this.strip(Content)),
+    metaDesc: this.shortDesc.nativeElement.innerText,
+    imageDesc: this.blogImageDesc.nativeElement.innerText
   };
   console.log(this.blogPreview);
  }

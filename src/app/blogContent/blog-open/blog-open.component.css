@@ -45,6 +45,11 @@
     color: black;
     margin-bottom: 1%
 }
+.shortDesc{
+    font-size: 1.1em;
+    color: #888888;
+    text-align: left
+}
 .facebook{
     width:20px;
     height: 20px;

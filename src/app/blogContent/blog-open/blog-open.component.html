@@ -17,7 +17,8 @@
     <img 
       class="blogImage"  
       alt="InitialblogImage" 
-      src="/assets/images/default-image.png"  
+      src="/assets/images/default-image.png" 
+      title="{{blog.ImageDesc}}" 
       *ngIf="loading" 
       (click)="openfullImage()" 
       role="button">
@@ -28,6 +29,7 @@
     
     <div class="blogInfo" #BlogInfo>
       <p *ngIf="blog" [innerHtml]="blog.heading"class="title"></p>
+      <p class="shortDesc">{{blog.MetaDesc}}</p>
       <div class="bloggerImage">
         <img *ngIf="blog" src="{{blog.bloggerImage}}"  (error)="setDefault()" >
       </div>
@@ -129,5 +131,5 @@
    
  </div>
  <div class="fullImageHolder" *ngIf="openFullImage" #fullImage>
-   <img src="{{blog.blogImage}}" (load)="onFullImageload()">
+   <img src="{{blog.blogImage}}" title="{{blog.ImageDesc}}" (load)="onFullImageload()">
  </div>

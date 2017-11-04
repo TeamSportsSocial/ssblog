@@ -105,7 +105,7 @@ export const AppServerModuleNgFactory:i0.NgModuleFactory<i1.AppServerModule> = i
               i24.StatusService,i24.StatusService,([] as any[])),i0.ɵmpd(4608,i25.PostService,
               i25.PostService,[i11.Http]),i0.ɵmpd(4608,i26.AuthService,i26.AuthService,
               ([] as any[])),i0.ɵmpd(4608,i27.AuthGuard,i27.AuthGuard,[i26.AuthService,
-              i20.Router]),i0.ɵmpd(4608,i28.FacebookService,i28.FacebookService,([] as any[])),
+              i20.Router]),i0.ɵmpd(4608,i28.FacebookService,i28.FacebookService,[i0.PLATFORM_ID]),
           i0.ɵmpd(4608,i29.WindowRefService,i29.WindowRefService,([] as any[])),i0.ɵmpd(512,
               i11.HttpModule,i11.HttpModule,([] as any[])),i0.ɵmpd(512,i13.HttpClientXsrfModule,
               i13.HttpClientXsrfModule,([] as any[])),i0.ɵmpd(512,i13.HttpClientModule,

@@ -49,8 +49,8 @@ function View_BlogsComponent_2(_l) {
                 'blogImage'], bloggerName: [2, 'bloggerName'], bloggerImage: [3, 'bloggerImage'],
             heading: [4, 'heading'], Content: [5, 'Content'], insertedDate: [6, 'insertedDate'],
             ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
-            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'] }, null),
-        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
+            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12,
+                'MetaDesc'], ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerName;
@@ -63,8 +63,10 @@ function View_BlogsComponent_2(_l) {
         var currVal_9 = _v.context.$implicit.keywords;
         var currVal_10 = _v.context.$implicit.exactDate;
         var currVal_11 = _v.context.$implicit.readingTime;
+        var currVal_12 = _v.context.$implicit.MetaDesc;
+        var currVal_13 = _v.context.$implicit.ImageDesc;
         _ck(_v, 3, 1, [currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6,
-            currVal_7, currVal_8, currVal_9, currVal_10, currVal_11]);
+            currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13]);
     }, null);
 }
 function View_BlogsComponent_3(_l) {
@@ -83,8 +85,8 @@ function View_BlogsComponent_3(_l) {
                 'blogImage'], bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'],
             heading: [4, 'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'],
             ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
-            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'] }, null),
-        (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵted(null, ['\n        ']))], function (_ck, _v) {
+            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12,
+                'MetaDesc'], ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵted(null, ['\n        ']))], function (_ck, _v) {
         var currVal_0 = _ck(_v, 2, 0, (_v.context.index != 2), (_v.context.index === 2));
         _ck(_v, 1, 0, currVal_0);
         var currVal_1 = _v.context.$implicit.blogId;
@@ -99,8 +101,10 @@ function View_BlogsComponent_3(_l) {
         var currVal_10 = _v.context.$implicit.keywords;
         var currVal_11 = _v.context.$implicit.exactDate;
         var currVal_12 = _v.context.$implicit.readingTime;
+        var currVal_13 = _v.context.$implicit.MetaDesc;
+        var currVal_14 = _v.context.$implicit.ImageDesc;
         _ck(_v, 5, 1, [currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7,
-            currVal_8, currVal_9, currVal_10, currVal_11, currVal_12]);
+            currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13, currVal_14]);
     }, null);
 }
 function View_BlogsComponent_4(_l) {
@@ -136,8 +140,8 @@ function View_BlogsComponent_5(_l) {
                 'blogImage'], bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'],
             heading: [4, 'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'],
             ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
-            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'] }, null),
-        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
+            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12,
+                'MetaDesc'], ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _ck(_v, 2, 0, ((_v.context.index % 5) === 0), ((_v.context.index % 5) != 0));
         _ck(_v, 1, 0, currVal_0);
         var currVal_1 = _v.context.$implicit.blogId;
@@ -152,8 +156,10 @@ function View_BlogsComponent_5(_l) {
         var currVal_10 = _v.context.$implicit.keywords;
         var currVal_11 = _v.context.$implicit.exactDate;
         var currVal_12 = _v.context.$implicit.readingTime;
+        var currVal_13 = _v.context.$implicit.MetaDesc;
+        var currVal_14 = _v.context.$implicit.ImageDesc;
         _ck(_v, 6, 1, [currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7,
-            currVal_8, currVal_9, currVal_10, currVal_11, currVal_12]);
+            currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13, currVal_14]);
     }, null);
 }
 function View_BlogsComponent_1(_l) {
@@ -198,8 +204,8 @@ function View_BlogsComponent_7(_l) {
                 'bloggerName'], bloggerImage: [3, 'bloggerImage'], heading: [4, 'heading'], Content: [5,
                 'Content'], insertedDate: [6, 'insertedDate'], ViewCount: [7, 'ViewCount'], ShareCount: [8,
                 'ShareCount'], keywords: [9, 'keywords'], exactDate: [10, 'exactDate'], readingTime: [11,
-                'readingTime'] }, null), (_l()(), i1.ɵted(null, ['\n        '])),
-        (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
+                'readingTime'], MetaDesc: [12, 'MetaDesc'], ImageDesc: [13, 'ImageDesc'] }, null),
+        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerName;
@@ -212,8 +218,10 @@ function View_BlogsComponent_7(_l) {
         var currVal_9 = _v.context.$implicit.keywords;
         var currVal_10 = _v.context.$implicit.exactDate;
         var currVal_11 = _v.context.$implicit.readingTime;
+        var currVal_12 = _v.context.$implicit.MetaDesc;
+        var currVal_13 = _v.context.$implicit.ImageDesc;
         _ck(_v, 3, 1, [currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6,
-            currVal_7, currVal_8, currVal_9, currVal_10, currVal_11]);
+            currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13]);
     }, null);
 }
 function View_BlogsComponent_8(_l) {
@@ -232,8 +240,8 @@ function View_BlogsComponent_8(_l) {
                 'blogImage'], bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'],
             heading: [4, 'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'],
             ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
-            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'] }, null),
-        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
+            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12,
+                'MetaDesc'], ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerImage;
@@ -246,8 +254,10 @@ function View_BlogsComponent_8(_l) {
         var currVal_9 = _v.context.$implicit.keywords;
         var currVal_10 = _v.context.$implicit.exactDate;
         var currVal_11 = _v.context.$implicit.readingTime;
+        var currVal_12 = _v.context.$implicit.MetaDesc;
+        var currVal_13 = _v.context.$implicit.ImageDesc;
         _ck(_v, 3, 1, [currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6,
-            currVal_7, currVal_8, currVal_9, currVal_10, currVal_11]);
+            currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13]);
     }, null);
 }
 function View_BlogsComponent_9(_l) {
@@ -275,8 +285,8 @@ function View_BlogsComponent_10(_l) {
                 'blogImage'], bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'],
             heading: [4, 'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'],
             ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
-            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'] }, null),
-        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
+            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12,
+                'MetaDesc'], ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerImage;
@@ -289,8 +299,10 @@ function View_BlogsComponent_10(_l) {
         var currVal_9 = _v.context.$implicit.keywords;
         var currVal_10 = _v.context.$implicit.exactDate;
         var currVal_11 = _v.context.$implicit.readingTime;
+        var currVal_12 = _v.context.$implicit.MetaDesc;
+        var currVal_13 = _v.context.$implicit.ImageDesc;
         _ck(_v, 3, 1, [currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6,
-            currVal_7, currVal_8, currVal_9, currVal_10, currVal_11]);
+            currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13]);
     }, null);
 }
 function View_BlogsComponent_6(_l) {

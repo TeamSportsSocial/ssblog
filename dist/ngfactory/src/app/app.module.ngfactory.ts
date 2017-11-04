@@ -84,7 +84,7 @@ export const AppModuleNgFactory:i0.NgModuleFactory<i1.AppModule> = i0.ɵcmf(i1.A
               i19.StatusService,i19.StatusService,([] as any[])),i0.ɵmpd(4608,i20.PostService,
               i20.PostService,[i14.Http]),i0.ɵmpd(4608,i21.AuthService,i21.AuthService,
               ([] as any[])),i0.ɵmpd(4608,i22.AuthGuard,i22.AuthGuard,[i21.AuthService,
-              i15.Router]),i0.ɵmpd(4608,i23.FacebookService,i23.FacebookService,([] as any[])),
+              i15.Router]),i0.ɵmpd(4608,i23.FacebookService,i23.FacebookService,[i0.PLATFORM_ID]),
           i0.ɵmpd(4608,i24.WindowRefService,i24.WindowRefService,([] as any[])),i0.ɵmpd(512,
               i11.CommonModule,i11.CommonModule,([] as any[])),i0.ɵmpd(1024,i0.ErrorHandler,
               i12.ɵa,([] as any[])),i0.ɵmpd(1024,i0.NgProbeToken,() => {

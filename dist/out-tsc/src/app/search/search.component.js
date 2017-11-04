@@ -24,11 +24,6 @@ var SearchComponent = /** @class */ (function () {
         this.pageNumber = 1;
         this.mobileView = false;
         this.haveData = true;
-        metaService.addTags([
-            { name: 'author', content: 'Coursetro.com' },
-            { name: 'keywords', content: 'angular seo, angular 4 universal, etc' },
-            { name: 'description', content: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa' }
-        ]);
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.setTopMargin();
@@ -50,6 +45,7 @@ var SearchComponent = /** @class */ (function () {
             { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to '
                     + this.recievedKey },
             { name: 'title', content: this.recievedKey + 'Blogs' },
+            { name: 'keywords', content: this.Keywords },
             { name: 'theme-color', content: '#4327a0' },
             { property: 'og:title', content: this.recievedKey + 'Blogs' },
             { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to '
@@ -80,6 +76,7 @@ var SearchComponent = /** @class */ (function () {
             if (data.length == 0 && _this.pageNumber == 1) {
             }
             _this.show = true;
+            var key = '';
             _this.dataRecieved = true;
             for (var i in data) {
                 blogDetails.push({
@@ -94,12 +91,20 @@ var SearchComponent = /** @class */ (function () {
                     ShareCount: data[i].ShareCount,
                     keywords: data[i].keywords.split(','),
                     exactDate: _this.ExactDate(data[i].insertedDate),
-                    readingTime: _this.timeToRead(data[i].Content)
+                    readingTime: _this.timeToRead(data[i].Content),
+                    MetaDesc: data[i].MetaDesc,
+                    ImageDesc: data[i].ImageDesc
                 });
+                key += data[i].keywords + ',';
             }
+            // console.log(key)
+            _this.Keywords = key.split(',').filter(function (elem, index, self) {
+                return index === self.indexOf(elem);
+            }).toString();
+            // console.log(this.Keywords, 'h')
             _this.blogDetails = blogDetails;
+            _this.setMetaTags();
         });
-        this.setMetaTags();
     };
     SearchComponent.prototype.recievekeyFromUrl = function () {
         var _this = this;
@@ -211,12 +216,12 @@ var SearchComponent = /** @class */ (function () {
                     ShareCount: data[i].ShareCount,
                     keywords: data[i].keywords.split(','),
                     exactDate: _this.ExactDate(data[i].insertedDate),
-                    readingTime: _this.timeToRead(data[i].Content)
+                    readingTime: _this.timeToRead(data[i].Content),
+                    MetaDesc: data[i].MetaDesc,
+                    ImageDesc: data[i].ImageDesc
                 });
             }
-            //sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
         });
-        //sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
     };
     SearchComponent.decorators = [
         { type: core_1.Component, args: [{

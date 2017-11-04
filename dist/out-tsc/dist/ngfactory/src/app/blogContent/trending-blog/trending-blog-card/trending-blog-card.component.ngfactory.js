@@ -98,5 +98,6 @@ exports.View_TrendingBlogCardComponent_Host_0 = View_TrendingBlogCardComponent_H
 exports.TrendingBlogCardComponentNgFactory = i1.ɵccf('SportSocial-trending-blog-card', i2.TrendingBlogCardComponent, View_TrendingBlogCardComponent_Host_0, { blogId: 'blogId',
     blogImage: 'blogImage', bloggerImage: 'bloggerImage', bloggerName: 'bloggerName',
     heading: 'heading', insertedDate: 'insertedDate', Content: 'Content', ViewCount: 'ViewCount',
-    ShareCount: 'ShareCount', keywords: 'keywords', exactDate: 'exactDate', readingTime: 'readingTime' }, {}, []);
+    ShareCount: 'ShareCount', keywords: 'keywords', exactDate: 'exactDate', readingTime: 'readingTime',
+    MetaDesc: 'MetaDesc', ImageDesc: 'ImageDesc' }, {}, []);
 //# sourceMappingURL=trending-blog-card.component.ngfactory.js.map

@@ -6,6 +6,8 @@ import * as express from 'express';
 import { join } from 'path';
 import { readFileSync } from 'fs';
 import { AppServerModuleNgFactory } from '../dist/ngfactory/src/app/app-server.module.ngfactory';
+import { routes } from './server.routes';
+
 
 enableProdMode();
 
@@ -25,10 +27,27 @@ app.set('views', 'src');
 app.set('view engine', 'html');
 
 app.get('*.*', express.static(DIST_DIR));
-app.get('*', (req, res) => {
-  res.render('index', { req });
-});
 
+
+function ngApp(req, res) {
+  res.render('index', {
+    req,
+    res,
+    // time: true, // use this to determine what part of your app is slow only in development
+    preboot: true,
+    baseUrl: '/',
+    requestUrl: req.originalUrl,
+    originUrl: `http://localhost:${PORT}`
+  });
+}
+/* app.get('*', (req, res) => {
+  res.render('index', { req});
+}); */
+app.get('/', ngApp);
+routes.forEach(route => {
+  app.get(`/${route}`, ngApp);
+  app.get(`/${route}/*`, ngApp);
+});
 app.listen(PORT, () => {
   console.log(`App listening on http://localhost:${PORT}!`);
 });

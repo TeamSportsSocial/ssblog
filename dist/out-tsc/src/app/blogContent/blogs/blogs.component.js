@@ -48,33 +48,13 @@ var BlogsComponent = /** @class */ (function () {
         this.setMobileView();
         this.getBlog();
     };
-    /* setMetaTags() {
-      this.metaService.addTags([
-        { rel: 'canonical' , href: 'https://wwww.chaseoursport.com'},
-        { name: 'author',   content: 'Coursetro.com'},
-        { name: 'keywords', content: 'angular seo, angular 4 universal, etc'},
-        { name: 'description', content: 'Welcome to Sports Social Blog. Here you will get all latest update regarding sports.' },
-        { name: 'title', content: 'Chase Your Sport: The Sports Social Blog'},
-        { name: 'theme-color', content: '#4327a0'},
-        { property: 'og:title', content: 'Chase Your Sport: The Sports Social Blog' },
-        { property: 'og:description', content:  'Welcome to Sports Social Blog. Here you will get all latest update regarding sports.'},
-        { property: 'og:url', content:  'https://wwww.chaseoursport.com' },
-        { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
-        { property: 'og:site_name', content: 'Chase Your Sport' },
-        { property: 'fb:app_id', content: '1750709328507665'},
-        { name: 'twitter:card', content: 'summary_large_image'},
-        { name: 'twitter:site', content: '@Chaseyoursport'},
-        { name: 'twitter:creator', content: '@NadeemKhan'},
-        { name: 'twitter:title', content: 'Chase Your Sport:The Sports Social Blog'},
-        { name: 'twitter:description', content: 'Welcome to Sports Social Blog. Here you will get all latest update regarding sports.'},
-        { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
-      ]);
-    } */
     BlogsComponent.prototype.getBlog = function () {
         var _this = this;
         this.get.blogData(this.nextPageNumber, this.defaultKey).subscribe(function (data) {
+            console.log(data);
             _this.show = true;
             _this.dataRecived = true;
+            // tslint:disable-next-line:forin
             for (var i_1 in data) {
                 _this.blogDetails.push({
                     blogId: data[i_1].blogId,
@@ -88,7 +68,9 @@ var BlogsComponent = /** @class */ (function () {
                     ShareCount: data[i_1].ShareCount,
                     keywords: data[i_1].keywords.split(','),
                     exactDate: _this.ExactDate(data[i_1].insertedDate),
-                    readingTime: _this.timeToRead(data[i_1].Content)
+                    readingTime: _this.timeToRead(data[i_1].Content),
+                    MetaDesc: data[i_1].MetaDesc,
+                    ImageDesc: data[i_1].ImageDesc
                 });
             }
             _this.latestBlogDetails.push({
@@ -103,7 +85,9 @@ var BlogsComponent = /** @class */ (function () {
                 ShareCount: _this.blogDetails[0].ShareCount,
                 keywords: _this.blogDetails[0].keywords,
                 exactDate: _this.blogDetails[0].exactDate,
-                readingTime: _this.blogDetails[0].readingTime
+                readingTime: _this.blogDetails[0].readingTime,
+                MetaDesc: _this.blogDetails[0].MetaDesc,
+                ImageDesc: _this.blogDetails[0].ImageDesc
             });
             for (var i = 1; i < 4; i++) {
                 _this.topBlogDetails.push({
@@ -118,7 +102,9 @@ var BlogsComponent = /** @class */ (function () {
                     ShareCount: _this.blogDetails[i].ShareCount,
                     keywords: _this.blogDetails[i].keywords,
                     exactDate: _this.blogDetails[i].exactDate,
-                    readingTime: _this.blogDetails[i].readingTime
+                    readingTime: _this.blogDetails[i].readingTime,
+                    MetaDesc: _this.blogDetails[i].MetaDesc,
+                    ImageDesc: _this.blogDetails[i].ImageDesc
                 });
             }
             for (var i = 4; i < _this.blogDetails.length; i++) {
@@ -134,7 +120,9 @@ var BlogsComponent = /** @class */ (function () {
                     ShareCount: _this.blogDetails[i].ShareCount,
                     keywords: _this.blogDetails[i].keywords,
                     exactDate: _this.blogDetails[i].exactDate,
-                    readingTime: _this.blogDetails[i].readingTime
+                    readingTime: _this.blogDetails[i].readingTime,
+                    MetaDesc: _this.blogDetails[i].MetaDesc,
+                    ImageDesc: _this.blogDetails[i].ImageDesc
                 });
             }
         });
@@ -238,12 +226,13 @@ var BlogsComponent = /** @class */ (function () {
         if (this.nextPageNumber > 1) {
             this.get.blogData((this.nextPageNumber), this.defaultKey).subscribe(function (data) {
                 _this.dataRecived = true;
-                if (data.length == 0) {
+                if (data.length === 0) {
                     _this.haveData = false;
                 }
                 else {
                     _this.haveData = true;
                 }
+                // tslint:disable-next-line:forin
                 for (var i in data) {
                     _this.restBlogDetails.push({
                         blogId: data[i].blogId,
@@ -253,11 +242,13 @@ var BlogsComponent = /** @class */ (function () {
                         heading: data[i].heading,
                         Content: data[i].Content,
                         insertedDate: _this.timePassed(data[i].insertedDate),
-                        ViewCount: '50',
-                        ShareCount: '50',
+                        ViewCount: data.ViewCount,
+                        ShareCount: data.ShareCount,
                         keywords: data[i].keywords.split(','),
                         exactDate: _this.ExactDate(data[i].insertedDate),
-                        readingTime: _this.timeToRead(data[i].Content)
+                        readingTime: _this.timeToRead(data[i].Content),
+                        MetaDesc: data[i].MetaDesc,
+                        ImageDesc: data[i].ImageDesc
                     });
                 }
             });

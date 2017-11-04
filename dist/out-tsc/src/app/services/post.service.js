@@ -28,7 +28,7 @@ var PostService = /** @class */ (function () {
             id: id,
             email: email,
             name: name,
-            isFb: "1",
+            isFb: '1',
             image: image
         };
         return this.http.post('https://admin.chaseyoursport.com/blog/blogLogin', this.loginDetails)
@@ -56,8 +56,8 @@ var PostService = /** @class */ (function () {
             blogid: id,
             viewcount: count
         };
-        console.log(this.viewCount, "count");
-        return this.http.post("https://admin.chaseyoursport.com/blog/updateViewCount", this.viewCount)
+        console.log(this.viewCount, 'count');
+        return this.http.post('https://admin.chaseyoursport.com/blog/updateViewCount', this.viewCount)
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.shareCountOfBlog = function (id, count) {
@@ -66,8 +66,8 @@ var PostService = /** @class */ (function () {
             blogid: id,
             sharecount: count
         };
-        console.log(this.shareCount, "count");
-        return this.http.post("https://admin.chaseyoursport.com/blog/updateShareCount", this.shareCount)
+        console.log(this.shareCount, 'count');
+        return this.http.post('https://admin.chaseyoursport.com/blog/updateShareCount', this.shareCount)
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.dataOfsingleBlog = function (id) {
@@ -77,6 +77,13 @@ var PostService = /** @class */ (function () {
         console.log(this.BlogId);
         return this.http.post('https://admin.chaseyoursport.com/blog/loadSingleBlogData', this.BlogId)
             .map(function (response) { return response.json(); });
+    };
+    PostService.prototype.deleteBlog = function (id) {
+        this.BlogId = {
+            blogid: id
+        };
+        return this.http.post('https://admin.chaseyoursport.com/blog/deleteBlog', this.BlogId)
+            .map(function (res) { return res.json(); });
     };
     PostService.decorators = [
         { type: core_1.Injectable },

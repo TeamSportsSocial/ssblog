@@ -48,6 +48,8 @@ export class RelatedBlogsComponent implements OnInit {
       keywords:string[],
       exactDate:string;
       readingTime:string;
+      MetaDesc: string;
+      ImageDesc: string
     }[]=[]
     this.getRelated.blogData(1,key).subscribe(
         data=>{
@@ -73,11 +75,13 @@ export class RelatedBlogsComponent implements OnInit {
                     ShareCount:data[i].ShareCount,
                     keywords:data[i].keywords.split(","),
                     exactDate:this.ExactDate(data[i].insertedDate),
-                    readingTime:this.timeToRead(data[i].Content)
+                    readingTime:this.timeToRead(data[i].Content),
+                    MetaDesc: data[i].MetaDesc,
+                    ImageDesc: data[i].ImageDesc
                   }
                 )
             }
-            this.relatedBlogDetails=relatedBlogDetails
+            this.relatedBlogDetails = relatedBlogDetails
             console.log(this.relatedBlogDetails," checkarticle")
         }
     )

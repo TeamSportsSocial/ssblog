@@ -5,27 +5,25 @@ var platform_browser_1 = require("@angular/platform-browser");
 var property_service_1 = require("../../services/property.service");
 var post_service_1 = require("../../services/post.service");
 var router_1 = require("@angular/router");
-var facebook_service_1 = require("../../services/facebook.service");
-var router_2 = require("@angular/router");
+var common_1 = require("@angular/common");
 var platform_browser_2 = require("@angular/platform-browser");
-var window_ref_service_1 = require("../../services/window-ref.service");
+var router_2 = require("@angular/router");
+var facebook_service_1 = require("../../services/facebook.service");
 var BlogOpenComponent = /** @class */ (function () {
-    function BlogOpenComponent(recieve, recieveHeight, renderer, route, Fb, sendKey, router, post, send, metaService, load, zone, titleService, sanitizer, winRef) {
+    function BlogOpenComponent(platformId, recieve, recieveHeight, renderer, route, sanitizer, sendKey, router, post, send, metaService, load, titleService, Fb) {
         this.recieve = recieve;
         this.recieveHeight = recieveHeight;
         this.renderer = renderer;
         this.route = route;
-        this.Fb = Fb;
+        this.sanitizer = sanitizer;
         this.sendKey = sendKey;
         this.router = router;
         this.post = post;
         this.send = send;
         this.metaService = metaService;
         this.load = load;
-        this.zone = zone;
         this.titleService = titleService;
-        this.sanitizer = sanitizer;
-        this.winRef = winRef;
+        this.Fb = Fb;
         this.removeSocial = false;
         this.isConnectedWithFacebook = false;
         this.mobileView = false;
@@ -35,8 +33,9 @@ var BlogOpenComponent = /** @class */ (function () {
         this.blogDataRecieved = false;
         this.Keywords = [];
         this.loading = true;
-        Fb.init();
-        this.blogID = this.route.snapshot.url[2].path;
+        if (common_1.isPlatformBrowser(platformId)) {
+            Fb.init();
+        }
     }
     BlogOpenComponent.prototype.ngOnInit = function () {
         this.recieveBlogIdFromUrl();
@@ -45,7 +44,7 @@ var BlogOpenComponent = /** @class */ (function () {
     };
     BlogOpenComponent.prototype.ngAfterViewInit = function () {
         this.scriptOfTwitter();
-        // this.recieveBlogIdFromUrl();
+        this.recieveBlogIdFromUrl();
     };
     BlogOpenComponent.prototype.setTitle = function () {
         if (this.route.snapshot.url[0].path !== 'sportsocialblog' || this.route.snapshot.url[1].path !== 'page') {
@@ -58,7 +57,8 @@ var BlogOpenComponent = /** @class */ (function () {
         });
     };
     BlogOpenComponent.prototype.strip = function (html) {
-        var tmp = document.createElement('DIV');
+        /* const tmp = document.createElement('DIV'); */
+        var tmp = this.renderer.createElement('DIV');
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || '';
     };
@@ -81,14 +81,17 @@ var BlogOpenComponent = /** @class */ (function () {
         this.metaService.removeTag("property= 'fb:app_id'");
     };
     BlogOpenComponent.prototype.setMetaTags = function () {
+        this.keys = this.blog.keywords.toString();
+        var url = 'https://www.chaseyoursport.com/' + this.Keywords[0] + '/' + this.blog.heading.replace(/ /g, '-')
+            + '/' + this.blogID;
         this.metaService.addTags([
-            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' },
-            { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to ' },
+            { rel: 'canonical', href: url },
             { name: 'title', content: this.blog.heading },
+            { name: 'keywords', content: this.keys },
             { name: 'theme-color', content: '#4327a0' },
             { property: 'og:title', content: this.blog.heading },
-            { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to ' },
-            { property: 'og:url', content: 'https://www.chaseyoursport.com/' },
+            { property: 'og:description', content: this.blog.MetaDesc },
+            { property: 'og:url', content: url },
             { property: 'og:image', content: this.blog.blogImage },
             { property: 'og:site_name', content: 'Chase Your Sport' },
             { property: 'fb:app_id', content: '1750709328507665' },
@@ -96,7 +99,7 @@ var BlogOpenComponent = /** @class */ (function () {
             { name: 'twitter:site', content: '@Chaseyoursport' },
             { name: 'twitter:creator', content: '@NadeemKhan' },
             { name: 'twitter:title', content: this.blog.heading },
-            { name: 'twitter:description', content: 'Read the latest articles, blogs, news and other informations related to ' },
+            { name: 'twitter:description', content: this.blog.MetaDesc },
             { name: 'twitter:image:src', content: this.blog.blogImage },
         ]);
     };
@@ -117,7 +120,7 @@ var BlogOpenComponent = /** @class */ (function () {
                 ShareCount: data['ShareCount'],
                 keywords: data['keywords'],
                 exactDate: data['exactDate'],
-                readingTime: data['readingTime']
+                readingTime: data['readingTime'],
             };
         });
     };
@@ -137,7 +140,8 @@ var BlogOpenComponent = /** @class */ (function () {
         var blog;
         this.load.dataOfsingleBlog(this.blogID).subscribe(function (res) {
             var data = res[0];
-            if (data === undefined) {
+            if (data === undefined || _this.route.snapshot.url[0].path === 'sportsocialblog'
+                || _this.route.snapshot.url[1].path === 'page') {
                 _this.router.navigate(['/']);
             }
             else {
@@ -149,23 +153,27 @@ var BlogOpenComponent = /** @class */ (function () {
                 bloggerName: data.bloggerName,
                 bloggerImage: data.bloggerImage,
                 heading: data.heading,
-                Content: data.Content,
+                Content: (data.Content),
                 insertedDate: _this.timePassed(data.insertedDate),
                 ViewCount: data.ViewCount,
                 ShareCount: data.ShareCount,
                 keywords: data.keys.split(','),
                 exactDate: _this.ExactDate(data.insertedDate),
-                readingTime: _this.timeToRead(data.Content)
+                readingTime: _this.timeToRead(data.Content),
+                MetaDesc: data.MetaDesc,
+                ImageDesc: data.ImageDesc
             };
             _this.blog = blog;
-            _this.content = _this.sanitizer.bypassSecurityTrustHtml(data['Content']);
-            _this.setMetaTags();
+            console.clear();
+            console.log(_this.blog);
+            _this.Keywords = blog.keywords;
+            _this.content = _this.sanitizer.bypassSecurityTrustHtml(data.Content);
             _this.ShareCount = +blog.ShareCount;
             _this.ViewCount = +(blog.ViewCount);
             _this.sendViewCount();
-            _this.Keywords = blog.keywords;
             // window.scrollTo(0, 0);
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
+            _this.setMetaTags();
             _this.setTitle();
         });
     };
@@ -212,24 +220,18 @@ var BlogOpenComponent = /** @class */ (function () {
             this.loading = false;
         }
     };
-    BlogOpenComponent.prototype.showprogress = function (event) {
-        console.log(event, 'progress');
-    };
-    BlogOpenComponent.prototype.setDefaultBlogImage = function () {
-        this.blog.blogImage = '/assets/images/default-image.png';
-    };
     BlogOpenComponent.prototype.setMobileView = function () {
-        if (this.winRef.nativeWindow.innerWidth > 950) {
+        if (window.innerWidth > 950) {
             this.mobileView = false;
             this.removeSocial = false;
             this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '68%');
         }
-        if (this.winRef.nativeWindow.innerWidth <= 950 && window.innerWidth > 700) {
+        if (window.innerWidth <= 950 && window.innerWidth > 700) {
             this.removeSocial = true;
             this.mobileView = false;
             this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
         }
-        if (this.winRef.nativeWindow.innerWidth < 700) {
+        if (window.innerWidth < 700) {
             this.removeSocial = true;
             this.mobileView = true;
             this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
@@ -260,6 +262,9 @@ var BlogOpenComponent = /** @class */ (function () {
             this.onFullImageload();
         }
     };
+    BlogOpenComponent.prototype.handleError = function (error) {
+        console.error('Error processing action', error);
+    };
     BlogOpenComponent.prototype.openfullImage = function () {
         this.openFullImage = true;
     };
@@ -279,25 +284,34 @@ var BlogOpenComponent = /** @class */ (function () {
     BlogOpenComponent.prototype.shareOnFacebook = function () {
         this.sendShareCount();
         FB.ui({
-            method: 'share_open_graph',
-            action_type: 'og.shares',
-            action_properties: JSON.stringify({
-                object: {
+            method: 'share',
+            href: 'https://developers.facebook.com/docs/',
+        }, function (response) { });
+    };
+    /*  shareOnFacebook() {
+        // this.sendShareCount();
+        console.clear();
+        console.log(this.strip (this.blog.Content));
+         FB.ui({
+             method: 'share_open_graph',
+             action_type: 'og.shares',
+             action_properties: JSON.stringify({
+                 object : {
                     'og:url': 'https://www.chaseyoursport.com/' + this.Keywords[0].replace(/ /g, '-')
-                        + '/' + this.blog.heading.replace(/ /g, '-') + '/' + this.blogID,
+                         + '/' + this.blog.heading.replace(/ /g, '-') + '/' + this.blogID ,
                     'og:title': this.blog.heading,
-                    'og:description': this.strip(this.blog.Content),
+                    'og:description': this.strip (this.blog.Content),
                     'og:image': this.blog.blogImage,
                     'og:image:width': '180',
                     'og:image:height': '110'
-                }
-            })
-        }, 
-        // callback
-        function (response) { });
-    };
+                 }
+             })
+             },
+             // callback
+             function(response) {});
+     } */
     BlogOpenComponent.prototype.shareOnTwitter = function () {
-        this.sendShareCount();
+        //this.sendShareCount();
         var width = 575, height = 400, left = (window.innerWidth - width) / 2, top = (window.innerHeight - height) / 2, url = this.popup.nativeElement.attributes[2].value, opts = 'status=1' +
             ',width=' + width +
             ',height=' + height +
@@ -321,21 +335,20 @@ var BlogOpenComponent = /** @class */ (function () {
     ];
     /** @nocollapse */
     BlogOpenComponent.ctorParameters = function () { return [
+        { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
         { type: property_service_1.PropertyService, },
         { type: property_service_1.PropertyService, },
         { type: core_1.Renderer2, },
         { type: router_1.ActivatedRoute, },
-        { type: facebook_service_1.FacebookService, },
+        { type: platform_browser_2.DomSanitizer, },
         { type: property_service_1.PropertyService, },
         { type: router_2.Router, },
         { type: post_service_1.PostService, },
         { type: post_service_1.PostService, },
         { type: platform_browser_1.Meta, },
         { type: post_service_1.PostService, },
-        { type: core_1.NgZone, },
         { type: platform_browser_1.Title, },
-        { type: platform_browser_2.DomSanitizer, },
-        { type: window_ref_service_1.WindowRefService, },
+        { type: facebook_service_1.FacebookService, },
     ]; };
     BlogOpenComponent.propDecorators = {
         'openBlog': [{ type: core_1.ViewChild, args: ['openBlog',] },],

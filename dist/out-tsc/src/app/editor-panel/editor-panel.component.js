@@ -27,6 +27,7 @@ var EditorPanelComponent = /** @class */ (function () {
         this.imageName = [];
         this.isDisabled = false;
         this.Preview = false;
+        this.charCount = 0;
         this.filesToUpload = [];
     }
     EditorPanelComponent.prototype.ngOnInit = function () {
@@ -52,7 +53,15 @@ var EditorPanelComponent = /** @class */ (function () {
             this.Keypress = false;
         }
     };
-    EditorPanelComponent.prototype.onmousedown = function (event) {
+    EditorPanelComponent.prototype.calCharCount = function () {
+        this.charCount = this.shortDesc.nativeElement.innerText.length;
+        console.log(this.charCount);
+        if (this.charCount >= 139) {
+            this.shortDesc.nativeElement.blur();
+        }
+        else {
+            this.shortDesc.nativeElement.focus();
+        }
     };
     EditorPanelComponent.prototype.onkeyup = function (event) {
         this.initialActiveElement = {
@@ -249,6 +258,7 @@ var EditorPanelComponent = /** @class */ (function () {
         var reader = event.target;
         this.imageSrc = reader.result;
         console.log(this.imageSrc);
+        //document.execCommand('insertImage', false, this.imageSrc);
         document.execCommand('insertHTML', false, "<div style=\"max-width:100%;height:auto;\" ><img style=\"max-width:100%;max-height:100%;\" src=\""
             + this.imageSrc + "\"></div>");
     };
@@ -322,6 +332,8 @@ var EditorPanelComponent = /** @class */ (function () {
             formData.append('blogrTitle', _this.blog.blogTitle);
             formData.append('blogDesc', _this.blog.blogDesc);
             formData.append('keywords', _this.blog.keywords);
+            formData.append('metaDesc', _this.blog.metaDesc);
+            formData.append('imageDesc', _this.blog.imageDesc);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
@@ -338,24 +350,26 @@ var EditorPanelComponent = /** @class */ (function () {
     };
     EditorPanelComponent.prototype.upload = function () {
         var _this = this;
-        console.log(this.panel);
-        this.blogImage = this.panel.nativeElement.children[0].children[1].files[0];
-        this.bloggerImage = this.panel.nativeElement.children[2].children[0].children[1].files[0];
+        // console.log(this.BlogImage,this.BloggerImage,this.BloggerName,this.title,this.desc,this.shortDesc,this.blogImageDesc);
+        this.blogImage = this.BlogImage.nativeElement.files[0];
+        this.bloggerImage = this.BloggerImage.nativeElement.files[0];
         this.files = [this.blogImage, this.bloggerImage];
         console.log(this.files);
         this.isDisabled = true;
         this.blog = {
-            bloggerName: this.panel.nativeElement.children[2].children[1].innerText,
-            blogTitle: this.panel.nativeElement.children[1].innerText,
-            blogDesc: this.panel.nativeElement.children[4].innerHTML,
-            keywords: this.Keys
+            bloggerName: this.BloggerName.nativeElement.innerText,
+            blogTitle: this.title.nativeElement.innerText,
+            blogDesc: this.desc.nativeElement.innerHTML,
+            keywords: this.Keys,
+            metaDesc: this.shortDesc.nativeElement.innerText,
+            imageDesc: this.blogImageDesc.nativeElement.innerText
         };
         console.log(this.blog);
         this.imageName = ['blogImage', 'bloggerImage'];
         for (var i = 0; i < this.files.length; i++) {
             this.filesToUpload.push(this.files[i]);
         }
-        this.makeFileRequest('https://test.sportsocial.in/poc/saveNewBlog', [], this.filesToUpload)
+        this.makeFileRequest('https://admin.chaseyoursport.com/blog/saveNewBlog', [], this.filesToUpload)
             .then(function (result) {
             _this.Result = result;
             console.log(result);
@@ -369,22 +383,35 @@ var EditorPanelComponent = /** @class */ (function () {
             }
         });
     };
+    EditorPanelComponent.prototype.strip = function (html) {
+        var tmp = document.createElement('DIV');
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || '';
+    };
+    EditorPanelComponent.prototype.timeToRead = function (s) {
+        var words = s.split(' ');
+        var time = Math.round(words.length / 180);
+        if (time > 1) {
+            return time + ' min read';
+        }
+        else {
+            return '2 min read';
+        }
+    };
     EditorPanelComponent.prototype.preview = function () {
         this.Preview = true;
-        console.log(this.panel);
-        this.blogImage = this.panel.nativeElement.children[0].children[1].files[0];
-        this.bloggerImage = this.panel.nativeElement.children[2].children[0].children[1].files[0];
-        this.files = [this.blogImage, this.bloggerImage];
+        var Content = this.desc.nativeElement.innerHTML;
         console.log(this.files);
-        this.isDisabled = true;
         this.blogPreview = {
-            bloggerName: this.panel.nativeElement.children[2].children[1].innerText,
-            heading: this.panel.nativeElement.children[1].innerText,
-            content: this.sanitizer.bypassSecurityTrustHtml(this.panel.nativeElement.children[4].innerHTML),
+            bloggerName: this.BloggerName.nativeElement.innerText,
+            heading: this.title.nativeElement.innerText,
+            content: this.sanitizer.bypassSecurityTrustHtml(this.desc.nativeElement.innerHTML),
             keywords: this.keywordArray,
             blogImage: this.blogimageSrc,
             bloggerImage: this.bloggerimageSrc,
-            readingTime: '2 min read '
+            readingTime: this.timeToRead(this.strip(Content)),
+            metaDesc: this.shortDesc.nativeElement.innerText,
+            imageDesc: this.blogImageDesc.nativeElement.innerText
         };
         console.log(this.blogPreview);
     };
@@ -409,6 +436,11 @@ var EditorPanelComponent = /** @class */ (function () {
     EditorPanelComponent.propDecorators = {
         'title': [{ type: core_1.ViewChild, args: ['title',] },],
         'desc': [{ type: core_1.ViewChild, args: ['desc',] },],
+        'BlogImage': [{ type: core_1.ViewChild, args: ['BlogImage',] },],
+        'BloggerImage': [{ type: core_1.ViewChild, args: ['BloggerImage',] },],
+        'blogImageDesc': [{ type: core_1.ViewChild, args: ['blogImageDesc',] },],
+        'shortDesc': [{ type: core_1.ViewChild, args: ['shortDesc',] },],
+        'BloggerName': [{ type: core_1.ViewChild, args: ['BloggerName',] },],
         'URL': [{ type: core_1.ViewChild, args: ['url',] },],
         'youtubeURL': [{ type: core_1.ViewChild, args: ['YoutubeUrl',] },],
         'pluginURL': [{ type: core_1.ViewChild, args: ['PluginUrl',] },],
@@ -419,7 +451,7 @@ var EditorPanelComponent = /** @class */ (function () {
         'linkpopup': [{ type: core_1.ViewChild, args: ['linkpopup',] },],
         'youtubeLinkPopup': [{ type: core_1.ViewChild, args: ['youtubeLinkPopup',] },],
         'pluginLinkPopup': [{ type: core_1.ViewChild, args: ['pluginLinkPopup',] },],
-        'onmousedown': [{ type: core_1.HostListener, args: ['mousedown', ['$event'],] },],
+        'panelButton': [{ type: core_1.ViewChild, args: ['panelButton',] },],
         'onkeyup': [{ type: core_1.HostListener, args: ['keyup', ['$event'],] },],
     };
     return EditorPanelComponent;

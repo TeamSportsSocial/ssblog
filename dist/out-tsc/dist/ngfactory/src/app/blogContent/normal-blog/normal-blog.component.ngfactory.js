@@ -24,7 +24,8 @@ function View_NormalBlogComponent_1(_l) {
 }
 function View_NormalBlogComponent_2(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 0, 'img', [['alt',
-                'blogImage']], [[8, 'src', 4]], [[null, 'load'], [null, 'error']], function (_v, en, $event) {
+                'blogImage']], [[8, 'src', 4], [8, 'title', 0]], [[null, 'load'], [null,
+                'error']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('load' === en)) {
@@ -39,7 +40,8 @@ function View_NormalBlogComponent_2(_l) {
         }, null, null))], null, function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = i1.ɵinlineInterpolate(1, '', _co.blogImage, '');
-        _ck(_v, 0, 0, currVal_0);
+        var currVal_1 = i1.ɵinlineInterpolate(1, '', _co.ImageDesc, '');
+        _ck(_v, 0, 0, currVal_0, currVal_1);
     });
 }
 function View_NormalBlogComponent_0(_l) {
@@ -96,7 +98,7 @@ function View_NormalBlogComponent_0(_l) {
         _ck(_v, 9, 0, currVal_0, currVal_1);
         var currVal_5 = _co.insertedDate;
         _ck(_v, 26, 0, currVal_5);
-        var currVal_6 = _co.readingTime;
+        var currVal_6 = _co.keywords[0];
         _ck(_v, 32, 0, currVal_6);
         var currVal_7 = _co.ViewCount;
         _ck(_v, 37, 0, currVal_7);
@@ -126,5 +128,5 @@ exports.View_NormalBlogComponent_Host_0 = View_NormalBlogComponent_Host_0;
 exports.NormalBlogComponentNgFactory = i1.ɵccf('SportSocial-normal-blog', i3.NormalBlogComponent, View_NormalBlogComponent_Host_0, { blogId: 'blogId', blogImage: 'blogImage',
     bloggerImage: 'bloggerImage', bloggerName: 'bloggerName', heading: 'heading', insertedDate: 'insertedDate',
     Content: 'Content', ViewCount: 'ViewCount', ShareCount: 'ShareCount', keywords: 'keywords',
-    exactDate: 'exactDate', readingTime: 'readingTime' }, {}, []);
+    exactDate: 'exactDate', readingTime: 'readingTime', MetaDesc: 'MetaDesc', ImageDesc: 'ImageDesc' }, {}, []);
 //# sourceMappingURL=normal-blog.component.ngfactory.js.map

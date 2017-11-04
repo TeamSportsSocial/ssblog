@@ -23,7 +23,9 @@ export class TrendingBlogComponent implements OnInit {
     ShareCount:string,
     keywords:string[],
     exactDate:string;
-    readingTime:string
+    readingTime:string;
+    MetadDesc: string;
+    ImageDesc: string;
   }[]=[]
   constructor(
     private get: PostService,
@@ -50,7 +52,9 @@ export class TrendingBlogComponent implements OnInit {
               ShareCount:data[i].ShareCount,
               keywords:data[i].keywords.split(","),
               exactDate:this.ExactDate(data[i].insertedDate),
-              readingTime:this.timeToRead(data[i].Content)
+              readingTime:this.timeToRead(data[i].Content),
+              MetadDesc: data[i].MetadDesc,
+              ImageDesc: data[i].ImageDesc
             }
           )
        }

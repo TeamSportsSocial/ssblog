@@ -9,23 +9,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var i0 = require("./single-panel.component.css.shim.ngstyle");
 var i1 = require("@angular/core");
 var i2 = require("../../../../../../src/app/admin-panel/single-panel/single-panel.component");
-var i3 = require("@angular/router");
-var i4 = require("../../../../../../src/app/services/property.service");
+var i3 = require("../../../../../../src/app/services/post.service");
+var i4 = require("@angular/router");
+var i5 = require("../../../../../../src/app/services/property.service");
 var styles_SinglePanelComponent = [i0.styles];
 exports.RenderType_SinglePanelComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_SinglePanelComponent, data: {} });
 function View_SinglePanelComponent_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 32, 'div', [['class',
-                'panel']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 3, 'div', [['class', 'blogImage']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])),
-        (_l()(), i1.ɵeld(0, null, null, 0, 'img', [['alt', '']], [[8, 'src',
-                4]], null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 24, 'div', [['class', 'blogInfo']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 1, 'p', [['class',
-                'heading']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['', ''])), (_l()(), i1.ɵted(null, ['\n    '])),
-        (_l()(), i1.ɵeld(0, null, null, 1, 'p', [['class', 'desc']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['', ''])), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 1, 'p', [['class', 'keywords']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['', ''])), (_l()(),
-            i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 3, 'p', [['class', 'bloggerName']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n      '])),
-        (_l()(), i1.ɵeld(0, null, null, 0, 'img', [['alt', ''], ['src', '/assets/images/sports-social-blogger-black.png']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n      ', '\n    '])), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 7, 'div', [['class',
+    return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { panel: 0 }), (_l()(), i1.ɵeld(0, [[1, 0], ['panel',
+                1]], null, 32, 'div', [['class', 'panel']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(),
+            i1.ɵeld(0, null, null, 3, 'div', [['class', 'blogImage']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 0, 'img', [['alt', '']], [[8, 'src', 4]], null, null, null, null)), (_l()(),
+            i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(),
+            i1.ɵeld(0, null, null, 24, 'div', [['class', 'blogInfo']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 1, 'p', [['class', 'heading']], null, null, null, null, null)), (_l()(),
+            i1.ɵted(null, ['', ''])), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(),
+            i1.ɵeld(0, null, null, 1, 'p', [['class', 'desc']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['', ''])), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 1, 'p', [['class', 'keywords']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['', ''])), (_l()(),
+            i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 3, 'p', [['class', 'bloggerName']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵeld(0, null, null, 0, 'img', [['alt', ''], ['src', '/assets/images/sports-social-blogger-black.png']], null, null, null, null, null)), (_l()(),
+            i1.ɵted(null, ['\n      ', '\n    '])), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 7, 'div', [['class',
                 'btn']], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵeld(0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
@@ -49,20 +48,20 @@ function View_SinglePanelComponent_0(_l) {
         (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n']))], null, function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = i1.ɵinlineInterpolate(1, '', _co.blogImage, '');
-        _ck(_v, 4, 0, currVal_0);
+        _ck(_v, 5, 0, currVal_0);
         var currVal_1 = _co.heading;
-        _ck(_v, 10, 0, currVal_1);
+        _ck(_v, 11, 0, currVal_1);
         var currVal_2 = _co.Content;
-        _ck(_v, 13, 0, currVal_2);
+        _ck(_v, 14, 0, currVal_2);
         var currVal_3 = _co.keywords;
-        _ck(_v, 16, 0, currVal_3);
+        _ck(_v, 17, 0, currVal_3);
         var currVal_4 = _co.bloggerName;
-        _ck(_v, 21, 0, currVal_4);
+        _ck(_v, 22, 0, currVal_4);
     });
 }
 exports.View_SinglePanelComponent_0 = View_SinglePanelComponent_0;
 function View_SinglePanelComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-single-panel', [], null, null, null, View_SinglePanelComponent_0, exports.RenderType_SinglePanelComponent)), i1.ɵdid(114688, null, 0, i2.SinglePanelComponent, [i3.Router, i4.PropertyService], null, null)], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-single-panel', [], null, null, null, View_SinglePanelComponent_0, exports.RenderType_SinglePanelComponent)), i1.ɵdid(114688, null, 0, i2.SinglePanelComponent, [i3.PostService, i4.Router, i5.PropertyService, i1.Renderer2], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

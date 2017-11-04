@@ -66,7 +66,7 @@ function View_BlogOpenComponent_3(_l) {
 }
 function View_BlogOpenComponent_4(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 0, 'img', [['alt',
-                'InitialblogImage'], ['class', 'blogImage'], ['role', 'button'], ['src', '/assets/images/default-image.png']], null, [[null, 'click']], function (_v, en, $event) {
+                'InitialblogImage'], ['class', 'blogImage'], ['role', 'button'], ['src', '/assets/images/default-image.png']], [[8, 'title', 0]], [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('click' === en)) {
@@ -74,7 +74,11 @@ function View_BlogOpenComponent_4(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null))], null, null);
+        }, null, null))], null, function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = i1.ɵinlineInterpolate(1, '', _co.blog.ImageDesc, '');
+        _ck(_v, 0, 0, currVal_0);
+    });
 }
 function View_BlogOpenComponent_5(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 0, 'p', [['class',
@@ -312,8 +316,7 @@ function View_BlogOpenComponent_18(_l) {
         }, null, null)), (_l()(), i1.ɵted(null, ['   \n   \n ']))], null, null);
 }
 function View_BlogOpenComponent_19(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, [[5, 0], ['fullImage', 1]], null, 3, 'div', [['class', 'fullImageHolder']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n   '])), (_l()(), i1.ɵeld(0, null, null, 0, 'img', [], [[8, 'src', 4]], [[null,
-                'load']], function (_v, en, $event) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, [[5, 0], ['fullImage', 1]], null, 3, 'div', [['class', 'fullImageHolder']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n   '])), (_l()(), i1.ɵeld(0, null, null, 0, 'img', [], [[8, 'src', 4], [8, 'title', 0]], [[null, 'load']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('load' === en)) {
@@ -324,13 +327,14 @@ function View_BlogOpenComponent_19(_l) {
         }, null, null)), (_l()(), i1.ɵted(null, ['\n ']))], null, function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = i1.ɵinlineInterpolate(1, '', _co.blog.blogImage, '');
-        _ck(_v, 2, 0, currVal_0);
+        var currVal_1 = i1.ɵinlineInterpolate(1, '', _co.blog.ImageDesc, '');
+        _ck(_v, 2, 0, currVal_0, currVal_1);
     });
 }
 function View_BlogOpenComponent_0(_l) {
     return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { openBlog: 0 }), i1.ɵqud(402653184, 2, { Social: 0 }),
         i1.ɵqud(402653184, 3, { BlogInfo: 0 }), i1.ɵqud(671088640, 4, { popup: 0 }), i1.ɵqud(671088640, 5, { fullImage: 0 }), i1.ɵqud(402653184, 6, { BlogImage: 0 }), (_l()(), i1.ɵeld(0, [[1,
-                0], ['openBlog', 1]], null, 67, 'div', [['class', 'openBlog']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 11, 'p', [['class',
+                0], ['openBlog', 1]], null, 70, 'div', [['class', 'openBlog']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 11, 'p', [['class',
                 'Catagory']], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 2, 'span', [['role', 'button']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
@@ -355,13 +359,12 @@ function View_BlogOpenComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(null, ['\n  '])),
-        (_l()(), i1.ɵted(null, ['\n  \n  '])), (_l()(), i1.ɵeld(0, null, null, 34, 'div', [['class', 'content']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    \n    '])), (_l()(), i1.ɵeld(0, [[3, 0], ['BlogInfo', 1]], null, 28, 'div', [['class', 'blogInfo']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n      '])),
+        (_l()(), i1.ɵted(null, ['\n  \n  '])), (_l()(), i1.ɵeld(0, null, null, 37, 'div', [['class', 'content']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    \n    '])), (_l()(), i1.ɵeld(0, [[3, 0], ['BlogInfo', 1]], null, 31, 'div', [['class', 'blogInfo']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n      '])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_5)),
         i1.ɵdid(16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
                 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n      '])), (_l()(),
-            i1.ɵeld(0, null, null, 4, 'div', [['class', 'bloggerImage']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_6)), i1.ɵdid(16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
-        (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵted(null, ['\n      '])),
+            i1.ɵeld(0, null, null, 1, 'p', [['class', 'shortDesc']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['', ''])), (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class', 'bloggerImage']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_6)), i1.ɵdid(16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(),
+            i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵted(null, ['\n      '])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_7)),
         i1.ɵdid(16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
                 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n      '])), (_l()(),
@@ -384,7 +387,7 @@ function View_BlogOpenComponent_0(_l) {
             i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-related-blogs', [], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 72).onresize() !== false);
+                var pd_0 = (i1.ɵnov(_v, 75).onresize() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
@@ -412,10 +415,8 @@ function View_BlogOpenComponent_0(_l) {
         _ck(_v, 27, 0, currVal_5);
         var currVal_6 = _co.blog;
         _ck(_v, 37, 0, currVal_6);
-        var currVal_7 = _co.blog;
-        _ck(_v, 42, 0, currVal_7);
-        var currVal_8 = _co.blogDataRecieved;
-        _ck(_v, 46, 0, currVal_8);
+        var currVal_8 = _co.blog;
+        _ck(_v, 45, 0, currVal_8);
         var currVal_9 = _co.blogDataRecieved;
         _ck(_v, 49, 0, currVal_9);
         var currVal_10 = _co.blogDataRecieved;
@@ -426,21 +427,25 @@ function View_BlogOpenComponent_0(_l) {
         _ck(_v, 58, 0, currVal_12);
         var currVal_13 = _co.blogDataRecieved;
         _ck(_v, 61, 0, currVal_13);
-        var currVal_14 = !_co.removeSocial;
-        _ck(_v, 65, 0, currVal_14);
-        var currVal_15 = _co.blogDataRecieved;
-        _ck(_v, 69, 0, currVal_15);
-        _ck(_v, 72, 0);
+        var currVal_14 = _co.blogDataRecieved;
+        _ck(_v, 64, 0, currVal_14);
+        var currVal_15 = !_co.removeSocial;
+        _ck(_v, 68, 0, currVal_15);
         var currVal_16 = _co.blogDataRecieved;
-        _ck(_v, 76, 0, currVal_16);
-        var currVal_17 = _co.openFullImage;
+        _ck(_v, 72, 0, currVal_16);
+        _ck(_v, 75, 0);
+        var currVal_17 = _co.blogDataRecieved;
         _ck(_v, 79, 0, currVal_17);
         var currVal_18 = _co.openFullImage;
         _ck(_v, 82, 0, currVal_18);
+        var currVal_19 = _co.openFullImage;
+        _ck(_v, 85, 0, currVal_19);
     }, function (_ck, _v) {
         var _co = _v.component;
         var currVal_1 = _co.Keywords[0];
         _ck(_v, 12, 0, currVal_1);
+        var currVal_7 = _co.blog.MetaDesc;
+        _ck(_v, 40, 0, currVal_7);
     });
 }
 exports.View_BlogOpenComponent_0 = View_BlogOpenComponent_0;
@@ -452,10 +457,9 @@ function View_BlogOpenComponent_Host_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, View_BlogOpenComponent_0, exports.RenderType_BlogOpenComponent)), i1.ɵdid(4308992, null, 0, i13.BlogOpenComponent, [i16.PropertyService, i16.PropertyService, i1.Renderer2,
-            i2.ActivatedRoute, i6.FacebookService, i16.PropertyService, i2.Router, i8.PostService,
-            i8.PostService, i17.Meta, i8.PostService, i1.NgZone, i17.Title, i17.DomSanitizer,
-            i9.WindowRefService], null, null)], function (_ck, _v) {
+        }, View_BlogOpenComponent_0, exports.RenderType_BlogOpenComponent)), i1.ɵdid(4308992, null, 0, i13.BlogOpenComponent, [i1.PLATFORM_ID, i16.PropertyService, i16.PropertyService,
+            i1.Renderer2, i2.ActivatedRoute, i17.DomSanitizer, i16.PropertyService, i2.Router,
+            i8.PostService, i8.PostService, i17.Meta, i8.PostService, i17.Title, i6.FacebookService], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

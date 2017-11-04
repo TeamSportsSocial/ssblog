@@ -35,7 +35,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     ShareCount:string,
     keywords:string[],
     exactDate:string;
-    readingTime:string
+    readingTime:string;
+    MetaDesc: string;
+    ImageDesc: string;
   }[]=[]
   blogDetails:{
     blogId:string;
@@ -49,7 +51,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     ShareCount:string,
     keywords:string[],
     exactDate:string;
-    readingTime:string
+    readingTime:string;
+    MetaDesc: string;
+    ImageDesc: string
   }[]=[]
   topBlogDetails:{
     blogId:string;
@@ -63,7 +67,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     ShareCount:string,
     keywords:string[],
     exactDate:string;
-    readingTime:string
+    readingTime:string;
+    MetaDesc: string;
+    ImageDesc: string
   }[]= []
   restBlogDetails:{
     blogId:string;
@@ -77,7 +83,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     ShareCount: string,
     keywords: string[],
     exactDate: string;
-    readingTime: string
+    readingTime: string;
+    MetaDesc: string;
+    ImageDesc: string
   }[]= []
   topMargin;
   removeTrendingBlock: boolean= false;
@@ -140,35 +148,17 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     this.setMobileView();
     this.getBlog();
   }
-  /* setMetaTags() {
-    this.metaService.addTags([
-      { rel: 'canonical' , href: 'https://wwww.chaseoursport.com'},
-      { name: 'author',   content: 'Coursetro.com'},
-      { name: 'keywords', content: 'angular seo, angular 4 universal, etc'},
-      { name: 'description', content: 'Welcome to Sports Social Blog. Here you will get all latest update regarding sports.' },
-      { name: 'title', content: 'Chase Your Sport: The Sports Social Blog'},
-      { name: 'theme-color', content: '#4327a0'},
-      { property: 'og:title', content: 'Chase Your Sport: The Sports Social Blog' },
-      { property: 'og:description', content:  'Welcome to Sports Social Blog. Here you will get all latest update regarding sports.'},
-      { property: 'og:url', content:  'https://wwww.chaseoursport.com' },
-      { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
-      { property: 'og:site_name', content: 'Chase Your Sport' },
-      { property: 'fb:app_id', content: '1750709328507665'},
-      { name: 'twitter:card', content: 'summary_large_image'},
-      { name: 'twitter:site', content: '@Chaseyoursport'},
-      { name: 'twitter:creator', content: '@NadeemKhan'},
-      { name: 'twitter:title', content: 'Chase Your Sport:The Sports Social Blog'},
-      { name: 'twitter:description', content: 'Welcome to Sports Social Blog. Here you will get all latest update regarding sports.'},
-      { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
-    ]);
-  } */
+  
 
   getBlog(){
     this.get.blogData(this.nextPageNumber, this.defaultKey).subscribe(
       (data) => {
+
+        console.log(data);
         this.show = true;
         this.dataRecived = true;
-        for (let i in data){
+        // tslint:disable-next-line:forin
+        for (const i in data) {
             this.blogDetails.push({
                 blogId: data[i].blogId,
                 blogImage: data[i].blogImage,
@@ -181,8 +171,10 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 ShareCount: data[i].ShareCount,
                 keywords: data[i].keywords.split(','),
                 exactDate: this.ExactDate(data[i].insertedDate),
-                readingTime: this.timeToRead(data[i].Content)
-              })
+                readingTime: this.timeToRead(data[i].Content),
+                MetaDesc: data[i].MetaDesc,
+                ImageDesc: data[i].ImageDesc
+              });
         }
 
        
@@ -199,7 +191,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             ShareCount: this.blogDetails[0].ShareCount,
             keywords: this.blogDetails[0].keywords,
             exactDate: this.blogDetails[0].exactDate,
-            readingTime: this.blogDetails[0].readingTime
+            readingTime: this.blogDetails[0].readingTime,
+            MetaDesc: this.blogDetails[0].MetaDesc,
+            ImageDesc: this.blogDetails[0].ImageDesc
           }
         )
         for (var i = 1; i < 4; i++){
@@ -216,7 +210,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               ShareCount: this.blogDetails[i].ShareCount,
               keywords: this.blogDetails[i].keywords,
               exactDate: this.blogDetails[i].exactDate,
-              readingTime: this.blogDetails[i].readingTime
+              readingTime: this.blogDetails[i].readingTime,
+              MetaDesc: this.blogDetails[i].MetaDesc,
+              ImageDesc: this.blogDetails[i].ImageDesc
             }
           )
         }
@@ -234,7 +230,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             ShareCount: this.blogDetails[i].ShareCount,
             keywords: this.blogDetails[i].keywords,
             exactDate: this.blogDetails[i].exactDate,
-            readingTime: this.blogDetails[i].readingTime
+            readingTime: this.blogDetails[i].readingTime,
+            MetaDesc: this.blogDetails[i].MetaDesc,
+            ImageDesc: this.blogDetails[i].ImageDesc
           }
         )
       }
@@ -340,17 +338,17 @@ export class BlogsComponent implements OnInit,AfterViewInit {
   nextPage(){
     this.dataRecived = false;
     this.nextPageNumber++;
-    if (this.nextPageNumber > 1){
+    if (this.nextPageNumber > 1) {
       this.get.blogData((this.nextPageNumber), this.defaultKey).subscribe(
         (data) => {
           this.dataRecived = true;
-           if (data.length == 0){
+           if (data.length === 0) {
              this.haveData = false;
-           }
-           else{
+           }else {
              this.haveData = true;
            }
-           for (let i in data){
+           // tslint:disable-next-line:forin
+           for (const i in data) {
             this.restBlogDetails.push(
               {
                 blogId: data[i].blogId,
@@ -360,16 +358,18 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 heading: data[i].heading,
                 Content: data[i].Content,
                 insertedDate: this.timePassed(data[i].insertedDate),
-                ViewCount: '50',
-                ShareCount: '50',
+                ViewCount: data.ViewCount,
+                ShareCount: data.ShareCount,
                 keywords: data[i].keywords.split(','),
                 exactDate: this.ExactDate(data[i].insertedDate),
-                readingTime: this.timeToRead(data[i].Content)
+                readingTime: this.timeToRead(data[i].Content),
+                MetaDesc: data[i].MetaDesc,
+                ImageDesc: data[i].ImageDesc
               }
-            )
+            );
            }
         }
-      )
+      );
     }
   }
 

@@ -28,7 +28,9 @@ var LatestBlogComponent = /** @class */ (function () {
             ShareCount: this.ShareCount,
             keywords: this.keywords,
             exactDate: this.exactDate,
-            readingTime: this.readingTime
+            readingTime: this.readingTime,
+            MetaDesc: this.MetaDesc,
+            ImageDesc: this.ImageDesc
         };
         this.responsiveDesign();
         if (this.blogImage) {
@@ -127,6 +129,8 @@ var LatestBlogComponent = /** @class */ (function () {
         'keywords': [{ type: core_1.Input },],
         'exactDate': [{ type: core_1.Input },],
         'readingTime': [{ type: core_1.Input },],
+        'MetaDesc': [{ type: core_1.Input },],
+        'ImageDesc': [{ type: core_1.Input },],
         'DescChild': [{ type: core_1.ViewChild, args: ['DescChild',] },],
         'latestTitle': [{ type: core_1.ViewChild, args: ['latestTitle',] },],
         'latestDesc': [{ type: core_1.ViewChild, args: ['latestDesc',] },],

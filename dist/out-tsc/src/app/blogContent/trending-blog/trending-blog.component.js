@@ -26,7 +26,9 @@ var TrendingBlogComponent = /** @class */ (function () {
                     ShareCount: data[i].ShareCount,
                     keywords: data[i].keywords.split(","),
                     exactDate: _this.ExactDate(data[i].insertedDate),
-                    readingTime: _this.timeToRead(data[i].Content)
+                    readingTime: _this.timeToRead(data[i].Content),
+                    MetadDesc: data[i].MetadDesc,
+                    ImageDesc: data[i].ImageDesc
                 });
             }
         });

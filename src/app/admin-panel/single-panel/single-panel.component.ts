@@ -1,10 +1,13 @@
 import { 
   Component, 
   OnInit,
-  Input
+  Input,
+  ViewChild,
+  Renderer2
  } from '@angular/core';
-import {Router} from "@angular/router";
-import {PropertyService} from "../../services/property.service";
+import {Router} from '@angular/router';
+import {PropertyService} from '../../services/property.service';
+import {PostService} from '../../services/post.service';
 @Component({
   selector: 'SportSocial-single-panel',
   templateUrl: './single-panel.component.html',
@@ -29,9 +32,12 @@ export class SinglePanelComponent implements OnInit {
     Content:string,
     keywords:string,
   }
+  @ViewChild('panel') panel;
   constructor(
+    private perform: PostService,
     private route :Router,
-    private send: PropertyService
+    private send: PropertyService,
+    private renderer:Renderer2
   ) { }
 
   ngOnInit() {
@@ -50,6 +56,16 @@ export class SinglePanelComponent implements OnInit {
     this.send.detailsofBlog.next(this.blog)
   }
   deleteBlog() {
-
+    this.perform.deleteBlog(this.blog.blogId).subscribe(
+      (res) => {
+        console.log(res);
+        if (res.Status === 'Success') {
+          console.log('blog Deleted');
+          this.renderer.setStyle(this.panel.nativeElement, 'display', 'none');
+        }else {
+          console.log('something went wrong');
+        }
+      }
+    )
   }
 }

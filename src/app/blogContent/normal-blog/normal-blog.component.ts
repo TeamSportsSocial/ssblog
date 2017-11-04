@@ -31,6 +31,8 @@ export class NormalBlogComponent implements OnInit {
   @Input()  keywords:string[]
   @Input()  exactDate:string
   @Input()  readingTime:string
+  @Input()  MetaDesc: string
+  @Input()  ImageDesc: string
 
   content:string;
   blog:{
@@ -45,7 +47,9 @@ export class NormalBlogComponent implements OnInit {
     ShareCount:string,
     keywords:string[],
     exactDate:string,
-    readingTime:string
+    readingTime:string,
+    MetaDesc: string,
+    ImageDesc: string
   }
   @ViewChild('blogTitle') blogTitle;
   @ViewChild('holder') holder;
@@ -77,7 +81,9 @@ export class NormalBlogComponent implements OnInit {
     ShareCount:this.ShareCount,
     keywords:this.keywords,
     exactDate: this.exactDate,
-    readingTime: this.readingTime
+    readingTime: this.readingTime,
+    MetaDesc: this.MetaDesc,
+    ImageDesc: this.ImageDesc
   }
    this.setVariableFont()
    if (this.blogImage) {

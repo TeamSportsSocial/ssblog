@@ -74,7 +74,7 @@ exports.AppServerModuleNgFactory = i0.ɵcmf(i1.AppServerModule, [i2.AppComponent
             return [p0_0];
         }, [i20.ROUTER_INITIALIZER]), i0.ɵmpd(4608, i19.FormBuilder, i19.FormBuilder, []), i0.ɵmpd(4608, i21.PropertyService, i21.PropertyService, []), i0.ɵmpd(4608, i22.GetService, i22.GetService, [i11.Http]),
         i0.ɵmpd(4608, i23.SaveService, i23.SaveService, []), i0.ɵmpd(4608, i24.StatusService, i24.StatusService, []), i0.ɵmpd(4608, i25.PostService, i25.PostService, [i11.Http]), i0.ɵmpd(4608, i26.AuthService, i26.AuthService, []), i0.ɵmpd(4608, i27.AuthGuard, i27.AuthGuard, [i26.AuthService,
-            i20.Router]), i0.ɵmpd(4608, i28.FacebookService, i28.FacebookService, []),
+            i20.Router]), i0.ɵmpd(4608, i28.FacebookService, i28.FacebookService, [i0.PLATFORM_ID]),
         i0.ɵmpd(4608, i29.WindowRefService, i29.WindowRefService, []), i0.ɵmpd(512, i11.HttpModule, i11.HttpModule, []), i0.ɵmpd(512, i13.HttpClientXsrfModule, i13.HttpClientXsrfModule, []), i0.ɵmpd(512, i13.HttpClientModule, i13.HttpClientModule, []), i0.ɵmpd(512, i14.CommonModule, i14.CommonModule, []), i0.ɵmpd(1024, i0.ErrorHandler, i15.ɵa, []), i0.ɵmpd(1024, i0.NgProbeToken, function () {
             return [i20.ɵb()];
         }, []), i0.ɵmpd(512, i20.ɵg, i20.ɵg, [i0.Injector]), i0.ɵmpd(256, i0.APP_ID, 'blogist', []), i0.ɵmpd(2048, i15.ɵTRANSITION_ID, null, [i0.APP_ID]), i0.ɵmpd(1024, i0.APP_INITIALIZER, function (p0_0, p0_1, p1_0, p2_0, p2_1, p2_2) {

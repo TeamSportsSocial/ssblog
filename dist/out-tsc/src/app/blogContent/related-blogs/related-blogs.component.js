@@ -46,7 +46,9 @@ var RelatedBlogsComponent = /** @class */ (function () {
                     ShareCount: data[i].ShareCount,
                     keywords: data[i].keywords.split(","),
                     exactDate: _this.ExactDate(data[i].insertedDate),
-                    readingTime: _this.timeToRead(data[i].Content)
+                    readingTime: _this.timeToRead(data[i].Content),
+                    MetaDesc: data[i].MetaDesc,
+                    ImageDesc: data[i].ImageDesc
                 });
             }
             _this.relatedBlogDetails = relatedBlogDetails;

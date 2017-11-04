@@ -9,38 +9,39 @@
 import * as i0 from './single-panel.component.css.shim.ngstyle';
 import * as i1 from '@angular/core';
 import * as i2 from '../../../../../../src/app/admin-panel/single-panel/single-panel.component';
-import * as i3 from '@angular/router';
-import * as i4 from '../../../../../../src/app/services/property.service';
+import * as i3 from '../../../../../../src/app/services/post.service';
+import * as i4 from '@angular/router';
+import * as i5 from '../../../../../../src/app/services/property.service';
 const styles_SinglePanelComponent:any[] = [i0.styles];
 export const RenderType_SinglePanelComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_SinglePanelComponent,data:{}});
 export function View_SinglePanelComponent_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),32,'div',[['class',
-      'panel']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          3,'div',[['class','blogImage']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt','']],[[8,'src',
-          4]],(null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n  '])),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),24,'div',[['class','blogInfo']],(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'p',[['class',
-          'heading']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['',''])),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),1,'p',[['class','desc']],(null as any),
+  return i1.ɵvid(0,[i1.ɵqud(402653184,1,{panel:0}),(_l()(),i1.ɵeld(0,[[1,0],['panel',
+      1]],(null as any),32,'div',[['class','panel']],(null as any),(null as any),(null as any),
+      (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),
+      i1.ɵeld(0,(null as any),(null as any),3,'div',[['class','blogImage']],(null as any),
           (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['',''])),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),1,'p',[['class','keywords']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['',''])),(_l()(),
-          i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          3,'p',[['class','bloggerName']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['src','/assets/images/sports-social-blogger-black.png']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n      ','\n    '])),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),7,'div',[['class',
-          'btn']],(null as any),(null as any),(null as any),(null as any),(null as any))),
+      ['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt','']],
+      [[8,'src',4]],(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),
+      i1.ɵeld(0,(null as any),(null as any),24,'div',[['class','blogInfo']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
+      ['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'p',[['class','heading']],
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['',''])),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),
+      i1.ɵeld(0,(null as any),(null as any),1,'p',[['class','desc']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
+      ['',''])),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),
+      (null as any),1,'p',[['class','keywords']],(null as any),(null as any),(null as any),
+      (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['',''])),(_l()(),
+      i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+      3,'p',[['class','bloggerName']],(null as any),(null as any),(null as any),(null as any),
+      (null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),(_l()(),i1.ɵeld(0,
+      (null as any),(null as any),0,'img',[['alt',''],['src','/assets/images/sports-social-blogger-black.png']],
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['\n      ','\n    '])),(_l()(),i1.ɵted((null as any),
+      ['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),7,'div',[['class',
+      'btn']],(null as any),(null as any),(null as any),(null as any),(null as any))),
       (_l()(),i1.ɵted((null as any),['\n      '])),(_l()(),i1.ɵeld(0,(null as any),
           (null as any),1,'button',([] as any[]),(null as any),[[(null as any),'click']],
           (_v,en,$event) => {
@@ -68,27 +69,28 @@ export function View_SinglePanelComponent_0(_l:any):i1.ɵViewDefinition {
       (null as any),(_ck,_v) => {
         var _co:i2.SinglePanelComponent = _v.component;
         const currVal_0:any = i1.ɵinlineInterpolate(1,'',_co.blogImage,'');
-        _ck(_v,4,0,currVal_0);
+        _ck(_v,5,0,currVal_0);
         const currVal_1:any = _co.heading;
-        _ck(_v,10,0,currVal_1);
+        _ck(_v,11,0,currVal_1);
         const currVal_2:any = _co.Content;
-        _ck(_v,13,0,currVal_2);
+        _ck(_v,14,0,currVal_2);
         const currVal_3:any = _co.keywords;
-        _ck(_v,16,0,currVal_3);
+        _ck(_v,17,0,currVal_3);
         const currVal_4:any = _co.bloggerName;
-        _ck(_v,21,0,currVal_4);
+        _ck(_v,22,0,currVal_4);
       });
 }
 export function View_SinglePanelComponent_Host_0(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'SportSocial-single-panel',
       ([] as any[]),(null as any),(null as any),(null as any),View_SinglePanelComponent_0,
       RenderType_SinglePanelComponent)),i1.ɵdid(114688,(null as any),0,i2.SinglePanelComponent,
-      [i3.Router,i4.PropertyService],(null as any),(null as any))],(_ck,_v) => {
-    _ck(_v,1,0);
-  },(null as any));
+      [i3.PostService,i4.Router,i5.PropertyService,i1.Renderer2],(null as any),(null as any))],
+      (_ck,_v) => {
+        _ck(_v,1,0);
+      },(null as any));
 }
 export const SinglePanelComponentNgFactory:i1.ComponentFactory<i2.SinglePanelComponent> = i1.ɵccf('SportSocial-single-panel',
     i2.SinglePanelComponent,View_SinglePanelComponent_Host_0,{blogId:'blogId',blogImage:'blogImage',
         bloggerImage:'bloggerImage',bloggerName:'bloggerName',heading:'heading',Content:'Content',
         keywords:'keywords'},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvc2luZ2xlLXBhbmVsL3NpbmdsZS1wYW5lbC5jb21wb25lbnQubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvc2luZ2xlLXBhbmVsL3NpbmdsZS1wYW5lbC5jb21wb25lbnQudHMiLCJuZzovLy9DOi9TcG9ydFNvY2lhbEJsb2cvc3JjL2FwcC9hZG1pbi1wYW5lbC9zaW5nbGUtcGFuZWwvc2luZ2xlLXBhbmVsLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvc2luZ2xlLXBhbmVsL3NpbmdsZS1wYW5lbC5jb21wb25lbnQudHMuU2luZ2xlUGFuZWxDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwicGFuZWxcIj5cbiAgPGRpdiBjbGFzcz1cImJsb2dJbWFnZVwiPlxuICAgIDxpbWcgc3JjPVwie3tibG9nSW1hZ2V9fVwiIGFsdD1cIlwiPlxuICA8L2Rpdj5cbiAgPGRpdiBjbGFzcz1cImJsb2dJbmZvXCI+XG4gICAgPHAgY2xhc3M9XCJoZWFkaW5nXCI+e3toZWFkaW5nfX08L3A+XG4gICAgPHAgY2xhc3M9XCJkZXNjXCI+e3tDb250ZW50fX08L3A+XG4gICAgPHAgY2xhc3M9XCJrZXl3b3Jkc1wiID57e2tleXdvcmRzfX08L3A+XG4gICAgPHAgY2xhc3M9XCJibG9nZ2VyTmFtZVwiPlxuICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWJsb2dnZXItYmxhY2sucG5nXCIgYWx0PVwiXCI+XG4gICAgICB7e2Jsb2dnZXJOYW1lfX1cbiAgICA8L3A+XG4gICAgPGRpdiBjbGFzcz1cImJ0blwiPlxuICAgICAgPGJ1dHRvbiAoY2xpY2spPVwiZWRpdEJsb2coKVwiPkVkaXQ8L2J1dHRvbj5cbiAgICAgIDxidXR0b24gKGNsaWNrKT1cImRlbGV0ZUJsb2coKVwiPkRlbGV0ZTwvYnV0dG9uPlxuICAgIDwvZGl2PlxuICA8L2Rpdj5cbjwvZGl2PlxuIiwiPFNwb3J0U29jaWFsLXNpbmdsZS1wYW5lbD48L1Nwb3J0U29jaWFsLXNpbmdsZS1wYW5lbD4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7OztvQkNBQTtNQUFBO01BQW1CLHlDQUNqQjtVQUFBO1VBQUEsOEJBQXVCO01BQ3JCO1VBQUEsOERBQWdDO1VBQUEsV0FDNUIseUNBQ047VUFBQTtVQUFBLDRDQUFzQjtVQUFBLGFBQ3BCO1VBQUE7TUFBbUIsd0NBQWU7TUFDbEM7VUFBQSwwREFBZ0I7VUFBQSxVQUFlLDJDQUMvQjtVQUFBO1VBQUEsOEJBQXFCLHdDQUFnQjtpQkFBQSw0QkFDckM7VUFBQTtVQUFBLDhCQUF1QjtNQUNyQjtVQUFBO01BQWlFLHNEQUUvRDtVQUFBLGFBQ0o7VUFBQTtNQUFpQiw2Q0FDZjtVQUFBO1VBQUE7WUFBQTtZQUFBO1lBQVE7Y0FBQTtjQUFBO1lBQUE7WUFBUjtVQUFBLGdDQUE2QjtNQUFhLDZDQUMxQztVQUFBO1VBQUE7WUFBQTtZQUFBO1lBQVE7Y0FBQTtjQUFBO1lBQUE7WUFBUjtVQUFBLGdDQUErQjtNQUFlLDJDQUMxQztNQUNGLHVDQUNGOzs7UUFmRztRQUFMLFdBQUssU0FBTDtRQUdtQjtRQUFBO1FBQ0g7UUFBQTtRQUNLO1FBQUE7UUFFOEM7UUFBQTs7OztvQkNUdkU7TUFBQTtxQ0FBQSxVQUFBO01BQUE7SUFBQTs7Ozs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvc2luZ2xlLXBhbmVsL3NpbmdsZS1wYW5lbC5jb21wb25lbnQubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvc2luZ2xlLXBhbmVsL3NpbmdsZS1wYW5lbC5jb21wb25lbnQudHMiLCJuZzovLy9DOi9TcG9ydFNvY2lhbEJsb2cvc3JjL2FwcC9hZG1pbi1wYW5lbC9zaW5nbGUtcGFuZWwvc2luZ2xlLXBhbmVsLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvc2luZ2xlLXBhbmVsL3NpbmdsZS1wYW5lbC5jb21wb25lbnQudHMuU2luZ2xlUGFuZWxDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwicGFuZWxcIiAjcGFuZWw+XG4gIDxkaXYgY2xhc3M9XCJibG9nSW1hZ2VcIj5cbiAgICA8aW1nIHNyYz1cInt7YmxvZ0ltYWdlfX1cIiBhbHQ9XCJcIj5cbiAgPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJibG9nSW5mb1wiPlxuICAgIDxwIGNsYXNzPVwiaGVhZGluZ1wiPnt7aGVhZGluZ319PC9wPlxuICAgIDxwIGNsYXNzPVwiZGVzY1wiPnt7Q29udGVudH19PC9wPlxuICAgIDxwIGNsYXNzPVwia2V5d29yZHNcIiA+e3trZXl3b3Jkc319PC9wPlxuICAgIDxwIGNsYXNzPVwiYmxvZ2dlck5hbWVcIj5cbiAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1ibG9nZ2VyLWJsYWNrLnBuZ1wiIGFsdD1cIlwiPlxuICAgICAge3tibG9nZ2VyTmFtZX19XG4gICAgPC9wPlxuICAgIDxkaXYgY2xhc3M9XCJidG5cIj5cbiAgICAgIDxidXR0b24gKGNsaWNrKT1cImVkaXRCbG9nKClcIj5FZGl0PC9idXR0b24+XG4gICAgICA8YnV0dG9uIChjbGljayk9XCJkZWxldGVCbG9nKClcIj5EZWxldGU8L2J1dHRvbj5cbiAgICA8L2Rpdj5cbiAgPC9kaXY+XG48L2Rpdj5cbiIsIjxTcG9ydFNvY2lhbC1zaW5nbGUtcGFuZWw+PC9TcG9ydFNvY2lhbC1zaW5nbGUtcGFuZWw+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7O21EQ0FBO01BQUE7TUFBQSw4QkFBMEIseUNBQ3hCO2FBQUE7VUFBQSwwREFBdUI7TUFBQSxhQUNyQjtNQUFBLHdFQUFnQzthQUFBLDBCQUM1Qix5Q0FDTjthQUFBO1VBQUEsMERBQXNCO01BQUEsYUFDcEI7TUFBQSx3RUFBbUI7YUFBQSx5QkFBZSwyQ0FDbEM7YUFBQTtVQUFBLDBEQUFnQjtNQUFBLFVBQWUsMkNBQy9CO01BQUE7TUFBQSw4QkFBcUIsd0NBQWdCO2FBQUEsNEJBQ3JDO01BQUE7TUFBQSxnQkFBdUIsNkNBQ3JCO01BQUE7TUFBQSx3RUFBaUU7YUFBQSx1Q0FFL0Q7TUFBQSxhQUNKO01BQUE7TUFBaUIsNkNBQ2Y7VUFBQTtVQUFBO1lBQUE7WUFBQTtZQUFRO2NBQUE7Y0FBQTtZQUFBO1lBQVI7VUFBQSxnQ0FBNkI7TUFBYSw2Q0FDMUM7VUFBQTtVQUFBO1lBQUE7WUFBQTtZQUFRO2NBQUE7Y0FBQTtZQUFBO1lBQVI7VUFBQSxnQ0FBK0I7TUFBZSwyQ0FDMUM7TUFDRix1Q0FDRjs7O1FBZkc7UUFBTCxXQUFLLFNBQUw7UUFHbUI7UUFBQTtRQUNIO1FBQUE7UUFDSztRQUFBO1FBRThDO1FBQUE7Ozs7b0JDVHZFO01BQUE7cUNBQUEsVUFBQTtNQUFBOztRQUFBOzs7Ozs7In0=

@@ -25,6 +25,8 @@ export class TrendingBlogCardComponent implements OnInit {
   @Input()  keywords:string[]
   @Input()  exactDate:string
   @Input()  readingTime:string
+  @Input()  MetaDesc: string
+  @Input()  ImageDesc: string
   
   isloading:boolean=true;
   dataRecieved:boolean=false;
@@ -40,7 +42,9 @@ export class TrendingBlogCardComponent implements OnInit {
     ShareCount:string,
     keywords:string[],
     exactDate:string,
-    readingTime:string
+    readingTime:string,
+    Metadesc: string,
+    ImageDesc: string
   }
   constructor(private Send: PropertyService, private winRef: WindowRefService) { }
 
@@ -57,7 +61,9 @@ export class TrendingBlogCardComponent implements OnInit {
       ShareCount:this.ShareCount,
       keywords:this.keywords,
       exactDate:this.exactDate,
-      readingTime:this.readingTime
+      readingTime:this.readingTime,
+      Metadesc: this.MetaDesc,
+      ImageDesc: this.ImageDesc
     }
     if(this.blogImage){
       this.dataRecieved=true
