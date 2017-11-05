@@ -15,7 +15,7 @@ var LatestBlogComponent = /** @class */ (function () {
         this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     LatestBlogComponent.prototype.ngOnInit = function () {
-        this.content = this.Content.replace(/<br>/g, '').replace(/<b>/g, '').replace(/<\/b>/g, '').replace(/<i>/g, '').replace(/<\/i>/g, '');
+        this.content = this.strip(this.Content);
         this.blog = {
             blogId: this.blogId,
             blogImage: this.blogImage,
@@ -42,6 +42,11 @@ var LatestBlogComponent = /** @class */ (function () {
         if (this.blogImage) {
             this.dataRecieved = true;
         }
+    };
+    LatestBlogComponent.prototype.strip = function (html) {
+        var tmp = this.renderer.createElement('DIV');
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || '';
     };
     LatestBlogComponent.prototype.removeInitialImage = function () {
         this.isloading = false;

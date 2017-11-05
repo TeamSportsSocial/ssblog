@@ -75,7 +75,7 @@ export class LatestBlogComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.content=this.Content.replace(/<br>/g,'').replace(/<b>/g,'').replace(/<\/b>/g,'').replace(/<i>/g,'').replace(/<\/i>/g,'')
+    this.content = this.strip( this.Content);
     this.blog={
       blogId:this.blogId,
       blogImage:this.blogImage,
@@ -107,6 +107,13 @@ export class LatestBlogComponent implements OnInit {
 
     }
   }
+
+  strip(html) {
+    const tmp = this.renderer.createElement('DIV');
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || '';
+  }
+
   removeInitialImage(){
     this.isloading=false
 
