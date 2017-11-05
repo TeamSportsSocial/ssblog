@@ -1142,7 +1142,7 @@ module.exports = "<footer >\n  <div class=\"subscribe\" >\n    <p>\n      Subscr
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_status_service__ = __webpack_require__("../../../../../src/app/services/status.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1152,18 +1152,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 
 
 
 
 var BlogFooterComponent = /** @class */ (function () {
-    function BlogFooterComponent(sendEmail, renderer, status, winRef) {
+    function BlogFooterComponent(sendEmail, renderer, status, platformId) {
         this.sendEmail = sendEmail;
         this.renderer = renderer;
         this.status = status;
-        this.winRef = winRef;
         this.showSubscriptionBox = false;
         this.errorMessage = false;
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_3__angular_common__["j" /* isPlatformBrowser */])(platformId),
+            console.log(this.isBrowser);
     }
     BlogFooterComponent.prototype.ngOnInit = function () {
         this.setMobileView();
@@ -1173,10 +1177,8 @@ var BlogFooterComponent = /** @class */ (function () {
         if (this.subscriber.nativeElement.validity.valid == true && this.subscriber.nativeElement.value) {
             this.sendEmail.ofUser(this.subscriber.nativeElement.value)
                 .subscribe(function (res) {
-                //console.log(res.Status)
                 if (res.Status == 'Success') {
                     _this.showSubscriptionBox = true;
-                    //console.log(this.showSubscriptionBox)
                     _this.subscriber.nativeElement.value = '';
                     _this.errorMessage = false;
                 }
@@ -1189,20 +1191,21 @@ var BlogFooterComponent = /** @class */ (function () {
     };
     BlogFooterComponent.prototype.close = function () {
         this.showSubscriptionBox = false;
-        //console.log(this.showSubscriptionBox)
     };
     BlogFooterComponent.prototype.setMobileView = function () {
-        if (this.winRef.nativeWindow.innerWidth < 850) {
-            this.renderer.setStyle(this.copyright.nativeElement, 'width', '100%');
-            this.renderer.setStyle(this.followUs.nativeElement, 'width', '100%');
-            this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'center');
-            this.renderer.setStyle(this.copyright.nativeElement, 'text-align', 'center');
-        }
-        else {
-            this.renderer.setStyle(this.followUs.nativeElement, 'width', '40%');
-            this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'right');
-            this.renderer.setStyle(this.copyright.nativeElement, 'width', '60%');
-            this.renderer.setStyle(this.copyright.nativeElement, 'text-align', 'left');
+        if (this.isBrowser) {
+            if (window.innerWidth < 850) {
+                this.renderer.setStyle(this.copyright.nativeElement, 'width', '100%');
+                this.renderer.setStyle(this.followUs.nativeElement, 'width', '100%');
+                this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'center');
+                this.renderer.setStyle(this.copyright.nativeElement, 'text-align', 'center');
+            }
+            else {
+                this.renderer.setStyle(this.followUs.nativeElement, 'width', '40%');
+                this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'right');
+                this.renderer.setStyle(this.copyright.nativeElement, 'width', '60%');
+                this.renderer.setStyle(this.copyright.nativeElement, 'text-align', 'left');
+            }
         }
     };
     BlogFooterComponent.prototype.onresize = function () {
@@ -1232,10 +1235,11 @@ var BlogFooterComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/blog-footer/blog-footer.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blog-footer/blog-footer.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_status_service__["a" /* StatusService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_status_service__["a" /* StatusService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _d || Object])
+        __param(3, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_status_service__["a" /* StatusService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_status_service__["a" /* StatusService */]) === "function" && _c || Object, Object])
     ], BlogFooterComponent);
     return BlogFooterComponent;
-    var _a, _b, _c, _d;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=blog-footer.component.js.map
@@ -1280,7 +1284,7 @@ module.exports = "<header #Header>\n  <ul class=\"left\" #left>\n    <a href=\"/
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_ReplaySubject__ = __webpack_require__("../../../../rxjs/ReplaySubject.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_ReplaySubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_ReplaySubject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1289,6 +1293,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
 };
 
 
@@ -1299,7 +1306,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var BlogHeaderComponent = /** @class */ (function () {
-    function BlogHeaderComponent(sendHeight, renderer, send, get, elRef, _sanitizer, searchKeyword, router, sendKey, zone, winRef) {
+    function BlogHeaderComponent(sendHeight, renderer, send, get, elRef, _sanitizer, searchKeyword, router, sendKey, zone, platformId) {
         this.sendHeight = sendHeight;
         this.renderer = renderer;
         this.send = send;
@@ -1310,7 +1317,6 @@ var BlogHeaderComponent = /** @class */ (function () {
         this.router = router;
         this.sendKey = sendKey;
         this.zone = zone;
-        this.winRef = winRef;
         this.keywords = [];
         this.pageNumber = 1;
         this.mobileView = false;
@@ -1320,6 +1326,7 @@ var BlogHeaderComponent = /** @class */ (function () {
         this.results = [];
         this.haveresult = false;
         this.searchKey = new __WEBPACK_IMPORTED_MODULE_6_rxjs_ReplaySubject__["ReplaySubject"]();
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_7__angular_common__["j" /* isPlatformBrowser */])(platformId);
     }
     BlogHeaderComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1330,21 +1337,25 @@ var BlogHeaderComponent = /** @class */ (function () {
             }
         });
         this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
-        if (window.innerWidth <= 750) {
-            this.mobileView = true;
-        }
-        else {
-            this.mobileView = false;
+        if (this.isBrowser) {
+            if (window.innerWidth <= 750) {
+                this.mobileView = true;
+            }
+            else {
+                this.mobileView = false;
+            }
         }
     };
     BlogHeaderComponent.prototype.ngAfterViewChecked = function () {
-        this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
+        if (this.isBrowser) {
+            this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
+        }
     };
-    BlogHeaderComponent.prototype.reloadPage = function () {
-        this.zone.runOutsideAngular(function () {
-            location.reload();
-        });
-    };
+    /* reloadPage() {
+      this.zone.runOutsideAngular(() => {
+          location.reload();
+      });
+    } */
     BlogHeaderComponent.prototype.onclick = function () {
         this.haveresult = false;
         if (this.searchBox) {
@@ -1356,11 +1367,13 @@ var BlogHeaderComponent = /** @class */ (function () {
             this.setStyleOfResultBox();
         }
         this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
-        if (window.innerWidth <= 750) {
-            this.mobileView = true;
-        }
-        else {
-            this.mobileView = false;
+        if (this.isBrowser) {
+            if (window.innerWidth <= 750) {
+                this.mobileView = true;
+            }
+            else {
+                this.mobileView = false;
+            }
         }
     };
     BlogHeaderComponent.prototype.openDropDown = function () {
@@ -1466,10 +1479,11 @@ var BlogHeaderComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/blog-header/blog-header.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blog-header/blog-header.component.css")],
         }),
-        __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_7__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _q || Object])
+        __param(10, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
+        __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _p || Object, Object])
     ], BlogHeaderComponent);
     return BlogHeaderComponent;
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
 }());
 
 //# sourceMappingURL=blog-header.component.js.map
@@ -1558,6 +1572,7 @@ var BlogOpenComponent = /** @class */ (function () {
         this.blogDataRecieved = false;
         this.Keywords = [];
         this.loading = true;
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_5__angular_common__["j" /* isPlatformBrowser */])(platformId);
         if (Object(__WEBPACK_IMPORTED_MODULE_5__angular_common__["j" /* isPlatformBrowser */])(platformId)) {
             Fb.init();
         }
@@ -1582,7 +1597,6 @@ var BlogOpenComponent = /** @class */ (function () {
         });
     };
     BlogOpenComponent.prototype.strip = function (html) {
-        /* const tmp = document.createElement('DIV'); */
         var tmp = this.renderer.createElement('DIV');
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || '';
@@ -1606,9 +1620,23 @@ var BlogOpenComponent = /** @class */ (function () {
         this.metaService.removeTag("property= 'fb:app_id'");
     };
     BlogOpenComponent.prototype.setMetaTags = function () {
+        var key;
+        var title;
+        if (this.Keywords[0].search(/ /g)) {
+            key = this.Keywords[0].replace(/ /g, '-');
+        }
+        else {
+            key = this.Keywords[0];
+        }
+        if (this.blog.heading.search(/ /g)) {
+            title = this.blog.heading.replace(/ /g, '-');
+        }
+        else {
+            title = this.blog.heading;
+        }
         this.keys = this.blog.keywords.toString();
-        var url = 'https://www.chaseyoursport.com/' + this.Keywords[0] + '/' + this.blog.heading.replace(/ /g, '-')
-            + '/' + this.blogID;
+        var url = 'https://www.chaseyoursport.com/' + key
+            + '/' + title + '/' + this.blogID;
         this.metaService.addTags([
             { rel: 'canonical', href: url },
             { name: 'title', content: this.blog.heading },
@@ -1696,7 +1724,6 @@ var BlogOpenComponent = /** @class */ (function () {
             _this.ShareCount = +blog.ShareCount;
             _this.ViewCount = +(blog.ViewCount);
             _this.sendViewCount();
-            // window.scrollTo(0, 0);
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
             _this.setMetaTags();
             _this.setTitle();
@@ -1746,20 +1773,22 @@ var BlogOpenComponent = /** @class */ (function () {
         }
     };
     BlogOpenComponent.prototype.setMobileView = function () {
-        if (window.innerWidth > 950) {
-            this.mobileView = false;
-            this.removeSocial = false;
-            this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '68%');
-        }
-        if (window.innerWidth <= 950 && window.innerWidth > 700) {
-            this.removeSocial = true;
-            this.mobileView = false;
-            this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
-        }
-        if (window.innerWidth < 700) {
-            this.removeSocial = true;
-            this.mobileView = true;
-            this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
+        if (this.isBrowser) {
+            if (window.innerWidth > 950) {
+                this.mobileView = false;
+                this.removeSocial = false;
+                this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '68%');
+            }
+            if (window.innerWidth <= 950 && window.innerWidth > 700) {
+                this.removeSocial = true;
+                this.mobileView = false;
+                this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
+            }
+            if (window.innerWidth < 700) {
+                this.removeSocial = true;
+                this.mobileView = true;
+                this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
+            }
         }
     };
     BlogOpenComponent.prototype.scriptOfTwitter = function () {
@@ -1794,9 +1823,11 @@ var BlogOpenComponent = /** @class */ (function () {
         this.openFullImage = true;
     };
     BlogOpenComponent.prototype.onFullImageload = function () {
-        var height = this.fullImage.nativeElement.getBoundingClientRect().height;
-        var top = (window.innerHeight - height) / 2;
-        this.renderer.setStyle(this.fullImage.nativeElement, 'top', top + 'px');
+        if (this.isBrowser) {
+            var height = this.fullImage.nativeElement.getBoundingClientRect().height;
+            var top = (window.innerHeight - height) / 2;
+            this.renderer.setStyle(this.fullImage.nativeElement, 'top', top + 'px');
+        }
     };
     BlogOpenComponent.prototype.closeFullImage = function () {
         this.openFullImage = false;
@@ -1807,36 +1838,29 @@ var BlogOpenComponent = /** @class */ (function () {
         });
     };
     BlogOpenComponent.prototype.shareOnFacebook = function () {
+        var key;
+        var title;
+        if (this.Keywords[0].search(/ /g)) {
+            key = this.Keywords[0].replace(/ /g, '-');
+        }
+        else {
+            key = this.Keywords[0];
+        }
+        if (this.blog.heading.search(/ /g)) {
+            title = this.blog.heading.replace(/ /g, '-');
+        }
+        else {
+            title = this.blog.heading;
+        }
         this.sendShareCount();
         FB.ui({
             method: 'share',
-            href: 'https://developers.facebook.com/docs/',
+            href: 'https://www.chaseyoursport.com/' + key
+                + '/' + title + '/' + this.blogID,
         }, function (response) { });
     };
-    /*  shareOnFacebook() {
-        // this.sendShareCount();
-        console.clear();
-        console.log(this.strip (this.blog.Content));
-         FB.ui({
-             method: 'share_open_graph',
-             action_type: 'og.shares',
-             action_properties: JSON.stringify({
-                 object : {
-                    'og:url': 'https://www.chaseyoursport.com/' + this.Keywords[0].replace(/ /g, '-')
-                         + '/' + this.blog.heading.replace(/ /g, '-') + '/' + this.blogID ,
-                    'og:title': this.blog.heading,
-                    'og:description': this.strip (this.blog.Content),
-                    'og:image': this.blog.blogImage,
-                    'og:image:width': '180',
-                    'og:image:height': '110'
-                 }
-             })
-             },
-             // callback
-             function(response) {});
-     } */
     BlogOpenComponent.prototype.shareOnTwitter = function () {
-        //this.sendShareCount();
+        this.sendShareCount();
         var width = 575, height = 400, left = (window.innerWidth - width) / 2, top = (window.innerHeight - height) / 2, url = this.popup.nativeElement.attributes[2].value, opts = 'status=1' +
             ',width=' + width +
             ',height=' + height +
@@ -1932,7 +1956,7 @@ module.exports = "<SportSocialBlog-keywords></SportSocialBlog-keywords>\n<div cl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1942,18 +1966,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 
 
 
 
 
 var BlogsComponent = /** @class */ (function () {
-    function BlogsComponent(reciveHeight, renderer, get, metaService, winRef) {
+    function BlogsComponent(reciveHeight, renderer, get, metaService, platformId) {
         this.reciveHeight = reciveHeight;
         this.renderer = renderer;
         this.get = get;
         this.metaService = metaService;
-        this.winRef = winRef;
         this.latestBlogDetails = [];
         this.blogDetails = [];
         this.topBlogDetails = [];
@@ -1985,6 +2011,7 @@ var BlogsComponent = /** @class */ (function () {
             { name: 'twitter:description', content: "chase your sports provides a better & sustainable\n      platform for the sports analytics and latest national as well as international\n      sports news & update for better engagement with the sports-friendly environment &\n      future aspects in INDIA...." },
             { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
         ]);
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_4__angular_common__["j" /* isPlatformBrowser */])(platformId);
     }
     BlogsComponent.prototype.ngOnInit = function () {
         this.setMobileView();
@@ -2070,7 +2097,7 @@ var BlogsComponent = /** @class */ (function () {
         });
     };
     BlogsComponent.prototype.setMobileView = function () {
-        if (this.winRef.nativeWindow.innerWidth > 600) {
+        if (window.innerWidth > 600) {
             this.mobileView = false;
         }
         else {
@@ -2147,12 +2174,10 @@ var BlogsComponent = /** @class */ (function () {
     };
     BlogsComponent.prototype.ExactDate = function (i) {
         var writtenDate = new Date(i * 1000);
-        // console.log(i, writtenDate,writtenDate.toDateString())
         return writtenDate.toDateString();
     };
     BlogsComponent.prototype.timeToRead = function (s) {
         var words = s.split(' ');
-        //console.log(words,words.length,this.blog.blogId)
         var time = Math.round(words.length / 180);
         if (time > 1) {
             return time + ' min read';
@@ -2212,10 +2237,11 @@ var BlogsComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/blogContent/blogs/blogs.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/blogs/blogs.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* Meta */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _e || Object])
+        __param(4, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* Meta */]) === "function" && _d || Object, Object])
     ], BlogsComponent);
     return BlogsComponent;
-    var _a, _b, _c, _d, _e;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=blogs.component.js.map
@@ -2255,7 +2281,7 @@ module.exports = "\n\n<div class=\"latest\" MaintainHeightWidthRatio #latest>\n 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2265,19 +2291,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 
 
 
 
 var LatestBlogComponent = /** @class */ (function () {
-    function LatestBlogComponent(Send, renderer, post, winRef) {
+    function LatestBlogComponent(Send, renderer, post, platformId) {
         this.Send = Send;
         this.renderer = renderer;
         this.post = post;
-        this.winRef = winRef;
         this.openFullImage = false;
         this.isloading = true;
         this.dataRecieved = false;
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_3__angular_common__["j" /* isPlatformBrowser */])(platformId);
     }
     LatestBlogComponent.prototype.ngOnInit = function () {
         this.content = this.Content.replace(/<br>/g, '').replace(/<b>/g, '').replace(/<\/b>/g, '').replace(/<i>/g, '').replace(/<\/i>/g, '');
@@ -2312,11 +2341,13 @@ var LatestBlogComponent = /** @class */ (function () {
         this.isloading = false;
     };
     LatestBlogComponent.prototype.setDefault = function () {
-        this.blogImage = "/assets/images/default-image.png";
+        this.blogImage = '/assets/images/default-image.png';
     };
     LatestBlogComponent.prototype.send = function () {
         this.Send.detailsofBlog.next(this.blog);
-        window.scrollTo(0, 0);
+        if (this.isBrowser) {
+            window.scrollTo(0, 0);
+        }
     };
     LatestBlogComponent.prototype.openfullImage = function () {
         this.openFullImage = true;
@@ -2325,7 +2356,7 @@ var LatestBlogComponent = /** @class */ (function () {
         this.openFullImage = false;
     };
     LatestBlogComponent.prototype.heightOfInitialImage = function () {
-        if (this.winRef.nativeWindow.innerWidth <= 600) {
+        if (window.innerWidth <= 600) {
             var width = this.initialImage.nativeElement.getBoundingClientRect().width;
             var height = .72 * width;
             this.renderer.setStyle(this.initialImage.nativeElement, 'height', height + 'px');
@@ -2335,33 +2366,32 @@ var LatestBlogComponent = /** @class */ (function () {
         this.responsiveDesign();
     };
     LatestBlogComponent.prototype.responsiveDesign = function () {
-        if (this.winRef.nativeWindow.innerWidth >= 1000) {
+        if (window.innerWidth >= 1000) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '8% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '2.2em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.2em');
         }
-        if (this.winRef.nativeWindow.innerWidth > 800 && this.winRef.nativeWindow.innerWidth < 1000) {
+        if (window.innerWidth > 800 && window.innerWidth < 1000) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '8% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.8em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.2em');
         }
-        if (this.winRef.nativeWindow.innerWidth < 800 && this.winRef.nativeWindow.innerWidth >= 600) {
+        if (window.innerWidth < 800 && window.innerWidth >= 600) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '4% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.1em');
         }
-        if (this.winRef.nativeWindow.innerWidth < 600 && this.winRef.nativeWindow.innerWidth > 400) {
+        if (window.innerWidth < 600 && window.innerWidth > 400) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
-            //this.renderer.setStyle(this.Desc.nativeElement,' background','rgba(0, 0, 0, 0.5)')
         }
-        if (this.winRef.nativeWindow.innerWidth < 400 && this.winRef.nativeWindow.innerWidth > 340) {
+        if (window.innerWidth < 400 && window.innerWidth > 340) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.3em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
         }
-        if (this.winRef.nativeWindow.innerWidth < 340) {
+        if (window.innerWidth < 340) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.2em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
@@ -2463,10 +2493,11 @@ var LatestBlogComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/blogContent/latest-blog/latest-blog.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/latest-blog/latest-blog.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _d || Object])
+        __param(3, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object, Object])
     ], LatestBlogComponent);
     return LatestBlogComponent;
-    var _a, _b, _c, _d;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=latest-blog.component.js.map
@@ -2506,7 +2537,7 @@ module.exports = "\n  <div class=\"blog\" MaintainHeightWidthRatio #blog >\n    
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2516,20 +2547,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 
 
 
 
 var NormalBlogComponent = /** @class */ (function () {
-    function NormalBlogComponent(Send, renderer, post, zone, winRef) {
+    function NormalBlogComponent(Send, renderer, post, zone, platformId) {
         this.Send = Send;
         this.renderer = renderer;
         this.post = post;
         this.zone = zone;
-        this.winRef = winRef;
         this.isloading = true;
         this.openFullImage = false;
         this.dataRecieved = false;
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_3__angular_common__["j" /* isPlatformBrowser */])(platformId);
     }
     NormalBlogComponent.prototype.ngOnInit = function () {
         this.content = this.strip(this.Content);
@@ -2556,7 +2590,7 @@ var NormalBlogComponent = /** @class */ (function () {
         //console.log(this.blogTitle)
     };
     NormalBlogComponent.prototype.strip = function (html) {
-        var tmp = document.createElement('DIV');
+        var tmp = this.renderer.createElement('DIV');
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || '';
     };
@@ -2571,50 +2605,42 @@ var NormalBlogComponent = /** @class */ (function () {
         });
     };
     NormalBlogComponent.prototype.setVariableFont = function () {
-        if (this.winRef.nativeWindow.innerWidth > 1200) {
+        if (window.innerWidth > 1200) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
         }
-        if (this.winRef.nativeWindow.innerWidth > 1100 && this.winRef.nativeWindow.innerWidth < 1200) {
+        if (window.innerWidth > 1100 && window.innerWidth < 1200) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
         }
-        if (this.winRef.nativeWindow.innerWidth < 1100 && this.winRef.nativeWindow.innerWidth > 1000) {
+        if (window.innerWidth < 1100 && window.innerWidth > 1000) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
         }
-        if (this.winRef.nativeWindow.innerWidth < 1000 && this.winRef.nativeWindow.innerWidth > 950) {
+        if (window.innerWidth < 1000 && window.innerWidth > 950) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.15em');
         }
-        if (this.winRef.nativeWindow.innerWidth > 700 && this.winRef.nativeWindow.innerWidth < 950) {
+        if (window.innerWidth > 700 && window.innerWidth < 950) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.25em');
         }
-        if (this.winRef.nativeWindow.innerWidth > 600 && this.winRef.nativeWindow.innerWidth < 700) {
+        if (window.innerWidth > 600 && window.innerWidth < 700) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
         }
-        if (this.winRef.nativeWindow.innerWidth > 600 && this.winRef.nativeWindow.innerWidth < 500) {
+        if (window.innerWidth > 600 && window.innerWidth < 500) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
         }
-        if (this.winRef.nativeWindow.innerWidth > 500 && this.winRef.nativeWindow.innerWidth < 600) {
+        if (window.innerWidth > 500 && window.innerWidth < 600) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
         }
-        if (this.winRef.nativeWindow.innerWidth > 320 && this.winRef.nativeWindow.innerWidth < 400) {
+        if (window.innerWidth > 320 && window.innerWidth < 400) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
         }
-        if (this.winRef.nativeWindow.innerWidth < 320) {
+        if (window.innerWidth < 320) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '0.9em');
         }
     };
-    NormalBlogComponent.prototype.setHeightOfTitle = function () {
-        var heightofBlog = this.Blog.nativeElement.getBoundingClientRect().height;
-        var heightofHolder = this.holder.nativeElement.getBoundingClientRect().height;
-        var heightofFooter = heightofBlog - heightofHolder;
-        var heightofFirstChild = this.footer.nativeElement.children[0].offsetHeight;
-        var heightofThirdChild = this.footer.nativeElement.children[2].offsetHeight;
-        var heightOfTitle = heightofFooter - heightofFirstChild - heightofThirdChild - 18;
-        this.renderer.setStyle(this.blogTitle.nativeElement, 'height', heightOfTitle + 'px');
-        var topMargin = (heightofFooter - heightofFirstChild - heightOfTitle - heightofThirdChild) / 2;
-    };
     NormalBlogComponent.prototype.send = function () {
         this.Send.detailsofBlog.next(this.blog);
-        this.winRef.nativeWindow.scrollTo(0, 0);
+        if (this.isBrowser) {
+            window.scrollTo(0, 0);
+        }
     };
     NormalBlogComponent.prototype.setDefault = function (event) {
         this.blogImage = '/assets/images/default-image.png';
@@ -2713,10 +2739,11 @@ var NormalBlogComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/blogContent/normal-blog/normal-blog.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/normal-blog/normal-blog.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _e || Object])
+        __param(4, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _d || Object, Object])
     ], NormalBlogComponent);
     return NormalBlogComponent;
-    var _a, _b, _c, _d, _e;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=normal-blog.component.js.map
@@ -2756,7 +2783,7 @@ module.exports = "<div>\n  <div  *ngIf=\"!mobileView\" class=\"relatedBlog\">\n 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2766,33 +2793,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 
 
 
 
 var RelatedBlogsComponent = /** @class */ (function () {
-    function RelatedBlogsComponent(getRelated, recieveKey, winRef) {
+    function RelatedBlogsComponent(getRelated, recieveKey, platformId) {
         this.getRelated = getRelated;
         this.recieveKey = recieveKey;
-        this.winRef = winRef;
         this.dataRecived = false;
         this.mobileView = false;
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_3__angular_common__["j" /* isPlatformBrowser */])(platformId);
     }
     RelatedBlogsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.setMobileView();
         this.recieveKey.ofBlogCard.subscribe(function (data) {
-            console.log(data, " checkarticle");
+            console.log(data, ' checkarticle');
             _this.getRelatedBlogs(data);
         });
     };
     RelatedBlogsComponent.prototype.getRelatedBlogs = function (key) {
         var _this = this;
-        //console.clear()
         var relatedBlogDetails = [];
         this.getRelated.blogData(1, key).subscribe(function (data) {
             _this.dataRecived = true;
-            console.log(data, "related");
+            console.log(data, 'related');
             if (data.length > 3) {
                 _this.numberofBlog = 3;
             }
@@ -2810,7 +2839,7 @@ var RelatedBlogsComponent = /** @class */ (function () {
                     insertedDate: _this.timePassed(data[i].insertedDate),
                     ViewCount: data[i].ViewCount,
                     ShareCount: data[i].ShareCount,
-                    keywords: data[i].keywords.split(","),
+                    keywords: data[i].keywords.split(','),
                     exactDate: _this.ExactDate(data[i].insertedDate),
                     readingTime: _this.timeToRead(data[i].Content),
                     MetaDesc: data[i].MetaDesc,
@@ -2818,17 +2847,16 @@ var RelatedBlogsComponent = /** @class */ (function () {
                 });
             }
             _this.relatedBlogDetails = relatedBlogDetails;
-            console.log(_this.relatedBlogDetails, " checkarticle");
         });
     };
     RelatedBlogsComponent.prototype.timeToRead = function (s) {
-        var words = s.split(" ");
+        var words = s.split(' ');
         var time = Math.round(words.length / 180);
         if (time > 1) {
-            return time + " min read";
+            return time + ' min read';
         }
         else {
-            return "2 min read";
+            return '2 min read';
         }
     };
     RelatedBlogsComponent.prototype.timePassed = function (i) {
@@ -2872,11 +2900,10 @@ var RelatedBlogsComponent = /** @class */ (function () {
     };
     RelatedBlogsComponent.prototype.ExactDate = function (i) {
         var writtenDate = new Date(i * 1000);
-        //console.log(writtenDate," wDate")
         return writtenDate.toDateString();
     };
     RelatedBlogsComponent.prototype.setMobileView = function () {
-        if (this.winRef.nativeWindow.innerWidth > 950) {
+        if (window.innerWidth > 950) {
             this.mobileView = false;
         }
         else {
@@ -2898,10 +2925,11 @@ var RelatedBlogsComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/blogContent/related-blogs/related-blogs.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/related-blogs/related-blogs.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _c || Object])
+        __param(2, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_post_service__["a" /* PostService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, Object])
     ], RelatedBlogsComponent);
     return RelatedBlogsComponent;
-    var _a, _b, _c;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=related-blogs.component.js.map
@@ -2940,7 +2968,7 @@ module.exports = "<div class=\"trending\">\n  <a routerLink=\"/{{keywords[0]}}/{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrendingBlogCardComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2950,15 +2978,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 
 
 
 var TrendingBlogCardComponent = /** @class */ (function () {
-    function TrendingBlogCardComponent(Send, winRef) {
+    function TrendingBlogCardComponent(Send, platformId) {
         this.Send = Send;
-        this.winRef = winRef;
         this.isloading = true;
         this.dataRecieved = false;
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_2__angular_common__["j" /* isPlatformBrowser */])(platformId);
     }
     TrendingBlogCardComponent.prototype.ngOnInit = function () {
         this.blog = {
@@ -2988,7 +3019,7 @@ var TrendingBlogCardComponent = /** @class */ (function () {
     };
     TrendingBlogCardComponent.prototype.send = function () {
         this.Send.detailsofBlog.next(this.blog);
-        this.winRef.nativeWindow.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     };
     TrendingBlogCardComponent.prototype.setDefault = function (event) {
         this.blogImage = '/assets/images/default-image.png';
@@ -3058,10 +3089,11 @@ var TrendingBlogCardComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/blogContent/trending-blog/trending-blog-card/trending-blog-card.component.html"),
             styles: [__webpack_require__("../../../../../src/app/blogContent/trending-blog/trending-blog-card/trending-blog-card.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _b || Object])
+        __param(1, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, Object])
     ], TrendingBlogCardComponent);
     return TrendingBlogCardComponent;
-    var _a, _b;
+    var _a;
 }());
 
 //# sourceMappingURL=trending-blog-card.component.js.map
@@ -3247,7 +3279,7 @@ module.exports = "<div class=\"comment\" #commentBox>\n  <div class=\"imageHolde
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_facebook_service__ = __webpack_require__("../../../../../src/app/services/facebook.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3257,13 +3289,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 
 
 
 
 
 var CommentsComponent = /** @class */ (function () {
-    function CommentsComponent(renderer, Fb, http, sendUserInfo, send, loadComment, zone, winRef) {
+    function CommentsComponent(renderer, Fb, http, sendUserInfo, send, loadComment, zone, platformId) {
         this.renderer = renderer;
         this.Fb = Fb;
         this.http = http;
@@ -3271,12 +3306,14 @@ var CommentsComponent = /** @class */ (function () {
         this.send = send;
         this.loadComment = loadComment;
         this.zone = zone;
-        this.winRef = winRef;
         this.isConnected = false;
         this.loged = false;
         this.user = { name: 'Hello' };
         this.recivedComment = [];
-        Fb.init();
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_4__angular_common__["j" /* isPlatformBrowser */])(platformId);
+        if (Object(__WEBPACK_IMPORTED_MODULE_4__angular_common__["j" /* isPlatformBrowser */])(platformId)) {
+            Fb.init();
+        }
     }
     CommentsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -3290,10 +3327,9 @@ var CommentsComponent = /** @class */ (function () {
                 });
             }
         });
-        this.getLoginStatus();
-    };
-    CommentsComponent.prototype.ngAfterViewInit = function () {
-        this.getLoginStatus();
+        if (this.isBrowser) {
+            this.getLoginStatus();
+        }
     };
     CommentsComponent.prototype.setDefault = function () {
         this.profilePicture = '/assets/images/user.png';
@@ -3349,39 +3385,43 @@ var CommentsComponent = /** @class */ (function () {
     };
     CommentsComponent.prototype.login = function () {
         var _this = this;
-        FB.login(function (response) {
-            if (response.status === 'connected') {
-                _this.loged = true;
-                _this.token = response;
-                _this.isConnected = true;
-                _this.profilePicture = "https://graph.facebook.com/" + response.authResponse.userID + "/picture?type=large";
-                _this.me();
-                console.log(_this.user);
-            }
-            else if (response.status === 'not_authorized') {
-                console.log('conect1');
-            }
-            else {
-                console.log('conect2');
-            }
-        }, { scope: 'user_friends,email' });
+        if (this.isBrowser) {
+            FB.login(function (response) {
+                if (response.status === 'connected') {
+                    _this.loged = true;
+                    _this.token = response;
+                    _this.isConnected = true;
+                    _this.profilePicture = "https://graph.facebook.com/" + response.authResponse.userID + "/picture?type=large";
+                    _this.me();
+                    console.log(_this.user);
+                }
+                else if (response.status === 'not_authorized') {
+                    console.log('conect1');
+                }
+                else {
+                    console.log('conect2');
+                }
+            }, { scope: 'user_friends,email' });
+        }
     };
     CommentsComponent.prototype.me = function () {
         var _this = this;
-        FB.api('/me?fields=id,name,picture.type(large),email', function (result) {
-            if (result && !result.error) {
-                _this.user = result;
-                console.log(_this.user, 'conect');
-                console.log(_this.profilePicture);
-                _this.sendUserInfo.ofFacebookUser(result.id, result.name, result.email, _this.profilePicture).subscribe(function (res) {
-                    console.log(res, ' login');
-                    _this.userId = res[0].UserId;
-                });
-            }
-            else {
-                console.log(result.error);
-            }
-        });
+        if (this.isBrowser) {
+            FB.api('/me?fields=id,name,picture.type(large),email', function (result) {
+                if (result && !result.error) {
+                    _this.user = result;
+                    console.log(_this.user, 'conect');
+                    console.log(_this.profilePicture);
+                    _this.sendUserInfo.ofFacebookUser(result.id, result.name, result.email, _this.profilePicture).subscribe(function (res) {
+                        console.log(res, ' login');
+                        _this.userId = res[0].UserId;
+                    });
+                }
+                else {
+                    console.log(result.error);
+                }
+            });
+        }
     };
     CommentsComponent.prototype.post = function () {
         var _this = this;
@@ -3423,10 +3463,11 @@ var CommentsComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/comments/comments.component.html"),
             styles: [__webpack_require__("../../../../../src/app/comments/comments.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_facebook_service__["a" /* FacebookService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_facebook_service__["a" /* FacebookService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_4__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _h || Object])
+        __param(7, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_facebook_service__["a" /* FacebookService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_facebook_service__["a" /* FacebookService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _g || Object, Object])
     ], CommentsComponent);
     return CommentsComponent;
-    var _a, _b, _c, _d, _e, _f, _g, _h;
+    var _a, _b, _c, _d, _e, _f, _g;
 }());
 
 //# sourceMappingURL=comments.component.js.map
@@ -3525,6 +3566,7 @@ var CustomUrlComponent = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MaintainHeightWidthRatioDirective; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3534,11 +3576,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
 
 var MaintainHeightWidthRatioDirective = /** @class */ (function () {
-    function MaintainHeightWidthRatioDirective(elRef, renderer) {
+    function MaintainHeightWidthRatioDirective(elRef, renderer, platformId) {
         this.elRef = elRef;
         this.renderer = renderer;
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_1__angular_common__["j" /* isPlatformBrowser */])(platformId);
         this.setHeight();
     }
     MaintainHeightWidthRatioDirective.prototype.ngAfterViewInit = function () {
@@ -3548,37 +3595,39 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
         this.setHeight();
     };
     MaintainHeightWidthRatioDirective.prototype.setHeight = function () {
-        this.width = this.elRef.nativeElement.getBoundingClientRect().width;
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-8') {
-            this.height = 0.47 * (this.width);
-        }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-4') {
-            this.height = (1) * this.width;
-        }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-6') {
-            this.height = (1) * this.width;
-        }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-12') {
-            this.height = 0.47 * (this.width);
-        }
-        if (this.elRef.nativeElement.parentNode.parentNode.className == 'trendingBlogs') {
-            this.height = (1.9) * this.width;
-        }
-        if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className != "latestBlog col-4") {
-            this.height = (0.3) * this.width;
-        }
-        if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className == 'latestBlog col-4') {
-            this.height = (0.64) * (this.width);
-        }
-        if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth < 950) {
-            this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
+        if (this.isBrowser) {
             this.width = this.elRef.nativeElement.getBoundingClientRect().width;
-            this.height = -(.548751486325 * (this.width)) + this.width;
+            if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-8') {
+                this.height = 0.47 * (this.width);
+            }
+            if (this.elRef.nativeElement.parentNode.parentNode.className === 'col-4') {
+                this.height = (1) * this.width;
+            }
+            if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-6') {
+                this.height = (1) * this.width;
+            }
+            if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-12') {
+                this.height = 0.47 * (this.width);
+            }
+            if (this.elRef.nativeElement.parentNode.parentNode.className == 'trendingBlogs') {
+                this.height = (1.9) * this.width;
+            }
+            if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className != "latestBlog col-4") {
+                this.height = (0.3) * this.width;
+            }
+            if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className == 'latestBlog col-4') {
+                this.height = (0.64) * (this.width);
+            }
+            if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth < 950) {
+                this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
+                this.width = this.elRef.nativeElement.getBoundingClientRect().width;
+                this.height = -(.548751486325 * (this.width)) + this.width;
+            }
+            if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth >= 950) {
+                this.renderer.setStyle(this.elRef.nativeElement, 'height', "23.5%");
+            }
+            this.renderer.setStyle(this.elRef.nativeElement, 'height', this.height + "px");
         }
-        if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth >= 950) {
-            this.renderer.setStyle(this.elRef.nativeElement, 'height', "23.5%");
-        }
-        this.renderer.setStyle(this.elRef.nativeElement, 'height', this.height + "px");
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
@@ -3590,7 +3639,8 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* Directive */])({
             selector: '[MaintainHeightWidthRatio]'
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object])
+        __param(2, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, Object])
     ], MaintainHeightWidthRatioDirective);
     return MaintainHeightWidthRatioDirective;
     var _a, _b;
@@ -3606,7 +3656,7 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabViewAvailableDirective; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3616,79 +3666,90 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 
 
 var TabViewAvailableDirective = /** @class */ (function () {
-    function TabViewAvailableDirective(elRef, renderer, winRef) {
+    function TabViewAvailableDirective(elRef, renderer, platformId) {
         this.elRef = elRef;
         this.renderer = renderer;
-        this.winRef = winRef;
-        this.windowWidth = winRef.nativeWindow.innerWidth;
-        if (this.windowWidth < 950 && this.windowWidth > 600) {
-            this.className = this.elRef.nativeElement.className;
-            if (this.className === 'col-8') {
-                this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-            }
-            if (this.className === 'col-4') {
-                this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                this.renderer.addClass(this.elRef.nativeElement, 'col-6');
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_1__angular_common__["j" /* isPlatformBrowser */])(platformId);
+        if (this.isBrowser) {
+            this.windowWidth = window.innerWidth;
+            if (this.windowWidth < 950 && this.windowWidth > 600) {
+                this.className = this.elRef.nativeElement.className;
+                if (this.className === 'col-8') {
+                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                    this.renderer.addClass(this.elRef.nativeElement, 'col-12');
+                }
+                if (this.className === 'col-4') {
+                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                    this.renderer.addClass(this.elRef.nativeElement, 'col-6');
+                }
             }
         }
     }
     TabViewAvailableDirective.prototype.ngAfterViewInit = function () {
-        this.windowWidth = this.winRef.nativeWindow.innerWidth;
-        if (this.windowWidth < 950 && this.windowWidth > 600) {
-            this.className = this.elRef.nativeElement.className;
-            if (this.className === 'col-8') {
-                this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
-            }
-            if (this.className === 'col-4') {
-                this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                this.renderer.addClass(this.elRef.nativeElement, 'col-6');
+        if (this.isBrowser) {
+            this.windowWidth = window.innerWidth;
+            if (this.windowWidth < 950 && this.windowWidth > 600) {
+                this.className = this.elRef.nativeElement.className;
+                if (this.className === 'col-8') {
+                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                    this.renderer.addClass(this.elRef.nativeElement, 'col-12');
+                    // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
+                }
+                if (this.className === 'col-4') {
+                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                    this.renderer.addClass(this.elRef.nativeElement, 'col-6');
+                }
             }
         }
     };
     TabViewAvailableDirective.prototype.ngAfterContentInit = function () {
-        this.windowWidth = this.winRef.nativeWindow.innerWidth;
-        if (this.windowWidth < 950 && this.windowWidth > 600) {
-            this.className = this.elRef.nativeElement.className;
-            if (this.className === 'col-8') {
-                this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
-            }
-            if (this.className === 'col-4') {
-                this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                this.renderer.addClass(this.elRef.nativeElement, 'col-6');
+        if (this.isBrowser) {
+            this.windowWidth = window.innerWidth;
+            if (this.windowWidth < 950 && this.windowWidth > 600) {
+                this.className = this.elRef.nativeElement.className;
+                if (this.className === 'col-8') {
+                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                    this.renderer.addClass(this.elRef.nativeElement, 'col-12');
+                    // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
+                }
+                if (this.className === 'col-4') {
+                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                    this.renderer.addClass(this.elRef.nativeElement, 'col-6');
+                }
             }
         }
     };
     TabViewAvailableDirective.prototype.onresize = function () {
-        this.windowWidth = this.winRef.nativeWindow.innerWidth;
-        if (this.windowWidth > 950) {
-            this.className = this.elRef.nativeElement.className;
-            if (this.className === 'col-12') {
-                this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                this.renderer.addClass(this.elRef.nativeElement, 'col-8');
+        if (this.isBrowser) {
+            this.windowWidth = window.innerWidth;
+            if (this.windowWidth > 950) {
+                this.className = this.elRef.nativeElement.className;
+                if (this.className === 'col-12') {
+                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                    this.renderer.addClass(this.elRef.nativeElement, 'col-8');
+                }
+                if (this.className === 'col-6') {
+                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                    this.renderer.addClass(this.elRef.nativeElement, 'col-4');
+                }
             }
-            if (this.className === 'col-6') {
-                this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                this.renderer.addClass(this.elRef.nativeElement, 'col-4');
-            }
-        }
-        if (this.windowWidth < 950 && this.windowWidth > 600) {
-            this.className = this.elRef.nativeElement.className;
-            if (this.className === 'col-8') {
-                this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
-            }
-            if (this.className == 'col-4') {
-                this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                this.renderer.addClass(this.elRef.nativeElement, 'col-6');
+            if (this.windowWidth < 950 && this.windowWidth > 600) {
+                this.className = this.elRef.nativeElement.className;
+                if (this.className === 'col-8') {
+                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                    this.renderer.addClass(this.elRef.nativeElement, 'col-12');
+                    // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
+                }
+                if (this.className == 'col-4') {
+                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                    this.renderer.addClass(this.elRef.nativeElement, 'col-6');
+                }
             }
         }
     };
@@ -3702,10 +3763,11 @@ var TabViewAvailableDirective = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* Directive */])({
             selector: '[TabViewAvailable]'
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _c || Object])
+        __param(2, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, Object])
     ], TabViewAvailableDirective);
     return TabViewAvailableDirective;
-    var _a, _b, _c;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=tab-view-available.directive.js.map
@@ -4442,6 +4504,7 @@ module.exports = "<div class=\"keywords\" #Keywords>\n  <div>\n    <SportSocialB
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_get_service__ = __webpack_require__("../../../../../src/app/services/get.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4451,13 +4514,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
 
 
 
 
 
 var KeywordsComponent = /** @class */ (function () {
-    function KeywordsComponent(renderer, recieveHeight, sendHeight, searched, sendSearchedData, router, sendKey, get) {
+    function KeywordsComponent(platformId, renderer, recieveHeight, sendHeight, searched, sendSearchedData, router, sendKey, get) {
         this.renderer = renderer;
         this.recieveHeight = recieveHeight;
         this.sendHeight = sendHeight;
@@ -4468,6 +4535,7 @@ var KeywordsComponent = /** @class */ (function () {
         this.get = get;
         this.keywords = [];
         this.pageNumber = 1;
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_5__angular_common__["j" /* isPlatformBrowser */])(platformId);
     }
     KeywordsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -4478,20 +4546,20 @@ var KeywordsComponent = /** @class */ (function () {
                 });
             }
         });
-        console.log(this.keywords, " check");
+        console.log(this.keywords, ' check');
         this.recieveHeight.ofHeader.subscribe(function (margin) {
             _this.topMargin = margin;
         });
-        this.renderer.setStyle(this.Keywords.nativeElement, 'position', "fixed");
-        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + "px");
+        this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
+        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');
     };
     KeywordsComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
         this.recieveHeight.ofHeader.subscribe(function (margin) {
             _this.topMargin = margin;
         });
-        this.renderer.setStyle(this.Keywords.nativeElement, 'position', "fixed");
-        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + "px");
+        this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
+        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');
         this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
     };
     KeywordsComponent.prototype.ngAfterViewChecked = function () {
@@ -4499,8 +4567,8 @@ var KeywordsComponent = /** @class */ (function () {
         this.recieveHeight.ofHeader.subscribe(function (margin) {
             _this.topMargin = margin;
         });
-        this.renderer.setStyle(this.Keywords.nativeElement, 'position', "fixed");
-        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + "px");
+        this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
+        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');
         this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
     };
     KeywordsComponent.prototype.send = function (i) {
@@ -4510,7 +4578,7 @@ var KeywordsComponent = /** @class */ (function () {
             this.sendSearchedData.ofsearchBlog.next(res);
           }
         ) */
-        this.path = "/" + this.keywords[i].name;
+        this.path = '/' + this.keywords[i].name;
         this.router.navigate([this.path]);
         //this.sendKey.ofBlogCard.next(this.keywords[i].name)
     };
@@ -4518,8 +4586,8 @@ var KeywordsComponent = /** @class */ (function () {
         var _this = this;
         this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
         this.recieveHeight.ofHeader.subscribe(function (margin) { return _this.topMargin = margin; });
-        this.renderer.setStyle(this.Keywords.nativeElement, 'position', "fixed");
-        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + "px");
+        this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
+        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('Keywords'),
@@ -4537,7 +4605,8 @@ var KeywordsComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/keywords/keywords.component.html"),
             styles: [__webpack_require__("../../../../../src/app/keywords/keywords.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */]) === "function" && _j || Object])
+        __param(0, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
+        __metadata("design:paramtypes", [Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_get_service__["a" /* GetService */]) === "function" && _j || Object])
     ], KeywordsComponent);
     return KeywordsComponent;
     var _a, _b, _c, _d, _e, _f, _g, _h, _j;
@@ -4901,7 +4970,7 @@ module.exports = "<div #searchPage>\n\n  <h2 class=\"topic\">{{recievedKey}} blo
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4911,6 +4980,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 
 
 
@@ -4918,7 +4990,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var SearchComponent = /** @class */ (function () {
-    function SearchComponent(recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService, winRef) {
+    function SearchComponent(recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService, platformId) {
         this.recieveHeight = recieveHeight;
         this.renderer = renderer;
         this.recieveData = recieveData;
@@ -4928,13 +5000,13 @@ var SearchComponent = /** @class */ (function () {
         this.zone = zone;
         this.titleService = titleService;
         this.metaService = metaService;
-        this.winRef = winRef;
         this.dataRecieved = false;
         this.show = false;
         this.tempBlog = [];
         this.pageNumber = 1;
         this.mobileView = false;
         this.haveData = true;
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_5__angular_common__["j" /* isPlatformBrowser */])(platformId);
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.setTopMargin();
@@ -4951,8 +5023,15 @@ var SearchComponent = /** @class */ (function () {
             + this.recievedKey);
     };
     SearchComponent.prototype.setMetaTags = function () {
+        var key;
+        if (this.recievedKey.search(/ /g)) {
+            key = this.recievedKey.replace(/ /g, '-');
+        }
+        else {
+            key = this.recievedKey;
+        }
         this.metaService.addTags([
-            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
+            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + key },
             { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to '
                     + this.recievedKey },
             { name: 'title', content: this.recievedKey + 'Blogs' },
@@ -4961,7 +5040,7 @@ var SearchComponent = /** @class */ (function () {
             { property: 'og:title', content: this.recievedKey + 'Blogs' },
             { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to '
                     + this.recievedKey },
-            { property: 'og:url', content: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
+            { property: 'og:url', content: 'https://www.chaseyoursport.com/' + key },
             { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
             { property: 'og:site_name', content: 'Chase Your Sport' },
             { property: 'fb:app_id', content: '1750709328507665' },
@@ -5022,14 +5101,13 @@ var SearchComponent = /** @class */ (function () {
         this.recievedKey = this.route.snapshot.url[0].path.replace(/-/g, ' ');
         this.route.params.subscribe(function (params) {
             _this.pageNumber = 1;
-            // console.log(params, " params")
             _this.recievedKey = params.tag.replace(/-/g, ' ');
             _this.setTitle();
             _this.getBlogs();
         });
     };
     SearchComponent.prototype.setMobileView = function () {
-        if (this.winRef.nativeWindow.innerWidth < 700) {
+        if (window.innerWidth < 700) {
             this.mobileView = true;
         }
         else {
@@ -5154,10 +5232,11 @@ var SearchComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/search/search.component.html"),
             styles: [__webpack_require__("../../../../../src/app/search/search.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_5__services_window_ref_service__["a" /* WindowRefService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_window_ref_service__["a" /* WindowRefService */]) === "function" && _k || Object])
+        __param(9, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _j || Object, Object])
     ], SearchComponent);
     return SearchComponent;
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 }());
 
 //# sourceMappingURL=search.component.js.map
@@ -5688,17 +5767,17 @@ var SubscribeCardComponent = /** @class */ (function () {
             this.sendEmail.ofUser(this.subscriber.nativeElement.value)
                 .subscribe(function (res) {
                 console.log(res.Status);
-                if (res.Status == "Success") {
+                if (res.Status == 'Success') {
                     _this.showSubscriptionBox = true;
                     console.log(_this.showSubscriptionBox);
-                    _this.subscriber.nativeElement.value = "";
+                    _this.subscriber.nativeElement.value = '';
                     _this.errorMessage = false;
                     _this.renderer.setStyle(_this.button.nativeElement, 'margin', '5% auto');
                 }
             });
         }
         else {
-            this.subscriber.nativeElement.value = "";
+            this.subscriber.nativeElement.value = '';
             this.errorMessage = true;
             this.renderer.setStyle(this.button.nativeElement, 'margin', '1% auto');
         }

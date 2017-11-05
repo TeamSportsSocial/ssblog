@@ -12,7 +12,6 @@ var i2 = require("../../../../../../../src/app/blogContent/trending-blog/trendin
 var i3 = require("@angular/router");
 var i4 = require("@angular/common");
 var i5 = require("../../../../../../../src/app/services/property.service");
-var i6 = require("../../../../../../../src/app/services/window-ref.service");
 var styles_TrendingBlogCardComponent = [i0.styles];
 exports.RenderType_TrendingBlogCardComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_TrendingBlogCardComponent, data: {} });
@@ -90,7 +89,7 @@ function View_TrendingBlogCardComponent_0(_l) {
 }
 exports.View_TrendingBlogCardComponent_0 = View_TrendingBlogCardComponent_0;
 function View_TrendingBlogCardComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-trending-blog-card', [], null, null, null, View_TrendingBlogCardComponent_0, exports.RenderType_TrendingBlogCardComponent)), i1.ɵdid(4308992, null, 0, i2.TrendingBlogCardComponent, [i5.PropertyService, i6.WindowRefService], null, null)], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-trending-blog-card', [], null, null, null, View_TrendingBlogCardComponent_0, exports.RenderType_TrendingBlogCardComponent)), i1.ɵdid(4308992, null, 0, i2.TrendingBlogCardComponent, [i5.PropertyService, i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

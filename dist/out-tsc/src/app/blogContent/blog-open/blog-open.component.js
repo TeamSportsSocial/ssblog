@@ -33,6 +33,7 @@ var BlogOpenComponent = /** @class */ (function () {
         this.blogDataRecieved = false;
         this.Keywords = [];
         this.loading = true;
+        this.isBrowser = common_1.isPlatformBrowser(platformId);
         if (common_1.isPlatformBrowser(platformId)) {
             Fb.init();
         }
@@ -57,7 +58,6 @@ var BlogOpenComponent = /** @class */ (function () {
         });
     };
     BlogOpenComponent.prototype.strip = function (html) {
-        /* const tmp = document.createElement('DIV'); */
         var tmp = this.renderer.createElement('DIV');
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || '';
@@ -81,9 +81,23 @@ var BlogOpenComponent = /** @class */ (function () {
         this.metaService.removeTag("property= 'fb:app_id'");
     };
     BlogOpenComponent.prototype.setMetaTags = function () {
+        var key;
+        var title;
+        if (this.Keywords[0].search(/ /g)) {
+            key = this.Keywords[0].replace(/ /g, '-');
+        }
+        else {
+            key = this.Keywords[0];
+        }
+        if (this.blog.heading.search(/ /g)) {
+            title = this.blog.heading.replace(/ /g, '-');
+        }
+        else {
+            title = this.blog.heading;
+        }
         this.keys = this.blog.keywords.toString();
-        var url = 'https://www.chaseyoursport.com/' + this.Keywords[0] + '/' + this.blog.heading.replace(/ /g, '-')
-            + '/' + this.blogID;
+        var url = 'https://www.chaseyoursport.com/' + key
+            + '/' + title + '/' + this.blogID;
         this.metaService.addTags([
             { rel: 'canonical', href: url },
             { name: 'title', content: this.blog.heading },
@@ -171,7 +185,6 @@ var BlogOpenComponent = /** @class */ (function () {
             _this.ShareCount = +blog.ShareCount;
             _this.ViewCount = +(blog.ViewCount);
             _this.sendViewCount();
-            // window.scrollTo(0, 0);
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
             _this.setMetaTags();
             _this.setTitle();
@@ -221,20 +234,22 @@ var BlogOpenComponent = /** @class */ (function () {
         }
     };
     BlogOpenComponent.prototype.setMobileView = function () {
-        if (window.innerWidth > 950) {
-            this.mobileView = false;
-            this.removeSocial = false;
-            this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '68%');
-        }
-        if (window.innerWidth <= 950 && window.innerWidth > 700) {
-            this.removeSocial = true;
-            this.mobileView = false;
-            this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
-        }
-        if (window.innerWidth < 700) {
-            this.removeSocial = true;
-            this.mobileView = true;
-            this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
+        if (this.isBrowser) {
+            if (window.innerWidth > 950) {
+                this.mobileView = false;
+                this.removeSocial = false;
+                this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '68%');
+            }
+            if (window.innerWidth <= 950 && window.innerWidth > 700) {
+                this.removeSocial = true;
+                this.mobileView = false;
+                this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
+            }
+            if (window.innerWidth < 700) {
+                this.removeSocial = true;
+                this.mobileView = true;
+                this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
+            }
         }
     };
     BlogOpenComponent.prototype.scriptOfTwitter = function () {
@@ -269,9 +284,11 @@ var BlogOpenComponent = /** @class */ (function () {
         this.openFullImage = true;
     };
     BlogOpenComponent.prototype.onFullImageload = function () {
-        var height = this.fullImage.nativeElement.getBoundingClientRect().height;
-        var top = (window.innerHeight - height) / 2;
-        this.renderer.setStyle(this.fullImage.nativeElement, 'top', top + 'px');
+        if (this.isBrowser) {
+            var height = this.fullImage.nativeElement.getBoundingClientRect().height;
+            var top_1 = (window.innerHeight - height) / 2;
+            this.renderer.setStyle(this.fullImage.nativeElement, 'top', top_1 + 'px');
+        }
     };
     BlogOpenComponent.prototype.closeFullImage = function () {
         this.openFullImage = false;
@@ -282,36 +299,29 @@ var BlogOpenComponent = /** @class */ (function () {
         });
     };
     BlogOpenComponent.prototype.shareOnFacebook = function () {
+        var key;
+        var title;
+        if (this.Keywords[0].search(/ /g)) {
+            key = this.Keywords[0].replace(/ /g, '-');
+        }
+        else {
+            key = this.Keywords[0];
+        }
+        if (this.blog.heading.search(/ /g)) {
+            title = this.blog.heading.replace(/ /g, '-');
+        }
+        else {
+            title = this.blog.heading;
+        }
         this.sendShareCount();
         FB.ui({
             method: 'share',
-            href: 'https://developers.facebook.com/docs/',
+            href: 'https://www.chaseyoursport.com/' + key
+                + '/' + title + '/' + this.blogID,
         }, function (response) { });
     };
-    /*  shareOnFacebook() {
-        // this.sendShareCount();
-        console.clear();
-        console.log(this.strip (this.blog.Content));
-         FB.ui({
-             method: 'share_open_graph',
-             action_type: 'og.shares',
-             action_properties: JSON.stringify({
-                 object : {
-                    'og:url': 'https://www.chaseyoursport.com/' + this.Keywords[0].replace(/ /g, '-')
-                         + '/' + this.blog.heading.replace(/ /g, '-') + '/' + this.blogID ,
-                    'og:title': this.blog.heading,
-                    'og:description': this.strip (this.blog.Content),
-                    'og:image': this.blog.blogImage,
-                    'og:image:width': '180',
-                    'og:image:height': '110'
-                 }
-             })
-             },
-             // callback
-             function(response) {});
-     } */
     BlogOpenComponent.prototype.shareOnTwitter = function () {
-        //this.sendShareCount();
+        this.sendShareCount();
         var width = 575, height = 400, left = (window.innerWidth - width) / 2, top = (window.innerHeight - height) / 2, url = this.popup.nativeElement.attributes[2].value, opts = 'status=1' +
             ',width=' + width +
             ',height=' + height +

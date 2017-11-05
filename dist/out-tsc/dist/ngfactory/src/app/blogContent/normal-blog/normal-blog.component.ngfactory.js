@@ -14,7 +14,6 @@ var i4 = require("@angular/router");
 var i5 = require("@angular/common");
 var i6 = require("../../../../../../src/app/services/property.service");
 var i7 = require("../../../../../../src/app/services/post.service");
-var i8 = require("../../../../../../src/app/services/window-ref.service");
 var styles_NormalBlogComponent = [i0.styles];
 exports.RenderType_NormalBlogComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_NormalBlogComponent, data: {} });
@@ -54,7 +53,8 @@ function View_NormalBlogComponent_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(4210688, null, 0, i2.MaintainHeightWidthRatioDirective, [i1.ElementRef, i1.Renderer2], null, null), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 40, 'a', [], [[1, 'target', 0], [8, 'href', 4]], [[null, 'click']], function (_v, en, $event) {
+        }, null, null)), i1.ɵdid(4210688, null, 0, i2.MaintainHeightWidthRatioDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID], null, null),
+        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 40, 'a', [], [[1, 'target', 0], [8, 'href', 4]], [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('click' === en)) {
@@ -120,7 +120,7 @@ function View_NormalBlogComponent_Host_0(_l) {
             }
             return ad;
         }, View_NormalBlogComponent_0, exports.RenderType_NormalBlogComponent)), i1.ɵdid(4308992, null, 0, i3.NormalBlogComponent, [i6.PropertyService, i1.Renderer2, i7.PostService,
-            i1.NgZone, i8.WindowRefService], null, null)], function (_ck, _v) {
+            i1.NgZone, i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

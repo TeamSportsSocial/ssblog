@@ -14,7 +14,6 @@ var i4 = require("@angular/common");
 var i5 = require("../../../../../src/app/services/facebook.service");
 var i6 = require("@angular/http");
 var i7 = require("../../../../../src/app/services/post.service");
-var i8 = require("../../../../../src/app/services/window-ref.service");
 var styles_CommentsComponent = [i0.styles];
 exports.RenderType_CommentsComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_CommentsComponent, data: {} });
@@ -126,8 +125,8 @@ function View_CommentsComponent_0(_l) {
 }
 exports.View_CommentsComponent_0 = View_CommentsComponent_0;
 function View_CommentsComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-comments', [], null, null, null, View_CommentsComponent_0, exports.RenderType_CommentsComponent)), i1.ɵdid(4308992, null, 0, i2.CommentsComponent, [i1.Renderer2, i5.FacebookService, i6.Http, i7.PostService, i7.PostService, i7.PostService,
-            i1.NgZone, i8.WindowRefService], null, null)], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-comments', [], null, null, null, View_CommentsComponent_0, exports.RenderType_CommentsComponent)), i1.ɵdid(114688, null, 0, i2.CommentsComponent, [i1.Renderer2, i5.FacebookService, i6.Http, i7.PostService, i7.PostService, i7.PostService,
+            i1.NgZone, i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

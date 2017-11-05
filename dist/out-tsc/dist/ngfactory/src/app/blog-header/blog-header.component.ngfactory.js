@@ -15,7 +15,6 @@ var i5 = require("../../../../../src/app/services/property.service");
 var i6 = require("../../../../../src/app/services/get.service");
 var i7 = require("@angular/platform-browser");
 var i8 = require("../../../../../src/app/services/post.service");
-var i9 = require("../../../../../src/app/services/window-ref.service");
 var styles_BlogHeaderComponent = [i0.styles];
 exports.RenderType_BlogHeaderComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_BlogHeaderComponent, data: {} });
@@ -220,7 +219,7 @@ function View_BlogHeaderComponent_Host_0(_l) {
             return ad;
         }, View_BlogHeaderComponent_0, exports.RenderType_BlogHeaderComponent)), i1.ɵdid(8503296, null, 0, i4.BlogHeaderComponent, [i5.PropertyService, i1.Renderer2, i5.PropertyService,
             i6.GetService, i1.ElementRef, i7.DomSanitizer, i8.PostService, i2.Router, i5.PropertyService,
-            i1.NgZone, i9.WindowRefService], null, null)], function (_ck, _v) {
+            i1.NgZone, i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

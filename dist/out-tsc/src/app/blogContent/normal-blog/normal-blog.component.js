@@ -3,17 +3,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var property_service_1 = require("../../services/property.service");
 var post_service_1 = require("../../services/post.service");
-var window_ref_service_1 = require("../../services/window-ref.service");
+var common_1 = require("@angular/common");
 var NormalBlogComponent = /** @class */ (function () {
-    function NormalBlogComponent(Send, renderer, post, zone, winRef) {
+    function NormalBlogComponent(Send, renderer, post, zone, platformId) {
         this.Send = Send;
         this.renderer = renderer;
         this.post = post;
         this.zone = zone;
-        this.winRef = winRef;
         this.isloading = true;
         this.openFullImage = false;
         this.dataRecieved = false;
+        this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     NormalBlogComponent.prototype.ngOnInit = function () {
         this.content = this.strip(this.Content);
@@ -40,7 +40,7 @@ var NormalBlogComponent = /** @class */ (function () {
         //console.log(this.blogTitle)
     };
     NormalBlogComponent.prototype.strip = function (html) {
-        var tmp = document.createElement('DIV');
+        var tmp = this.renderer.createElement('DIV');
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || '';
     };
@@ -55,50 +55,42 @@ var NormalBlogComponent = /** @class */ (function () {
         });
     };
     NormalBlogComponent.prototype.setVariableFont = function () {
-        if (this.winRef.nativeWindow.innerWidth > 1200) {
+        if (window.innerWidth > 1200) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
         }
-        if (this.winRef.nativeWindow.innerWidth > 1100 && this.winRef.nativeWindow.innerWidth < 1200) {
+        if (window.innerWidth > 1100 && window.innerWidth < 1200) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
         }
-        if (this.winRef.nativeWindow.innerWidth < 1100 && this.winRef.nativeWindow.innerWidth > 1000) {
+        if (window.innerWidth < 1100 && window.innerWidth > 1000) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
         }
-        if (this.winRef.nativeWindow.innerWidth < 1000 && this.winRef.nativeWindow.innerWidth > 950) {
+        if (window.innerWidth < 1000 && window.innerWidth > 950) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.15em');
         }
-        if (this.winRef.nativeWindow.innerWidth > 700 && this.winRef.nativeWindow.innerWidth < 950) {
+        if (window.innerWidth > 700 && window.innerWidth < 950) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.25em');
         }
-        if (this.winRef.nativeWindow.innerWidth > 600 && this.winRef.nativeWindow.innerWidth < 700) {
+        if (window.innerWidth > 600 && window.innerWidth < 700) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
         }
-        if (this.winRef.nativeWindow.innerWidth > 600 && this.winRef.nativeWindow.innerWidth < 500) {
+        if (window.innerWidth > 600 && window.innerWidth < 500) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
         }
-        if (this.winRef.nativeWindow.innerWidth > 500 && this.winRef.nativeWindow.innerWidth < 600) {
+        if (window.innerWidth > 500 && window.innerWidth < 600) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
         }
-        if (this.winRef.nativeWindow.innerWidth > 320 && this.winRef.nativeWindow.innerWidth < 400) {
+        if (window.innerWidth > 320 && window.innerWidth < 400) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
         }
-        if (this.winRef.nativeWindow.innerWidth < 320) {
+        if (window.innerWidth < 320) {
             this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '0.9em');
         }
     };
-    NormalBlogComponent.prototype.setHeightOfTitle = function () {
-        var heightofBlog = this.Blog.nativeElement.getBoundingClientRect().height;
-        var heightofHolder = this.holder.nativeElement.getBoundingClientRect().height;
-        var heightofFooter = heightofBlog - heightofHolder;
-        var heightofFirstChild = this.footer.nativeElement.children[0].offsetHeight;
-        var heightofThirdChild = this.footer.nativeElement.children[2].offsetHeight;
-        var heightOfTitle = heightofFooter - heightofFirstChild - heightofThirdChild - 18;
-        this.renderer.setStyle(this.blogTitle.nativeElement, 'height', heightOfTitle + 'px');
-        var topMargin = (heightofFooter - heightofFirstChild - heightOfTitle - heightofThirdChild) / 2;
-    };
     NormalBlogComponent.prototype.send = function () {
         this.Send.detailsofBlog.next(this.blog);
-        this.winRef.nativeWindow.scrollTo(0, 0);
+        if (this.isBrowser) {
+            window.scrollTo(0, 0);
+        }
     };
     NormalBlogComponent.prototype.setDefault = function (event) {
         this.blogImage = '/assets/images/default-image.png';
@@ -122,7 +114,7 @@ var NormalBlogComponent = /** @class */ (function () {
         { type: core_1.Renderer2, },
         { type: post_service_1.PostService, },
         { type: core_1.NgZone, },
-        { type: window_ref_service_1.WindowRefService, },
+        { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
     ]; };
     NormalBlogComponent.propDecorators = {
         'blogId': [{ type: core_1.Input },],

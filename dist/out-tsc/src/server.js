@@ -7,13 +7,17 @@ var core_1 = require("@angular/core");
 var express = require("express");
 var path_1 = require("path");
 var fs_1 = require("fs");
+var compression = require("compression");
 var app_server_module_ngfactory_1 = require("../dist/ngfactory/src/app/app-server.module.ngfactory");
 var server_routes_1 = require("./server.routes");
 core_1.enableProdMode();
 var PORT = process.env.PORT || 4000;
 var DIST_DIR = path_1.join(__dirname, '..', 'dist');
 var app = express();
+app.use(compression());
 var template = fs_1.readFileSync(path_1.join(DIST_DIR, 'index.html')).toString();
+console.log(template);
+console.log(DIST_DIR);
 app.engine('html', function (_, options, callback) {
     var newOptions = { document: template, url: options.req.url };
     platform_server_1.renderModuleFactory(app_server_module_ngfactory_1.AppServerModuleNgFactory, newOptions)

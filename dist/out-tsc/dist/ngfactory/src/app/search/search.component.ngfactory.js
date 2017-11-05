@@ -9,18 +9,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var i0 = require("./search.component.css.shim.ngstyle");
 var i1 = require("@angular/core");
 var i2 = require("../../../../../src/app/directives/tab-view-available.directive");
-var i3 = require("../../../../../src/app/services/window-ref.service");
-var i4 = require("../blogContent/normal-blog/normal-blog.component.ngfactory");
-var i5 = require("../../../../../src/app/blogContent/normal-blog/normal-blog.component");
-var i6 = require("../../../../../src/app/services/property.service");
-var i7 = require("../../../../../src/app/services/post.service");
-var i8 = require("@angular/common");
-var i9 = require("../blog-footer/blog-footer.component.ngfactory");
-var i10 = require("../../../../../src/app/blog-footer/blog-footer.component");
-var i11 = require("../../../../../src/app/services/status.service");
-var i12 = require("../../../../../src/app/search/search.component");
-var i13 = require("@angular/router");
-var i14 = require("@angular/platform-browser");
+var i3 = require("../blogContent/normal-blog/normal-blog.component.ngfactory");
+var i4 = require("../../../../../src/app/blogContent/normal-blog/normal-blog.component");
+var i5 = require("../../../../../src/app/services/property.service");
+var i6 = require("../../../../../src/app/services/post.service");
+var i7 = require("@angular/common");
+var i8 = require("../blog-footer/blog-footer.component.ngfactory");
+var i9 = require("../../../../../src/app/blog-footer/blog-footer.component");
+var i10 = require("../../../../../src/app/services/status.service");
+var i11 = require("../../../../../src/app/search/search.component");
+var i12 = require("@angular/router");
+var i13 = require("@angular/platform-browser");
 var styles_SearchComponent = [i0.styles];
 exports.RenderType_SearchComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_SearchComponent, data: {} });
@@ -33,22 +32,21 @@ function View_SearchComponent_2(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(5259264, null, 0, i2.TabViewAvailableDirective, [i1.ElementRef, i1.Renderer2, i3.WindowRefService], null, null),
-        (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵeld(0, null, null, 2, 'SportSocial-normal-blog', [], null, [['window',
-                'resize']], function (_v, en, $event) {
+        }, null, null)), i1.ɵdid(5259264, null, 0, i2.TabViewAvailableDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID], null, null), (_l()(),
+            i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵeld(0, null, null, 2, 'SportSocial-normal-blog', [], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
                 var pd_0 = (i1.ɵnov(_v, 4).onresize() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i4.View_NormalBlogComponent_0, i4.RenderType_NormalBlogComponent)), i1.ɵdid(4308992, null, 0, i5.NormalBlogComponent, [i6.PropertyService, i1.Renderer2,
-            i7.PostService, i1.NgZone, i3.WindowRefService], { blogId: [0, 'blogId'], blogImage: [1,
-                'blogImage'], bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'],
-            heading: [4, 'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'],
-            ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
-            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12,
-                'MetaDesc'], ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
+        }, i3.View_NormalBlogComponent_0, i3.RenderType_NormalBlogComponent)), i1.ɵdid(4308992, null, 0, i4.NormalBlogComponent, [i5.PropertyService, i1.Renderer2, i6.PostService,
+            i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'],
+            bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'], heading: [4,
+                'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'], ViewCount: [7,
+                'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'], exactDate: [10,
+                'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12, 'MetaDesc'],
+            ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerImage;
@@ -70,7 +68,7 @@ function View_SearchComponent_2(_l) {
 function View_SearchComponent_1(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class',
                 'Row']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n      \n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_2)), i1.ɵdid(802816, null, 0, i8.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n    \n  ']))], function (_ck, _v) {
+        (_l()(), i1.ɵted(null, ['\n      \n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_2)), i1.ɵdid(802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n    \n  ']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.blogDetails;
         _ck(_v, 3, 0, currVal_0);
@@ -87,8 +85,8 @@ function View_SearchComponent_4(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i4.View_NormalBlogComponent_0, i4.RenderType_NormalBlogComponent)), i1.ɵdid(4308992, null, 0, i5.NormalBlogComponent, [i6.PropertyService, i1.Renderer2,
-            i7.PostService, i1.NgZone, i3.WindowRefService], { blogId: [0, 'blogId'], blogImage: [1,
+        }, i3.View_NormalBlogComponent_0, i3.RenderType_NormalBlogComponent)), i1.ɵdid(4308992, null, 0, i4.NormalBlogComponent, [i5.PropertyService, i1.Renderer2,
+            i6.PostService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1,
                 'blogImage'], bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'],
             heading: [4, 'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'],
             ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
@@ -115,7 +113,7 @@ function View_SearchComponent_4(_l) {
 function View_SearchComponent_3(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class',
                 'Row mobileView']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_4)), i1.ɵdid(802816, null, 0, i8.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0,
+        (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_4)), i1.ɵdid(802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0,
                 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n  ']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.blogDetails;
@@ -139,8 +137,8 @@ function View_SearchComponent_7(_l) {
 }
 function View_SearchComponent_5(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 7, 'div', [], null, null, null, null, null)), (_l()(),
-            i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_6)), i1.ɵdid(16384, null, 0, i8.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(),
-            i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_7)), i1.ɵdid(16384, null, 0, i8.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(),
+            i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_6)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(),
+            i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_7)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(),
             i1.ɵted(null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.dataRecieved;
@@ -162,8 +160,8 @@ function View_SearchComponent_9(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i9.View_BlogFooterComponent_0, i9.RenderType_BlogFooterComponent)), i1.ɵdid(114688, null, 0, i10.BlogFooterComponent, [i7.PostService, i1.Renderer2, i11.StatusService,
-            i3.WindowRefService], null, null)], function (_ck, _v) {
+        }, i8.View_BlogFooterComponent_0, i8.RenderType_BlogFooterComponent)), i1.ɵdid(114688, null, 0, i9.BlogFooterComponent, [i6.PostService, i1.Renderer2, i10.StatusService,
+            i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }
@@ -172,9 +170,9 @@ function View_SearchComponent_0(_l) {
         (_l()(), i1.ɵeld(0, [[1, 0], ['searchPage', 1]], null, 13, 'div', [], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n\n  '])), (_l()(), i1.ɵeld(0, null, null, 1, 'h2', [['class', 'topic']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['', ' blogs'])), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 1, 'p', [['class',
                 'topicDetails']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['Read the latest articles, blogs, news and other informations related to ',
-            ''])), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_1)), i1.ɵdid(16384, null, 0, i8.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_3)), i1.ɵdid(16384, null, 0, i8.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_5)), i1.ɵdid(16384, null, 0, i8.NgIf, [i1.ViewContainerRef,
-            i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_8)), i1.ɵdid(16384, null, 0, i8.NgIf, [i1.ViewContainerRef,
-            i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['         \n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_9)), i1.ɵdid(16384, null, 0, i8.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(),
+            ''])), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_1)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_3)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_5)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef,
+            i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_8)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef,
+            i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['         \n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_9)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(),
             i1.ɵted(null, [' ']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_2 = !_co.mobileView;
@@ -204,11 +202,11 @@ function View_SearchComponent_Host_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, View_SearchComponent_0, exports.RenderType_SearchComponent)), i1.ɵdid(4308992, null, 0, i12.SearchComponent, [i6.PropertyService, i1.Renderer2, i6.PropertyService, i6.PropertyService,
-            i7.PostService, i13.ActivatedRoute, i1.NgZone, i14.Title, i14.Meta, i3.WindowRefService], null, null)], function (_ck, _v) {
+        }, View_SearchComponent_0, exports.RenderType_SearchComponent)), i1.ɵdid(4308992, null, 0, i11.SearchComponent, [i5.PropertyService, i1.Renderer2, i5.PropertyService, i5.PropertyService,
+            i6.PostService, i12.ActivatedRoute, i1.NgZone, i13.Title, i13.Meta, i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }
 exports.View_SearchComponent_Host_0 = View_SearchComponent_Host_0;
-exports.SearchComponentNgFactory = i1.ɵccf('app-search', i12.SearchComponent, View_SearchComponent_Host_0, {}, {}, []);
+exports.SearchComponentNgFactory = i1.ɵccf('app-search', i11.SearchComponent, View_SearchComponent_Host_0, {}, {}, []);
 //# sourceMappingURL=search.component.ngfactory.js.map

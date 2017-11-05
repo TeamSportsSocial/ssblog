@@ -6,13 +6,15 @@ import {
   ViewChild,
   ElementRef,
   Input,
-  NgZone
+  NgZone,
+  PLATFORM_ID,
+  Inject
 } from '@angular/core';
 import {Http} from '@angular/http';
 import {PostService} from '.././services/post.service';
 import {GetService} from '.././services/get.service';
 import {FacebookService} from '.././services/facebook.service';
-import { WindowRefService } from '.././services/window-ref.service';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 declare var window: any;
 declare var FB: any;
@@ -35,7 +37,7 @@ export class CommentsComponent implements OnInit {
   token: any;
   loged: boolean = false;
   user = { name: 'Hello' };
-
+  isBrowser: boolean;
   @Input() BlogId;
 
   newComment:{
@@ -59,9 +61,12 @@ export class CommentsComponent implements OnInit {
     private send: PostService,
     private loadComment: PostService,
     private zone: NgZone,
-    private winRef: WindowRefService
+    @Inject(PLATFORM_ID) platformId: Object
   ) {
-    Fb.init();
+    this.isBrowser = isPlatformBrowser(platformId);
+    if (isPlatformBrowser(platformId)){
+      Fb.init();
+    }
   }
 
   ngOnInit() {
@@ -77,12 +82,11 @@ export class CommentsComponent implements OnInit {
         }
       }
     );
-    this.getLoginStatus();
+    if(this.isBrowser){
+      this.getLoginStatus();
+    }
   }
 
-  ngAfterViewInit() {
-    this.getLoginStatus();
-  }
   setDefault() {
     this.profilePicture = '/assets/images/user.png';
   }
@@ -134,41 +138,45 @@ export class CommentsComponent implements OnInit {
   }
 
   login() {
-    FB.login((response: any) => {
-      if (response.status === 'connected') {
-        this.loged = true;
-        this.token = response;
-        this.isConnected = true;
-        this.profilePicture = `https://graph.facebook.com/` + response.authResponse.userID + `/picture?type=large`;
-        this.me();
-        console.log(this.user);
-      } else if (response.status === 'not_authorized') {
-        console.log('conect1');
-      } else {
-        console.log('conect2');
-      }
+    if(this.isBrowser){
+      FB.login((response: any) => {
+        if (response.status === 'connected') {
+          this.loged = true;
+          this.token = response;
+          this.isConnected = true;
+          this.profilePicture = `https://graph.facebook.com/` + response.authResponse.userID + `/picture?type=large`;
+          this.me();
+          console.log(this.user);
+        } else if (response.status === 'not_authorized') {
+          console.log('conect1');
+        } else {
+          console.log('conect2');
+        }
 
-    }, {scope: 'user_friends,email'});
+      }, {scope: 'user_friends,email'});
+    }
   }
 
   me() {
-    FB.api('/me?fields=id,name,picture.type(large),email',
-    (result) => {
-        if (result && !result.error) {
-            this.user = result;
-            console.log(this.user, 'conect');
-            console.log(this.profilePicture);
-            this.sendUserInfo.ofFacebookUser(result.id, result.name, result.email, this.profilePicture).subscribe(
-              res => {
-                console.log(res, ' login');
-                this.userId = res[0].UserId;
-              }
-            );
+    if(this.isBrowser){
+      FB.api('/me?fields=id,name,picture.type(large),email',
+      (result) => {
+          if (result && !result.error) {
+              this.user = result;
+              console.log(this.user, 'conect');
+              console.log(this.profilePicture);
+              this.sendUserInfo.ofFacebookUser(result.id, result.name, result.email, this.profilePicture).subscribe(
+                res => {
+                  console.log(res, ' login');
+                  this.userId = res[0].UserId;
+                }
+              );
 
-        } else {
-            console.log(result.error);
-        }
-    });
+          } else {
+              console.log(result.error);
+          }
+      });
+    }
   }
   post() {
     if (this.isConnected !== true) {

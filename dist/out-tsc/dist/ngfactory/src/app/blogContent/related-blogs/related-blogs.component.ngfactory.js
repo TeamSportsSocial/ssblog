@@ -9,13 +9,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var i0 = require("./related-blogs.component.css.shim.ngstyle");
 var i1 = require("@angular/core");
 var i2 = require("../../../../../../src/app/directives/tab-view-available.directive");
-var i3 = require("../../../../../../src/app/services/window-ref.service");
-var i4 = require("../normal-blog/normal-blog.component.ngfactory");
-var i5 = require("../../../../../../src/app/blogContent/normal-blog/normal-blog.component");
-var i6 = require("../../../../../../src/app/services/property.service");
-var i7 = require("../../../../../../src/app/services/post.service");
-var i8 = require("@angular/common");
-var i9 = require("../../../../../../src/app/blogContent/related-blogs/related-blogs.component");
+var i3 = require("../normal-blog/normal-blog.component.ngfactory");
+var i4 = require("../../../../../../src/app/blogContent/normal-blog/normal-blog.component");
+var i5 = require("../../../../../../src/app/services/property.service");
+var i6 = require("../../../../../../src/app/services/post.service");
+var i7 = require("@angular/common");
+var i8 = require("../../../../../../src/app/blogContent/related-blogs/related-blogs.component");
 var styles_RelatedBlogsComponent = [i0.styles];
 exports.RenderType_RelatedBlogsComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_RelatedBlogsComponent, data: {} });
@@ -32,22 +31,21 @@ function View_RelatedBlogsComponent_3(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(5259264, null, 0, i2.TabViewAvailableDirective, [i1.ElementRef, i1.Renderer2, i3.WindowRefService], null, null),
-        (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵeld(0, null, null, 2, 'SportSocial-normal-blog', [], null, [['window',
-                'resize']], function (_v, en, $event) {
+        }, null, null)), i1.ɵdid(5259264, null, 0, i2.TabViewAvailableDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID], null, null), (_l()(),
+            i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵeld(0, null, null, 2, 'SportSocial-normal-blog', [], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
                 var pd_0 = (i1.ɵnov(_v, 4).onresize() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i4.View_NormalBlogComponent_0, i4.RenderType_NormalBlogComponent)), i1.ɵdid(4308992, null, 0, i5.NormalBlogComponent, [i6.PropertyService, i1.Renderer2,
-            i7.PostService, i1.NgZone, i3.WindowRefService], { blogId: [0, 'blogId'], blogImage: [1,
-                'blogImage'], bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'],
-            heading: [4, 'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'],
-            ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
-            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12,
-                'MetaDesc'], ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
+        }, i3.View_NormalBlogComponent_0, i3.RenderType_NormalBlogComponent)), i1.ɵdid(4308992, null, 0, i4.NormalBlogComponent, [i5.PropertyService, i1.Renderer2, i6.PostService,
+            i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'],
+            bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'], heading: [4,
+                'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'], ViewCount: [7,
+                'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'], exactDate: [10,
+                'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12, 'MetaDesc'],
+            ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerImage;
@@ -70,8 +68,8 @@ function View_RelatedBlogsComponent_1(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 10, 'div', [['class',
                 'relatedBlog']], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 1, 'p', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['Related Articles'])), (_l()(),
-            i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_2)), i1.ɵdid(16384, null, 0, i8.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_3)),
-        i1.ɵdid(802816, null, 0, i8.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
+            i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_2)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_3)),
+        i1.ɵdid(802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
             i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n  ']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = !_co.dataRecived;
@@ -95,8 +93,8 @@ function View_RelatedBlogsComponent_6(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i4.View_NormalBlogComponent_0, i4.RenderType_NormalBlogComponent)), i1.ɵdid(4308992, null, 0, i5.NormalBlogComponent, [i6.PropertyService, i1.Renderer2,
-            i7.PostService, i1.NgZone, i3.WindowRefService], { blogId: [0, 'blogId'], blogImage: [1,
+        }, i3.View_NormalBlogComponent_0, i3.RenderType_NormalBlogComponent)), i1.ɵdid(4308992, null, 0, i4.NormalBlogComponent, [i5.PropertyService, i1.Renderer2,
+            i6.PostService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1,
                 'blogImage'], bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'],
             heading: [4, 'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'],
             ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
@@ -123,8 +121,8 @@ function View_RelatedBlogsComponent_6(_l) {
 function View_RelatedBlogsComponent_4(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 10, 'div', [['class',
                 'mobileView relatedBlog']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 1, 'p', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['Related Articles'])),
-        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_5)), i1.ɵdid(16384, null, 0, i8.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_6)),
-        i1.ɵdid(802816, null, 0, i8.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
+        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_5)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_6)),
+        i1.ɵdid(802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
             i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n  ']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = !_co.dataRecived;
@@ -135,8 +133,8 @@ function View_RelatedBlogsComponent_4(_l) {
 }
 function View_RelatedBlogsComponent_0(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 7, 'div', [], null, null, null, null, null)), (_l()(),
-            i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_1)), i1.ɵdid(16384, null, 0, i8.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
-        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_4)), i1.ɵdid(16384, null, 0, i8.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
+            i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_1)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_4)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = !_co.mobileView;
         _ck(_v, 3, 0, currVal_0);
@@ -153,11 +151,11 @@ function View_RelatedBlogsComponent_Host_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, View_RelatedBlogsComponent_0, exports.RenderType_RelatedBlogsComponent)), i1.ɵdid(114688, null, 0, i9.RelatedBlogsComponent, [i7.PostService, i6.PropertyService,
-            i3.WindowRefService], null, null)], function (_ck, _v) {
+        }, View_RelatedBlogsComponent_0, exports.RenderType_RelatedBlogsComponent)), i1.ɵdid(114688, null, 0, i8.RelatedBlogsComponent, [i6.PostService, i5.PropertyService,
+            i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }
 exports.View_RelatedBlogsComponent_Host_0 = View_RelatedBlogsComponent_Host_0;
-exports.RelatedBlogsComponentNgFactory = i1.ɵccf('SportSocial-related-blogs', i9.RelatedBlogsComponent, View_RelatedBlogsComponent_Host_0, {}, {}, []);
+exports.RelatedBlogsComponentNgFactory = i1.ɵccf('SportSocial-related-blogs', i8.RelatedBlogsComponent, View_RelatedBlogsComponent_Host_0, {}, {}, []);
 //# sourceMappingURL=related-blogs.component.ngfactory.js.map

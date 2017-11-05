@@ -5,9 +5,9 @@ var platform_browser_1 = require("@angular/platform-browser");
 var property_service_1 = require("../services/property.service");
 var post_service_1 = require("../services/post.service");
 var router_1 = require("@angular/router");
-var window_ref_service_1 = require("../services/window-ref.service");
+var common_1 = require("@angular/common");
 var SearchComponent = /** @class */ (function () {
-    function SearchComponent(recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService, winRef) {
+    function SearchComponent(recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService, platformId) {
         this.recieveHeight = recieveHeight;
         this.renderer = renderer;
         this.recieveData = recieveData;
@@ -17,13 +17,13 @@ var SearchComponent = /** @class */ (function () {
         this.zone = zone;
         this.titleService = titleService;
         this.metaService = metaService;
-        this.winRef = winRef;
         this.dataRecieved = false;
         this.show = false;
         this.tempBlog = [];
         this.pageNumber = 1;
         this.mobileView = false;
         this.haveData = true;
+        this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.setTopMargin();
@@ -40,8 +40,15 @@ var SearchComponent = /** @class */ (function () {
             + this.recievedKey);
     };
     SearchComponent.prototype.setMetaTags = function () {
+        var key;
+        if (this.recievedKey.search(/ /g)) {
+            key = this.recievedKey.replace(/ /g, '-');
+        }
+        else {
+            key = this.recievedKey;
+        }
         this.metaService.addTags([
-            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
+            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + key },
             { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to '
                     + this.recievedKey },
             { name: 'title', content: this.recievedKey + 'Blogs' },
@@ -50,7 +57,7 @@ var SearchComponent = /** @class */ (function () {
             { property: 'og:title', content: this.recievedKey + 'Blogs' },
             { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to '
                     + this.recievedKey },
-            { property: 'og:url', content: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
+            { property: 'og:url', content: 'https://www.chaseyoursport.com/' + key },
             { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
             { property: 'og:site_name', content: 'Chase Your Sport' },
             { property: 'fb:app_id', content: '1750709328507665' },
@@ -111,14 +118,13 @@ var SearchComponent = /** @class */ (function () {
         this.recievedKey = this.route.snapshot.url[0].path.replace(/-/g, ' ');
         this.route.params.subscribe(function (params) {
             _this.pageNumber = 1;
-            // console.log(params, " params")
             _this.recievedKey = params.tag.replace(/-/g, ' ');
             _this.setTitle();
             _this.getBlogs();
         });
     };
     SearchComponent.prototype.setMobileView = function () {
-        if (this.winRef.nativeWindow.innerWidth < 700) {
+        if (window.innerWidth < 700) {
             this.mobileView = true;
         }
         else {
@@ -241,7 +247,7 @@ var SearchComponent = /** @class */ (function () {
         { type: core_1.NgZone, },
         { type: platform_browser_1.Title, },
         { type: platform_browser_1.Meta, },
-        { type: window_ref_service_1.WindowRefService, },
+        { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
     ]; };
     SearchComponent.propDecorators = {
         'searchPage': [{ type: core_1.ViewChild, args: ['searchPage',] },],

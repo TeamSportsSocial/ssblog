@@ -6,13 +6,16 @@ import {
    ElementRef,
    Renderer2,
    AfterViewInit,
-   ViewChildren
+   ViewChildren,
+   PLATFORM_ID,
+   Inject
 } from '@angular/core';
-import {PropertyService} from "../services/property.service";
+import {PropertyService} from '../services/property.service';
 import {KeywordComponent} from './keyword/keyword.component';
-import {PostService} from "../services/post.service";
-import {GetService} from "../services/get.service";
-import {Router} from "@angular/router";
+import {PostService} from '../services/post.service';
+import {GetService} from '../services/get.service';
+import {Router} from '@angular/router';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 @Component({
   selector: 'SportSocialBlog-keywords',
   templateUrl: './keywords.component.html',
@@ -32,7 +35,10 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
   sumofkeyWordWidth;
   pageNumber=1;
   path:string;
-  constructor(private renderer :Renderer2 ,
+  isBrowser: boolean;
+  constructor(
+    @Inject(PLATFORM_ID) platformId: Object,
+    private renderer :Renderer2 ,
     private recieveHeight:PropertyService,
     private sendHeight:PropertyService,
     private searched:PostService,
@@ -41,7 +47,9 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     private sendKey:PropertyService,
     private get: GetService
 
-  ) { }
+  ) { 
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit() {
     this.get.keywords().subscribe(
@@ -55,14 +63,14 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
         }
       }
     )
-    console.log(this.keywords, " check")
+    console.log(this.keywords, ' check')
     this.recieveHeight.ofHeader.subscribe(
       margin=>{
         this.topMargin=margin
       }
     )
-    this.renderer.setStyle(this.Keywords.nativeElement,'position',"fixed");
-    this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
+    this.renderer.setStyle(this.Keywords.nativeElement,'position','fixed');
+    this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+'px');
   }
   ngAfterViewInit(){
     this.recieveHeight.ofHeader.subscribe(
@@ -70,8 +78,8 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
         this.topMargin=margin
       }
     )
-    this.renderer.setStyle(this.Keywords.nativeElement,'position',"fixed");
-    this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
+    this.renderer.setStyle(this.Keywords.nativeElement,'position','fixed');
+    this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+'px');
     this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
   }
   ngAfterViewChecked(){
@@ -80,9 +88,11 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
         this.topMargin=margin
       }
     )
-    this.renderer.setStyle(this.Keywords.nativeElement,'position',"fixed");
-    this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
-    this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
+    this.renderer.setStyle(this.Keywords.nativeElement, 'position','fixed');
+    this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+'px');
+
+      this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
+    
   }
   send(i:number){
     /* this.searched.blogData(this.pageNumber,this.keywords[i].name).subscribe(
@@ -91,7 +101,7 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
         this.sendSearchedData.ofsearchBlog.next(res);
       }
     ) */
-    this.path="/"+this.keywords[i].name;
+    this.path='/'+this.keywords[i].name;
     this.router.navigate([this.path]);
     //this.sendKey.ofBlogCard.next(this.keywords[i].name)
   }
@@ -101,7 +111,7 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
       margin=> this.topMargin=margin
     )
     
-    this.renderer.setStyle(this.Keywords.nativeElement,'position',"fixed");
-    this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+"px");
+    this.renderer.setStyle(this.Keywords.nativeElement,'position','fixed');
+    this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+'px');
   }
 }

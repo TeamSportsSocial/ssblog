@@ -55,8 +55,8 @@ function View_KeywordsComponent_Host_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, View_KeywordsComponent_0, exports.RenderType_KeywordsComponent)), i1.ɵdid(12697600, null, 0, i5.KeywordsComponent, [i1.Renderer2, i6.PropertyService, i6.PropertyService, i7.PostService,
-            i6.PropertyService, i8.Router, i6.PropertyService, i9.GetService], null, null)], function (_ck, _v) {
+        }, View_KeywordsComponent_0, exports.RenderType_KeywordsComponent)), i1.ɵdid(12697600, null, 0, i5.KeywordsComponent, [i1.PLATFORM_ID, i1.Renderer2, i6.PropertyService, i6.PropertyService,
+            i7.PostService, i6.PropertyService, i8.Router, i6.PropertyService, i9.GetService], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

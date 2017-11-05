@@ -4,14 +4,15 @@ import {
   ViewChild,
   Renderer2,
   HostListener,
-  NgZone
+  NgZone,
+  PLATFORM_ID,
+  Inject
 } from '@angular/core';
 import { Meta,Title } from '@angular/platform-browser';
 import {PropertyService} from '../services/property.service';
 import {PostService} from '../services/post.service';
 import {ActivatedRoute} from '@angular/router';
-import { WindowRefService } from '../services/window-ref.service';
-
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -29,6 +30,7 @@ export class SearchComponent implements OnInit {
   recievedKey;
   mobileView:boolean=false;
   haveData:boolean=true;
+  isBrowser: boolean;
   @ViewChild('searchPage') searchPage;
   @ViewChild('blog') blog;
   constructor(
@@ -41,9 +43,9 @@ export class SearchComponent implements OnInit {
     private zone: NgZone,
     private titleService:Title,
     private metaService:Meta,
-    private winRef: WindowRefService
+    @Inject(PLATFORM_ID) platformId: Object
   ) {
-   
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit() {
@@ -65,8 +67,15 @@ export class SearchComponent implements OnInit {
                   + this.recievedKey);
     }
     setMetaTags() {
+      let key;
+      if(this.recievedKey.search(/ /g)){
+        key = this.recievedKey.replace(/ /g, '-')
+      }
+      else{
+        key = this.recievedKey;
+      }
       this.metaService.addTags([
-        { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-')},
+        { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + key},
         { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to '
           + this.recievedKey },
         { name: 'title', content: this.recievedKey + 'Blogs'},
@@ -75,7 +84,7 @@ export class SearchComponent implements OnInit {
         { property: 'og:title', content: this.recievedKey + 'Blogs' },
         { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to '
            + this.recievedKey},
-        { property: 'og:url', content:  'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-')},
+        { property: 'og:url', content:  'https://www.chaseyoursport.com/' + key},
         { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
         { property: 'og:site_name', content: 'Chase Your Sport' },
         { property: 'fb:app_id', content: '1750709328507665'},
@@ -118,7 +127,7 @@ export class SearchComponent implements OnInit {
           this.show=true;
           let key='';
           this.dataRecieved=true;
-          for(let i in data){
+          for(const i in data){
               blogDetails.push(
                 {
                   blogId: data[i].blogId,
@@ -158,7 +167,6 @@ export class SearchComponent implements OnInit {
       this.route.params.subscribe(
         (params)=>{
           this.pageNumber=1
-          // console.log(params, " params")
           this.recievedKey=params.tag.replace(/-/g, ' ')
           this.setTitle()
           this.getBlogs()
@@ -168,19 +176,17 @@ export class SearchComponent implements OnInit {
 
     }
 
-    setMobileView(){
-      if(this.winRef.nativeWindow.innerWidth<700){
-        this.mobileView=true;
-       }
-       else{
-         this.mobileView=false;
-       }
-
+    setMobileView() {
+        if ( window.innerWidth < 700) {
+          this.mobileView = true;
+        }else {
+          this.mobileView = false;
+        }
     }
 
-    timeToRead(s:string){
-      let words = s.split(' ');
-      let time=Math.round(words.length/180)
+    timeToRead(s: string){
+      const words = s.split(' ');
+      const time=Math.round(words.length/180)
       if(time>1){
         return time + ' min read'
       }
@@ -190,14 +196,14 @@ export class SearchComponent implements OnInit {
     }
 
     ExactDate(i:number){
-      let writtenDate=new Date(i*1000);
+      const writtenDate=new Date(i*1000);
       return writtenDate.toDateString()
     }
 
     timePassed(i: string){
       
-        let writtenDate = new Date(parseInt(i) * 1000);
-        let presentDate = new Date();
+        const writtenDate = new Date(parseInt(i) * 1000);
+        const presentDate = new Date();
         if (writtenDate.getFullYear() === presentDate.getFullYear()) {
           if (writtenDate.getMonth() === presentDate.getMonth() || writtenDate.getDate() > presentDate.getDate()) {
             if (writtenDate.getDate() === presentDate.getDate()) {
@@ -268,7 +274,7 @@ export class SearchComponent implements OnInit {
             this.haveData=false;
           }
           console.log(this.haveData)
-          for(let i in data){
+          for(const i in data){
             this.blogDetails.push(
               {
                 blogId:data[i].blogId,

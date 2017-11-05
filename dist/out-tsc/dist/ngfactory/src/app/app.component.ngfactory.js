@@ -15,8 +15,7 @@ var i5 = require("../../../../src/app/services/get.service");
 var i6 = require("@angular/platform-browser");
 var i7 = require("../../../../src/app/services/post.service");
 var i8 = require("@angular/router");
-var i9 = require("../../../../src/app/services/window-ref.service");
-var i10 = require("../../../../src/app/app.component");
+var i9 = require("../../../../src/app/app.component");
 var styles_AppComponent = [i0.styles];
 exports.RenderType_AppComponent = i1.ɵcrt({ encapsulation: 0, styles: styles_AppComponent,
     data: {} });
@@ -34,7 +33,7 @@ function View_AppComponent_0(_l) {
             return ad;
         }, i2.View_BlogHeaderComponent_0, i2.RenderType_BlogHeaderComponent)), i1.ɵdid(8503296, null, 0, i3.BlogHeaderComponent, [i4.PropertyService, i1.Renderer2, i4.PropertyService,
             i5.GetService, i1.ElementRef, i6.DomSanitizer, i7.PostService, i8.Router, i4.PropertyService,
-            i1.NgZone, i9.WindowRefService], null, null), (_l()(), i1.ɵted(null, ['    \n'])), (_l()(), i1.ɵeld(16777216, null, null, 1, 'router-outlet', [], null, null, null, null, null)),
+            i1.NgZone, i1.PLATFORM_ID], null, null), (_l()(), i1.ɵted(null, ['    \n'])), (_l()(), i1.ɵeld(16777216, null, null, 1, 'router-outlet', [], null, null, null, null, null)),
         i1.ɵdid(212992, null, 0, i8.RouterOutlet, [i8.ChildrenOutletContexts, i1.ViewContainerRef,
             i1.ComponentFactoryResolver, [8, null], i1.ChangeDetectorRef], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
@@ -44,8 +43,8 @@ function View_AppComponent_0(_l) {
 exports.View_AppComponent_0 = View_AppComponent_0;
 function View_AppComponent_Host_0(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'app-root', [], null, null, null, View_AppComponent_0, exports.RenderType_AppComponent)),
-        i1.ɵdid(49152, null, 0, i10.AppComponent, [], null, null)], null, null);
+        i1.ɵdid(49152, null, 0, i9.AppComponent, [], null, null)], null, null);
 }
 exports.View_AppComponent_Host_0 = View_AppComponent_Host_0;
-exports.AppComponentNgFactory = i1.ɵccf('app-root', i10.AppComponent, View_AppComponent_Host_0, {}, {}, []);
+exports.AppComponentNgFactory = i1.ɵccf('app-root', i9.AppComponent, View_AppComponent_Host_0, {}, {}, []);
 //# sourceMappingURL=app.component.ngfactory.js.map

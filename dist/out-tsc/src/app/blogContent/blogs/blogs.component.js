@@ -4,14 +4,13 @@ var core_1 = require("@angular/core");
 var property_service_1 = require("../../services/property.service");
 var post_service_1 = require("../../services/post.service");
 var platform_browser_1 = require("@angular/platform-browser");
-var window_ref_service_1 = require("../../services/window-ref.service");
+var common_1 = require("@angular/common");
 var BlogsComponent = /** @class */ (function () {
-    function BlogsComponent(reciveHeight, renderer, get, metaService, winRef) {
+    function BlogsComponent(reciveHeight, renderer, get, metaService, platformId) {
         this.reciveHeight = reciveHeight;
         this.renderer = renderer;
         this.get = get;
         this.metaService = metaService;
-        this.winRef = winRef;
         this.latestBlogDetails = [];
         this.blogDetails = [];
         this.topBlogDetails = [];
@@ -43,6 +42,7 @@ var BlogsComponent = /** @class */ (function () {
             { name: 'twitter:description', content: "chase your sports provides a better & sustainable\n      platform for the sports analytics and latest national as well as international\n      sports news & update for better engagement with the sports-friendly environment &\n      future aspects in INDIA...." },
             { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
         ]);
+        this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     BlogsComponent.prototype.ngOnInit = function () {
         this.setMobileView();
@@ -128,7 +128,7 @@ var BlogsComponent = /** @class */ (function () {
         });
     };
     BlogsComponent.prototype.setMobileView = function () {
-        if (this.winRef.nativeWindow.innerWidth > 600) {
+        if (window.innerWidth > 600) {
             this.mobileView = false;
         }
         else {
@@ -205,12 +205,10 @@ var BlogsComponent = /** @class */ (function () {
     };
     BlogsComponent.prototype.ExactDate = function (i) {
         var writtenDate = new Date(i * 1000);
-        // console.log(i, writtenDate,writtenDate.toDateString())
         return writtenDate.toDateString();
     };
     BlogsComponent.prototype.timeToRead = function (s) {
         var words = s.split(' ');
-        //console.log(words,words.length,this.blog.blogId)
         var time = Math.round(words.length / 180);
         if (time > 1) {
             return time + ' min read';
@@ -267,7 +265,7 @@ var BlogsComponent = /** @class */ (function () {
         { type: core_1.Renderer2, },
         { type: post_service_1.PostService, },
         { type: platform_browser_1.Meta, },
-        { type: window_ref_service_1.WindowRefService, },
+        { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
     ]; };
     BlogsComponent.propDecorators = {
         'blog': [{ type: core_1.ViewChild, args: ['blog',] },],

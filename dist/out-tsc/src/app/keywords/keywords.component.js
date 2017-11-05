@@ -5,8 +5,9 @@ var property_service_1 = require("../services/property.service");
 var post_service_1 = require("../services/post.service");
 var get_service_1 = require("../services/get.service");
 var router_1 = require("@angular/router");
+var common_1 = require("@angular/common");
 var KeywordsComponent = /** @class */ (function () {
-    function KeywordsComponent(renderer, recieveHeight, sendHeight, searched, sendSearchedData, router, sendKey, get) {
+    function KeywordsComponent(platformId, renderer, recieveHeight, sendHeight, searched, sendSearchedData, router, sendKey, get) {
         this.renderer = renderer;
         this.recieveHeight = recieveHeight;
         this.sendHeight = sendHeight;
@@ -17,6 +18,7 @@ var KeywordsComponent = /** @class */ (function () {
         this.get = get;
         this.keywords = [];
         this.pageNumber = 1;
+        this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     KeywordsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -27,20 +29,20 @@ var KeywordsComponent = /** @class */ (function () {
                 });
             }
         });
-        console.log(this.keywords, " check");
+        console.log(this.keywords, ' check');
         this.recieveHeight.ofHeader.subscribe(function (margin) {
             _this.topMargin = margin;
         });
-        this.renderer.setStyle(this.Keywords.nativeElement, 'position', "fixed");
-        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + "px");
+        this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
+        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');
     };
     KeywordsComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
         this.recieveHeight.ofHeader.subscribe(function (margin) {
             _this.topMargin = margin;
         });
-        this.renderer.setStyle(this.Keywords.nativeElement, 'position', "fixed");
-        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + "px");
+        this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
+        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');
         this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
     };
     KeywordsComponent.prototype.ngAfterViewChecked = function () {
@@ -48,8 +50,8 @@ var KeywordsComponent = /** @class */ (function () {
         this.recieveHeight.ofHeader.subscribe(function (margin) {
             _this.topMargin = margin;
         });
-        this.renderer.setStyle(this.Keywords.nativeElement, 'position', "fixed");
-        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + "px");
+        this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
+        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');
         this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
     };
     KeywordsComponent.prototype.send = function (i) {
@@ -59,7 +61,7 @@ var KeywordsComponent = /** @class */ (function () {
             this.sendSearchedData.ofsearchBlog.next(res);
           }
         ) */
-        this.path = "/" + this.keywords[i].name;
+        this.path = '/' + this.keywords[i].name;
         this.router.navigate([this.path]);
         //this.sendKey.ofBlogCard.next(this.keywords[i].name)
     };
@@ -67,8 +69,8 @@ var KeywordsComponent = /** @class */ (function () {
         var _this = this;
         this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
         this.recieveHeight.ofHeader.subscribe(function (margin) { return _this.topMargin = margin; });
-        this.renderer.setStyle(this.Keywords.nativeElement, 'position', "fixed");
-        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + "px");
+        this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
+        this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');
     };
     KeywordsComponent.decorators = [
         { type: core_1.Component, args: [{
@@ -79,6 +81,7 @@ var KeywordsComponent = /** @class */ (function () {
     ];
     /** @nocollapse */
     KeywordsComponent.ctorParameters = function () { return [
+        { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
         { type: core_1.Renderer2, },
         { type: property_service_1.PropertyService, },
         { type: property_service_1.PropertyService, },

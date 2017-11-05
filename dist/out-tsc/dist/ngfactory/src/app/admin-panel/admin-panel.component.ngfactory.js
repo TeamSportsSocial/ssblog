@@ -17,8 +17,7 @@ var i7 = require("@angular/common");
 var i8 = require("../blog-footer/blog-footer.component.ngfactory");
 var i9 = require("../../../../../src/app/blog-footer/blog-footer.component");
 var i10 = require("../../../../../src/app/services/status.service");
-var i11 = require("../../../../../src/app/services/window-ref.service");
-var i12 = require("../../../../../src/app/admin-panel/admin-panel.component");
+var i11 = require("../../../../../src/app/admin-panel/admin-panel.component");
 var styles_AdminPanelComponent = [i0.styles];
 exports.RenderType_AdminPanelComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_AdminPanelComponent, data: {} });
@@ -78,7 +77,7 @@ function View_AdminPanelComponent_6(_l) {
             }
             return ad;
         }, i8.View_BlogFooterComponent_0, i8.RenderType_BlogFooterComponent)), i1.ɵdid(114688, null, 0, i9.BlogFooterComponent, [i4.PostService, i1.Renderer2, i10.StatusService,
-            i11.WindowRefService], null, null)], function (_ck, _v) {
+            i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }
@@ -115,10 +114,10 @@ function View_AdminPanelComponent_Host_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, View_AdminPanelComponent_0, exports.RenderType_AdminPanelComponent)), i1.ɵdid(114688, null, 0, i12.AdminPanelComponent, [i6.PropertyService, i1.Renderer2, i4.PostService], null, null)], function (_ck, _v) {
+        }, View_AdminPanelComponent_0, exports.RenderType_AdminPanelComponent)), i1.ɵdid(114688, null, 0, i11.AdminPanelComponent, [i6.PropertyService, i1.Renderer2, i4.PostService], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }
 exports.View_AdminPanelComponent_Host_0 = View_AdminPanelComponent_Host_0;
-exports.AdminPanelComponentNgFactory = i1.ɵccf('SportSocialBlog-admin-panel', i12.AdminPanelComponent, View_AdminPanelComponent_Host_0, {}, {}, []);
+exports.AdminPanelComponentNgFactory = i1.ɵccf('SportSocialBlog-admin-panel', i11.AdminPanelComponent, View_AdminPanelComponent_Host_0, {}, {}, []);
 //# sourceMappingURL=admin-panel.component.ngfactory.js.map

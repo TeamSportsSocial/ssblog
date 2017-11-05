@@ -5,12 +5,13 @@ import {
   HostListener,
   ViewChild,
   Renderer2,
-  NgZone
+  NgZone,
+  PLATFORM_ID,
+  Inject
 } from '@angular/core';
 import {PropertyService} from '../../services/property.service';
 import {PostService} from '../../services/post.service';
-
-import { WindowRefService } from '../../services/window-ref.service';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'SportSocial-normal-blog',
@@ -19,20 +20,20 @@ import { WindowRefService } from '../../services/window-ref.service';
 })
 export class NormalBlogComponent implements OnInit {
 
-  @Input()  blogId:string
-  @Input()  blogImage:string
-  @Input()  bloggerImage:string
-  @Input()  bloggerName:string
-  @Input()  heading:string
-  @Input()  insertedDate:string
-  @Input()  Content:string
-  @Input()  ViewCount:string
-  @Input()  ShareCount:string
-  @Input()  keywords:string[]
-  @Input()  exactDate:string
-  @Input()  readingTime:string
-  @Input()  MetaDesc: string
-  @Input()  ImageDesc: string
+  @Input()  blogId:string;
+  @Input()  blogImage:string;
+  @Input()  bloggerImage:string;
+  @Input()  bloggerName:string;
+  @Input()  heading:string;
+  @Input()  insertedDate:string;
+  @Input()  Content:string;
+  @Input()  ViewCount:string;
+  @Input()  ShareCount:string;
+  @Input()  keywords:string[];
+  @Input()  exactDate:string;
+  @Input()  readingTime:string;
+  @Input()  MetaDesc: string;
+  @Input()  ImageDesc: string;
 
   content:string;
   blog:{
@@ -50,7 +51,8 @@ export class NormalBlogComponent implements OnInit {
     readingTime:string,
     MetaDesc: string,
     ImageDesc: string
-  }
+  };
+  isBrowser: boolean;
   @ViewChild('blogTitle') blogTitle;
   @ViewChild('holder') holder;
   @ViewChild('fullImage') fullImage;
@@ -58,14 +60,16 @@ export class NormalBlogComponent implements OnInit {
   @ViewChild('footer') footer;
   isloading:boolean=true;
   openFullImage:boolean=false;
-  dataRecieved:boolean=false
+  dataRecieved:boolean=false;
   constructor(
     private Send: PropertyService,
     private renderer:Renderer2,
     private post:PostService,
     private zone:NgZone,
-    private winRef: WindowRefService
-  ) { }
+    @Inject(PLATFORM_ID) platformId: Object
+  ) { 
+    this.isBrowser= isPlatformBrowser(platformId);
+  }
 
   ngOnInit() {
     this.content = this.strip(this.Content);
@@ -84,8 +88,8 @@ export class NormalBlogComponent implements OnInit {
     readingTime: this.readingTime,
     MetaDesc: this.MetaDesc,
     ImageDesc: this.ImageDesc
-  }
-   this.setVariableFont()
+  };
+   this.setVariableFont();
    if (this.blogImage) {
     this.dataRecieved = true;
    }
@@ -94,7 +98,7 @@ export class NormalBlogComponent implements OnInit {
   }
 
   strip(html) {
-     const tmp = document.createElement('DIV');
+     const tmp = this.renderer.createElement('DIV');
      tmp.innerHTML = html;
      return tmp.textContent || tmp.innerText || '';
   }
@@ -113,64 +117,48 @@ export class NormalBlogComponent implements OnInit {
 
 
   setVariableFont(){
-    if(this.winRef.nativeWindow.innerWidth>1200){
-      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em')
-    }
-    if(this.winRef.nativeWindow.innerWidth>1100 && this.winRef.nativeWindow.innerWidth<1200){
-      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
-    }
-    if(this.winRef.nativeWindow.innerWidth<1100 && this.winRef.nativeWindow.innerWidth>1000){
-     this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
-    }
-    if(this.winRef.nativeWindow.innerWidth<1000 && this.winRef.nativeWindow.innerWidth>950){
-     this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.15em')
-    }
-    if(this.winRef.nativeWindow.innerWidth>700 && this.winRef.nativeWindow.innerWidth<950){
-      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.25em')
-     }
-     if(this.winRef.nativeWindow.innerWidth>600 && this.winRef.nativeWindow.innerWidth<700){
-      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.1em')
-     }
-     if(this.winRef.nativeWindow.innerWidth>600 && this.winRef.nativeWindow.innerWidth<500){
-      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em')
-     }
-     if(this.winRef.nativeWindow.innerWidth>500 && this.winRef.nativeWindow.innerWidth<600){
-      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em')
-     }
-     if(this.winRef.nativeWindow.innerWidth>320 && this.winRef.nativeWindow.innerWidth<400){
-      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.1em')
-     }
-     if(this.winRef.nativeWindow.innerWidth<320){
-      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','0.9em')
-     }
+      if(window.innerWidth>1200){
+        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em');
+      }
+      if(window.innerWidth>1100 && window.innerWidth<1200){
+        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em');
+      }
+      if(window.innerWidth<1100 && window.innerWidth>1000){
+      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em');
+      }
+      if(window.innerWidth<1000 && window.innerWidth>950){
+      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.15em');
+      }
+      if(window.innerWidth>700 && window.innerWidth<950){
+        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.25em');
+      }
+      if(window.innerWidth>600 && window.innerWidth<700){
+        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.1em');
+      }
+      if(window.innerWidth>600 && window.innerWidth<500){
+        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em');
+      }
+      if(window.innerWidth>500 && window.innerWidth<600){
+        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em');
+      }
+      if(window.innerWidth>320 && window.innerWidth<400){
+        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.1em');
+      }
+      if(window.innerWidth<320){
+        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','0.9em');
+      }
   }
-  setHeightOfTitle(){
-
-    const heightofBlog = this.Blog.nativeElement.getBoundingClientRect().height;
-
-    const heightofHolder = this.holder.nativeElement.getBoundingClientRect().height;
-
-    const heightofFooter = heightofBlog - heightofHolder;
-
-    const heightofFirstChild=this.footer.nativeElement.children[0].offsetHeight
-
-    const heightofThirdChild=this.footer.nativeElement.children[2].offsetHeight
-
-    const heightOfTitle = heightofFooter-heightofFirstChild-heightofThirdChild-18
-
-    this.renderer.setStyle(this.blogTitle.nativeElement,'height',heightOfTitle+'px')
-
-    const topMargin=(heightofFooter-heightofFirstChild-heightOfTitle-heightofThirdChild)/2;
-
-  }
+ 
   send(){
-    this.Send.detailsofBlog.next(this.blog)
-    this.winRef.nativeWindow.scrollTo(0,0);
+    this.Send.detailsofBlog.next(this.blog);
+    if ( this.isBrowser ) {
+      window.scrollTo(0, 0);
+    }
   }
 
 
   setDefault(event){
-    this.blogImage='/assets/images/default-image.png'
+    this.blogImage='/assets/images/default-image.png';
   }
 
 

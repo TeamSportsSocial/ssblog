@@ -8,13 +8,15 @@ import {
   AfterViewInit,
   ViewChildren,
   SimpleChanges,
-  ChangeDetectorRef
+  ChangeDetectorRef,
+  PLATFORM_ID,
+  Inject
 } from '@angular/core';
 import {PropertyService} from '../../services/property.service';
 import {GetService} from '../../services/get.service';
 import {PostService} from '../../services/post.service';
 import { Meta, Title } from '@angular/platform-browser';
-import { WindowRefService } from '../../services/window-ref.service';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 
 @Component({
@@ -96,13 +98,14 @@ export class BlogsComponent implements OnInit,AfterViewInit {
   dataRecived: boolean= false;
   haveData: boolean= true
   count= 0;
+  isBrowser: boolean;
   @ViewChild('blog') blog;
   constructor(
     private reciveHeight: PropertyService,
     private renderer: Renderer2,
     private get: PostService,
     private metaService: Meta,
-    private winRef: WindowRefService
+    @Inject(PLATFORM_ID) platformId: Object
   ) {
     metaService.addTags([
       { rel: 'canonical', href: 'https://www.chaseyoursport.com/'},
@@ -142,6 +145,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       future aspects in INDIA....`},
       { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
     ]);
+    this.isBrowser = isPlatformBrowser( platformId )
   }
 
   ngOnInit() {
@@ -240,11 +244,13 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     )
   }
   setMobileView(){
-    if (this.winRef.nativeWindow.innerWidth > 600 ) {
-      this.mobileView = false;
-    }else {
-      this.mobileView = true;
-    }
+  
+      if (window.innerWidth > 600 ) {
+        this.mobileView = false;
+      }else {
+        this.mobileView = true;
+      }
+   
   }
    
   setTopMargin(){
@@ -254,12 +260,12 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + 'px')
   }
   showTrendingBlock() {
-    if (this.blogDetails.length === 0 || window.innerWidth < 950){
-      return false;
-    }
-    if (this.blogDetails.length >= 0 && window.innerWidth > 950){
-      return true;
-    }
+      if (this.blogDetails.length === 0 || window.innerWidth < 950){
+        return false;
+      }
+      if (this.blogDetails.length >= 0 && window.innerWidth > 950){
+        return true;
+      }
   }
   ngAfterViewInit(){
     this.setTopMargin()
@@ -275,7 +281,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     this.showTrendingBlock();
     this.setMobileView()
     if (this.blogDetails.length > 0){
-      this.show = true
+      this.show = true;
     }
   }
   timePassed(i: string){
@@ -321,12 +327,10 @@ export class BlogsComponent implements OnInit,AfterViewInit {
   }
   ExactDate(i: number){
     let writtenDate = new Date(i * 1000);
-   // console.log(i, writtenDate,writtenDate.toDateString())
-    return  writtenDate.toDateString()
+    return  writtenDate.toDateString();
   }
   timeToRead(s: string){
     let words = s.split(' ');
-    //console.log(words,words.length,this.blog.blogId)
     let time = Math.round(words.length / 180)
     if (time > 1){
       return time + ' min read'

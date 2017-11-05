@@ -15,15 +15,14 @@ var i5 = require("../../../../../../src/app/comments/comments.component");
 var i6 = require("../../../../../../src/app/services/facebook.service");
 var i7 = require("@angular/http");
 var i8 = require("../../../../../../src/app/services/post.service");
-var i9 = require("../../../../../../src/app/services/window-ref.service");
-var i10 = require("../../blog-footer/blog-footer.component.ngfactory");
-var i11 = require("../../../../../../src/app/blog-footer/blog-footer.component");
-var i12 = require("../../../../../../src/app/services/status.service");
-var i13 = require("../../../../../../src/app/blogContent/blog-open/blog-open.component");
-var i14 = require("../related-blogs/related-blogs.component.ngfactory");
-var i15 = require("../../../../../../src/app/blogContent/related-blogs/related-blogs.component");
-var i16 = require("../../../../../../src/app/services/property.service");
-var i17 = require("@angular/platform-browser");
+var i9 = require("../../blog-footer/blog-footer.component.ngfactory");
+var i10 = require("../../../../../../src/app/blog-footer/blog-footer.component");
+var i11 = require("../../../../../../src/app/services/status.service");
+var i12 = require("../../../../../../src/app/blogContent/blog-open/blog-open.component");
+var i13 = require("../related-blogs/related-blogs.component.ngfactory");
+var i14 = require("../../../../../../src/app/blogContent/related-blogs/related-blogs.component");
+var i15 = require("../../../../../../src/app/services/property.service");
+var i16 = require("@angular/platform-browser");
 var styles_BlogOpenComponent = [i0.styles];
 exports.RenderType_BlogOpenComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_BlogOpenComponent, data: {} });
@@ -281,8 +280,8 @@ function View_BlogOpenComponent_14(_l) {
 function View_BlogOpenComponent_16(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 5, 'div', [['class',
                 'comments']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 2, 'SportSocial-comments', [], null, null, null, i4.View_CommentsComponent_0, i4.RenderType_CommentsComponent)), i1.ɵdid(4308992, null, 0, i5.CommentsComponent, [i1.Renderer2, i6.FacebookService, i7.Http,
-            i8.PostService, i8.PostService, i8.PostService, i1.NgZone, i9.WindowRefService], { BlogId: [0, 'BlogId'] }, null), (_l()(), i1.ɵted(null, ['\n    '])),
+        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 2, 'SportSocial-comments', [], null, null, null, i4.View_CommentsComponent_0, i4.RenderType_CommentsComponent)), i1.ɵdid(114688, null, 0, i5.CommentsComponent, [i1.Renderer2, i6.FacebookService, i7.Http,
+            i8.PostService, i8.PostService, i8.PostService, i1.NgZone, i1.PLATFORM_ID], { BlogId: [0, 'BlogId'] }, null), (_l()(), i1.ɵted(null, ['\n    '])),
         (_l()(), i1.ɵted(null, ['\n  ']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.blogID;
@@ -297,8 +296,8 @@ function View_BlogOpenComponent_17(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i10.View_BlogFooterComponent_0, i10.RenderType_BlogFooterComponent)), i1.ɵdid(114688, null, 0, i11.BlogFooterComponent, [i8.PostService, i1.Renderer2, i12.StatusService,
-            i9.WindowRefService], null, null)], function (_ck, _v) {
+        }, i9.View_BlogFooterComponent_0, i9.RenderType_BlogFooterComponent)), i1.ɵdid(114688, null, 0, i10.BlogFooterComponent, [i8.PostService, i1.Renderer2, i11.StatusService,
+            i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }
@@ -391,9 +390,9 @@ function View_BlogOpenComponent_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i14.View_RelatedBlogsComponent_0, i14.RenderType_RelatedBlogsComponent)),
-        i1.ɵdid(114688, null, 0, i15.RelatedBlogsComponent, [i8.PostService, i16.PropertyService,
-            i9.WindowRefService], null, null), (_l()(), i1.ɵted(null, ['\n  \n'])), (_l()(), i1.ɵted(null, [' \n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_17)),
+        }, i13.View_RelatedBlogsComponent_0, i13.RenderType_RelatedBlogsComponent)),
+        i1.ɵdid(114688, null, 0, i14.RelatedBlogsComponent, [i8.PostService, i15.PropertyService,
+            i1.PLATFORM_ID], null, null), (_l()(), i1.ɵted(null, ['\n  \n'])), (_l()(), i1.ɵted(null, [' \n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_17)),
         i1.ɵdid(16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
                 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(),
             i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_18)),
@@ -457,12 +456,12 @@ function View_BlogOpenComponent_Host_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, View_BlogOpenComponent_0, exports.RenderType_BlogOpenComponent)), i1.ɵdid(4308992, null, 0, i13.BlogOpenComponent, [i1.PLATFORM_ID, i16.PropertyService, i16.PropertyService,
-            i1.Renderer2, i2.ActivatedRoute, i17.DomSanitizer, i16.PropertyService, i2.Router,
-            i8.PostService, i8.PostService, i17.Meta, i8.PostService, i17.Title, i6.FacebookService], null, null)], function (_ck, _v) {
+        }, View_BlogOpenComponent_0, exports.RenderType_BlogOpenComponent)), i1.ɵdid(4308992, null, 0, i12.BlogOpenComponent, [i1.PLATFORM_ID, i15.PropertyService, i15.PropertyService,
+            i1.Renderer2, i2.ActivatedRoute, i16.DomSanitizer, i15.PropertyService, i2.Router,
+            i8.PostService, i8.PostService, i16.Meta, i8.PostService, i16.Title, i6.FacebookService], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }
 exports.View_BlogOpenComponent_Host_0 = View_BlogOpenComponent_Host_0;
-exports.BlogOpenComponentNgFactory = i1.ɵccf('SportSocial-blog-open', i13.BlogOpenComponent, View_BlogOpenComponent_Host_0, {}, {}, []);
+exports.BlogOpenComponentNgFactory = i1.ɵccf('SportSocial-blog-open', i12.BlogOpenComponent, View_BlogOpenComponent_Host_0, {}, {}, []);
 //# sourceMappingURL=blog-open.component.ngfactory.js.map

@@ -6,7 +6,9 @@ import {
   HostListener,
   Renderer2,
   ChangeDetectorRef,
-  NgZone
+  NgZone,
+  PLATFORM_ID,
+  Inject
 } from '@angular/core';
 import {PropertyService} from '../services/property.service';
 import {GetService} from '../services/get.service';
@@ -17,8 +19,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {Router} from '@angular/router';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { Subject } from 'rxjs/Subject';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
-import { WindowRefService } from '../services/window-ref.service';
 
 
 @Component({
@@ -49,6 +51,7 @@ export class BlogHeaderComponent implements OnInit {
   haveresult:boolean=false;
   searchKey = new ReplaySubject();
   SearchKey;
+  isBrowser: boolean;
   constructor(
     private sendHeight: PropertyService,
     private renderer: Renderer2,
@@ -60,8 +63,10 @@ export class BlogHeaderComponent implements OnInit {
     private router: Router,
     private sendKey: PropertyService,
     private zone: NgZone,
-    private winRef: WindowRefService
-  ) { }
+    @Inject(PLATFORM_ID) platformId: Object
+  ) { 
+      this.isBrowser = isPlatformBrowser(platformId);
+  }
   ngOnInit() {
 
     this.get.keywords()
@@ -75,24 +80,26 @@ export class BlogHeaderComponent implements OnInit {
       }
     );
     this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
-    if(window.innerWidth <= 750){
-      this.mobileView = true;
-    }
-    else{
-      this.mobileView=false;
+    if (this.isBrowser) {
+      if (window.innerWidth <= 750) {
+        this.mobileView = true;
+      }else {
+        this.mobileView = false;
+      }
     }
 
   }
-  ngAfterViewChecked(){
-
-    this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
+  ngAfterViewChecked() {
+    if ( this.isBrowser ) {
+      this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
+    }
   }
 
-  reloadPage() {
+  /* reloadPage() {
     this.zone.runOutsideAngular(() => {
         location.reload();
     });
-  }
+  } */
 
   @HostListener('window:click', [])onclick() {
     this.haveresult = false;
@@ -101,33 +108,33 @@ export class BlogHeaderComponent implements OnInit {
     }
   }
 
-  @HostListener('window:resize',[]) onresize(){
+  @HostListener('window:resize', []) onresize() {
     if (this.resultBox) {
      this.setStyleOfResultBox();
     }
     this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
-    if(window.innerWidth <= 750){
-      this.mobileView=true;
-    }
-    else{
-      this.mobileView=false;
-    }
+    if ( this.isBrowser ) {
+    if ( window.innerWidth <= 750 ) {
+      this.mobileView = true;
+    } else {
+      this.mobileView = false;
+    }}
 
   }
-  openDropDown(){
-    this.open=true;
+  openDropDown() {
+    this.open = true;
   }
-  closeDropDown(){
-    this.open=false;
+  closeDropDown() {
+    this.open = false;
   }
-  searchSportSocial(){
+  searchSportSocial() {
     const input = this.searchBox.nativeElement.value;
     this.open = false;
     this.router.navigate(['/' + input]);
     this.searchBox.nativeElement.value = '';
     this.haveresult = false;
   }
-  
+
   sendData(event) {
     console.clear();
     console.log(event);
@@ -167,7 +174,7 @@ export class BlogHeaderComponent implements OnInit {
     }
   }
 
-  navigate(){
+  navigate() {
     this.open = false;
   }
   hover(event) {
@@ -178,15 +185,14 @@ export class BlogHeaderComponent implements OnInit {
   }
 
   setStyleOfResultBox() {
-    
     const prop = this.searchBox.nativeElement.getBoundingClientRect();
     this.renderer.setStyle(this.resultBox.nativeElement, 'width', prop.width + 'px');
-    if (!this.mobileView){
+    if (!this.mobileView) {
       this.renderer.setStyle(this.resultBox.nativeElement, 'top', prop.bottom + 2 + 'px');
     } else {
-      this.renderer.setStyle(this.resultBox.nativeElement, 'top', prop.top - 22 + 'px')
-      if(this.results.toString() === ''){
-        this.haveresult=false;
+      this.renderer.setStyle(this.resultBox.nativeElement, 'top', prop.top - 22 + 'px');
+      if (this.results.toString() === '') {
+        this.haveresult = false;
       }
     }
   }

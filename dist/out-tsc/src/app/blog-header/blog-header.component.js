@@ -7,9 +7,9 @@ var post_service_1 = require("../services/post.service");
 var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 var ReplaySubject_1 = require("rxjs/ReplaySubject");
-var window_ref_service_1 = require("../services/window-ref.service");
+var common_1 = require("@angular/common");
 var BlogHeaderComponent = /** @class */ (function () {
-    function BlogHeaderComponent(sendHeight, renderer, send, get, elRef, _sanitizer, searchKeyword, router, sendKey, zone, winRef) {
+    function BlogHeaderComponent(sendHeight, renderer, send, get, elRef, _sanitizer, searchKeyword, router, sendKey, zone, platformId) {
         this.sendHeight = sendHeight;
         this.renderer = renderer;
         this.send = send;
@@ -20,7 +20,6 @@ var BlogHeaderComponent = /** @class */ (function () {
         this.router = router;
         this.sendKey = sendKey;
         this.zone = zone;
-        this.winRef = winRef;
         this.keywords = [];
         this.pageNumber = 1;
         this.mobileView = false;
@@ -30,6 +29,7 @@ var BlogHeaderComponent = /** @class */ (function () {
         this.results = [];
         this.haveresult = false;
         this.searchKey = new ReplaySubject_1.ReplaySubject();
+        this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     BlogHeaderComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -40,21 +40,25 @@ var BlogHeaderComponent = /** @class */ (function () {
             }
         });
         this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
-        if (window.innerWidth <= 750) {
-            this.mobileView = true;
-        }
-        else {
-            this.mobileView = false;
+        if (this.isBrowser) {
+            if (window.innerWidth <= 750) {
+                this.mobileView = true;
+            }
+            else {
+                this.mobileView = false;
+            }
         }
     };
     BlogHeaderComponent.prototype.ngAfterViewChecked = function () {
-        this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
+        if (this.isBrowser) {
+            this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
+        }
     };
-    BlogHeaderComponent.prototype.reloadPage = function () {
-        this.zone.runOutsideAngular(function () {
-            location.reload();
-        });
-    };
+    /* reloadPage() {
+      this.zone.runOutsideAngular(() => {
+          location.reload();
+      });
+    } */
     BlogHeaderComponent.prototype.onclick = function () {
         this.haveresult = false;
         if (this.searchBox) {
@@ -66,11 +70,13 @@ var BlogHeaderComponent = /** @class */ (function () {
             this.setStyleOfResultBox();
         }
         this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
-        if (window.innerWidth <= 750) {
-            this.mobileView = true;
-        }
-        else {
-            this.mobileView = false;
+        if (this.isBrowser) {
+            if (window.innerWidth <= 750) {
+                this.mobileView = true;
+            }
+            else {
+                this.mobileView = false;
+            }
         }
     };
     BlogHeaderComponent.prototype.openDropDown = function () {
@@ -161,7 +167,7 @@ var BlogHeaderComponent = /** @class */ (function () {
         { type: router_1.Router, },
         { type: property_service_1.PropertyService, },
         { type: core_1.NgZone, },
-        { type: window_ref_service_1.WindowRefService, },
+        { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
     ]; };
     BlogHeaderComponent.propDecorators = {
         'Header': [{ type: core_1.ViewChild, args: ['Header',] },],

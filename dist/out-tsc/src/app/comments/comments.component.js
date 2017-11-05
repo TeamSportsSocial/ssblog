@@ -4,9 +4,9 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var post_service_1 = require(".././services/post.service");
 var facebook_service_1 = require(".././services/facebook.service");
-var window_ref_service_1 = require(".././services/window-ref.service");
+var common_1 = require("@angular/common");
 var CommentsComponent = /** @class */ (function () {
-    function CommentsComponent(renderer, Fb, http, sendUserInfo, send, loadComment, zone, winRef) {
+    function CommentsComponent(renderer, Fb, http, sendUserInfo, send, loadComment, zone, platformId) {
         this.renderer = renderer;
         this.Fb = Fb;
         this.http = http;
@@ -14,12 +14,14 @@ var CommentsComponent = /** @class */ (function () {
         this.send = send;
         this.loadComment = loadComment;
         this.zone = zone;
-        this.winRef = winRef;
         this.isConnected = false;
         this.loged = false;
         this.user = { name: 'Hello' };
         this.recivedComment = [];
-        Fb.init();
+        this.isBrowser = common_1.isPlatformBrowser(platformId);
+        if (common_1.isPlatformBrowser(platformId)) {
+            Fb.init();
+        }
     }
     CommentsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -33,10 +35,9 @@ var CommentsComponent = /** @class */ (function () {
                 });
             }
         });
-        this.getLoginStatus();
-    };
-    CommentsComponent.prototype.ngAfterViewInit = function () {
-        this.getLoginStatus();
+        if (this.isBrowser) {
+            this.getLoginStatus();
+        }
     };
     CommentsComponent.prototype.setDefault = function () {
         this.profilePicture = '/assets/images/user.png';
@@ -92,39 +93,43 @@ var CommentsComponent = /** @class */ (function () {
     };
     CommentsComponent.prototype.login = function () {
         var _this = this;
-        FB.login(function (response) {
-            if (response.status === 'connected') {
-                _this.loged = true;
-                _this.token = response;
-                _this.isConnected = true;
-                _this.profilePicture = "https://graph.facebook.com/" + response.authResponse.userID + "/picture?type=large";
-                _this.me();
-                console.log(_this.user);
-            }
-            else if (response.status === 'not_authorized') {
-                console.log('conect1');
-            }
-            else {
-                console.log('conect2');
-            }
-        }, { scope: 'user_friends,email' });
+        if (this.isBrowser) {
+            FB.login(function (response) {
+                if (response.status === 'connected') {
+                    _this.loged = true;
+                    _this.token = response;
+                    _this.isConnected = true;
+                    _this.profilePicture = "https://graph.facebook.com/" + response.authResponse.userID + "/picture?type=large";
+                    _this.me();
+                    console.log(_this.user);
+                }
+                else if (response.status === 'not_authorized') {
+                    console.log('conect1');
+                }
+                else {
+                    console.log('conect2');
+                }
+            }, { scope: 'user_friends,email' });
+        }
     };
     CommentsComponent.prototype.me = function () {
         var _this = this;
-        FB.api('/me?fields=id,name,picture.type(large),email', function (result) {
-            if (result && !result.error) {
-                _this.user = result;
-                console.log(_this.user, 'conect');
-                console.log(_this.profilePicture);
-                _this.sendUserInfo.ofFacebookUser(result.id, result.name, result.email, _this.profilePicture).subscribe(function (res) {
-                    console.log(res, ' login');
-                    _this.userId = res[0].UserId;
-                });
-            }
-            else {
-                console.log(result.error);
-            }
-        });
+        if (this.isBrowser) {
+            FB.api('/me?fields=id,name,picture.type(large),email', function (result) {
+                if (result && !result.error) {
+                    _this.user = result;
+                    console.log(_this.user, 'conect');
+                    console.log(_this.profilePicture);
+                    _this.sendUserInfo.ofFacebookUser(result.id, result.name, result.email, _this.profilePicture).subscribe(function (res) {
+                        console.log(res, ' login');
+                        _this.userId = res[0].UserId;
+                    });
+                }
+                else {
+                    console.log(result.error);
+                }
+            });
+        }
     };
     CommentsComponent.prototype.post = function () {
         var _this = this;
@@ -160,7 +165,7 @@ var CommentsComponent = /** @class */ (function () {
         { type: post_service_1.PostService, },
         { type: post_service_1.PostService, },
         { type: core_1.NgZone, },
-        { type: window_ref_service_1.WindowRefService, },
+        { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
     ]; };
     CommentsComponent.propDecorators = {
         'commentBox': [{ type: core_1.ViewChild, args: ['commentBox',] },],

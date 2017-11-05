@@ -46,19 +46,23 @@ function View_SubscribeCardComponent_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(4210688, null, 0, i2.MaintainHeightWidthRatioDirective, [i1.ElementRef, i1.Renderer2], null, null), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 1, 'p', [['class',
-                'heading']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['Subscribe via Email'])), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, [[1, 0], ['subscriber', 1]], null, 0, 'input', [['email', ''], ['name', 'Email'], ['placeholder', 'Enter your Email'], ['type',
-                'email']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SubscribeCardComponent_1)), i1.ɵdid(16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, [[2, 0], ['button', 1]], null, 1, 'button', [['type', 'submit']], null, [[null, 'click']], function (_v, en, $event) {
-            var ad = true;
-            var _co = _v.component;
-            if (('click' === en)) {
-                var pd_0 = (_co.Subscribe() !== false);
-                ad = (pd_0 && ad);
-            }
-            return ad;
-        }, null, null)), (_l()(), i1.ɵted(null, ['Submit'])),
+        }, null, null)), i1.ɵdid(4210688, null, 0, i2.MaintainHeightWidthRatioDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID], null, null),
+        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 1, 'p', [['class', 'heading']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['Subscribe via Email'])),
+        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, [[1, 0], ['subscriber',
+                1]], null, 0, 'input', [['email', ''], ['name', 'Email'], ['placeholder',
+                'Enter your Email'], ['type', 'email']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(),
+            i1.ɵand(16777216, null, null, 1, null, View_SubscribeCardComponent_1)),
+        i1.ɵdid(16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
+                'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(),
+            i1.ɵeld(0, [[2, 0], ['button', 1]], null, 1, 'button', [['type', 'submit']], null, [[null, 'click']], function (_v, en, $event) {
+                var ad = true;
+                var _co = _v.component;
+                if (('click' === en)) {
+                    var pd_0 = (_co.Subscribe() !== false);
+                    ad = (pd_0 && ad);
+                }
+                return ad;
+            }, null, null)), (_l()(), i1.ɵted(null, ['Submit'])),
         (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SubscribeCardComponent_2)),
         i1.ɵdid(16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,

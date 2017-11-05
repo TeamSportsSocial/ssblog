@@ -2,13 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var property_service_1 = require("../../../services/property.service");
-var window_ref_service_1 = require("../../../services/window-ref.service");
+var common_1 = require("@angular/common");
 var TrendingBlogCardComponent = /** @class */ (function () {
-    function TrendingBlogCardComponent(Send, winRef) {
+    function TrendingBlogCardComponent(Send, platformId) {
         this.Send = Send;
-        this.winRef = winRef;
         this.isloading = true;
         this.dataRecieved = false;
+        this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     TrendingBlogCardComponent.prototype.ngOnInit = function () {
         this.blog = {
@@ -38,7 +38,7 @@ var TrendingBlogCardComponent = /** @class */ (function () {
     };
     TrendingBlogCardComponent.prototype.send = function () {
         this.Send.detailsofBlog.next(this.blog);
-        this.winRef.nativeWindow.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     };
     TrendingBlogCardComponent.prototype.setDefault = function (event) {
         this.blogImage = '/assets/images/default-image.png';
@@ -56,7 +56,7 @@ var TrendingBlogCardComponent = /** @class */ (function () {
     /** @nocollapse */
     TrendingBlogCardComponent.ctorParameters = function () { return [
         { type: property_service_1.PropertyService, },
-        { type: window_ref_service_1.WindowRefService, },
+        { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
     ]; };
     TrendingBlogCardComponent.propDecorators = {
         'blogId': [{ type: core_1.Input },],

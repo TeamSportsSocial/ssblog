@@ -9,13 +9,12 @@
 import * as i0 from './related-blogs.component.css.shim.ngstyle';
 import * as i1 from '@angular/core';
 import * as i2 from '../../../../../../src/app/directives/tab-view-available.directive';
-import * as i3 from '../../../../../../src/app/services/window-ref.service';
-import * as i4 from '../normal-blog/normal-blog.component.ngfactory';
-import * as i5 from '../../../../../../src/app/blogContent/normal-blog/normal-blog.component';
-import * as i6 from '../../../../../../src/app/services/property.service';
-import * as i7 from '../../../../../../src/app/services/post.service';
-import * as i8 from '@angular/common';
-import * as i9 from '../../../../../../src/app/blogContent/related-blogs/related-blogs.component';
+import * as i3 from '../normal-blog/normal-blog.component.ngfactory';
+import * as i4 from '../../../../../../src/app/blogContent/normal-blog/normal-blog.component';
+import * as i5 from '../../../../../../src/app/services/property.service';
+import * as i6 from '../../../../../../src/app/services/post.service';
+import * as i7 from '@angular/common';
+import * as i8 from '../../../../../../src/app/blogContent/related-blogs/related-blogs.component';
 const styles_RelatedBlogsComponent:any[] = [i0.styles];
 export const RenderType_RelatedBlogsComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_RelatedBlogsComponent,data:{}});
@@ -34,25 +33,25 @@ function View_RelatedBlogsComponent_3(_l:any):i1.ɵViewDefinition {
     }
     return ad;
   },(null as any),(null as any))),i1.ɵdid(5259264,(null as any),0,i2.TabViewAvailableDirective,
-      [i1.ElementRef,i1.Renderer2,i3.WindowRefService],(null as any),(null as any)),
-      (_l()(),i1.ɵted((null as any),['\n      '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),2,'SportSocial-normal-blog',([] as any[]),(null as any),[['window',
-              'resize']],(_v,en,$event) => {
-            var ad:boolean = true;
-            if (('window:resize' === en)) {
-              const pd_0:any = ((<any>i1.ɵnov(_v,4).onresize()) !== false);
-              ad = (pd_0 && ad);
-            }
-            return ad;
-          },i4.View_NormalBlogComponent_0,i4.RenderType_NormalBlogComponent)),i1.ɵdid(4308992,
-          (null as any),0,i5.NormalBlogComponent,[i6.PropertyService,i1.Renderer2,
-              i7.PostService,i1.NgZone,i3.WindowRefService],{blogId:[0,'blogId'],blogImage:[1,
-              'blogImage'],bloggerImage:[2,'bloggerImage'],bloggerName:[3,'bloggerName'],
-              heading:[4,'heading'],insertedDate:[5,'insertedDate'],Content:[6,'Content'],
-              ViewCount:[7,'ViewCount'],ShareCount:[8,'ShareCount'],keywords:[9,'keywords'],
-              exactDate:[10,'exactDate'],readingTime:[11,'readingTime'],MetaDesc:[12,
-                  'MetaDesc'],ImageDesc:[13,'ImageDesc']},(null as any)),(_l()(),i1.ɵted((null as any),
-          ['\n      '])),(_l()(),i1.ɵted((null as any),['\n    ']))],(_ck,_v) => {
+      [i1.ElementRef,i1.Renderer2,i1.PLATFORM_ID],(null as any),(null as any)),(_l()(),
+      i1.ɵted((null as any),['\n      '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+      2,'SportSocial-normal-blog',([] as any[]),(null as any),[['window','resize']],
+      (_v,en,$event) => {
+        var ad:boolean = true;
+        if (('window:resize' === en)) {
+          const pd_0:any = ((<any>i1.ɵnov(_v,4).onresize()) !== false);
+          ad = (pd_0 && ad);
+        }
+        return ad;
+      },i3.View_NormalBlogComponent_0,i3.RenderType_NormalBlogComponent)),i1.ɵdid(4308992,
+      (null as any),0,i4.NormalBlogComponent,[i5.PropertyService,i1.Renderer2,i6.PostService,
+          i1.NgZone,i1.PLATFORM_ID],{blogId:[0,'blogId'],blogImage:[1,'blogImage'],
+          bloggerImage:[2,'bloggerImage'],bloggerName:[3,'bloggerName'],heading:[4,
+              'heading'],insertedDate:[5,'insertedDate'],Content:[6,'Content'],ViewCount:[7,
+              'ViewCount'],ShareCount:[8,'ShareCount'],keywords:[9,'keywords'],exactDate:[10,
+              'exactDate'],readingTime:[11,'readingTime'],MetaDesc:[12,'MetaDesc'],
+          ImageDesc:[13,'ImageDesc']},(null as any)),(_l()(),i1.ɵted((null as any),
+      ['\n      '])),(_l()(),i1.ɵted((null as any),['\n    ']))],(_ck,_v) => {
     const currVal_0:any = _v.context.$implicit.blogId;
     const currVal_1:any = _v.context.$implicit.blogImage;
     const currVal_2:any = _v.context.$implicit.bloggerImage;
@@ -79,10 +78,10 @@ function View_RelatedBlogsComponent_1(_l:any):i1.ɵViewDefinition {
           (null as any))),(_l()(),i1.ɵted((null as any),['Related Articles'])),(_l()(),
           i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵand(16777216,(null as any),
           (null as any),1,(null as any),View_RelatedBlogsComponent_2)),i1.ɵdid(16384,
-          (null as any),0,i8.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
+          (null as any),0,i7.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
           (null as any)),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵand(16777216,
           (null as any),(null as any),1,(null as any),View_RelatedBlogsComponent_3)),
-      i1.ɵdid(802816,(null as any),0,i8.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
+      i1.ɵdid(802816,(null as any),0,i7.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
           i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),
           ['\n  ']))],(_ck,_v) => {
     var _co:any = _v.component;
@@ -109,9 +108,9 @@ function View_RelatedBlogsComponent_6(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },i4.View_NormalBlogComponent_0,i4.RenderType_NormalBlogComponent)),i1.ɵdid(4308992,
-          (null as any),0,i5.NormalBlogComponent,[i6.PropertyService,i1.Renderer2,
-              i7.PostService,i1.NgZone,i3.WindowRefService],{blogId:[0,'blogId'],blogImage:[1,
+          },i3.View_NormalBlogComponent_0,i3.RenderType_NormalBlogComponent)),i1.ɵdid(4308992,
+          (null as any),0,i4.NormalBlogComponent,[i5.PropertyService,i1.Renderer2,
+              i6.PostService,i1.NgZone,i1.PLATFORM_ID],{blogId:[0,'blogId'],blogImage:[1,
               'blogImage'],bloggerImage:[2,'bloggerImage'],bloggerName:[3,'bloggerName'],
               heading:[4,'heading'],insertedDate:[5,'insertedDate'],Content:[6,'Content'],
               ViewCount:[7,'ViewCount'],ShareCount:[8,'ShareCount'],keywords:[9,'keywords'],
@@ -144,10 +143,10 @@ function View_RelatedBlogsComponent_4(_l:any):i1.ɵViewDefinition {
       (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Related Articles'])),
       (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵand(16777216,(null as any),
           (null as any),1,(null as any),View_RelatedBlogsComponent_5)),i1.ɵdid(16384,
-          (null as any),0,i8.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
+          (null as any),0,i7.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
           (null as any)),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵand(16777216,
           (null as any),(null as any),1,(null as any),View_RelatedBlogsComponent_6)),
-      i1.ɵdid(802816,(null as any),0,i8.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
+      i1.ɵdid(802816,(null as any),0,i7.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
           i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),
           ['\n  ']))],(_ck,_v) => {
     var _co:any = _v.component;
@@ -162,13 +161,13 @@ export function View_RelatedBlogsComponent_0(_l:any):i1.ɵViewDefinition {
       (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
       i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),
       1,(null as any),View_RelatedBlogsComponent_1)),i1.ɵdid(16384,(null as any),0,
-      i8.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),
+      i7.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),
       (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵand(16777216,(null as any),
           (null as any),1,(null as any),View_RelatedBlogsComponent_4)),i1.ɵdid(16384,
-          (null as any),0,i8.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
+          (null as any),0,i7.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
           (null as any)),(_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵted((null as any),
           ['\n']))],(_ck,_v) => {
-    var _co:i9.RelatedBlogsComponent = _v.component;
+    var _co:i8.RelatedBlogsComponent = _v.component;
     const currVal_0:boolean = !_co.mobileView;
     _ck(_v,3,0,currVal_0);
     const currVal_1:any = _co.mobileView;
@@ -185,11 +184,11 @@ export function View_RelatedBlogsComponent_Host_0(_l:any):i1.ɵViewDefinition {
         }
         return ad;
       },View_RelatedBlogsComponent_0,RenderType_RelatedBlogsComponent)),i1.ɵdid(114688,
-      (null as any),0,i9.RelatedBlogsComponent,[i7.PostService,i6.PropertyService,
-          i3.WindowRefService],(null as any),(null as any))],(_ck,_v) => {
+      (null as any),0,i8.RelatedBlogsComponent,[i6.PostService,i5.PropertyService,
+          i1.PLATFORM_ID],(null as any),(null as any))],(_ck,_v) => {
     _ck(_v,1,0);
   },(null as any));
 }
-export const RelatedBlogsComponentNgFactory:i1.ComponentFactory<i9.RelatedBlogsComponent> = i1.ɵccf('SportSocial-related-blogs',
-    i9.RelatedBlogsComponent,View_RelatedBlogsComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYmxvZ0NvbnRlbnQvcmVsYXRlZC1ibG9ncy9yZWxhdGVkLWJsb2dzLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9TcG9ydFNvY2lhbEJsb2cvc3JjL2FwcC9ibG9nQ29udGVudC9yZWxhdGVkLWJsb2dzL3JlbGF0ZWQtYmxvZ3MuY29tcG9uZW50LnRzIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYmxvZ0NvbnRlbnQvcmVsYXRlZC1ibG9ncy9yZWxhdGVkLWJsb2dzLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYmxvZ0NvbnRlbnQvcmVsYXRlZC1ibG9ncy9yZWxhdGVkLWJsb2dzLmNvbXBvbmVudC50cy5SZWxhdGVkQmxvZ3NDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2PlxuICA8ZGl2ICAqbmdJZj1cIiFtb2JpbGVWaWV3XCIgY2xhc3M9XCJyZWxhdGVkQmxvZ1wiPlxuICAgIDxwID5SZWxhdGVkIEFydGljbGVzPC9wPlxuICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1sb2FkaW5nLmdpZlwiICpuZ0lmPVwiIWRhdGFSZWNpdmVkXCIgY2xhc3M9XCJsb2FkaW5nXCIgPlxuICAgIDxkaXYgVGFiVmlld0F2YWlsYWJsZSBjbGFzcz1cImNvbC00XCIgKm5nRm9yPVwibGV0IGRhdGEgb2YgcmVsYXRlZEJsb2dEZXRhaWxzO2xldCBpPWluZGV4XCI+XG4gICAgICA8U3BvcnRTb2NpYWwtbm9ybWFsLWJsb2cgXG4gICAgICAgIFtibG9nSWRdPVwiZGF0YS5ibG9nSWRcIlxuICAgICAgICBbYmxvZ0ltYWdlXT1cImRhdGEuYmxvZ0ltYWdlXCJcbiAgICAgICAgW2Jsb2dnZXJJbWFnZV09XCJkYXRhLmJsb2dnZXJJbWFnZVwiXG4gICAgICAgIFtibG9nZ2VyTmFtZV09XCJkYXRhLmJsb2dnZXJOYW1lXCJcbiAgICAgICAgW2luc2VydGVkRGF0ZV09XCJkYXRhLmluc2VydGVkRGF0ZVwiXG4gICAgICAgIFtoZWFkaW5nXT1cImRhdGEuaGVhZGluZ1wiXG4gICAgICAgIFtDb250ZW50XT1cImRhdGEuQ29udGVudFwiXG4gICAgICAgIFtWaWV3Q291bnRdPVwiZGF0YS5WaWV3Q291bnRcIlxuICAgICAgICBbU2hhcmVDb3VudF09XCJkYXRhLlNoYXJlQ291bnRcIlxuICAgICAgICBba2V5d29yZHNdPVwiZGF0YS5rZXl3b3Jkc1wiXG4gICAgICAgIFtleGFjdERhdGVdPVwiZGF0YS5leGFjdERhdGVcIlxuICAgICAgICBbcmVhZGluZ1RpbWVdPVwiZGF0YS5yZWFkaW5nVGltZVwiXG4gICAgICAgIFtNZXRhRGVzY109XCJkYXRhLk1ldGFEZXNjXCJcbiAgICAgICAgW0ltYWdlRGVzY109XCJkYXRhLkltYWdlRGVzY1wiPlxuICAgICAgPC9TcG9ydFNvY2lhbC1ub3JtYWwtYmxvZz5cbiAgICA8L2Rpdj5cbiAgPC9kaXY+XG4gIDxkaXYgKm5nSWY9XCJtb2JpbGVWaWV3XCIgY2xhc3M9XCJtb2JpbGVWaWV3IHJlbGF0ZWRCbG9nXCI+XG4gICAgPHA+UmVsYXRlZCBBcnRpY2xlczwvcD5cbiAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtbG9hZGluZy5naWZcIiAqbmdJZj1cIiFkYXRhUmVjaXZlZFwiIGNsYXNzPVwibG9hZGluZ1wiPlxuICAgIDxkaXYgY2xhc3M9XCJjb2wtNFwiICpuZ0Zvcj1cImxldCBkYXRhIG9mIHJlbGF0ZWRCbG9nRGV0YWlscztsZXQgaT1pbmRleFwiPlxuICAgICAgPFNwb3J0U29jaWFsLW5vcm1hbC1ibG9nIFxuICAgICAgICAgIFtibG9nSWRdPVwiZGF0YS5ibG9nSWRcIlxuICAgICAgICAgIFtibG9nSW1hZ2VdPVwiZGF0YS5ibG9nSW1hZ2VcIlxuICAgICAgICAgIFtibG9nZ2VySW1hZ2VdPVwiZGF0YS5ibG9nZ2VySW1hZ2VcIlxuICAgICAgICAgIFtibG9nZ2VyTmFtZV09XCJkYXRhLmJsb2dnZXJOYW1lXCJcbiAgICAgICAgICBbaW5zZXJ0ZWREYXRlXT1cImRhdGEuaW5zZXJ0ZWREYXRlXCJcbiAgICAgICAgICBbaGVhZGluZ109XCJkYXRhLmhlYWRpbmdcIlxuICAgICAgICAgIFtDb250ZW50XT1cImRhdGEuQ29udGVudFwiXG4gICAgICAgICAgW1ZpZXdDb3VudF09XCJkYXRhLlZpZXdDb3VudFwiXG4gICAgICAgICAgW1NoYXJlQ291bnRdPVwiZGF0YS5TaGFyZUNvdW50XCJcbiAgICAgICAgICBba2V5d29yZHNdPVwiZGF0YS5rZXl3b3Jkc1wiXG4gICAgICAgICAgW2V4YWN0RGF0ZV09XCJkYXRhLmV4YWN0RGF0ZVwiXG4gICAgICAgICAgW3JlYWRpbmdUaW1lXT1cImRhdGEucmVhZGluZ1RpbWVcIlxuICAgICAgICAgIFtNZXRhRGVzY109XCJkYXRhLk1ldGFEZXNjXCJcbiAgICAgICAgICBbSW1hZ2VEZXNjXT1cImRhdGEuSW1hZ2VEZXNjXCI+XG4gICAgICA8L1Nwb3J0U29jaWFsLW5vcm1hbC1ibG9nPlxuICA8L2Rpdj5cbiAgPC9kaXY+XG48L2Rpdj5cbiIsIjxTcG9ydFNvY2lhbC1yZWxhdGVkLWJsb2dzPjwvU3BvcnRTb2NpYWwtcmVsYXRlZC1ibG9ncz4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O29CQ0dJO01BQUE7TUFBQTs7O29CQUNBO01BQUE7SUFBQTtJQUFBO01BQUE7TUFBQTtJQUFBO0lBQUE7RUFBQSx1Q0FBQTtNQUFBO01BQXdGLDZDQUN0RjtVQUFBO2NBQUE7WUFBQTtZQUFBO2NBQUE7Y0FBQTtZQUFBO1lBQUE7VUFBQSwyRUFBQTtVQUFBOzBEQUFBO2NBQUE7Y0FBQTtjQUFBO2NBQUE7a0JBQUEsdURBYytCO1VBQUEsZUFDTDtJQWR4QjtJQUNBO0lBQ0E7SUFDQTtJQUVBO0lBREE7SUFFQTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBZEYsWUFDRSxVQUNBLFVBQ0EsVUFDQSxVQUVBLFVBREEsVUFFQTtRQUNBLFVBQ0EsVUFDQSxVQUNBLFdBQ0EsV0FDQSxXQUNBLFVBZEY7Ozs7b0JBSko7TUFBQTtNQUE4QywyQ0FDNUM7VUFBQTtVQUFBLGdCQUFJLHFEQUFvQjtpQkFBQSw0QkFDeEI7VUFBQSxvRUFBQTtVQUFBO1VBQUEsZUFBMEYsMkNBQzFGO1VBQUE7YUFBQTs0QkFBQSx5Q0FpQk07VUFBQTs7SUFsQjhDO0lBQXBELFdBQW9ELFNBQXBEO0lBQ29DO0lBQXBDLFdBQW9DLFNBQXBDOzs7O29CQXFCQTtNQUFBO01BQUE7OztvQkFDQTtNQUFBO01BQXVFLDZDQUNyRTtVQUFBO2NBQUE7WUFBQTtZQUFBO2NBQUE7Y0FBQTtZQUFBO1lBQUE7VUFBQSwyRUFBQTtVQUFBOzBEQUFBO2NBQUE7Y0FBQTtjQUFBO2NBQUE7a0JBQUEsdURBY2lDO1VBQUEsZUFDUDtJQWR0QjtJQUNBO0lBQ0E7SUFDQTtJQUVBO0lBREE7SUFFQTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBZEosWUFDSSxVQUNBLFVBQ0EsVUFDQSxVQUVBLFVBREEsVUFFQTtRQUNBLFVBQ0EsVUFDQSxVQUNBLFdBQ0EsV0FDQSxXQUNBLFVBZEo7Ozs7b0JBSko7TUFBQTtNQUFBLGdCQUF1RCwyQ0FDckQ7TUFBQTtNQUFBLDRDQUFHO01BQW9CLDJDQUN2QjtVQUFBLG9FQUFBO1VBQUE7VUFBQSxlQUF5RiwyQ0FDekY7VUFBQTthQUFBOzRCQUFBLHlDQWlCSTtVQUFBOztJQWxCZ0Q7SUFBcEQsV0FBb0QsU0FBcEQ7SUFDbUI7SUFBbkIsV0FBbUIsU0FBbkI7Ozs7b0JBMUJKO01BQUEsd0VBQUs7YUFBQSwwQkFDSDtNQUFBLHNEQUFBO2NBQUE7TUFxQk0seUNBQ047VUFBQSxvRUFBQTtVQUFBO1VBQUEsZUFxQk0sdUNBQ0Y7VUFBQTs7SUE1Q0U7SUFBTixXQUFNLFNBQU47SUFzQks7SUFBTCxXQUFLLFNBQUw7Ozs7b0JDdkJGO01BQUE7UUFBQTtRQUFBO1VBQUE7VUFBQTtRQUFBO1FBQUE7TUFBQSx5RUFBQTtNQUFBOzZCQUFBO0lBQUE7Ozs7In0=
+export const RelatedBlogsComponentNgFactory:i1.ComponentFactory<i8.RelatedBlogsComponent> = i1.ɵccf('SportSocial-related-blogs',
+    i8.RelatedBlogsComponent,View_RelatedBlogsComponent_Host_0,{},{},([] as any[]));
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYmxvZ0NvbnRlbnQvcmVsYXRlZC1ibG9ncy9yZWxhdGVkLWJsb2dzLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9TcG9ydFNvY2lhbEJsb2cvc3JjL2FwcC9ibG9nQ29udGVudC9yZWxhdGVkLWJsb2dzL3JlbGF0ZWQtYmxvZ3MuY29tcG9uZW50LnRzIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYmxvZ0NvbnRlbnQvcmVsYXRlZC1ibG9ncy9yZWxhdGVkLWJsb2dzLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYmxvZ0NvbnRlbnQvcmVsYXRlZC1ibG9ncy9yZWxhdGVkLWJsb2dzLmNvbXBvbmVudC50cy5SZWxhdGVkQmxvZ3NDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2PlxuICA8ZGl2ICAqbmdJZj1cIiFtb2JpbGVWaWV3XCIgY2xhc3M9XCJyZWxhdGVkQmxvZ1wiPlxuICAgIDxwID5SZWxhdGVkIEFydGljbGVzPC9wPlxuICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1sb2FkaW5nLmdpZlwiICpuZ0lmPVwiIWRhdGFSZWNpdmVkXCIgY2xhc3M9XCJsb2FkaW5nXCIgPlxuICAgIDxkaXYgVGFiVmlld0F2YWlsYWJsZSBjbGFzcz1cImNvbC00XCIgKm5nRm9yPVwibGV0IGRhdGEgb2YgcmVsYXRlZEJsb2dEZXRhaWxzO2xldCBpPWluZGV4XCI+XG4gICAgICA8U3BvcnRTb2NpYWwtbm9ybWFsLWJsb2cgXG4gICAgICAgIFtibG9nSWRdPVwiZGF0YS5ibG9nSWRcIlxuICAgICAgICBbYmxvZ0ltYWdlXT1cImRhdGEuYmxvZ0ltYWdlXCJcbiAgICAgICAgW2Jsb2dnZXJJbWFnZV09XCJkYXRhLmJsb2dnZXJJbWFnZVwiXG4gICAgICAgIFtibG9nZ2VyTmFtZV09XCJkYXRhLmJsb2dnZXJOYW1lXCJcbiAgICAgICAgW2luc2VydGVkRGF0ZV09XCJkYXRhLmluc2VydGVkRGF0ZVwiXG4gICAgICAgIFtoZWFkaW5nXT1cImRhdGEuaGVhZGluZ1wiXG4gICAgICAgIFtDb250ZW50XT1cImRhdGEuQ29udGVudFwiXG4gICAgICAgIFtWaWV3Q291bnRdPVwiZGF0YS5WaWV3Q291bnRcIlxuICAgICAgICBbU2hhcmVDb3VudF09XCJkYXRhLlNoYXJlQ291bnRcIlxuICAgICAgICBba2V5d29yZHNdPVwiZGF0YS5rZXl3b3Jkc1wiXG4gICAgICAgIFtleGFjdERhdGVdPVwiZGF0YS5leGFjdERhdGVcIlxuICAgICAgICBbcmVhZGluZ1RpbWVdPVwiZGF0YS5yZWFkaW5nVGltZVwiXG4gICAgICAgIFtNZXRhRGVzY109XCJkYXRhLk1ldGFEZXNjXCJcbiAgICAgICAgW0ltYWdlRGVzY109XCJkYXRhLkltYWdlRGVzY1wiPlxuICAgICAgPC9TcG9ydFNvY2lhbC1ub3JtYWwtYmxvZz5cbiAgICA8L2Rpdj5cbiAgPC9kaXY+XG4gIDxkaXYgKm5nSWY9XCJtb2JpbGVWaWV3XCIgY2xhc3M9XCJtb2JpbGVWaWV3IHJlbGF0ZWRCbG9nXCI+XG4gICAgPHA+UmVsYXRlZCBBcnRpY2xlczwvcD5cbiAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtbG9hZGluZy5naWZcIiAqbmdJZj1cIiFkYXRhUmVjaXZlZFwiIGNsYXNzPVwibG9hZGluZ1wiPlxuICAgIDxkaXYgY2xhc3M9XCJjb2wtNFwiICpuZ0Zvcj1cImxldCBkYXRhIG9mIHJlbGF0ZWRCbG9nRGV0YWlscztsZXQgaT1pbmRleFwiPlxuICAgICAgPFNwb3J0U29jaWFsLW5vcm1hbC1ibG9nIFxuICAgICAgICAgIFtibG9nSWRdPVwiZGF0YS5ibG9nSWRcIlxuICAgICAgICAgIFtibG9nSW1hZ2VdPVwiZGF0YS5ibG9nSW1hZ2VcIlxuICAgICAgICAgIFtibG9nZ2VySW1hZ2VdPVwiZGF0YS5ibG9nZ2VySW1hZ2VcIlxuICAgICAgICAgIFtibG9nZ2VyTmFtZV09XCJkYXRhLmJsb2dnZXJOYW1lXCJcbiAgICAgICAgICBbaW5zZXJ0ZWREYXRlXT1cImRhdGEuaW5zZXJ0ZWREYXRlXCJcbiAgICAgICAgICBbaGVhZGluZ109XCJkYXRhLmhlYWRpbmdcIlxuICAgICAgICAgIFtDb250ZW50XT1cImRhdGEuQ29udGVudFwiXG4gICAgICAgICAgW1ZpZXdDb3VudF09XCJkYXRhLlZpZXdDb3VudFwiXG4gICAgICAgICAgW1NoYXJlQ291bnRdPVwiZGF0YS5TaGFyZUNvdW50XCJcbiAgICAgICAgICBba2V5d29yZHNdPVwiZGF0YS5rZXl3b3Jkc1wiXG4gICAgICAgICAgW2V4YWN0RGF0ZV09XCJkYXRhLmV4YWN0RGF0ZVwiXG4gICAgICAgICAgW3JlYWRpbmdUaW1lXT1cImRhdGEucmVhZGluZ1RpbWVcIlxuICAgICAgICAgIFtNZXRhRGVzY109XCJkYXRhLk1ldGFEZXNjXCJcbiAgICAgICAgICBbSW1hZ2VEZXNjXT1cImRhdGEuSW1hZ2VEZXNjXCI+XG4gICAgICA8L1Nwb3J0U29jaWFsLW5vcm1hbC1ibG9nPlxuICA8L2Rpdj5cbiAgPC9kaXY+XG48L2Rpdj5cbiIsIjxTcG9ydFNvY2lhbC1yZWxhdGVkLWJsb2dzPjwvU3BvcnRTb2NpYWwtcmVsYXRlZC1ibG9ncz4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7b0JDR0k7TUFBQTtNQUFBOzs7b0JBQ0E7TUFBQTtJQUFBO0lBQUE7TUFBQTtNQUFBO0lBQUE7SUFBQTtFQUFBLHVDQUFBO01BQUEseUVBQXdGO2FBQUEsOEJBQ3RGO01BQUE7TUFBQTtRQUFBO1FBQUE7VUFBQTtVQUFBO1FBQUE7UUFBQTtNQUFBLDJFQUFBO01BQUE7a0NBQUE7VUFBQTtjQUFBO2NBQUE7Y0FBQTtVQUFBLDJDQWMrQjtNQUFBLGVBQ0w7SUFkeEI7SUFDQTtJQUNBO0lBQ0E7SUFFQTtJQURBO0lBRUE7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQWRGLFlBQ0UsVUFDQSxVQUNBLFVBQ0EsVUFFQSxVQURBLFVBRUE7UUFDQSxVQUNBLFVBQ0EsVUFDQSxXQUNBLFdBQ0EsV0FDQSxVQWRGOzs7O29CQUpKO01BQUE7TUFBOEMsMkNBQzVDO1VBQUE7VUFBQSxnQkFBSSxxREFBb0I7aUJBQUEsNEJBQ3hCO1VBQUEsb0VBQUE7VUFBQTtVQUFBLGVBQTBGLDJDQUMxRjtVQUFBO2FBQUE7NEJBQUEseUNBaUJNO1VBQUE7O0lBbEI4QztJQUFwRCxXQUFvRCxTQUFwRDtJQUNvQztJQUFwQyxXQUFvQyxTQUFwQzs7OztvQkFxQkE7TUFBQTtNQUFBOzs7b0JBQ0E7TUFBQTtNQUF1RSw2Q0FDckU7VUFBQTtjQUFBO1lBQUE7WUFBQTtjQUFBO2NBQUE7WUFBQTtZQUFBO1VBQUEsMkVBQUE7VUFBQTtxREFBQTtjQUFBO2NBQUE7Y0FBQTtjQUFBO2tCQUFBLHVEQWNpQztVQUFBLGVBQ1A7SUFkdEI7SUFDQTtJQUNBO0lBQ0E7SUFFQTtJQURBO0lBRUE7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQWRKLFlBQ0ksVUFDQSxVQUNBLFVBQ0EsVUFFQSxVQURBLFVBRUE7UUFDQSxVQUNBLFVBQ0EsVUFDQSxXQUNBLFdBQ0EsV0FDQSxVQWRKOzs7O29CQUpKO01BQUE7TUFBQSxnQkFBdUQsMkNBQ3JEO01BQUE7TUFBQSw0Q0FBRztNQUFvQiwyQ0FDdkI7VUFBQSxvRUFBQTtVQUFBO1VBQUEsZUFBeUYsMkNBQ3pGO1VBQUE7YUFBQTs0QkFBQSx5Q0FpQkk7VUFBQTs7SUFsQmdEO0lBQXBELFdBQW9ELFNBQXBEO0lBQ21CO0lBQW5CLFdBQW1CLFNBQW5COzs7O29CQTFCSjtNQUFBLHdFQUFLO2FBQUEsMEJBQ0g7TUFBQSxzREFBQTtjQUFBO01BcUJNLHlDQUNOO1VBQUEsb0VBQUE7VUFBQTtVQUFBLGVBcUJNLHVDQUNGO1VBQUE7O0lBNUNFO0lBQU4sV0FBTSxTQUFOO0lBc0JLO0lBQUwsV0FBSyxTQUFMOzs7O29CQ3ZCRjtNQUFBO1FBQUE7UUFBQTtVQUFBO1VBQUE7UUFBQTtRQUFBO01BQUEseUVBQUE7TUFBQTt3QkFBQTtJQUFBOzs7OyJ9

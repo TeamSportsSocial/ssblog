@@ -1,11 +1,12 @@
-import { 
-  Component, 
+import {
+  Component,
   OnInit,
-  Input 
+  Input,
+  PLATFORM_ID,
+  Inject
 } from '@angular/core';
 import {PropertyService} from '../../../services/property.service';
-
-import { WindowRefService } from '../../../services/window-ref.service';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'SportSocial-trending-blog-card',
@@ -13,23 +14,24 @@ import { WindowRefService } from '../../../services/window-ref.service';
   styleUrls: ['./trending-blog-card.component.css']
 })
 export class TrendingBlogCardComponent implements OnInit {
-  @Input()  blogId:string
-  @Input()  blogImage:string
-  @Input()  bloggerImage:string
-  @Input()  bloggerName:string
-  @Input()  heading:string
-  @Input()  insertedDate:string
-  @Input()  Content:string
-  @Input()  ViewCount:string
-  @Input()  ShareCount:string
-  @Input()  keywords:string[]
-  @Input()  exactDate:string
-  @Input()  readingTime:string
-  @Input()  MetaDesc: string
-  @Input()  ImageDesc: string
-  
+  @Input()  blogId:string;
+  @Input()  blogImage:string;
+  @Input()  bloggerImage:string;
+  @Input()  bloggerName:string;
+  @Input()  heading:string;
+  @Input()  insertedDate:string;
+  @Input()  Content:string;
+  @Input()  ViewCount:string;
+  @Input()  ShareCount:string;
+  @Input()  keywords:string[];
+  @Input()  exactDate:string;
+  @Input()  readingTime:string;
+  @Input()  MetaDesc: string;
+  @Input()  ImageDesc: string;
+
   isloading:boolean=true;
   dataRecieved:boolean=false;
+  isBrowser: boolean;
   blog:{
     blogId:string,
     blogImage:string,
@@ -45,8 +47,10 @@ export class TrendingBlogCardComponent implements OnInit {
     readingTime:string,
     Metadesc: string,
     ImageDesc: string
-  }
-  constructor(private Send: PropertyService, private winRef: WindowRefService) { }
+  };
+  constructor(private Send: PropertyService, @Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+   }
 
   ngOnInit() {
     this.blog={
@@ -64,31 +68,31 @@ export class TrendingBlogCardComponent implements OnInit {
       readingTime:this.readingTime,
       Metadesc: this.MetaDesc,
       ImageDesc: this.ImageDesc
-    }
+    };
     if(this.blogImage){
-      this.dataRecieved=true
-     
+      this.dataRecieved=true;
+
     }
   }
   ngAfterViewInit(){
-   
+
     if(this.blogImage){
-      this.dataRecieved=true
-     
+      this.dataRecieved=true;
+
     }
   }
-  send(){
-    this.Send.detailsofBlog.next(this.blog)
-    this.winRef.nativeWindow.scrollTo(0,0)
+  send() {
+    this.Send.detailsofBlog.next(this.blog);
+      window.scrollTo(0, 0);
   }
   setDefault(event){
-    this.blogImage='/assets/images/default-image.png'
+    this.blogImage='/assets/images/default-image.png';
   }
-  
-  
+
+
   removeInitialImage(){
     this.isloading=false;
   }
-  
+
 
 }

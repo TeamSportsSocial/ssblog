@@ -19,17 +19,17 @@ var SubscribeCardComponent = /** @class */ (function () {
             this.sendEmail.ofUser(this.subscriber.nativeElement.value)
                 .subscribe(function (res) {
                 console.log(res.Status);
-                if (res.Status == "Success") {
+                if (res.Status == 'Success') {
                     _this.showSubscriptionBox = true;
                     console.log(_this.showSubscriptionBox);
-                    _this.subscriber.nativeElement.value = "";
+                    _this.subscriber.nativeElement.value = '';
                     _this.errorMessage = false;
                     _this.renderer.setStyle(_this.button.nativeElement, 'margin', '5% auto');
                 }
             });
         }
         else {
-            this.subscriber.nativeElement.value = "";
+            this.subscriber.nativeElement.value = '';
             this.errorMessage = true;
             this.renderer.setStyle(this.button.nativeElement, 'margin', '1% auto');
         }

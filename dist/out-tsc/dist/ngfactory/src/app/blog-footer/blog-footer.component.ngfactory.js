@@ -12,7 +12,6 @@ var i2 = require("../../../../../src/app/blog-footer/blog-footer.component");
 var i3 = require("@angular/common");
 var i4 = require("../../../../../src/app/services/post.service");
 var i5 = require("../../../../../src/app/services/status.service");
-var i6 = require("../../../../../src/app/services/window-ref.service");
 var styles_BlogFooterComponent = [i0.styles];
 exports.RenderType_BlogFooterComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_BlogFooterComponent, data: {} });
@@ -101,7 +100,7 @@ function View_BlogFooterComponent_Host_0(_l) {
             }
             return ad;
         }, View_BlogFooterComponent_0, exports.RenderType_BlogFooterComponent)), i1.ɵdid(114688, null, 0, i2.BlogFooterComponent, [i4.PostService, i1.Renderer2, i5.StatusService,
-            i6.WindowRefService], null, null)], function (_ck, _v) {
+            i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

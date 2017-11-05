@@ -3,30 +3,29 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var post_service_1 = require("../../services/post.service");
 var property_service_1 = require("../../services/property.service");
-var window_ref_service_1 = require("../../services/window-ref.service");
+var common_1 = require("@angular/common");
 var RelatedBlogsComponent = /** @class */ (function () {
-    function RelatedBlogsComponent(getRelated, recieveKey, winRef) {
+    function RelatedBlogsComponent(getRelated, recieveKey, platformId) {
         this.getRelated = getRelated;
         this.recieveKey = recieveKey;
-        this.winRef = winRef;
         this.dataRecived = false;
         this.mobileView = false;
+        this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     RelatedBlogsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.setMobileView();
         this.recieveKey.ofBlogCard.subscribe(function (data) {
-            console.log(data, " checkarticle");
+            console.log(data, ' checkarticle');
             _this.getRelatedBlogs(data);
         });
     };
     RelatedBlogsComponent.prototype.getRelatedBlogs = function (key) {
         var _this = this;
-        //console.clear()
         var relatedBlogDetails = [];
         this.getRelated.blogData(1, key).subscribe(function (data) {
             _this.dataRecived = true;
-            console.log(data, "related");
+            console.log(data, 'related');
             if (data.length > 3) {
                 _this.numberofBlog = 3;
             }
@@ -44,7 +43,7 @@ var RelatedBlogsComponent = /** @class */ (function () {
                     insertedDate: _this.timePassed(data[i].insertedDate),
                     ViewCount: data[i].ViewCount,
                     ShareCount: data[i].ShareCount,
-                    keywords: data[i].keywords.split(","),
+                    keywords: data[i].keywords.split(','),
                     exactDate: _this.ExactDate(data[i].insertedDate),
                     readingTime: _this.timeToRead(data[i].Content),
                     MetaDesc: data[i].MetaDesc,
@@ -52,17 +51,16 @@ var RelatedBlogsComponent = /** @class */ (function () {
                 });
             }
             _this.relatedBlogDetails = relatedBlogDetails;
-            console.log(_this.relatedBlogDetails, " checkarticle");
         });
     };
     RelatedBlogsComponent.prototype.timeToRead = function (s) {
-        var words = s.split(" ");
+        var words = s.split(' ');
         var time = Math.round(words.length / 180);
         if (time > 1) {
-            return time + " min read";
+            return time + ' min read';
         }
         else {
-            return "2 min read";
+            return '2 min read';
         }
     };
     RelatedBlogsComponent.prototype.timePassed = function (i) {
@@ -106,11 +104,10 @@ var RelatedBlogsComponent = /** @class */ (function () {
     };
     RelatedBlogsComponent.prototype.ExactDate = function (i) {
         var writtenDate = new Date(i * 1000);
-        //console.log(writtenDate," wDate")
         return writtenDate.toDateString();
     };
     RelatedBlogsComponent.prototype.setMobileView = function () {
-        if (this.winRef.nativeWindow.innerWidth > 950) {
+        if (window.innerWidth > 950) {
             this.mobileView = false;
         }
         else {
@@ -131,7 +128,7 @@ var RelatedBlogsComponent = /** @class */ (function () {
     RelatedBlogsComponent.ctorParameters = function () { return [
         { type: post_service_1.PostService, },
         { type: property_service_1.PropertyService, },
-        { type: window_ref_service_1.WindowRefService, },
+        { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
     ]; };
     RelatedBlogsComponent.propDecorators = {
         'onresize': [{ type: core_1.HostListener, args: ['window:resize', [],] },],

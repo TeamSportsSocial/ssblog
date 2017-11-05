@@ -6,8 +6,8 @@ import {
   ElementRef,
   Renderer2
 } from '@angular/core';
-import {PostService} from ".././services/post.service"
-import {StatusService} from ".././services/status.service";
+import {PostService} from '.././services/post.service';
+import {StatusService} from '.././services/status.service';
 
 @Component({
   selector: 'SportSocial-subscribe-card',
@@ -33,10 +33,10 @@ export class SubscribeCardComponent implements OnInit {
       .subscribe(
         res=>{
           console.log(res.Status)
-          if(res.Status=="Success"){
+          if(res.Status=='Success'){
             this.showSubscriptionBox=true;
             console.log(this.showSubscriptionBox)
-            this.subscriber.nativeElement.value=""
+            this.subscriber.nativeElement.value=''
             this.errorMessage=false
             this.renderer.setStyle(this.button.nativeElement,'margin','5% auto')
           }
@@ -44,7 +44,7 @@ export class SubscribeCardComponent implements OnInit {
       )
     }
     else{
-      this.subscriber.nativeElement.value=""
+      this.subscriber.nativeElement.value=''
       this.errorMessage=true;
       this.renderer.setStyle(this.button.nativeElement,'margin','1% auto')
     }
