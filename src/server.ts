@@ -18,8 +18,8 @@ const DIST_DIR = join(__dirname, '..', 'dist');
 const app = express();
 app.use(compression());
 const template = readFileSync(join(DIST_DIR, 'index.html')).toString();
-console.log(template);
-console.log(DIST_DIR);
+// console.log(template);
+// console.log(DIST_DIR);
 
 app.engine('html', (_, options, callback) => {
   const newOptions = { document: template, url: options.req.url };
@@ -33,7 +33,7 @@ app.set('view engine', 'html');
 
 app.get('*.*', express.static(DIST_DIR));
 
-function ngApp(req, res) {
+/* function ngApp(req, res) {
   res.render('index', {
     req,
     res,
@@ -43,15 +43,15 @@ function ngApp(req, res) {
     requestUrl: req.originalUrl,
     originUrl: `http://localhost:${PORT}`
   });
-}
-/* app.get('*', (req, res) => {
+} */
+app.get('*', (req, res) => {
   res.render('index', { req});
-}); */
-app.get('/', ngApp);
+});
+/* app.get('/', ngApp);
 routes.forEach(route => {
   app.get(`/${route}`, ngApp);
   app.get(`/${route}/*`, ngApp);
-});
+}); */
 app.listen(PORT, () => {
   console.log(`App listening on http://localhost:${PORT}!`);
 });

@@ -83,21 +83,17 @@ var BlogOpenComponent = /** @class */ (function () {
     BlogOpenComponent.prototype.setMetaTags = function () {
         var key;
         var title;
-        if (this.Keywords[0].search(/ /g)) {
-            key = this.Keywords[0].replace(/ /g, '-');
-        }
-        else {
+        console.log(this.Keywords[0].search(/ /g), " d", this.Keywords[0]);
+        if (this.Keywords[0].search(/ /g) === -1) {
             key = this.Keywords[0];
         }
-        if (this.blog.heading.search(/ /g)) {
-            title = this.blog.heading.replace(/ /g, '-');
-        }
         else {
-            title = this.blog.heading;
+            key = this.Keywords[0].replace(/\s/g, '-');
         }
         this.keys = this.blog.keywords.toString();
         var url = 'https://www.chaseyoursport.com/' + key
-            + '/' + title + '/' + this.blogID;
+            + '/' + this.blog.heading.replace(/\s/g, '-') + '/' + this.blogID;
+        console.log(url);
         this.metaService.addTags([
             { rel: 'canonical', href: url },
             { name: 'title', content: this.blog.heading },
@@ -154,6 +150,7 @@ var BlogOpenComponent = /** @class */ (function () {
         var blog;
         this.load.dataOfsingleBlog(this.blogID).subscribe(function (res) {
             var data = res[0];
+            console.log(data);
             if (data === undefined || _this.route.snapshot.url[0].path === 'sportsocialblog'
                 || _this.route.snapshot.url[1].path === 'page') {
                 _this.router.navigate(['/']);
@@ -178,7 +175,6 @@ var BlogOpenComponent = /** @class */ (function () {
                 ImageDesc: data.ImageDesc
             };
             _this.blog = blog;
-            console.clear();
             console.log(_this.blog);
             _this.Keywords = blog.keywords;
             _this.content = _this.sanitizer.bypassSecurityTrustHtml(data.Content);
@@ -301,23 +297,23 @@ var BlogOpenComponent = /** @class */ (function () {
     BlogOpenComponent.prototype.shareOnFacebook = function () {
         var key;
         var title;
-        if (this.Keywords[0].search(/ /g)) {
-            key = this.Keywords[0].replace(/ /g, '-');
-        }
-        else {
+        if (this.Keywords[0].search(/ /g) === -1) {
             key = this.Keywords[0];
         }
-        if (this.blog.heading.search(/ /g)) {
+        else {
+            key = this.Keywords[0].replace(/\s+/g, '-');
+        }
+        /* if(this.blog.heading.search(/ /g)){
             title = this.blog.heading.replace(/ /g, '-');
         }
-        else {
+        else{
             title = this.blog.heading;
-        }
+        } */
         this.sendShareCount();
         FB.ui({
             method: 'share',
             href: 'https://www.chaseyoursport.com/' + key
-                + '/' + title + '/' + this.blogID,
+                + '/' + this.blog.heading.replace(/\s+/g, '-') + '/' + this.blogID,
         }, function (response) { });
     };
     BlogOpenComponent.prototype.shareOnTwitter = function () {

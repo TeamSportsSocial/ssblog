@@ -4,15 +4,13 @@ import {
   ViewChild,
   Renderer2,
   HostListener,
-  NgZone,
-  PLATFORM_ID,
-  Inject
+  NgZone
 } from '@angular/core';
 import { Meta,Title } from '@angular/platform-browser';
 import {PropertyService} from '../services/property.service';
 import {PostService} from '../services/post.service';
 import {ActivatedRoute} from '@angular/router';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -23,14 +21,19 @@ export class SearchComponent implements OnInit {
   dataRecieved:boolean=false;
   show:boolean=false;
   tempBlog=[];
+  savedDetails:{
+    tempBlog:any[],
+    pageNumber:number
+  }
   tempBlogDetails;
   blogDetails;
-  Keywords;
+
   pageNumber=1;
   recievedKey;
   mobileView:boolean=false;
   haveData:boolean=true;
-  isBrowser: boolean;
+  Keyword;
+  key = [];
   @ViewChild('searchPage') searchPage;
   @ViewChild('blog') blog;
   constructor(
@@ -42,10 +45,9 @@ export class SearchComponent implements OnInit {
     private route:  ActivatedRoute,
     private zone: NgZone,
     private titleService:Title,
-    private metaService:Meta,
-    @Inject(PLATFORM_ID) platformId: Object
+    private metaService:Meta
   ) {
-    this.isBrowser = isPlatformBrowser(platformId);
+   
   }
 
   ngOnInit() {
@@ -67,24 +69,18 @@ export class SearchComponent implements OnInit {
                   + this.recievedKey);
     }
     setMetaTags() {
-      let key;
-      if(this.recievedKey.search(/ /g)){
-        key = this.recievedKey.replace(/ /g, '-')
-      }
-      else{
-        key = this.recievedKey;
-      }
+      console.log(this.Keyword, 'key2');
       this.metaService.addTags([
-        { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + key},
+        { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-')},
         { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to '
           + this.recievedKey },
-        { name: 'title', content: this.recievedKey + 'Blogs'},
-        { name: 'keywords', content: this.Keywords},
+        { name: 'title', content: this.recievedKey + ' Blogs'},
+        { name: 'keywords', content: this.Keyword},
         { name: 'theme-color', content: '#4327a0'},
         { property: 'og:title', content: this.recievedKey + 'Blogs' },
         { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to '
            + this.recievedKey},
-        { property: 'og:url', content:  'https://www.chaseyoursport.com/' + key},
+        { property: 'og:url', content:  'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-')},
         { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
         { property: 'og:site_name', content: 'Chase Your Sport' },
         { property: 'fb:app_id', content: '1750709328507665'},
@@ -101,33 +97,28 @@ export class SearchComponent implements OnInit {
       const blogDetails: {
         blogId: string;
         blogImage: string;
-        bloggerName:string,
-        bloggerImage:string,
-        heading:string,
-        Content:string,
-        insertedDate:string,
-        ViewCount:string,
-        ShareCount:string,
-        keywords:string[],
-        exactDate:string;
-        readingTime:string;
-        MetaDesc: string;
-        ImageDesc: string;
+        bloggerName: string,
+        bloggerImage: string,
+        heading: string,
+        Content: string,
+        insertedDate: string,
+        ViewCount: string,
+        ShareCount: string,
+        keywords: string[],
+        exactDate: string;
+        readingTime: string
       }[] = [];
       this.get.blogData(this.pageNumber, this.recievedKey).subscribe(
         (data) => {
-          if(data.length > 0) {
+          if (data.length > 0) {
             this.haveData = true;
           } else {
             this.haveData = false;
           }
-          if(data.length==0 && this.pageNumber==1){
-
-          }
-          this.show=true;
-          let key='';
-          this.dataRecieved=true;
-          for(const i in data){
+          this.show = true;
+          this.dataRecieved = true;
+          // tslint:disable-next-line:forin
+          for (const i in data) {
               blogDetails.push(
                 {
                   blogId: data[i].blogId,
@@ -141,32 +132,28 @@ export class SearchComponent implements OnInit {
                   ShareCount: data[i].ShareCount,
                   keywords: data[i].keywords.split(','),
                   exactDate: this.ExactDate(data[i].insertedDate),
-                  readingTime: this.timeToRead(data[i].Content),
-                  MetaDesc: data[i].MetaDesc,
-                  ImageDesc: data[i].ImageDesc
+                  readingTime: this.timeToRead(data[i].Content)
                 }
-              )
-              
-              key += data[i].keywords + ',';
+              );
+              this.key = this.key .concat (blogDetails[i].keywords);
+
             }
-            // console.log(key)
-            this.Keywords = key.split(',').filter(function(elem, index, self) {
-              return index === self.indexOf(elem);
-            }).toString()
-            // console.log(this.Keywords, 'h')
           this.blogDetails = blogDetails;
-          this.setMetaTags();
+          this.Keyword = Array.from(new Set(this.key)).toString();
+          console.log( this.Keyword, 'key');
+          
           }
-        )
-       
-        
+        );
+        console.log(this.Keyword, 'key1');
+        this.setMetaTags();
     }
     recievekeyFromUrl() {
 
-      this.recievedKey=this.route.snapshot.url[0].path.replace(/-/g, ' ')
+      this.recievedKey=this.route.snapshot.url[0].path.replace(/-/g, ' ');
       this.route.params.subscribe(
         (params)=>{
           this.pageNumber=1
+          // console.log(params, " params")
           this.recievedKey=params.tag.replace(/-/g, ' ')
           this.setTitle()
           this.getBlogs()
@@ -176,17 +163,19 @@ export class SearchComponent implements OnInit {
 
     }
 
-    setMobileView() {
-        if ( window.innerWidth < 700) {
-          this.mobileView = true;
-        }else {
-          this.mobileView = false;
-        }
+    setMobileView(){
+      if(window.innerWidth<700){
+        this.mobileView=true;
+       }
+       else{
+         this.mobileView=false;
+       }
+
     }
 
-    timeToRead(s: string){
-      const words = s.split(' ');
-      const time=Math.round(words.length/180)
+    timeToRead(s:string){
+      let words = s.split(' ');
+      let time=Math.round(words.length/180)
       if(time>1){
         return time + ' min read'
       }
@@ -196,50 +185,47 @@ export class SearchComponent implements OnInit {
     }
 
     ExactDate(i:number){
-      const writtenDate=new Date(i*1000);
+      let writtenDate=new Date(i*1000);
       return writtenDate.toDateString()
     }
 
-    timePassed(i: string){
-      
-        const writtenDate = new Date(parseInt(i) * 1000);
-        const presentDate = new Date();
-        if (writtenDate.getFullYear() === presentDate.getFullYear()) {
-          if (writtenDate.getMonth() === presentDate.getMonth() || writtenDate.getDate() > presentDate.getDate()) {
-            if (writtenDate.getDate() === presentDate.getDate()) {
-                if (writtenDate.getHours() === presentDate.getHours()) {
-                  if (writtenDate.getMinutes() === presentDate.getMinutes()) {
-                    if (writtenDate.getSeconds() === presentDate.getSeconds()) {
+    timePassed(i:string){
+
+        let writtenDate=new Date(parseInt(i)*1000);
+        let presentDate=new Date();
+        //console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
+        if(writtenDate.getFullYear()==presentDate.getFullYear()){
+          if(writtenDate.getMonth()==presentDate.getMonth()){
+            if(writtenDate.getDate()==presentDate.getDate()){
+                if(writtenDate.getHours()==presentDate.getHours()){
+                  if(writtenDate.getMinutes()==presentDate.getMinutes()){
+                    if(writtenDate.getSeconds()-presentDate.getSeconds()){
                       return 'Just Now'
                     }
                     else{
-                      return presentDate.getSeconds() - writtenDate.getSeconds() + ' sec ago';
+                      return presentDate.getSeconds() -writtenDate.getSeconds()+' sec ago'
                     }
                   }
                   else{
-                    return presentDate.getMinutes() - writtenDate.getMinutes() + ' min ago'
+                    return presentDate.getMinutes()-writtenDate.getMinutes()+' min ago'
                   }
                 }
                 else{
-                  return presentDate.getHours() - writtenDate.getHours() + ' hrs ago'
+                  return presentDate.getHours()-writtenDate.getHours()+' hrs ago'
                 }
             }
             else{
-              let date = (presentDate.getDate() - writtenDate.getDate());
-              if (date < 0) {
-                date += 30;
-              }
-              return date + ' day ago';
+              return presentDate.getDate()-writtenDate.getDate() + ' day ago'
             }
           }
           else{
-            return presentDate.getMonth() - writtenDate.getMonth() + ' month ago';
+            return presentDate.getMonth()-writtenDate.getMonth() + ' month ago'
           }
         }
         else{
-          return presentDate.getFullYear() - writtenDate.getFullYear() + ' year ago'
+          return presentDate.getFullYear()-writtenDate.getFullYear() + ' year ago'
         }
-       
+
     }
 
 
@@ -288,14 +274,12 @@ export class SearchComponent implements OnInit {
                 ShareCount:data[i].ShareCount,
                 keywords:data[i].keywords.split(','),
                 exactDate:this.ExactDate(data[i].insertedDate),
-                readingTime:this.timeToRead(data[i].Content),
-                MetaDesc: data[i].MetaDesc,
-                ImageDesc: data[i].ImageDesc
+                readingTime:this.timeToRead(data[i].Content)
               }
             )
          }
         }
-      )
+      );
     }
 
 }

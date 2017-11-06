@@ -9,15 +9,14 @@ var path_1 = require("path");
 var fs_1 = require("fs");
 var compression = require("compression");
 var app_server_module_ngfactory_1 = require("../dist/ngfactory/src/app/app-server.module.ngfactory");
-var server_routes_1 = require("./server.routes");
 core_1.enableProdMode();
 var PORT = process.env.PORT || 4000;
 var DIST_DIR = path_1.join(__dirname, '..', 'dist');
 var app = express();
 app.use(compression());
 var template = fs_1.readFileSync(path_1.join(DIST_DIR, 'index.html')).toString();
-console.log(template);
-console.log(DIST_DIR);
+// console.log(template);
+// console.log(DIST_DIR);
 app.engine('html', function (_, options, callback) {
     var newOptions = { document: template, url: options.req.url };
     platform_server_1.renderModuleFactory(app_server_module_ngfactory_1.AppServerModuleNgFactory, newOptions)
@@ -26,25 +25,25 @@ app.engine('html', function (_, options, callback) {
 app.set('views', 'src');
 app.set('view engine', 'html');
 app.get('*.*', express.static(DIST_DIR));
-function ngApp(req, res) {
-    res.render('index', {
-        req: req,
-        res: res,
-        // time: true, // use this to determine what part of your app is slow only in development
-        preboot: true,
-        baseUrl: '/',
-        requestUrl: req.originalUrl,
-        originUrl: "http://localhost:" + PORT
-    });
-}
-/* app.get('*', (req, res) => {
-  res.render('index', { req});
-}); */
-app.get('/', ngApp);
-server_routes_1.routes.forEach(function (route) {
-    app.get("/" + route, ngApp);
-    app.get("/" + route + "/*", ngApp);
+/* function ngApp(req, res) {
+  res.render('index', {
+    req,
+    res,
+    // time: true, // use this to determine what part of your app is slow only in development
+    preboot: true,
+    baseUrl: '/',
+    requestUrl: req.originalUrl,
+    originUrl: `http://localhost:${PORT}`
+  });
+} */
+app.get('*', function (req, res) {
+    res.render('index', { req: req });
 });
+/* app.get('/', ngApp);
+routes.forEach(route => {
+  app.get(`/${route}`, ngApp);
+  app.get(`/${route}/*`, ngApp);
+}); */
 app.listen(PORT, function () {
     console.log("App listening on http://localhost:" + PORT + "!");
 });

@@ -126,21 +126,17 @@ export class BlogOpenComponent implements OnInit {
     setMetaTags() {
         let key;
         let title;
-        if(this.Keywords[0].search(/ /g )){
-           key = this.Keywords[0].replace(/ /g, '-');
+        console.log(this.Keywords[0].search(/ /g )," d",this.Keywords[0])
+        if(this.Keywords[0].search(/ /g ) === -1){
+           key = this.Keywords[0] ;
         }
         else{
-            key = this.Keywords[0]
-        }
-        if(this.blog.heading.search(/ /g)){
-            title = this.blog.heading.replace(/ /g, '-');
-        }
-        else{
-            title = this.blog.heading;
+            key = this.Keywords[0].replace(/\s/g, '-')
         }
         this.keys = this.blog.keywords.toString();
         const url = 'https://www.chaseyoursport.com/' + key
-            + '/' + title + '/' + this.blogID;
+            + '/' + this.blog.heading.replace(/\s/g, '-') + '/' + this.blogID;
+        console.log(url);
         this.metaService.addTags([
             { rel: 'canonical', href: url},
             { name: 'title', content: this.blog.heading},
@@ -216,6 +212,7 @@ export class BlogOpenComponent implements OnInit {
         this.load.dataOfsingleBlog(this.blogID).subscribe(
             res => {
                 const data = res[0];
+                console.log(data)
                 if (data === undefined  || this.route.snapshot.url[0].path === 'sportsocialblog'
                             || this.route.snapshot.url[1].path === 'page') {
                     this.router.navigate(['/']);
@@ -239,7 +236,6 @@ export class BlogOpenComponent implements OnInit {
                     ImageDesc: data.ImageDesc
                 };
                 this.blog = blog;
-                console.clear();
                 console.log(this.blog);
                 this.Keywords = blog.keywords;
                 this.content = this.sanitizer.bypassSecurityTrustHtml(data.Content);
@@ -384,23 +380,23 @@ export class BlogOpenComponent implements OnInit {
     shareOnFacebook(){
         let key;
         let title;
-        if(this.Keywords[0].search(/ /g )){
-           key = this.Keywords[0].replace(/ /g, '-');
-        }
-        else{
-            key = this.Keywords[0]
-        }
-        if(this.blog.heading.search(/ /g)){
+        if(this.Keywords[0].search(/ /g ) === -1){
+            key = this.Keywords[0] ;
+         }
+         else{
+             key = this.Keywords[0].replace(/\s+/g, '-')
+         }
+        /* if(this.blog.heading.search(/ /g)){
             title = this.blog.heading.replace(/ /g, '-');
         }
         else{
             title = this.blog.heading;
-        }
+        } */
         this.sendShareCount();
         FB.ui({
             method: 'share',
             href: 'https://www.chaseyoursport.com/' + key
-                + '/' + title + '/' + this.blogID,
+                + '/' + this.blog.heading.replace(/\s+/g, '-') + '/' + this.blogID,
           }, function(response){});
     }
 

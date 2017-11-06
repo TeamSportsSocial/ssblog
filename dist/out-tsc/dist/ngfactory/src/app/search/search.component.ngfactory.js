@@ -203,7 +203,7 @@ function View_SearchComponent_Host_0(_l) {
             }
             return ad;
         }, View_SearchComponent_0, exports.RenderType_SearchComponent)), i1.ɵdid(4308992, null, 0, i11.SearchComponent, [i5.PropertyService, i1.Renderer2, i5.PropertyService, i5.PropertyService,
-            i6.PostService, i12.ActivatedRoute, i1.NgZone, i13.Title, i13.Meta, i1.PLATFORM_ID], null, null)], function (_ck, _v) {
+            i6.PostService, i12.ActivatedRoute, i1.NgZone, i13.Title, i13.Meta], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

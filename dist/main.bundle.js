@@ -1622,21 +1622,17 @@ var BlogOpenComponent = /** @class */ (function () {
     BlogOpenComponent.prototype.setMetaTags = function () {
         var key;
         var title;
-        if (this.Keywords[0].search(/ /g)) {
-            key = this.Keywords[0].replace(/ /g, '-');
-        }
-        else {
+        console.log(this.Keywords[0].search(/ /g), " d", this.Keywords[0]);
+        if (this.Keywords[0].search(/ /g) === -1) {
             key = this.Keywords[0];
         }
-        if (this.blog.heading.search(/ /g)) {
-            title = this.blog.heading.replace(/ /g, '-');
-        }
         else {
-            title = this.blog.heading;
+            key = this.Keywords[0].replace(/\s/g, '-');
         }
         this.keys = this.blog.keywords.toString();
         var url = 'https://www.chaseyoursport.com/' + key
-            + '/' + title + '/' + this.blogID;
+            + '/' + this.blog.heading.replace(/\s/g, '-') + '/' + this.blogID;
+        console.log(url);
         this.metaService.addTags([
             { rel: 'canonical', href: url },
             { name: 'title', content: this.blog.heading },
@@ -1693,6 +1689,7 @@ var BlogOpenComponent = /** @class */ (function () {
         var blog;
         this.load.dataOfsingleBlog(this.blogID).subscribe(function (res) {
             var data = res[0];
+            console.log(data);
             if (data === undefined || _this.route.snapshot.url[0].path === 'sportsocialblog'
                 || _this.route.snapshot.url[1].path === 'page') {
                 _this.router.navigate(['/']);
@@ -1717,7 +1714,6 @@ var BlogOpenComponent = /** @class */ (function () {
                 ImageDesc: data.ImageDesc
             };
             _this.blog = blog;
-            console.clear();
             console.log(_this.blog);
             _this.Keywords = blog.keywords;
             _this.content = _this.sanitizer.bypassSecurityTrustHtml(data.Content);
@@ -1840,23 +1836,23 @@ var BlogOpenComponent = /** @class */ (function () {
     BlogOpenComponent.prototype.shareOnFacebook = function () {
         var key;
         var title;
-        if (this.Keywords[0].search(/ /g)) {
-            key = this.Keywords[0].replace(/ /g, '-');
-        }
-        else {
+        if (this.Keywords[0].search(/ /g) === -1) {
             key = this.Keywords[0];
         }
-        if (this.blog.heading.search(/ /g)) {
+        else {
+            key = this.Keywords[0].replace(/\s+/g, '-');
+        }
+        /* if(this.blog.heading.search(/ /g)){
             title = this.blog.heading.replace(/ /g, '-');
         }
-        else {
+        else{
             title = this.blog.heading;
-        }
+        } */
         this.sendShareCount();
         FB.ui({
             method: 'share',
             href: 'https://www.chaseyoursport.com/' + key
-                + '/' + title + '/' + this.blogID,
+                + '/' + this.blog.heading.replace(/\s+/g, '-') + '/' + this.blogID,
         }, function (response) { });
     };
     BlogOpenComponent.prototype.shareOnTwitter = function () {
@@ -4975,7 +4971,6 @@ module.exports = "<div #searchPage>\n\n  <h2 class=\"topic\">{{recievedKey}} blo
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4985,17 +4980,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-
 
 
 
 
 
 var SearchComponent = /** @class */ (function () {
-    function SearchComponent(recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService, platformId) {
+    function SearchComponent(recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService) {
         this.recieveHeight = recieveHeight;
         this.renderer = renderer;
         this.recieveData = recieveData;
@@ -5011,7 +5002,7 @@ var SearchComponent = /** @class */ (function () {
         this.pageNumber = 1;
         this.mobileView = false;
         this.haveData = true;
-        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_5__angular_common__["j" /* isPlatformBrowser */])(platformId);
+        this.key = [];
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.setTopMargin();
@@ -5028,24 +5019,18 @@ var SearchComponent = /** @class */ (function () {
             + this.recievedKey);
     };
     SearchComponent.prototype.setMetaTags = function () {
-        var key;
-        if (this.recievedKey.search(/ /g)) {
-            key = this.recievedKey.replace(/ /g, '-');
-        }
-        else {
-            key = this.recievedKey;
-        }
+        console.log(this.Keyword, 'key2');
         this.metaService.addTags([
-            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + key },
+            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
             { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to '
                     + this.recievedKey },
-            { name: 'title', content: this.recievedKey + 'Blogs' },
-            { name: 'keywords', content: this.Keywords },
+            { name: 'title', content: this.recievedKey + ' Blogs' },
+            { name: 'keywords', content: this.Keyword },
             { name: 'theme-color', content: '#4327a0' },
             { property: 'og:title', content: this.recievedKey + 'Blogs' },
             { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to '
                     + this.recievedKey },
-            { property: 'og:url', content: 'https://www.chaseyoursport.com/' + key },
+            { property: 'og:url', content: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
             { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
             { property: 'og:site_name', content: 'Chase Your Sport' },
             { property: 'fb:app_id', content: '1750709328507665' },
@@ -5068,11 +5053,9 @@ var SearchComponent = /** @class */ (function () {
             else {
                 _this.haveData = false;
             }
-            if (data.length == 0 && _this.pageNumber == 1) {
-            }
             _this.show = true;
-            var key = '';
             _this.dataRecieved = true;
+            // tslint:disable-next-line:forin
             for (var i in data) {
                 blogDetails.push({
                     blogId: data[i].blogId,
@@ -5086,26 +5069,23 @@ var SearchComponent = /** @class */ (function () {
                     ShareCount: data[i].ShareCount,
                     keywords: data[i].keywords.split(','),
                     exactDate: _this.ExactDate(data[i].insertedDate),
-                    readingTime: _this.timeToRead(data[i].Content),
-                    MetaDesc: data[i].MetaDesc,
-                    ImageDesc: data[i].ImageDesc
+                    readingTime: _this.timeToRead(data[i].Content)
                 });
-                key += data[i].keywords + ',';
+                _this.key = _this.key.concat(blogDetails[i].keywords);
             }
-            // console.log(key)
-            _this.Keywords = key.split(',').filter(function (elem, index, self) {
-                return index === self.indexOf(elem);
-            }).toString();
-            // console.log(this.Keywords, 'h')
             _this.blogDetails = blogDetails;
-            _this.setMetaTags();
+            _this.Keyword = Array.from(new Set(_this.key)).toString();
+            console.log(_this.Keyword, 'key');
         });
+        console.log(this.Keyword, 'key1');
+        this.setMetaTags();
     };
     SearchComponent.prototype.recievekeyFromUrl = function () {
         var _this = this;
         this.recievedKey = this.route.snapshot.url[0].path.replace(/-/g, ' ');
         this.route.params.subscribe(function (params) {
             _this.pageNumber = 1;
+            // console.log(params, " params")
             _this.recievedKey = params.tag.replace(/-/g, ' ');
             _this.setTitle();
             _this.getBlogs();
@@ -5136,12 +5116,13 @@ var SearchComponent = /** @class */ (function () {
     SearchComponent.prototype.timePassed = function (i) {
         var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
-        if (writtenDate.getFullYear() === presentDate.getFullYear()) {
-            if (writtenDate.getMonth() === presentDate.getMonth() || writtenDate.getDate() > presentDate.getDate()) {
-                if (writtenDate.getDate() === presentDate.getDate()) {
-                    if (writtenDate.getHours() === presentDate.getHours()) {
-                        if (writtenDate.getMinutes() === presentDate.getMinutes()) {
-                            if (writtenDate.getSeconds() === presentDate.getSeconds()) {
+        //console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
+        if (writtenDate.getFullYear() == presentDate.getFullYear()) {
+            if (writtenDate.getMonth() == presentDate.getMonth()) {
+                if (writtenDate.getDate() == presentDate.getDate()) {
+                    if (writtenDate.getHours() == presentDate.getHours()) {
+                        if (writtenDate.getMinutes() == presentDate.getMinutes()) {
+                            if (writtenDate.getSeconds() - presentDate.getSeconds()) {
                                 return 'Just Now';
                             }
                             else {
@@ -5157,11 +5138,7 @@ var SearchComponent = /** @class */ (function () {
                     }
                 }
                 else {
-                    var date = (presentDate.getDate() - writtenDate.getDate());
-                    if (date < 0) {
-                        date += 30;
-                    }
-                    return date + ' day ago';
+                    return presentDate.getDate() - writtenDate.getDate() + ' day ago';
                 }
             }
             else {
@@ -5210,9 +5187,7 @@ var SearchComponent = /** @class */ (function () {
                     ShareCount: data[i].ShareCount,
                     keywords: data[i].keywords.split(','),
                     exactDate: _this.ExactDate(data[i].insertedDate),
-                    readingTime: _this.timeToRead(data[i].Content),
-                    MetaDesc: data[i].MetaDesc,
-                    ImageDesc: data[i].ImageDesc
+                    readingTime: _this.timeToRead(data[i].Content)
                 });
             }
         });
@@ -5237,8 +5212,7 @@ var SearchComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/search/search.component.html"),
             styles: [__webpack_require__("../../../../../src/app/search/search.component.css")]
         }),
-        __param(9, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _j || Object, Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _j || Object])
     ], SearchComponent);
     return SearchComponent;
     var _a, _b, _c, _d, _e, _f, _g, _h, _j;
