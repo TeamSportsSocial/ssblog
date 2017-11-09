@@ -48,11 +48,9 @@ function ngApp(req, res) {
   res.render('index', { req});
 }); */
 app.get('/', ngApp);
-routes.forEach(route => {
-  console.log(route, 'route');
-  app.get(`/${route}`, ngApp);
-  app.get(`/${route}/*`, ngApp);
-});
+app.get('/:tag', ngApp);
+app.get('/:tag/:title/:blogId', ngApp);
+
 app.listen(PORT, () => {
   console.log(`App listening on http://localhost:${PORT}!`);
 });

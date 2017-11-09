@@ -9,7 +9,6 @@ var path_1 = require("path");
 var fs_1 = require("fs");
 var compression = require("compression");
 var app_server_module_ngfactory_1 = require("../dist/ngfactory/src/app/app-server.module.ngfactory");
-var server_routes_1 = require("./server.routes");
 core_1.enableProdMode();
 var PORT = process.env.PORT || 4000;
 var DIST_DIR = path_1.join(__dirname, '..', 'dist');
@@ -41,11 +40,8 @@ function ngApp(req, res) {
   res.render('index', { req});
 }); */
 app.get('/', ngApp);
-server_routes_1.routes.forEach(function (route) {
-    console.log(route, 'route');
-    app.get("/" + route, ngApp);
-    app.get("/" + route + "/*", ngApp);
-});
+app.get('/:tag', ngApp);
+app.get('/:tag/:title/:blogId', ngApp);
 app.listen(PORT, function () {
     console.log("App listening on http://localhost:" + PORT + "!");
 });

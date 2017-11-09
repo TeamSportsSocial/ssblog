@@ -22,7 +22,7 @@ var BlogFooterComponent = /** @class */ (function () {
         if (this.subscriber.nativeElement.validity.valid == true && this.subscriber.nativeElement.value) {
             this.sendEmail.ofUser(this.subscriber.nativeElement.value)
                 .subscribe(function (res) {
-                if (res.Status == 'Success') {
+                if (res.Status === 'Success') {
                     _this.showSubscriptionBox = true;
                     _this.subscriber.nativeElement.value = '';
                     _this.errorMessage = false;

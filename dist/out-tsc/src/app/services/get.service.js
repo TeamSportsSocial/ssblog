@@ -8,7 +8,7 @@ var GetService = /** @class */ (function () {
         this.http = http;
     }
     GetService.prototype.keywords = function () {
-        return this.http.get(' https://admin.chaseyoursport.com/blog/getKeywords ')
+        return this.http.get('https://admin.chaseyoursport.com/blog/getKeywords')
             .map(function (res) { return res.json(); });
     };
     GetService.decorators = [
