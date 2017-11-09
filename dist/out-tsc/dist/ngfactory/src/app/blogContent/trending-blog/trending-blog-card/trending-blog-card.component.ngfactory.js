@@ -16,11 +16,10 @@ var styles_TrendingBlogCardComponent = [i0.styles];
 exports.RenderType_TrendingBlogCardComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_TrendingBlogCardComponent, data: {} });
 function View_TrendingBlogCardComponent_1(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, [['initialImage', 1]], null, 0, 'img', [['alt',
-                'InitialblogImage'], ['src', '/assets/images/default-image.png']], null, null, null, null, null))], null, null);
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, [['initialImage', 1]], null, 0, 'img', [['alt', 'InitialblogImage'], ['src', '/assets/images/default-image.png']], null, null, null, null, null))], null, null);
 }
 function View_TrendingBlogCardComponent_2(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 0, 'img', [['alt',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 0, 'img', [['alt',
                 'blogImage']], [[8, 'src', 4]], [[null, 'load'], [null, 'error']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -40,9 +39,10 @@ function View_TrendingBlogCardComponent_2(_l) {
     });
 }
 function View_TrendingBlogCardComponent_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 38, 'div', [['class',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 38, 'div', [['class',
                 'trending']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 35, 'a', [], [[1, 'target', 0], [8, 'href', 4]], [[null, 'click']], function (_v, en, $event) {
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(2, 0, null, null, 35, 'a', [], [[1, 'target', 0], [8, 'href', 4]], [[null,
+                'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('click' === en)) {
@@ -54,19 +54,17 @@ function View_TrendingBlogCardComponent_0(_l) {
                 ad = (pd_1 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(671744, null, 0, i3.RouterLinkWithHref, [i3.Router, i3.ActivatedRoute, i4.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, [['holder', 1]], null, 7, 'div', [['class', 'blogImageHolder']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TrendingBlogCardComponent_1)), i1.ɵdid(16384, null, 0, i4.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
-        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TrendingBlogCardComponent_2)), i1.ɵdid(16384, null, 0, i4.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 22, 'div', [['class',
-                'desc']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n    \n    '])), (_l()(), i1.ɵeld(0, null, null, 17, 'p', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n      '])),
-        (_l()(), i1.ɵeld(0, null, null, 6, 'span', [['class', 'views']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵeld(0, null, null, 0, 'img', [['alt',
-                'sports-social-view-white'], ['src', '/assets/images/sports-social-view-white.png']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵeld(0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['', ''])), (_l()(),
-            i1.ɵted(null, [' \n      '])), (_l()(), i1.ɵted(null, ['\n      '])),
-        (_l()(), i1.ɵeld(0, null, null, 6, 'span', [['class', 'share']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵeld(0, null, null, 0, 'img', [['alt',
-                'sports-social-share-white'], ['src', '/assets/images/sports-social-share-white.png']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵeld(0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['', ''])), (_l()(),
-            i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵted(null, ['\n    '])),
-        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 0, 'p', [], [[8, 'innerHTML', 1]], null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
+        }, null, null)), i1.ɵdid(3, 671744, null, 0, i3.RouterLinkWithHref, [i3.Router, i3.ActivatedRoute, i4.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(5, 0, [['holder', 1]], null, 7, 'div', [['class', 'blogImageHolder']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TrendingBlogCardComponent_1)), i1.ɵdid(8, 16384, null, 0, i4.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TrendingBlogCardComponent_2)), i1.ɵdid(11, 16384, null, 0, i4.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
+                'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])),
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(14, 0, null, null, 22, 'div', [['class', 'desc']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n    \n    '])),
+        (_l()(), i1.ɵeld(16, 0, null, null, 17, 'p', [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(18, 0, null, null, 6, 'span', [['class', 'views']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(),
+            i1.ɵeld(20, 0, null, null, 0, 'img', [['alt', 'sports-social-view-white'],
+                ['src', '/assets/images/sports-social-view-white.png']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(22, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(23, null, ['', ''])), (_l()(), i1.ɵted(-1, null, [' \n      '])), (_l()(), i1.ɵted(-1, null, ['\n      '])),
+        (_l()(), i1.ɵeld(26, 0, null, null, 6, 'span', [['class', 'share']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(28, 0, null, null, 0, 'img', [['alt', 'sports-social-share-white'], ['src', '/assets/images/sports-social-share-white.png']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(30, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(31, null, ['', ''])),
+        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(35, 0, null, null, 0, 'p', [], [[8, 'innerHTML', 1]], null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵted(-1, null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_2 = i1.ɵinlineInterpolate(3, '/', _co.keywords[0], '/', _co.heading, '/', _co.blogId, '');
         _ck(_v, 3, 0, currVal_2);
@@ -89,7 +87,7 @@ function View_TrendingBlogCardComponent_0(_l) {
 }
 exports.View_TrendingBlogCardComponent_0 = View_TrendingBlogCardComponent_0;
 function View_TrendingBlogCardComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-trending-blog-card', [], null, null, null, View_TrendingBlogCardComponent_0, exports.RenderType_TrendingBlogCardComponent)), i1.ɵdid(4308992, null, 0, i2.TrendingBlogCardComponent, [i5.PropertyService, i1.PLATFORM_ID], null, null)], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocial-trending-blog-card', [], null, null, null, View_TrendingBlogCardComponent_0, exports.RenderType_TrendingBlogCardComponent)), i1.ɵdid(1, 4308992, null, 0, i2.TrendingBlogCardComponent, [i5.PropertyService, i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

@@ -42,25 +42,24 @@ export class BlogFooterComponent implements OnInit {
     if(this.subscriber.nativeElement.validity.valid==true && this.subscriber.nativeElement.value){
       this.sendEmail.ofUser(this.subscriber.nativeElement.value)
       .subscribe(
-        res=>{
-          if(res.Status=='Success'){
-            this.showSubscriptionBox=true;
-            this.subscriber.nativeElement.value=''
-            this.errorMessage=false;
+        res => {
+          if (res.Status === 'Success') {
+            this.showSubscriptionBox = true;
+            this.subscriber.nativeElement.value = '';
+            this.errorMessage = false;
           }
         }
-      )
-    }
-    else{
-      this.subscriber.nativeElement.value=''
-      this.errorMessage=true
+      );
+    }else {
+      this.subscriber.nativeElement.value = '';
+      this.errorMessage = true;
     }
   }
   close() {
     this.showSubscriptionBox = false;
    }
-   setMobileView(){
-    if (this.isBrowser){
+   setMobileView() {
+    if (this.isBrowser) {
      if ( window.innerWidth < 850 ) {
        this.renderer.setStyle(this.copyright.nativeElement, 'width', '100%');
       this.renderer.setStyle(this.followUs.nativeElement, 'width', '100%');
@@ -69,8 +68,8 @@ export class BlogFooterComponent implements OnInit {
      }else {
       this.renderer.setStyle(this.followUs.nativeElement, 'width', '40%');
       this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'right');
-      this.renderer.setStyle(this.copyright.nativeElement,'width','60%')
-      this.renderer.setStyle(this.copyright.nativeElement,'text-align','left')
+      this.renderer.setStyle(this.copyright.nativeElement, 'width', '60%');
+      this.renderer.setStyle(this.copyright.nativeElement, 'text-align', 'left');
      }}
    }
    @HostListener('window:resize', [])onresize() {

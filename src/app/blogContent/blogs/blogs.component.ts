@@ -40,7 +40,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     readingTime:string;
     MetaDesc: string;
     ImageDesc: string;
-  }[]=[]
+  }[]=[];
   blogDetails:{
     blogId:string;
     blogImage:string;
@@ -56,7 +56,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     readingTime:string;
     MetaDesc: string;
     ImageDesc: string
-  }[]=[]
+  }[]=[];
   topBlogDetails:{
     blogId:string;
     blogImage:string;
@@ -72,7 +72,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     readingTime:string;
     MetaDesc: string;
     ImageDesc: string
-  }[]= []
+  }[]= [];
   restBlogDetails:{
     blogId:string;
     blogImage: string;
@@ -88,7 +88,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     readingTime: string;
     MetaDesc: string;
     ImageDesc: string
-  }[]= []
+  }[]= [];
   topMargin;
   removeTrendingBlock: boolean= false;
   mobileView= false;
@@ -96,7 +96,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
   defaultKey= 'dfg';
   show: boolean= false;
   dataRecived: boolean= false;
-  haveData: boolean= true
+  haveData: boolean= true;
   count= 0;
   isBrowser: boolean;
   @ViewChild('blog') blog;
@@ -145,20 +145,18 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       future aspects in INDIA....`},
       { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
     ]);
-    this.isBrowser = isPlatformBrowser( platformId )
+    this.isBrowser = isPlatformBrowser( platformId );
   }
 
   ngOnInit() {
     this.setMobileView();
     this.getBlog();
   }
-  
-
-  getBlog(){
+  getBlog() {
     this.get.blogData(this.nextPageNumber, this.defaultKey).subscribe(
       (data) => {
 
-        console.log(data);
+       // console.log(data);
         this.show = true;
         this.dataRecived = true;
         // tslint:disable-next-line:forin
@@ -180,8 +178,6 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 ImageDesc: data[i].ImageDesc
               });
         }
-
-       
         this.latestBlogDetails.push(
           {
             blogId: this.blogDetails[0].blogId,
@@ -199,8 +195,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             MetaDesc: this.blogDetails[0].MetaDesc,
             ImageDesc: this.blogDetails[0].ImageDesc
           }
-        )
-        for (var i = 1; i < 4; i++){
+        );
+        for (let i = 1; i < 4; i++) {
           this.topBlogDetails.push(
             {
               blogId: this.blogDetails[i].blogId,
@@ -218,9 +214,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               MetaDesc: this.blogDetails[i].MetaDesc,
               ImageDesc: this.blogDetails[i].ImageDesc
             }
-          )
+          );
         }
-       for (var i = 4; i < this.blogDetails.length; i++){
+       for (let i = 4; i < this.blogDetails.length; i++) {
         this.restBlogDetails.push(
           {
             blogId: this.blogDetails[i].blogId,
@@ -238,108 +234,96 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             MetaDesc: this.blogDetails[i].MetaDesc,
             ImageDesc: this.blogDetails[i].ImageDesc
           }
-        )
+        );
       }
       }
-    )
+    );
   }
-  setMobileView(){
-  
+  setMobileView() {
       if (window.innerWidth > 600 ) {
         this.mobileView = false;
       }else {
         this.mobileView = true;
       }
-   
   }
-   
-  setTopMargin(){
+  setTopMargin() {
     this.reciveHeight.ofKeyWords.subscribe(
       (margin) => this.topMargin = margin
-    )
-    this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + 'px')
+    );
+    this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + 'px');
   }
   showTrendingBlock() {
-      if (this.blogDetails.length === 0 || window.innerWidth < 950){
+      if (this.blogDetails.length === 0 || window.innerWidth < 950) {
         return false;
       }
-      if (this.blogDetails.length >= 0 && window.innerWidth > 950){
+      if (this.blogDetails.length >= 0 && window.innerWidth > 950) {
         return true;
       }
   }
-  ngAfterViewInit(){
-    this.setTopMargin()
+  ngAfterViewInit() {
+    this.setTopMargin();
   }
-  ngAfterViewChecked(){
+  ngAfterViewChecked() {
     this.reciveHeight.ofKeyWords.subscribe(
       (margin) => this.topMargin = margin
-    ) 
-    this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + 'px')
+    );
+    this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + 'px');
   }
-  @HostListener('window:resize', []) onresize(){
+  @HostListener('window:resize', []) onresize() {
     this.setTopMargin();
     this.showTrendingBlock();
-    this.setMobileView()
+    this.setMobileView();
     if (this.blogDetails.length > 0){
       this.show = true;
     }
   }
-  timePassed(i: string){
-    
-      let writtenDate = new Date(parseInt(i) * 1000);
-      let presentDate = new Date();
+  timePassed(i: string) {
+      const writtenDate = new Date(parseInt(i) * 1000);
+      const presentDate = new Date();
       if (writtenDate.getFullYear() === presentDate.getFullYear()) {
         if (writtenDate.getMonth() === presentDate.getMonth() || writtenDate.getDate() > presentDate.getDate()) {
           if (writtenDate.getDate() === presentDate.getDate()) {
               if (writtenDate.getHours() === presentDate.getHours()) {
                 if (writtenDate.getMinutes() === presentDate.getMinutes()) {
                   if (writtenDate.getSeconds() === presentDate.getSeconds()) {
-                    return 'Just Now'
-                  }
-                  else{
+                    return 'Just Now';
+                  }else {
                     return presentDate.getSeconds() - writtenDate.getSeconds() + ' sec ago';
                   }
+                }else {
+                  return presentDate.getMinutes() - writtenDate.getMinutes() + ' min ago';
                 }
-                else{
-                  return presentDate.getMinutes() - writtenDate.getMinutes() + ' min ago'
-                }
+              }else {
+                return presentDate.getHours() - writtenDate.getHours() + ' hrs ago';
               }
-              else{
-                return presentDate.getHours() - writtenDate.getHours() + ' hrs ago'
-              }
-          }
-          else{
+          }else {
             let date = (presentDate.getDate() - writtenDate.getDate());
             if (date < 0) {
               date += 30;
             }
             return date + ' day ago';
           }
-        }
-        else{
+        }else {
           return presentDate.getMonth() - writtenDate.getMonth() + ' month ago';
         }
+      }else {
+        return presentDate.getFullYear() - writtenDate.getFullYear() + ' year ago';
       }
-      else{
-        return presentDate.getFullYear() - writtenDate.getFullYear() + ' year ago'
-      }
-     
   }
-  ExactDate(i: number){
-    let writtenDate = new Date(i * 1000);
+  ExactDate(i: number) {
+    const writtenDate = new Date(i * 1000);
     return  writtenDate.toDateString();
   }
-  timeToRead(s: string){
-    let words = s.split(' ');
-    let time = Math.round(words.length / 180)
-    if (time > 1){
-      return time + ' min read'
-    }
-    else{
-      return '2 min read'
+  timeToRead(s: string) {
+    const words = s.split(' ');
+    const time = Math.round(words.length / 180);
+    if (time > 1) {
+      return time + ' min read';
+    }else {
+      return '2 min read';
     }
   }
-  nextPage(){
+  nextPage() {
     this.dataRecived = false;
     this.nextPageNumber++;
     if (this.nextPageNumber > 1) {
@@ -362,8 +346,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 heading: data[i].heading,
                 Content: data[i].Content,
                 insertedDate: this.timePassed(data[i].insertedDate),
-                ViewCount: data.ViewCount,
-                ShareCount: data.ShareCount,
+                ViewCount: data[i].ViewCount,
+                ShareCount: data[i].ShareCount,
                 keywords: data[i].keywords.split(','),
                 exactDate: this.ExactDate(data[i].insertedDate),
                 readingTime: this.timeToRead(data[i].Content),

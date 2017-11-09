@@ -54,11 +54,6 @@ var BlogHeaderComponent = /** @class */ (function () {
             this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
         }
     };
-    /* reloadPage() {
-      this.zone.runOutsideAngular(() => {
-          location.reload();
-      });
-    } */
     BlogHeaderComponent.prototype.onclick = function () {
         this.haveresult = false;
         if (this.searchBox) {

@@ -17,70 +17,72 @@ const styles_LoginPageComponent:any[] = [i0.styles];
 export const RenderType_LoginPageComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_LoginPageComponent,data:{}});
 function View_LoginPageComponent_1(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'p',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'p',[['class',
       'wrongPassword']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['Enter Correct credentials!!!']))],(null as any),
+      (_l()(),i1.ɵted(-1,(null as any),['Enter Correct credentials!!!']))],(null as any),
       (null as any));
 }
 export function View_LoginPageComponent_0(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[i1.ɵqud(402653184,1,{userName:0}),i1.ɵqud(402653184,2,{password:0}),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),28,'div',[['class','login']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n  '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
-          View_LoginPageComponent_1)),i1.ɵdid(16384,(null as any),0,i2.NgIf,[i1.ViewContainerRef,
-          i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),
-          ['\n  '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),6,'div',[['class',
-          'form-group']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+      (_l()(),i1.ɵeld(2,0,(null as any),(null as any),28,'div',[['class','login']],
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵand(16777216,(null as any),
+          (null as any),1,(null as any),View_LoginPageComponent_1)),i1.ɵdid(5,16384,
+          (null as any),0,i2.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
+          (null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵeld(7,
+          0,(null as any),(null as any),6,'div',[['class','form-group']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n    '])),(_l()(),i1.ɵeld(9,0,(null as any),(null as any),
           1,'label',[['for','username']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['UserName'])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,[[1,0],['userName',
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['UserName'])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(12,0,[[1,0],['userName',
           1]],(null as any),0,'input',[['class','form-control'],['id','userName'],
           ['name','UserName'],['type','text']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),
-          i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          11,'div',[['class','form-group']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),1,'label',[['for','Title']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['Password'])),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,
-          [[2,0],['password',1]],(null as any),5,'input',[['class','form-control'],
-              ['id','password'],['name','password'],['ngModel',''],['type','password']],
-          [[2,'ng-untouched',(null as any)],[2,'ng-touched',(null as any)],[2,'ng-pristine',
-              (null as any)],[2,'ng-dirty',(null as any)],[2,'ng-valid',(null as any)],
-              [2,'ng-invalid',(null as any)],[2,'ng-pending',(null as any)]],[[(null as any),
-              'input'],[(null as any),'blur'],[(null as any),'compositionstart'],[(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n  '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵeld(15,0,(null as any),
+          (null as any),11,'div',[['class','form-group']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n    '])),(_l()(),i1.ɵeld(17,0,(null as any),(null as any),1,'label',
+          [['for','Title']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['Password'])),(_l()(),
+          i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(20,0,[[2,0],['password',
+          1]],(null as any),5,'input',[['class','form-control'],['id','password'],
+          ['name','password'],['ngModel',''],['type','password']],[[2,'ng-untouched',
+          (null as any)],[2,'ng-touched',(null as any)],[2,'ng-pristine',(null as any)],
+          [2,'ng-dirty',(null as any)],[2,'ng-valid',(null as any)],[2,'ng-invalid',
+              (null as any)],[2,'ng-pending',(null as any)]],[[(null as any),'input'],
+          [(null as any),'blur'],[(null as any),'compositionstart'],[(null as any),
               'compositionend']],(_v,en,$event) => {
-            var ad:boolean = true;
-            if (('input' === en)) {
-              const pd_0:any = ((<any>i1.ɵnov(_v,21)._handleInput($event.target.value)) !== false);
-              ad = (pd_0 && ad);
-            }
-            if (('blur' === en)) {
-              const pd_1:any = ((<any>i1.ɵnov(_v,21).onTouched()) !== false);
-              ad = (pd_1 && ad);
-            }
-            if (('compositionstart' === en)) {
-              const pd_2:any = ((<any>i1.ɵnov(_v,21)._compositionStart()) !== false);
-              ad = (pd_2 && ad);
-            }
-            if (('compositionend' === en)) {
-              const pd_3:any = ((<any>i1.ɵnov(_v,21)._compositionEnd($event.target.value)) !== false);
-              ad = (pd_3 && ad);
-            }
-            return ad;
-          },(null as any),(null as any))),i1.ɵdid(16384,(null as any),0,i3.DefaultValueAccessor,
+        var ad:boolean = true;
+        if (('input' === en)) {
+          const pd_0:any = ((<any>i1.ɵnov(_v,21)._handleInput($event.target.value)) !== false);
+          ad = (pd_0 && ad);
+        }
+        if (('blur' === en)) {
+          const pd_1:any = ((<any>i1.ɵnov(_v,21).onTouched()) !== false);
+          ad = (pd_1 && ad);
+        }
+        if (('compositionstart' === en)) {
+          const pd_2:any = ((<any>i1.ɵnov(_v,21)._compositionStart()) !== false);
+          ad = (pd_2 && ad);
+        }
+        if (('compositionend' === en)) {
+          const pd_3:any = ((<any>i1.ɵnov(_v,21)._compositionEnd($event.target.value)) !== false);
+          ad = (pd_3 && ad);
+        }
+        return ad;
+      },(null as any),(null as any))),i1.ɵdid(21,16384,(null as any),0,i3.DefaultValueAccessor,
           [i1.Renderer2,i1.ElementRef,[2,i3.COMPOSITION_BUFFER_MODE]],(null as any),
           (null as any)),i1.ɵprd(1024,(null as any),i3.NG_VALUE_ACCESSOR,(p0_0:any) => {
         return [p0_0];
-      },[i3.DefaultValueAccessor]),i1.ɵdid(671744,(null as any),0,i3.NgModel,[[8,(null as any)],
-          [8,(null as any)],[8,(null as any)],[2,i3.NG_VALUE_ACCESSOR]],{name:[0,'name'],
-          model:[1,'model']},(null as any)),i1.ɵprd(2048,(null as any),i3.NgControl,
-          (null as any),[i3.NgModel]),i1.ɵdid(16384,(null as any),0,i3.NgControlStatus,
-          [i3.NgControl],(null as any),(null as any)),(_l()(),i1.ɵted((null as any),
-          ['\n  '])),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),1,'button',([] as any[]),(null as any),[[(null as any),'click']],
-          (_v,en,$event) => {
+      },[i3.DefaultValueAccessor]),i1.ɵdid(23,671744,(null as any),0,i3.NgModel,[[8,
+          (null as any)],[8,(null as any)],[8,(null as any)],[2,i3.NG_VALUE_ACCESSOR]],
+          {name:[0,'name'],model:[1,'model']},(null as any)),i1.ɵprd(2048,(null as any),
+          i3.NgControl,(null as any),[i3.NgModel]),i1.ɵdid(25,16384,(null as any),
+          0,i3.NgControlStatus,[i3.NgControl],(null as any),(null as any)),(_l()(),
+          i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵted(-1,(null as any),['\n  '])),
+      (_l()(),i1.ɵeld(28,0,(null as any),(null as any),1,'button',([] as any[]),(null as any),
+          [[(null as any),'click']],(_v,en,$event) => {
             var ad:boolean = true;
             var _co:i4.LoginPageComponent = _v.component;
             if (('click' === en)) {
@@ -88,8 +90,8 @@ export function View_LoginPageComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Login '])),
-      (_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵted((null as any),['\n']))],
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Login '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n'])),(_l()(),i1.ɵted(-1,(null as any),['\n']))],
       (_ck,_v) => {
         var _co:i4.LoginPageComponent = _v.component;
         const currVal_0:any = _co.wrongPassword;
@@ -109,7 +111,7 @@ export function View_LoginPageComponent_0(_l:any):i1.ɵViewDefinition {
       });
 }
 export function View_LoginPageComponent_Host_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'SportSocialBlog-login-page',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'SportSocialBlog-login-page',
       ([] as any[]),(null as any),[['document','keypress']],(_v,en,$event) => {
         var ad:boolean = true;
         if (('document:keypress' === en)) {
@@ -117,12 +119,12 @@ export function View_LoginPageComponent_Host_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },View_LoginPageComponent_0,RenderType_LoginPageComponent)),i1.ɵdid(114688,(null as any),
-      0,i4.LoginPageComponent,[i5.ActivatedRoute,i5.Router,i6.AuthService],(null as any),
-      (null as any))],(_ck,_v) => {
+      },View_LoginPageComponent_0,RenderType_LoginPageComponent)),i1.ɵdid(1,114688,
+      (null as any),0,i4.LoginPageComponent,[i5.ActivatedRoute,i5.Router,i6.AuthService],
+      (null as any),(null as any))],(_ck,_v) => {
     _ck(_v,1,0);
   },(null as any));
 }
 export const LoginPageComponentNgFactory:i1.ComponentFactory<i4.LoginPageComponent> = i1.ɵccf('SportSocialBlog-login-page',
     i4.LoginPageComponent,View_LoginPageComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvbG9naW4tcGFnZS9sb2dpbi1wYWdlLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9TcG9ydFNvY2lhbEJsb2cvc3JjL2FwcC9sb2dpbi1wYWdlL2xvZ2luLXBhZ2UuY29tcG9uZW50LnRzIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvbG9naW4tcGFnZS9sb2dpbi1wYWdlLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvbG9naW4tcGFnZS9sb2dpbi1wYWdlLmNvbXBvbmVudC50cy5Mb2dpblBhZ2VDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwibG9naW5cIj5cbiAgPHAgKm5nSWY9XCJ3cm9uZ1Bhc3N3b3JkXCIgY2xhc3M9XCJ3cm9uZ1Bhc3N3b3JkXCI+RW50ZXIgQ29ycmVjdCBjcmVkZW50aWFscyEhITwvcD5cbiAgPGRpdiBjbGFzcz1cImZvcm0tZ3JvdXBcIj5cbiAgICA8bGFiZWwgZm9yPVwidXNlcm5hbWVcIj5Vc2VyTmFtZTwvbGFiZWw+XG4gICAgPGlucHV0IHR5cGU9XCJ0ZXh0XCIgaWQ9XCJ1c2VyTmFtZVwiIGNsYXNzPVwiZm9ybS1jb250cm9sXCIgIG5hbWU9XCJVc2VyTmFtZVwiICN1c2VyTmFtZT5cbiAgPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb3JtLWdyb3VwXCI+XG4gICAgPGxhYmVsIGZvcj1cIlRpdGxlXCI+UGFzc3dvcmQ8L2xhYmVsPlxuICAgIDxpbnB1dCB0eXBlPVwicGFzc3dvcmRcIiBpZD1cInBhc3N3b3JkXCIgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIiBuZ01vZGVsIG5hbWU9XCJwYXNzd29yZFwiICNwYXNzd29yZD5cbiAgPC9kaXY+XG4gIDxidXR0b24gKGNsaWNrKT1cImNoZWNrTG9naW4oKVwiIFtkaXNhYmxlZF09XCJcIj5Mb2dpbiA8L2J1dHRvbj5cbjwvZGl2PlxuIiwiPFNwb3J0U29jaWFsQmxvZy1sb2dpbi1wYWdlPjwvU3BvcnRTb2NpYWxCbG9nLWxvZ2luLXBhZ2U+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7OztvQkNDRTtNQUFBO01BQStDOzs7OztNQURqRDtVQUFBLDBEQUFtQjtVQUFBLFdBQ2pCO1VBQUEsbUNBQUE7d0JBQUEsbUNBQStFO1VBQUEsV0FDL0U7VUFBQTtNQUF3QiwyQ0FDdEI7VUFBQTtVQUFBLDhCQUFzQjtNQUFnQiwyQ0FDdEM7VUFBQTtVQUFBO1VBQUEsOEJBQWlGLHlDQUM3RTtpQkFBQSwwQkFDTjtVQUFBO1VBQUEsOEJBQXdCO01BQ3RCO1VBQUEsMERBQW1CO1VBQUEsZUFBZ0IsMkNBQ25DO1VBQUE7Y0FBQTtVQUFBO2NBQUE7Y0FBQTtjQUFBO2NBQUE7WUFBQTtZQUFBO2NBQUE7Y0FBQTtZQUFBO1lBQUE7Y0FBQTtjQUFBO1lBQUE7WUFBQTtjQUFBO2NBQUE7WUFBQTtZQUFBO2NBQUE7Y0FBQTtZQUFBO1lBQUE7VUFBQSx1Q0FBQTtVQUFBO1VBQUEsc0JBQUE7UUFBQTtNQUFBLG9DQUFBO1VBQUE7VUFBQSx5Q0FBQTtVQUFBLG1DQUFBO1VBQUEsNENBQTRGO1VBQUEsV0FDeEYseUNBQ047VUFBQTtVQUFBO1lBQUE7WUFBQTtZQUFRO2NBQUE7Y0FBQTtZQUFBO1lBQVI7VUFBQSxnQ0FBNkM7TUFBZSx1Q0FDeEQ7OztRQVZEO1FBQUgsV0FBRyxTQUFIO1FBT29FO1FBQVI7UUFBMUQsWUFBa0UsVUFBUixTQUExRDs7UUFBQTtRQUFBO1FBQUE7UUFBQTtRQUFBO1FBQUE7UUFBQTtRQUFBLFlBQUEscUVBQUE7Ozs7b0JDUko7TUFBQTtRQUFBO1FBQUE7VUFBQTtVQUFBO1FBQUE7UUFBQTtNQUFBLG1FQUFBO01BQUE7TUFBQTtJQUFBOzs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovc3NibG9nL3NyYy9hcHAvbG9naW4tcGFnZS9sb2dpbi1wYWdlLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9zc2Jsb2cvc3JjL2FwcC9sb2dpbi1wYWdlL2xvZ2luLXBhZ2UuY29tcG9uZW50LnRzIiwibmc6Ly8vQzovc3NibG9nL3NyYy9hcHAvbG9naW4tcGFnZS9sb2dpbi1wYWdlLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovc3NibG9nL3NyYy9hcHAvbG9naW4tcGFnZS9sb2dpbi1wYWdlLmNvbXBvbmVudC50cy5Mb2dpblBhZ2VDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwibG9naW5cIj5cclxuICA8cCAqbmdJZj1cIndyb25nUGFzc3dvcmRcIiBjbGFzcz1cIndyb25nUGFzc3dvcmRcIj5FbnRlciBDb3JyZWN0IGNyZWRlbnRpYWxzISEhPC9wPlxyXG4gIDxkaXYgY2xhc3M9XCJmb3JtLWdyb3VwXCI+XHJcbiAgICA8bGFiZWwgZm9yPVwidXNlcm5hbWVcIj5Vc2VyTmFtZTwvbGFiZWw+XHJcbiAgICA8aW5wdXQgdHlwZT1cInRleHRcIiBpZD1cInVzZXJOYW1lXCIgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIiAgbmFtZT1cIlVzZXJOYW1lXCIgI3VzZXJOYW1lPlxyXG4gIDwvZGl2PlxyXG4gIDxkaXYgY2xhc3M9XCJmb3JtLWdyb3VwXCI+XHJcbiAgICA8bGFiZWwgZm9yPVwiVGl0bGVcIj5QYXNzd29yZDwvbGFiZWw+XHJcbiAgICA8aW5wdXQgdHlwZT1cInBhc3N3b3JkXCIgaWQ9XCJwYXNzd29yZFwiIGNsYXNzPVwiZm9ybS1jb250cm9sXCIgbmdNb2RlbCBuYW1lPVwicGFzc3dvcmRcIiAjcGFzc3dvcmQ+XHJcbiAgPC9kaXY+XHJcbiAgPGJ1dHRvbiAoY2xpY2spPVwiY2hlY2tMb2dpbigpXCIgW2Rpc2FibGVkXT1cIlwiPkxvZ2luIDwvYnV0dG9uPlxyXG48L2Rpdj5cclxuIiwiPFNwb3J0U29jaWFsQmxvZy1sb2dpbi1wYWdlPjwvU3BvcnRTb2NpYWxCbG9nLWxvZ2luLXBhZ2U+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7OztvQkNDRTtNQUFBO01BQStDOzs7OztNQURqRDtVQUFBO01BQW1CLDRDQUNqQjtVQUFBLGlFQUFBO1VBQUE7VUFBQSxlQUErRSw0Q0FDL0U7VUFBQTtVQUFBLDBEQUF3QjtVQUFBLDJCQUN0QjtVQUFBO1VBQUEsOEJBQXNCO01BQWdCLDhDQUN0QztVQUFBO1VBQUE7VUFBQSw4QkFBaUY7TUFDN0UsNENBQ047VUFBQTtVQUFBLDRDQUF3QjtVQUFBLGFBQ3RCO1VBQUE7VUFBQSxnQkFBbUIsZ0RBQWdCO2lCQUFBLCtCQUNuQztVQUFBO1VBQUE7VUFBQTtVQUFBO2NBQUE7VUFBQTtjQUFBO1FBQUE7UUFBQTtVQUFBO1VBQUE7UUFBQTtRQUFBO1VBQUE7VUFBQTtRQUFBO1FBQUE7VUFBQTtVQUFBO1FBQUE7UUFBQTtVQUFBO1VBQUE7UUFBQTtRQUFBO01BQUEsdUNBQUE7VUFBQTtVQUFBLHNCQUFBO1FBQUE7TUFBQSxvQ0FBQTtVQUFBO1VBQUEsMERBQUE7dUJBQUEsbUNBQUE7VUFBQSxpRUFBNEY7aUJBQUEsNkJBQ3hGO01BQ047VUFBQTtZQUFBO1lBQUE7WUFBUTtjQUFBO2NBQUE7WUFBQTtZQUFSO1VBQUEsZ0NBQTZDO01BQWUsMENBQ3hEOzs7UUFWRDtRQUFILFdBQUcsU0FBSDtRQU9vRTtRQUFSO1FBQTFELFlBQWtFLFVBQVIsU0FBMUQ7O1FBQUE7UUFBQTtRQUFBO1FBQUE7UUFBQTtRQUFBO1FBQUE7UUFBQSxZQUFBLHFFQUFBOzs7O29CQ1JKO01BQUE7UUFBQTtRQUFBO1VBQUE7VUFBQTtRQUFBO1FBQUE7TUFBQSxtRUFBQTtNQUFBO01BQUE7SUFBQTs7OzsifQ==

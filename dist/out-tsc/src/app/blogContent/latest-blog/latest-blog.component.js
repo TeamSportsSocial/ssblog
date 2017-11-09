@@ -48,9 +48,10 @@ var LatestBlogComponent = /** @class */ (function () {
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || '';
     };
-    LatestBlogComponent.prototype.removeInitialImage = function () {
-        this.isloading = false;
-    };
+    /* removeInitialImage(){
+      this.isloading=false
+  
+    } */
     LatestBlogComponent.prototype.setDefault = function () {
         this.blogImage = '/assets/images/default-image.png';
     };

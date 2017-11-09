@@ -2,8 +2,8 @@
 
 <div class="latest" MaintainHeightWidthRatio #latest>
   <a routerLink="/{{keywords[0]}}/{{heading}}/{{blogId}}" (click)="send()">
-    <img #initialImage src="/assets/images/default-image.png" alt="InitialblogImage" *ngIf="isloading">
-    <img src="{{blogImage}}" title="{{ImageDesc}}" (load)="removeInitialImage()"  (error)="setDefault()" alt="blogImage"  *ngIf="dataRecieved" #blogimage>
+    <!-- <img #initialImage src="/assets/images/default-image.png" alt="InitialblogImage" *ngIf="isloading"> -->
+    <img src="{{blogImage}}" title="{{ImageDesc}}" (error)="setDefault()" alt="blogImage"  *ngIf="dataRecieved" #blogimage>
     
     
     <div class="desc" #Desc>

@@ -18,15 +18,16 @@ var styles_CommentsComponent = [i0.styles];
 exports.RenderType_CommentsComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_CommentsComponent, data: {} });
 function View_CommentsComponent_1(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 18, 'div', [['class',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 18, 'div', [['class',
                 'loadComment']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 3, 'div', [['class', 'imageHolder']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])),
-        (_l()(), i1.ɵeld(0, null, null, 0, 'img', [['alt', '']], [[8, 'src',
-                4]], null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 10, 'div', [['class', 'commentBox']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 4, 'p', [['class',
-                'userName']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n       ', '\n       '])), (_l()(), i1.ɵeld(0, null, null, 1, 'span', [['class', 'commentDate']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['', ''])), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵted(null, ['\n   \n    '])), (_l()(), i1.ɵeld(0, null, null, 1, 'p', [['class',
-                'userComment']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n      ', '\n    '])), (_l()(),
-            i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵted(null, ['\n']))], null, function (_ck, _v) {
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(2, 0, null, null, 3, 'div', [['class', 'imageHolder']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(4, 0, null, null, 0, 'img', [['alt',
+                '']], [[8, 'src', 4]], null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(7, 0, null, null, 10, 'div', [['class',
+                'commentBox']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(9, 0, null, null, 4, 'p', [['class', 'userName']], null, null, null, null, null)), (_l()(), i1.ɵted(10, null, ['\n       ',
+            '\n       '])), (_l()(), i1.ɵeld(11, 0, null, null, 1, 'span', [['class', 'commentDate']], null, null, null, null, null)), (_l()(), i1.ɵted(12, null, ['', ''])), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, ['\n   \n    '])),
+        (_l()(), i1.ɵeld(15, 0, null, null, 1, 'p', [['class', 'userComment']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(16, null, ['\n      ', '\n    '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n']))], null, function (_ck, _v) {
         var currVal_0 = i1.ɵinlineInterpolate(1, '', _v.context.$implicit.image, '');
         _ck(_v, 4, 0, currVal_0);
         var currVal_1 = _v.context.$implicit.userName;
@@ -39,9 +40,9 @@ function View_CommentsComponent_1(_l) {
 }
 function View_CommentsComponent_0(_l) {
     return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { commentBox: 0 }), i1.ɵqud(402653184, 2, { textArea: 0 }),
-        i1.ɵqud(402653184, 3, { profileImage: 0 }), (_l()(), i1.ɵeld(0, [[1, 0], ['commentBox',
-                1]], null, 24, 'div', [['class', 'comment']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 3, 'div', [['class',
-                'imageHolder']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 0, 'img', [], [[8, 'src', 4]], [[null,
+        i1.ɵqud(402653184, 3, { profileImage: 0 }), (_l()(), i1.ɵeld(3, 0, [[1, 0], ['commentBox',
+                1]], null, 24, 'div', [['class', 'comment']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(5, 0, null, null, 3, 'div', [['class',
+                'imageHolder']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(7, 0, null, null, 0, 'img', [], [[8, 'src', 4]], [[null,
                 'error']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -50,15 +51,14 @@ function View_CommentsComponent_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), (_l()(), i1.ɵted(null, ['\n  '])),
-        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 16, 'div', [['class', 'commentBox ']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])),
-        (_l()(), i1.ɵeld(0, [[2, 0], ['textArea', 1]], null, 7, 'textarea', [['class',
-                'text'], ['name', 'desc'], ['ngModel', ''], ['placeholder', 'Add a Comment...'],
-            ['required', '']], [[1, 'required', 0], [2, 'ng-untouched', null], [2, 'ng-touched',
-                null], [2, 'ng-pristine', null], [2, 'ng-dirty', null],
-            [2, 'ng-valid', null], [2, 'ng-invalid', null], [2, 'ng-pending',
-                null]], [[null, 'input'], [null, 'blur'], [null,
-                'compositionstart'], [null, 'compositionend']], function (_v, en, $event) {
+        }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n  '])),
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(10, 0, null, null, 16, 'div', [['class', 'commentBox ']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(12, 0, [[2, 0], ['textArea', 1]], null, 7, 'textarea', [['class', 'text'], ['name', 'desc'], ['ngModel', ''], ['placeholder',
+                'Add a Comment...'], ['required', '']], [[1, 'required', 0], [2, 'ng-untouched',
+                null], [2, 'ng-touched', null], [2, 'ng-pristine', null],
+            [2, 'ng-dirty', null], [2, 'ng-valid', null], [2, 'ng-invalid',
+                null], [2, 'ng-pending', null]], [[null, 'input'],
+            [null, 'blur'], [null, 'compositionstart'], [null,
+                'compositionend']], function (_v, en, $event) {
             var ad = true;
             if (('input' === en)) {
                 var pd_0 = (i1.ɵnov(_v, 13)._handleInput($event.target.value) !== false);
@@ -77,14 +77,12 @@ function View_CommentsComponent_0(_l) {
                 ad = (pd_3 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(16384, null, 0, i3.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i3.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵdid(16384, null, 0, i3.RequiredValidator, [], { required: [0, 'required'] }, null), i1.ɵprd(1024, null, i3.NG_VALIDATORS, function (p0_0) {
+        }, null, null)), i1.ɵdid(13, 16384, null, 0, i3.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i3.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵdid(14, 16384, null, 0, i3.RequiredValidator, [], { required: [0, 'required'] }, null), i1.ɵprd(1024, null, i3.NG_VALIDATORS, function (p0_0) {
             return [p0_0];
         }, [i3.RequiredValidator]), i1.ɵprd(1024, null, i3.NG_VALUE_ACCESSOR, function (p0_0) {
             return [p0_0];
-        }, [i3.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i3.NgModel, [[8,
-                null], [2, i3.NG_VALIDATORS], [8, null], [2, i3.NG_VALUE_ACCESSOR]], { name: [0, 'name'], model: [1, 'model'] }, null), i1.ɵprd(2048, null, i3.NgControl, null, [i3.NgModel]), i1.ɵdid(16384, null, 0, i3.NgControlStatus, [i3.NgControl], null, null), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class',
-                'commentButton']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵeld(0, null, null, 1, 'button', [], null, [[null,
-                'click']], function (_v, en, $event) {
+        }, [i3.DefaultValueAccessor]), i1.ɵdid(17, 671744, null, 0, i3.NgModel, [[8, null], [2, i3.NG_VALIDATORS], [8, null], [2, i3.NG_VALUE_ACCESSOR]], { name: [0, 'name'], model: [1, 'model'] }, null), i1.ɵprd(2048, null, i3.NgControl, null, [i3.NgModel]), i1.ɵdid(19, 16384, null, 0, i3.NgControlStatus, [i3.NgControl], null, null), (_l()(),
+            i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(21, 0, null, null, 4, 'div', [['class', 'commentButton']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(23, 0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('click' === en)) {
@@ -92,12 +90,9 @@ function View_CommentsComponent_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), (_l()(), i1.ɵted(null, [' ', ''])),
-        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵted(null, ['\n  '])),
-        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])),
-        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_CommentsComponent_1)),
-        i1.ɵdid(802816, null, 0, i4.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
-            i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
+        }, null, null)), (_l()(), i1.ɵted(24, null, [' ', ''])),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_CommentsComponent_1)), i1.ɵdid(30, 802816, null, 0, i4.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0,
+                'ngForOf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_9 = '';
         _ck(_v, 14, 0, currVal_9);
@@ -125,7 +120,7 @@ function View_CommentsComponent_0(_l) {
 }
 exports.View_CommentsComponent_0 = View_CommentsComponent_0;
 function View_CommentsComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-comments', [], null, null, null, View_CommentsComponent_0, exports.RenderType_CommentsComponent)), i1.ɵdid(114688, null, 0, i2.CommentsComponent, [i1.Renderer2, i5.FacebookService, i6.Http, i7.PostService, i7.PostService, i7.PostService,
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocial-comments', [], null, null, null, View_CommentsComponent_0, exports.RenderType_CommentsComponent)), i1.ɵdid(1, 114688, null, 0, i2.CommentsComponent, [i1.Renderer2, i5.FacebookService, i6.Http, i7.PostService, i7.PostService, i7.PostService,
             i1.NgZone, i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);

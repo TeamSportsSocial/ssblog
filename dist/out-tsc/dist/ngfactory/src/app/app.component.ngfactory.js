@@ -20,7 +20,7 @@ var styles_AppComponent = [i0.styles];
 exports.RenderType_AppComponent = i1.ɵcrt({ encapsulation: 0, styles: styles_AppComponent,
     data: {} });
 function View_AppComponent_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocialBlog-header', [], null, [['window', 'click'], ['window', 'resize']], function (_v, en, $event) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocialBlog-header', [], null, [['window', 'click'], ['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:click' === en)) {
                 var pd_0 = (i1.ɵnov(_v, 1).onclick() !== false);
@@ -31,19 +31,19 @@ function View_AppComponent_0(_l) {
                 ad = (pd_1 && ad);
             }
             return ad;
-        }, i2.View_BlogHeaderComponent_0, i2.RenderType_BlogHeaderComponent)), i1.ɵdid(8503296, null, 0, i3.BlogHeaderComponent, [i4.PropertyService, i1.Renderer2, i4.PropertyService,
-            i5.GetService, i1.ElementRef, i6.DomSanitizer, i7.PostService, i8.Router, i4.PropertyService,
-            i1.NgZone, i1.PLATFORM_ID], null, null), (_l()(), i1.ɵted(null, ['    \n'])), (_l()(), i1.ɵeld(16777216, null, null, 1, 'router-outlet', [], null, null, null, null, null)),
-        i1.ɵdid(212992, null, 0, i8.RouterOutlet, [i8.ChildrenOutletContexts, i1.ViewContainerRef,
-            i1.ComponentFactoryResolver, [8, null], i1.ChangeDetectorRef], null, null)], function (_ck, _v) {
+        }, i2.View_BlogHeaderComponent_0, i2.RenderType_BlogHeaderComponent)), i1.ɵdid(1, 8503296, null, 0, i3.BlogHeaderComponent, [i4.PropertyService, i1.Renderer2,
+            i4.PropertyService, i5.GetService, i1.ElementRef, i6.DomSanitizer, i7.PostService,
+            i8.Router, i4.PropertyService, i1.NgZone, i1.PLATFORM_ID], null, null),
+        (_l()(), i1.ɵted(-1, null, ['    \n'])), (_l()(), i1.ɵeld(3, 16777216, null, null, 1, 'router-outlet', [], null, null, null, null, null)), i1.ɵdid(4, 212992, null, 0, i8.RouterOutlet, [i8.ChildrenOutletContexts, i1.ViewContainerRef, i1.ComponentFactoryResolver,
+            [8, null], i1.ChangeDetectorRef], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
         _ck(_v, 4, 0);
     }, null);
 }
 exports.View_AppComponent_0 = View_AppComponent_0;
 function View_AppComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'app-root', [], null, null, null, View_AppComponent_0, exports.RenderType_AppComponent)),
-        i1.ɵdid(49152, null, 0, i9.AppComponent, [], null, null)], null, null);
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'app-root', [], null, null, null, View_AppComponent_0, exports.RenderType_AppComponent)),
+        i1.ɵdid(1, 49152, null, 0, i9.AppComponent, [], null, null)], null, null);
 }
 exports.View_AppComponent_Host_0 = View_AppComponent_Host_0;
 exports.AppComponentNgFactory = i1.ɵccf('app-root', i9.AppComponent, View_AppComponent_Host_0, {}, {}, []);

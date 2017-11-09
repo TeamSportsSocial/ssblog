@@ -32,8 +32,7 @@ export class SearchComponent implements OnInit {
   recievedKey;
   mobileView:boolean=false;
   haveData:boolean=true;
-  Keyword;
-  key = [];
+  keywords= ' ';
   @ViewChild('searchPage') searchPage;
   @ViewChild('blog') blog;
   constructor(
@@ -47,7 +46,6 @@ export class SearchComponent implements OnInit {
     private titleService:Title,
     private metaService:Meta
   ) {
-   
   }
 
   ngOnInit() {
@@ -69,13 +67,12 @@ export class SearchComponent implements OnInit {
                   + this.recievedKey);
     }
     setMetaTags() {
-      console.log(this.Keyword, 'key2');
       this.metaService.addTags([
         { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-')},
         { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to '
           + this.recievedKey },
         { name: 'title', content: this.recievedKey + ' Blogs'},
-        { name: 'keywords', content: this.Keyword},
+        { name: 'keywords' , content: this.keywords},
         { name: 'theme-color', content: '#4327a0'},
         { property: 'og:title', content: this.recievedKey + 'Blogs' },
         { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to '
@@ -87,7 +84,7 @@ export class SearchComponent implements OnInit {
         { name: 'twitter:card', content: 'summary_large_image'},
         { name: 'twitter:site', content: '@Chaseyoursport'},
         { name: 'twitter:creator', content: '@NadeemKhan'},
-        { name: 'twitter:title', content: this.recievedKey + 'Blogs'},
+        { name: 'twitter:title', content: this.recievedKey + ' Blogs'},
         { name: 'twitter:description', content: 'Read the latest articles, blogs, news and other informations related to '
           + this.recievedKey},
         { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
@@ -97,28 +94,30 @@ export class SearchComponent implements OnInit {
       const blogDetails: {
         blogId: string;
         blogImage: string;
-        bloggerName: string,
-        bloggerImage: string,
-        heading: string,
-        Content: string,
-        insertedDate: string,
-        ViewCount: string,
-        ShareCount: string,
-        keywords: string[],
-        exactDate: string;
-        readingTime: string
+        bloggerName:string,
+        bloggerImage:string,
+        heading:string,
+        Content:string,
+        insertedDate:string,
+        ViewCount:string,
+        ShareCount:string,
+        keywords:string[],
+        exactDate:string;
+        readingTime:string
       }[] = [];
-      this.get.blogData(this.pageNumber, this.recievedKey).subscribe(
+      this.get.blogData(this.pageNumber,this.recievedKey).subscribe(
         (data) => {
-          if (data.length > 0) {
+          if(data.length > 0) {
             this.haveData = true;
           } else {
             this.haveData = false;
           }
-          this.show = true;
-          this.dataRecieved = true;
-          // tslint:disable-next-line:forin
-          for (const i in data) {
+          if(data.length==0 && this.pageNumber==1){
+
+          }
+          this.show=true;
+          this.dataRecieved=true;
+          for(let i in data){
               blogDetails.push(
                 {
                   blogId: data[i].blogId,
@@ -134,22 +133,20 @@ export class SearchComponent implements OnInit {
                   exactDate: this.ExactDate(data[i].insertedDate),
                   readingTime: this.timeToRead(data[i].Content)
                 }
-              );
-              this.key = this.key .concat (blogDetails[i].keywords);
-
+              )
+              this.keywords += blogDetails[i].keywords + ','
             }
           this.blogDetails = blogDetails;
-          this.Keyword = Array.from(new Set(this.key)).toString();
-          console.log( this.Keyword, 'key');
-          
+          console.log(this.keywords)
+          this.setMetaTags();
           }
+          
         );
-        console.log(this.Keyword, 'key1');
-        this.setMetaTags();
+       
     }
     recievekeyFromUrl() {
 
-      this.recievedKey=this.route.snapshot.url[0].path.replace(/-/g, ' ');
+      this.recievedKey=this.route.snapshot.url[0].path.replace(/-/g, ' ')
       this.route.params.subscribe(
         (params)=>{
           this.pageNumber=1
@@ -203,7 +200,7 @@ export class SearchComponent implements OnInit {
                       return 'Just Now'
                     }
                     else{
-                      return presentDate.getSeconds() -writtenDate.getSeconds()+' sec ago'
+                      return presentDate.getSeconds()-writtenDate.getSeconds()+' sec ago'
                     }
                   }
                   else{
@@ -260,7 +257,7 @@ export class SearchComponent implements OnInit {
             this.haveData=false;
           }
           console.log(this.haveData)
-          for(const i in data){
+          for(let i in data){
             this.blogDetails.push(
               {
                 blogId:data[i].blogId,
@@ -278,8 +275,10 @@ export class SearchComponent implements OnInit {
               }
             )
          }
+         //sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
         }
-      );
+      )
+      //sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
     }
 
 }

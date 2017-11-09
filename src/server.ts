@@ -33,7 +33,7 @@ app.set('view engine', 'html');
 
 app.get('*.*', express.static(DIST_DIR));
 
-/* function ngApp(req, res) {
+function ngApp(req, res) {
   res.render('index', {
     req,
     res,
@@ -43,15 +43,16 @@ app.get('*.*', express.static(DIST_DIR));
     requestUrl: req.originalUrl,
     originUrl: `http://localhost:${PORT}`
   });
-} */
-app.get('*', (req, res) => {
+}
+/* app.get('*', (req, res) => {
   res.render('index', { req});
-});
-/* app.get('/', ngApp);
+}); */
+app.get('/', ngApp);
 routes.forEach(route => {
+  console.log(route, 'route');
   app.get(`/${route}`, ngApp);
   app.get(`/${route}/*`, ngApp);
-}); */
+});
 app.listen(PORT, () => {
   console.log(`App listening on http://localhost:${PORT}!`);
 });

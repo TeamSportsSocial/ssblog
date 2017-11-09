@@ -22,7 +22,7 @@ var styles_AdminPanelComponent = [i0.styles];
 exports.RenderType_AdminPanelComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_AdminPanelComponent, data: {} });
 function View_AdminPanelComponent_1(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-single-panel', [], null, null, null, i2.View_SinglePanelComponent_0, i2.RenderType_SinglePanelComponent)), i1.ɵdid(114688, null, 0, i3.SinglePanelComponent, [i4.PostService, i5.Router, i6.PropertyService, i1.Renderer2], { blogId: [0, 'blogId'],
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocial-single-panel', [], null, null, null, i2.View_SinglePanelComponent_0, i2.RenderType_SinglePanelComponent)), i1.ɵdid(1, 114688, null, 0, i3.SinglePanelComponent, [i4.PostService, i5.Router, i6.PropertyService, i1.Renderer2], { blogId: [0, 'blogId'],
             blogImage: [1, 'blogImage'], bloggerImage: [2, 'bloggerImage'], bloggerName: [3,
                 'bloggerName'], heading: [4, 'heading'], Content: [5, 'Content'], keywords: [6,
                 'keywords'] }, null)], function (_ck, _v) {
@@ -37,7 +37,7 @@ function View_AdminPanelComponent_1(_l) {
     }, null);
 }
 function View_AdminPanelComponent_3(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('click' === en)) {
@@ -45,17 +45,16 @@ function View_AdminPanelComponent_3(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), (_l()(), i1.ɵted(null, ['Load More']))], null, null);
+        }, null, null)), (_l()(), i1.ɵted(-1, null, ['Load More']))], null, null);
 }
 function View_AdminPanelComponent_4(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 0, 'img', [['class',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 0, 'img', [['class',
                 'loading'], ['src', '/assets/images/sports-social-loading.gif']], null, null, null, null, null))], null, null);
 }
 function View_AdminPanelComponent_2(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 7, 'div', [], null, null, null, null, null)), (_l()(),
-            i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_AdminPanelComponent_3)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(),
-            i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_AdminPanelComponent_4)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(),
-            i1.ɵted(null, ['\n']))], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 7, 'div', [], null, null, null, null, null)), (_l()(),
+            i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_AdminPanelComponent_3)), i1.ɵdid(3, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_AdminPanelComponent_4)), i1.ɵdid(6, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.dataRecieved;
         _ck(_v, 3, 0, currVal_0);
@@ -64,36 +63,35 @@ function View_AdminPanelComponent_2(_l) {
     }, null);
 }
 function View_AdminPanelComponent_5(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'p', [['class',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'p', [['class',
                 'noMoreData']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['No More Data !!!']))], null, null);
+        (_l()(), i1.ɵted(-1, null, ['No More Data !!!']))], null, null);
 }
 function View_AdminPanelComponent_6(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-blog-footer', [], null, [['window', 'resize']], function (_v, en, $event) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocial-blog-footer', [], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
                 var pd_0 = (i1.ɵnov(_v, 1).onresize() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i8.View_BlogFooterComponent_0, i8.RenderType_BlogFooterComponent)), i1.ɵdid(114688, null, 0, i9.BlogFooterComponent, [i4.PostService, i1.Renderer2, i10.StatusService,
+        }, i8.View_BlogFooterComponent_0, i8.RenderType_BlogFooterComponent)), i1.ɵdid(1, 114688, null, 0, i9.BlogFooterComponent, [i4.PostService, i1.Renderer2, i10.StatusService,
             i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }
 function View_AdminPanelComponent_0(_l) {
-    return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { panel: 0 }), (_l()(), i1.ɵeld(0, [[1, 0], ['panel',
-                1]], null, 4, 'div', [['class', 'panel']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(),
+    return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { panel: 0 }), (_l()(), i1.ɵeld(1, 0, [[1, 0], ['panel',
+                1]], null, 4, 'div', [['class', 'panel']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(),
             i1.ɵand(16777216, null, null, 1, null, View_AdminPanelComponent_1)),
-        i1.ɵdid(802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
-            i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_AdminPanelComponent_2)),
-        i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
-                'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_AdminPanelComponent_5)),
-        i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
-                'ngIf'] }, null), (_l()(), i1.ɵted(null, ['         \n'])),
+        i1.ɵdid(4, 802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
+            i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(),
+            i1.ɵand(16777216, null, null, 1, null, View_AdminPanelComponent_2)),
+        i1.ɵdid(8, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n'])),
+        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_AdminPanelComponent_5)),
+        i1.ɵdid(11, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['         \n'])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_AdminPanelComponent_6)),
-        i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
-                'ngIf'] }, null), (_l()(), i1.ɵted(null, [' \n']))], function (_ck, _v) {
+        i1.ɵdid(14, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, [' \n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.blogDetails;
         _ck(_v, 4, 0, currVal_0);
@@ -107,14 +105,14 @@ function View_AdminPanelComponent_0(_l) {
 }
 exports.View_AdminPanelComponent_0 = View_AdminPanelComponent_0;
 function View_AdminPanelComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocialBlog-admin-panel', [], null, [['window', 'resize']], function (_v, en, $event) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocialBlog-admin-panel', [], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
                 var pd_0 = (i1.ɵnov(_v, 1).onresize() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, View_AdminPanelComponent_0, exports.RenderType_AdminPanelComponent)), i1.ɵdid(114688, null, 0, i11.AdminPanelComponent, [i6.PropertyService, i1.Renderer2, i4.PostService], null, null)], function (_ck, _v) {
+        }, View_AdminPanelComponent_0, exports.RenderType_AdminPanelComponent)), i1.ɵdid(1, 114688, null, 0, i11.AdminPanelComponent, [i6.PropertyService, i1.Renderer2, i4.PostService], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

@@ -20,12 +20,12 @@ const styles_EditBlogComponent:any[] = [i0.styles];
 export const RenderType_EditBlogComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_EditBlogComponent,data:{}});
 function View_EditBlogComponent_1(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),3,'option',([] as any[]),
-      (null as any),(null as any),(null as any),(null as any),(null as any))),i1.ɵdid(147456,
-      (null as any),0,i2.NgSelectOption,[i1.ElementRef,i1.Renderer2,[8,(null as any)]],
-      {value:[0,'value']},(null as any)),i1.ɵdid(147456,(null as any),0,i2.ɵq,[i1.ElementRef,
-      i1.Renderer2,[8,(null as any)]],{value:[0,'value']},(null as any)),(_l()(),i1.ɵted((null as any),
-      ['','']))],(_ck,_v) => {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),3,'option',([] as any[]),
+      (null as any),(null as any),(null as any),(null as any),(null as any))),i1.ɵdid(1,
+      147456,(null as any),0,i2.NgSelectOption,[i1.ElementRef,i1.Renderer2,[8,(null as any)]],
+      {value:[0,'value']},(null as any)),i1.ɵdid(2,147456,(null as any),0,i2.ɵq,[i1.ElementRef,
+      i1.Renderer2,[8,(null as any)]],{value:[0,'value']},(null as any)),(_l()(),i1.ɵted(3,
+      (null as any),['','']))],(_ck,_v) => {
     const currVal_0:any = _v.context.$implicit;
     _ck(_v,1,0,currVal_0);
     const currVal_1:any = _v.context.$implicit;
@@ -36,19 +36,19 @@ function View_EditBlogComponent_1(_l:any):i1.ɵViewDefinition {
   });
 }
 function View_EditBlogComponent_2(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),3,(null as any),
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),3,(null as any),
       (null as any),(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n                    '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),0,'img',[['class','dummyBlogImage'],['role',
+      (_l()(),i1.ɵted(-1,(null as any),['\n                    '])),(_l()(),i1.ɵeld(2,
+          0,(null as any),(null as any),0,'img',[['class','dummyBlogImage'],['role',
               'button'],['src','/assets/images/sports-social-temp-blog-image.jpg']],
           (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n                ']))],(null as any),(null as any));
+      (_l()(),i1.ɵted(-1,(null as any),['\n                ']))],(null as any),(null as any));
 }
 function View_EditBlogComponent_3(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),3,(null as any),
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),3,(null as any),
       (null as any),(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n                    '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),0,'img',[['class','BlogImage'],['role','button']],
+      (_l()(),i1.ɵted(-1,(null as any),['\n                    '])),(_l()(),i1.ɵeld(2,
+          0,(null as any),(null as any),0,'img',[['class','BlogImage'],['role','button']],
           [[8,'src',4]],[[(null as any),'error']],(_v,en,$event) => {
             var ad:boolean = true;
             var _co:any = _v.component;
@@ -57,7 +57,7 @@ function View_EditBlogComponent_3(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n                ']))],
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n                ']))],
       (null as any),(_ck,_v) => {
         var _co:any = _v.component;
         const currVal_0:any = i1.ɵinlineInterpolate(1,'',_co.blogimageSrc,'');
@@ -65,13 +65,13 @@ function View_EditBlogComponent_3(_l:any):i1.ɵViewDefinition {
       });
 }
 function View_EditBlogComponent_4(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),0,'img',[['class',
       'dummy'],['role','button'],['src','/assets/images/sports-social-user.png']],
       (null as any),(null as any),(null as any),(null as any),(null as any)))],(null as any),
       (null as any));
 }
 function View_EditBlogComponent_5(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),0,'img',[['class',
       'BloggerImage'],['role','button']],[[8,'src',4]],[[(null as any),'error']],(_v,
       en,$event) => {
     var ad:boolean = true;
@@ -88,15 +88,15 @@ function View_EditBlogComponent_5(_l:any):i1.ɵViewDefinition {
   });
 }
 function View_EditBlogComponent_6(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'p',[['contenteditable',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),0,'p',[['contenteditable',
       'true'],['placeholder','Click on tag button to add Keywords']],(null as any),
       (null as any),(null as any),(null as any),(null as any)))],(null as any),(null as any));
 }
 function View_EditBlogComponent_8(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),3,'span',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),3,'span',[['class',
       'key']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),[' \n                        ','\n                        '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['role','button'],['src',
+      (_l()(),i1.ɵted(1,(null as any),[' \n                        ','\n                        '])),
+      (_l()(),i1.ɵeld(2,0,(null as any),(null as any),0,'img',[['role','button'],['src',
           '/assets/images/sports-social-delete-keyword.png']],(null as any),[[(null as any),
           'click']],(_v,en,$event) => {
         var ad:boolean = true;
@@ -106,19 +106,19 @@ function View_EditBlogComponent_8(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n                    ']))],
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n                    ']))],
       (null as any),(_ck,_v) => {
         const currVal_0:any = _v.context.$implicit;
         _ck(_v,1,0,currVal_0);
       });
 }
 function View_EditBlogComponent_7(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),4,'p',([] as any[]),
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),4,'p',([] as any[]),
       (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i1.ɵted((null as any),['\n                    '])),(_l()(),i1.ɵand(16777216,
-      (null as any),(null as any),1,(null as any),View_EditBlogComponent_8)),i1.ɵdid(802816,
-      (null as any),0,i3.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,i1.IterableDiffers],
-      {ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n                ']))],
+      i1.ɵted(-1,(null as any),['\n                    '])),(_l()(),i1.ɵand(16777216,
+      (null as any),(null as any),1,(null as any),View_EditBlogComponent_8)),i1.ɵdid(3,
+      802816,(null as any),0,i3.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,i1.IterableDiffers],
+      {ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n                ']))],
       (_ck,_v) => {
         var _co:any = _v.component;
         const currVal_0:any = _co.keywordArray;
@@ -126,26 +126,27 @@ function View_EditBlogComponent_7(_l:any):i1.ɵViewDefinition {
       },(null as any));
 }
 function View_EditBlogComponent_9(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'div',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'div',[['class',
       'descAbove']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['Below the Line you will write the Content of Blog. You can also add Images,Youtube Video,Links']))],
+      (_l()(),i1.ɵted(-1,(null as any),['Below the Line you will write the Content of Blog. You can also add Images,Youtube Video,Links']))],
       (null as any),(null as any));
 }
 function View_EditBlogComponent_10(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),16,'div',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),16,'div',[['class',
       'keywordPopup']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          1,'label',([] as any[]),(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['Add Keywords:'])),(_l()(),
-          i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,[[11,0],['keys',1]],
-          (null as any),1,'div',[['class','keyword'],['contenteditable','true'],['placeholder',
-              'Separate keywords by Comma']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['',''])),(_l()(),
-          i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          7,'div',[['class','button']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),1,'button',([] as any[]),(null as any),[[(null as any),
-              'click']],(_v,en,$event) => {
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(2,0,(null as any),
+          (null as any),1,'label',([] as any[]),(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Add Keywords:'])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(5,0,[[11,0],['keys',
+          1]],(null as any),1,'div',[['class','keyword'],['contenteditable','true'],
+          ['placeholder','Separate keywords by Comma']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(6,(null as any),
+          ['',''])),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(8,
+          0,(null as any),(null as any),7,'div',[['class','button']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n        '])),(_l()(),i1.ɵeld(10,0,(null as any),(null as any),
+          1,'button',([] as any[]),(null as any),[[(null as any),'click']],(_v,en,
+              $event) => {
             var ad:boolean = true;
             var _co:any = _v.component;
             if (('click' === en)) {
@@ -153,8 +154,8 @@ function View_EditBlogComponent_10(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Add'])),
-      (_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,(null as any),
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Add'])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),i1.ɵeld(13,0,(null as any),
           (null as any),1,'button',([] as any[]),(null as any),[[(null as any),'click']],
           (_v,en,$event) => {
             var ad:boolean = true;
@@ -164,34 +165,34 @@ function View_EditBlogComponent_10(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Cancel'])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),['\n']))],
-      (null as any),(_ck,_v) => {
-        var _co:any = _v.component;
-        const currVal_0:any = _co.Keys;
-        _ck(_v,6,0,currVal_0);
-      });
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Cancel'])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n']))],(null as any),(_ck,_v) => {
+    var _co:any = _v.component;
+    const currVal_0:any = _co.Keys;
+    _ck(_v,6,0,currVal_0);
+  });
 }
 function View_EditBlogComponent_12(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'span',([] as any[]),
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'span',([] as any[]),
       (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i1.ɵted((null as any),['','']))],(null as any),(_ck,_v) => {
+      i1.ɵted(1,(null as any),['','']))],(null as any),(_ck,_v) => {
     var _co:any = _v.component;
     const currVal_0:any = _co.blogPreview.keywords[0];
     _ck(_v,1,0,currVal_0);
   });
 }
 function View_EditBlogComponent_13(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'span',([] as any[]),
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'span',([] as any[]),
       (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i1.ɵted((null as any),['','']))],(null as any),(_ck,_v) => {
+      i1.ɵted(1,(null as any),['','']))],(null as any),(_ck,_v) => {
     var _co:any = _v.component;
     const currVal_0:any = _co.blogPreview.readingTime;
     _ck(_v,1,0,currVal_0);
   });
 }
 function View_EditBlogComponent_14(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),0,'img',[['alt',
       'blogImage'],['class','previewBlogImage']],[[8,'title',0],[8,'src',4]],(null as any),
       (null as any),(null as any),(null as any)))],(null as any),(_ck,_v) => {
     var _co:any = _v.component;
@@ -201,7 +202,7 @@ function View_EditBlogComponent_14(_l:any):i1.ɵViewDefinition {
   });
 }
 function View_EditBlogComponent_15(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'p',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),0,'p',[['class',
       'previewHeading']],[[8,'innerHTML',1]],(null as any),(null as any),(null as any),
       (null as any)))],(null as any),(_ck,_v) => {
     var _co:any = _v.component;
@@ -210,9 +211,9 @@ function View_EditBlogComponent_15(_l:any):i1.ɵViewDefinition {
   });
 }
 function View_EditBlogComponent_16(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'p',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'p',[['class',
       'previewBlogShortDesc']],(null as any),(null as any),(null as any),(null as any),
-      (null as any))),(_l()(),i1.ɵted((null as any),['','']))],(null as any),(_ck,
+      (null as any))),(_l()(),i1.ɵted(1,(null as any),['','']))],(null as any),(_ck,
       _v) => {
     var _co:any = _v.component;
     const currVal_0:any = _co.blogPreview.metaDesc;
@@ -220,7 +221,7 @@ function View_EditBlogComponent_16(_l:any):i1.ɵViewDefinition {
   });
 }
 function View_EditBlogComponent_17(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),0,'img',[['class',
       'previewBloggerImage']],[[8,'src',4]],(null as any),(null as any),(null as any),
       (null as any)))],(null as any),(_ck,_v) => {
     var _co:any = _v.component;
@@ -230,19 +231,19 @@ function View_EditBlogComponent_17(_l:any):i1.ɵViewDefinition {
   });
 }
 function View_EditBlogComponent_18(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),3,'p',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),3,'p',[['class',
       'previewBloggerName']],(null as any),(null as any),(null as any),(null as any),
-      (null as any))),(_l()(),i1.ɵted((null as any),['Written by '])),(_l()(),i1.ɵeld(0,
-      (null as any),(null as any),1,'span',([] as any[]),(null as any),(null as any),
-      (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),[' ',
-      '']))],(null as any),(_ck,_v) => {
+      (null as any))),(_l()(),i1.ɵted(-1,(null as any),['Written by '])),(_l()(),i1.ɵeld(2,
+      0,(null as any),(null as any),1,'span',([] as any[]),(null as any),(null as any),
+      (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(3,(null as any),
+      [' ','']))],(null as any),(_ck,_v) => {
     var _co:any = _v.component;
     const currVal_0:any = _co.blogPreview.bloggerName;
     _ck(_v,3,0,currVal_0);
   });
 }
 function View_EditBlogComponent_19(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'p',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),0,'p',[['class',
       'prviewBlogContent']],[[8,'innerHTML',1]],(null as any),(null as any),(null as any),
       (null as any)))],(null as any),(_ck,_v) => {
     var _co:any = _v.component;
@@ -251,31 +252,31 @@ function View_EditBlogComponent_19(_l:any):i1.ɵViewDefinition {
   });
 }
 function View_EditBlogComponent_21(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'span',([] as any[]),
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'span',([] as any[]),
       (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i1.ɵted((null as any),['','']))],(null as any),(_ck,_v) => {
+      i1.ɵted(1,(null as any),['','']))],(null as any),(_ck,_v) => {
     const currVal_0:any = _v.context.$implicit;
     _ck(_v,1,0,currVal_0);
   });
 }
 function View_EditBlogComponent_20(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),4,(null as any),
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),4,(null as any),
       (null as any),(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['          \n              '])),(_l()(),i1.ɵand(16777216,
+      (_l()(),i1.ɵted(-1,(null as any),['          \n              '])),(_l()(),i1.ɵand(16777216,
           (null as any),(null as any),1,(null as any),View_EditBlogComponent_21)),
-      i1.ɵdid(802816,(null as any),0,i3.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
-          i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),
-          ['\n          ']))],(_ck,_v) => {
+      i1.ɵdid(3,802816,(null as any),0,i3.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
+          i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted(-1,
+          (null as any),['\n          ']))],(_ck,_v) => {
     var _co:any = _v.component;
     const currVal_0:any = _co.blogPreview.keywords;
     _ck(_v,3,0,currVal_0);
   },(null as any));
 }
 function View_EditBlogComponent_11(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),56,'div',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),56,'div',[['class',
       'preview']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          0,'img',[['class','close'],['role','button'],['src','/assets/images/sports-social-cancel-black.png']],
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(2,0,(null as any),
+          (null as any),0,'img',[['class','close'],['role','button'],['src','/assets/images/sports-social-cancel-black.png']],
           (null as any),[[(null as any),'click']],(_v,en,$event) => {
             var ad:boolean = true;
             var _co:any = _v.component;
@@ -284,85 +285,86 @@ function View_EditBlogComponent_11(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),10,'p',[['class','previewCatagory']],
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),
+      (_l()(),i1.ɵeld(4,0,(null as any),(null as any),10,'p',[['class','previewCatagory']],
           (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵand(16777216,(null as any),
-          (null as any),1,(null as any),View_EditBlogComponent_12)),i1.ɵdid(16384,
+      (_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),i1.ɵand(16777216,(null as any),
+          (null as any),1,(null as any),View_EditBlogComponent_12)),i1.ɵdid(7,16384,
           (null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
-          (null as any)),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),1,'span',([] as any[]),(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['|'])),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵand(16777216,
-          (null as any),(null as any),1,(null as any),View_EditBlogComponent_13)),
-      i1.ɵdid(16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),
-          i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          4,'div',[['class','previewBlogImageHolder']],(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
+          (null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),
+          i1.ɵeld(9,0,(null as any),(null as any),1,'span',([] as any[]),(null as any),
+              (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['|'])),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_EditBlogComponent_13)),
+      i1.ɵdid(13,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(16,0,(null as any),
+          (null as any),4,'div',[['class','previewBlogImageHolder']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n        '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),
+          1,(null as any),View_EditBlogComponent_14)),i1.ɵdid(19,16384,(null as any),
+          0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n    '])),(_l()(),i1.ɵeld(22,0,(null as any),(null as any),33,'div',[['class',
+          'previewBlogInfo']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),
+          i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_EditBlogComponent_15)),
+      i1.ɵdid(25,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_EditBlogComponent_16)),
+      i1.ɵdid(28,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n        \n        '])),
+      (_l()(),i1.ɵeld(30,0,(null as any),(null as any),4,'div',[['class','previewBloggerImageHolder']],
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['\n          '])),(_l()(),i1.ɵand(16777216,
+          (null as any),(null as any),1,(null as any),View_EditBlogComponent_17)),
+      i1.ɵdid(33,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),i1.ɵeld(36,0,(null as any),
+          (null as any),4,'div',[['class','previewBlogger']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n          '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),
+          1,(null as any),View_EditBlogComponent_18)),i1.ɵdid(39,16384,(null as any),
+          0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),
+      (_l()(),i1.ɵted(-1,(null as any),['  \n        '])),(_l()(),i1.ɵted(-1,(null as any),
           ['\n        '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,
-          (null as any),View_EditBlogComponent_14)),i1.ɵdid(16384,(null as any),0,
-          i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),33,'div',[['class','previewBlogInfo']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵand(16777216,(null as any),
-          (null as any),1,(null as any),View_EditBlogComponent_15)),i1.ɵdid(16384,
-          (null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
-          (null as any)),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵand(16777216,
-          (null as any),(null as any),1,(null as any),View_EditBlogComponent_16)),
-      i1.ɵdid(16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n        \n        '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),4,'div',[['class','previewBloggerImageHolder']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n          '])),(_l()(),i1.ɵand(16777216,(null as any),
-          (null as any),1,(null as any),View_EditBlogComponent_17)),i1.ɵdid(16384,
-          (null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
-          (null as any)),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵted((null as any),
-          ['\n        '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),4,'div',[['class',
-          'previewBlogger']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n          '])),(_l()(),
-          i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_EditBlogComponent_18)),
-      i1.ɵdid(16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['  \n        '])),
-      (_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵand(16777216,(null as any),
-          (null as any),1,(null as any),View_EditBlogComponent_19)),i1.ɵdid(16384,
-          (null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
-          (null as any)),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),9,'div',[['class','previewTags']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n          '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),3,'div',
+          (null as any),View_EditBlogComponent_19)),i1.ɵdid(43,16384,(null as any),
+          0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),
+      (_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),i1.ɵeld(45,0,(null as any),
+          (null as any),9,'div',[['class','previewTags']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n          '])),(_l()(),i1.ɵeld(47,0,(null as any),(null as any),3,'div',
           [['class','previewTagIconHolder']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n            '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt','sports-social-tag'],
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n            '])),
+      (_l()(),i1.ɵeld(49,0,(null as any),(null as any),0,'img',[['alt','sports-social-tag'],
           ['src','/assets/images/sports-social-tag.png']],(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n          '])),(_l()(),i1.ɵted((null as any),['\n          '])),(_l()(),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n          '])),(_l()(),i1.ɵted(-1,(null as any),['\n          '])),(_l()(),
           i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_EditBlogComponent_20)),
-      i1.ɵdid(16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n            \n        '])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),['   \n']))],
-      (_ck,_v) => {
-        var _co:any = _v.component;
-        const currVal_0:any = _co.blogPreview;
-        _ck(_v,7,0,currVal_0);
-        const currVal_1:any = _co.blogPreview;
-        _ck(_v,13,0,currVal_1);
-        const currVal_2:any = _co.blogPreview;
-        _ck(_v,19,0,currVal_2);
-        const currVal_3:any = _co.blogPreview;
-        _ck(_v,25,0,currVal_3);
-        const currVal_4:any = _co.blogPreview;
-        _ck(_v,28,0,currVal_4);
-        const currVal_5:any = _co.blogPreview;
-        _ck(_v,33,0,currVal_5);
-        const currVal_6:any = _co.blogPreview;
-        _ck(_v,39,0,currVal_6);
-        const currVal_7:any = _co.blogPreview;
-        _ck(_v,43,0,currVal_7);
-        const currVal_8:any = _co.blogPreview;
-        _ck(_v,53,0,currVal_8);
-      },(null as any));
+      i1.ɵdid(53,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n            \n        '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['   \n']))],(_ck,_v) => {
+    var _co:any = _v.component;
+    const currVal_0:any = _co.blogPreview;
+    _ck(_v,7,0,currVal_0);
+    const currVal_1:any = _co.blogPreview;
+    _ck(_v,13,0,currVal_1);
+    const currVal_2:any = _co.blogPreview;
+    _ck(_v,19,0,currVal_2);
+    const currVal_3:any = _co.blogPreview;
+    _ck(_v,25,0,currVal_3);
+    const currVal_4:any = _co.blogPreview;
+    _ck(_v,28,0,currVal_4);
+    const currVal_5:any = _co.blogPreview;
+    _ck(_v,33,0,currVal_5);
+    const currVal_6:any = _co.blogPreview;
+    _ck(_v,39,0,currVal_6);
+    const currVal_7:any = _co.blogPreview;
+    _ck(_v,43,0,currVal_7);
+    const currVal_8:any = _co.blogPreview;
+    _ck(_v,53,0,currVal_8);
+  },(null as any));
 }
 export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[i1.ɵqud(402653184,1,{title:0}),i1.ɵqud(402653184,2,{desc:0}),i1.ɵqud(402653184,
@@ -372,28 +374,28 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
       i1.ɵqud(671088640,11,{keys:0}),i1.ɵqud(402653184,12,{Text:0}),i1.ɵqud(402653184,
           13,{editorPanel:0}),i1.ɵqud(402653184,14,{panel:0}),i1.ɵqud(402653184,15,
           {linkpopup:0}),i1.ɵqud(402653184,16,{youtubeLinkPopup:0}),i1.ɵqud(402653184,
-          17,{pluginLinkPopup:0}),(_l()(),i1.ɵeld(0,[[13,0],['editorPanel',1]],(null as any),
-          178,'div',[['class','editorPanel']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),
-          i1.ɵeld(0,(null as any),(null as any),111,'div',[['class','toolbar']],(null as any),
-              (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),43,'div',([] as any[]),
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n      '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),0,'img',[['alt',''],['class','not-selected'],['role','button'],
-              ['src','/assets/images/sports-social-undo.png'],['title','undo']],(null as any),
-          [[(null as any),'click']],(_v,en,$event) => {
-            var ad:boolean = true;
-            var _co:i4.EditBlogComponent = _v.component;
-            if (('click' === en)) {
-              const pd_0:any = ((<any>_co.undo($event)) !== false);
-              ad = (pd_0 && ad);
-            }
-            return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      \n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-redo.png'],['title',
-              'redo']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
+          17,{pluginLinkPopup:0}),(_l()(),i1.ɵeld(17,0,[[13,0],['editorPanel',1]],
+          (null as any),178,'div',[['class','editorPanel']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n  '])),(_l()(),i1.ɵeld(19,0,(null as any),(null as any),111,'div',[['class',
+          'toolbar']],(null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(21,0,(null as any),
+          (null as any),43,'div',([] as any[]),(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵeld(23,0,(null as any),(null as any),0,'img',[['alt',''],['class',
+          'not-selected'],['role','button'],['src','/assets/images/sports-social-undo.png'],
+          ['title','undo']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
+        var ad:boolean = true;
+        var _co:i4.EditBlogComponent = _v.component;
+        if (('click' === en)) {
+          const pd_0:any = ((<any>_co.undo($event)) !== false);
+          ad = (pd_0 && ad);
+        }
+        return ad;
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),
+      (_l()(),i1.ɵeld(25,0,(null as any),(null as any),0,'img',[['alt',''],['class',
+          'not-selected'],['role','button'],['src','/assets/images/sports-social-redo.png'],
+          ['title','redo']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
         var ad:boolean = true;
         var _co:i4.EditBlogComponent = _v.component;
         if (('click' === en)) {
@@ -401,10 +403,10 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      \n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-bold.png'],['title',
-              'Bold']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),
+      (_l()(),i1.ɵeld(27,0,(null as any),(null as any),0,'img',[['alt',''],['class',
+          'not-selected'],['role','button'],['src','/assets/images/sports-social-bold.png'],
+          ['title','Bold']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
         var ad:boolean = true;
         var _co:i4.EditBlogComponent = _v.component;
         if (('click' === en)) {
@@ -412,10 +414,10 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      \n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-italic.png'],['title',
-              'Italic']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),
+      (_l()(),i1.ɵeld(29,0,(null as any),(null as any),0,'img',[['alt',''],['class',
+          'not-selected'],['role','button'],['src','/assets/images/sports-social-italic.png'],
+          ['title','Italic']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
         var ad:boolean = true;
         var _co:i4.EditBlogComponent = _v.component;
         if (('click' === en)) {
@@ -423,9 +425,9 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      \n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-align-left.png'],
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),
+      (_l()(),i1.ɵeld(31,0,(null as any),(null as any),0,'img',[['alt',''],['class',
+          'not-selected'],['role','button'],['src','/assets/images/sports-social-align-left.png'],
           ['title','left-align']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
         var ad:boolean = true;
         var _co:i4.EditBlogComponent = _v.component;
@@ -434,9 +436,9 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      \n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-align-center.png'],
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),
+      (_l()(),i1.ɵeld(33,0,(null as any),(null as any),0,'img',[['alt',''],['class',
+          'not-selected'],['role','button'],['src','/assets/images/sports-social-align-center.png'],
           ['title','center-align']],(null as any),[[(null as any),'click']],(_v,en,
           $event) => {
         var ad:boolean = true;
@@ -446,9 +448,9 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      \n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-align-right.png'],
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),
+      (_l()(),i1.ɵeld(35,0,(null as any),(null as any),0,'img',[['alt',''],['class',
+          'not-selected'],['role','button'],['src','/assets/images/sports-social-align-right.png'],
           ['title','right-align']],(null as any),[[(null as any),'click']],(_v,en,
           $event) => {
         var ad:boolean = true;
@@ -458,9 +460,9 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      \n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-text-justify.png'],
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),
+      (_l()(),i1.ɵeld(37,0,(null as any),(null as any),0,'img',[['alt',''],['class',
+          'not-selected'],['role','button'],['src','/assets/images/sports-social-text-justify.png'],
           ['title','justify']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
         var ad:boolean = true;
         var _co:i4.EditBlogComponent = _v.component;
@@ -469,10 +471,10 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      \n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-underline.png'],['title',
-              'underline']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),
+      (_l()(),i1.ɵeld(39,0,(null as any),(null as any),0,'img',[['alt',''],['class',
+          'not-selected'],['role','button'],['src','/assets/images/sports-social-underline.png'],
+          ['title','underline']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
         var ad:boolean = true;
         var _co:i4.EditBlogComponent = _v.component;
         if (('click' === en)) {
@@ -480,9 +482,9 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      \n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-list-with-dots.png'],
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),
+      (_l()(),i1.ɵeld(41,0,(null as any),(null as any),0,'img',[['alt',''],['class',
+          'not-selected'],['role','button'],['src','/assets/images/sports-social-list-with-dots.png'],
           ['title','List with dosts']],(null as any),[[(null as any),'click']],(_v,
           en,$event) => {
         var ad:boolean = true;
@@ -492,9 +494,9 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      \n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-list-with-numbers.png'],
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),
+      (_l()(),i1.ɵeld(43,0,(null as any),(null as any),0,'img',[['alt',''],['class',
+          'not-selected'],['role','button'],['src','/assets/images/sports-social-list-with-numbers.png'],
           ['title','List with number']],(null as any),[[(null as any),'click']],(_v,
           en,$event) => {
         var ad:boolean = true;
@@ -504,14 +506,14 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      \n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),5,'label',[['class','file']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n          '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',
-          [['alt',''],['role','button'],['src','/assets/images/sports-social-text-color.png'],
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),
+      (_l()(),i1.ɵeld(45,0,(null as any),(null as any),5,'label',[['class','file']],
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['\n          '])),(_l()(),i1.ɵeld(47,0,(null as any),
+          (null as any),0,'img',[['alt',''],['role','button'],['src','/assets/images/sports-social-text-color.png'],
               ['title','Text Color']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n          '])),(_l()(),
-          i1.ɵeld(0,(null as any),(null as any),0,'input',[['id','textcolor'],['name',
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n          '])),(_l()(),
+          i1.ɵeld(49,0,(null as any),(null as any),0,'input',[['id','textcolor'],['name',
               'textcolor'],['type','color']],(null as any),[[(null as any),'change']],
               (_v,en,$event) => {
                 var ad:boolean = true;
@@ -521,28 +523,28 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
                   ad = (pd_0 && ad);
                 }
                 return ad;
-              },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵted((null as any),['\n      \n      '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),5,'label',[['class','file']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n          '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['multiple',
-          ''],['role','button'],['src','/assets/images/sports-social-background-color.png'],
-          ['title','Background Color']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n          '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'input',[['id','bcolor'],['name',
-          'bcolor'],['type','color']],(null as any),[[(null as any),'change']],(_v,
-          en,$event) => {
-        var ad:boolean = true;
-        var _co:i4.EditBlogComponent = _v.component;
-        if (('change' === en)) {
-          const pd_0:any = ((<any>_co.selectBackgroundColor($event)) !== false);
-          ad = (pd_0 && ad);
-        }
-        return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵted((null as any),['\n      \n      '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),4,'select',([] as any[]),[[8,'value',0]],[[(null as any),'change']],
+              },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),(_l()(),i1.ɵeld(52,0,
+          (null as any),(null as any),5,'label',[['class','file']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n          '])),(_l()(),i1.ɵeld(54,0,(null as any),(null as any),0,'img',
+          [['alt',''],['multiple',''],['role','button'],['src','/assets/images/sports-social-background-color.png'],
+              ['title','Background Color']],(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n          '])),
+      (_l()(),i1.ɵeld(56,0,(null as any),(null as any),0,'input',[['id','bcolor'],
+          ['name','bcolor'],['type','color']],(null as any),[[(null as any),'change']],
           (_v,en,$event) => {
+            var ad:boolean = true;
+            var _co:i4.EditBlogComponent = _v.component;
+            if (('change' === en)) {
+              const pd_0:any = ((<any>_co.selectBackgroundColor($event)) !== false);
+              ad = (pd_0 && ad);
+            }
+            return ad;
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),(_l()(),i1.ɵeld(59,0,
+          (null as any),(null as any),4,'select',([] as any[]),[[8,'value',0]],[[(null as any),
+              'change']],(_v,en,$event) => {
             var ad:boolean = true;
             var _co:i4.EditBlogComponent = _v.component;
             if (('change' === en)) {
@@ -550,63 +552,66 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n          '])),
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n          '])),
       (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_EditBlogComponent_1)),
-      i1.ɵdid(802816,(null as any),0,i3.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
-          i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),
-          ['\n      '])),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),
-          ['  \n    \n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),63,'div',
-          ([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n      \n      '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),3,'label',[['class','file']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-indent.png'],['title',
-              'indent']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
-        var ad:boolean = true;
-        var _co:i4.EditBlogComponent = _v.component;
-        if (('click' === en)) {
-          const pd_0:any = ((<any>_co.indent($event)) !== false);
-          ad = (pd_0 && ad);
-        }
-        return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵted((null as any),['\n      \n      '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),3,'label',[['class','file']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-outdent.png'],['title',
-              ' outdent']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
-        var ad:boolean = true;
-        var _co:i4.EditBlogComponent = _v.component;
-        if (('click' === en)) {
-          const pd_0:any = ((<any>_co.outdent($event)) !== false);
-          ad = (pd_0 && ad);
-        }
-        return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵted((null as any),['\n      \n      '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),3,'label',[['class','file']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n         '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-paragraph.png'],['title',
-              'Paragraph']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
-        var ad:boolean = true;
-        var _co:i4.EditBlogComponent = _v.component;
-        if (('click' === en)) {
-          const pd_0:any = ((<any>_co.addParagraph($event)) !== false);
-          ad = (pd_0 && ad);
-        }
-        return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n       '])),
-      (_l()(),i1.ɵted((null as any),['\n      \n      '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),5,'label',[['class','file']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-picture.png'],['title',
-              'Add Image']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),0,'input',[['accept','image/jpeg, image/png'],
+      i1.ɵdid(62,802816,(null as any),0,i3.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
+          i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted(-1,
+          (null as any),['\n      '])),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),
+      (_l()(),i1.ɵted(-1,(null as any),['  \n    \n    '])),(_l()(),i1.ɵeld(66,0,(null as any),
+          (null as any),63,'div',([] as any[]),(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),
+      (_l()(),i1.ɵeld(68,0,(null as any),(null as any),3,'label',[['class','file']],
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),i1.ɵeld(70,0,(null as any),
+          (null as any),0,'img',[['alt',''],['class','not-selected'],['role','button'],
+              ['src','/assets/images/sports-social-indent.png'],['title','indent']],
+          (null as any),[[(null as any),'click']],(_v,en,$event) => {
+            var ad:boolean = true;
+            var _co:i4.EditBlogComponent = _v.component;
+            if (('click' === en)) {
+              const pd_0:any = ((<any>_co.indent($event)) !== false);
+              ad = (pd_0 && ad);
+            }
+            return ad;
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),(_l()(),i1.ɵeld(73,0,
+          (null as any),(null as any),3,'label',[['class','file']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n        '])),(_l()(),i1.ɵeld(75,0,(null as any),(null as any),0,'img',
+          [['alt',''],['class','not-selected'],['role','button'],['src','/assets/images/sports-social-outdent.png'],
+              ['title',' outdent']],(null as any),[[(null as any),'click']],(_v,en,
+              $event) => {
+            var ad:boolean = true;
+            var _co:i4.EditBlogComponent = _v.component;
+            if (('click' === en)) {
+              const pd_0:any = ((<any>_co.outdent($event)) !== false);
+              ad = (pd_0 && ad);
+            }
+            return ad;
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),(_l()(),i1.ɵeld(78,0,
+          (null as any),(null as any),3,'label',[['class','file']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n         '])),(_l()(),i1.ɵeld(80,0,(null as any),(null as any),0,'img',
+          [['alt',''],['class','not-selected'],['role','button'],['src','/assets/images/sports-social-paragraph.png'],
+              ['title','Paragraph']],(null as any),[[(null as any),'click']],(_v,en,
+              $event) => {
+            var ad:boolean = true;
+            var _co:i4.EditBlogComponent = _v.component;
+            if (('click' === en)) {
+              const pd_0:any = ((<any>_co.addParagraph($event)) !== false);
+              ad = (pd_0 && ad);
+            }
+            return ad;
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n       '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),(_l()(),i1.ɵeld(83,0,
+          (null as any),(null as any),5,'label',[['class','file']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n        '])),(_l()(),i1.ɵeld(85,0,(null as any),(null as any),0,'img',
+          [['alt',''],['class','not-selected'],['role','button'],['src','/assets/images/sports-social-picture.png'],
+              ['title','Add Image']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),
+          i1.ɵeld(87,0,(null as any),(null as any),0,'input',[['accept','image/jpeg, image/png'],
               ['id','image'],['name','image'],['type','file']],(null as any),[[(null as any),
               'change']],(_v,en,$event) => {
             var ad:boolean = true;
@@ -616,32 +621,33 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵted((null as any),['\n      \n     '])),(_l()(),i1.ɵted((null as any),
-          ['\n      \n      '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),3,'label',
-          [['class','file']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),0,'img',[['class','not-selected'],['role','button'],
-              ['src','/assets/images/sports-social-youtube-video.png'],['title','Add Youtube Video']],
-          (null as any),[[(null as any),'click']],(_v,en,$event) => {
-            var ad:boolean = true;
-            var _co:i4.EditBlogComponent = _v.component;
-            if (('click' === en)) {
-              const pd_0:any = ((<any>_co.addYoutubevideo()) !== false);
-              ad = (pd_0 && ad);
-            }
-            return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵted((null as any),['\n      \n      '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),5,'label',[['class','file']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n          '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['multiple',''],['role','button'],['src','/assets/images/sports-social-gif.png'],
-          ['title','Add Gif']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n          '])),(_l()(),
-          i1.ɵeld(0,(null as any),(null as any),0,'input',[['accept','image/gif image/webp'],
-              ['id','video'],['name','video'],['type','file']],(null as any),[[(null as any),
-              'change']],(_v,en,$event) => {
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n      \n     '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n      \n      '])),(_l()(),i1.ɵeld(91,0,(null as any),(null as any),
+          3,'label',[['class','file']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),
+          i1.ɵeld(93,0,(null as any),(null as any),0,'img',[['class','not-selected'],
+              ['role','button'],['src','/assets/images/sports-social-youtube-video.png'],
+              ['title','Add Youtube Video']],(null as any),[[(null as any),'click']],
+              (_v,en,$event) => {
+                var ad:boolean = true;
+                var _co:i4.EditBlogComponent = _v.component;
+                if (('click' === en)) {
+                  const pd_0:any = ((<any>_co.addYoutubevideo()) !== false);
+                  ad = (pd_0 && ad);
+                }
+                return ad;
+              },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),(_l()(),i1.ɵeld(96,0,
+          (null as any),(null as any),5,'label',[['class','file']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n          '])),(_l()(),i1.ɵeld(98,0,(null as any),(null as any),0,'img',
+          [['alt',''],['class','not-selected'],['multiple',''],['role','button'],['src',
+              '/assets/images/sports-social-gif.png'],['title','Add Gif']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n          '])),(_l()(),i1.ɵeld(100,0,(null as any),(null as any),
+          0,'input',[['accept','image/gif image/webp'],['id','video'],['name','video'],
+              ['type','file']],(null as any),[[(null as any),'change']],(_v,en,$event) => {
             var ad:boolean = true;
             var _co:i4.EditBlogComponent = _v.component;
             if (('change' === en)) {
@@ -649,72 +655,74 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵted((null as any),['\n      \n      '])),(_l()(),i1.ɵeld(0,(null as any),
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),(_l()(),i1.ɵeld(103,
+          0,(null as any),(null as any),3,'label',[['class','file']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n          '])),(_l()(),i1.ɵeld(105,0,(null as any),(null as any),
+          0,'img',[['alt',''],['class','not-selected'],['role','button'],['src','/assets/images/sports-social-link.png'],
+              ['title','Add Link']],(null as any),[[(null as any),'click']],(_v,en,
+              $event) => {
+            var ad:boolean = true;
+            var _co:i4.EditBlogComponent = _v.component;
+            if (('click' === en)) {
+              const pd_0:any = ((<any>_co.addLink($event)) !== false);
+              ad = (pd_0 && ad);
+            }
+            return ad;
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n      \n     '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n      \n     '])),(_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),
+      (_l()(),i1.ɵeld(110,0,(null as any),(null as any),3,'label',[['class','file']],
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),i1.ɵeld(112,0,(null as any),
+          (null as any),0,'img',[['alt',''],['class','not-selected'],['role','button'],
+              ['src','/assets/images/sports-social-remove-css.png'],['title','Remove Style']],
+          (null as any),[[(null as any),'click']],(_v,en,$event) => {
+            var ad:boolean = true;
+            var _co:i4.EditBlogComponent = _v.component;
+            if (('click' === en)) {
+              const pd_0:any = ((<any>_co.removeCss($event)) !== false);
+              ad = (pd_0 && ad);
+            }
+            return ad;
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),(_l()(),i1.ɵeld(115,
+          0,(null as any),(null as any),3,'label',[['class','file']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n        '])),(_l()(),i1.ɵeld(117,0,(null as any),(null as any),
+          0,'img',[['alt',''],['class','not-selected'],['role','button'],['src','/assets/images/sports-social-subscript.png'],
+              ['title','Subscript']],(null as any),[[(null as any),'click']],(_v,en,
+              $event) => {
+            var ad:boolean = true;
+            var _co:i4.EditBlogComponent = _v.component;
+            if (('click' === en)) {
+              const pd_0:any = ((<any>_co.subscript($event)) !== false);
+              ad = (pd_0 && ad);
+            }
+            return ad;
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n      \n      '])),(_l()(),i1.ɵeld(120,
+          0,(null as any),(null as any),3,'label',[['class','file']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n        '])),(_l()(),i1.ɵeld(122,0,(null as any),(null as any),
+          0,'img',[['alt',''],['class','not-selected'],['role','button'],['src','/assets/images/sports-social-superscript.png'],
+              ['title','Superscript']],(null as any),[[(null as any),'click']],(_v,
+              en,$event) => {
+            var ad:boolean = true;
+            var _co:i4.EditBlogComponent = _v.component;
+            if (('click' === en)) {
+              const pd_0:any = ((<any>_co.superscript($event)) !== false);
+              ad = (pd_0 && ad);
+            }
+            return ad;
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n      '])),(_l()(),i1.ɵeld(125,0,(null as any),
           (null as any),3,'label',[['class','file']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n          '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-link.png'],['title',
-              'Add Link']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
-        var ad:boolean = true;
-        var _co:i4.EditBlogComponent = _v.component;
-        if (('click' === en)) {
-          const pd_0:any = ((<any>_co.addLink($event)) !== false);
-          ad = (pd_0 && ad);
-        }
-        return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵted((null as any),['\n      \n     '])),(_l()(),i1.ɵted((null as any),
-          ['\n      \n     '])),(_l()(),i1.ɵted((null as any),['\n      \n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),3,'label',[['class','file']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n        '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',
-          ''],['class','not-selected'],['role','button'],['src','/assets/images/sports-social-remove-css.png'],
-          ['title','Remove Style']],(null as any),[[(null as any),'click']],(_v,en,
-          $event) => {
-        var ad:boolean = true;
-        var _co:i4.EditBlogComponent = _v.component;
-        if (('click' === en)) {
-          const pd_0:any = ((<any>_co.removeCss($event)) !== false);
-          ad = (pd_0 && ad);
-        }
-        return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵted((null as any),['\n      \n      '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),3,'label',[['class','file']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-subscript.png'],['title',
-              'Subscript']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
-        var ad:boolean = true;
-        var _co:i4.EditBlogComponent = _v.component;
-        if (('click' === en)) {
-          const pd_0:any = ((<any>_co.subscript($event)) !== false);
-          ad = (pd_0 && ad);
-        }
-        return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵted((null as any),['\n      \n      '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),3,'label',[['class','file']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-superscript.png'],
-          ['title','Superscript']],(null as any),[[(null as any),'click']],(_v,en,
-          $event) => {
-        var ad:boolean = true;
-        var _co:i4.EditBlogComponent = _v.component;
-        if (('click' === en)) {
-          const pd_0:any = ((<any>_co.superscript($event)) !== false);
-          ad = (pd_0 && ad);
-        }
-        return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵted((null as any),['\n      '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),3,'label',[['class','file']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',''],['class','not-selected'],
-          ['role','button'],['src','/assets/images/sports-social-quote.png'],['title',
-              'Quote']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵeld(127,0,(null as any),(null as any),0,'img',[['alt',''],['class',
+          'not-selected'],['role','button'],['src','/assets/images/sports-social-quote.png'],
+          ['title','Quote']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
         var ad:boolean = true;
         var _co:i4.EditBlogComponent = _v.component;
         if (('click' === en)) {
@@ -722,24 +730,24 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          62,'div',[['class','panel-wrapper']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),
-      (_l()(),i1.ɵeld(0,[[14,0],['panel',1]],(null as any),53,'div',[['class','panel']],
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n    '])),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(132,
+          0,(null as any),(null as any),62,'div',[['class','panel-wrapper']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n        '])),(_l()(),i1.ɵeld(134,0,[[14,0],['panel',1]],
+          (null as any),53,'div',[['class','panel']],(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),[' \n            '])),
+      (_l()(),i1.ɵeld(136,0,(null as any),(null as any),9,'label',[['class','file blog']],
           (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),[' \n            '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),9,'label',[['class','file blog']],(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n                '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),
-          1,(null as any),View_EditBlogComponent_2)),i1.ɵdid(16384,(null as any),0,
-          i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),
-      (_l()(),i1.ɵted((null as any),['\n                '])),(_l()(),i1.ɵand(16777216,
-          (null as any),(null as any),1,(null as any),View_EditBlogComponent_3)),i1.ɵdid(16384,
-          (null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
-          (null as any)),(_l()(),i1.ɵted((null as any),['                \n                '])),
-      (_l()(),i1.ɵeld(0,[[3,0],['BlogImage',1]],(null as any),0,'input',[['accept',
+      (_l()(),i1.ɵted(-1,(null as any),['\n                '])),(_l()(),i1.ɵand(16777216,
+          (null as any),(null as any),1,(null as any),View_EditBlogComponent_2)),i1.ɵdid(139,
+          16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
+              'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n                '])),
+      (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_EditBlogComponent_3)),
+      i1.ɵdid(142,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['                \n                '])),
+      (_l()(),i1.ɵeld(144,0,[[3,0],['BlogImage',1]],(null as any),0,'input',[['accept',
           'image/*'],['id','blogImage'],['name','blogImage'],['type','file']],(null as any),
           [[(null as any),'change']],(_v,en,$event) => {
             var ad:boolean = true;
@@ -749,18 +757,19 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n            '])),
-      (_l()(),i1.ɵted((null as any),['\n            '])),(_l()(),i1.ɵeld(0,[[5,0],
-          ['blogImageDesc',1]],(null as any),0,'div',[['class','imageDesc'],['contenteditable',
-          'true'],['placeholder','Describe your Image']],(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['   \n            '])),(_l()(),i1.ɵeld(0,[[1,0],['title',1]],(null as any),
-          0,'div',[['class','title'],['contenteditable','true'],['placeholder','Hii Buddy, Your Title Goes Here']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n            '])),(_l()(),i1.ɵeld(0,[[6,0],
-          ['shortDesc',1]],(null as any),0,'div',[['class','shortDesc'],['contenteditable',
-          'true'],['placeholder','Add short description, max 140 Characters are allowed']],
-          (null as any),[[(null as any),'keyup']],(_v,en,$event) => {
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n            '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n            '])),(_l()(),i1.ɵeld(147,0,
+          [[5,0],['blogImageDesc',1]],(null as any),0,'div',[['class','imageDesc'],
+              ['contenteditable','true'],['placeholder','Describe your Image']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['   \n            '])),(_l()(),i1.ɵeld(149,0,[[1,0],['title',
+          1]],(null as any),0,'div',[['class','title'],['contenteditable','true'],
+          ['placeholder','Hii Buddy, Your Title Goes Here']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n            '])),(_l()(),i1.ɵeld(151,0,[[6,0],['shortDesc',1]],(null as any),
+          0,'div',[['class','shortDesc'],['contenteditable','true'],['placeholder',
+              'Add short description, max 140 Characters are allowed']],(null as any),
+          [[(null as any),'keyup']],(_v,en,$event) => {
             var ad:boolean = true;
             var _co:i4.EditBlogComponent = _v.component;
             if (('keyup' === en)) {
@@ -768,22 +777,23 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n            '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),1,'div',[['class','charCount']],
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n            '])),
+      (_l()(),i1.ɵeld(153,0,(null as any),(null as any),1,'div',[['class','charCount']],
           (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['','/140'])),(_l()(),i1.ɵted((null as any),['\n            '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),14,'div',[['class','blogger']],
+      (_l()(),i1.ɵted(154,(null as any),['','/140'])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n            '])),(_l()(),i1.ɵeld(156,0,(null as any),(null as any),14,
+          'div',[['class','blogger']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n                '])),
+      (_l()(),i1.ɵeld(158,0,(null as any),(null as any),9,'label',[['class','file']],
           (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n                '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),9,'label',[['class','file']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n                    '])),
-      (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_EditBlogComponent_4)),
-      i1.ɵdid(16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n                    '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n                    '])),(_l()(),i1.ɵand(16777216,
+          (null as any),(null as any),1,(null as any),View_EditBlogComponent_4)),i1.ɵdid(161,
+          16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
+              'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n                    '])),
       (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_EditBlogComponent_5)),
-      i1.ɵdid(16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n                    '])),
-      (_l()(),i1.ɵeld(0,[[4,0],['BloggerImage',1]],(null as any),0,'input',[['accept',
+      i1.ɵdid(164,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n                    '])),
+      (_l()(),i1.ɵeld(166,0,[[4,0],['BloggerImage',1]],(null as any),0,'input',[['accept',
           'image/*'],['id','bloggerImage'],['name','bloggerImage'],['type','file']],
           (null as any),[[(null as any),'change']],(_v,en,$event) => {
             var ad:boolean = true;
@@ -793,18 +803,18 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n                '])),
-      (_l()(),i1.ɵted((null as any),['\n            '])),(_l()(),i1.ɵeld(0,[[7,0],
-          ['BloggerName',1]],(null as any),0,'div',[['class','bloggerName'],['contenteditable',
-          'true'],['placeholder','What\'s your name??']],(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n            '])),(_l()(),i1.ɵted((null as any),['\n            '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),9,'div',[['class','keywords']],
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n                '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n            '])),(_l()(),i1.ɵeld(169,0,
+          [[7,0],['BloggerName',1]],(null as any),0,'div',[['class','bloggerName'],
+              ['contenteditable','true'],['placeholder','What\'s your name??']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n            '])),(_l()(),i1.ɵted(-1,(null as any),['\n            '])),
+      (_l()(),i1.ɵeld(172,0,(null as any),(null as any),9,'div',[['class','keywords']],
           (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n                '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),0,'img',[['class','not-selected'],['role','button'],['src',
-              '/assets/images/sports-social-tags.png']],(null as any),[[(null as any),
-              'click']],(_v,en,$event) => {
+      (_l()(),i1.ɵted(-1,(null as any),['\n                '])),(_l()(),i1.ɵeld(174,
+          0,(null as any),(null as any),0,'img',[['class','not-selected'],['role',
+              'button'],['src','/assets/images/sports-social-tags.png']],(null as any),
+          [[(null as any),'click']],(_v,en,$event) => {
             var ad:boolean = true;
             var _co:i4.EditBlogComponent = _v.component;
             if (('click' === en)) {
@@ -812,28 +822,29 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n                '])),
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n                '])),
       (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_EditBlogComponent_6)),
-      i1.ɵdid(16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n                '])),
+      i1.ɵdid(177,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n                '])),
       (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_EditBlogComponent_7)),
-      i1.ɵdid(16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n            '])),
-      (_l()(),i1.ɵted((null as any),['\n            '])),(_l()(),i1.ɵand(16777216,
-          (null as any),(null as any),1,(null as any),View_EditBlogComponent_9)),i1.ɵdid(16384,
-          (null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
-          (null as any)),(_l()(),i1.ɵted((null as any),[' \n            '])),(_l()(),
-          i1.ɵeld(0,[[2,0],['desc',1]],(null as any),0,'div',[['class','desc'],['contenteditable',
-              'true']],(null as any),[[(null as any),'keyup']],(_v,en,$event) => {
-            var ad:boolean = true;
-            var _co:i4.EditBlogComponent = _v.component;
-            if (('keyup' === en)) {
-              const pd_0:any = ((<any>_co.startDesc()) !== false);
-              ad = (pd_0 && ad);
-            }
-            return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),[' \n        '])),
-      (_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,[['panelButton',
+      i1.ɵdid(180,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n            '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n            '])),(_l()(),i1.ɵand(16777216,
+          (null as any),(null as any),1,(null as any),View_EditBlogComponent_9)),i1.ɵdid(184,
+          16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
+              'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),[' \n            '])),
+      (_l()(),i1.ɵeld(186,0,[[2,0],['desc',1]],(null as any),0,'div',[['class','desc'],
+          ['contenteditable','true']],(null as any),[[(null as any),'keyup']],(_v,
+          en,$event) => {
+        var ad:boolean = true;
+        var _co:i4.EditBlogComponent = _v.component;
+        if (('keyup' === en)) {
+          const pd_0:any = ((<any>_co.startDesc()) !== false);
+          ad = (pd_0 && ad);
+        }
+        return ad;
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),[' \n        '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),i1.ɵeld(189,0,[['panelButton',
           1]],(null as any),1,'button',[['class','panelButton']],[[8,'disabled',0]],
           [[(null as any),'click']],(_v,en,$event) => {
             var ad:boolean = true;
@@ -843,8 +854,8 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Update'])),
-      (_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,(null as any),
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Update'])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),i1.ɵeld(192,0,(null as any),
           (null as any),1,'button',[['class','panelButton']],(null as any),[[(null as any),
               'click']],(_v,en,$event) => {
             var ad:boolean = true;
@@ -854,20 +865,21 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Preview '])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),['\n'])),
-      (_l()(),i1.ɵted((null as any),['\n\n'])),(_l()(),i1.ɵeld(0,[[15,0],['linkpopup',
-          1]],(null as any),28,'div',[['class','linkPopup'],['role','dialog']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'p',[['class',
-          'confirm']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['Please Click on tick to Confirm'])),(_l()(),
-          i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          1,'label',[['for','URL']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['Url'])),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵeld(0,[[8,0],['url',1]],(null as any),0,'input',
-          [['class','form-control'],['id','url'],['name','URl'],['type','url']],(null as any),
-          [[(null as any),'click']],(_v,en,$event) => {
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Preview '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n'])),(_l()(),i1.ɵted(-1,(null as any),['\n\n'])),(_l()(),i1.ɵeld(197,
+          0,[[15,0],['linkpopup',1]],(null as any),28,'div',[['class','linkPopup'],
+              ['role','dialog']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(199,
+          0,(null as any),(null as any),1,'p',[['class','confirm']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['Please Click on tick to Confirm'])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n    '])),(_l()(),i1.ɵeld(202,0,(null as any),(null as any),1,'label',
+          [['for','URL']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['Url'])),(_l()(),i1.ɵted(-1,
+          (null as any),['\n    '])),(_l()(),i1.ɵeld(205,0,[[8,0],['url',1]],(null as any),
+          0,'input',[['class','form-control'],['id','url'],['name','URl'],['type',
+              'url']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
             var ad:boolean = true;
             var _co:i4.EditBlogComponent = _v.component;
             if (('click' === en)) {
@@ -875,19 +887,19 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),1,'label',[['for','text']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['Text'])),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,
-          [[12,0],['text',1]],(null as any),0,'input',[['class','form-control'],['id',
-              'text'],['name','text'],['type','text']],(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),3,'div',[['class',
-          'tick']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),0,'img',[['class','not-selected'],['role','button'],['src',
-              '/assets/images/sports-social-confirmation.png']],(null as any),[[(null as any),
-              'click']],(_v,en,$event) => {
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),
+      (_l()(),i1.ɵeld(207,0,(null as any),(null as any),1,'label',[['for','text']],
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['Text'])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n    '])),(_l()(),i1.ɵeld(210,0,[[12,0],['text',1]],(null as any),0,'input',
+          [['class','form-control'],['id','text'],['name','text'],['type','text']],
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(212,0,(null as any),
+          (null as any),3,'div',[['class','tick']],(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵeld(214,0,(null as any),(null as any),0,'img',[['class','not-selected'],
+          ['role','button'],['src','/assets/images/sports-social-confirmation.png']],
+          (null as any),[[(null as any),'click']],(_v,en,$event) => {
             var ad:boolean = true;
             var _co:i4.EditBlogComponent = _v.component;
             if (('click' === en)) {
@@ -895,12 +907,12 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          7,'div',[['class','button']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),1,'button',([] as any[]),(null as any),[[(null as any),
-              'click']],(_v,en,$event) => {
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(217,0,(null as any),
+          (null as any),7,'div',[['class','button']],(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵeld(219,0,(null as any),(null as any),1,'button',([] as any[]),(null as any),
+          [[(null as any),'click']],(_v,en,$event) => {
             var ad:boolean = true;
             var _co:i4.EditBlogComponent = _v.component;
             if (('click' === en)) {
@@ -908,10 +920,10 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Ok'])),(_l()(),
-          i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          1,'button',([] as any[]),(null as any),[[(null as any),'click']],(_v,en,
-              $event) => {
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Ok'])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),i1.ɵeld(222,0,(null as any),
+          (null as any),1,'button',([] as any[]),(null as any),[[(null as any),'click']],
+          (_v,en,$event) => {
             var ad:boolean = true;
             var _co:i4.EditBlogComponent = _v.component;
             if (('click' === en)) {
@@ -919,26 +931,27 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Cancel'])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),['\n'])),
-      (_l()(),i1.ɵted((null as any),['\n\n'])),(_l()(),i1.ɵeld(0,[[16,0],['youtubeLinkPopup',
-          1]],(null as any),23,'div',[['class','linkPopup'],['role','dialog']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'p',[['class',
-          'confirm']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['Please Click on tick to Confirm'])),(_l()(),
-          i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          1,'label',[['for','URL']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['Url'])),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵeld(0,[[9,0],['YoutubeUrl',1]],(null as any),0,
-          'input',[['class','form-control'],['id','url'],['name','URl'],['type','url']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          3,'div',[['class','tick']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),0,'img',[['class','not-selected'],['role','button'],
-              ['src','/assets/images/sports-social-confirmation.png']],(null as any),
-          [[(null as any),'click']],(_v,en,$event) => {
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Cancel'])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n'])),(_l()(),i1.ɵted(-1,(null as any),['\n\n'])),(_l()(),i1.ɵeld(227,
+          0,[[16,0],['youtubeLinkPopup',1]],(null as any),23,'div',[['class','linkPopup'],
+              ['role','dialog']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(229,
+          0,(null as any),(null as any),1,'p',[['class','confirm']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['Please Click on tick to Confirm'])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n    '])),(_l()(),i1.ɵeld(232,0,(null as any),(null as any),1,'label',
+          [['for','URL']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['Url'])),(_l()(),i1.ɵted(-1,
+          (null as any),['\n    '])),(_l()(),i1.ɵeld(235,0,[[9,0],['YoutubeUrl',1]],
+          (null as any),0,'input',[['class','form-control'],['id','url'],['name','URl'],
+              ['type','url']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(237,
+          0,(null as any),(null as any),3,'div',[['class','tick']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n        '])),(_l()(),i1.ɵeld(239,0,(null as any),(null as any),0,'img',
+          [['class','not-selected'],['role','button'],['src','/assets/images/sports-social-confirmation.png']],
+          (null as any),[[(null as any),'click']],(_v,en,$event) => {
             var ad:boolean = true;
             var _co:i4.EditBlogComponent = _v.component;
             if (('click' === en)) {
@@ -946,12 +959,12 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          7,'div',[['class','button']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),1,'button',([] as any[]),(null as any),[[(null as any),
-              'click']],(_v,en,$event) => {
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(242,0,(null as any),
+          (null as any),7,'div',[['class','button']],(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵeld(244,0,(null as any),(null as any),1,'button',([] as any[]),(null as any),
+          [[(null as any),'click']],(_v,en,$event) => {
             var ad:boolean = true;
             var _co:i4.EditBlogComponent = _v.component;
             if (('click' === en)) {
@@ -959,10 +972,10 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Ok'])),(_l()(),
-          i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          1,'button',([] as any[]),(null as any),[[(null as any),'click']],(_v,en,
-              $event) => {
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Ok'])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),i1.ɵeld(247,0,(null as any),
+          (null as any),1,'button',([] as any[]),(null as any),[[(null as any),'click']],
+          (_v,en,$event) => {
             var ad:boolean = true;
             var _co:i4.EditBlogComponent = _v.component;
             if (('click' === en)) {
@@ -970,15 +983,15 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Cancel'])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),['\n'])),
-      (_l()(),i1.ɵted((null as any),['\n\n\n'])),(_l()(),i1.ɵand(16777216,(null as any),
-          (null as any),1,(null as any),View_EditBlogComponent_10)),i1.ɵdid(16384,
-          (null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
-          (null as any)),(_l()(),i1.ɵted((null as any),['\n\n'])),(_l()(),i1.ɵand(16777216,
-          (null as any),(null as any),1,(null as any),View_EditBlogComponent_11)),
-      i1.ɵdid(16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any))],(_ck,_v) => {
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Cancel'])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n'])),(_l()(),i1.ɵted(-1,(null as any),['\n\n\n'])),(_l()(),i1.ɵand(16777216,
+          (null as any),(null as any),1,(null as any),View_EditBlogComponent_10)),
+      i1.ɵdid(253,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n\n'])),
+      (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_EditBlogComponent_11)),
+      i1.ɵdid(256,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any))],(_ck,_v) => {
     var _co:i4.EditBlogComponent = _v.component;
     const currVal_1:any = _co.fontSize;
     _ck(_v,62,0,currVal_1);
@@ -1011,7 +1024,7 @@ export function View_EditBlogComponent_0(_l:any):i1.ɵViewDefinition {
   });
 }
 export function View_EditBlogComponent_Host_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'app-edit-blog',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'app-edit-blog',
       ([] as any[]),(null as any),[[(null as any),'mousedown'],[(null as any),'keyup']],
       (_v,en,$event) => {
         var ad:boolean = true;
@@ -1024,7 +1037,7 @@ export function View_EditBlogComponent_Host_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_1 && ad);
         }
         return ad;
-      },View_EditBlogComponent_0,RenderType_EditBlogComponent)),i1.ɵdid(114688,(null as any),
+      },View_EditBlogComponent_0,RenderType_EditBlogComponent)),i1.ɵdid(1,114688,(null as any),
       0,i4.EditBlogComponent,[i5.Http,i6.PropertyService,i1.Renderer2,i7.Router,i8.DomSanitizer,
           i6.PropertyService,i9.PostService],(null as any),(null as any))],(_ck,_v) => {
     _ck(_v,1,0);
@@ -1032,4 +1045,4 @@ export function View_EditBlogComponent_Host_0(_l:any):i1.ɵViewDefinition {
 }
 export const EditBlogComponentNgFactory:i1.ComponentFactory<i4.EditBlogComponent> = i1.ɵccf('app-edit-blog',
     i4.EditBlogComponent,View_EditBlogComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvZWRpdC1ibG9nL2VkaXQtYmxvZy5jb21wb25lbnQubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvZWRpdC1ibG9nL2VkaXQtYmxvZy5jb21wb25lbnQudHMiLCJuZzovLy9DOi9TcG9ydFNvY2lhbEJsb2cvc3JjL2FwcC9hZG1pbi1wYW5lbC9lZGl0LWJsb2cvZWRpdC1ibG9nLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvZWRpdC1ibG9nL2VkaXQtYmxvZy5jb21wb25lbnQudHMuRWRpdEJsb2dDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwiZWRpdG9yUGFuZWxcIiAjZWRpdG9yUGFuZWw+XG4gIDxkaXYgY2xhc3M9XCJ0b29sYmFyXCI+XG4gICAgPGRpdj5cbiAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC11bmRvLnBuZ1wiICB0aXRsZT1cInVuZG9cIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgKGNsaWNrKT1cInVuZG8oJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxuICAgICAgXG4gICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtcmVkby5wbmdcIiB0aXRsZT1cInJlZG9cIiAgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiIChjbGljayk9XCJyZWRvKCRldmVudClcIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiID5cbiAgICAgIFxuICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWJvbGQucG5nXCIgdGl0bGU9XCJCb2xkXCIgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiIChjbGljayk9XCJib2xkKCRldmVudClcIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiID5cbiAgICAgIFxuICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWl0YWxpYy5wbmdcIiB0aXRsZT1cIkl0YWxpY1wiIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiAoY2xpY2spPVwiaXRhbGljKCRldmVudClcIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiPlxuICAgICAgXG4gICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtYWxpZ24tbGVmdC5wbmdcIiB0aXRsZT1cImxlZnQtYWxpZ25cIiAgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiIChjbGljayk9XCJsZWZ0QWxpZ24oJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCI+XG4gICAgICBcbiAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1hbGlnbi1jZW50ZXIucG5nXCIgdGl0bGU9XCJjZW50ZXItYWxpZ25cIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgKGNsaWNrKT1cImNlbnRlckFsaWduKCRldmVudClcIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiPlxuICAgICAgXG4gICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtYWxpZ24tcmlnaHQucG5nXCIgdGl0bGU9XCJyaWdodC1hbGlnblwiICByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgKGNsaWNrKT1cInJpZ2h0QWxpZ24oJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCI+XG4gICAgICBcbiAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC10ZXh0LWp1c3RpZnkucG5nXCIgdGl0bGU9XCJqdXN0aWZ5XCIgIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiAoY2xpY2spPVwianVzdGlmeSgkZXZlbnQpXCIgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIj5cbiAgICAgIFxuICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLXVuZGVybGluZS5wbmdcIiB0aXRsZT1cInVuZGVybGluZVwiIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiAoY2xpY2spPVwidW5kZXJsaW5lKCRldmVudClcIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiPlxuICAgICAgXG4gICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtbGlzdC13aXRoLWRvdHMucG5nXCIgdGl0bGU9XCJMaXN0IHdpdGggZG9zdHNcIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgKGNsaWNrKT1cImxpc3RXaXRoRG90cygkZXZlbnQpXCIgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIiA+XG4gICAgICBcbiAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1saXN0LXdpdGgtbnVtYmVycy5wbmdcIiB0aXRsZT1cIkxpc3Qgd2l0aCBudW1iZXJcIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgKGNsaWNrKT1cImxpc3RXaXRoTnVtYmVycygkZXZlbnQpXCIgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIiA+XG4gICAgICBcbiAgICAgIDxsYWJlbCBjbGFzcz1cImZpbGVcIj5cbiAgICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtdGV4dC1jb2xvci5wbmdcIiB0aXRsZT1cIlRleHQgQ29sb3JcIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgPlxuICAgICAgICAgIDxpbnB1dCB0eXBlPVwiY29sb3JcIiBuYW1lPVwidGV4dGNvbG9yXCIgaWQ9XCJ0ZXh0Y29sb3JcIiAgKGNoYW5nZSk9XCJzZWxlY3RUZXh0Q29sb3IoJGV2ZW50KVwiPlxuICAgICAgPC9sYWJlbD5cbiAgICAgIFxuICAgICAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxuICAgICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1iYWNrZ3JvdW5kLWNvbG9yLnBuZ1wiIHRpdGxlPVwiQmFja2dyb3VuZCBDb2xvclwiIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiAgbXVsdGlwbGU+XG4gICAgICAgICAgPGlucHV0IHR5cGU9XCJjb2xvclwiIG5hbWU9XCJiY29sb3JcIiBpZD1cImJjb2xvclwiICAoY2hhbmdlKT1cInNlbGVjdEJhY2tncm91bmRDb2xvcigkZXZlbnQpXCI+XG4gICAgICA8L2xhYmVsPlxuICAgICAgXG4gICAgICA8c2VsZWN0IChjaGFuZ2UpPVwic2VsZWN0Rm9udFNpemUoJGV2ZW50KVwiIFt2YWx1ZV09MjA+XG4gICAgICAgICAgPG9wdGlvbiAqbmdGb3I9XCJsZXQgaSBvZiBmb250U2l6ZVwiIFt2YWx1ZV09XCJpXCIgPnt7aX19PC9vcHRpb24+XG4gICAgICA8L3NlbGVjdD5cbiAgICA8L2Rpdj4gIFxuICAgIFxuICAgIDxkaXY+XG4gICAgICBcbiAgICAgIDxsYWJlbCBjbGFzcz1cImZpbGVcIj5cbiAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWluZGVudC5wbmdcIiB0aXRsZT1cImluZGVudFwiIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiAoY2xpY2spPVwiaW5kZW50KCRldmVudClcIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiID5cbiAgICAgIDwvbGFiZWw+XG4gICAgICBcbiAgICAgIDxsYWJlbCBjbGFzcz1cImZpbGVcIj5cbiAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLW91dGRlbnQucG5nXCIgdGl0bGU9XCIgb3V0ZGVudFwiIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiAoY2xpY2spPVwib3V0ZGVudCgkZXZlbnQpXCIgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIiA+XG4gICAgICA8L2xhYmVsPlxuICAgICAgXG4gICAgICA8bGFiZWwgY2xhc3M9XCJmaWxlXCI+XG4gICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtcGFyYWdyYXBoLnBuZ1wiIHRpdGxlPVwiUGFyYWdyYXBoXCIgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiIChjbGljayk9XCJhZGRQYXJhZ3JhcGgoJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxuICAgICAgIDwvbGFiZWw+XG4gICAgICBcbiAgICAgIDxsYWJlbCBjbGFzcz1cImZpbGVcIj5cbiAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLXBpY3R1cmUucG5nXCIgdGl0bGU9XCJBZGQgSW1hZ2VcIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxuICAgICAgICA8aW5wdXQgdHlwZT1cImZpbGVcIiBuYW1lPVwiaW1hZ2VcIiBpZD1cImltYWdlXCIgYWNjZXB0PVwiaW1hZ2UvanBlZywgaW1hZ2UvcG5nXCIgKGNoYW5nZSk9XCJzZWxlY3RJbWFnZSgkZXZlbnQpXCI+XG4gICAgICA8L2xhYmVsPlxuICAgICAgXG4gICAgIDwhLS0gIDxsYWJlbCBjbGFzcz1cImZpbGVcIj5cbiAgICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtZnJhbWUtcGx1Z2luLnBuZ1wiIHJvbGU9XCJidXR0b25cIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiIGFsdD1cIlwiIChjbGljayk9XCJhZGRQbHVnaW4oJGV2ZW50KVwiICA+XG4gICAgICA8L2xhYmVsPiAtLT5cbiAgICAgIFxuICAgICAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwteW91dHViZS12aWRlby5wbmdcIiB0aXRsZT1cIkFkZCBZb3V0dWJlIFZpZGVvXCIgcm9sZT1cImJ1dHRvblwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgIChjbGljayk9XCJhZGRZb3V0dWJldmlkZW8oKVwiPlxuICAgICAgPC9sYWJlbD5cbiAgICAgIFxuICAgICAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxuICAgICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1naWYucG5nXCIgdGl0bGU9XCJBZGQgR2lmXCIgcm9sZT1cImJ1dHRvblwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgYWx0PVwiXCIgIG11bHRpcGxlPlxuICAgICAgICAgIDxpbnB1dCB0eXBlPVwiZmlsZVwiIG5hbWU9XCJ2aWRlb1wiIGlkPVwidmlkZW9cIiBhY2NlcHQ9XCJpbWFnZS9naWYgaW1hZ2Uvd2VicFwiICAoY2hhbmdlKT1cInNlbGVjdEdpZigkZXZlbnQpXCI+XG4gICAgICA8L2xhYmVsPlxuICAgICAgXG4gICAgICA8bGFiZWwgY2xhc3M9XCJmaWxlXCI+XG4gICAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWxpbmsucG5nXCIgdGl0bGU9XCJBZGQgTGlua1wiIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiIChjbGljayk9XCJhZGRMaW5rKCRldmVudClcIj5cbiAgICAgIDwvbGFiZWw+XG4gICAgICBcbiAgICAgPCEtLSAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtdW5saW5rLnBuZ1wiIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiIChjbGljayk9XCJ1bkxpbmsoKVwiPlxuICAgICAgPC9sYWJlbD4gLS0+XG4gICAgICBcbiAgICAgPCEtLSAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxuICAgICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1tdXNpYy5wbmdcIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIiBtdWx0aXBsZT5cbiAgICAgICAgICA8aW5wdXQgdHlwZT1cImZpbGVcIiBuYW1lPVwibXVzaWNcIiBpZD1cIm11c2ljXCIgYWNjZXB0PVwiYXVkaW8vKlwiIChjaGFuZ2UpPVwic2VsZWN0TXVzaWMoJGV2ZW50KVwiPlxuICAgICAgPC9sYWJlbD4gLS0+XG4gICAgICBcbiAgICAgIDxsYWJlbCBjbGFzcz1cImZpbGVcIj5cbiAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLXJlbW92ZS1jc3MucG5nXCIgdGl0bGU9XCJSZW1vdmUgU3R5bGVcIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgKGNsaWNrKT1cInJlbW92ZUNzcygkZXZlbnQpXCIgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIiA+XG4gICAgICA8L2xhYmVsPlxuICAgICAgXG4gICAgICA8bGFiZWwgY2xhc3M9XCJmaWxlXCI+XG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1zdWJzY3JpcHQucG5nXCIgdGl0bGU9XCJTdWJzY3JpcHRcIiAgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiIChjbGljayk9XCJzdWJzY3JpcHQoJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxuICAgICAgPC9sYWJlbD5cbiAgICAgIFxuICAgICAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtc3VwZXJzY3JpcHQucG5nXCIgdGl0bGU9XCJTdXBlcnNjcmlwdFwiIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiAoY2xpY2spPVwic3VwZXJzY3JpcHQoJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxuICAgICAgPC9sYWJlbD5cbiAgICAgIDxsYWJlbCBjbGFzcz1cImZpbGVcIj5cbiAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLXF1b3RlLnBuZ1wiIHRpdGxlPVwiUXVvdGVcIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgKGNsaWNrKT1cImFkZFF1b3RlKCRldmVudClcIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiID5cbiAgICAgIDwvbGFiZWw+XG4gICAgPC9kaXY+XG4gICAgPC9kaXY+XG4gICAgPGRpdiBjbGFzcz1cInBhbmVsLXdyYXBwZXJcIj5cbiAgICAgICAgPGRpdiBjbGFzcz1cInBhbmVsXCIgI3BhbmVsPiBcbiAgICAgICAgICAgIDxsYWJlbCBjbGFzcz1cImZpbGUgYmxvZ1wiPlxuICAgICAgICAgICAgICAgIDxuZy1jb250YWluZXIgICpuZ0lmPVwiIWJsb2dpbWFnZUxvYWRlZFwiPlxuICAgICAgICAgICAgICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtdGVtcC1ibG9nLWltYWdlLmpwZ1wiIHJvbGU9XCJidXR0b25cIiBjbGFzcz1cImR1bW15QmxvZ0ltYWdlXCI+XG4gICAgICAgICAgICAgICAgPC9uZy1jb250YWluZXIgPlxuICAgICAgICAgICAgICAgIDxuZy1jb250YWluZXIgICpuZ0lmPVwiYmxvZ2ltYWdlTG9hZGVkXCI+XG4gICAgICAgICAgICAgICAgICAgIDxpbWcgc3JjPVwie3tibG9naW1hZ2VTcmN9fVwiICByb2xlPVwiYnV0dG9uXCIgKGVycm9yKT1cImJsb2dJbWFnZU5vdEZvdW5kKClcIiBjbGFzcz1cIkJsb2dJbWFnZVwiID5cbiAgICAgICAgICAgICAgICA8L25nLWNvbnRhaW5lciA+ICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPVwiZmlsZVwiIG5hbWU9XCJibG9nSW1hZ2VcIiAgaWQ9XCJibG9nSW1hZ2VcIiBhY2NlcHQ9XCJpbWFnZS8qXCIgKGNoYW5nZSk9XCJzZWxlY3RCbG9nSW1hZ2UoJGV2ZW50KVwiICNCbG9nSW1hZ2U+XG4gICAgICAgICAgICA8L2xhYmVsPlxuICAgICAgICAgICAgPGRpdiBjb250ZW50ZWRpdGFibGU9XCJ0cnVlXCIgY2xhc3M9XCJpbWFnZURlc2NcIiAgcGxhY2Vob2xkZXI9XCJEZXNjcmliZSB5b3VyIEltYWdlXCIgI2Jsb2dJbWFnZURlc2M+PC9kaXY+ICAgXG4gICAgICAgICAgICA8ZGl2IGNvbnRlbnRlZGl0YWJsZT1cInRydWVcIiBjbGFzcz1cInRpdGxlXCIgIHBsYWNlaG9sZGVyPVwiSGlpIEJ1ZGR5LCBZb3VyIFRpdGxlIEdvZXMgSGVyZVwiICN0aXRsZT48L2Rpdj5cbiAgICAgICAgICAgIDxkaXYgY29udGVudGVkaXRhYmxlPVwidHJ1ZVwiIGNsYXNzPVwic2hvcnREZXNjXCIgKGtleXVwKT1cImNhbENoYXJDb3VudCgpXCIgcGxhY2Vob2xkZXI9XCJBZGQgc2hvcnQgZGVzY3JpcHRpb24sIG1heCAxNDAgQ2hhcmFjdGVycyBhcmUgYWxsb3dlZFwiICNzaG9ydERlc2M+PC9kaXY+XG4gICAgICAgICAgICA8ZGl2IGNsYXNzPVwiY2hhckNvdW50XCIgPnt7Y2hhckNvdW50fX0vMTQwPC9kaXY+XG4gICAgICAgICAgICA8ZGl2IGNsYXNzPVwiYmxvZ2dlclwiPlxuICAgICAgICAgICAgICAgIDxsYWJlbCBjbGFzcz1cImZpbGVcIj5cbiAgICAgICAgICAgICAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLXVzZXIucG5nXCIgcm9sZT1cImJ1dHRvblwiIGNsYXNzPVwiZHVtbXlcIiAqbmdJZj1cIiFibG9nZ2VyaW1hZ2VMb2FkZWRcIj5cbiAgICAgICAgICAgICAgICAgICAgPGltZyBzcmM9XCJ7e2Jsb2dnZXJpbWFnZVNyY319XCIgKm5nSWY9XCJibG9nZ2VyaW1hZ2VMb2FkZWRcIiAoZXJyb3IpPVwiYmxvZ2dlckltYWdlTm90Rm91bmQoKVwiIHJvbGU9XCJidXR0b25cIiBjbGFzcz1cIkJsb2dnZXJJbWFnZVwiPlxuICAgICAgICAgICAgICAgICAgICA8aW5wdXQgdHlwZT1cImZpbGVcIiBuYW1lPVwiYmxvZ2dlckltYWdlXCIgaWQ9XCJibG9nZ2VySW1hZ2VcIiBhY2NlcHQ9XCJpbWFnZS8qXCIgKGNoYW5nZSk9XCJzZWxlY3RCbG9nZ2VySW1hZ2UoJGV2ZW50KVwiICNCbG9nZ2VySW1hZ2U+XG4gICAgICAgICAgICAgICAgPC9sYWJlbD5cbiAgICAgICAgICAgIDxkaXYgY29udGVudGVkaXRhYmxlPVwidHJ1ZVwiIGNsYXNzPVwiYmxvZ2dlck5hbWVcIiAgcGxhY2Vob2xkZXI9XCJXaGF0J3MgeW91ciBuYW1lPz9cIiAjQmxvZ2dlck5hbWU+PC9kaXY+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJrZXl3b3Jkc1wiID5cbiAgICAgICAgICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtdGFncy5wbmdcIiAoY2xpY2spPVwib3BlbkFkZEtleXdvcmRQb3B1cCgpXCIgcm9sZT1cImJ1dHRvblwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCI+XG4gICAgICAgICAgICAgICAgPHAgY29udGVudGVkaXRhYmxlPVwidHJ1ZVwiIHBsYWNlaG9sZGVyPVwiQ2xpY2sgb24gdGFnIGJ1dHRvbiB0byBhZGQgS2V5d29yZHNcIiAqbmdJZj1cIiFrZXl3b3JkQWRkZWRcIj48L3A+XG4gICAgICAgICAgICAgICAgPHAgKm5nSWY9XCJrZXl3b3JkQWRkZWRcIj5cbiAgICAgICAgICAgICAgICAgICAgPHNwYW4gKm5nRm9yPVwibGV0IGtleSBvZiBrZXl3b3JkQXJyYXk7bGV0IGk9aW5kZXhcIiBjbGFzcz1cImtleVwiPiBcbiAgICAgICAgICAgICAgICAgICAgICAgIHt7a2V5fX1cbiAgICAgICAgICAgICAgICAgICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1kZWxldGUta2V5d29yZC5wbmdcIiByb2xlPVwiYnV0dG9uXCIgKGNsaWNrKT1cImRlbGV0ZUtleXdvcmQoaSlcIj5cbiAgICAgICAgICAgICAgICAgICAgPC9zcGFuPlxuICAgICAgICAgICAgICAgIDwvcD5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPGRpdiBjbGFzcz1cImRlc2NBYm92ZVwiICpuZ0lmPVwiIUtleXByZXNzXCI+QmVsb3cgdGhlIExpbmUgeW91IHdpbGwgd3JpdGUgdGhlIENvbnRlbnQgb2YgQmxvZy4gWW91IGNhbiBhbHNvIGFkZCBJbWFnZXMsWW91dHViZSBWaWRlbyxMaW5rczwvZGl2PiBcbiAgICAgICAgICAgIDxkaXYgY29udGVudGVkaXRhYmxlPVwidHJ1ZVwiIGNsYXNzPVwiZGVzY1wiIChrZXl1cCk9XCJzdGFydERlc2MoKVwiICNkZXNjPjwvZGl2PiBcbiAgICAgICAgPC9kaXY+XG4gICAgICAgIDxidXR0b24gY2xhc3M9XCJwYW5lbEJ1dHRvblwiIChjbGljayk9XCJ1cGxvYWQoKVwiIFtkaXNhYmxlZF09XCJpc0Rpc2FibGVkXCIgI3BhbmVsQnV0dG9uID5VcGRhdGU8L2J1dHRvbj5cbiAgICAgICAgPGJ1dHRvbiBjbGFzcz1cInBhbmVsQnV0dG9uXCIgKGNsaWNrKT1cInByZXZpZXcoKVwiID5QcmV2aWV3IDwvYnV0dG9uPlxuICAgIDwvZGl2PlxuPC9kaXY+XG5cbjxkaXYgY2xhc3M9XCJsaW5rUG9wdXBcIiByb2xlPVwiZGlhbG9nXCIgI2xpbmtwb3B1cD5cbiAgICA8cCBjbGFzcz1cImNvbmZpcm1cIj5QbGVhc2UgQ2xpY2sgb24gdGljayB0byBDb25maXJtPC9wPlxuICAgIDxsYWJlbCBmb3I9XCJVUkxcIj5Vcmw8L2xhYmVsPlxuICAgIDxpbnB1dCB0eXBlPVwidXJsXCIgbmFtZT1cIlVSbFwiIGlkPVwidXJsXCIgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIiAoY2xpY2spPVwidGVzdCgpXCIgICN1cmw+XG4gICAgPGxhYmVsIGZvcj1cInRleHRcIj5UZXh0PC9sYWJlbD5cbiAgICA8aW5wdXQgdHlwZT1cInRleHRcIiBuYW1lPVwidGV4dFwiIGlkPVwidGV4dFwiIGNsYXNzPVwiZm9ybS1jb250cm9sXCIgI3RleHQ+XG4gICAgPGRpdiBjbGFzcz1cInRpY2tcIj5cbiAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWNvbmZpcm1hdGlvbi5wbmdcIiByb2xlPVwiYnV0dG9uXCIgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIiAoY2xpY2spPVwicmVzdG9yZUNhcmV0KClcIj5cbiAgICA8L2Rpdj5cbiAgICA8ZGl2IGNsYXNzPVwiYnV0dG9uXCI+XG4gICAgICAgIDxidXR0b24gKGNsaWNrKT1cImxpbmtPaygkZXZlbnQpXCI+T2s8L2J1dHRvbj5cbiAgICAgICAgPGJ1dHRvbiAoY2xpY2spPVwibGlua0NhbmNlbCgpXCI+Q2FuY2VsPC9idXR0b24+XG4gICAgPC9kaXY+XG48L2Rpdj5cblxuPGRpdiBjbGFzcz1cImxpbmtQb3B1cFwiIHJvbGU9XCJkaWFsb2dcIiAjeW91dHViZUxpbmtQb3B1cD5cbiAgICA8cCBjbGFzcz1cImNvbmZpcm1cIj5QbGVhc2UgQ2xpY2sgb24gdGljayB0byBDb25maXJtPC9wPlxuICAgIDxsYWJlbCBmb3I9XCJVUkxcIj5Vcmw8L2xhYmVsPlxuICAgIDxpbnB1dCB0eXBlPVwidXJsXCIgbmFtZT1cIlVSbFwiIGlkPVwidXJsXCIgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIiAjWW91dHViZVVybD5cbiAgICA8ZGl2IGNsYXNzPVwidGlja1wiPlxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtY29uZmlybWF0aW9uLnBuZ1wiIHJvbGU9XCJidXR0b25cIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiIChjbGljayk9XCJyZXN0b3JlQ2FyZXQoKVwiPlxuICAgIDwvZGl2PlxuICAgIDxkaXYgY2xhc3M9XCJidXR0b25cIj5cbiAgICAgICAgPGJ1dHRvbiAoY2xpY2spPVwieW91dHViZUxpbmtPaygkZXZlbnQpXCI+T2s8L2J1dHRvbj5cbiAgICAgICAgPGJ1dHRvbiAoY2xpY2spPVwieW91dHViZUxpbmtDYW5jZWwoKVwiPkNhbmNlbDwvYnV0dG9uPlxuICAgIDwvZGl2PlxuPC9kaXY+XG5cblxuPGRpdiBjbGFzcz1cImtleXdvcmRQb3B1cFwiICpuZ0lmPVwiaXNLZXl3b3JkQnV0dG9uQ2xpY2tlZFwiID5cbiAgICA8bGFiZWwgPkFkZCBLZXl3b3Jkczo8L2xhYmVsPlxuICAgIDxkaXYgY29udGVudGVkaXRhYmxlPVwidHJ1ZVwiIGNsYXNzPVwia2V5d29yZFwiIHBsYWNlaG9sZGVyPVwiU2VwYXJhdGUga2V5d29yZHMgYnkgQ29tbWFcIiAja2V5cz57e0tleXN9fTwvZGl2PlxuICAgIDxkaXYgY2xhc3M9XCJidXR0b25cIj5cbiAgICAgICAgPGJ1dHRvbiAgKGNsaWNrKT1cImFkZEtleXdvcmRzKClcIj5BZGQ8L2J1dHRvbj5cbiAgICAgICAgPGJ1dHRvbiAoY2xpY2spPVwiYWRkS2V5d29yZHNDYW5jZWwoKVwiPkNhbmNlbDwvYnV0dG9uPlxuICAgIDwvZGl2PlxuPC9kaXY+XG5cbjxkaXYgY2xhc3M9XCJwcmV2aWV3XCIgKm5nSWY9XCJQcmV2aWV3XCI+XG4gICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWNhbmNlbC1ibGFjay5wbmdcIiBjbGFzcz1cImNsb3NlXCIgcm9sZT1cImJ1dHRvblwiIChjbGljayk9XCJjbG9zZVByZXZpZXcoKVwiPlxuICAgIDxwICBjbGFzcz1cInByZXZpZXdDYXRhZ29yeVwiPlxuICAgICAgICA8c3BhbiAqbmdJZj1cImJsb2dQcmV2aWV3XCIgPnt7YmxvZ1ByZXZpZXcua2V5d29yZHNbMF19fTwvc3Bhbj5cbiAgICAgICAgPHNwYW4gPnw8L3NwYW4+XG4gICAgICAgIDxzcGFuICpuZ0lmPVwiYmxvZ1ByZXZpZXdcIj57e2Jsb2dQcmV2aWV3LnJlYWRpbmdUaW1lfX08L3NwYW4+XG4gICAgPC9wPlxuICAgIDxkaXYgY2xhc3M9XCJwcmV2aWV3QmxvZ0ltYWdlSG9sZGVyXCI+XG4gICAgICAgIDxpbWcgKm5nSWY9XCJibG9nUHJldmlld1wiIGNsYXNzPVwicHJldmlld0Jsb2dJbWFnZVwiIHRpdGxlPVwie3tibG9nUHJldmlldy5pbWFnZURlc2N9fVwiIGFsdD1cImJsb2dJbWFnZVwiIHNyYz1cInt7YmxvZ1ByZXZpZXcuYmxvZ0ltYWdlfX1cIiAgPlxuICAgIDwvZGl2PlxuICAgIDxkaXYgY2xhc3M9XCJwcmV2aWV3QmxvZ0luZm9cIj5cbiAgICAgICAgPHAgKm5nSWY9XCJibG9nUHJldmlld1wiIFtpbm5lckh0bWxdPVwiYmxvZ1ByZXZpZXcuaGVhZGluZ1wiIGNsYXNzPVwicHJldmlld0hlYWRpbmdcIj48L3A+XG4gICAgICAgIDxwICpuZ0lmPVwiYmxvZ1ByZXZpZXdcIiBjbGFzcz1cInByZXZpZXdCbG9nU2hvcnREZXNjXCI+e3tibG9nUHJldmlldy5tZXRhRGVzY319PC9wPlxuICAgICAgICBcbiAgICAgICAgPGRpdiBjbGFzcz1cInByZXZpZXdCbG9nZ2VySW1hZ2VIb2xkZXJcIj5cbiAgICAgICAgICA8aW1nICpuZ0lmPVwiYmxvZ1ByZXZpZXdcIiBjbGFzcz1cInByZXZpZXdCbG9nZ2VySW1hZ2VcIiAgc3JjPVwie3tibG9nUHJldmlldy5ibG9nZ2VySW1hZ2V9fVwiID5cbiAgICAgICAgPC9kaXY+XG4gICAgICAgIDxkaXYgY2xhc3M9XCJwcmV2aWV3QmxvZ2dlclwiPlxuICAgICAgICAgIDxwICpuZ0lmPVwiYmxvZ1ByZXZpZXdcIiBjbGFzcz1cInByZXZpZXdCbG9nZ2VyTmFtZVwiPldyaXR0ZW4gYnkgPHNwYW4gPiB7e2Jsb2dQcmV2aWV3LmJsb2dnZXJOYW1lfX08L3NwYW4+PC9wPiAgXG4gICAgICAgIDwvZGl2PlxuICAgICAgICA8cCAqbmdJZj1cImJsb2dQcmV2aWV3XCIgW2lubmVySHRtbF09XCJibG9nUHJldmlldy5jb250ZW50XCIgY2xhc3M9XCJwcnZpZXdCbG9nQ29udGVudFwiPjwvcD5cbiAgICAgICAgPGRpdiBjbGFzcz1cInByZXZpZXdUYWdzXCIgPlxuICAgICAgICAgIDxkaXYgY2xhc3M9XCJwcmV2aWV3VGFnSWNvbkhvbGRlclwiPlxuICAgICAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLXRhZy5wbmdcIiBhbHQ9XCJzcG9ydHMtc29jaWFsLXRhZ1wiPlxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDxuZy1jb250YWluZXIgKm5nSWY9XCIgYmxvZ1ByZXZpZXdcIj4gICAgICAgICAgXG4gICAgICAgICAgICAgIDxzcGFuICpuZ0Zvcj1cImxldCBrZXkgb2YgYmxvZ1ByZXZpZXcua2V5d29yZHM7bGV0IGk9aW5kZXhcIj57e2tleX19PC9zcGFuPlxuICAgICAgICAgIDwvbmctY29udGFpbmVyPlxuICAgICAgICAgICAgXG4gICAgICAgIDwvZGl2PlxuICAgIDwvZGl2PiAgIFxuPC9kaXY+IiwiPGFwcC1lZGl0LWJsb2c+PC9hcHAtZWRpdC1ibG9nPiJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7b0JDb0NVO01BQUEsK0VBQUE7TUFBQTtNQUFBLDBDQUFBO21CQUFBLHNEQUFnRDtNQUFBO0lBQWI7SUFBbkMsV0FBbUMsU0FBbkM7SUFBbUM7SUFBbkMsV0FBbUMsU0FBbkM7O0lBQWdEO0lBQUE7Ozs7b0JBb0UxQztNQUFBO01BQXdDLDJEQUNwQztVQUFBO2NBQUE7VUFBQTtNQUFpRzs7O29CQUVyRztNQUFBO01BQXVDLDJEQUNuQztVQUFBO1VBQUE7WUFBQTtZQUFBO1lBQTJDO2NBQUE7Y0FBQTtZQUFBO1lBQTNDO1VBQUEsZ0NBQTRGOzs7UUFBdkY7UUFBTCxXQUFLLFNBQUw7Ozs7b0JBVUE7TUFBQTtNQUFBOzs7O29CQUNBO01BQUE7ZUFBQTtJQUFBO0lBQUE7SUFBMEQ7TUFBQTtNQUFBO0lBQUE7SUFBMUQ7RUFBQTs7SUFBSztJQUFMLFdBQUssU0FBTDs7OztvQkFPSjtNQUFBO01BQUE7OztvQkFFSTtNQUFBO01BQStEO01BRTNEO1VBQUE7VUFBQTtRQUFBO1FBQUE7UUFBeUU7VUFBQTtVQUFBO1FBQUE7UUFBekU7TUFBQSxnQ0FBb0c7O1FBRnpD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
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovc3NibG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvZWRpdC1ibG9nL2VkaXQtYmxvZy5jb21wb25lbnQubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vQzovc3NibG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvZWRpdC1ibG9nL2VkaXQtYmxvZy5jb21wb25lbnQudHMiLCJuZzovLy9DOi9zc2Jsb2cvc3JjL2FwcC9hZG1pbi1wYW5lbC9lZGl0LWJsb2cvZWRpdC1ibG9nLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovc3NibG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvZWRpdC1ibG9nL2VkaXQtYmxvZy5jb21wb25lbnQudHMuRWRpdEJsb2dDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwiZWRpdG9yUGFuZWxcIiAjZWRpdG9yUGFuZWw+XHJcbiAgPGRpdiBjbGFzcz1cInRvb2xiYXJcIj5cclxuICAgIDxkaXY+XHJcbiAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC11bmRvLnBuZ1wiICB0aXRsZT1cInVuZG9cIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgKGNsaWNrKT1cInVuZG8oJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxyXG4gICAgICBcclxuICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLXJlZG8ucG5nXCIgdGl0bGU9XCJyZWRvXCIgIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiAoY2xpY2spPVwicmVkbygkZXZlbnQpXCIgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIiA+XHJcbiAgICAgIFxyXG4gICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtYm9sZC5wbmdcIiB0aXRsZT1cIkJvbGRcIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgKGNsaWNrKT1cImJvbGQoJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxyXG4gICAgICBcclxuICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWl0YWxpYy5wbmdcIiB0aXRsZT1cIkl0YWxpY1wiIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiAoY2xpY2spPVwiaXRhbGljKCRldmVudClcIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiPlxyXG4gICAgICBcclxuICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWFsaWduLWxlZnQucG5nXCIgdGl0bGU9XCJsZWZ0LWFsaWduXCIgIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiAoY2xpY2spPVwibGVmdEFsaWduKCRldmVudClcIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiPlxyXG4gICAgICBcclxuICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWFsaWduLWNlbnRlci5wbmdcIiB0aXRsZT1cImNlbnRlci1hbGlnblwiIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiAoY2xpY2spPVwiY2VudGVyQWxpZ24oJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCI+XHJcbiAgICAgIFxyXG4gICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtYWxpZ24tcmlnaHQucG5nXCIgdGl0bGU9XCJyaWdodC1hbGlnblwiICByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgKGNsaWNrKT1cInJpZ2h0QWxpZ24oJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCI+XHJcbiAgICAgIFxyXG4gICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtdGV4dC1qdXN0aWZ5LnBuZ1wiIHRpdGxlPVwianVzdGlmeVwiICByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgKGNsaWNrKT1cImp1c3RpZnkoJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCI+XHJcbiAgICAgIFxyXG4gICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtdW5kZXJsaW5lLnBuZ1wiIHRpdGxlPVwidW5kZXJsaW5lXCIgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiIChjbGljayk9XCJ1bmRlcmxpbmUoJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCI+XHJcbiAgICAgIFxyXG4gICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtbGlzdC13aXRoLWRvdHMucG5nXCIgdGl0bGU9XCJMaXN0IHdpdGggZG9zdHNcIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgKGNsaWNrKT1cImxpc3RXaXRoRG90cygkZXZlbnQpXCIgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIiA+XHJcbiAgICAgIFxyXG4gICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtbGlzdC13aXRoLW51bWJlcnMucG5nXCIgdGl0bGU9XCJMaXN0IHdpdGggbnVtYmVyXCIgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiIChjbGljayk9XCJsaXN0V2l0aE51bWJlcnMoJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxyXG4gICAgICBcclxuICAgICAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxyXG4gICAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLXRleHQtY29sb3IucG5nXCIgdGl0bGU9XCJUZXh0IENvbG9yXCIgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiID5cclxuICAgICAgICAgIDxpbnB1dCB0eXBlPVwiY29sb3JcIiBuYW1lPVwidGV4dGNvbG9yXCIgaWQ9XCJ0ZXh0Y29sb3JcIiAgKGNoYW5nZSk9XCJzZWxlY3RUZXh0Q29sb3IoJGV2ZW50KVwiPlxyXG4gICAgICA8L2xhYmVsPlxyXG4gICAgICBcclxuICAgICAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxyXG4gICAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWJhY2tncm91bmQtY29sb3IucG5nXCIgdGl0bGU9XCJCYWNrZ3JvdW5kIENvbG9yXCIgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiICBtdWx0aXBsZT5cclxuICAgICAgICAgIDxpbnB1dCB0eXBlPVwiY29sb3JcIiBuYW1lPVwiYmNvbG9yXCIgaWQ9XCJiY29sb3JcIiAgKGNoYW5nZSk9XCJzZWxlY3RCYWNrZ3JvdW5kQ29sb3IoJGV2ZW50KVwiPlxyXG4gICAgICA8L2xhYmVsPlxyXG4gICAgICBcclxuICAgICAgPHNlbGVjdCAoY2hhbmdlKT1cInNlbGVjdEZvbnRTaXplKCRldmVudClcIiBbdmFsdWVdPTIwPlxyXG4gICAgICAgICAgPG9wdGlvbiAqbmdGb3I9XCJsZXQgaSBvZiBmb250U2l6ZVwiIFt2YWx1ZV09XCJpXCIgPnt7aX19PC9vcHRpb24+XHJcbiAgICAgIDwvc2VsZWN0PlxyXG4gICAgPC9kaXY+ICBcclxuICAgIFxyXG4gICAgPGRpdj5cclxuICAgICAgXHJcbiAgICAgIDxsYWJlbCBjbGFzcz1cImZpbGVcIj5cclxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtaW5kZW50LnBuZ1wiIHRpdGxlPVwiaW5kZW50XCIgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiIChjbGljayk9XCJpbmRlbnQoJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxyXG4gICAgICA8L2xhYmVsPlxyXG4gICAgICBcclxuICAgICAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxyXG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1vdXRkZW50LnBuZ1wiIHRpdGxlPVwiIG91dGRlbnRcIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgKGNsaWNrKT1cIm91dGRlbnQoJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxyXG4gICAgICA8L2xhYmVsPlxyXG4gICAgICBcclxuICAgICAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxyXG4gICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtcGFyYWdyYXBoLnBuZ1wiIHRpdGxlPVwiUGFyYWdyYXBoXCIgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiIChjbGljayk9XCJhZGRQYXJhZ3JhcGgoJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxyXG4gICAgICAgPC9sYWJlbD5cclxuICAgICAgXHJcbiAgICAgIDxsYWJlbCBjbGFzcz1cImZpbGVcIj5cclxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtcGljdHVyZS5wbmdcIiB0aXRsZT1cIkFkZCBJbWFnZVwiIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiAgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIiA+XHJcbiAgICAgICAgPGlucHV0IHR5cGU9XCJmaWxlXCIgbmFtZT1cImltYWdlXCIgaWQ9XCJpbWFnZVwiIGFjY2VwdD1cImltYWdlL2pwZWcsIGltYWdlL3BuZ1wiIChjaGFuZ2UpPVwic2VsZWN0SW1hZ2UoJGV2ZW50KVwiPlxyXG4gICAgICA8L2xhYmVsPlxyXG4gICAgICBcclxuICAgICA8IS0tICA8bGFiZWwgY2xhc3M9XCJmaWxlXCI+XHJcbiAgICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtZnJhbWUtcGx1Z2luLnBuZ1wiIHJvbGU9XCJidXR0b25cIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiIGFsdD1cIlwiIChjbGljayk9XCJhZGRQbHVnaW4oJGV2ZW50KVwiICA+XHJcbiAgICAgIDwvbGFiZWw+IC0tPlxyXG4gICAgICBcclxuICAgICAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxyXG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC15b3V0dWJlLXZpZGVvLnBuZ1wiIHRpdGxlPVwiQWRkIFlvdXR1YmUgVmlkZW9cIiByb2xlPVwiYnV0dG9uXCIgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIiAgKGNsaWNrKT1cImFkZFlvdXR1YmV2aWRlbygpXCI+XHJcbiAgICAgIDwvbGFiZWw+XHJcbiAgICAgIFxyXG4gICAgICA8bGFiZWwgY2xhc3M9XCJmaWxlXCI+XHJcbiAgICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtZ2lmLnBuZ1wiIHRpdGxlPVwiQWRkIEdpZlwiIHJvbGU9XCJidXR0b25cIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiIGFsdD1cIlwiICBtdWx0aXBsZT5cclxuICAgICAgICAgIDxpbnB1dCB0eXBlPVwiZmlsZVwiIG5hbWU9XCJ2aWRlb1wiIGlkPVwidmlkZW9cIiBhY2NlcHQ9XCJpbWFnZS9naWYgaW1hZ2Uvd2VicFwiICAoY2hhbmdlKT1cInNlbGVjdEdpZigkZXZlbnQpXCI+XHJcbiAgICAgIDwvbGFiZWw+XHJcbiAgICAgIFxyXG4gICAgICA8bGFiZWwgY2xhc3M9XCJmaWxlXCI+XHJcbiAgICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtbGluay5wbmdcIiB0aXRsZT1cIkFkZCBMaW5rXCIgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgKGNsaWNrKT1cImFkZExpbmsoJGV2ZW50KVwiPlxyXG4gICAgICA8L2xhYmVsPlxyXG4gICAgICBcclxuICAgICA8IS0tICA8bGFiZWwgY2xhc3M9XCJmaWxlXCI+XHJcbiAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLXVubGluay5wbmdcIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIiAoY2xpY2spPVwidW5MaW5rKClcIj5cclxuICAgICAgPC9sYWJlbD4gLS0+XHJcbiAgICAgIFxyXG4gICAgIDwhLS0gIDxsYWJlbCBjbGFzcz1cImZpbGVcIj5cclxuICAgICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1tdXNpYy5wbmdcIiByb2xlPVwiYnV0dG9uXCIgYWx0PVwiXCIgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIiBtdWx0aXBsZT5cclxuICAgICAgICAgIDxpbnB1dCB0eXBlPVwiZmlsZVwiIG5hbWU9XCJtdXNpY1wiIGlkPVwibXVzaWNcIiBhY2NlcHQ9XCJhdWRpby8qXCIgKGNoYW5nZSk9XCJzZWxlY3RNdXNpYygkZXZlbnQpXCI+XHJcbiAgICAgIDwvbGFiZWw+IC0tPlxyXG4gICAgICBcclxuICAgICAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxyXG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1yZW1vdmUtY3NzLnBuZ1wiIHRpdGxlPVwiUmVtb3ZlIFN0eWxlXCIgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiIChjbGljayk9XCJyZW1vdmVDc3MoJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxyXG4gICAgICA8L2xhYmVsPlxyXG4gICAgICBcclxuICAgICAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxyXG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1zdWJzY3JpcHQucG5nXCIgdGl0bGU9XCJTdWJzY3JpcHRcIiAgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiIChjbGljayk9XCJzdWJzY3JpcHQoJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxyXG4gICAgICA8L2xhYmVsPlxyXG4gICAgICBcclxuICAgICAgPGxhYmVsIGNsYXNzPVwiZmlsZVwiPlxyXG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1zdXBlcnNjcmlwdC5wbmdcIiB0aXRsZT1cIlN1cGVyc2NyaXB0XCIgcm9sZT1cImJ1dHRvblwiIGFsdD1cIlwiIChjbGljayk9XCJzdXBlcnNjcmlwdCgkZXZlbnQpXCIgY2xhc3M9XCJub3Qtc2VsZWN0ZWRcIiA+XHJcbiAgICAgIDwvbGFiZWw+XHJcbiAgICAgIDxsYWJlbCBjbGFzcz1cImZpbGVcIj5cclxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtcXVvdGUucG5nXCIgdGl0bGU9XCJRdW90ZVwiIHJvbGU9XCJidXR0b25cIiBhbHQ9XCJcIiAoY2xpY2spPVwiYWRkUXVvdGUoJGV2ZW50KVwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgPlxyXG4gICAgICA8L2xhYmVsPlxyXG4gICAgPC9kaXY+XHJcbiAgICA8L2Rpdj5cclxuICAgIDxkaXYgY2xhc3M9XCJwYW5lbC13cmFwcGVyXCI+XHJcbiAgICAgICAgPGRpdiBjbGFzcz1cInBhbmVsXCIgI3BhbmVsPiBcclxuICAgICAgICAgICAgPGxhYmVsIGNsYXNzPVwiZmlsZSBibG9nXCI+XHJcbiAgICAgICAgICAgICAgICA8bmctY29udGFpbmVyICAqbmdJZj1cIiFibG9naW1hZ2VMb2FkZWRcIj5cclxuICAgICAgICAgICAgICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtdGVtcC1ibG9nLWltYWdlLmpwZ1wiIHJvbGU9XCJidXR0b25cIiBjbGFzcz1cImR1bW15QmxvZ0ltYWdlXCI+XHJcbiAgICAgICAgICAgICAgICA8L25nLWNvbnRhaW5lciA+XHJcbiAgICAgICAgICAgICAgICA8bmctY29udGFpbmVyICAqbmdJZj1cImJsb2dpbWFnZUxvYWRlZFwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxpbWcgc3JjPVwie3tibG9naW1hZ2VTcmN9fVwiICByb2xlPVwiYnV0dG9uXCIgKGVycm9yKT1cImJsb2dJbWFnZU5vdEZvdW5kKClcIiBjbGFzcz1cIkJsb2dJbWFnZVwiID5cclxuICAgICAgICAgICAgICAgIDwvbmctY29udGFpbmVyID4gICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgICAgICA8aW5wdXQgdHlwZT1cImZpbGVcIiBuYW1lPVwiYmxvZ0ltYWdlXCIgIGlkPVwiYmxvZ0ltYWdlXCIgYWNjZXB0PVwiaW1hZ2UvKlwiIChjaGFuZ2UpPVwic2VsZWN0QmxvZ0ltYWdlKCRldmVudClcIiAjQmxvZ0ltYWdlPlxyXG4gICAgICAgICAgICA8L2xhYmVsPlxyXG4gICAgICAgICAgICA8ZGl2IGNvbnRlbnRlZGl0YWJsZT1cInRydWVcIiBjbGFzcz1cImltYWdlRGVzY1wiICBwbGFjZWhvbGRlcj1cIkRlc2NyaWJlIHlvdXIgSW1hZ2VcIiAjYmxvZ0ltYWdlRGVzYz48L2Rpdj4gICBcclxuICAgICAgICAgICAgPGRpdiBjb250ZW50ZWRpdGFibGU9XCJ0cnVlXCIgY2xhc3M9XCJ0aXRsZVwiICBwbGFjZWhvbGRlcj1cIkhpaSBCdWRkeSwgWW91ciBUaXRsZSBHb2VzIEhlcmVcIiAjdGl0bGU+PC9kaXY+XHJcbiAgICAgICAgICAgIDxkaXYgY29udGVudGVkaXRhYmxlPVwidHJ1ZVwiIGNsYXNzPVwic2hvcnREZXNjXCIgKGtleXVwKT1cImNhbENoYXJDb3VudCgpXCIgcGxhY2Vob2xkZXI9XCJBZGQgc2hvcnQgZGVzY3JpcHRpb24sIG1heCAxNDAgQ2hhcmFjdGVycyBhcmUgYWxsb3dlZFwiICNzaG9ydERlc2M+PC9kaXY+XHJcbiAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJjaGFyQ291bnRcIiA+e3tjaGFyQ291bnR9fS8xNDA8L2Rpdj5cclxuICAgICAgICAgICAgPGRpdiBjbGFzcz1cImJsb2dnZXJcIj5cclxuICAgICAgICAgICAgICAgIDxsYWJlbCBjbGFzcz1cImZpbGVcIj5cclxuICAgICAgICAgICAgICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtdXNlci5wbmdcIiByb2xlPVwiYnV0dG9uXCIgY2xhc3M9XCJkdW1teVwiICpuZ0lmPVwiIWJsb2dnZXJpbWFnZUxvYWRlZFwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxpbWcgc3JjPVwie3tibG9nZ2VyaW1hZ2VTcmN9fVwiICpuZ0lmPVwiYmxvZ2dlcmltYWdlTG9hZGVkXCIgKGVycm9yKT1cImJsb2dnZXJJbWFnZU5vdEZvdW5kKClcIiByb2xlPVwiYnV0dG9uXCIgY2xhc3M9XCJCbG9nZ2VySW1hZ2VcIj5cclxuICAgICAgICAgICAgICAgICAgICA8aW5wdXQgdHlwZT1cImZpbGVcIiBuYW1lPVwiYmxvZ2dlckltYWdlXCIgaWQ9XCJibG9nZ2VySW1hZ2VcIiBhY2NlcHQ9XCJpbWFnZS8qXCIgKGNoYW5nZSk9XCJzZWxlY3RCbG9nZ2VySW1hZ2UoJGV2ZW50KVwiICNCbG9nZ2VySW1hZ2U+XHJcbiAgICAgICAgICAgICAgICA8L2xhYmVsPlxyXG4gICAgICAgICAgICA8ZGl2IGNvbnRlbnRlZGl0YWJsZT1cInRydWVcIiBjbGFzcz1cImJsb2dnZXJOYW1lXCIgIHBsYWNlaG9sZGVyPVwiV2hhdCdzIHlvdXIgbmFtZT8/XCIgI0Jsb2dnZXJOYW1lPjwvZGl2PlxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgPGRpdiBjbGFzcz1cImtleXdvcmRzXCIgPlxyXG4gICAgICAgICAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLXRhZ3MucG5nXCIgKGNsaWNrKT1cIm9wZW5BZGRLZXl3b3JkUG9wdXAoKVwiIHJvbGU9XCJidXR0b25cIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiPlxyXG4gICAgICAgICAgICAgICAgPHAgY29udGVudGVkaXRhYmxlPVwidHJ1ZVwiIHBsYWNlaG9sZGVyPVwiQ2xpY2sgb24gdGFnIGJ1dHRvbiB0byBhZGQgS2V5d29yZHNcIiAqbmdJZj1cIiFrZXl3b3JkQWRkZWRcIj48L3A+XHJcbiAgICAgICAgICAgICAgICA8cCAqbmdJZj1cImtleXdvcmRBZGRlZFwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxzcGFuICpuZ0Zvcj1cImxldCBrZXkgb2Yga2V5d29yZEFycmF5O2xldCBpPWluZGV4XCIgY2xhc3M9XCJrZXlcIj4gXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHt7a2V5fX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWRlbGV0ZS1rZXl3b3JkLnBuZ1wiIHJvbGU9XCJidXR0b25cIiAoY2xpY2spPVwiZGVsZXRlS2V5d29yZChpKVwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvc3Bhbj5cclxuICAgICAgICAgICAgICAgIDwvcD5cclxuICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJkZXNjQWJvdmVcIiAqbmdJZj1cIiFLZXlwcmVzc1wiPkJlbG93IHRoZSBMaW5lIHlvdSB3aWxsIHdyaXRlIHRoZSBDb250ZW50IG9mIEJsb2cuIFlvdSBjYW4gYWxzbyBhZGQgSW1hZ2VzLFlvdXR1YmUgVmlkZW8sTGlua3M8L2Rpdj4gXHJcbiAgICAgICAgICAgIDxkaXYgY29udGVudGVkaXRhYmxlPVwidHJ1ZVwiIGNsYXNzPVwiZGVzY1wiIChrZXl1cCk9XCJzdGFydERlc2MoKVwiICNkZXNjPjwvZGl2PiBcclxuICAgICAgICA8L2Rpdj5cclxuICAgICAgICA8YnV0dG9uIGNsYXNzPVwicGFuZWxCdXR0b25cIiAoY2xpY2spPVwidXBsb2FkKClcIiBbZGlzYWJsZWRdPVwiaXNEaXNhYmxlZFwiICNwYW5lbEJ1dHRvbiA+VXBkYXRlPC9idXR0b24+XHJcbiAgICAgICAgPGJ1dHRvbiBjbGFzcz1cInBhbmVsQnV0dG9uXCIgKGNsaWNrKT1cInByZXZpZXcoKVwiID5QcmV2aWV3IDwvYnV0dG9uPlxyXG4gICAgPC9kaXY+XHJcbjwvZGl2PlxyXG5cclxuPGRpdiBjbGFzcz1cImxpbmtQb3B1cFwiIHJvbGU9XCJkaWFsb2dcIiAjbGlua3BvcHVwPlxyXG4gICAgPHAgY2xhc3M9XCJjb25maXJtXCI+UGxlYXNlIENsaWNrIG9uIHRpY2sgdG8gQ29uZmlybTwvcD5cclxuICAgIDxsYWJlbCBmb3I9XCJVUkxcIj5Vcmw8L2xhYmVsPlxyXG4gICAgPGlucHV0IHR5cGU9XCJ1cmxcIiBuYW1lPVwiVVJsXCIgaWQ9XCJ1cmxcIiBjbGFzcz1cImZvcm0tY29udHJvbFwiIChjbGljayk9XCJ0ZXN0KClcIiAgI3VybD5cclxuICAgIDxsYWJlbCBmb3I9XCJ0ZXh0XCI+VGV4dDwvbGFiZWw+XHJcbiAgICA8aW5wdXQgdHlwZT1cInRleHRcIiBuYW1lPVwidGV4dFwiIGlkPVwidGV4dFwiIGNsYXNzPVwiZm9ybS1jb250cm9sXCIgI3RleHQ+XHJcbiAgICA8ZGl2IGNsYXNzPVwidGlja1wiPlxyXG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1jb25maXJtYXRpb24ucG5nXCIgcm9sZT1cImJ1dHRvblwiIGNsYXNzPVwibm90LXNlbGVjdGVkXCIgKGNsaWNrKT1cInJlc3RvcmVDYXJldCgpXCI+XHJcbiAgICA8L2Rpdj5cclxuICAgIDxkaXYgY2xhc3M9XCJidXR0b25cIj5cclxuICAgICAgICA8YnV0dG9uIChjbGljayk9XCJsaW5rT2soJGV2ZW50KVwiPk9rPC9idXR0b24+XHJcbiAgICAgICAgPGJ1dHRvbiAoY2xpY2spPVwibGlua0NhbmNlbCgpXCI+Q2FuY2VsPC9idXR0b24+XHJcbiAgICA8L2Rpdj5cclxuPC9kaXY+XHJcblxyXG48ZGl2IGNsYXNzPVwibGlua1BvcHVwXCIgcm9sZT1cImRpYWxvZ1wiICN5b3V0dWJlTGlua1BvcHVwPlxyXG4gICAgPHAgY2xhc3M9XCJjb25maXJtXCI+UGxlYXNlIENsaWNrIG9uIHRpY2sgdG8gQ29uZmlybTwvcD5cclxuICAgIDxsYWJlbCBmb3I9XCJVUkxcIj5Vcmw8L2xhYmVsPlxyXG4gICAgPGlucHV0IHR5cGU9XCJ1cmxcIiBuYW1lPVwiVVJsXCIgaWQ9XCJ1cmxcIiBjbGFzcz1cImZvcm0tY29udHJvbFwiICNZb3V0dWJlVXJsPlxyXG4gICAgPGRpdiBjbGFzcz1cInRpY2tcIj5cclxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtY29uZmlybWF0aW9uLnBuZ1wiIHJvbGU9XCJidXR0b25cIiBjbGFzcz1cIm5vdC1zZWxlY3RlZFwiIChjbGljayk9XCJyZXN0b3JlQ2FyZXQoKVwiPlxyXG4gICAgPC9kaXY+XHJcbiAgICA8ZGl2IGNsYXNzPVwiYnV0dG9uXCI+XHJcbiAgICAgICAgPGJ1dHRvbiAoY2xpY2spPVwieW91dHViZUxpbmtPaygkZXZlbnQpXCI+T2s8L2J1dHRvbj5cclxuICAgICAgICA8YnV0dG9uIChjbGljayk9XCJ5b3V0dWJlTGlua0NhbmNlbCgpXCI+Q2FuY2VsPC9idXR0b24+XHJcbiAgICA8L2Rpdj5cclxuPC9kaXY+XHJcblxyXG5cclxuPGRpdiBjbGFzcz1cImtleXdvcmRQb3B1cFwiICpuZ0lmPVwiaXNLZXl3b3JkQnV0dG9uQ2xpY2tlZFwiID5cclxuICAgIDxsYWJlbCA+QWRkIEtleXdvcmRzOjwvbGFiZWw+XHJcbiAgICA8ZGl2IGNvbnRlbnRlZGl0YWJsZT1cInRydWVcIiBjbGFzcz1cImtleXdvcmRcIiBwbGFjZWhvbGRlcj1cIlNlcGFyYXRlIGtleXdvcmRzIGJ5IENvbW1hXCIgI2tleXM+e3tLZXlzfX08L2Rpdj5cclxuICAgIDxkaXYgY2xhc3M9XCJidXR0b25cIj5cclxuICAgICAgICA8YnV0dG9uICAoY2xpY2spPVwiYWRkS2V5d29yZHMoKVwiPkFkZDwvYnV0dG9uPlxyXG4gICAgICAgIDxidXR0b24gKGNsaWNrKT1cImFkZEtleXdvcmRzQ2FuY2VsKClcIj5DYW5jZWw8L2J1dHRvbj5cclxuICAgIDwvZGl2PlxyXG48L2Rpdj5cclxuXHJcbjxkaXYgY2xhc3M9XCJwcmV2aWV3XCIgKm5nSWY9XCJQcmV2aWV3XCI+XHJcbiAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtY2FuY2VsLWJsYWNrLnBuZ1wiIGNsYXNzPVwiY2xvc2VcIiByb2xlPVwiYnV0dG9uXCIgKGNsaWNrKT1cImNsb3NlUHJldmlldygpXCI+XHJcbiAgICA8cCAgY2xhc3M9XCJwcmV2aWV3Q2F0YWdvcnlcIj5cclxuICAgICAgICA8c3BhbiAqbmdJZj1cImJsb2dQcmV2aWV3XCIgPnt7YmxvZ1ByZXZpZXcua2V5d29yZHNbMF19fTwvc3Bhbj5cclxuICAgICAgICA8c3BhbiA+fDwvc3Bhbj5cclxuICAgICAgICA8c3BhbiAqbmdJZj1cImJsb2dQcmV2aWV3XCI+e3tibG9nUHJldmlldy5yZWFkaW5nVGltZX19PC9zcGFuPlxyXG4gICAgPC9wPlxyXG4gICAgPGRpdiBjbGFzcz1cInByZXZpZXdCbG9nSW1hZ2VIb2xkZXJcIj5cclxuICAgICAgICA8aW1nICpuZ0lmPVwiYmxvZ1ByZXZpZXdcIiBjbGFzcz1cInByZXZpZXdCbG9nSW1hZ2VcIiB0aXRsZT1cInt7YmxvZ1ByZXZpZXcuaW1hZ2VEZXNjfX1cIiBhbHQ9XCJibG9nSW1hZ2VcIiBzcmM9XCJ7e2Jsb2dQcmV2aWV3LmJsb2dJbWFnZX19XCIgID5cclxuICAgIDwvZGl2PlxyXG4gICAgPGRpdiBjbGFzcz1cInByZXZpZXdCbG9nSW5mb1wiPlxyXG4gICAgICAgIDxwICpuZ0lmPVwiYmxvZ1ByZXZpZXdcIiBbaW5uZXJIdG1sXT1cImJsb2dQcmV2aWV3LmhlYWRpbmdcIiBjbGFzcz1cInByZXZpZXdIZWFkaW5nXCI+PC9wPlxyXG4gICAgICAgIDxwICpuZ0lmPVwiYmxvZ1ByZXZpZXdcIiBjbGFzcz1cInByZXZpZXdCbG9nU2hvcnREZXNjXCI+e3tibG9nUHJldmlldy5tZXRhRGVzY319PC9wPlxyXG4gICAgICAgIFxyXG4gICAgICAgIDxkaXYgY2xhc3M9XCJwcmV2aWV3QmxvZ2dlckltYWdlSG9sZGVyXCI+XHJcbiAgICAgICAgICA8aW1nICpuZ0lmPVwiYmxvZ1ByZXZpZXdcIiBjbGFzcz1cInByZXZpZXdCbG9nZ2VySW1hZ2VcIiAgc3JjPVwie3tibG9nUHJldmlldy5ibG9nZ2VySW1hZ2V9fVwiID5cclxuICAgICAgICA8L2Rpdj5cclxuICAgICAgICA8ZGl2IGNsYXNzPVwicHJldmlld0Jsb2dnZXJcIj5cclxuICAgICAgICAgIDxwICpuZ0lmPVwiYmxvZ1ByZXZpZXdcIiBjbGFzcz1cInByZXZpZXdCbG9nZ2VyTmFtZVwiPldyaXR0ZW4gYnkgPHNwYW4gPiB7e2Jsb2dQcmV2aWV3LmJsb2dnZXJOYW1lfX08L3NwYW4+PC9wPiAgXHJcbiAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgPHAgKm5nSWY9XCJibG9nUHJldmlld1wiIFtpbm5lckh0bWxdPVwiYmxvZ1ByZXZpZXcuY29udGVudFwiIGNsYXNzPVwicHJ2aWV3QmxvZ0NvbnRlbnRcIj48L3A+XHJcbiAgICAgICAgPGRpdiBjbGFzcz1cInByZXZpZXdUYWdzXCIgPlxyXG4gICAgICAgICAgPGRpdiBjbGFzcz1cInByZXZpZXdUYWdJY29uSG9sZGVyXCI+XHJcbiAgICAgICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC10YWcucG5nXCIgYWx0PVwic3BvcnRzLXNvY2lhbC10YWdcIj5cclxuICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgPG5nLWNvbnRhaW5lciAqbmdJZj1cIiBibG9nUHJldmlld1wiPiAgICAgICAgICBcclxuICAgICAgICAgICAgICA8c3BhbiAqbmdGb3I9XCJsZXQga2V5IG9mIGJsb2dQcmV2aWV3LmtleXdvcmRzO2xldCBpPWluZGV4XCI+e3trZXl9fTwvc3Bhbj5cclxuICAgICAgICAgIDwvbmctY29udGFpbmVyPlxyXG4gICAgICAgICAgICBcclxuICAgICAgICA8L2Rpdj5cclxuICAgIDwvZGl2PiAgIFxyXG48L2Rpdj4iLCI8YXBwLWVkaXQtYmxvZz48L2FwcC1lZGl0LWJsb2c+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztvQkNvQ1U7TUFBQSwrRUFBQTtNQUFBO01BQUEsMENBQUE7bUJBQUEsc0RBQWdEO01BQUE7SUFBYjtJQUFuQyxXQUFtQyxTQUFuQztJQUFtQztJQUFuQyxXQUFtQyxT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

@@ -48,7 +48,8 @@
 .shortDesc{
     font-size: 1.1em;
     color: #888888;
-    text-align: left
+    text-align: left;
+    margin-bottom: 5%;
 }
 .facebook{
     width:20px;
@@ -130,8 +131,8 @@
     padding: 2% 0% 2% 0%;
 }
 .desc{
-    font-family: 'Roboto',sans-serif;
-    font-size: 1.2em;
+    font-family: 'Roboto',sans-serif !important;
+    font-size: 1.2em !important;
     font-weight: 400;
     line-height: 2em;
     color: black;

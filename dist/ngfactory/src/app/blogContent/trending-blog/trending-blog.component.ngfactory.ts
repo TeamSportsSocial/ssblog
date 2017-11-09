@@ -22,18 +22,18 @@ const styles_TrendingBlogComponent:any[] = [i0.styles];
 export const RenderType_TrendingBlogComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_TrendingBlogComponent,data:{}});
 function View_TrendingBlogComponent_1(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),5,(null as any),
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),5,(null as any),
       (null as any),(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          2,'SportSocial-trending-blog-card',([] as any[]),(null as any),(null as any),
-          (null as any),i2.View_TrendingBlogCardComponent_0,i2.RenderType_TrendingBlogCardComponent)),
-      i1.ɵdid(4308992,(null as any),0,i3.TrendingBlogCardComponent,[i4.PropertyService,
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(2,0,(null as any),
+          (null as any),2,'SportSocial-trending-blog-card',([] as any[]),(null as any),
+          (null as any),(null as any),i2.View_TrendingBlogCardComponent_0,i2.RenderType_TrendingBlogCardComponent)),
+      i1.ɵdid(3,4308992,(null as any),0,i3.TrendingBlogCardComponent,[i4.PropertyService,
           i1.PLATFORM_ID],{blogId:[0,'blogId'],blogImage:[1,'blogImage'],bloggerImage:[2,
           'bloggerImage'],bloggerName:[3,'bloggerName'],heading:[4,'heading'],insertedDate:[5,
           'insertedDate'],Content:[6,'Content'],ViewCount:[7,'ViewCount'],ShareCount:[8,
           'ShareCount'],keywords:[9,'keywords'],exactDate:[10,'exactDate'],readingTime:[11,
-          'readingTime']},(null as any)),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵted((null as any),['\n    ']))],(_ck,_v) => {
+          'readingTime']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    ']))],(_ck,_v) => {
     const currVal_0:any = _v.context.$implicit.blogId;
     const currVal_1:any = _v.context.$implicit.blogImage;
     const currVal_2:any = _v.context.$implicit.bloggerImage;
@@ -51,7 +51,7 @@ function View_TrendingBlogComponent_1(_l:any):i1.ɵViewDefinition {
   },(null as any));
 }
 export function View_TrendingBlogComponent_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),11,'div',[['MaintainHeightWidthRatio',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),11,'div',[['MaintainHeightWidthRatio',
       '']],(null as any),[['window','resize']],(_v,en,$event) => {
     var ad:boolean = true;
     if (('window:resize' === en)) {
@@ -59,20 +59,21 @@ export function View_TrendingBlogComponent_0(_l:any):i1.ɵViewDefinition {
       ad = (pd_0 && ad);
     }
     return ad;
-  },(null as any),(null as any))),i1.ɵdid(4210688,(null as any),0,i5.MaintainHeightWidthRatioDirective,
+  },(null as any),(null as any))),i1.ɵdid(1,4210688,(null as any),0,i5.MaintainHeightWidthRatioDirective,
       [i1.ElementRef,i1.Renderer2,i1.PLATFORM_ID],(null as any),(null as any)),(_l()(),
-      i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+      i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(3,0,(null as any),(null as any),
       1,'SportSocial-subscribe-card',([] as any[]),(null as any),(null as any),(null as any),
-      i6.View_SubscribeCardComponent_0,i6.RenderType_SubscribeCardComponent)),i1.ɵdid(114688,
-      (null as any),0,i7.SubscribeCardComponent,[i8.PostService,i9.StatusService,i1.Renderer2],
-      (null as any),(null as any)),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),
-      i1.ɵeld(0,(null as any),(null as any),1,'a',[['class','popular'],['href','#']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n       Most Popular >>\n    '])),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
-          View_TrendingBlogComponent_1)),i1.ɵdid(802816,(null as any),0,i10.NgForOf,
-          [i1.ViewContainerRef,i1.TemplateRef,i1.IterableDiffers],{ngForOf:[0,'ngForOf']},
-          (null as any)),(_l()(),i1.ɵted((null as any),['\n   \n']))],(_ck,_v) => {
+      i6.View_SubscribeCardComponent_0,i6.RenderType_SubscribeCardComponent)),i1.ɵdid(4,
+      114688,(null as any),0,i7.SubscribeCardComponent,[i8.PostService,i9.StatusService,
+          i1.Renderer2],(null as any),(null as any)),(_l()(),i1.ɵted(-1,(null as any),
+      ['\n    '])),(_l()(),i1.ɵeld(6,0,(null as any),(null as any),1,'a',[['class',
+      'popular'],['href','#']],(null as any),(null as any),(null as any),(null as any),
+      (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n       Most Popular >>\n    '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵand(16777216,(null as any),
+          (null as any),1,(null as any),View_TrendingBlogComponent_1)),i1.ɵdid(10,
+          802816,(null as any),0,i10.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,i1.IterableDiffers],
+          {ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n   \n']))],(_ck,_v) => {
     var _co:i11.TrendingBlogComponent = _v.component;
     _ck(_v,4,0);
     const currVal_0:any = _co.blogDetails;
@@ -80,13 +81,13 @@ export function View_TrendingBlogComponent_0(_l:any):i1.ɵViewDefinition {
   },(null as any));
 }
 export function View_TrendingBlogComponent_Host_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'SportSocial-trending-blog',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'SportSocial-trending-blog',
       ([] as any[]),(null as any),(null as any),(null as any),View_TrendingBlogComponent_0,
-      RenderType_TrendingBlogComponent)),i1.ɵdid(114688,(null as any),0,i11.TrendingBlogComponent,
+      RenderType_TrendingBlogComponent)),i1.ɵdid(1,114688,(null as any),0,i11.TrendingBlogComponent,
       [i8.PostService],(null as any),(null as any))],(_ck,_v) => {
     _ck(_v,1,0);
   },(null as any));
 }
 export const TrendingBlogComponentNgFactory:i1.ComponentFactory<i11.TrendingBlogComponent> = i1.ɵccf('SportSocial-trending-blog',
     i11.TrendingBlogComponent,View_TrendingBlogComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYmxvZ0NvbnRlbnQvdHJlbmRpbmctYmxvZy90cmVuZGluZy1ibG9nLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9TcG9ydFNvY2lhbEJsb2cvc3JjL2FwcC9ibG9nQ29udGVudC90cmVuZGluZy1ibG9nL3RyZW5kaW5nLWJsb2cuY29tcG9uZW50LnRzIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYmxvZ0NvbnRlbnQvdHJlbmRpbmctYmxvZy90cmVuZGluZy1ibG9nLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYmxvZ0NvbnRlbnQvdHJlbmRpbmctYmxvZy90cmVuZGluZy1ibG9nLmNvbXBvbmVudC50cy5UcmVuZGluZ0Jsb2dDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IE1haW50YWluSGVpZ2h0V2lkdGhSYXRpbz5cbiAgICA8U3BvcnRTb2NpYWwtc3Vic2NyaWJlLWNhcmQ+PC9TcG9ydFNvY2lhbC1zdWJzY3JpYmUtY2FyZD5cbiAgICA8YSBocmVmPVwiI1wiIGNsYXNzPVwicG9wdWxhclwiPlxuICAgICAgIE1vc3QgUG9wdWxhciA+PlxuICAgIDwvYT5cbiAgICA8bmctY29udGFpbmVyXG4gICAgICAgICpuZ0Zvcj1cImxldCBkYXRhIG9mIGJsb2dEZXRhaWxzO2xldCBpPWluZGV4XCI+XG4gICAgPFNwb3J0U29jaWFsLXRyZW5kaW5nLWJsb2ctY2FyZFxuICAgICAgICBbYmxvZ0lkXT1cImRhdGEuYmxvZ0lkXCJcbiAgICAgICAgW2Jsb2dJbWFnZV09XCJkYXRhLmJsb2dJbWFnZVwiXG4gICAgICAgIFtibG9nZ2VySW1hZ2VdPVwiZGF0YS5ibG9nZ2VySW1hZ2VcIlxuICAgICAgICBbYmxvZ2dlck5hbWVdPVwiZGF0YS5ibG9nZ2VyTmFtZVwiXG4gICAgICAgIFtpbnNlcnRlZERhdGVdPVwiZGF0YS5pbnNlcnRlZERhdGVcIlxuICAgICAgICBbaGVhZGluZ109XCJkYXRhLmhlYWRpbmdcIlxuICAgICAgICBbQ29udGVudF09XCJkYXRhLkNvbnRlbnRcIlxuICAgICAgICBbVmlld0NvdW50XT1cImRhdGEuVmlld0NvdW50XCJcbiAgICAgICAgW1NoYXJlQ291bnRdPVwiZGF0YS5TaGFyZUNvdW50XCJcbiAgICAgICAgW2tleXdvcmRzXT1cImRhdGEua2V5d29yZHNcIlxuICAgICAgICBbZXhhY3REYXRlXT1cImRhdGEuZXhhY3REYXRlXCJcbiAgICAgICAgW3JlYWRpbmdUaW1lXT1cImRhdGEucmVhZGluZ1RpbWVcIj5cbiAgICA8L1Nwb3J0U29jaWFsLXRyZW5kaW5nLWJsb2ctY2FyZD5cbiAgICA8L25nLWNvbnRhaW5lcj5cbiAgIFxuPC9kaXY+IiwiPFNwb3J0U29jaWFsLXRyZW5kaW5nLWJsb2c+PC9TcG9ydFNvY2lhbC10cmVuZGluZy1ibG9nPiJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztvQkNLSTtNQUFBO01BQ2lELDJDQUNqRDtVQUFBO1VBQUE7YUFBQTt3QkFBQTtVQUFBO1VBQUE7VUFBQTtVQUFBLCtCQVlxQztNQUNKO0lBWjdCO0lBQ0E7SUFDQTtJQUNBO0lBRUE7SUFEQTtJQUVBO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQVpKLFlBQ0ksVUFDQSxVQUNBLFVBQ0EsVUFFQSxVQURBLFVBRUE7UUFDQSxVQUNBLFVBQ0EsVUFDQSxXQUNBLFVBWko7Ozs7b0JBUEo7TUFBQTtJQUFBO0lBQUE7TUFBQTtNQUFBO0lBQUE7SUFBQTtFQUFBLHVDQUFBO01BQUEseUVBQThCO2FBQUEsNEJBQzFCO01BQUE7MkVBQUEsVUFBQTtNQUFBO01BQUEsNkJBQXlELDJDQUN6RDthQUFBO1VBQUE7TUFBNEIsbUVBRXhCO1VBQUEsYUFDSjtVQUFBLHNDQUFBO1VBQUE7VUFBQSxlQWdCZTs7SUFwQmY7SUFLSTtJQURKLFlBQ0ksU0FESjs7OztvQkNMSjtNQUFBO3NDQUFBLFVBQUE7TUFBQTtJQUFBOzs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovc3NibG9nL3NyYy9hcHAvYmxvZ0NvbnRlbnQvdHJlbmRpbmctYmxvZy90cmVuZGluZy1ibG9nLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9zc2Jsb2cvc3JjL2FwcC9ibG9nQ29udGVudC90cmVuZGluZy1ibG9nL3RyZW5kaW5nLWJsb2cuY29tcG9uZW50LnRzIiwibmc6Ly8vQzovc3NibG9nL3NyYy9hcHAvYmxvZ0NvbnRlbnQvdHJlbmRpbmctYmxvZy90cmVuZGluZy1ibG9nLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovc3NibG9nL3NyYy9hcHAvYmxvZ0NvbnRlbnQvdHJlbmRpbmctYmxvZy90cmVuZGluZy1ibG9nLmNvbXBvbmVudC50cy5UcmVuZGluZ0Jsb2dDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IE1haW50YWluSGVpZ2h0V2lkdGhSYXRpbz5cclxuICAgIDxTcG9ydFNvY2lhbC1zdWJzY3JpYmUtY2FyZD48L1Nwb3J0U29jaWFsLXN1YnNjcmliZS1jYXJkPlxyXG4gICAgPGEgaHJlZj1cIiNcIiBjbGFzcz1cInBvcHVsYXJcIj5cclxuICAgICAgIE1vc3QgUG9wdWxhciA+PlxyXG4gICAgPC9hPlxyXG4gICAgPG5nLWNvbnRhaW5lclxyXG4gICAgICAgICpuZ0Zvcj1cImxldCBkYXRhIG9mIGJsb2dEZXRhaWxzO2xldCBpPWluZGV4XCI+XHJcbiAgICA8U3BvcnRTb2NpYWwtdHJlbmRpbmctYmxvZy1jYXJkXHJcbiAgICAgICAgW2Jsb2dJZF09XCJkYXRhLmJsb2dJZFwiXHJcbiAgICAgICAgW2Jsb2dJbWFnZV09XCJkYXRhLmJsb2dJbWFnZVwiXHJcbiAgICAgICAgW2Jsb2dnZXJJbWFnZV09XCJkYXRhLmJsb2dnZXJJbWFnZVwiXHJcbiAgICAgICAgW2Jsb2dnZXJOYW1lXT1cImRhdGEuYmxvZ2dlck5hbWVcIlxyXG4gICAgICAgIFtpbnNlcnRlZERhdGVdPVwiZGF0YS5pbnNlcnRlZERhdGVcIlxyXG4gICAgICAgIFtoZWFkaW5nXT1cImRhdGEuaGVhZGluZ1wiXHJcbiAgICAgICAgW0NvbnRlbnRdPVwiZGF0YS5Db250ZW50XCJcclxuICAgICAgICBbVmlld0NvdW50XT1cImRhdGEuVmlld0NvdW50XCJcclxuICAgICAgICBbU2hhcmVDb3VudF09XCJkYXRhLlNoYXJlQ291bnRcIlxyXG4gICAgICAgIFtrZXl3b3Jkc109XCJkYXRhLmtleXdvcmRzXCJcclxuICAgICAgICBbZXhhY3REYXRlXT1cImRhdGEuZXhhY3REYXRlXCJcclxuICAgICAgICBbcmVhZGluZ1RpbWVdPVwiZGF0YS5yZWFkaW5nVGltZVwiPlxyXG4gICAgPC9TcG9ydFNvY2lhbC10cmVuZGluZy1ibG9nLWNhcmQ+XHJcbiAgICA8L25nLWNvbnRhaW5lcj5cclxuICAgXHJcbjwvZGl2PiIsIjxTcG9ydFNvY2lhbC10cmVuZGluZy1ibG9nPjwvU3BvcnRTb2NpYWwtdHJlbmRpbmctYmxvZz4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7b0JDS0k7TUFBQTtNQUNpRCw4Q0FDakQ7VUFBQTtVQUFBO2FBQUE7d0JBQUE7VUFBQTtVQUFBO1VBQUE7VUFBQSwrQkFZcUM7TUFDSjtJQVo3QjtJQUNBO0lBQ0E7SUFDQTtJQUVBO0lBREE7SUFFQTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFaSixZQUNJLFVBQ0EsVUFDQSxVQUNBLFVBRUEsVUFEQSxVQUVBO1FBQ0EsVUFDQSxVQUNBLFVBQ0EsV0FDQSxVQVpKOzs7O29CQVBKO01BQUE7SUFBQTtJQUFBO01BQUE7TUFBQTtJQUFBO0lBQUE7RUFBQSx1Q0FBQTtNQUFBLHlFQUE4QjthQUFBLCtCQUMxQjtNQUFBOzJFQUFBLFVBQUE7TUFBQTtzQkFBQSwrQkFBeUQ7TUFBQSxhQUN6RDtNQUFBO01BQUEsZ0JBQTRCO01BRXhCLDhDQUNKO1VBQUEsb0VBQUE7VUFBQTtVQUFBLHVDQWdCZTtVQUFBOztJQXBCZjtJQUtJO0lBREosWUFDSSxTQURKOzs7O29CQ0xKO01BQUE7c0NBQUEsVUFBQTtNQUFBO0lBQUE7Ozs7In0=

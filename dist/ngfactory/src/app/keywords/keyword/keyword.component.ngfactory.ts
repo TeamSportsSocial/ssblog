@@ -13,28 +13,29 @@ const styles_KeywordComponent:any[] = [i0.styles];
 export const RenderType_KeywordComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_KeywordComponent,data:{}});
 export function View_KeywordComponent_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[i1.ɵqud(402653184,1,{Keyword:0}),(_l()(),i1.ɵeld(0,[[1,0],['Keyword',
+  return i1.ɵvid(0,[i1.ɵqud(402653184,1,{Keyword:0}),(_l()(),i1.ɵeld(1,0,[[1,0],['Keyword',
       1]],(null as any),7,'div',[['class','keyword']],(null as any),(null as any),
-      (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n  '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),4,'div',[['class','title']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'p',([] as any[]),
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['',''])),(_l()(),i1.ɵted((null as any),['\n  '])),
-      (_l()(),i1.ɵted((null as any),['\n']))],(null as any),(_ck,_v) => {
+      (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+      ['\n  '])),(_l()(),i1.ɵeld(3,0,(null as any),(null as any),4,'div',[['class',
+      'title']],(null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(5,0,(null as any),
+          (null as any),1,'p',([] as any[]),(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(6,(null as any),['',''])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n']))],(null as any),(_ck,_v) => {
     var _co:i2.KeywordComponent = _v.component;
     const currVal_0:any = _co.title;
     _ck(_v,6,0,currVal_0);
   });
 }
 export function View_KeywordComponent_Host_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'SportSocialBlog-keyword',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'SportSocialBlog-keyword',
       ([] as any[]),(null as any),(null as any),(null as any),View_KeywordComponent_0,
-      RenderType_KeywordComponent)),i1.ɵdid(114688,(null as any),0,i2.KeywordComponent,
+      RenderType_KeywordComponent)),i1.ɵdid(1,114688,(null as any),0,i2.KeywordComponent,
       [i1.Renderer2],(null as any),(null as any))],(_ck,_v) => {
     _ck(_v,1,0);
   },(null as any));
 }
 export const KeywordComponentNgFactory:i1.ComponentFactory<i2.KeywordComponent> = i1.ɵccf('SportSocialBlog-keyword',
     i2.KeywordComponent,View_KeywordComponent_Host_0,{title:'title'},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAva2V5d29yZHMva2V5d29yZC9rZXl3b3JkLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9TcG9ydFNvY2lhbEJsb2cvc3JjL2FwcC9rZXl3b3Jkcy9rZXl3b3JkL2tleXdvcmQuY29tcG9uZW50LnRzIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAva2V5d29yZHMva2V5d29yZC9rZXl3b3JkLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAva2V5d29yZHMva2V5d29yZC9rZXl3b3JkLmNvbXBvbmVudC50cy5LZXl3b3JkQ29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiPGRpdiBjbGFzcz1cImtleXdvcmRcIiAjS2V5d29yZD5cbiAgPGRpdiBjbGFzcz1cInRpdGxlXCI+XG4gICAgPHA+e3t0aXRsZX19PC9wPlxuICA8L2Rpdj5cbjwvZGl2PiIsIjxTcG9ydFNvY2lhbEJsb2cta2V5d29yZD48L1Nwb3J0U29jaWFsQmxvZy1rZXl3b3JkPiJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7OztxRENBQTtNQUFBO01BQUEsNENBQThCO01BQzVCO1VBQUEsMERBQW1CO1VBQUEsYUFDakI7VUFBQTtNQUFHLHdDQUFhO01BQ1o7O0lBREQ7SUFBQTs7OztvQkNGUDtNQUFBO2lDQUFBLFVBQUE7TUFBQTtJQUFBOzs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovc3NibG9nL3NyYy9hcHAva2V5d29yZHMva2V5d29yZC9rZXl3b3JkLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9zc2Jsb2cvc3JjL2FwcC9rZXl3b3Jkcy9rZXl3b3JkL2tleXdvcmQuY29tcG9uZW50LnRzIiwibmc6Ly8vQzovc3NibG9nL3NyYy9hcHAva2V5d29yZHMva2V5d29yZC9rZXl3b3JkLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovc3NibG9nL3NyYy9hcHAva2V5d29yZHMva2V5d29yZC9rZXl3b3JkLmNvbXBvbmVudC50cy5LZXl3b3JkQ29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiPGRpdiBjbGFzcz1cImtleXdvcmRcIiAjS2V5d29yZD5cclxuICA8ZGl2IGNsYXNzPVwidGl0bGVcIj5cclxuICAgIDxwPnt7dGl0bGV9fTwvcD5cclxuICA8L2Rpdj5cclxuPC9kaXY+IiwiPFNwb3J0U29jaWFsQmxvZy1rZXl3b3JkPjwvU3BvcnRTb2NpYWxCbG9nLWtleXdvcmQ+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7O3FEQ0FBO01BQUE7TUFBQSw0Q0FBOEI7TUFBQSxXQUM1QjtNQUFBO01BQW1CLDhDQUNqQjtVQUFBO1VBQUEsOEJBQUc7TUFBYSw0Q0FDWjtVQUFBOztJQUREO0lBQUE7Ozs7b0JDRlA7TUFBQTtpQ0FBQSxVQUFBO01BQUE7SUFBQTs7OzsifQ==

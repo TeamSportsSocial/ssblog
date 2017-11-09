@@ -17,43 +17,43 @@ const styles_SubscribeCardComponent:any[] = [i0.styles];
 export const RenderType_SubscribeCardComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_SubscribeCardComponent,data:{}});
 function View_SubscribeCardComponent_1(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'p',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'p',[['class',
       'errorMessage']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['Email is Inavlid!!! Please enter correct Email']))],
+      (_l()(),i1.ɵted(-1,(null as any),['Email is Inavlid!!! Please enter correct Email']))],
       (null as any),(null as any));
 }
 function View_SubscribeCardComponent_2(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,[['subscriptionBox',1]],(null as any),15,'div',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,[['subscriptionBox',1]],(null as any),15,'div',
       [['class','subscriptionBox']],(null as any),(null as any),(null as any),(null as any),
-      (null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,
-      (null as any),(null as any),3,'div',[['class','top']],(null as any),(null as any),
-      (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['class','closeMessage'],
-          ['role','button'],['src','/assets/images/sports-social-cancel-black.png']],
-          (null as any),[[(null as any),'click']],(_v,en,$event) => {
-            var ad:boolean = true;
-            var _co:any = _v.component;
-            if (('click' === en)) {
-              const pd_0:any = ((<any>_co.close()) !== false);
-              ad = (pd_0 && ad);
-            }
-            return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          7,'div',[['class','bottom']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),1,'p',([] as any[]),(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['Great'])),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),1,'p',([] as any[]),(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n            You have Subscribed for our Newsletter and Blog updates.\n        '])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),['\n']))],
-      (null as any),(null as any));
+      (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(2,
+      0,(null as any),(null as any),3,'div',[['class','top']],(null as any),(null as any),
+      (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+      ['\n        '])),(_l()(),i1.ɵeld(4,0,(null as any),(null as any),0,'img',[['class',
+      'closeMessage'],['role','button'],['src','/assets/images/sports-social-cancel-black.png']],
+      (null as any),[[(null as any),'click']],(_v,en,$event) => {
+        var ad:boolean = true;
+        var _co:any = _v.component;
+        if (('click' === en)) {
+          const pd_0:any = ((<any>_co.close()) !== false);
+          ad = (pd_0 && ad);
+        }
+        return ad;
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(7,0,(null as any),
+          (null as any),7,'div',[['class','bottom']],(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵeld(9,0,(null as any),(null as any),1,'p',([] as any[]),(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['Great'])),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵeld(12,0,(null as any),(null as any),1,'p',([] as any[]),(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n            You have Subscribed for our Newsletter and Blog updates.\n        '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n']))],(null as any),(null as any));
 }
 export function View_SubscribeCardComponent_0(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[i1.ɵqud(402653184,1,{subscriber:0}),i1.ɵqud(402653184,2,{button:0}),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),13,'div',[['MaintainHeightWidthRatio',
+      (_l()(),i1.ɵeld(2,0,(null as any),(null as any),13,'div',[['MaintainHeightWidthRatio',
           ''],['class','subscribeCard']],(null as any),[['window','resize']],(_v,en,
           $event) => {
         var ad:boolean = true;
@@ -62,32 +62,32 @@ export function View_SubscribeCardComponent_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),i1.ɵdid(4210688,(null as any),0,i2.MaintainHeightWidthRatioDirective,
+      },(null as any),(null as any))),i1.ɵdid(3,4210688,(null as any),0,i2.MaintainHeightWidthRatioDirective,
           [i1.ElementRef,i1.Renderer2,i1.PLATFORM_ID],(null as any),(null as any)),
-      (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          1,'p',[['class','heading']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['Subscribe via Email'])),
-      (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,[[1,0],['subscriber',
+      (_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵeld(5,0,(null as any),
+          (null as any),1,'p',[['class','heading']],(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Subscribe via Email'])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵeld(8,0,[[1,0],['subscriber',
           1]],(null as any),0,'input',[['email',''],['name','Email'],['placeholder',
           'Enter your Email'],['type','email']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),
-          i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_SubscribeCardComponent_1)),
-      i1.ɵdid(16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),
-          i1.ɵeld(0,[[2,0],['button',1]],(null as any),1,'button',[['type','submit']],
-              (null as any),[[(null as any),'click']],(_v,en,$event) => {
-                var ad:boolean = true;
-                var _co:i4.SubscribeCardComponent = _v.component;
-                if (('click' === en)) {
-                  const pd_0:any = ((<any>_co.Subscribe()) !== false);
-                  ad = (pd_0 && ad);
-                }
-                return ad;
-              },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Submit'])),
-      (_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵted((null as any),['\n'])),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n  '])),
+      (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_SubscribeCardComponent_1)),
+      i1.ɵdid(11,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n  '])),
+      (_l()(),i1.ɵeld(13,0,[[2,0],['button',1]],(null as any),1,'button',[['type',
+          'submit']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
+        var ad:boolean = true;
+        var _co:i4.SubscribeCardComponent = _v.component;
+        if (('click' === en)) {
+          const pd_0:any = ((<any>_co.Subscribe()) !== false);
+          ad = (pd_0 && ad);
+        }
+        return ad;
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Submit'])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n'])),(_l()(),i1.ɵted(-1,(null as any),['\n'])),
       (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_SubscribeCardComponent_2)),
-      i1.ɵdid(16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any))],(_ck,_v) => {
+      i1.ɵdid(18,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any))],(_ck,_v) => {
     var _co:i4.SubscribeCardComponent = _v.component;
     const currVal_0:any = _co.errorMessage;
     _ck(_v,11,0,currVal_0);
@@ -96,9 +96,9 @@ export function View_SubscribeCardComponent_0(_l:any):i1.ɵViewDefinition {
   },(null as any));
 }
 export function View_SubscribeCardComponent_Host_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'SportSocial-subscribe-card',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'SportSocial-subscribe-card',
       ([] as any[]),(null as any),(null as any),(null as any),View_SubscribeCardComponent_0,
-      RenderType_SubscribeCardComponent)),i1.ɵdid(114688,(null as any),0,i4.SubscribeCardComponent,
+      RenderType_SubscribeCardComponent)),i1.ɵdid(1,114688,(null as any),0,i4.SubscribeCardComponent,
       [i5.PostService,i6.StatusService,i1.Renderer2],(null as any),(null as any))],
       (_ck,_v) => {
         _ck(_v,1,0);
@@ -106,4 +106,4 @@ export function View_SubscribeCardComponent_Host_0(_l:any):i1.ɵViewDefinition {
 }
 export const SubscribeCardComponentNgFactory:i1.ComponentFactory<i4.SubscribeCardComponent> = i1.ɵccf('SportSocial-subscribe-card',
     i4.SubscribeCardComponent,View_SubscribeCardComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvc3Vic2NyaWJlLWNhcmQvc3Vic2NyaWJlLWNhcmQuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0M6L1Nwb3J0U29jaWFsQmxvZy9zcmMvYXBwL3N1YnNjcmliZS1jYXJkL3N1YnNjcmliZS1jYXJkLmNvbXBvbmVudC50cyIsIm5nOi8vL0M6L1Nwb3J0U29jaWFsQmxvZy9zcmMvYXBwL3N1YnNjcmliZS1jYXJkL3N1YnNjcmliZS1jYXJkLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvc3Vic2NyaWJlLWNhcmQvc3Vic2NyaWJlLWNhcmQuY29tcG9uZW50LnRzLlN1YnNjcmliZUNhcmRDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwic3Vic2NyaWJlQ2FyZFwiIE1haW50YWluSGVpZ2h0V2lkdGhSYXRpbz5cbiAgPHAgY2xhc3M9XCJoZWFkaW5nXCI+U3Vic2NyaWJlIHZpYSBFbWFpbDwvcD5cbiAgPGlucHV0IHR5cGU9XCJlbWFpbFwiIG5hbWU9XCJFbWFpbFwiIHBsYWNlaG9sZGVyPVwiRW50ZXIgeW91ciBFbWFpbFwiICAjc3Vic2NyaWJlciBlbWFpbCA+XG4gIDxwICBjbGFzcz1cImVycm9yTWVzc2FnZVwiICpuZ0lmPVwiZXJyb3JNZXNzYWdlXCI+RW1haWwgaXMgSW5hdmxpZCEhISBQbGVhc2UgZW50ZXIgY29ycmVjdCBFbWFpbDwvcD5cbiAgPGJ1dHRvbiAoY2xpY2spPVwiU3Vic2NyaWJlKClcIiB0eXBlPVwic3VibWl0XCIgI2J1dHRvbj5TdWJtaXQ8L2J1dHRvbj5cbjwvZGl2PlxuPGRpdiBjbGFzcz1cInN1YnNjcmlwdGlvbkJveFwiICNzdWJzY3JpcHRpb25Cb3ggKm5nSWY9XCJzaG93U3Vic2NyaXB0aW9uQm94XCI+XG4gICAgPGRpdiBjbGFzcz1cInRvcFwiPlxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtY2FuY2VsLWJsYWNrLnBuZ1wiIHJvbGU9XCJidXR0b25cIiBjbGFzcz1cImNsb3NlTWVzc2FnZVwiICAoY2xpY2spPVwiY2xvc2UoKVwiPlxuICAgIDwvZGl2PlxuICAgIDxkaXYgY2xhc3M9XCJib3R0b21cIj5cbiAgICAgICAgPHA+R3JlYXQ8L3A+XG4gICAgICAgIDxwPlxuICAgICAgICAgICAgWW91IGhhdmUgU3Vic2NyaWJlZCBmb3Igb3VyIE5ld3NsZXR0ZXIgYW5kIEJsb2cgdXBkYXRlcy5cbiAgICAgICAgPC9wPlxuICAgIDwvZGl2PlxuPC9kaXY+IiwiPFNwb3J0U29jaWFsLXN1YnNjcmliZS1jYXJkPjwvU3BvcnRTb2NpYWwtc3Vic2NyaWJlLWNhcmQ+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7OztvQkNHRTtNQUFBO01BQThDOzs7O29CQUdoRDtNQUFBO01BQUEsZ0JBQTBFLDJDQUN0RTtNQUFBO01BQUEsNENBQWlCO01BQ2I7VUFBQTtVQUFBO1lBQUE7WUFBQTtZQUE2RjtjQUFBO2NBQUE7WUFBQTtZQUE3RjtVQUFBLGdDQUErRztNQUM3RywyQ0FDTjtVQUFBO1VBQUEsZ0JBQW9CLCtDQUNoQjtVQUFBO1VBQUEsNENBQUc7VUFBQSxZQUFTLCtDQUNaO1VBQUE7VUFBQSw0Q0FBRztVQUFBO01BRUMsMkNBQ0Y7Ozs7O01BZlY7VUFBQTtnQkFBQTtRQUFBO1FBQUE7VUFBQTtVQUFBO1FBQUE7UUFBQTtNQUFBLHVDQUFBO1VBQUE7TUFBb0QseUNBQ2xEO1VBQUE7VUFBQSxnQkFBbUI7TUFBdUIseUNBQzFDO1VBQUE7VUFBQTtVQUFBLDhCQUFvRix5Q0FDcEY7aUJBQUE7YUFBQTtVQUFBLHdCQUFnRyx5Q0FDaEc7aUJBQUE7Y0FBQTtnQkFBQTtnQkFBQTtnQkFBUTtrQkFBQTtrQkFBQTtnQkFBQTtnQkFBUjtjQUFBLGdDQUFvRDtNQUFlLHVDQUMvRDtNQUNOO2FBQUE7VUFBQTs7SUFIMkI7SUFBekIsWUFBeUIsU0FBekI7SUFHNEM7SUFBOUMsWUFBOEMsU0FBOUM7Ozs7b0JDTkE7TUFBQTt1Q0FBQSxVQUFBO01BQUE7O1FBQUE7Ozs7In0=
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovc3NibG9nL3NyYy9hcHAvc3Vic2NyaWJlLWNhcmQvc3Vic2NyaWJlLWNhcmQuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0M6L3NzYmxvZy9zcmMvYXBwL3N1YnNjcmliZS1jYXJkL3N1YnNjcmliZS1jYXJkLmNvbXBvbmVudC50cyIsIm5nOi8vL0M6L3NzYmxvZy9zcmMvYXBwL3N1YnNjcmliZS1jYXJkL3N1YnNjcmliZS1jYXJkLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovc3NibG9nL3NyYy9hcHAvc3Vic2NyaWJlLWNhcmQvc3Vic2NyaWJlLWNhcmQuY29tcG9uZW50LnRzLlN1YnNjcmliZUNhcmRDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwic3Vic2NyaWJlQ2FyZFwiIE1haW50YWluSGVpZ2h0V2lkdGhSYXRpbz5cclxuICA8cCBjbGFzcz1cImhlYWRpbmdcIj5TdWJzY3JpYmUgdmlhIEVtYWlsPC9wPlxyXG4gIDxpbnB1dCB0eXBlPVwiZW1haWxcIiBuYW1lPVwiRW1haWxcIiBwbGFjZWhvbGRlcj1cIkVudGVyIHlvdXIgRW1haWxcIiAgI3N1YnNjcmliZXIgZW1haWwgPlxyXG4gIDxwICBjbGFzcz1cImVycm9yTWVzc2FnZVwiICpuZ0lmPVwiZXJyb3JNZXNzYWdlXCI+RW1haWwgaXMgSW5hdmxpZCEhISBQbGVhc2UgZW50ZXIgY29ycmVjdCBFbWFpbDwvcD5cclxuICA8YnV0dG9uIChjbGljayk9XCJTdWJzY3JpYmUoKVwiIHR5cGU9XCJzdWJtaXRcIiAjYnV0dG9uPlN1Ym1pdDwvYnV0dG9uPlxyXG48L2Rpdj5cclxuPGRpdiBjbGFzcz1cInN1YnNjcmlwdGlvbkJveFwiICNzdWJzY3JpcHRpb25Cb3ggKm5nSWY9XCJzaG93U3Vic2NyaXB0aW9uQm94XCI+XHJcbiAgICA8ZGl2IGNsYXNzPVwidG9wXCI+XHJcbiAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWNhbmNlbC1ibGFjay5wbmdcIiByb2xlPVwiYnV0dG9uXCIgY2xhc3M9XCJjbG9zZU1lc3NhZ2VcIiAgKGNsaWNrKT1cImNsb3NlKClcIj5cclxuICAgIDwvZGl2PlxyXG4gICAgPGRpdiBjbGFzcz1cImJvdHRvbVwiPlxyXG4gICAgICAgIDxwPkdyZWF0PC9wPlxyXG4gICAgICAgIDxwPlxyXG4gICAgICAgICAgICBZb3UgaGF2ZSBTdWJzY3JpYmVkIGZvciBvdXIgTmV3c2xldHRlciBhbmQgQmxvZyB1cGRhdGVzLlxyXG4gICAgICAgIDwvcD5cclxuICAgIDwvZGl2PlxyXG48L2Rpdj4iLCI8U3BvcnRTb2NpYWwtc3Vic2NyaWJlLWNhcmQ+PC9TcG9ydFNvY2lhbC1zdWJzY3JpYmUtY2FyZD4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7O29CQ0dFO01BQUE7TUFBOEM7Ozs7b0JBR2hEO01BQUE7TUFBQSxnQkFBMEUsOENBQ3RFO01BQUE7TUFBQSw0Q0FBaUI7TUFBQSxpQkFDYjtNQUFBO01BQUE7UUFBQTtRQUFBO1FBQTZGO1VBQUE7VUFBQTtRQUFBO1FBQTdGO01BQUEsZ0NBQStHO01BQzdHLDhDQUNOO1VBQUE7VUFBQSw4QkFBb0I7TUFDaEI7VUFBQSwwREFBRztVQUFBLDBCQUFTO01BQ1o7VUFBQSwwREFBRztVQUFBO01BRUMsOENBQ0Y7VUFBQTs7OztNQWZWO1VBQUE7Z0JBQUE7UUFBQTtRQUFBO1VBQUE7VUFBQTtRQUFBO1FBQUE7TUFBQSx1Q0FBQTtVQUFBO01BQW9ELDRDQUNsRDtVQUFBO1VBQUEsOEJBQW1CO01BQXVCLDRDQUMxQztVQUFBO1VBQUE7VUFBQSw4QkFBb0Y7TUFDcEY7YUFBQTtVQUFBLGlDQUFnRztNQUNoRztVQUFBO1FBQUE7UUFBQTtRQUFRO1VBQUE7VUFBQTtRQUFBO1FBQVI7TUFBQSxnQ0FBb0Q7TUFBZSwwQ0FDL0Q7TUFDTjthQUFBO1VBQUE7O0lBSDJCO0lBQXpCLFlBQXlCLFNBQXpCO0lBRzRDO0lBQTlDLFlBQThDLFNBQTlDOzs7O29CQ05BO01BQUE7dUNBQUEsVUFBQTtNQUFBOztRQUFBOzs7OyJ9

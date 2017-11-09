@@ -22,15 +22,15 @@ var styles_TrendingBlogComponent = [i0.styles];
 exports.RenderType_TrendingBlogComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_TrendingBlogComponent, data: {} });
 function View_TrendingBlogComponent_1(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 5, null, null, null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 2, 'SportSocial-trending-blog-card', [], null, null, null, i2.View_TrendingBlogCardComponent_0, i2.RenderType_TrendingBlogCardComponent)),
-        i1.ɵdid(4308992, null, 0, i3.TrendingBlogCardComponent, [i4.PropertyService,
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 5, null, null, null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(2, 0, null, null, 2, 'SportSocial-trending-blog-card', [], null, null, null, i2.View_TrendingBlogCardComponent_0, i2.RenderType_TrendingBlogCardComponent)),
+        i1.ɵdid(3, 4308992, null, 0, i3.TrendingBlogCardComponent, [i4.PropertyService,
             i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'], bloggerImage: [2,
                 'bloggerImage'], bloggerName: [3, 'bloggerName'], heading: [4, 'heading'], insertedDate: [5,
                 'insertedDate'], Content: [6, 'Content'], ViewCount: [7, 'ViewCount'], ShareCount: [8,
                 'ShareCount'], keywords: [9, 'keywords'], exactDate: [10, 'exactDate'], readingTime: [11,
-                'readingTime'] }, null), (_l()(), i1.ɵted(null, ['\n    '])),
-        (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
+                'readingTime'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])),
+        (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerImage;
@@ -48,7 +48,7 @@ function View_TrendingBlogComponent_1(_l) {
     }, null);
 }
 function View_TrendingBlogComponent_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 11, 'div', [['MaintainHeightWidthRatio',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 11, 'div', [['MaintainHeightWidthRatio',
                 '']], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
@@ -56,10 +56,11 @@ function View_TrendingBlogComponent_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(4210688, null, 0, i5.MaintainHeightWidthRatioDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID], null, null), (_l()(),
-            i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-subscribe-card', [], null, null, null, i6.View_SubscribeCardComponent_0, i6.RenderType_SubscribeCardComponent)), i1.ɵdid(114688, null, 0, i7.SubscribeCardComponent, [i8.PostService, i9.StatusService, i1.Renderer2], null, null), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(),
-            i1.ɵeld(0, null, null, 1, 'a', [['class', 'popular'], ['href', '#']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n       Most Popular >>\n    '])), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TrendingBlogComponent_1)), i1.ɵdid(802816, null, 0, i10.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n   \n']))], function (_ck, _v) {
+        }, null, null)), i1.ɵdid(1, 4210688, null, 0, i5.MaintainHeightWidthRatioDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID], null, null), (_l()(),
+            i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(3, 0, null, null, 1, 'SportSocial-subscribe-card', [], null, null, null, i6.View_SubscribeCardComponent_0, i6.RenderType_SubscribeCardComponent)), i1.ɵdid(4, 114688, null, 0, i7.SubscribeCardComponent, [i8.PostService, i9.StatusService,
+            i1.Renderer2], null, null), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(6, 0, null, null, 1, 'a', [['class',
+                'popular'], ['href', '#']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n       Most Popular >>\n    '])),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TrendingBlogComponent_1)), i1.ɵdid(10, 802816, null, 0, i10.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n   \n']))], function (_ck, _v) {
         var _co = _v.component;
         _ck(_v, 4, 0);
         var currVal_0 = _co.blogDetails;
@@ -68,7 +69,7 @@ function View_TrendingBlogComponent_0(_l) {
 }
 exports.View_TrendingBlogComponent_0 = View_TrendingBlogComponent_0;
 function View_TrendingBlogComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-trending-blog', [], null, null, null, View_TrendingBlogComponent_0, exports.RenderType_TrendingBlogComponent)), i1.ɵdid(114688, null, 0, i11.TrendingBlogComponent, [i8.PostService], null, null)], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocial-trending-blog', [], null, null, null, View_TrendingBlogComponent_0, exports.RenderType_TrendingBlogComponent)), i1.ɵdid(1, 114688, null, 0, i11.TrendingBlogComponent, [i8.PostService], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

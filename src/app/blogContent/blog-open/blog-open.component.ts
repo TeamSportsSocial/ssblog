@@ -37,7 +37,7 @@ export class BlogOpenComponent implements OnInit {
     mobileView:boolean=false;
     dataRecived:boolean=false;
     openFullImage:boolean=false;
-    relatedArticles:boolean=false;
+    relatedArticles: boolean=false;
     blogDataRecieved:boolean=false;
     blogID;
     Keywords=[];
@@ -48,6 +48,7 @@ export class BlogOpenComponent implements OnInit {
     contentForShare;
     keys;
     isBrowser: boolean;
+    readTimeCalc: boolean;
     @ViewChild('openBlog') openBlog;
     @ViewChild('Social') Social;
     @ViewChild('BlogInfo') BlogInfo;
@@ -71,9 +72,6 @@ export class BlogOpenComponent implements OnInit {
         private Fb: FacebookService,
     ) {
         this.isBrowser = isPlatformBrowser(platformId);
-        if ( isPlatformBrowser(platformId) ) {
-            Fb.init();
-        }
     }
 
     ngOnInit() {
@@ -84,7 +82,7 @@ export class BlogOpenComponent implements OnInit {
 
     ngAfterViewInit() {
         this.scriptOfTwitter();
-        this.recieveBlogIdFromUrl();
+
     }
     setTitle() {
         if (this.route.snapshot.url[0].path !== 'sportsocialblog' || this.route.snapshot.url[1].path !== 'page') {
@@ -125,13 +123,10 @@ export class BlogOpenComponent implements OnInit {
     }
     setMetaTags() {
         let key;
-        let title;
-        console.log(this.Keywords[0].search(/ /g )," d",this.Keywords[0])
-        if(this.Keywords[0].search(/ /g ) === -1){
+        if (this.Keywords[0].search(/ /g ) === -1) {
            key = this.Keywords[0] ;
-        }
-        else{
-            key = this.Keywords[0].replace(/\s/g, '-')
+        }else {
+            key = this.Keywords[0].replace(/\s/g, '-');
         }
         this.keys = this.blog.keywords.toString();
         const url = 'https://www.chaseyoursport.com/' + key
@@ -156,7 +151,7 @@ export class BlogOpenComponent implements OnInit {
             { name: 'twitter:image:src', content: this.blog.blogImage},
           ]);
     }
-    loadBlogFromSendData() {
+    /* loadBlogFromSendData() {
         this.recieve.detailsofBlog
         .subscribe(
             data => {
@@ -178,14 +173,14 @@ export class BlogOpenComponent implements OnInit {
             }
         );
     }
-
+ */
     recieveBlogIdFromUrl() {
         this.blogID = this.route.snapshot.url[2].path;
         this.route.params.subscribe(
             (params) => {
               this.blogID = params.blogId;
-              console.clear();
-              console.log(this.blogID);
+             // console.clear();
+             // console.log(this.blogID);
               this.getBlogDetails();
 
             });
@@ -212,7 +207,7 @@ export class BlogOpenComponent implements OnInit {
         this.load.dataOfsingleBlog(this.blogID).subscribe(
             res => {
                 const data = res[0];
-                console.log(data)
+                // console.log(data)
                 if (data === undefined  || this.route.snapshot.url[0].path === 'sportsocialblog'
                             || this.route.snapshot.url[1].path === 'page') {
                     this.router.navigate(['/']);
@@ -233,18 +228,24 @@ export class BlogOpenComponent implements OnInit {
                     exactDate: this.ExactDate(data.insertedDate),
                     readingTime: this.timeToRead(data.Content),
                     MetaDesc: data.MetaDesc,
-                    ImageDesc: data.ImageDesc
+                    ImageDesc: data.ImageDesc == null ? ' ' : data.ImageDesc
                 };
+                if (blog.MetaDesc == null) {
+                    blog.MetaDesc = '';
+                }
+                if (blog.ImageDesc == null) {
+                    blog.ImageDesc = '';
+                }
                 this.blog = blog;
-                console.log(this.blog);
+                // console.log(this.blog);
                 this.Keywords = blog.keywords;
                 this.content = this.sanitizer.bypassSecurityTrustHtml(data.Content);
-                this.ShareCount = + blog.ShareCount;
-                this.ViewCount = + (blog.ViewCount);
-                this.sendViewCount();
                 this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length - 1]);
                 this.setMetaTags();
                 this.setTitle();
+                this.ShareCount = + blog.ShareCount;
+                this.ViewCount = + (blog.ViewCount);
+                this.sendViewCount();
             }
         );
 
@@ -261,7 +262,7 @@ export class BlogOpenComponent implements OnInit {
     }
 
     timePassed(i: string) {
-        const writtenDate = new Date( parseInt(i)*1000 );
+        const writtenDate = new Date( parseInt(i) * 1000 );
         const presentDate = new Date();
         if (writtenDate.getFullYear() === presentDate.getFullYear()) {
           if (writtenDate.getMonth() === presentDate.getMonth()) {
@@ -292,46 +293,46 @@ export class BlogOpenComponent implements OnInit {
     }
 
     removeInitalImage(event) {
-        console.log(event.returnValue, 'load');
+       // console.log(event.returnValue, 'load');
         if (event.returnValue) {
             this.loading = false;
         }
     }
-    setMobileView(){
-        if(this.isBrowser){
-            if(window.innerWidth > 950 ){
+    setMobileView() {
+        if (this.isBrowser) {
+            if (window.innerWidth > 950 ) {
                 this.mobileView = false;
                 this.removeSocial = false;
-                this.renderer.setStyle(this.BlogInfo.nativeElement,'width','68%');
+                this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '68%');
             }
-            if(window.innerWidth <= 950 && window.innerWidth > 700 ){
+            if (window.innerWidth <= 950 && window.innerWidth > 700 ){
             this.removeSocial = true;
             this.mobileView = false;
-            this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%');
+            this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
 
             }
-            if(window.innerWidth < 700){
+            if (window.innerWidth < 700) {
                 this.removeSocial = true;
                 this.mobileView = true;
-                this.renderer.setStyle(this.BlogInfo.nativeElement,'width','100%');
+                this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
             }
         }
 
     }
 
     scriptOfTwitter() {
-        !function(d,s,id) {
+        !function(d, s, id) {
             let js: any,
-                fjs =d.getElementsByTagName(s)[0],
-                p ='https';
-            if(!d.getElementById(id)){
+                fjs = d.getElementsByTagName(s)[0],
+                p = 'https';
+            if (!d.getElementById(id)){
                 js = d.createElement(s);
                 js.id = id;
                 js.src = p + '://platform.twitter.com/widgets.js';
-                fjs.parentNode.insertBefore(js,fjs);
+                fjs.parentNode.insertBefore(js, fjs);
             }
         }
-        (document,'script','twitter-wjs');
+        (document, 'script', 'twitter-wjs');
     }
 
     setTopMargin() {
@@ -377,21 +378,13 @@ export class BlogOpenComponent implements OnInit {
             }
         );
     }
-    shareOnFacebook(){
+    shareOnFacebook() {
         let key;
-        let title;
-        if(this.Keywords[0].search(/ /g ) === -1){
+        if (this.Keywords[0].search(/ /g ) === -1){
             key = this.Keywords[0] ;
-         }
-         else{
+        }else {
              key = this.Keywords[0].replace(/\s+/g, '-')
-         }
-        /* if(this.blog.heading.search(/ /g)){
-            title = this.blog.heading.replace(/ /g, '-');
         }
-        else{
-            title = this.blog.heading;
-        } */
         this.sendShareCount();
         FB.ui({
             method: 'share',

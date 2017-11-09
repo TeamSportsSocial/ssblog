@@ -18,7 +18,6 @@
       class="blogImage"  
       alt="InitialblogImage" 
       src="/assets/images/default-image.png" 
-      title="{{blog.ImageDesc}}" 
       *ngIf="loading" 
       (click)="openfullImage()" 
       role="button">
@@ -29,7 +28,7 @@
     
     <div class="blogInfo" #BlogInfo>
       <p *ngIf="blog" [innerHtml]="blog.heading"class="title"></p>
-      <p class="shortDesc">{{blog.MetaDesc}}</p>
+      <p  *ngIf="blog" class="shortDesc">{{blog.MetaDesc}}</p>
       <div class="bloggerImage">
         <img *ngIf="blog" src="{{blog.bloggerImage}}"  (error)="setDefault()" >
       </div>
@@ -42,7 +41,7 @@
       <div class="count" *ngIf="blogDataRecieved">
         <span>
           <img src="/assets/images/sports-social-view-orange.png" alt="sports-social-view-orange">
-          <span>{{blog.ViewCount}}</span>
+          <span >{{blog.ViewCount}}</span>
         </span>
         <span>
           <img src="/assets/images/sports-social-share-orange.png" alt="sports-social-share-orange">

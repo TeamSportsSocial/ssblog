@@ -22,7 +22,7 @@ var SearchComponent = /** @class */ (function () {
         this.pageNumber = 1;
         this.mobileView = false;
         this.haveData = true;
-        this.key = [];
+        this.keywords = ' ';
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.setTopMargin();
@@ -39,13 +39,12 @@ var SearchComponent = /** @class */ (function () {
             + this.recievedKey);
     };
     SearchComponent.prototype.setMetaTags = function () {
-        console.log(this.Keyword, 'key2');
         this.metaService.addTags([
             { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
             { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to '
                     + this.recievedKey },
             { name: 'title', content: this.recievedKey + ' Blogs' },
-            { name: 'keywords', content: this.Keyword },
+            { name: 'keywords', content: this.keywords },
             { name: 'theme-color', content: '#4327a0' },
             { property: 'og:title', content: this.recievedKey + 'Blogs' },
             { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to '
@@ -57,7 +56,7 @@ var SearchComponent = /** @class */ (function () {
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@Chaseyoursport' },
             { name: 'twitter:creator', content: '@NadeemKhan' },
-            { name: 'twitter:title', content: this.recievedKey + 'Blogs' },
+            { name: 'twitter:title', content: this.recievedKey + ' Blogs' },
             { name: 'twitter:description', content: 'Read the latest articles, blogs, news and other informations related to '
                     + this.recievedKey },
             { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
@@ -73,9 +72,10 @@ var SearchComponent = /** @class */ (function () {
             else {
                 _this.haveData = false;
             }
+            if (data.length == 0 && _this.pageNumber == 1) {
+            }
             _this.show = true;
             _this.dataRecieved = true;
-            // tslint:disable-next-line:forin
             for (var i in data) {
                 blogDetails.push({
                     blogId: data[i].blogId,
@@ -91,14 +91,12 @@ var SearchComponent = /** @class */ (function () {
                     exactDate: _this.ExactDate(data[i].insertedDate),
                     readingTime: _this.timeToRead(data[i].Content)
                 });
-                _this.key = _this.key.concat(blogDetails[i].keywords);
+                _this.keywords += blogDetails[i].keywords + ',';
             }
             _this.blogDetails = blogDetails;
-            _this.Keyword = Array.from(new Set(_this.key)).toString();
-            console.log(_this.Keyword, 'key');
+            console.log(_this.keywords);
+            _this.setMetaTags();
         });
-        console.log(this.Keyword, 'key1');
-        this.setMetaTags();
     };
     SearchComponent.prototype.recievekeyFromUrl = function () {
         var _this = this;
@@ -210,7 +208,9 @@ var SearchComponent = /** @class */ (function () {
                     readingTime: _this.timeToRead(data[i].Content)
                 });
             }
+            //sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
         });
+        //sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
     };
     SearchComponent.decorators = [
         { type: core_1.Component, args: [{

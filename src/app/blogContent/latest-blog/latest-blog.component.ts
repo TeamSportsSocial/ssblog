@@ -114,10 +114,10 @@ export class LatestBlogComponent implements OnInit {
     return tmp.textContent || tmp.innerText || '';
   }
 
-  removeInitialImage(){
+  /* removeInitialImage(){
     this.isloading=false
 
-  }
+  } */
 
   setDefault(){
     this.blogImage='/assets/images/default-image.png'

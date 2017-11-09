@@ -30,25 +30,25 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 })
 export class BlogHeaderComponent implements OnInit {
   data;
-  keywords=[];
-  pageNumber=1;
+  keywords= [];
+  pageNumber= 1;
   selected;
   customText;
-  Page:{
-    name:string
-    page:number
+  Page: {
+    name: string
+    page: number
   };
 
-  @ViewChild('Header') Header:ElementRef;
-  @ViewChild('searchBox') searchBox:ElementRef;
-  @ViewChild('resultBox') resultBox:ElementRef;
-  @ViewChild('linkImage') linkImage:ElementRef;
-  mobileView:boolean=false;
-  searchedTextPresent:boolean=false;
-  open:boolean=false;
-  search:boolean=false;
+  @ViewChild('Header') Header: ElementRef;
+  @ViewChild('searchBox') searchBox: ElementRef;
+  @ViewChild('resultBox') resultBox: ElementRef;
+  @ViewChild('linkImage') linkImage: ElementRef;
+  mobileView: boolean = false;
+  searchedTextPresent: boolean=false;
+  open: boolean= false;
+  search: boolean= false;
   results = [];
-  haveresult:boolean=false;
+  haveresult: boolean=false;
   searchKey = new ReplaySubject();
   SearchKey;
   isBrowser: boolean;
@@ -68,7 +68,6 @@ export class BlogHeaderComponent implements OnInit {
       this.isBrowser = isPlatformBrowser(platformId);
   }
   ngOnInit() {
-
     this.get.keywords()
     .subscribe(
       res=>{
@@ -94,12 +93,6 @@ export class BlogHeaderComponent implements OnInit {
       this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
     }
   }
-
-  /* reloadPage() {
-    this.zone.runOutsideAngular(() => {
-        location.reload();
-    });
-  } */
 
   @HostListener('window:click', [])onclick() {
     this.haveresult = false;

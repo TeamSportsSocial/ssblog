@@ -13,11 +13,11 @@ var styles_KeywordComponent = [i0.styles];
 exports.RenderType_KeywordComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_KeywordComponent, data: {} });
 function View_KeywordComponent_0(_l) {
-    return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { Keyword: 0 }), (_l()(), i1.ɵeld(0, [[1, 0], ['Keyword',
-                1]], null, 7, 'div', [['class', 'keyword']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])),
-        (_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class', 'title']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 1, 'p', [], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['', ''])), (_l()(), i1.ɵted(null, ['\n  '])),
-        (_l()(), i1.ɵted(null, ['\n']))], null, function (_ck, _v) {
+    return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { Keyword: 0 }), (_l()(), i1.ɵeld(1, 0, [[1, 0], ['Keyword',
+                1]], null, 7, 'div', [['class', 'keyword']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(3, 0, null, null, 4, 'div', [['class',
+                'title']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(5, 0, null, null, 1, 'p', [], null, null, null, null, null)), (_l()(), i1.ɵted(6, null, ['', ''])),
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n']))], null, function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.title;
         _ck(_v, 6, 0, currVal_0);
@@ -25,7 +25,7 @@ function View_KeywordComponent_0(_l) {
 }
 exports.View_KeywordComponent_0 = View_KeywordComponent_0;
 function View_KeywordComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocialBlog-keyword', [], null, null, null, View_KeywordComponent_0, exports.RenderType_KeywordComponent)), i1.ɵdid(114688, null, 0, i2.KeywordComponent, [i1.Renderer2], null, null)], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocialBlog-keyword', [], null, null, null, View_KeywordComponent_0, exports.RenderType_KeywordComponent)), i1.ɵdid(1, 114688, null, 0, i2.KeywordComponent, [i1.Renderer2], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

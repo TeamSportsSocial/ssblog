@@ -19,11 +19,11 @@ var styles_RelatedBlogsComponent = [i0.styles];
 exports.RenderType_RelatedBlogsComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_RelatedBlogsComponent, data: {} });
 function View_RelatedBlogsComponent_2(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 0, 'img', [['class',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 0, 'img', [['class',
                 'loading'], ['src', '/assets/images/sports-social-loading.gif']], null, null, null, null, null))], null, null);
 }
 function View_RelatedBlogsComponent_3(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 6, 'div', [['TabViewAvailable',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 6, 'div', [['TabViewAvailable',
                 ''], ['class', 'col-4']], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
@@ -31,21 +31,21 @@ function View_RelatedBlogsComponent_3(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(5259264, null, 0, i2.TabViewAvailableDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID], null, null), (_l()(),
-            i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵeld(0, null, null, 2, 'SportSocial-normal-blog', [], null, [['window', 'resize']], function (_v, en, $event) {
+        }, null, null)), i1.ɵdid(1, 5259264, null, 0, i2.TabViewAvailableDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID], null, null), (_l()(),
+            i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(3, 0, null, null, 2, 'SportSocial-normal-blog', [], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
                 var pd_0 = (i1.ɵnov(_v, 4).onresize() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i3.View_NormalBlogComponent_0, i3.RenderType_NormalBlogComponent)), i1.ɵdid(4308992, null, 0, i4.NormalBlogComponent, [i5.PropertyService, i1.Renderer2, i6.PostService,
-            i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'],
-            bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'], heading: [4,
-                'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'], ViewCount: [7,
-                'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'], exactDate: [10,
-                'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12, 'MetaDesc'],
-            ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵted(null, ['\n    ']))], function (_ck, _v) {
+        }, i3.View_NormalBlogComponent_0, i3.RenderType_NormalBlogComponent)), i1.ɵdid(4, 4308992, null, 0, i4.NormalBlogComponent, [i5.PropertyService, i1.Renderer2,
+            i6.PostService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1,
+                'blogImage'], bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'],
+            heading: [4, 'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'],
+            ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
+            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12, 'MetaDesc'],
+            ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerImage;
@@ -65,12 +65,12 @@ function View_RelatedBlogsComponent_3(_l) {
     }, null);
 }
 function View_RelatedBlogsComponent_1(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 10, 'div', [['class',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 10, 'div', [['class',
                 'relatedBlog']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 1, 'p', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['Related Articles'])), (_l()(),
-            i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_2)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_3)),
-        i1.ɵdid(802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
-            i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n  ']))], function (_ck, _v) {
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(2, 0, null, null, 1, 'p', [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['Related Articles'])),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_2)), i1.ɵdid(6, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_3)),
+        i1.ɵdid(9, 802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
+            i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n  ']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = !_co.dataRecived;
         _ck(_v, 6, 0, currVal_0);
@@ -79,13 +79,13 @@ function View_RelatedBlogsComponent_1(_l) {
     }, null);
 }
 function View_RelatedBlogsComponent_5(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 0, 'img', [['class',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 0, 'img', [['class',
                 'loading'], ['src', '/assets/images/sports-social-loading.gif']], null, null, null, null, null))], null, null);
 }
 function View_RelatedBlogsComponent_6(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 5, 'div', [['class',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 5, 'div', [['class',
                 'col-4']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵeld(0, null, null, 2, 'SportSocial-normal-blog', [], null, [['window',
+        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(2, 0, null, null, 2, 'SportSocial-normal-blog', [], null, [['window',
                 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
@@ -93,13 +93,13 @@ function View_RelatedBlogsComponent_6(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i3.View_NormalBlogComponent_0, i3.RenderType_NormalBlogComponent)), i1.ɵdid(4308992, null, 0, i4.NormalBlogComponent, [i5.PropertyService, i1.Renderer2,
+        }, i3.View_NormalBlogComponent_0, i3.RenderType_NormalBlogComponent)), i1.ɵdid(3, 4308992, null, 0, i4.NormalBlogComponent, [i5.PropertyService, i1.Renderer2,
             i6.PostService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1,
                 'blogImage'], bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'],
             heading: [4, 'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'],
             ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
             exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12,
-                'MetaDesc'], ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵted(null, ['\n  ']))], function (_ck, _v) {
+                'MetaDesc'], ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n  ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerImage;
@@ -119,11 +119,13 @@ function View_RelatedBlogsComponent_6(_l) {
     }, null);
 }
 function View_RelatedBlogsComponent_4(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 10, 'div', [['class',
-                'mobileView relatedBlog']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 1, 'p', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['Related Articles'])),
-        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_5)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_6)),
-        i1.ɵdid(802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
-            i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n  ']))], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 10, 'div', [['class',
+                'mobileView relatedBlog']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(2, 0, null, null, 1, 'p', [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['Related Articles'])), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(),
+            i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_5)),
+        i1.ɵdid(6, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])),
+        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_6)),
+        i1.ɵdid(9, 802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
+            i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n  ']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = !_co.dataRecived;
         _ck(_v, 6, 0, currVal_0);
@@ -132,9 +134,9 @@ function View_RelatedBlogsComponent_4(_l) {
     }, null);
 }
 function View_RelatedBlogsComponent_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 7, 'div', [], null, null, null, null, null)), (_l()(),
-            i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_1)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
-        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_4)), i1.ɵdid(16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 7, 'div', [], null, null, null, null, null)), (_l()(),
+            i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_1)), i1.ɵdid(3, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_RelatedBlogsComponent_4)), i1.ɵdid(6, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵted(-1, null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = !_co.mobileView;
         _ck(_v, 3, 0, currVal_0);
@@ -144,14 +146,14 @@ function View_RelatedBlogsComponent_0(_l) {
 }
 exports.View_RelatedBlogsComponent_0 = View_RelatedBlogsComponent_0;
 function View_RelatedBlogsComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'SportSocial-related-blogs', [], null, [['window', 'resize']], function (_v, en, $event) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocial-related-blogs', [], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
                 var pd_0 = (i1.ɵnov(_v, 1).onresize() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, View_RelatedBlogsComponent_0, exports.RenderType_RelatedBlogsComponent)), i1.ɵdid(114688, null, 0, i8.RelatedBlogsComponent, [i6.PostService, i5.PropertyService,
+        }, View_RelatedBlogsComponent_0, exports.RenderType_RelatedBlogsComponent)), i1.ɵdid(1, 114688, null, 0, i8.RelatedBlogsComponent, [i6.PostService, i5.PropertyService,
             i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);

@@ -16,56 +16,56 @@ const styles_BlogFooterComponent:any[] = [i0.styles];
 export const RenderType_BlogFooterComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_BlogFooterComponent,data:{}});
 function View_BlogFooterComponent_1(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'p',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'p',[['class',
       'errorMessage']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['Email is Inavlid!!! Please enter correct Email']))],
+      (_l()(),i1.ɵted(-1,(null as any),['Email is Inavlid!!! Please enter correct Email']))],
       (null as any),(null as any));
 }
 function View_BlogFooterComponent_2(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,[['subscriptionBox',1]],(null as any),15,'div',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,[['subscriptionBox',1]],(null as any),15,'div',
       [['class','subscriptionBox']],(null as any),(null as any),(null as any),(null as any),
-      (null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,
-      (null as any),(null as any),3,'div',[['class','top']],(null as any),(null as any),
-      (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['class','closeMessage'],
-          ['role','button'],['src','/assets/images/sports-social-cancel-black.png']],
-          (null as any),[[(null as any),'click']],(_v,en,$event) => {
-            var ad:boolean = true;
-            var _co:any = _v.component;
-            if (('click' === en)) {
-              const pd_0:any = ((<any>_co.close()) !== false);
-              ad = (pd_0 && ad);
-            }
-            return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          7,'div',[['class','bottom']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),1,'p',([] as any[]),(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['Great'])),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),1,'p',([] as any[]),(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n            You have Subscribed for our Newsletter and Blog updates.\n        '])),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),['\n']))],
-      (null as any),(null as any));
+      (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(2,
+      0,(null as any),(null as any),3,'div',[['class','top']],(null as any),(null as any),
+      (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+      ['\n        '])),(_l()(),i1.ɵeld(4,0,(null as any),(null as any),0,'img',[['class',
+      'closeMessage'],['role','button'],['src','/assets/images/sports-social-cancel-black.png']],
+      (null as any),[[(null as any),'click']],(_v,en,$event) => {
+        var ad:boolean = true;
+        var _co:any = _v.component;
+        if (('click' === en)) {
+          const pd_0:any = ((<any>_co.close()) !== false);
+          ad = (pd_0 && ad);
+        }
+        return ad;
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(7,0,(null as any),
+          (null as any),7,'div',[['class','bottom']],(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵeld(9,0,(null as any),(null as any),1,'p',([] as any[]),(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['Great'])),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵeld(12,0,(null as any),(null as any),1,'p',([] as any[]),(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n            You have Subscribed for our Newsletter and Blog updates.\n        '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n']))],(null as any),(null as any));
 }
 export function View_BlogFooterComponent_0(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[i1.ɵqud(402653184,1,{followUs:0}),i1.ɵqud(402653184,2,{copyright:0}),
-      i1.ɵqud(402653184,3,{subscriber:0}),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+      i1.ɵqud(402653184,3,{subscriber:0}),(_l()(),i1.ɵeld(3,0,(null as any),(null as any),
           68,'footer',([] as any[]),(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),9,'div',[['class','subscribe']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'p',([] as any[]),
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n      Subscribe\n    '])),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵeld(0,[[3,0],['subscriber',1]],(null as any),0,
-          'input',[['email',''],['placeholder','Enter your Email'],['type','email']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          1,'button',([] as any[]),(null as any),[[(null as any),'click']],(_v,en,
-              $event) => {
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵeld(5,
+          0,(null as any),(null as any),9,'div',[['class','subscribe']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n    '])),(_l()(),i1.ɵeld(7,0,(null as any),(null as any),
+          1,'p',([] as any[]),(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      Subscribe\n    '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(10,0,[[3,0],['subscriber',
+          1]],(null as any),0,'input',[['email',''],['placeholder','Enter your Email'],
+          ['type','email']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(12,
+          0,(null as any),(null as any),1,'button',([] as any[]),(null as any),[[(null as any),
+              'click']],(_v,en,$event) => {
             var ad:boolean = true;
             var _co:i2.BlogFooterComponent = _v.component;
             if (('click' === en)) {
@@ -73,91 +73,95 @@ export function View_BlogFooterComponent_0(_l:any):i1.ɵViewDefinition {
               ad = (pd_0 && ad);
             }
             return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Submit'])),
-      (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵted((null as any),['\n  '])),
-      (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_BlogFooterComponent_1)),
-      i1.ɵdid(16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),
-          i1.ɵeld(0,[['blogName',1]],(null as any),1,'p',[['class','blogName']],(null as any),
-              (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['Chase Your Sport'])),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),
-          i1.ɵeld(0,[['tagline',1]],(null as any),1,'p',[['class','tagline']],(null as any),
-              (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['The Sports Social Blog'])),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),
-          i1.ɵeld(0,[['about',1]],(null as any),3,'p',[['class','about']],(null as any),
-              (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          [' \n    \'Chase Your Sport\' blog provides Health, Fitness and\n     Sport information and other useful information to help everyone\n     to keep them active, healthy and fit .'])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'br',([] as any[]),(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n     We are here to help you to follow your passion for sports. \n  '])),
-      (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,[['contactUs',1]],
-          (null as any),1,'p',[['class','contactUs']],(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n    Contact Us: letstalk@sportsocial.in\n  '])),(_l()(),i1.ɵted((null as any),
-          ['\n  '])),(_l()(),i1.ɵted((null as any),['\n  \n  '])),(_l()(),i1.ɵeld(0,
-          [[1,0],['followUs',1]],(null as any),31,'p',[['class','followUs']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n    Follow us on \n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          3,'a',[['href','https://www.facebook.com/chaseyoursport'],['rel','noopener'],
-              ['target','_blank']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),0,'img',[['alt','facebook_Logo'],['src','/assets/images/sports-social-facebook-logo-white.png']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),[' \n    '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),3,'a',[['href','https://www.twitter.com/chaseyoursport'],
-          ['rel','noopener'],['target','_blank']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt','twitter_Logo'],
-          ['src','/assets/images/sports-social-twitter-logo-white.png']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),3,'a',[['href','https://www.instagram.com/chaseyoursport'],
+          },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Submit'])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n  '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
+          View_BlogFooterComponent_1)),i1.ɵdid(17,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,
+          i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n  '])),(_l()(),i1.ɵeld(19,0,[['blogName',1]],(null as any),1,'p',[['class',
+          'blogName']],(null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['Chase Your Sport'])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n  '])),(_l()(),i1.ɵeld(22,0,[['tagline',1]],(null as any),1,'p',[['class',
+          'tagline']],(null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['The Sports Social Blog'])),(_l()(),i1.ɵted(-1,
+          (null as any),['\n  '])),(_l()(),i1.ɵeld(25,0,[['about',1]],(null as any),
+          3,'p',[['class','about']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),[' \n    \'Chase Your Sport\' blog provides Health, Fitness and\n     Sport information and other useful information to help everyone\n     to keep them active, healthy and fit .'])),
+      (_l()(),i1.ɵeld(27,0,(null as any),(null as any),0,'br',([] as any[]),(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n     We are here to help you to follow your passion for sports. \n  '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵeld(30,0,[['contactUs',
+          1]],(null as any),1,'p',[['class','contactUs']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n    Contact Us: letstalk@sportsocial.in\n  '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n  '])),(_l()(),i1.ɵted(-1,(null as any),['\n  \n  '])),(_l()(),i1.ɵeld(34,
+          0,[[1,0],['followUs',1]],(null as any),31,'p',[['class','followUs']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n    Follow us on \n    '])),(_l()(),i1.ɵeld(36,0,(null as any),
+          (null as any),3,'a',[['href','https://www.facebook.com/chaseyoursport'],
               ['rel','noopener'],['target','_blank']],(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n        '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',
-          'insta_Logo'],['src','/assets/images/sports-social-instagram-logo-white.png']],
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n        '])),(_l()(),i1.ɵeld(38,0,(null as any),(null as any),0,'img',
+          [['alt','facebook_Logo'],['src','/assets/images/sports-social-facebook-logo-white.png']],
           (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),3,'a',[['href','https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network'],
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),
+          [' \n    '])),(_l()(),i1.ɵeld(41,0,(null as any),(null as any),3,'a',[['href',
+          'https://www.twitter.com/chaseyoursport'],['rel','noopener'],['target','_blank']],
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),i1.ɵeld(43,0,(null as any),
+          (null as any),0,'img',[['alt','twitter_Logo'],['src','/assets/images/sports-social-twitter-logo-white.png']],
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n    '])),(_l()(),i1.ɵeld(46,0,(null as any),(null as any),3,'a',[['href',
+          'https://www.instagram.com/chaseyoursport'],['rel','noopener'],['target',
+          '_blank']],(null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['\n        '])),(_l()(),i1.ɵeld(48,0,(null as any),
+          (null as any),0,'img',[['alt','insta_Logo'],['src','/assets/images/sports-social-instagram-logo-white.png']],
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n    '])),(_l()(),i1.ɵeld(51,0,(null as any),(null as any),3,'a',[['href',
+          'https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network'],
           ['rel','noopener'],['target','_blank']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt','quora_Logo'],
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵeld(53,0,(null as any),(null as any),0,'img',[['alt','quora_Logo'],
           ['src','/assets/images/sports-social-quora-logo-white.png']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),3,'a',[['href','https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ'],
-              ['rel','noopener'],['target','_blank']],(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n        '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt',
-          'youtube_Logo'],['src','/assets/images/sports-social-youtube-logo-white.png']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),3,'a',[['href','https://www.pinterest.com/chaseyoursport'],
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),
+      (_l()(),i1.ɵeld(56,0,(null as any),(null as any),3,'a',[['href','https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ'],
           ['rel','noopener'],['target','_blank']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['alt','pintrest_Logo'],
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵeld(58,0,(null as any),(null as any),0,'img',[['alt','youtube_Logo'],
+          ['src','/assets/images/sports-social-youtube-logo-white.png']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),['\n    '])),
+      (_l()(),i1.ɵeld(61,0,(null as any),(null as any),3,'a',[['href','https://www.pinterest.com/chaseyoursport'],
+          ['rel','noopener'],['target','_blank']],(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n        '])),
+      (_l()(),i1.ɵeld(63,0,(null as any),(null as any),0,'img',[['alt','pintrest_Logo'],
           ['src','/assets/images/sports-social-pinterest-logo-white.png']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵted((null as any),['\n    \n  '])),(_l()(),i1.ɵted((null as any),
-          ['\n  '])),(_l()(),i1.ɵeld(0,[[2,0],['copyright',1]],(null as any),3,'p',
-          [['class','copyright']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['\n    Copyright '])),(_l()(),
-          i1.ɵeld(0,(null as any),(null as any),0,'img',[['src','/assets/images/copyright.png']],
-              (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),[' 2017 CnP Sports Services Private Limited | All Rights Reserved\n  '])),
-      (_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵted((null as any),['\n\n\n'])),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),['\n    \n  '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵeld(67,0,[[2,0],['copyright',
+          1]],(null as any),3,'p',[['class','copyright']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n    Copyright '])),(_l()(),i1.ɵeld(69,0,(null as any),(null as any),
+          0,'img',[['src','/assets/images/copyright.png']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
+          [' 2017 CnP Sports Services Private Limited | All Rights Reserved\n  '])),
+      (_l()(),i1.ɵted(-1,(null as any),['\n'])),(_l()(),i1.ɵted(-1,(null as any),['\n\n\n'])),
       (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_BlogFooterComponent_2)),
-      i1.ɵdid(16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n']))],(_ck,_v) => {
-    var _co:i2.BlogFooterComponent = _v.component;
-    const currVal_0:any = _co.errorMessage;
-    _ck(_v,17,0,currVal_0);
-    const currVal_1:any = _co.showSubscriptionBox;
-    _ck(_v,74,0,currVal_1);
-  },(null as any));
+      i1.ɵdid(74,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n']))],
+      (_ck,_v) => {
+        var _co:i2.BlogFooterComponent = _v.component;
+        const currVal_0:any = _co.errorMessage;
+        _ck(_v,17,0,currVal_0);
+        const currVal_1:any = _co.showSubscriptionBox;
+        _ck(_v,74,0,currVal_1);
+      },(null as any));
 }
 export function View_BlogFooterComponent_Host_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'SportSocial-blog-footer',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'SportSocial-blog-footer',
       ([] as any[]),(null as any),[['window','resize']],(_v,en,$event) => {
         var ad:boolean = true;
         if (('window:resize' === en)) {
@@ -165,7 +169,7 @@ export function View_BlogFooterComponent_Host_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },View_BlogFooterComponent_0,RenderType_BlogFooterComponent)),i1.ɵdid(114688,
+      },View_BlogFooterComponent_0,RenderType_BlogFooterComponent)),i1.ɵdid(1,114688,
       (null as any),0,i2.BlogFooterComponent,[i4.PostService,i1.Renderer2,i5.StatusService,
           i1.PLATFORM_ID],(null as any),(null as any))],(_ck,_v) => {
     _ck(_v,1,0);
@@ -173,4 +177,4 @@ export function View_BlogFooterComponent_Host_0(_l:any):i1.ɵViewDefinition {
 }
 export const BlogFooterComponentNgFactory:i1.ComponentFactory<i2.BlogFooterComponent> = i1.ɵccf('SportSocial-blog-footer',
     i2.BlogFooterComponent,View_BlogFooterComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYmxvZy1mb290ZXIvYmxvZy1mb290ZXIuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0M6L1Nwb3J0U29jaWFsQmxvZy9zcmMvYXBwL2Jsb2ctZm9vdGVyL2Jsb2ctZm9vdGVyLmNvbXBvbmVudC50cyIsIm5nOi8vL0M6L1Nwb3J0U29jaWFsQmxvZy9zcmMvYXBwL2Jsb2ctZm9vdGVyL2Jsb2ctZm9vdGVyLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYmxvZy1mb290ZXIvYmxvZy1mb290ZXIuY29tcG9uZW50LnRzLkJsb2dGb290ZXJDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8Zm9vdGVyID5cbiAgPGRpdiBjbGFzcz1cInN1YnNjcmliZVwiID5cbiAgICA8cD5cbiAgICAgIFN1YnNjcmliZVxuICAgIDwvcD5cbiAgICA8aW5wdXQgdHlwZT1cImVtYWlsXCIgcGxhY2Vob2xkZXI9XCJFbnRlciB5b3VyIEVtYWlsXCIgI3N1YnNjcmliZXIgIGVtYWlsPlxuICAgIDxidXR0b24gIChjbGljayk9XCJTdWJzY3JpYmUoKVwiPlN1Ym1pdDwvYnV0dG9uPlxuICA8L2Rpdj5cbiAgPHAgIGNsYXNzPVwiZXJyb3JNZXNzYWdlXCIgKm5nSWY9XCJlcnJvck1lc3NhZ2VcIj5FbWFpbCBpcyBJbmF2bGlkISEhIFBsZWFzZSBlbnRlciBjb3JyZWN0IEVtYWlsPC9wPlxuICA8cCBjbGFzcz1cImJsb2dOYW1lXCIgI2Jsb2dOYW1lPkNoYXNlIFlvdXIgU3BvcnQ8L3A+XG4gIDxwIGNsYXNzPVwidGFnbGluZVwiICN0YWdsaW5lPlRoZSBTcG9ydHMgU29jaWFsIEJsb2c8L3A+XG4gIDxwIGNsYXNzPVwiYWJvdXRcIiAjYWJvdXQ+IFxuICAgICdDaGFzZSBZb3VyIFNwb3J0JyBibG9nIHByb3ZpZGVzIEhlYWx0aCwgRml0bmVzcyBhbmRcbiAgICAgU3BvcnQgaW5mb3JtYXRpb24gYW5kIG90aGVyIHVzZWZ1bCBpbmZvcm1hdGlvbiB0byBoZWxwIGV2ZXJ5b25lXG4gICAgIHRvIGtlZXAgdGhlbSBhY3RpdmUsIGhlYWx0aHkgYW5kIGZpdCAuPGJyPlxuICAgICBXZSBhcmUgaGVyZSB0byBoZWxwIHlvdSB0byBmb2xsb3cgeW91ciBwYXNzaW9uIGZvciBzcG9ydHMuIFxuICA8L3A+XG4gIDxwIGNsYXNzPVwiY29udGFjdFVzXCIgI2NvbnRhY3RVcz5cbiAgICBDb250YWN0IFVzOiBsZXRzdGFsa0BzcG9ydHNvY2lhbC5pblxuICA8L3A+XG4gIDwhLS0gPHAgY2xhc3M9XCJlZGl0b3JcIj4gPGEgcm91dGVyTGluaz1cIi9lZGl0b3JQYW5lbFwiPkVkaXRvcjwvYT48L3A+IC0tPlxuICBcbiAgPHAgY2xhc3M9XCJmb2xsb3dVc1wiICNmb2xsb3dVcz5cbiAgICBGb2xsb3cgdXMgb24gXG4gICAgPGEgaHJlZj1cImh0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9jaGFzZXlvdXJzcG9ydFwiIHRhcmdldD1cIl9ibGFua1wiICByZWw9XCJub29wZW5lclwiPlxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtZmFjZWJvb2stbG9nby13aGl0ZS5wbmdcIiBhbHQ9XCJmYWNlYm9va19Mb2dvXCIgPlxuICAgIDwvYT4gXG4gICAgPGEgaHJlZj1cImh0dHBzOi8vd3d3LnR3aXR0ZXIuY29tL2NoYXNleW91cnNwb3J0XCIgdGFyZ2V0PVwiX2JsYW5rXCIgIHJlbD1cIm5vb3BlbmVyXCI+XG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC10d2l0dGVyLWxvZ28td2hpdGUucG5nXCIgYWx0PVwidHdpdHRlcl9Mb2dvXCIgID5cbiAgICA8L2E+XG4gICAgPGEgaHJlZj1cImh0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20vY2hhc2V5b3Vyc3BvcnRcIiB0YXJnZXQ9XCJfYmxhbmtcIiByZWw9XCJub29wZW5lclwiPlxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtaW5zdGFncmFtLWxvZ28td2hpdGUucG5nXCIgYWx0PVwiaW5zdGFfTG9nb1wiID5cbiAgICA8L2E+XG4gICAgPGEgaHJlZj1cImh0dHBzOi8vd3d3LnF1b3JhLmNvbS90b3BpYy9TcG9ydHMtU29jaWFsLUluZGlhcy1GaXJzdC1TcG9ydHMtU29jaWFsLU5ldHdvcmtcIiB0YXJnZXQ9XCJfYmxhbmtcIiByZWw9XCJub29wZW5lclwiPlxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtcXVvcmEtbG9nby13aGl0ZS5wbmdcIiBhbHQ9XCJxdW9yYV9Mb2dvXCI+XG4gICAgPC9hPlxuICAgIDxhIGhyZWY9XCJodHRwczovL3d3dy55b3V0dWJlLmNvbS9jaGFubmVsL1VDOGRSUGp5Zk5reG1Pb3pQdVVzNVlWUVwiIHRhcmdldD1cIl9ibGFua1wiIHJlbD1cIm5vb3BlbmVyXCI+XG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC15b3V0dWJlLWxvZ28td2hpdGUucG5nXCIgYWx0PVwieW91dHViZV9Mb2dvXCI+XG4gICAgPC9hPlxuICAgIDxhIGhyZWY9XCJodHRwczovL3d3dy5waW50ZXJlc3QuY29tL2NoYXNleW91cnNwb3J0XCIgdGFyZ2V0PVwiX2JsYW5rXCIgcmVsPVwibm9vcGVuZXJcIj5cbiAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLXBpbnRlcmVzdC1sb2dvLXdoaXRlLnBuZ1wiIGFsdD1cInBpbnRyZXN0X0xvZ29cIj5cbiAgICA8L2E+XG4gICAgXG4gIDwvcD5cbiAgPHAgY2xhc3M9XCJjb3B5cmlnaHRcIiAjY29weXJpZ2h0PlxuICAgIENvcHlyaWdodCA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL2NvcHlyaWdodC5wbmdcIj4gMjAxNyBDblAgU3BvcnRzIFNlcnZpY2VzIFByaXZhdGUgTGltaXRlZCB8IEFsbCBSaWdodHMgUmVzZXJ2ZWRcbiAgPC9wPlxuPC9mb290ZXI+XG5cblxuPGRpdiBjbGFzcz1cInN1YnNjcmlwdGlvbkJveFwiICNzdWJzY3JpcHRpb25Cb3ggKm5nSWY9XCJzaG93U3Vic2NyaXB0aW9uQm94XCI+XG4gICAgPGRpdiBjbGFzcz1cInRvcFwiPlxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtY2FuY2VsLWJsYWNrLnBuZ1wiIHJvbGU9XCJidXR0b25cIiBjbGFzcz1cImNsb3NlTWVzc2FnZVwiICAoY2xpY2spPVwiY2xvc2UoKVwiPlxuICAgIDwvZGl2PlxuICAgIDxkaXYgY2xhc3M9XCJib3R0b21cIj5cbiAgICAgICAgPHA+R3JlYXQ8L3A+XG4gICAgICAgIDxwPlxuICAgICAgICAgICAgWW91IGhhdmUgU3Vic2NyaWJlZCBmb3Igb3VyIE5ld3NsZXR0ZXIgYW5kIEJsb2cgdXBkYXRlcy5cbiAgICAgICAgPC9wPlxuICAgIDwvZGl2PlxuPC9kaXY+XG4iLCI8U3BvcnRTb2NpYWwtYmxvZy1mb290ZXI+PC9TcG9ydFNvY2lhbC1ibG9nLWZvb3Rlcj4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7b0JDUUU7TUFBQTtNQUE4Qzs7OztvQkEwQ2hEO01BQUE7TUFBQSxnQkFBMEUsMkNBQ3RFO01BQUE7TUFBQSw0Q0FBaUI7TUFDYjtVQUFBO1VBQUE7WUFBQTtZQUFBO1lBQTZGO2NBQUE7Y0FBQTtZQUFBO1lBQTdGO1VBQUEsZ0NBQStHO01BQzdHLDJDQUNOO1VBQUE7VUFBQSxnQkFBb0IsK0NBQ2hCO1VBQUE7VUFBQSw0Q0FBRztVQUFBLFlBQVMsK0NBQ1o7VUFBQTtVQUFBLDRDQUFHO1VBQUE7TUFFQywyQ0FDRjs7Ozs7MENBM0RWO1VBQUE7VUFBQSxnQkFBUyx5Q0FDUDtVQUFBO1VBQUEsMERBQXdCO1VBQUEsYUFDdEI7VUFBQTtNQUFHLDREQUVDO1VBQUEsYUFDSjtVQUFBO1VBQUE7TUFBc0UsMkNBQ3RFO1VBQUE7b0JBQUE7WUFBQTtZQUFBO1lBQVM7Y0FBQTtjQUFBO1lBQUE7WUFBVDtVQUFBLGdDQUErQjtNQUFlLHlDQUMxQztNQUNOO2FBQUE7VUFBQSx3QkFBZ0cseUNBQ2hHO2lCQUFBO2NBQUEsMERBQThCO1VBQUEsdUJBQW9CLHlDQUNsRDtpQkFBQTtjQUFBLDBEQUE0QjtVQUFBLDZCQUEwQix5Q0FDdEQ7aUJBQUE7Y0FBQSwwREFBd0I7VUFBQTtNQUdpQjtVQUFBLDBEQUFJO1VBQUE7TUFFekMseUNBQ0o7VUFBQTtVQUFBLDRDQUFnQztVQUFBLG9EQUU1QjtVQUFBLFdBQ21FLDZDQUV2RTtVQUFBO1VBQUEsMERBQThCO1VBQUEsZ0NBRTVCO1VBQUE7Y0FBQTtVQUFBLGdCQUFrRiwrQ0FDOUU7VUFBQTtVQUFBO01BQXFGLDJDQUNyRjtNQUNKO1VBQUE7VUFBQSw4QkFBaUY7TUFDN0U7VUFBQTtVQUFBLDBEQUFvRjtVQUFBLGFBQ3BGLDJDQUNKO1VBQUE7Y0FBQTtVQUFBLDRDQUFrRjtVQUFBLGlCQUM5RTtVQUFBO1VBQUE7TUFBbUYsMkNBQ25GO01BQ0o7VUFBQTtVQUFBLDhCQUFzSDtNQUNsSDtVQUFBO1VBQUEsMERBQThFO1VBQUEsYUFDOUUsMkNBQ0o7VUFBQTtjQUFBO1VBQUEsNENBQWtHO1VBQUEsaUJBQzlGO1VBQUE7VUFBQTtNQUFrRiwyQ0FDbEY7TUFDSjtVQUFBO1VBQUEsOEJBQWtGO01BQzlFO1VBQUE7VUFBQSwwREFBcUY7VUFBQSxhQUNyRiwrQ0FFRjtVQUFBLFdBQ0o7VUFBQTtVQUFBLGdCQUFnQyxxREFDcEI7aUJBQUE7Y0FBQTtNQUF3QztNQUNoRCx1Q0FDRztNQUdUO2FBQUE7VUFBQSx3QkFVTTs7SUFwRHFCO0lBQXpCLFlBQXlCLFNBQXpCO0lBMEM0QztJQUE5QyxZQUE4QyxTQUE5Qzs7OztvQkNsREE7TUFBQTtRQUFBO1FBQUE7VUFBQTtVQUFBO1FBQUE7UUFBQTtNQUFBLHFFQUFBO01BQUE7d0JBQUE7SUFBQTs7OzsifQ==
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovc3NibG9nL3NyYy9hcHAvYmxvZy1mb290ZXIvYmxvZy1mb290ZXIuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0M6L3NzYmxvZy9zcmMvYXBwL2Jsb2ctZm9vdGVyL2Jsb2ctZm9vdGVyLmNvbXBvbmVudC50cyIsIm5nOi8vL0M6L3NzYmxvZy9zcmMvYXBwL2Jsb2ctZm9vdGVyL2Jsb2ctZm9vdGVyLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovc3NibG9nL3NyYy9hcHAvYmxvZy1mb290ZXIvYmxvZy1mb290ZXIuY29tcG9uZW50LnRzLkJsb2dGb290ZXJDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8Zm9vdGVyID5cclxuICA8ZGl2IGNsYXNzPVwic3Vic2NyaWJlXCIgPlxyXG4gICAgPHA+XHJcbiAgICAgIFN1YnNjcmliZVxyXG4gICAgPC9wPlxyXG4gICAgPGlucHV0IHR5cGU9XCJlbWFpbFwiIHBsYWNlaG9sZGVyPVwiRW50ZXIgeW91ciBFbWFpbFwiICNzdWJzY3JpYmVyICBlbWFpbD5cclxuICAgIDxidXR0b24gIChjbGljayk9XCJTdWJzY3JpYmUoKVwiPlN1Ym1pdDwvYnV0dG9uPlxyXG4gIDwvZGl2PlxyXG4gIDxwICBjbGFzcz1cImVycm9yTWVzc2FnZVwiICpuZ0lmPVwiZXJyb3JNZXNzYWdlXCI+RW1haWwgaXMgSW5hdmxpZCEhISBQbGVhc2UgZW50ZXIgY29ycmVjdCBFbWFpbDwvcD5cclxuICA8cCBjbGFzcz1cImJsb2dOYW1lXCIgI2Jsb2dOYW1lPkNoYXNlIFlvdXIgU3BvcnQ8L3A+XHJcbiAgPHAgY2xhc3M9XCJ0YWdsaW5lXCIgI3RhZ2xpbmU+VGhlIFNwb3J0cyBTb2NpYWwgQmxvZzwvcD5cclxuICA8cCBjbGFzcz1cImFib3V0XCIgI2Fib3V0PiBcclxuICAgICdDaGFzZSBZb3VyIFNwb3J0JyBibG9nIHByb3ZpZGVzIEhlYWx0aCwgRml0bmVzcyBhbmRcclxuICAgICBTcG9ydCBpbmZvcm1hdGlvbiBhbmQgb3RoZXIgdXNlZnVsIGluZm9ybWF0aW9uIHRvIGhlbHAgZXZlcnlvbmVcclxuICAgICB0byBrZWVwIHRoZW0gYWN0aXZlLCBoZWFsdGh5IGFuZCBmaXQgLjxicj5cclxuICAgICBXZSBhcmUgaGVyZSB0byBoZWxwIHlvdSB0byBmb2xsb3cgeW91ciBwYXNzaW9uIGZvciBzcG9ydHMuIFxyXG4gIDwvcD5cclxuICA8cCBjbGFzcz1cImNvbnRhY3RVc1wiICNjb250YWN0VXM+XHJcbiAgICBDb250YWN0IFVzOiBsZXRzdGFsa0BzcG9ydHNvY2lhbC5pblxyXG4gIDwvcD5cclxuICA8IS0tIDxwIGNsYXNzPVwiZWRpdG9yXCI+IDxhIHJvdXRlckxpbms9XCIvZWRpdG9yUGFuZWxcIj5FZGl0b3I8L2E+PC9wPiAtLT5cclxuICBcclxuICA8cCBjbGFzcz1cImZvbGxvd1VzXCIgI2ZvbGxvd1VzPlxyXG4gICAgRm9sbG93IHVzIG9uIFxyXG4gICAgPGEgaHJlZj1cImh0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9jaGFzZXlvdXJzcG9ydFwiIHRhcmdldD1cIl9ibGFua1wiICByZWw9XCJub29wZW5lclwiPlxyXG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1mYWNlYm9vay1sb2dvLXdoaXRlLnBuZ1wiIGFsdD1cImZhY2Vib29rX0xvZ29cIiA+XHJcbiAgICA8L2E+IFxyXG4gICAgPGEgaHJlZj1cImh0dHBzOi8vd3d3LnR3aXR0ZXIuY29tL2NoYXNleW91cnNwb3J0XCIgdGFyZ2V0PVwiX2JsYW5rXCIgIHJlbD1cIm5vb3BlbmVyXCI+XHJcbiAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLXR3aXR0ZXItbG9nby13aGl0ZS5wbmdcIiBhbHQ9XCJ0d2l0dGVyX0xvZ29cIiAgPlxyXG4gICAgPC9hPlxyXG4gICAgPGEgaHJlZj1cImh0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20vY2hhc2V5b3Vyc3BvcnRcIiB0YXJnZXQ9XCJfYmxhbmtcIiByZWw9XCJub29wZW5lclwiPlxyXG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1pbnN0YWdyYW0tbG9nby13aGl0ZS5wbmdcIiBhbHQ9XCJpbnN0YV9Mb2dvXCIgPlxyXG4gICAgPC9hPlxyXG4gICAgPGEgaHJlZj1cImh0dHBzOi8vd3d3LnF1b3JhLmNvbS90b3BpYy9TcG9ydHMtU29jaWFsLUluZGlhcy1GaXJzdC1TcG9ydHMtU29jaWFsLU5ldHdvcmtcIiB0YXJnZXQ9XCJfYmxhbmtcIiByZWw9XCJub29wZW5lclwiPlxyXG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1xdW9yYS1sb2dvLXdoaXRlLnBuZ1wiIGFsdD1cInF1b3JhX0xvZ29cIj5cclxuICAgIDwvYT5cclxuICAgIDxhIGhyZWY9XCJodHRwczovL3d3dy55b3V0dWJlLmNvbS9jaGFubmVsL1VDOGRSUGp5Zk5reG1Pb3pQdVVzNVlWUVwiIHRhcmdldD1cIl9ibGFua1wiIHJlbD1cIm5vb3BlbmVyXCI+XHJcbiAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLXlvdXR1YmUtbG9nby13aGl0ZS5wbmdcIiBhbHQ9XCJ5b3V0dWJlX0xvZ29cIj5cclxuICAgIDwvYT5cclxuICAgIDxhIGhyZWY9XCJodHRwczovL3d3dy5waW50ZXJlc3QuY29tL2NoYXNleW91cnNwb3J0XCIgdGFyZ2V0PVwiX2JsYW5rXCIgcmVsPVwibm9vcGVuZXJcIj5cclxuICAgICAgICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtcGludGVyZXN0LWxvZ28td2hpdGUucG5nXCIgYWx0PVwicGludHJlc3RfTG9nb1wiPlxyXG4gICAgPC9hPlxyXG4gICAgXHJcbiAgPC9wPlxyXG4gIDxwIGNsYXNzPVwiY29weXJpZ2h0XCIgI2NvcHlyaWdodD5cclxuICAgIENvcHlyaWdodCA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL2NvcHlyaWdodC5wbmdcIj4gMjAxNyBDblAgU3BvcnRzIFNlcnZpY2VzIFByaXZhdGUgTGltaXRlZCB8IEFsbCBSaWdodHMgUmVzZXJ2ZWRcclxuICA8L3A+XHJcbjwvZm9vdGVyPlxyXG5cclxuXHJcbjxkaXYgY2xhc3M9XCJzdWJzY3JpcHRpb25Cb3hcIiAjc3Vic2NyaXB0aW9uQm94ICpuZ0lmPVwic2hvd1N1YnNjcmlwdGlvbkJveFwiPlxyXG4gICAgPGRpdiBjbGFzcz1cInRvcFwiPlxyXG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1jYW5jZWwtYmxhY2sucG5nXCIgcm9sZT1cImJ1dHRvblwiIGNsYXNzPVwiY2xvc2VNZXNzYWdlXCIgIChjbGljayk9XCJjbG9zZSgpXCI+XHJcbiAgICA8L2Rpdj5cclxuICAgIDxkaXYgY2xhc3M9XCJib3R0b21cIj5cclxuICAgICAgICA8cD5HcmVhdDwvcD5cclxuICAgICAgICA8cD5cclxuICAgICAgICAgICAgWW91IGhhdmUgU3Vic2NyaWJlZCBmb3Igb3VyIE5ld3NsZXR0ZXIgYW5kIEJsb2cgdXBkYXRlcy5cclxuICAgICAgICA8L3A+XHJcbiAgICA8L2Rpdj5cclxuPC9kaXY+XHJcbiIsIjxTcG9ydFNvY2lhbC1ibG9nLWZvb3Rlcj48L1Nwb3J0U29jaWFsLWJsb2ctZm9vdGVyPiJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7OztvQkNRRTtNQUFBO01BQThDOzs7O29CQTBDaEQ7TUFBQTtNQUFBLGdCQUEwRSw4Q0FDdEU7TUFBQTtNQUFBLDRDQUFpQjtNQUFBLGlCQUNiO01BQUE7TUFBQTtRQUFBO1FBQUE7UUFBNkY7VUFBQTtVQUFBO1FBQUE7UUFBN0Y7TUFBQSxnQ0FBK0c7TUFDN0csOENBQ047VUFBQTtVQUFBLDhCQUFvQjtNQUNoQjtVQUFBLDBEQUFHO1VBQUEsMEJBQVM7TUFDWjtVQUFBLDBEQUFHO1VBQUE7TUFFQyw4Q0FDRjtVQUFBOzs7OzBDQTNEVjtVQUFBO1VBQUEsZ0JBQVMsNENBQ1A7VUFBQTtVQUFBLDBEQUF3QjtVQUFBLDJCQUN0QjtVQUFBO1VBQUEsZ0JBQUc7TUFFQyw4Q0FDSjtVQUFBO1VBQUE7VUFBQSxnQkFBc0UsOENBQ3RFO1VBQUE7Y0FBQTtZQUFBO1lBQUE7WUFBUztjQUFBO2NBQUE7WUFBQTtZQUFUO1VBQUEsZ0NBQStCO01BQWUsNENBQzFDO1VBQUEsV0FDTjtVQUFBLG9DQUFBO3dCQUFBLG1DQUFnRztVQUFBLFdBQ2hHO1VBQUE7TUFBOEIsd0RBQW9CO1VBQUEsV0FDbEQ7VUFBQTtNQUE0Qiw4REFBMEI7VUFBQSx5QkFDdEQ7VUFBQTtVQUFBLGdCQUF3QjtNQUdpQjtVQUFBLDBEQUFJO1VBQUE7TUFFekMsNENBQ0o7VUFBQTtVQUFBLDRDQUFnQztVQUFBLG9EQUU1QjtVQUFBLFdBQ21FLGdEQUV2RTtVQUFBO1VBQUEsMERBQThCO1VBQUEsOENBRTVCO1VBQUE7Y0FBQTtVQUFBLDRDQUFrRjtVQUFBLGlCQUM5RTtVQUFBO1VBQUE7TUFBcUYsOENBQ3JGO1VBQUEsY0FDSjtVQUFBO1VBQUE7TUFBaUYsa0RBQzdFO1VBQUE7VUFBQTtNQUFvRiw4Q0FDcEY7VUFBQSxhQUNKO1VBQUE7VUFBQTtNQUFrRixrREFDOUU7VUFBQTtVQUFBO01BQW1GLDhDQUNuRjtVQUFBLGFBQ0o7VUFBQTtVQUFBO1VBQUEsOEJBQXNIO01BQ2xIO1VBQUE7VUFBQSwwREFBOEU7VUFBQSwyQkFDOUU7TUFDSjtVQUFBO1VBQUEsOEJBQWtHO01BQzlGO1VBQUE7VUFBQSwwREFBa0Y7VUFBQSwyQkFDbEY7TUFDSjtVQUFBO1VBQUEsOEJBQWtGO01BQzlFO1VBQUE7VUFBQSwwREFBcUY7VUFBQSwyQkFDckY7TUFFRiw0Q0FDSjtVQUFBO1VBQUEsNENBQWdDO1VBQUEsdUJBQ3BCO1VBQUE7VUFBQSw0Q0FBd0M7VUFBQTtNQUNoRCwwQ0FDRztNQUdUO2FBQUE7VUFBQSxpQ0FVTTs7O1FBcERxQjtRQUF6QixZQUF5QixTQUF6QjtRQTBDNEM7UUFBOUMsWUFBOEMsU0FBOUM7Ozs7b0JDbERBO01BQUE7UUFBQTtRQUFBO1VBQUE7VUFBQTtRQUFBO1FBQUE7TUFBQSxxRUFBQTtNQUFBO3dCQUFBO0lBQUE7Ozs7In0=

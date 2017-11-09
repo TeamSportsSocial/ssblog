@@ -22,9 +22,9 @@ const styles_AdminPanelComponent:any[] = [i0.styles];
 export const RenderType_AdminPanelComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_AdminPanelComponent,data:{}});
 function View_AdminPanelComponent_1(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'SportSocial-single-panel',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'SportSocial-single-panel',
       ([] as any[]),(null as any),(null as any),(null as any),i2.View_SinglePanelComponent_0,
-      i2.RenderType_SinglePanelComponent)),i1.ɵdid(114688,(null as any),0,i3.SinglePanelComponent,
+      i2.RenderType_SinglePanelComponent)),i1.ɵdid(1,114688,(null as any),0,i3.SinglePanelComponent,
       [i4.PostService,i5.Router,i6.PropertyService,i1.Renderer2],{blogId:[0,'blogId'],
           blogImage:[1,'blogImage'],bloggerImage:[2,'bloggerImage'],bloggerName:[3,
               'bloggerName'],heading:[4,'heading'],Content:[5,'Content'],keywords:[6,
@@ -40,7 +40,7 @@ function View_AdminPanelComponent_1(_l:any):i1.ɵViewDefinition {
   },(null as any));
 }
 function View_AdminPanelComponent_3(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'button',([] as any[]),
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'button',([] as any[]),
       (null as any),[[(null as any),'click']],(_v,en,$event) => {
         var ad:boolean = true;
         var _co:any = _v.component;
@@ -49,24 +49,24 @@ function View_AdminPanelComponent_3(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Load More']))],
+      },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Load More']))],
       (null as any),(null as any));
 }
 function View_AdminPanelComponent_4(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'img',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),0,'img',[['class',
       'loading'],['src','/assets/images/sports-social-loading.gif']],(null as any),
       (null as any),(null as any),(null as any),(null as any)))],(null as any),(null as any));
 }
 function View_AdminPanelComponent_2(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),7,'div',([] as any[]),
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),7,'div',([] as any[]),
       (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),
-      1,(null as any),View_AdminPanelComponent_3)),i1.ɵdid(16384,(null as any),0,i7.NgIf,
-      [i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),
-      i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),
-      1,(null as any),View_AdminPanelComponent_4)),i1.ɵdid(16384,(null as any),0,i7.NgIf,
-      [i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),
-      i1.ɵted((null as any),['\n']))],(_ck,_v) => {
+      i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),
+      1,(null as any),View_AdminPanelComponent_3)),i1.ɵdid(3,16384,(null as any),0,
+      i7.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),
+      (_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵand(16777216,(null as any),
+          (null as any),1,(null as any),View_AdminPanelComponent_4)),i1.ɵdid(6,16384,
+          (null as any),0,i7.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
+          (null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n']))],(_ck,_v) => {
     var _co:any = _v.component;
     const currVal_0:any = _co.dataRecieved;
     _ck(_v,3,0,currVal_0);
@@ -75,12 +75,12 @@ function View_AdminPanelComponent_2(_l:any):i1.ɵViewDefinition {
   },(null as any));
 }
 function View_AdminPanelComponent_5(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'p',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'p',[['class',
       'noMoreData']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['No More Data !!!']))],(null as any),(null as any));
+      (_l()(),i1.ɵted(-1,(null as any),['No More Data !!!']))],(null as any),(null as any));
 }
 function View_AdminPanelComponent_6(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'SportSocial-blog-footer',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'SportSocial-blog-footer',
       ([] as any[]),(null as any),[['window','resize']],(_v,en,$event) => {
         var ad:boolean = true;
         if (('window:resize' === en)) {
@@ -88,42 +88,43 @@ function View_AdminPanelComponent_6(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },i8.View_BlogFooterComponent_0,i8.RenderType_BlogFooterComponent)),i1.ɵdid(114688,
-      (null as any),0,i9.BlogFooterComponent,[i4.PostService,i1.Renderer2,i10.StatusService,
+      },i8.View_BlogFooterComponent_0,i8.RenderType_BlogFooterComponent)),i1.ɵdid(1,
+      114688,(null as any),0,i9.BlogFooterComponent,[i4.PostService,i1.Renderer2,i10.StatusService,
           i1.PLATFORM_ID],(null as any),(null as any))],(_ck,_v) => {
     _ck(_v,1,0);
   },(null as any));
 }
 export function View_AdminPanelComponent_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[i1.ɵqud(402653184,1,{panel:0}),(_l()(),i1.ɵeld(0,[[1,0],['panel',
+  return i1.ɵvid(0,[i1.ɵqud(402653184,1,{panel:0}),(_l()(),i1.ɵeld(1,0,[[1,0],['panel',
       1]],(null as any),4,'div',[['class','panel']],(null as any),(null as any),(null as any),
-      (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),
+      (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),
       i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_AdminPanelComponent_1)),
-      i1.ɵdid(802816,(null as any),0,i7.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
-          i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),
-          ['\n'])),(_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵand(16777216,
-          (null as any),(null as any),1,(null as any),View_AdminPanelComponent_2)),
-      i1.ɵdid(16384,(null as any),0,i7.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵand(16777216,
-          (null as any),(null as any),1,(null as any),View_AdminPanelComponent_5)),
-      i1.ɵdid(16384,(null as any),0,i7.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['         \n'])),
+      i1.ɵdid(4,802816,(null as any),0,i7.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
+          i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted(-1,
+          (null as any),['\n'])),(_l()(),i1.ɵted(-1,(null as any),['\n'])),(_l()(),
+          i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_AdminPanelComponent_2)),
+      i1.ɵdid(8,16384,(null as any),0,i7.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n'])),
+      (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_AdminPanelComponent_5)),
+      i1.ɵdid(11,16384,(null as any),0,i7.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['         \n'])),
       (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_AdminPanelComponent_6)),
-      i1.ɵdid(16384,(null as any),0,i7.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),[' \n']))],(_ck,_v) => {
-    var _co:i11.AdminPanelComponent = _v.component;
-    const currVal_0:any = _co.blogDetails;
-    _ck(_v,4,0,currVal_0);
-    const currVal_1:any = _co.haveData;
-    _ck(_v,8,0,currVal_1);
-    const currVal_2:boolean = !_co.haveData;
-    _ck(_v,11,0,currVal_2);
-    const currVal_3:any = _co.show;
-    _ck(_v,14,0,currVal_3);
-  },(null as any));
+      i1.ɵdid(14,16384,(null as any),0,i7.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),[' \n']))],
+      (_ck,_v) => {
+        var _co:i11.AdminPanelComponent = _v.component;
+        const currVal_0:any = _co.blogDetails;
+        _ck(_v,4,0,currVal_0);
+        const currVal_1:any = _co.haveData;
+        _ck(_v,8,0,currVal_1);
+        const currVal_2:boolean = !_co.haveData;
+        _ck(_v,11,0,currVal_2);
+        const currVal_3:any = _co.show;
+        _ck(_v,14,0,currVal_3);
+      },(null as any));
 }
 export function View_AdminPanelComponent_Host_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'SportSocialBlog-admin-panel',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'SportSocialBlog-admin-panel',
       ([] as any[]),(null as any),[['window','resize']],(_v,en,$event) => {
         var ad:boolean = true;
         if (('window:resize' === en)) {
@@ -131,7 +132,7 @@ export function View_AdminPanelComponent_Host_0(_l:any):i1.ɵViewDefinition {
           ad = (pd_0 && ad);
         }
         return ad;
-      },View_AdminPanelComponent_0,RenderType_AdminPanelComponent)),i1.ɵdid(114688,
+      },View_AdminPanelComponent_0,RenderType_AdminPanelComponent)),i1.ɵdid(1,114688,
       (null as any),0,i11.AdminPanelComponent,[i6.PropertyService,i1.Renderer2,i4.PostService],
       (null as any),(null as any))],(_ck,_v) => {
     _ck(_v,1,0);
@@ -139,4 +140,4 @@ export function View_AdminPanelComponent_Host_0(_l:any):i1.ɵViewDefinition {
 }
 export const AdminPanelComponentNgFactory:i1.ComponentFactory<i11.AdminPanelComponent> = i1.ɵccf('SportSocialBlog-admin-panel',
     i11.AdminPanelComponent,View_AdminPanelComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvYWRtaW4tcGFuZWwuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0M6L1Nwb3J0U29jaWFsQmxvZy9zcmMvYXBwL2FkbWluLXBhbmVsL2FkbWluLXBhbmVsLmNvbXBvbmVudC50cyIsIm5nOi8vL0M6L1Nwb3J0U29jaWFsQmxvZy9zcmMvYXBwL2FkbWluLXBhbmVsL2FkbWluLXBhbmVsLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovU3BvcnRTb2NpYWxCbG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvYWRtaW4tcGFuZWwuY29tcG9uZW50LnRzLkFkbWluUGFuZWxDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwicGFuZWxcIiAjcGFuZWw+XG4gIDxTcG9ydFNvY2lhbC1zaW5nbGUtcGFuZWwgKm5nRm9yPVwibGV0IGJsb2cgb2YgYmxvZ0RldGFpbHM7bGV0IGk9aW5kZXhcIlxuICAgIFtibG9nSWRdPVwiYmxvZy5ibG9nSWRcIlxuICAgIFtibG9nSW1hZ2VdPVwiYmxvZy5ibG9nSW1hZ2VcIlxuICAgIFtibG9nZ2VySW1hZ2VdPVwiYmxvZy5ibG9nZ2VySW1hZ2VcIlxuICAgIFtibG9nZ2VyTmFtZV09XCJibG9nLmJsb2dnZXJOYW1lXCJcbiAgICBbaGVhZGluZ109XCJibG9nLmhlYWRpbmdcIlxuICAgIFtDb250ZW50XT1cImJsb2cuQ29udGVudFwiXG4gICAgW2tleXdvcmRzXT1cImJsb2cua2V5d29yZHNcIlxuICA+PC9TcG9ydFNvY2lhbC1zaW5nbGUtcGFuZWw+XG48L2Rpdj5cbjxkaXYgKm5nSWY9XCJoYXZlRGF0YVwiPlxuICA8YnV0dG9uIChjbGljayk9XCJuZXh0UGFnZSgpXCIgKm5nSWY9XCJkYXRhUmVjaWV2ZWRcIj5Mb2FkIE1vcmU8L2J1dHRvbj5cbiAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWxvYWRpbmcuZ2lmXCIgKm5nSWY9XCIhZGF0YVJlY2lldmVkXCIgY2xhc3M9XCJsb2FkaW5nXCI+XG48L2Rpdj5cbjxwICpuZ0lmPVwiIWhhdmVEYXRhXCIgY2xhc3M9XCJub01vcmVEYXRhXCIgPk5vIE1vcmUgRGF0YSAhISE8L3A+ICAgICAgICAgXG48U3BvcnRTb2NpYWwtYmxvZy1mb290ZXIgKm5nSWY9XCJzaG93XCI+PC9TcG9ydFNvY2lhbC1ibG9nLWZvb3Rlcj4gXG4iLCI8U3BvcnRTb2NpYWxCbG9nLWFkbWluLXBhbmVsPjwvU3BvcnRTb2NpYWxCbG9nLWFkbWluLXBhbmVsPiJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztvQkNDRTtNQUFBO3dDQUFBLFVBQUE7TUFBQTtVQUFBO2NBQUE7Y0FBQTtJQUNFO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBUEYsV0FDRSxVQUNBLFVBQ0EsVUFDQSxVQUNBLFVBQ0EsVUFDQSxTQVBGOzs7O29CQVdBO01BQUE7UUFBQTtRQUFBO1FBQVE7VUFBQTtVQUFBO1FBQUE7UUFBUjtNQUFBLGdDQUFrRDs7OztvQkFDbEQ7TUFBQTtNQUFBOzs7b0JBRkY7TUFBQSx3RUFBc0I7YUFBQSwwQkFDcEI7TUFBQSxvREFBQTtNQUFBLHNFQUFvRTthQUFBLDBCQUNwRTtNQUFBLG9EQUFBO01BQUEsc0VBQTBGO2FBQUE7O0lBRDdEO0lBQTdCLFdBQTZCLFNBQTdCO0lBQ29EO0lBQXBELFdBQW9ELFNBQXBEOzs7O29CQUVGO01BQUE7TUFBeUM7OztvQkFDekM7TUFBQTtRQUFBO1FBQUE7VUFBQTtVQUFBO1FBQUE7UUFBQTtNQUFBLDJFQUFBO01BQUE7d0JBQUE7SUFBQTs7OzttREFoQkE7TUFBQTtNQUFBLDhCQUEwQix5Q0FDeEI7YUFBQTthQUFBOzRCQUFBLHlDQVE0QjtVQUFBLFNBQ3hCLHVDQUNOO1VBQUE7YUFBQTtVQUFBLHdCQUdNLHVDQUNOO1VBQUE7YUFBQTtVQUFBLHdCQUE2RDtNQUM3RDthQUFBO1VBQUEsd0JBQWdFOztJQWZwQztJQUExQixXQUEwQixTQUExQjtJQVVHO0lBQUwsV0FBSyxTQUFMO0lBSUc7SUFBSCxZQUFHLFNBQUg7SUFDeUI7SUFBekIsWUFBeUIsU0FBekI7Ozs7b0JDaEJBO01BQUE7UUFBQTtRQUFBO1VBQUE7VUFBQTtRQUFBO1FBQUE7TUFBQSxxRUFBQTtNQUFBO01BQUE7SUFBQTs7OzsifQ==
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovc3NibG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvYWRtaW4tcGFuZWwuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0M6L3NzYmxvZy9zcmMvYXBwL2FkbWluLXBhbmVsL2FkbWluLXBhbmVsLmNvbXBvbmVudC50cyIsIm5nOi8vL0M6L3NzYmxvZy9zcmMvYXBwL2FkbWluLXBhbmVsL2FkbWluLXBhbmVsLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovc3NibG9nL3NyYy9hcHAvYWRtaW4tcGFuZWwvYWRtaW4tcGFuZWwuY29tcG9uZW50LnRzLkFkbWluUGFuZWxDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwicGFuZWxcIiAjcGFuZWw+XHJcbiAgPFNwb3J0U29jaWFsLXNpbmdsZS1wYW5lbCAqbmdGb3I9XCJsZXQgYmxvZyBvZiBibG9nRGV0YWlscztsZXQgaT1pbmRleFwiXHJcbiAgICBbYmxvZ0lkXT1cImJsb2cuYmxvZ0lkXCJcclxuICAgIFtibG9nSW1hZ2VdPVwiYmxvZy5ibG9nSW1hZ2VcIlxyXG4gICAgW2Jsb2dnZXJJbWFnZV09XCJibG9nLmJsb2dnZXJJbWFnZVwiXHJcbiAgICBbYmxvZ2dlck5hbWVdPVwiYmxvZy5ibG9nZ2VyTmFtZVwiXHJcbiAgICBbaGVhZGluZ109XCJibG9nLmhlYWRpbmdcIlxyXG4gICAgW0NvbnRlbnRdPVwiYmxvZy5Db250ZW50XCJcclxuICAgIFtrZXl3b3Jkc109XCJibG9nLmtleXdvcmRzXCJcclxuICA+PC9TcG9ydFNvY2lhbC1zaW5nbGUtcGFuZWw+XHJcbjwvZGl2PlxyXG48ZGl2ICpuZ0lmPVwiaGF2ZURhdGFcIj5cclxuICA8YnV0dG9uIChjbGljayk9XCJuZXh0UGFnZSgpXCIgKm5nSWY9XCJkYXRhUmVjaWV2ZWRcIj5Mb2FkIE1vcmU8L2J1dHRvbj5cclxuICA8aW1nIHNyYz1cIi9hc3NldHMvaW1hZ2VzL3Nwb3J0cy1zb2NpYWwtbG9hZGluZy5naWZcIiAqbmdJZj1cIiFkYXRhUmVjaWV2ZWRcIiBjbGFzcz1cImxvYWRpbmdcIj5cclxuPC9kaXY+XHJcbjxwICpuZ0lmPVwiIWhhdmVEYXRhXCIgY2xhc3M9XCJub01vcmVEYXRhXCIgPk5vIE1vcmUgRGF0YSAhISE8L3A+ICAgICAgICAgXHJcbjxTcG9ydFNvY2lhbC1ibG9nLWZvb3RlciAqbmdJZj1cInNob3dcIj48L1Nwb3J0U29jaWFsLWJsb2ctZm9vdGVyPiBcclxuIiwiPFNwb3J0U29jaWFsQmxvZy1hZG1pbi1wYW5lbD48L1Nwb3J0U29jaWFsQmxvZy1hZG1pbi1wYW5lbD4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7b0JDQ0U7TUFBQTt3Q0FBQSxVQUFBO01BQUE7VUFBQTtjQUFBO2NBQUE7SUFDRTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQVBGLFdBQ0UsVUFDQSxVQUNBLFVBQ0EsVUFDQSxVQUNBLFVBQ0EsU0FQRjs7OztvQkFXQTtNQUFBO1FBQUE7UUFBQTtRQUFRO1VBQUE7VUFBQTtRQUFBO1FBQVI7TUFBQSxnQ0FBa0Q7Ozs7b0JBQ2xEO01BQUE7TUFBQTs7O29CQUZGO01BQUEsd0VBQXNCO2FBQUEsNkJBQ3BCO01BQUEsb0RBQUE7Y0FBQTtNQUFvRSw0Q0FDcEU7VUFBQSxrRUFBQTtVQUFBO1VBQUEsZUFBMEY7O0lBRDdEO0lBQTdCLFdBQTZCLFNBQTdCO0lBQ29EO0lBQXBELFdBQW9ELFNBQXBEOzs7O29CQUVGO01BQUE7TUFBeUM7OztvQkFDekM7TUFBQTtRQUFBO1FBQUE7VUFBQTtVQUFBO1FBQUE7UUFBQTtNQUFBLDJFQUFBO01BQUE7d0JBQUE7SUFBQTs7OzttREFoQkE7TUFBQTtNQUFBLDhCQUEwQiw0Q0FDeEI7YUFBQTthQUFBOzRCQUFBLHlDQVE0QjtVQUFBLHVCQUN4QiwwQ0FDTjtpQkFBQTthQUFBO1VBQUEsaUNBR007TUFDTjthQUFBO1VBQUEsaUNBQTZEO01BQzdEO2FBQUE7VUFBQSxpQ0FBZ0U7OztRQWZwQztRQUExQixXQUEwQixTQUExQjtRQVVHO1FBQUwsV0FBSyxTQUFMO1FBSUc7UUFBSCxZQUFHLFNBQUg7UUFDeUI7UUFBekIsWUFBeUIsU0FBekI7Ozs7b0JDaEJBO01BQUE7UUFBQTtRQUFBO1VBQUE7VUFBQTtRQUFBO1FBQUE7TUFBQSxxRUFBQTtNQUFBO01BQUE7SUFBQTs7OzsifQ==

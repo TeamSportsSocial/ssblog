@@ -51,26 +51,26 @@ var BlogsComponent = /** @class */ (function () {
     BlogsComponent.prototype.getBlog = function () {
         var _this = this;
         this.get.blogData(this.nextPageNumber, this.defaultKey).subscribe(function (data) {
-            console.log(data);
+            // console.log(data);
             _this.show = true;
             _this.dataRecived = true;
             // tslint:disable-next-line:forin
-            for (var i_1 in data) {
+            for (var i in data) {
                 _this.blogDetails.push({
-                    blogId: data[i_1].blogId,
-                    blogImage: data[i_1].blogImage,
-                    bloggerName: data[i_1].bloggerName,
-                    bloggerImage: data[i_1].bloggerImage,
-                    heading: data[i_1].heading,
-                    Content: data[i_1].Content,
-                    insertedDate: _this.timePassed(data[i_1].insertedDate),
-                    ViewCount: data[i_1].ViewCount,
-                    ShareCount: data[i_1].ShareCount,
-                    keywords: data[i_1].keywords.split(','),
-                    exactDate: _this.ExactDate(data[i_1].insertedDate),
-                    readingTime: _this.timeToRead(data[i_1].Content),
-                    MetaDesc: data[i_1].MetaDesc,
-                    ImageDesc: data[i_1].ImageDesc
+                    blogId: data[i].blogId,
+                    blogImage: data[i].blogImage,
+                    bloggerName: data[i].bloggerName,
+                    bloggerImage: data[i].bloggerImage,
+                    heading: data[i].heading,
+                    Content: data[i].Content,
+                    insertedDate: _this.timePassed(data[i].insertedDate),
+                    ViewCount: data[i].ViewCount,
+                    ShareCount: data[i].ShareCount,
+                    keywords: data[i].keywords.split(','),
+                    exactDate: _this.ExactDate(data[i].insertedDate),
+                    readingTime: _this.timeToRead(data[i].Content),
+                    MetaDesc: data[i].MetaDesc,
+                    ImageDesc: data[i].ImageDesc
                 });
             }
             _this.latestBlogDetails.push({
@@ -240,8 +240,8 @@ var BlogsComponent = /** @class */ (function () {
                         heading: data[i].heading,
                         Content: data[i].Content,
                         insertedDate: _this.timePassed(data[i].insertedDate),
-                        ViewCount: data.ViewCount,
-                        ShareCount: data.ShareCount,
+                        ViewCount: data[i].ViewCount,
+                        ShareCount: data[i].ShareCount,
                         keywords: data[i].keywords.split(','),
                         exactDate: _this.ExactDate(data[i].insertedDate),
                         readingTime: _this.timeToRead(data[i].Content),

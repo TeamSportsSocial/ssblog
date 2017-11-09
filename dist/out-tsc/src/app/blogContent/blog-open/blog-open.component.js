@@ -34,9 +34,6 @@ var BlogOpenComponent = /** @class */ (function () {
         this.Keywords = [];
         this.loading = true;
         this.isBrowser = common_1.isPlatformBrowser(platformId);
-        if (common_1.isPlatformBrowser(platformId)) {
-            Fb.init();
-        }
     }
     BlogOpenComponent.prototype.ngOnInit = function () {
         this.recieveBlogIdFromUrl();
@@ -45,7 +42,6 @@ var BlogOpenComponent = /** @class */ (function () {
     };
     BlogOpenComponent.prototype.ngAfterViewInit = function () {
         this.scriptOfTwitter();
-        this.recieveBlogIdFromUrl();
     };
     BlogOpenComponent.prototype.setTitle = function () {
         if (this.route.snapshot.url[0].path !== 'sportsocialblog' || this.route.snapshot.url[1].path !== 'page') {
@@ -82,8 +78,6 @@ var BlogOpenComponent = /** @class */ (function () {
     };
     BlogOpenComponent.prototype.setMetaTags = function () {
         var key;
-        var title;
-        console.log(this.Keywords[0].search(/ /g), " d", this.Keywords[0]);
         if (this.Keywords[0].search(/ /g) === -1) {
             key = this.Keywords[0];
         }
@@ -113,34 +107,36 @@ var BlogOpenComponent = /** @class */ (function () {
             { name: 'twitter:image:src', content: this.blog.blogImage },
         ]);
     };
-    BlogOpenComponent.prototype.loadBlogFromSendData = function () {
-        var _this = this;
+    /* loadBlogFromSendData() {
         this.recieve.detailsofBlog
-            .subscribe(function (data) {
-            _this.blogDataRecieved = true;
-            _this.blog = {
-                blogId: data['blogId'],
-                blogImage: data['blogImage'],
-                bloggerName: data['bloggerName'],
-                bloggerImage: data['bloggerImage'],
-                heading: (data['heading']),
-                Content: _this.sanitizer.bypassSecurityTrustHtml(data['Content']),
-                insertedDate: data['insertedDate'],
-                ViewCount: data['ViewCount'],
-                ShareCount: data['ShareCount'],
-                keywords: data['keywords'],
-                exactDate: data['exactDate'],
-                readingTime: data['readingTime'],
-            };
-        });
-    };
+        .subscribe(
+            data => {
+                this.blogDataRecieved = true;
+                this.blog = {
+                    blogId: data['blogId'],
+                    blogImage: data['blogImage'],
+                    bloggerName: data['bloggerName'],
+                    bloggerImage: data['bloggerImage'],
+                    heading: ( data['heading']),
+                    Content: this.sanitizer.bypassSecurityTrustHtml(data['Content']),
+                    insertedDate: data['insertedDate'],
+                    ViewCount: data['ViewCount'],
+                    ShareCount: data['ShareCount'],
+                    keywords: data['keywords'],
+                    exactDate: data['exactDate'],
+                    readingTime: data['readingTime'],
+                };
+            }
+        );
+    }
+ */
     BlogOpenComponent.prototype.recieveBlogIdFromUrl = function () {
         var _this = this;
         this.blogID = this.route.snapshot.url[2].path;
         this.route.params.subscribe(function (params) {
             _this.blogID = params.blogId;
-            console.clear();
-            console.log(_this.blogID);
+            // console.clear();
+            // console.log(this.blogID);
             _this.getBlogDetails();
         });
     };
@@ -150,7 +146,7 @@ var BlogOpenComponent = /** @class */ (function () {
         var blog;
         this.load.dataOfsingleBlog(this.blogID).subscribe(function (res) {
             var data = res[0];
-            console.log(data);
+            // console.log(data)
             if (data === undefined || _this.route.snapshot.url[0].path === 'sportsocialblog'
                 || _this.route.snapshot.url[1].path === 'page') {
                 _this.router.navigate(['/']);
@@ -172,18 +168,24 @@ var BlogOpenComponent = /** @class */ (function () {
                 exactDate: _this.ExactDate(data.insertedDate),
                 readingTime: _this.timeToRead(data.Content),
                 MetaDesc: data.MetaDesc,
-                ImageDesc: data.ImageDesc
+                ImageDesc: data.ImageDesc == null ? ' ' : data.ImageDesc
             };
+            if (blog.MetaDesc == null) {
+                blog.MetaDesc = '';
+            }
+            if (blog.ImageDesc == null) {
+                blog.ImageDesc = '';
+            }
             _this.blog = blog;
-            console.log(_this.blog);
+            // console.log(this.blog);
             _this.Keywords = blog.keywords;
             _this.content = _this.sanitizer.bypassSecurityTrustHtml(data.Content);
-            _this.ShareCount = +blog.ShareCount;
-            _this.ViewCount = +(blog.ViewCount);
-            _this.sendViewCount();
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
             _this.setMetaTags();
             _this.setTitle();
+            _this.ShareCount = +blog.ShareCount;
+            _this.ViewCount = +(blog.ViewCount);
+            _this.sendViewCount();
         });
     };
     BlogOpenComponent.prototype.timeToRead = function (s) {
@@ -224,7 +226,7 @@ var BlogOpenComponent = /** @class */ (function () {
         this.blog.bloggerImage = '/assets/images/user.png';
     };
     BlogOpenComponent.prototype.removeInitalImage = function (event) {
-        console.log(event.returnValue, 'load');
+        // console.log(event.returnValue, 'load');
         if (event.returnValue) {
             this.loading = false;
         }
@@ -296,19 +298,12 @@ var BlogOpenComponent = /** @class */ (function () {
     };
     BlogOpenComponent.prototype.shareOnFacebook = function () {
         var key;
-        var title;
         if (this.Keywords[0].search(/ /g) === -1) {
             key = this.Keywords[0];
         }
         else {
             key = this.Keywords[0].replace(/\s+/g, '-');
         }
-        /* if(this.blog.heading.search(/ /g)){
-            title = this.blog.heading.replace(/ /g, '-');
-        }
-        else{
-            title = this.blog.heading;
-        } */
         this.sendShareCount();
         FB.ui({
             method: 'share',
