@@ -116,40 +116,40 @@ export class NormalBlogComponent implements OnInit {
   }
 
 
-  setVariableFont(){
-      if(window.innerWidth>1200){
-        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em');
+  setVariableFont() {
+      if (window.innerWidth > 1200) {
+        this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
       }
-      if(window.innerWidth>1100 && window.innerWidth<1200){
-        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em');
+      if (window.innerWidth > 1100 && window.innerWidth < 1200) {
+        this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
       }
-      if(window.innerWidth<1100 && window.innerWidth>1000){
-      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em');
+      if (window.innerWidth < 1100 && window.innerWidth > 1000) {
+      this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
       }
-      if(window.innerWidth<1000 && window.innerWidth>950){
-      this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.15em');
+      if (window.innerWidth < 1000 && window.innerWidth > 950) {
+      this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.15em');
       }
-      if(window.innerWidth>700 && window.innerWidth<950){
-        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.25em');
+      if (window.innerWidth > 700 && window.innerWidth < 950) {
+        this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.25em');
       }
-      if(window.innerWidth>600 && window.innerWidth<700){
-        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.1em');
+      if (window.innerWidth > 600 && window.innerWidth < 700) {
+        this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
       }
-      if(window.innerWidth>600 && window.innerWidth<500){
-        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.3em');
+      if (window.innerWidth > 600 && window.innerWidth < 500) {
+        this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
       }
-      if(window.innerWidth>500 && window.innerWidth<600){
-        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.2em');
+      if (window.innerWidth > 500 && window.innerWidth < 600) {
+        this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
       }
-      if(window.innerWidth>320 && window.innerWidth<400){
-        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','1.1em');
+      if (window.innerWidth > 320 && window.innerWidth < 400) {
+        this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
       }
-      if(window.innerWidth<320){
-        this.renderer.setStyle(this.blogTitle.nativeElement,'font-size','0.9em');
+      if (window.innerWidth < 320) {
+        this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '0.9em');
       }
   }
  
-  send(){
+  send() {
     this.Send.detailsofBlog.next(this.blog);
     if ( this.isBrowser ) {
       window.scrollTo(0, 0);
@@ -157,17 +157,17 @@ export class NormalBlogComponent implements OnInit {
   }
 
 
-  setDefault(event){
-    this.blogImage='/assets/images/default-image.png';
+  setDefault(event) {
+    this.blogImage = '/assets/images/default-image.png';
   }
 
 
-  removeInitialImage(){
-    this.isloading=false;
+  removeInitialImage() {
+    this.isloading = false;
   }
 
 
-  @HostListener('window:resize',[])onresize(){
+  @HostListener('window:resize', [])onresize() {
     this.setVariableFont();
   }
 

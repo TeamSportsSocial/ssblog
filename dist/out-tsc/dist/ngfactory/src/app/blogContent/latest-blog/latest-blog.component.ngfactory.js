@@ -18,6 +18,9 @@ var styles_LatestBlogComponent = [i0.styles];
 exports.RenderType_LatestBlogComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_LatestBlogComponent, data: {} });
 function View_LatestBlogComponent_1(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, [[6, 0], ['initialImage', 1]], null, 0, 'img', [['alt', 'InitialblogImage'], ['src', '/assets/images/default-image.png']], null, null, null, null, null))], null, null);
+}
+function View_LatestBlogComponent_2(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, [[4, 0], ['blogimage', 1]], null, 0, 'img', [['alt', 'blogImage']], [[8, 'src', 4], [8, 'title', 0]], [[null, 'error']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -35,7 +38,7 @@ function View_LatestBlogComponent_1(_l) {
 }
 function View_LatestBlogComponent_0(_l) {
     return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { DescChild: 0 }), i1.ɵqud(402653184, 2, { latestTitle: 0 }),
-        i1.ɵqud(402653184, 3, { latestDesc: 0 }), i1.ɵqud(671088640, 4, { blogimage: 0 }), i1.ɵqud(402653184, 5, { latest: 0 }), i1.ɵqud(402653184, 6, { initialImage: 0 }), i1.ɵqud(402653184, 7, { Desc: 0 }), (_l()(), i1.ɵted(-1, null, ['\n\n'])), (_l()(), i1.ɵeld(8, 0, [[5, 0], ['latest', 1]], null, 59, 'div', [['MaintainHeightWidthRatio',
+        i1.ɵqud(402653184, 3, { latestDesc: 0 }), i1.ɵqud(671088640, 4, { blogimage: 0 }), i1.ɵqud(402653184, 5, { latest: 0 }), i1.ɵqud(671088640, 6, { initialImage: 0 }), i1.ɵqud(402653184, 7, { Desc: 0 }), (_l()(), i1.ɵted(-1, null, ['\n\n'])), (_l()(), i1.ɵeld(8, 0, [[5, 0], ['latest', 1]], null, 61, 'div', [['MaintainHeightWidthRatio',
                 ''], ['class', 'latest']], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
@@ -44,7 +47,7 @@ function View_LatestBlogComponent_0(_l) {
             }
             return ad;
         }, null, null)), i1.ɵdid(9, 4210688, null, 0, i2.MaintainHeightWidthRatioDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID], null, null),
-        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(11, 0, null, null, 55, 'a', [], [[1, 'target', 0], [8, 'href', 4]], [[null,
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(11, 0, null, null, 57, 'a', [], [[1, 'target', 0], [8, 'href', 4]], [[null,
                 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -57,50 +60,55 @@ function View_LatestBlogComponent_0(_l) {
                 ad = (pd_1 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(12, 671744, null, 0, i4.RouterLinkWithHref, [i4.Router, i4.ActivatedRoute, i5.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_LatestBlogComponent_1)), i1.ɵdid(16, 16384, null, 0, i5.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
-        (_l()(), i1.ɵted(-1, null, ['\n    \n    \n    '])), (_l()(), i1.ɵeld(18, 0, [[7, 0], ['Desc', 1]], null, 47, 'div', [['class', 'desc']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(20, 0, [[1, 0], ['DescChild', 1]], null, 44, 'div', [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵeld(22, 0, null, null, 11, 'div', [['class', 'count']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(24, 0, null, null, 0, 'img', [['alt', 'sports-social-view-white'], ['src', '/assets/images/sports-social-view-white.png']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(26, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(27, null, ['', ''])),
-        (_l()(), i1.ɵted(-1, null, [' \n          '])), (_l()(), i1.ɵeld(29, 0, null, null, 0, 'img', [['alt', 'sports-social-share-white'], ['src', '/assets/images/sports-social-share-white.png']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(31, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(32, null, ['', ''])),
-        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, [' \n        '])), (_l()(), i1.ɵeld(35, 0, null, null, 10, 'div', [], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(37, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(38, null, ['', ''])),
-        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(40, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['|'])), (_l()(),
-            i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(43, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(44, null, ['', ''])),
-        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(47, 0, [[2, 0], ['latestTitle', 1]], null, 1, 'p', [['class', 'heading']], [[8, 'innerHTML', 1]], null, null, null, null)), (_l()(), i1.ɵted(-1, null, [' '])), (_l()(),
-            i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(51, 0, [[3, 0], ['latestDesc', 1]], null, 1, 'p', [['class', 'smallDesc']], null, null, null, null, null)), (_l()(), i1.ɵted(52, null, ['', ''])),
-        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(54, 0, null, null, 9, 'div', [['class', 'Blogger']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(56, 0, [['BloggerImage', 1]], null, 3, 'div', [['class', 'bloggerImage']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n              '])),
-        (_l()(), i1.ɵeld(58, 0, null, null, 0, 'img', [['alt', 'sports-social-blogger-white'],
+        }, null, null)), i1.ɵdid(12, 671744, null, 0, i4.RouterLinkWithHref, [i4.Router, i4.ActivatedRoute, i5.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_LatestBlogComponent_1)),
+        i1.ɵdid(15, 16384, null, 0, i5.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])),
+        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_LatestBlogComponent_2)),
+        i1.ɵdid(18, 16384, null, 0, i5.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    \n    \n    '])),
+        (_l()(), i1.ɵeld(20, 0, [[7, 0], ['Desc', 1]], null, 47, 'div', [['class', 'desc']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(22, 0, [[1, 0],
+            ['DescChild', 1]], null, 44, 'div', [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(24, 0, null, null, 11, 'div', [['class', 'count']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(),
+            i1.ɵeld(26, 0, null, null, 0, 'img', [['alt', 'sports-social-view-white'],
+                ['src', '/assets/images/sports-social-view-white.png']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(28, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(29, null, ['', ''])), (_l()(), i1.ɵted(-1, null, [' \n          '])), (_l()(), i1.ɵeld(31, 0, null, null, 0, 'img', [['alt', 'sports-social-share-white'], ['src', '/assets/images/sports-social-share-white.png']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(33, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(34, null, ['', ''])),
+        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, [' \n        '])), (_l()(), i1.ɵeld(37, 0, null, null, 10, 'div', [], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(39, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(40, null, ['', ''])),
+        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(42, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['|'])), (_l()(),
+            i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(45, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(46, null, ['', ''])),
+        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(49, 0, [[2, 0], ['latestTitle', 1]], null, 1, 'p', [['class', 'heading']], [[8, 'innerHTML', 1]], null, null, null, null)), (_l()(), i1.ɵted(-1, null, [' '])), (_l()(),
+            i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(53, 0, [[3, 0], ['latestDesc', 1]], null, 1, 'p', [['class', 'smallDesc']], null, null, null, null, null)), (_l()(), i1.ɵted(54, null, ['', ''])),
+        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(56, 0, null, null, 9, 'div', [['class', 'Blogger']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(58, 0, [['BloggerImage', 1]], null, 3, 'div', [['class', 'bloggerImage']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n              '])),
+        (_l()(), i1.ɵeld(60, 0, null, null, 0, 'img', [['alt', 'sports-social-blogger-white'],
             ['src', '/assets/images/sports-social-blogger-white.png']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵted(-1, null, ['  \n          '])),
-        (_l()(), i1.ɵeld(61, 0, null, null, 1, 'p', [['class', 'bloggerName']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(62, null, ['', ''])), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(),
+        (_l()(), i1.ɵeld(63, 0, null, null, 1, 'p', [['class', 'bloggerName']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(64, null, ['', ''])), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(),
             i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, ['\n  '])),
         (_l()(), i1.ɵted(-1, null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_2 = i1.ɵinlineInterpolate(3, '/', _co.keywords[0], '/', _co.heading, '/', _co.blogId, '');
         _ck(_v, 12, 0, currVal_2);
-        var currVal_3 = _co.dataRecieved;
-        _ck(_v, 16, 0, currVal_3);
+        var currVal_3 = _co.isloading;
+        _ck(_v, 15, 0, currVal_3);
+        var currVal_4 = _co.dataRecieved;
+        _ck(_v, 18, 0, currVal_4);
     }, function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = i1.ɵnov(_v, 12).target;
         var currVal_1 = i1.ɵnov(_v, 12).href;
         _ck(_v, 11, 0, currVal_0, currVal_1);
-        var currVal_4 = _co.ViewCount;
-        _ck(_v, 27, 0, currVal_4);
-        var currVal_5 = _co.ShareCount;
-        _ck(_v, 32, 0, currVal_5);
-        var currVal_6 = _co.insertedDate;
-        _ck(_v, 38, 0, currVal_6);
-        var currVal_7 = _co.keywords[0];
-        _ck(_v, 44, 0, currVal_7);
-        var currVal_8 = _co.heading;
-        _ck(_v, 47, 0, currVal_8);
-        var currVal_9 = _co.content;
-        _ck(_v, 52, 0, currVal_9);
-        var currVal_10 = _co.bloggerName;
-        _ck(_v, 62, 0, currVal_10);
+        var currVal_5 = _co.ViewCount;
+        _ck(_v, 29, 0, currVal_5);
+        var currVal_6 = _co.ShareCount;
+        _ck(_v, 34, 0, currVal_6);
+        var currVal_7 = _co.insertedDate;
+        _ck(_v, 40, 0, currVal_7);
+        var currVal_8 = _co.keywords[0];
+        _ck(_v, 46, 0, currVal_8);
+        var currVal_9 = _co.heading;
+        _ck(_v, 49, 0, currVal_9);
+        var currVal_10 = _co.content;
+        _ck(_v, 54, 0, currVal_10);
+        var currVal_11 = _co.bloggerName;
+        _ck(_v, 64, 0, currVal_11);
     });
 }
 exports.View_LatestBlogComponent_0 = View_LatestBlogComponent_0;

@@ -7,80 +7,71 @@ var TabViewAvailableDirective = /** @class */ (function () {
         this.elRef = elRef;
         this.renderer = renderer;
         this.isBrowser = common_1.isPlatformBrowser(platformId);
-        if (this.isBrowser) {
-            this.windowWidth = window.innerWidth;
-            if (this.windowWidth < 950 && this.windowWidth > 600) {
-                this.className = this.elRef.nativeElement.className;
-                if (this.className === 'col-8') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                }
-                if (this.className === 'col-4') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-6');
-                }
+        this.windowWidth = window.innerWidth;
+        if (this.windowWidth < 950 && this.windowWidth > 600) {
+            this.className = this.elRef.nativeElement.className;
+            if (this.className === 'col-8') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-12');
+            }
+            if (this.className === 'col-4') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-6');
             }
         }
     }
     TabViewAvailableDirective.prototype.ngAfterViewInit = function () {
-        if (this.isBrowser) {
-            this.windowWidth = window.innerWidth;
-            if (this.windowWidth < 950 && this.windowWidth > 600) {
-                this.className = this.elRef.nativeElement.className;
-                if (this.className === 'col-8') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                    // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
-                }
-                if (this.className === 'col-4') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-6');
-                }
+        this.windowWidth = window.innerWidth;
+        if (this.windowWidth < 950 && this.windowWidth > 600) {
+            this.className = this.elRef.nativeElement.className;
+            if (this.className === 'col-8') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-12');
+                // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
+            }
+            if (this.className === 'col-4') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-6');
             }
         }
     };
     TabViewAvailableDirective.prototype.ngAfterContentInit = function () {
-        if (this.isBrowser) {
-            this.windowWidth = window.innerWidth;
-            if (this.windowWidth < 950 && this.windowWidth > 600) {
-                this.className = this.elRef.nativeElement.className;
-                if (this.className === 'col-8') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                    // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
-                }
-                if (this.className === 'col-4') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-6');
-                }
+        this.windowWidth = window.innerWidth;
+        if (this.windowWidth < 950 && this.windowWidth > 600) {
+            this.className = this.elRef.nativeElement.className;
+            if (this.className === 'col-8') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-12');
+                // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
+            }
+            if (this.className === 'col-4') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-6');
             }
         }
     };
     TabViewAvailableDirective.prototype.onresize = function () {
-        if (this.isBrowser) {
-            this.windowWidth = window.innerWidth;
-            if (this.windowWidth > 950) {
-                this.className = this.elRef.nativeElement.className;
-                if (this.className === 'col-12') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-8');
-                }
-                if (this.className === 'col-6') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-4');
-                }
+        this.windowWidth = window.innerWidth;
+        if (this.windowWidth > 950) {
+            this.className = this.elRef.nativeElement.className;
+            if (this.className === 'col-12') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-8');
             }
-            if (this.windowWidth < 950 && this.windowWidth > 600) {
-                this.className = this.elRef.nativeElement.className;
-                if (this.className === 'col-8') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                    // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
-                }
-                if (this.className == 'col-4') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-6');
-                }
+            if (this.className === 'col-6') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-4');
+            }
+        }
+        if (this.windowWidth < 950 && this.windowWidth > 600) {
+            this.className = this.elRef.nativeElement.className;
+            if (this.className === 'col-8') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-12');
+            }
+            if (this.className === 'col-4') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-6');
             }
         }
     };

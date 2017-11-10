@@ -2254,7 +2254,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/latest-blog/latest-blog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n<div class=\"latest\" MaintainHeightWidthRatio #latest>\r\n  <a routerLink=\"/{{keywords[0]}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\r\n    <!-- <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\"> -->\r\n    <img src=\"{{blogImage}}\" title=\"{{ImageDesc}}\" (error)=\"setDefault()\" alt=\"blogImage\"  *ngIf=\"dataRecieved\" #blogimage>\r\n    \r\n    \r\n    <div class=\"desc\" #Desc>\r\n      <div #DescChild>\r\n        <div class=\"count\">\r\n          <img src=\"/assets/images/sports-social-view-white.png\" alt=\"sports-social-view-white\">\r\n          <span>{{ViewCount}}</span> \r\n          <img src=\"/assets/images/sports-social-share-white.png\" alt=\"sports-social-share-white\">\r\n          <span>{{ShareCount}}</span>\r\n        </div> \r\n        <div >\r\n          <span>{{insertedDate}}</span>\r\n          <span>|</span>\r\n          <span>{{keywords[0]}}</span>\r\n        </div>\r\n        <p class=\"heading\" [innerHtml]=\"heading\" #latestTitle> </p>\r\n        <!-- <p  class=\"smallDesc\" #latestDesc>{{Content}}</p> -->\r\n        <p  class=\"smallDesc\" #latestDesc>{{content}}</p>\r\n        <div class=\"Blogger\">\r\n          <div class=\"bloggerImage\" #BloggerImage>\r\n              <img src=\"/assets/images/sports-social-blogger-white.png\" alt=\"sports-social-blogger-white\" >\r\n          </div>  \r\n          <p class=\"bloggerName\">{{bloggerName}}</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </a>\r\n</div>"
+module.exports = "\r\n\r\n<div class=\"latest\" MaintainHeightWidthRatio #latest>\r\n  <a routerLink=\"/{{keywords[0]}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\r\n    <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\r\n    <img src=\"{{blogImage}}\" title=\"{{ImageDesc}}\" (error)=\"setDefault()\" alt=\"blogImage\"  *ngIf=\"dataRecieved\" #blogimage>\r\n    \r\n    \r\n    <div class=\"desc\" #Desc>\r\n      <div #DescChild>\r\n        <div class=\"count\">\r\n          <img src=\"/assets/images/sports-social-view-white.png\" alt=\"sports-social-view-white\">\r\n          <span>{{ViewCount}}</span> \r\n          <img src=\"/assets/images/sports-social-share-white.png\" alt=\"sports-social-share-white\">\r\n          <span>{{ShareCount}}</span>\r\n        </div> \r\n        <div >\r\n          <span>{{insertedDate}}</span>\r\n          <span>|</span>\r\n          <span>{{keywords[0]}}</span>\r\n        </div>\r\n        <p class=\"heading\" [innerHtml]=\"heading\" #latestTitle> </p>\r\n        <!-- <p  class=\"smallDesc\" #latestDesc>{{Content}}</p> -->\r\n        <p  class=\"smallDesc\" #latestDesc>{{content}}</p>\r\n        <div class=\"Blogger\">\r\n          <div class=\"bloggerImage\" #BloggerImage>\r\n              <img src=\"/assets/images/sports-social-blogger-white.png\" alt=\"sports-social-blogger-white\" >\r\n          </div>  \r\n          <p class=\"bloggerName\">{{bloggerName}}</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </a>\r\n</div>"
 
 /***/ }),
 
@@ -2327,10 +2327,9 @@ var LatestBlogComponent = /** @class */ (function () {
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || '';
     };
-    /* removeInitialImage(){
-      this.isloading=false
-  
-    } */
+    LatestBlogComponent.prototype.removeInitialImage = function () {
+        this.isloading = false;
+    };
     LatestBlogComponent.prototype.setDefault = function () {
         this.blogImage = '/assets/images/default-image.png';
     };
@@ -3586,39 +3585,39 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
         this.setHeight();
     };
     MaintainHeightWidthRatioDirective.prototype.setHeight = function () {
-        if (this.isBrowser) {
-            this.width = this.elRef.nativeElement.getBoundingClientRect().width;
-            if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-8') {
-                this.height = 0.47 * (this.width);
-            }
-            if (this.elRef.nativeElement.parentNode.parentNode.className === 'col-4') {
-                this.height = (1) * this.width;
-            }
-            if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-6') {
-                this.height = (1) * this.width;
-            }
-            if (this.elRef.nativeElement.parentNode.parentNode.className == 'col-12') {
-                this.height = 0.47 * (this.width);
-            }
-            if (this.elRef.nativeElement.parentNode.parentNode.className == 'trendingBlogs') {
-                this.height = (1.9) * this.width;
-            }
-            if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className != "latestBlog col-4") {
-                this.height = (0.3) * this.width;
-            }
-            if (this.elRef.nativeElement.className == 'latest' && this.elRef.nativeElement.parentNode.parentNode.className == 'latestBlog col-4') {
-                this.height = (0.64) * (this.width);
-            }
-            if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth < 950) {
-                this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
-                this.width = this.elRef.nativeElement.getBoundingClientRect().width;
-                this.height = -(.548751486325 * (this.width)) + this.width;
-            }
-            if (this.elRef.nativeElement.className == 'subscribeCard' && window.innerWidth >= 950) {
-                this.renderer.setStyle(this.elRef.nativeElement, 'height', "23.5%");
-            }
-            this.renderer.setStyle(this.elRef.nativeElement, 'height', this.height + "px");
+        this.width = this.elRef.nativeElement.getBoundingClientRect().width;
+        if (this.elRef.nativeElement.parentNode.parentNode.className === 'col-8') {
+            this.height = 0.47 * (this.width);
         }
+        if (this.elRef.nativeElement.parentNode.parentNode.className === 'col-4') {
+            this.height = (1) * this.width;
+        }
+        if (this.elRef.nativeElement.parentNode.parentNode.className === 'col-6') {
+            this.height = (1) * this.width;
+        }
+        if (this.elRef.nativeElement.parentNode.parentNode.className === 'col-12') {
+            this.height = 0.47 * (this.width);
+        }
+        if (this.elRef.nativeElement.parentNode.parentNode.className === 'trendingBlogs') {
+            this.height = (1.9) * this.width;
+        }
+        if (this.elRef.nativeElement.className === 'latest' &&
+            this.elRef.nativeElement.parentNode.parentNode.className !== 'latestBlog col-4') {
+            this.height = (0.3) * this.width;
+        }
+        if (this.elRef.nativeElement.className === 'latest' &&
+            this.elRef.nativeElement.parentNode.parentNode.className === 'latestBlog col-4') {
+            this.height = (0.64) * (this.width);
+        }
+        if (this.elRef.nativeElement.className === 'subscribeCard' && window.innerWidth < 950) {
+            this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
+            this.width = this.elRef.nativeElement.getBoundingClientRect().width;
+            this.height = -(.548751486325 * (this.width)) + this.width;
+        }
+        if (this.elRef.nativeElement.className === 'subscribeCard' && window.innerWidth >= 950) {
+            this.renderer.setStyle(this.elRef.nativeElement, 'height', '23.5%');
+        }
+        this.renderer.setStyle(this.elRef.nativeElement, 'height', this.height + 'px');
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:resize', []),
@@ -3667,80 +3666,71 @@ var TabViewAvailableDirective = /** @class */ (function () {
         this.elRef = elRef;
         this.renderer = renderer;
         this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_1__angular_common__["j" /* isPlatformBrowser */])(platformId);
-        if (this.isBrowser) {
-            this.windowWidth = window.innerWidth;
-            if (this.windowWidth < 950 && this.windowWidth > 600) {
-                this.className = this.elRef.nativeElement.className;
-                if (this.className === 'col-8') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                }
-                if (this.className === 'col-4') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-6');
-                }
+        this.windowWidth = window.innerWidth;
+        if (this.windowWidth < 950 && this.windowWidth > 600) {
+            this.className = this.elRef.nativeElement.className;
+            if (this.className === 'col-8') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-12');
+            }
+            if (this.className === 'col-4') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-6');
             }
         }
     }
     TabViewAvailableDirective.prototype.ngAfterViewInit = function () {
-        if (this.isBrowser) {
-            this.windowWidth = window.innerWidth;
-            if (this.windowWidth < 950 && this.windowWidth > 600) {
-                this.className = this.elRef.nativeElement.className;
-                if (this.className === 'col-8') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                    // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
-                }
-                if (this.className === 'col-4') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-6');
-                }
+        this.windowWidth = window.innerWidth;
+        if (this.windowWidth < 950 && this.windowWidth > 600) {
+            this.className = this.elRef.nativeElement.className;
+            if (this.className === 'col-8') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-12');
+                // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
+            }
+            if (this.className === 'col-4') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-6');
             }
         }
     };
     TabViewAvailableDirective.prototype.ngAfterContentInit = function () {
-        if (this.isBrowser) {
-            this.windowWidth = window.innerWidth;
-            if (this.windowWidth < 950 && this.windowWidth > 600) {
-                this.className = this.elRef.nativeElement.className;
-                if (this.className === 'col-8') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                    // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
-                }
-                if (this.className === 'col-4') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-6');
-                }
+        this.windowWidth = window.innerWidth;
+        if (this.windowWidth < 950 && this.windowWidth > 600) {
+            this.className = this.elRef.nativeElement.className;
+            if (this.className === 'col-8') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-12');
+                // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
+            }
+            if (this.className === 'col-4') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-6');
             }
         }
     };
     TabViewAvailableDirective.prototype.onresize = function () {
-        if (this.isBrowser) {
-            this.windowWidth = window.innerWidth;
-            if (this.windowWidth > 950) {
-                this.className = this.elRef.nativeElement.className;
-                if (this.className === 'col-12') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-8');
-                }
-                if (this.className === 'col-6') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-4');
-                }
+        this.windowWidth = window.innerWidth;
+        if (this.windowWidth > 950) {
+            this.className = this.elRef.nativeElement.className;
+            if (this.className === 'col-12') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-8');
             }
-            if (this.windowWidth < 950 && this.windowWidth > 600) {
-                this.className = this.elRef.nativeElement.className;
-                if (this.className === 'col-8') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-12');
-                    // this.renderer.setStyle(this.elRef.nativeElement,'padding-bottom','2%')
-                }
-                if (this.className == 'col-4') {
-                    this.renderer.removeClass(this.elRef.nativeElement, this.className);
-                    this.renderer.addClass(this.elRef.nativeElement, 'col-6');
-                }
+            if (this.className === 'col-6') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-4');
+            }
+        }
+        if (this.windowWidth < 950 && this.windowWidth > 600) {
+            this.className = this.elRef.nativeElement.className;
+            if (this.className === 'col-8') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-12');
+            }
+            if (this.className === 'col-4') {
+                this.renderer.removeClass(this.elRef.nativeElement, this.className);
+                this.renderer.addClass(this.elRef.nativeElement, 'col-6');
             }
         }
     };

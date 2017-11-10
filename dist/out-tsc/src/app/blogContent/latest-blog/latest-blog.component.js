@@ -48,10 +48,9 @@ var LatestBlogComponent = /** @class */ (function () {
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || '';
     };
-    /* removeInitialImage(){
-      this.isloading=false
-  
-    } */
+    LatestBlogComponent.prototype.removeInitialImage = function () {
+        this.isloading = false;
+    };
     LatestBlogComponent.prototype.setDefault = function () {
         this.blogImage = '/assets/images/default-image.png';
     };
