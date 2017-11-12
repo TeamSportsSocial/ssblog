@@ -76,6 +76,7 @@ var EditBlogComponent = /** @class */ (function () {
             _this.shortDesc.nativeElement.innerText = data[0].MetaDesc;
             _this.blogImageDesc.nativeElement.innerText = data[0].ImageDesc;
         });
+        this.calCharCount();
     };
     EditBlogComponent.prototype.bloggerImageNotFound = function () {
         this.bloggerimageLoaded = false;
@@ -102,6 +103,10 @@ var EditBlogComponent = /** @class */ (function () {
         }
     };
     EditBlogComponent.prototype.onmousedown = function (event) {
+        this.initialActiveElement = {
+            key: 'hello',
+            Element: document.activeElement
+        };
     };
     EditBlogComponent.prototype.onkeyup = function (event) {
         this.initialActiveElement = {

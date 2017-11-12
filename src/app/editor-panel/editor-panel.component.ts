@@ -147,6 +147,13 @@ calCharCount() {
     this.shortDesc.nativeElement.focus();
   }
 }
+@HostListener('mousedown', ['$event'])onmousedown(event) {
+  this.initialActiveElement = {
+    key: 'hello',
+    Element: document.activeElement
+  };
+}
+
 @HostListener('keyup', ['$event'])onkeyup(event) {
   this.initialActiveElement = {
     key: 'hello',

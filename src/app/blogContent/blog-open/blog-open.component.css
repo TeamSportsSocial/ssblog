@@ -52,8 +52,8 @@
     margin-bottom: 5%;
 }
 .facebook{
-    width:20px;
-    height: 20px;
+    width:25px;
+    height: 25px;
     margin: 1% 1% 1% 1%;
 }
 .twitterButton{
@@ -132,7 +132,7 @@
 }
 .desc{
     font-family: 'Roboto',sans-serif !important;
-    font-size: 1.2em !important;
+    font-size: 1.3em !important;
     font-weight: 400;
     line-height: 2em;
     color: black;
@@ -189,8 +189,8 @@
     font-weight: 700;
 }
 .twitter img{
-    width:20px;
-    height: 20px;
+    width:25px;
+    height: 25px;
 }
 .comments{
     width: 90%;
@@ -239,6 +239,14 @@
     width: 20px;
     height: 20px;
     z-index: 150
+}
+.center{
+    width: 100%;
+    text-align: center;
+}
+.center img{
+    width: 30px;
+    height: 30px;
 }
 @media (max-width:800px) and (min-width:600px){
     .fullImageHolder{

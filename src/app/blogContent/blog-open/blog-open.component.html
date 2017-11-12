@@ -64,14 +64,7 @@
         </div>
         <a *ngFor="let key of Keywords;let i=index" role="button" routerLink="/{{key}}" (click)="getblogs($event)">{{key}}</a>
       </div>
-      <p class="shareOn" *ngIf="blogDataRecieved">
-        Share on 
-        
-        <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()" class="facebook" alt="sports-social-facebook-logo-black">
-        <a href="http://twitter.com/share" (click)="shareOnTwitter()" #popup class="twitter">
-          <img src="/assets/images/sports-social-twitter-logo-black.png"  class="twitterButton" alt="sports-social-twitter-logo-black">
-        </a> 
-      </p>
+      
     </div>
     <div class="social" *ngIf="!removeSocial">
       <div class="follow">
@@ -113,6 +106,12 @@
         </div>
     </div>
   </div>
+  <p class="shareOn center" *ngIf="blogDataRecieved">  
+    <img src="/assets/images/sports-social-facebook-logo-blue.png" role="button" (click)="shareOnFacebook()" class="facebook" alt="sports-social-facebook-logo-black">
+    <a href="http://twitter.com/share" (click)="shareOnTwitter()" #popup class="twitter">
+      <img src="/assets/images/sports-social-twitter-logo-blue.png"  class="twitterButton" alt="sports-social-twitter-logo-black">
+    </a> 
+  </p>
   <div class="comments" *ngIf="blogDataRecieved">
     <SportSocial-comments
       [BlogId]="blogID">

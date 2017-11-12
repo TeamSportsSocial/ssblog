@@ -6,7 +6,8 @@ import {
     HostListener,
     NgZone,
     PLATFORM_ID,
-    Inject
+    Inject,
+    AfterViewInit
 } from '@angular/core';
 import {Http} from '@angular/http';
 import { Meta, Title } from '@angular/platform-browser';
@@ -28,7 +29,7 @@ declare var FB: any;
   templateUrl: './blog-open.component.html',
   styleUrls: ['./blog-open.component.css']
 })
-export class BlogOpenComponent implements OnInit {
+export class BlogOpenComponent implements OnInit, AfterViewInit {
     temp;
     blog;
     topMargin;
@@ -40,10 +41,10 @@ export class BlogOpenComponent implements OnInit {
     relatedArticles: boolean=false;
     blogDataRecieved:boolean=false;
     blogID;
-    Keywords=[];
-    ViewCount:number;
-    ShareCount:number;
-    loading:boolean=true;
+    Keywords = [];
+    ViewCount: number;
+    ShareCount: number;
+    loading: boolean = true;
     content;
     contentForShare;
     keys;
@@ -82,11 +83,10 @@ export class BlogOpenComponent implements OnInit {
 
     ngAfterViewInit() {
         this.scriptOfTwitter();
-
     }
     setTitle() {
         if (this.route.snapshot.url[0].path !== 'sportsocialblog' || this.route.snapshot.url[1].path !== 'page') {
-            this.titleService.setTitle(this.blog.heading);
+            this.titleService.setTitle(this.blog.heading + ' | chaseyoursport - Sports Social Blog');
         }
     }
     sendViewCount() {
@@ -131,7 +131,7 @@ export class BlogOpenComponent implements OnInit {
         this.keys = this.blog.keywords.toString();
         const url = 'https://www.chaseyoursport.com/' + key
             + '/' + this.blog.heading.replace(/\s/g, '-') + '/' + this.blogID;
-        console.log(url);
+        // console.log(url);
         this.metaService.addTags([
             { rel: 'canonical', href: url},
             { name: 'title', content: this.blog.heading},
@@ -248,7 +248,6 @@ export class BlogOpenComponent implements OnInit {
                 this.sendViewCount();
             }
         );
-
     }
 
     timeToRead(s: string) {
@@ -293,7 +292,6 @@ export class BlogOpenComponent implements OnInit {
     }
 
     removeInitalImage(event) {
-       // console.log(event.returnValue, 'load');
         if (event.returnValue) {
             this.loading = false;
         }

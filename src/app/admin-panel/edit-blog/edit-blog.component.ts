@@ -132,13 +132,14 @@ ngOnInit() {
     key: 'hello',
     Element: document.activeElement
   };
+  
 }
 
 recieveBlogdetails() {
   this.rec.detailsofBlog.subscribe(
-    (data)=>{
+    (data) => {
       this.blogID = data['blogId'];
-      this.Keys=data['keywords'];
+      this.Keys = data['keywords'];
       this.getBlogDetails();
     }
   );
@@ -164,6 +165,7 @@ getBlogDetails() {
       this.blogImageDesc.nativeElement.innerText = data[0].ImageDesc;
     }
   );
+  this.calCharCount();
 }
 bloggerImageNotFound() {
   this.bloggerimageLoaded = false;
@@ -188,7 +190,10 @@ calCharCount() {
   }
 }
 @HostListener('mousedown', ['$event'])onmousedown(event){
-
+  this.initialActiveElement = {
+    key: 'hello',
+    Element: document.activeElement
+  };
 }
 @HostListener('keyup', ['$event'])onkeyup(event) {
   this.initialActiveElement = {

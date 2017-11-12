@@ -758,11 +758,15 @@ function View_EditorPanelComponent_0(_l) {
 }
 exports.View_EditorPanelComponent_0 = View_EditorPanelComponent_0;
 function View_EditorPanelComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocialBlog-editor-panel', [], null, [[null, 'keyup']], function (_v, en, $event) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocialBlog-editor-panel', [], null, [[null, 'mousedown'], [null, 'keyup']], function (_v, en, $event) {
             var ad = true;
-            if (('keyup' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 1).onkeyup($event) !== false);
+            if (('mousedown' === en)) {
+                var pd_0 = (i1.ɵnov(_v, 1).onmousedown($event) !== false);
                 ad = (pd_0 && ad);
+            }
+            if (('keyup' === en)) {
+                var pd_1 = (i1.ɵnov(_v, 1).onkeyup($event) !== false);
+                ad = (pd_1 && ad);
             }
             return ad;
         }, View_EditorPanelComponent_0, exports.RenderType_EditorPanelComponent)), i1.ɵdid(1, 114688, null, 0, i4.EditorPanelComponent, [i5.Http, i6.PropertyService, i1.Renderer2,

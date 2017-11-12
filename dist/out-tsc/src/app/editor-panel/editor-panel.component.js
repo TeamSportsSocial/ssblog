@@ -63,6 +63,12 @@ var EditorPanelComponent = /** @class */ (function () {
             this.shortDesc.nativeElement.focus();
         }
     };
+    EditorPanelComponent.prototype.onmousedown = function (event) {
+        this.initialActiveElement = {
+            key: 'hello',
+            Element: document.activeElement
+        };
+    };
     EditorPanelComponent.prototype.onkeyup = function (event) {
         this.initialActiveElement = {
             key: 'hello',
@@ -452,6 +458,7 @@ var EditorPanelComponent = /** @class */ (function () {
         'youtubeLinkPopup': [{ type: core_1.ViewChild, args: ['youtubeLinkPopup',] },],
         'pluginLinkPopup': [{ type: core_1.ViewChild, args: ['pluginLinkPopup',] },],
         'panelButton': [{ type: core_1.ViewChild, args: ['panelButton',] },],
+        'onmousedown': [{ type: core_1.HostListener, args: ['mousedown', ['$event'],] },],
         'onkeyup': [{ type: core_1.HostListener, args: ['keyup', ['$event'],] },],
     };
     return EditorPanelComponent;

@@ -21,12 +21,17 @@ function View_LatestBlogComponent_1(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, [[6, 0], ['initialImage', 1]], null, 0, 'img', [['alt', 'InitialblogImage'], ['src', '/assets/images/default-image.png']], null, null, null, null, null))], null, null);
 }
 function View_LatestBlogComponent_2(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, [[4, 0], ['blogimage', 1]], null, 0, 'img', [['alt', 'blogImage']], [[8, 'src', 4], [8, 'title', 0]], [[null, 'error']], function (_v, en, $event) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, [[4, 0], ['blogimage', 1]], null, 0, 'img', [['alt', 'blogImage']], [[8, 'src', 4], [8, 'title', 0]], [[null, 'error'], [null,
+                'load']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('error' === en)) {
                 var pd_0 = (_co.setDefault() !== false);
                 ad = (pd_0 && ad);
+            }
+            if (('load' === en)) {
+                var pd_1 = (_co.removeInitialImage() !== false);
+                ad = (pd_1 && ad);
             }
             return ad;
         }, null, null))], null, function (_ck, _v) {

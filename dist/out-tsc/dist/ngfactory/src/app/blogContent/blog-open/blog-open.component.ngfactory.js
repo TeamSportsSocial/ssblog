@@ -211,42 +211,14 @@ function View_BlogOpenComponent_12(_l) {
         _ck(_v, 8, 0, currVal_0);
     }, null);
 }
-function View_BlogOpenComponent_14(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 8, 'p', [['class',
-                'shareOn']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n        Share on \n        \n        '])),
-        (_l()(), i1.ɵeld(2, 0, null, null, 0, 'img', [['alt', 'sports-social-facebook-logo-black'],
-            ['class', 'facebook'], ['role', 'button'], ['src', '/assets/images/sports-social-facebook-logo-black.png']], null, [[null, 'click']], function (_v, en, $event) {
-            var ad = true;
-            var _co = _v.component;
-            if (('click' === en)) {
-                var pd_0 = (_co.shareOnFacebook() !== false);
-                ad = (pd_0 && ad);
-            }
-            return ad;
-        }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵeld(4, 0, [[4, 0], ['popup', 1]], null, 3, 'a', [['class', 'twitter'],
-            ['href', 'http://twitter.com/share']], null, [[null, 'click']], function (_v, en, $event) {
-            var ad = true;
-            var _co = _v.component;
-            if (('click' === en)) {
-                var pd_0 = (_co.shareOnTwitter() !== false);
-                ad = (pd_0 && ad);
-            }
-            return ad;
-        }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])),
-        (_l()(), i1.ɵeld(6, 0, null, null, 0, 'img', [['alt', 'sports-social-twitter-logo-black'],
-            ['class', 'twitterButton'], ['src', '/assets/images/sports-social-twitter-logo-black.png']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, [' \n      ']))], null, null);
-}
-function View_BlogOpenComponent_16(_l) {
+function View_BlogOpenComponent_15(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'p', [], null, null, null, null, null)), (_l()(),
             i1.ɵted(-1, null, ['Follow us']))], null, null);
 }
-function View_BlogOpenComponent_15(_l) {
+function View_BlogOpenComponent_14(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 54, 'div', [['class',
                 'social']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(2, 0, null, null, 39, 'div', [['class', 'follow']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_16)), i1.ɵdid(5, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(2, 0, null, null, 39, 'div', [['class', 'follow']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_15)), i1.ɵdid(5, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
         (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(7, 0, null, null, 3, 'a', [['href', 'https://www.facebook.com/chaseyoursport'],
             ['rel', 'noopener'], ['target', '_blank']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(9, 0, null, null, 0, 'img', [['alt', 'sports-social-facebook-logo-blue'], ['src', '/assets/images/sports-social-facebook-logo-blue.png']], null, null, null, null, null)),
         (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, [' \n        '])), (_l()(), i1.ɵeld(12, 0, null, null, 3, 'a', [['href', 'https://www.instagram.com/chaseyoursport'], ['rel', 'noopener'],
@@ -283,6 +255,33 @@ function View_BlogOpenComponent_15(_l) {
         var currVal_0 = _co.blogDataRecieved;
         _ck(_v, 5, 0, currVal_0);
     }, null);
+}
+function View_BlogOpenComponent_16(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 8, 'p', [['class',
+                'shareOn center']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['  \n    '])), (_l()(), i1.ɵeld(2, 0, null, null, 0, 'img', [['alt', 'sports-social-facebook-logo-black'], ['class',
+                'facebook'], ['role', 'button'], ['src', '/assets/images/sports-social-facebook-logo-blue.png']], null, [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            var _co = _v.component;
+            if (('click' === en)) {
+                var pd_0 = (_co.shareOnFacebook() !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n    '])),
+        (_l()(), i1.ɵeld(4, 0, [[4, 0], ['popup', 1]], null, 3, 'a', [['class', 'twitter'],
+            ['href', 'http://twitter.com/share']], null, [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            var _co = _v.component;
+            if (('click' === en)) {
+                var pd_0 = (_co.shareOnTwitter() !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])),
+        (_l()(), i1.ɵeld(6, 0, null, null, 0, 'img', [['alt', 'sports-social-twitter-logo-black'],
+            ['class', 'twitterButton'], ['src', '/assets/images/sports-social-twitter-logo-blue.png']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, [' \n  ']))], null, null);
 }
 function View_BlogOpenComponent_17(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 5, 'div', [['class',
@@ -372,7 +371,7 @@ function View_BlogOpenComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n  '])),
-        (_l()(), i1.ɵted(-1, null, ['\n  \n  '])), (_l()(), i1.ɵeld(32, 0, null, null, 37, 'div', [['class', 'content']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n    \n    '])), (_l()(), i1.ɵeld(34, 0, [[3, 0], ['BlogInfo', 1]], null, 31, 'div', [['class', 'blogInfo']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])),
+        (_l()(), i1.ɵted(-1, null, ['\n  \n  '])), (_l()(), i1.ɵeld(32, 0, null, null, 34, 'div', [['class', 'content']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n    \n    '])), (_l()(), i1.ɵeld(34, 0, [[3, 0], ['BlogInfo', 1]], null, 28, 'div', [['class', 'blogInfo']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_5)),
         i1.ɵdid(37, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n      '])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_6)),
@@ -385,11 +384,9 @@ function View_BlogOpenComponent_0(_l) {
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_11)),
         i1.ɵdid(58, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n      '])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_12)),
-        i1.ɵdid(61, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n      '])),
-        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_14)),
-        i1.ɵdid(64, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])),
-        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_15)), i1.ɵdid(68, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_17)), i1.ɵdid(72, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
-        (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵeld(74, 0, null, null, 1, 'SportSocial-related-blogs', [], null, [['window', 'resize']], function (_v, en, $event) {
+        i1.ɵdid(61, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n      \n    '])),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_14)), i1.ɵdid(65, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_16)), i1.ɵdid(69, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_BlogOpenComponent_17)), i1.ɵdid(72, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵeld(74, 0, null, null, 1, 'SportSocial-related-blogs', [], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
                 var pd_0 = (i1.ɵnov(_v, 75).onresize() !== false);
@@ -433,10 +430,10 @@ function View_BlogOpenComponent_0(_l) {
         _ck(_v, 58, 0, currVal_12);
         var currVal_13 = _co.blogDataRecieved;
         _ck(_v, 61, 0, currVal_13);
-        var currVal_14 = _co.blogDataRecieved;
-        _ck(_v, 64, 0, currVal_14);
-        var currVal_15 = !_co.removeSocial;
-        _ck(_v, 68, 0, currVal_15);
+        var currVal_14 = !_co.removeSocial;
+        _ck(_v, 65, 0, currVal_14);
+        var currVal_15 = _co.blogDataRecieved;
+        _ck(_v, 69, 0, currVal_15);
         var currVal_16 = _co.blogDataRecieved;
         _ck(_v, 72, 0, currVal_16);
         _ck(_v, 75, 0);
