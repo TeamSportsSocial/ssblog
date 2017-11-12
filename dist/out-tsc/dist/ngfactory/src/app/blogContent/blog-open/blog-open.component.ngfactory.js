@@ -139,11 +139,11 @@ function View_BlogOpenComponent_9(_l) {
     });
 }
 function View_BlogOpenComponent_10(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 8, 'div', [['class',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 18, 'div', [['class',
                 'shareOn']], null, null, null, null, null)),
         (_l()(), i1.ɵted(-1, null, ['\n        Share on \n        '])), (_l()(),
             i1.ɵeld(2, 0, null, null, 0, 'img', [['alt', 'sports-social-facebook-logo-black'],
-                ['class', 'facebook'], ['role', 'button'], ['src', '/assets/images/sports-social-facebook-logo-black.png']], null, [[null, 'click']], function (_v, en, $event) {
+                ['role', 'button'], ['src', '/assets/images/sports-social-facebook-logo-black.png']], null, [[null, 'click']], function (_v, en, $event) {
                 var ad = true;
                 var _co = _v.component;
                 if (('click' === en)) {
@@ -163,8 +163,19 @@ function View_BlogOpenComponent_10(_l) {
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])),
         (_l()(), i1.ɵeld(6, 0, null, null, 0, 'img', [['alt', 'sports-social-twitter-logo-black'],
-            ['class', 'twitterButton'], ['src', '/assets/images/sports-social-twitter-logo-black.png']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, [' \n      ']))], null, null);
+            ['src', '/assets/images/sports-social-twitter-logo-black.png']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, [' \n        '])),
+        (_l()(), i1.ɵeld(9, 0, null, null, 3, 'a', [['data-pin-custom', 'true'],
+            ['target', '_blank']], [[8, 'href', 4]], null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(),
+            i1.ɵeld(11, 0, null, null, 0, 'img', [['alt', ''], ['src', '/assets/images/sports-social-pintrest-black.png']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(14, 0, null, null, 3, 'a', [['target', '_blank']], [[8, 'href', 4]], null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(),
+            i1.ɵeld(16, 0, null, null, 0, 'img', [['role', 'button'], ['src',
+                    '/assets/images/sports-social-linkedin-black.png']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n        \n      ']))], null, function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = i1.ɵinlineInterpolate(2, 'https://www.pinterest.com/pin/create/button/?url=', _co.url, '&media=', _co.blog.blogImage, '');
+        _ck(_v, 9, 0, currVal_0);
+        var currVal_1 = i1.ɵinlineInterpolate(1, 'https://www.linkedin.com/shareArticle?mini=true&url=', _co.url, '');
+        _ck(_v, 14, 0, currVal_1);
+    });
 }
 function View_BlogOpenComponent_11(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'p', [['class',
@@ -245,7 +256,7 @@ function View_BlogOpenComponent_14(_l) {
             ['rel', 'noopener'], ['target', '_blank']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['  \n          '])),
         (_l()(), i1.ɵeld(39, 0, null, null, 0, 'img', [['alt', 'sports-social-quora-logo-blue'],
             ['src', '/assets/images/sports-social-quora-logo-blue.png']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n      '])),
-        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(43, 0, null, null, 10, 'div', [['class', 'twitter']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(45, 0, null, null, 3, 'p', [], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(43, 0, null, null, 10, 'div', [['class', 'twitter-profile']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(45, 0, null, null, 3, 'p', [], null, null, null, null, null)),
         (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(47, 0, null, null, 0, 'img', [['alt', 'sports-social-twitter-logo-blue'], ['src',
                 '/assets/images/sports-social-twitter-logo-blue.png']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          Tweets by @chaseyoursport'])), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(50, 0, null, null, 1, 'a', [['class', 'twitter-timeline'], ['data-chrome', 'noheader nofooter'],
             ['data-height', '700'], ['data-width', '450'], ['href', 'https://twitter.com/chaseyoursport?ref_src=twsrc%5Etfw']], null, null, null, null, null)),
@@ -257,10 +268,11 @@ function View_BlogOpenComponent_14(_l) {
     }, null);
 }
 function View_BlogOpenComponent_16(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 8, 'p', [['class',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 21, 'p', [['class',
                 'shareOn center']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['  \n    '])), (_l()(), i1.ɵeld(2, 0, null, null, 0, 'img', [['alt', 'sports-social-facebook-logo-black'], ['class',
-                'facebook'], ['role', 'button'], ['src', '/assets/images/sports-social-facebook-logo-blue.png']], null, [[null, 'click']], function (_v, en, $event) {
+        (_l()(), i1.ɵted(-1, null, [' \n     '])), (_l()(), i1.ɵeld(2, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['Enjoy this article? Don\'t forget to share.'])),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(5, 0, null, null, 0, 'img', [['alt', 'sports-social-facebook-logo-black'], ['role',
+                'button'], ['src', '/assets/images/sports-social-facebook-logo-blue.png']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('click' === en)) {
@@ -269,7 +281,7 @@ function View_BlogOpenComponent_16(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n    '])),
-        (_l()(), i1.ɵeld(4, 0, [[4, 0], ['popup', 1]], null, 3, 'a', [['class', 'twitter'],
+        (_l()(), i1.ɵeld(7, 0, [[4, 0], ['popup', 1]], null, 3, 'a', [['class', 'twitter'],
             ['href', 'http://twitter.com/share']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -279,9 +291,21 @@ function View_BlogOpenComponent_16(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])),
-        (_l()(), i1.ɵeld(6, 0, null, null, 0, 'img', [['alt', 'sports-social-twitter-logo-black'],
-            ['class', 'twitterButton'], ['src', '/assets/images/sports-social-twitter-logo-blue.png']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, [' \n  ']))], null, null);
+        (_l()(), i1.ɵeld(9, 0, null, null, 0, 'img', [['alt', 'sports-social-twitter-logo-black'],
+            ['src', '/assets/images/sports-social-twitter-logo-blue.png']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, [' \n    '])),
+        (_l()(), i1.ɵeld(12, 0, null, null, 3, 'a', [['data-pin-custom', 'true'],
+            ['target', '_blank']], [[8, 'href', 4]], null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(),
+            i1.ɵeld(14, 0, null, null, 0, 'img', [['alt', ''], ['src', '/assets/images/sports-social-pinterest-logo-blue.png']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(17, 0, null, null, 3, 'a', [['target',
+                '_blank']], [[8, 'href', 4]], null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(19, 0, null, null, 0, 'img', [['role', 'button'], ['src', '/assets/images/sports-social-linkedin-logo-blue.png']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, ['\n  ']))], null, function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = i1.ɵinlineInterpolate(2, 'https://www.pinterest.com/pin/create/button/?url=', _co.url, '&media=', _co.blog.blogImage, '');
+        _ck(_v, 12, 0, currVal_0);
+        var currVal_1 = i1.ɵinlineInterpolate(3, 'http://www.linkedin.com/shareArticle?mini=true&url=', _co.url, '&title=', _co.blog.heading, '&summary=', _co.blog.MetaDesc, '&source=chaseyoursport.com');
+        _ck(_v, 17, 0, currVal_1);
+    });
 }
 function View_BlogOpenComponent_17(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 5, 'div', [['class',
@@ -460,7 +484,8 @@ function View_BlogOpenComponent_Host_0(_l) {
             return ad;
         }, View_BlogOpenComponent_0, exports.RenderType_BlogOpenComponent)), i1.ɵdid(1, 4308992, null, 0, i12.BlogOpenComponent, [i1.PLATFORM_ID, i15.PropertyService, i15.PropertyService,
             i1.Renderer2, i2.ActivatedRoute, i16.DomSanitizer, i15.PropertyService, i2.Router,
-            i8.PostService, i8.PostService, i16.Meta, i8.PostService, i16.Title, i6.FacebookService], null, null)], function (_ck, _v) {
+            i8.PostService, i8.PostService, i16.Meta, i8.PostService, i16.Title, i6.FacebookService,
+            i7.Http], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

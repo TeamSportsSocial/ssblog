@@ -50,6 +50,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
     keys;
     isBrowser: boolean;
     readTimeCalc: boolean;
+    url;
     @ViewChild('openBlog') openBlog;
     @ViewChild('Social') Social;
     @ViewChild('BlogInfo') BlogInfo;
@@ -71,6 +72,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
         private load: PostService,
         private titleService: Title,
         private Fb: FacebookService,
+        private http: Http
     ) {
         this.isBrowser = isPlatformBrowser(platformId);
     }
@@ -79,6 +81,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
         this.recieveBlogIdFromUrl();
         this.setTopMargin();
         this.setMobileView();
+        
     }
 
     ngAfterViewInit() {
@@ -86,7 +89,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
     }
     setTitle() {
         if (this.route.snapshot.url[0].path !== 'sportsocialblog' || this.route.snapshot.url[1].path !== 'page') {
-            this.titleService.setTitle(this.blog.heading + ' | chaseyoursport - Sports Social Blog');
+            this.titleService.setTitle(this.blog.heading + ' | Chase Your Sport - Sports Social Blog');
         }
     }
     sendViewCount() {
@@ -141,6 +144,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
             { property: 'og:description', content: this.blog.MetaDesc},
             { property: 'og:url', content: url},
             { property: 'og:image', content: this.blog.blogImage},
+            { property: 'og:type', content: 'article'},
             { property: 'og:site_name', content: 'Chase Your Sport' },
             { property: 'fb:app_id', content: '1750709328507665'},
             { name: 'twitter:card', content: 'summary_large_image'},
@@ -246,6 +250,8 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
                 this.ShareCount = + blog.ShareCount;
                 this.ViewCount = + (blog.ViewCount);
                 this.sendViewCount();
+                this.url = 'https://www.chaseyoursport.com/' + this.Keywords[0].replace(/\s+/g, '-')
+                + '/' + this.blog.heading.replace(/\s+/g, '-') + '/' + this.blogID;
             }
         );
     }
@@ -409,7 +415,9 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
     return false;
     }
 
-
+    shareOnLinkedin() {
+       
+    }
     getblogs(event) {
         const key = event.toElement.innerText;
         console.log(key, ' navigate');

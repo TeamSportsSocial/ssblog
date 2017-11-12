@@ -51,10 +51,19 @@
       
       <div class="shareOn" *ngIf="blogDataRecieved">
         Share on 
-        <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()" class="facebook" alt="sports-social-facebook-logo-black">
+        <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()"  alt="sports-social-facebook-logo-black">
         <a href="https://twitter.com/share" (click)="shareOnTwitter()" #popup class="twitter">
-          <img src="/assets/images/sports-social-twitter-logo-black.png"  class="twitterButton" alt="sports-social-twitter-logo-black">
+          <img src="/assets/images/sports-social-twitter-logo-black.png"  alt="sports-social-twitter-logo-black">
         </a> 
+        <a href="https://www.pinterest.com/pin/create/button/?url={{url}}&media={{blog.blogImage}}"  
+          data-pin-custom="true"
+          target="_blank">
+            <img src="/assets/images/sports-social-pintrest-black.png" alt="">
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url}}" target="_blank">
+          <img src="/assets/images/sports-social-linkedin-black.png" role="button" >
+        </a>
+        
       </div>
       <p [innerHtml]="content" class="desc" *ngIf="blogDataRecieved">
       </p>
@@ -91,7 +100,7 @@
           <img src="/assets/images/sports-social-quora-logo-blue.png" alt="sports-social-quora-logo-blue">
         </a>
       </div>
-      <div class="twitter">
+      <div class="twitter-profile">
         <p>
           <img src="/assets/images/sports-social-twitter-logo-blue.png" alt="sports-social-twitter-logo-blue">
           Tweets by @chaseyoursport</p>
@@ -106,11 +115,20 @@
         </div>
     </div>
   </div>
-  <p class="shareOn center" *ngIf="blogDataRecieved">  
-    <img src="/assets/images/sports-social-facebook-logo-blue.png" role="button" (click)="shareOnFacebook()" class="facebook" alt="sports-social-facebook-logo-black">
+  <p class="shareOn center" *ngIf="blogDataRecieved"> 
+     <span>Enjoy this article? Don't forget to share.</span>
+    <img src="/assets/images/sports-social-facebook-logo-blue.png" role="button" (click)="shareOnFacebook()" alt="sports-social-facebook-logo-black">
     <a href="http://twitter.com/share" (click)="shareOnTwitter()" #popup class="twitter">
-      <img src="/assets/images/sports-social-twitter-logo-blue.png"  class="twitterButton" alt="sports-social-twitter-logo-black">
+      <img src="/assets/images/sports-social-twitter-logo-blue.png"   alt="sports-social-twitter-logo-black">
     </a> 
+    <a href="https://www.pinterest.com/pin/create/button/?url={{url}}&media={{blog.blogImage}}"  
+      data-pin-custom="true"
+      target="_blank">
+      <img src="/assets/images/sports-social-pinterest-logo-blue.png" alt="">
+    </a>
+    <a href= "http://www.linkedin.com/shareArticle?mini=true&url={{url}}&title={{blog.heading}}&summary={{blog.MetaDesc}}&source=chaseyoursport.com" target="_blank">
+      <img src="/assets/images/sports-social-linkedin-logo-blue.png" role="button" >
+    </a>
   </p>
   <div class="comments" *ngIf="blogDataRecieved">
     <SportSocial-comments

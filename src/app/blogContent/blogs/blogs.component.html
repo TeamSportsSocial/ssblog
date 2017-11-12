@@ -130,7 +130,10 @@
         <button (click)="nextPage()" *ngIf="dataRecived">Load More</button>
         <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
     </div>
-    <p *ngIf="!haveData" class="noMoreData"> !!!</p>
+    <p *ngIf="!haveData" class="noMoreData">
+        We don't stop playing because we grow old; we grow old because we stop playing.
+        <a href="https://goo.gl/qrgCz5">DOWNLOAD THE APP NOW</a>
+    </p>
     <SportSocial-blog-footer *ngIf="show"></SportSocial-blog-footer> 
           
        

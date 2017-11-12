@@ -351,9 +351,11 @@ function View_BlogsComponent_11(_l) {
     }, null);
 }
 function View_BlogsComponent_14(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'p', [['class',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 4, 'p', [['class',
                 'noMoreData']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, [' !!!']))], null, null);
+        (_l()(), i1.ɵted(-1, null, ['\n        We don\'t stop playing because we grow old; we grow old because we stop playing.\n        '])),
+        (_l()(), i1.ɵeld(2, 0, null, null, 1, 'a', [['href', 'https://goo.gl/qrgCz5']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['DOWNLOAD THE APP NOW'])), (_l()(), i1.ɵted(-1, null, ['\n    ']))], null, null);
 }
 function View_BlogsComponent_15(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocial-blog-footer', [], null, [['window', 'resize']], function (_v, en, $event) {

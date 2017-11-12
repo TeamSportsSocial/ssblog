@@ -51,16 +51,7 @@
     text-align: left;
     margin-bottom: 5%;
 }
-.facebook{
-    width:25px;
-    height: 25px;
-    margin: 1% 1% 1% 1%;
-}
-.twitterButton{
-    width:20px;
-    height:20px;
-    margin: 1% 1% 1% 1%;
-}
+
 .content{
     width: 90%;
     margin: 1% auto;
@@ -130,6 +121,14 @@
     font-weight: 700;
     padding: 2% 0% 2% 0%;
 }
+.shareOn img{
+    width:30px;
+    height:30px;
+    margin:1%;
+}
+.shareOn img:hover {
+    transform: scale(1.1)
+}
 .desc{
     font-family: 'Roboto',sans-serif !important;
     font-size: 1.3em !important;
@@ -175,21 +174,21 @@
     height:8%;
     margin: 2.3%
 }
-.social> .twitter{
+.social> .twitter-profile{
     border: 1px solid #bbbbbb;
     margin-top:2%;
 }
-.twitter{
+.twitter-profile{
     min-height: 700px
 }
-.twitter p{
+.twitter-profile p{
     padding: 1% 1% 1% 4%;
     color: #024771;
     font-size: 1em;
     font-weight: 700;
 }
-.twitter img{
-    width:25px;
+.twitter-profile img{
+    width: 25px;
     height: 25px;
 }
 .comments{
@@ -244,9 +243,9 @@
     width: 100%;
     text-align: center;
 }
-.center img{
-    width: 30px;
-    height: 30px;
+.center >span{
+    display: block;
+    font-size: 1.4em; 
 }
 @media (max-width:800px) and (min-width:600px){
     .fullImageHolder{

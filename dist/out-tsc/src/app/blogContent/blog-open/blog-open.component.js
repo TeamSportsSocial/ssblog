@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
 var platform_browser_1 = require("@angular/platform-browser");
 var property_service_1 = require("../../services/property.service");
 var post_service_1 = require("../../services/post.service");
@@ -10,7 +11,7 @@ var platform_browser_2 = require("@angular/platform-browser");
 var router_2 = require("@angular/router");
 var facebook_service_1 = require("../../services/facebook.service");
 var BlogOpenComponent = /** @class */ (function () {
-    function BlogOpenComponent(platformId, recieve, recieveHeight, renderer, route, sanitizer, sendKey, router, post, send, metaService, load, titleService, Fb) {
+    function BlogOpenComponent(platformId, recieve, recieveHeight, renderer, route, sanitizer, sendKey, router, post, send, metaService, load, titleService, Fb, http) {
         this.recieve = recieve;
         this.recieveHeight = recieveHeight;
         this.renderer = renderer;
@@ -24,6 +25,7 @@ var BlogOpenComponent = /** @class */ (function () {
         this.load = load;
         this.titleService = titleService;
         this.Fb = Fb;
+        this.http = http;
         this.removeSocial = false;
         this.isConnectedWithFacebook = false;
         this.mobileView = false;
@@ -45,7 +47,7 @@ var BlogOpenComponent = /** @class */ (function () {
     };
     BlogOpenComponent.prototype.setTitle = function () {
         if (this.route.snapshot.url[0].path !== 'sportsocialblog' || this.route.snapshot.url[1].path !== 'page') {
-            this.titleService.setTitle(this.blog.heading + ' | chaseyoursport - Sports Social Blog');
+            this.titleService.setTitle(this.blog.heading + ' | Chase Your Sport - Sports Social Blog');
         }
     };
     BlogOpenComponent.prototype.sendViewCount = function () {
@@ -97,6 +99,7 @@ var BlogOpenComponent = /** @class */ (function () {
             { property: 'og:description', content: this.blog.MetaDesc },
             { property: 'og:url', content: url },
             { property: 'og:image', content: this.blog.blogImage },
+            { property: 'og:type', content: 'article' },
             { property: 'og:site_name', content: 'Chase Your Sport' },
             { property: 'fb:app_id', content: '1750709328507665' },
             { name: 'twitter:card', content: 'summary_large_image' },
@@ -186,6 +189,8 @@ var BlogOpenComponent = /** @class */ (function () {
             _this.ShareCount = +blog.ShareCount;
             _this.ViewCount = +(blog.ViewCount);
             _this.sendViewCount();
+            _this.url = 'https://www.chaseyoursport.com/' + _this.Keywords[0].replace(/\s+/g, '-')
+                + '/' + _this.blog.heading.replace(/\s+/g, '-') + '/' + _this.blogID;
         });
     };
     BlogOpenComponent.prototype.timeToRead = function (s) {
@@ -320,6 +325,8 @@ var BlogOpenComponent = /** @class */ (function () {
         window.open(url, 'twitter', opts);
         return false;
     };
+    BlogOpenComponent.prototype.shareOnLinkedin = function () {
+    };
     BlogOpenComponent.prototype.getblogs = function (event) {
         var key = event.toElement.innerText;
         console.log(key, ' navigate');
@@ -349,6 +356,7 @@ var BlogOpenComponent = /** @class */ (function () {
         { type: post_service_1.PostService, },
         { type: platform_browser_1.Title, },
         { type: facebook_service_1.FacebookService, },
+        { type: http_1.Http, },
     ]; };
     BlogOpenComponent.propDecorators = {
         'openBlog': [{ type: core_1.ViewChild, args: ['openBlog',] },],
