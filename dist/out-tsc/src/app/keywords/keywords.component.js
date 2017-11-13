@@ -29,7 +29,7 @@ var KeywordsComponent = /** @class */ (function () {
                 });
             }
         });
-        console.log(this.keywords, ' check');
+        // console.log(this.keywords, ' check')
         this.recieveHeight.ofHeader.subscribe(function (margin) {
             _this.topMargin = margin;
         });

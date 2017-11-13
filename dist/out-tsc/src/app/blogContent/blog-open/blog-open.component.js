@@ -230,6 +230,9 @@ var BlogOpenComponent = /** @class */ (function () {
     BlogOpenComponent.prototype.setDefault = function () {
         this.blog.bloggerImage = '/assets/images/user.png';
     };
+    BlogOpenComponent.prototype.removeBackgroundUserImage = function () {
+        this.renderer.setStyle(this.userImage.nativeElement, 'background-color', 'white');
+    };
     BlogOpenComponent.prototype.removeInitalImage = function (event) {
         if (event.returnValue) {
             this.loading = false;
@@ -326,11 +329,17 @@ var BlogOpenComponent = /** @class */ (function () {
         return false;
     };
     BlogOpenComponent.prototype.shareOnLinkedin = function () {
+        this.sendShareCount();
+    };
+    BlogOpenComponent.prototype.shareOnPintrest = function () {
+        this.sendShareCount();
+    };
+    BlogOpenComponent.prototype.shareOngooglePlus = function () {
+        this.sendShareCount();
     };
     BlogOpenComponent.prototype.getblogs = function (event) {
         var key = event.toElement.innerText;
         console.log(key, ' navigate');
-        // this.router.navigate(['/'+key])
         this.sendKey.ofBlogCard.next(key);
     };
     BlogOpenComponent.decorators = [
@@ -365,6 +374,7 @@ var BlogOpenComponent = /** @class */ (function () {
         'popup': [{ type: core_1.ViewChild, args: ['popup',] },],
         'fullImage': [{ type: core_1.ViewChild, args: ['fullImage',] },],
         'BlogImage': [{ type: core_1.ViewChild, args: ['BlogImage',] },],
+        'userImage': [{ type: core_1.ViewChild, args: ['userImage',] },],
         'onresize': [{ type: core_1.HostListener, args: ['window:resize', [],] },],
     };
     return BlogOpenComponent;

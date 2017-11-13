@@ -60,8 +60,8 @@ var EditBlogComponent = /** @class */ (function () {
     EditBlogComponent.prototype.getBlogDetails = function () {
         var _this = this;
         this.recieve.dataOfsingleBlog(this.blogID).subscribe(function (data) {
-            console.clear();
-            console.log(data[0]);
+            // console.clear();
+            // console.log(data[0]);
             _this.bloggerimageLoaded = true;
             _this.blogimageLoaded = true;
             _this.keywordAdded = true;
@@ -69,7 +69,7 @@ var EditBlogComponent = /** @class */ (function () {
             _this.blogimageSrc = data[0].blogImage;
             _this.bloggerimageSrc = data[0].bloggerImage;
             _this.BloggerName.nativeElement.innerText = data[0].bloggerName;
-            _this.title.nativeElement.innerText = data[0].heading;
+            _this.title.nativeElement.innerHTML = data[0].heading;
             _this.desc.nativeElement.innerHTML = data[0].Content;
             _this.keywordArray = data[0].keys.split(',');
             _this.Keys = data[0].keys;
@@ -113,6 +113,14 @@ var EditBlogComponent = /** @class */ (function () {
             key: 'hello',
             Element: document.activeElement
         };
+    };
+    EditBlogComponent.prototype.AddH1Tag = function () {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('formatBlock', false, 'h1');
+    };
+    EditBlogComponent.prototype.AddH2Tag = function () {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('formatBlock', false, 'h2');
     };
     EditBlogComponent.prototype.bold = function (event) {
         this.initialActiveElement.Element.focus();
@@ -224,11 +232,11 @@ var EditBlogComponent = /** @class */ (function () {
         event.preventDefault();
     };
     EditBlogComponent.prototype.test = function () {
-        console.log(this.beforePopupSelectedElement, this.beforePopupActiveElement, this.beforePopupCurPos);
+        //  console.log(this.beforePopupSelectedElement, this.beforePopupActiveElement, this.beforePopupCurPos);
     };
     EditBlogComponent.prototype.restoreCaret = function () {
         this.beforePopupActiveElement.focus();
-        console.log(this.beforePopupSelectedElement, this.beforePopupActiveElement, this.beforePopupCurPos);
+        // console.log(this.beforePopupSelectedElement, this.beforePopupActiveElement, this.beforePopupCurPos);
         var sel = window.getSelection();
         sel.collapse(this.beforePopupSelectedElement, this.beforePopupCurPos);
     };
@@ -248,7 +256,7 @@ var EditBlogComponent = /** @class */ (function () {
     };
     EditBlogComponent.prototype.unLink = function () {
         this.selctedLink = document.getSelection();
-        console.log(this.selctedLink);
+        // console.log(this.selctedLink);
     };
     EditBlogComponent.prototype.linkOk = function (event) {
         this.linkUrl = this.URL.nativeElement.value;
@@ -302,7 +310,7 @@ var EditBlogComponent = /** @class */ (function () {
     EditBlogComponent.prototype._handleReaderLoaded = function (event) {
         var reader = event.target;
         this.imageSrc = reader.result;
-        console.log(this.imageSrc);
+        // console.log(this.imageSrc);
         document.execCommand('insertHTML', false, "<div style=\"max-width:100%;height:auto;\" >\n    <img style=\"max-width:100%;max-height:100%;\" src=\"" + this.imageSrc + "\"></div>");
     };
     EditBlogComponent.prototype.selectGif = function (event) {
@@ -449,7 +457,7 @@ var EditBlogComponent = /** @class */ (function () {
         var Content = this.desc.nativeElement.innerHTML;
         this.blogPreview = {
             bloggerName: this.BloggerName.nativeElement.innerText,
-            heading: this.title.nativeElement.innerText,
+            heading: this.title.nativeElement.innerHTML,
             content: this.sanitizer.bypassSecurityTrustHtml(this.desc.nativeElement.innerHTML),
             keywords: this.keywordArray,
             blogImage: this.blogimageSrc,

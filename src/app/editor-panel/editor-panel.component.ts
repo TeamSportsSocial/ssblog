@@ -161,6 +161,14 @@ calCharCount() {
   };
 }
 
+AddH1Tag() {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('formatBlock', false, 'h1');
+}
+AddH2Tag() {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('formatBlock', false, 'h2');
+}
 bold(event) {
   this.initialActiveElement.Element.focus();
   document.execCommand('bold', false, null);
@@ -534,7 +542,7 @@ upload() {
   console.log(this.files);
   this.blogPreview = {
     bloggerName: this.BloggerName.nativeElement.innerText,
-    heading: this.title.nativeElement.innerText,
+    heading: this.title.nativeElement.innerHTML,
     content: this.sanitizer.bypassSecurityTrustHtml( this.desc.nativeElement.innerHTML),
     keywords: this.keywordArray,
     blogImage: this.blogimageSrc,

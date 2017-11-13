@@ -89,8 +89,8 @@ var BlogHeaderComponent = /** @class */ (function () {
     };
     BlogHeaderComponent.prototype.sendData = function (event) {
         var _this = this;
-        console.clear();
-        console.log(event);
+        // console.clear();
+        // console.log(event);
         if (event.target.value !== '') {
             this.haveresult = true;
         }
@@ -111,7 +111,7 @@ var BlogHeaderComponent = /** @class */ (function () {
             if (_this.resultBox) {
                 _this.setStyleOfResultBox();
             }
-            console.log(_this.results, ' conect');
+            //  console.log(this.results, ' conect');
         });
         var input = this.searchBox.nativeElement.value;
         if (event.code === 'Enter') {

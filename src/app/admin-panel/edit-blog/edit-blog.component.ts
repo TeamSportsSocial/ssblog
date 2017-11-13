@@ -148,8 +148,8 @@ recieveBlogdetails() {
 getBlogDetails() {
   this.recieve.dataOfsingleBlog(this.blogID).subscribe(
     data => {
-      console.clear();
-      console.log(data[0]);
+      // console.clear();
+      // console.log(data[0]);
       this.bloggerimageLoaded = true;
       this.blogimageLoaded = true;
       this.keywordAdded = true;
@@ -157,7 +157,7 @@ getBlogDetails() {
       this.blogimageSrc = data[0].blogImage;
       this.bloggerimageSrc = data[0].bloggerImage;
       this.BloggerName.nativeElement.innerText = data[0].bloggerName;
-      this.title.nativeElement.innerText = data[0].heading;
+      this.title.nativeElement.innerHTML = data[0].heading;
       this.desc.nativeElement.innerHTML = data[0].Content;
       this.keywordArray = data[0].keys.split(',');
       this.Keys = data[0].keys;
@@ -201,7 +201,14 @@ calCharCount() {
     Element: document.activeElement
   };
 }
-
+AddH1Tag() {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('formatBlock', false, 'h1');
+}
+AddH2Tag() {
+  this.initialActiveElement.Element.focus();
+  document.execCommand('formatBlock', false, 'h2');
+}
 bold(event) {
   this.initialActiveElement.Element.focus();
   document.execCommand('bold', false, null);
@@ -330,12 +337,12 @@ preventdefault(event) {
   event.target.focus();
   event.preventDefault();
 }
-test(){
-  console.log(this.beforePopupSelectedElement, this.beforePopupActiveElement, this.beforePopupCurPos);
+test() {
+ //  console.log(this.beforePopupSelectedElement, this.beforePopupActiveElement, this.beforePopupCurPos);
 }
 restoreCaret(){
   this.beforePopupActiveElement.focus();
-  console.log(this.beforePopupSelectedElement, this.beforePopupActiveElement, this.beforePopupCurPos);
+ // console.log(this.beforePopupSelectedElement, this.beforePopupActiveElement, this.beforePopupCurPos);
   const sel = window.getSelection();
   sel.collapse(this.beforePopupSelectedElement, this.beforePopupCurPos);
 }
@@ -355,7 +362,7 @@ addLink(event) {
 }
 unLink() {
   this.selctedLink = document.getSelection();
-  console.log(this.selctedLink);
+  // console.log(this.selctedLink);
 }
 linkOk(event) {
   this.linkUrl = this.URL.nativeElement.value;
@@ -422,7 +429,7 @@ selectImage(event) {
 _handleReaderLoaded(event) {
   const reader = event.target;
   this.imageSrc = reader.result;
-  console.log(this.imageSrc);
+ // console.log(this.imageSrc);
   document.execCommand('insertHTML', false, `<div style="max-width:100%;height:auto;" >
     <img style="max-width:100%;max-height:100%;" src="` + this.imageSrc + `"></div>`);
 }
@@ -575,7 +582,7 @@ upload() {
   const Content = this.desc.nativeElement.innerHTML;
   this.blogPreview = {
     bloggerName: this.BloggerName.nativeElement.innerText,
-    heading: this.title.nativeElement.innerText,
+    heading: this.title.nativeElement.innerHTML,
     content: this.sanitizer.bypassSecurityTrustHtml( this.desc.nativeElement.innerHTML),
     keywords: this.keywordArray,
     blogImage: this.blogimageSrc,

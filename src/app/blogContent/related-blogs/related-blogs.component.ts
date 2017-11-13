@@ -29,7 +29,7 @@ export class RelatedBlogsComponent implements OnInit {
     this.setMobileView();
    this.recieveKey.ofBlogCard.subscribe(
      data => {
-       console.log(data, ' checkarticle');
+       // console.log(data, ' checkarticle');
        this.getRelatedBlogs(data);
      }
    );
@@ -55,7 +55,7 @@ export class RelatedBlogsComponent implements OnInit {
     this.getRelated.blogData(1, key).subscribe(
         data => {
             this.dataRecived = true;
-            console.log(data, 'related');
+            // console.log(data, 'related');
             if ( data.length > 3 ) {
                 this.numberofBlog = 3;
             }else {

@@ -18,10 +18,10 @@ var SubscribeCardComponent = /** @class */ (function () {
         if (this.subscriber.nativeElement.validity.valid == true && this.subscriber.nativeElement.value) {
             this.sendEmail.ofUser(this.subscriber.nativeElement.value)
                 .subscribe(function (res) {
-                console.log(res.Status);
+                // console.log(res.Status)
                 if (res.Status == 'Success') {
                     _this.showSubscriptionBox = true;
-                    console.log(_this.showSubscriptionBox);
+                    // console.log(this.showSubscriptionBox)
                     _this.subscriber.nativeElement.value = '';
                     _this.errorMessage = false;
                     _this.renderer.setStyle(_this.button.nativeElement, 'margin', '5% auto');

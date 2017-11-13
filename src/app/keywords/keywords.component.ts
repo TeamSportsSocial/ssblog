@@ -63,7 +63,7 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
         }
       }
     )
-    console.log(this.keywords, ' check')
+    // console.log(this.keywords, ' check')
     this.recieveHeight.ofHeader.subscribe(
       margin=>{
         this.topMargin=margin

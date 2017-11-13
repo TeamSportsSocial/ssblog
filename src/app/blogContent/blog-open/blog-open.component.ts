@@ -33,18 +33,18 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
     temp;
     blog;
     topMargin;
-    removeSocial:boolean=false;
+    removeSocial: boolean=false;
     isConnectedWithFacebook:boolean=false;
-    mobileView:boolean=false;
-    dataRecived:boolean=false;
-    openFullImage:boolean=false;
-    relatedArticles: boolean=false;
-    blogDataRecieved:boolean=false;
+    mobileView=false;
+    dataRecived=false;
+    openFullImage=false;
+    relatedArticles=false;
+    blogDataRecieved=false;
     blogID;
     Keywords = [];
     ViewCount: number;
     ShareCount: number;
-    loading: boolean = true;
+    loading = true;
     content;
     contentForShare;
     keys;
@@ -57,6 +57,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
     @ViewChild('popup') popup;
     @ViewChild('fullImage') fullImage;
     @ViewChild('BlogImage') BlogImage;
+    @ViewChild('userImage') userImage;
     constructor(
         @Inject(PLATFORM_ID) platformId: Object,
         private recieve: PropertyService ,
@@ -81,7 +82,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
         this.recieveBlogIdFromUrl();
         this.setTopMargin();
         this.setMobileView();
-        
+
     }
 
     ngAfterViewInit() {
@@ -297,6 +298,11 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
         this.blog.bloggerImage = '/assets/images/user.png';
     }
 
+
+    removeBackgroundUserImage() {
+        this.renderer.setStyle(this.userImage.nativeElement, 'background-color', 'white');
+    }
+
     removeInitalImage(event) {
         if (event.returnValue) {
             this.loading = false;
@@ -399,7 +405,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
 
     shareOnTwitter(){
         this.sendShareCount();
-        var width  = 575,
+        let width  = 575,
         height = 400,
         left   = (window.innerWidth  - width)  / 2,
         top    = (window.innerHeight - height) / 2,
@@ -416,12 +422,20 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
     }
 
     shareOnLinkedin() {
-       
+       this.sendShareCount();
     }
+
+    shareOnPintrest() {
+        this.sendShareCount();
+    }
+
+    shareOngooglePlus() {
+        this.sendShareCount();
+    }
+
     getblogs(event) {
         const key = event.toElement.innerText;
         console.log(key, ' navigate');
-       // this.router.navigate(['/'+key])
         this.sendKey.ofBlogCard.next(key);
 
     }

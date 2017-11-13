@@ -30,9 +30,8 @@ export class BlogFooterComponent implements OnInit {
     private renderer: Renderer2,
     private status:StatusService,
     @Inject(PLATFORM_ID) platformId: Object
-  ) { 
-    this.isBrowser= isPlatformBrowser(platformId),
-    console.log(this.isBrowser);
+  ) {
+    this.isBrowser= isPlatformBrowser(platformId)
   }
 
   ngOnInit() {

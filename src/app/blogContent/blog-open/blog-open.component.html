@@ -27,10 +27,10 @@
   <div class="content">
     
     <div class="blogInfo" #BlogInfo>
-      <p *ngIf="blog" [innerHtml]="blog.heading"class="title"></p>
+      <p *ngIf="blog" [innerHtml]="blog.heading" class="title"></p>
       <p  *ngIf="blog" class="shortDesc">{{blog.MetaDesc}}</p>
       <div class="bloggerImage">
-        <img *ngIf="blog" src="{{blog.bloggerImage}}"  (error)="setDefault()" >
+        <img *ngIf="blog" src="{{blog.bloggerImage}}" (load)="removeBackgroundUserImage()"  (error)="setDefault()" #userImage>
       </div>
       <div class="blogger" *ngIf="blogDataRecieved">
         <p  class="bloggerName">Written by <span > {{blog.bloggerName}}</span></p>  
@@ -58,12 +58,14 @@
         <a href="https://www.pinterest.com/pin/create/button/?url={{url}}&media={{blog.blogImage}}"  
           data-pin-custom="true"
           target="_blank">
-            <img src="/assets/images/sports-social-pintrest-black.png" alt="">
+            <img (click)="shareOnPintrest()" src="/assets/images/sports-social-pintrest-black.png" alt="">
         </a>
         <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url}}" target="_blank">
-          <img src="/assets/images/sports-social-linkedin-black.png" role="button" >
+          <img (click)="shareOnLinkedin()" src="/assets/images/sports-social-linkedin-black.png" role="button" >
         </a>
-        
+        <a href="https://plus.google.com/share?url={{url}}" target="_blank" >
+          <img (click)="shareOngooglePlus()" src="/assets/images/sports-social-google-plus-black.png" alt="Google+" title="Google+"/>
+        </a>
       </div>
       <p [innerHtml]="content" class="desc" *ngIf="blogDataRecieved">
       </p>
@@ -124,10 +126,13 @@
     <a href="https://www.pinterest.com/pin/create/button/?url={{url}}&media={{blog.blogImage}}"  
       data-pin-custom="true"
       target="_blank">
-      <img src="/assets/images/sports-social-pinterest-logo-blue.png" alt="">
+      <img (click)="shareOnPintrest()" src="/assets/images/sports-social-pinterest-logo-blue.png" alt="sports-social-pintrest-logo">
     </a>
     <a href= "http://www.linkedin.com/shareArticle?mini=true&url={{url}}&title={{blog.heading}}&summary={{blog.MetaDesc}}&source=chaseyoursport.com" target="_blank">
-      <img src="/assets/images/sports-social-linkedin-logo-blue.png" role="button" >
+      <img  (click)="shareOnLinkedin()" src="/assets/images/sports-social-linkedin-logo-blue.png" role="button" >
+    </a>
+    <a href="https://plus.google.com/share?url={{url}}" target="_blank"  >
+      <img (click)="shareOngooglePlus()" src="/assets/images/sports-social-google-plus-blue.png" alt="Google+" title="Google+"/>
     </a>
   </p>
   <div class="comments" *ngIf="blogDataRecieved">

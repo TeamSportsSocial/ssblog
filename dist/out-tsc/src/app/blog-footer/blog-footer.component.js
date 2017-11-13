@@ -11,8 +11,7 @@ var BlogFooterComponent = /** @class */ (function () {
         this.status = status;
         this.showSubscriptionBox = false;
         this.errorMessage = false;
-        this.isBrowser = common_1.isPlatformBrowser(platformId),
-            console.log(this.isBrowser);
+        this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     BlogFooterComponent.prototype.ngOnInit = function () {
         this.setMobileView();

@@ -37,7 +37,7 @@ export class LoginPageComponent implements OnInit {
   checkLogin(){
     let UserName=this.userName.nativeElement.value
     let Password=this.password.nativeElement.value
-    console.log(typeof(UserName),typeof(Password))
+    // console.log(typeof(UserName),typeof(Password))
     if(UserName=="sportsocial" && Password=="cys"){
       this.wrongPassword=false
       this.authService.login();

@@ -93,7 +93,7 @@ export class CommentsComponent implements OnInit {
 
 
   getDate(i: string) {
-    console.log(i);
+    // console.log(i);
     const commentDate = new Date(parseInt(i)*1000);
     const presentDate = new Date();
       if (commentDate.getFullYear() === presentDate.getFullYear()) {
@@ -126,13 +126,13 @@ export class CommentsComponent implements OnInit {
 
   getLoginStatus() {
     FB.getLoginStatus(function(response) {
-      console.log(response, ' conect');
+      // console.log(response, ' conect');
       if (response.status === 'connected') {
-        console.log('conect');
+        // console.log('conect');
         this.isConnected = true;
         this.profilePicture = `https://graph.facebook.com/` + response.authResponse.userID + `/picture?type=large`;
       }else {
-        console.log('logged out');
+        // console.log('logged out');
       }
     });
   }
@@ -146,11 +146,11 @@ export class CommentsComponent implements OnInit {
           this.isConnected = true;
           this.profilePicture = `https://graph.facebook.com/` + response.authResponse.userID + `/picture?type=large`;
           this.me();
-          console.log(this.user);
+         //  console.log(this.user);
         } else if (response.status === 'not_authorized') {
-          console.log('conect1');
+         //  console.log('conect1');
         } else {
-          console.log('conect2');
+         //  console.log('conect2');
         }
 
       }, {scope: 'user_friends,email'});
@@ -163,17 +163,17 @@ export class CommentsComponent implements OnInit {
       (result) => {
           if (result && !result.error) {
               this.user = result;
-              console.log(this.user, 'conect');
-              console.log(this.profilePicture);
+             //  console.log(this.user, 'conect');
+              // console.log(this.profilePicture);
               this.sendUserInfo.ofFacebookUser(result.id, result.name, result.email, this.profilePicture).subscribe(
                 res => {
-                  console.log(res, ' login');
+                 //  console.log(res, ' login');
                   this.userId = res[0].UserId;
                 }
               );
 
           } else {
-              console.log(result.error);
+             //  console.log(result.error);
           }
       });
     }
@@ -184,7 +184,7 @@ export class CommentsComponent implements OnInit {
     }
    this.send.userComment(this.BlogId, this.userId, this.textArea.nativeElement.value).subscribe(
     res => {
-      console.log(res, 'c');
+      // console.log(res, 'c');
       this.textArea.nativeElement.value = '';
       this.newComment = {
         userName: res[res.length - 1].Name,
@@ -192,7 +192,7 @@ export class CommentsComponent implements OnInit {
         comment: res[res.length - 1].Comment,
         commentDate: this.getDate(res[res.length - 1].InsertedDate)
       };
-      console.log(this.newComment, ' new comment' );
+      // console.log(this.newComment, ' new comment' );
       this.recivedComment.push(this.newComment);
     }
     );

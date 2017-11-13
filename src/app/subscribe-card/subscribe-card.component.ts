@@ -31,11 +31,11 @@ export class SubscribeCardComponent implements OnInit {
     if(this.subscriber.nativeElement.validity.valid==true && this.subscriber.nativeElement.value){
       this.sendEmail.ofUser(this.subscriber.nativeElement.value)
       .subscribe(
-        res=>{
-          console.log(res.Status)
+        res => {
+         // console.log(res.Status)
           if(res.Status=='Success'){
             this.showSubscriptionBox=true;
-            console.log(this.showSubscriptionBox)
+           // console.log(this.showSubscriptionBox)
             this.subscriber.nativeElement.value=''
             this.errorMessage=false
             this.renderer.setStyle(this.button.nativeElement,'margin','5% auto')

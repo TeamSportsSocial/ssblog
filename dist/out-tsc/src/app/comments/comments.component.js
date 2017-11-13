@@ -43,7 +43,7 @@ var CommentsComponent = /** @class */ (function () {
         this.profilePicture = '/assets/images/user.png';
     };
     CommentsComponent.prototype.getDate = function (i) {
-        console.log(i);
+        // console.log(i);
         var commentDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
         if (commentDate.getFullYear() === presentDate.getFullYear()) {
@@ -80,14 +80,14 @@ var CommentsComponent = /** @class */ (function () {
     };
     CommentsComponent.prototype.getLoginStatus = function () {
         FB.getLoginStatus(function (response) {
-            console.log(response, ' conect');
+            // console.log(response, ' conect');
             if (response.status === 'connected') {
-                console.log('conect');
+                // console.log('conect');
                 this.isConnected = true;
                 this.profilePicture = "https://graph.facebook.com/" + response.authResponse.userID + "/picture?type=large";
             }
             else {
-                console.log('logged out');
+                // console.log('logged out');
             }
         });
     };
@@ -101,13 +101,13 @@ var CommentsComponent = /** @class */ (function () {
                     _this.isConnected = true;
                     _this.profilePicture = "https://graph.facebook.com/" + response.authResponse.userID + "/picture?type=large";
                     _this.me();
-                    console.log(_this.user);
+                    //  console.log(this.user);
                 }
                 else if (response.status === 'not_authorized') {
-                    console.log('conect1');
+                    //  console.log('conect1');
                 }
                 else {
-                    console.log('conect2');
+                    //  console.log('conect2');
                 }
             }, { scope: 'user_friends,email' });
         }
@@ -118,15 +118,15 @@ var CommentsComponent = /** @class */ (function () {
             FB.api('/me?fields=id,name,picture.type(large),email', function (result) {
                 if (result && !result.error) {
                     _this.user = result;
-                    console.log(_this.user, 'conect');
-                    console.log(_this.profilePicture);
+                    //  console.log(this.user, 'conect');
+                    // console.log(this.profilePicture);
                     _this.sendUserInfo.ofFacebookUser(result.id, result.name, result.email, _this.profilePicture).subscribe(function (res) {
-                        console.log(res, ' login');
+                        //  console.log(res, ' login');
                         _this.userId = res[0].UserId;
                     });
                 }
                 else {
-                    console.log(result.error);
+                    //  console.log(result.error);
                 }
             });
         }
@@ -137,7 +137,7 @@ var CommentsComponent = /** @class */ (function () {
             this.login();
         }
         this.send.userComment(this.BlogId, this.userId, this.textArea.nativeElement.value).subscribe(function (res) {
-            console.log(res, 'c');
+            // console.log(res, 'c');
             _this.textArea.nativeElement.value = '';
             _this.newComment = {
                 userName: res[res.length - 1].Name,
@@ -145,7 +145,7 @@ var CommentsComponent = /** @class */ (function () {
                 comment: res[res.length - 1].Comment,
                 commentDate: _this.getDate(res[res.length - 1].InsertedDate)
             };
-            console.log(_this.newComment, ' new comment');
+            // console.log(this.newComment, ' new comment' );
             _this.recivedComment.push(_this.newComment);
         });
     };

@@ -75,6 +75,14 @@ var EditorPanelComponent = /** @class */ (function () {
             Element: document.activeElement
         };
     };
+    EditorPanelComponent.prototype.AddH1Tag = function () {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('formatBlock', false, 'h1');
+    };
+    EditorPanelComponent.prototype.AddH2Tag = function () {
+        this.initialActiveElement.Element.focus();
+        document.execCommand('formatBlock', false, 'h2');
+    };
     EditorPanelComponent.prototype.bold = function (event) {
         this.initialActiveElement.Element.focus();
         document.execCommand('bold', false, null);
@@ -410,7 +418,7 @@ var EditorPanelComponent = /** @class */ (function () {
         console.log(this.files);
         this.blogPreview = {
             bloggerName: this.BloggerName.nativeElement.innerText,
-            heading: this.title.nativeElement.innerText,
+            heading: this.title.nativeElement.innerHTML,
             content: this.sanitizer.bypassSecurityTrustHtml(this.desc.nativeElement.innerHTML),
             keywords: this.keywordArray,
             blogImage: this.blogimageSrc,

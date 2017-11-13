@@ -37,7 +37,7 @@ var NormalBlogComponent = /** @class */ (function () {
         if (this.blogImage) {
             this.dataRecieved = true;
         }
-        //console.log(this.blogTitle)
+        // console.log(this.blogTitle)
     };
     NormalBlogComponent.prototype.strip = function (html) {
         var tmp = this.renderer.createElement('DIV');

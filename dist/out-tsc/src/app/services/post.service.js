@@ -11,7 +11,7 @@ var PostService = /** @class */ (function () {
             name: s,
             page: i
         };
-        console.log(this.Page);
+        // console.log(this.Page);
         return this.http.post('https://admin.chaseyoursport.com/blog/loadblogdata', this.Page)
             .map(function (res) { return res.json(); });
     };
@@ -56,7 +56,7 @@ var PostService = /** @class */ (function () {
             blogid: id,
             viewcount: count
         };
-        console.log(this.viewCount, 'count');
+        // console.log(this.viewCount, 'count');
         return this.http.post('https://admin.chaseyoursport.com/blog/updateViewCount', this.viewCount)
             .map(function (res) { return res.json(); });
     };
@@ -66,7 +66,7 @@ var PostService = /** @class */ (function () {
             blogid: id,
             sharecount: count
         };
-        console.log(this.shareCount, 'count');
+        // console.log(this.shareCount, 'count');
         return this.http.post('https://admin.chaseyoursport.com/blog/updateShareCount', this.shareCount)
             .map(function (res) { return res.json(); });
     };
@@ -74,7 +74,7 @@ var PostService = /** @class */ (function () {
         this.BlogId = {
             blogid: id
         };
-        console.log(this.BlogId);
+        // console.log(this.BlogId);
         return this.http.post('https://admin.chaseyoursport.com/blog/loadSingleBlogData', this.BlogId)
             .map(function (response) { return response.json(); });
     };

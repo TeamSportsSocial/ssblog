@@ -93,7 +93,7 @@ export class NormalBlogComponent implements OnInit {
    if (this.blogImage) {
     this.dataRecieved = true;
    }
-   //console.log(this.blogTitle)
+   // console.log(this.blogTitle)
 
   }
 

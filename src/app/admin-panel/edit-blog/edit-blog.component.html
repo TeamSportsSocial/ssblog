@@ -39,64 +39,54 @@
     </div>  
     
     <div>
+        <label >
+            <span class="h1" role="button" title="heading" (click)="AddH1Tag()">H1</span>
+            <span class="h2" role="button" title="subHeading" (click)="AddH2Tag()">H2</span>
+        </label>
+        <label class="file">
+            <img src="/assets/images/sports-social-indent.png" title="indent" role="button" alt="" (click)="indent($event)" class="not-selected" >
+        </label>
+        
+        <label class="file">
+            <img src="/assets/images/sports-social-outdent.png" title=" outdent" role="button" alt="" (click)="outdent($event)" class="not-selected" >
+        </label>
       
-      <label class="file">
-        <img src="/assets/images/sports-social-indent.png" title="indent" role="button" alt="" (click)="indent($event)" class="not-selected" >
-      </label>
+        <label class="file">
+            <img src="/assets/images/sports-social-paragraph.png" title="Paragraph" role="button" alt="" (click)="addParagraph($event)" class="not-selected" >
+        </label>
+        
+        <label class="file">
+            <img src="/assets/images/sports-social-picture.png" title="Add Image" role="button" alt=""  class="not-selected" >
+            <input type="file" name="image" id="image" accept="image/jpeg, image/png" (change)="selectImage($event)">
+        </label>
+        
+        <label class="file">
+            <img src="/assets/images/sports-social-youtube-video.png" title="Add Youtube Video" role="button" class="not-selected"  (click)="addYoutubevideo()">
+        </label>
+        
+        <label class="file">
+            <img src="/assets/images/sports-social-gif.png" title="Add Gif" role="button" class="not-selected" alt=""  multiple>
+            <input type="file" name="video" id="video" accept="image/gif image/webp"  (change)="selectGif($event)">
+        </label>
+        
+        <label class="file">
+            <img src="/assets/images/sports-social-link.png" title="Add Link" role="button" alt="" class="not-selected" (click)="addLink($event)">
+        </label>
       
-      <label class="file">
-        <img src="/assets/images/sports-social-outdent.png" title=" outdent" role="button" alt="" (click)="outdent($event)" class="not-selected" >
-      </label>
-      
-      <label class="file">
-         <img src="/assets/images/sports-social-paragraph.png" title="Paragraph" role="button" alt="" (click)="addParagraph($event)" class="not-selected" >
-       </label>
-      
-      <label class="file">
-        <img src="/assets/images/sports-social-picture.png" title="Add Image" role="button" alt=""  class="not-selected" >
-        <input type="file" name="image" id="image" accept="image/jpeg, image/png" (change)="selectImage($event)">
-      </label>
-      
-     <!--  <label class="file">
-          <img src="/assets/images/sports-social-frame-plugin.png" role="button" class="not-selected" alt="" (click)="addPlugin($event)"  >
-      </label> -->
-      
-      <label class="file">
-        <img src="/assets/images/sports-social-youtube-video.png" title="Add Youtube Video" role="button" class="not-selected"  (click)="addYoutubevideo()">
-      </label>
-      
-      <label class="file">
-          <img src="/assets/images/sports-social-gif.png" title="Add Gif" role="button" class="not-selected" alt=""  multiple>
-          <input type="file" name="video" id="video" accept="image/gif image/webp"  (change)="selectGif($event)">
-      </label>
-      
-      <label class="file">
-          <img src="/assets/images/sports-social-link.png" title="Add Link" role="button" alt="" class="not-selected" (click)="addLink($event)">
-      </label>
-      
-     <!--  <label class="file">
-        <img src="/assets/images/sports-social-unlink.png" role="button" alt="" class="not-selected" (click)="unLink()">
-      </label> -->
-      
-     <!--  <label class="file">
-          <img src="/assets/images/sports-social-music.png" role="button" alt="" class="not-selected" multiple>
-          <input type="file" name="music" id="music" accept="audio/*" (change)="selectMusic($event)">
-      </label> -->
-      
-      <label class="file">
-        <img src="/assets/images/sports-social-remove-css.png" title="Remove Style" role="button" alt="" (click)="removeCss($event)" class="not-selected" >
-      </label>
-      
-      <label class="file">
-        <img src="/assets/images/sports-social-subscript.png" title="Subscript"  role="button" alt="" (click)="subscript($event)" class="not-selected" >
-      </label>
-      
-      <label class="file">
-        <img src="/assets/images/sports-social-superscript.png" title="Superscript" role="button" alt="" (click)="superscript($event)" class="not-selected" >
-      </label>
-      <label class="file">
-        <img src="/assets/images/sports-social-quote.png" title="Quote" role="button" alt="" (click)="addQuote($event)" class="not-selected" >
-      </label>
+        <label class="file">
+            <img src="/assets/images/sports-social-remove-css.png" title="Remove Style" role="button" alt="" (click)="removeCss($event)" class="not-selected" >
+        </label>
+        
+        <label class="file">
+            <img src="/assets/images/sports-social-subscript.png" title="Subscript"  role="button" alt="" (click)="subscript($event)" class="not-selected" >
+        </label>
+        
+        <label class="file">
+            <img src="/assets/images/sports-social-superscript.png" title="Superscript" role="button" alt="" (click)="superscript($event)" class="not-selected" >
+        </label>
+        <label class="file">
+            <img src="/assets/images/sports-social-quote.png" title="Quote" role="button" alt="" (click)="addQuote($event)" class="not-selected" >
+        </label>
     </div>
     </div>
     <div class="panel-wrapper">

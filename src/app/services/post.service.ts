@@ -44,7 +44,7 @@ export class PostService {
       name: s,
       page: i
     };
-    console.log(this.Page);
+   // console.log(this.Page);
     return this.http.post('https://admin.chaseyoursport.com/blog/loadblogdata', this.Page)
     .map( res => res.json());
   }
@@ -89,7 +89,7 @@ export class PostService {
       blogid: id,
       viewcount: count
     };
-    console.log(this.viewCount, 'count');
+   // console.log(this.viewCount, 'count');
     return this.http.post('https://admin.chaseyoursport.com/blog/updateViewCount',this.viewCount)
     .map(res => res.json());
   }
@@ -99,7 +99,7 @@ export class PostService {
       blogid: id,
       sharecount: count
     };
-    console.log(this.shareCount, 'count');
+    // console.log(this.shareCount, 'count');
     return this.http.post('https://admin.chaseyoursport.com/blog/updateShareCount', this.shareCount)
     .map(res => res.json());
   }
@@ -107,11 +107,11 @@ export class PostService {
     this.BlogId = {
       blogid: id
     };
-    console.log(this.BlogId);
+   // console.log(this.BlogId);
     return this.http.post('https://admin.chaseyoursport.com/blog/loadSingleBlogData',this.BlogId)
     .map((response: Response) => response.json());
   }
-  deleteBlog(id : string){
+  deleteBlog(id: string){
     this.BlogId = {
       blogid: id
     };

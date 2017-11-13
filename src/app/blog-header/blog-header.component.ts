@@ -129,8 +129,8 @@ export class BlogHeaderComponent implements OnInit {
   }
 
   sendData(event) {
-    console.clear();
-    console.log(event);
+   // console.clear();
+     // console.log(event);
     if (event.target.value !== '' ) {
       this.haveresult = true;
     }
@@ -154,7 +154,7 @@ export class BlogHeaderComponent implements OnInit {
         if (this.resultBox) {
           this.setStyleOfResultBox();
         }
-        console.log(this.results, ' conect');
+      //  console.log(this.results, ' conect');
       }
     );
 

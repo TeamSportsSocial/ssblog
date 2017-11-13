@@ -16,7 +16,7 @@ var RelatedBlogsComponent = /** @class */ (function () {
         var _this = this;
         this.setMobileView();
         this.recieveKey.ofBlogCard.subscribe(function (data) {
-            console.log(data, ' checkarticle');
+            // console.log(data, ' checkarticle');
             _this.getRelatedBlogs(data);
         });
     };
@@ -25,7 +25,7 @@ var RelatedBlogsComponent = /** @class */ (function () {
         var relatedBlogDetails = [];
         this.getRelated.blogData(1, key).subscribe(function (data) {
             _this.dataRecived = true;
-            console.log(data, 'related');
+            // console.log(data, 'related');
             if (data.length > 3) {
                 _this.numberofBlog = 3;
             }
