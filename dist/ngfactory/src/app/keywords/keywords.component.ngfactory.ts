@@ -19,7 +19,7 @@ import * as i9 from '../../../../../src/app/services/get.service';
 const styles_KeywordsComponent:any[] = [i0.styles];
 export const RenderType_KeywordsComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_KeywordsComponent,data:{}});
-function View_KeywordsComponent_1(_l:any):i1.ɵViewDefinition {
+function View_KeywordsComponent_2(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),2,'SportSocialBlog-keyword',
       [['class','keyword'],['role','button']],(null as any),[[(null as any),'click']],
       (_v,en,$event) => {
@@ -32,27 +32,39 @@ function View_KeywordsComponent_1(_l:any):i1.ɵViewDefinition {
         return ad;
       },i2.View_KeywordComponent_0,i2.RenderType_KeywordComponent)),i1.ɵdid(1,114688,
       (null as any),0,i3.KeywordComponent,[i1.Renderer2],{title:[0,'title']},(null as any)),
-      (_l()(),i1.ɵted(-1,(null as any),['\n    ']))],(_ck,_v) => {
+      (_l()(),i1.ɵted(-1,(null as any),['\n      ']))],(_ck,_v) => {
     const currVal_0:any = _v.context.$implicit.name;
     _ck(_v,1,0,currVal_0);
   },(null as any));
 }
+function View_KeywordsComponent_1(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),7,(null as any),
+      (null as any),(null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵeld(2,0,(null as any),
+          (null as any),4,'div',([] as any[]),(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n      '])),
+      (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_KeywordsComponent_2)),
+      i1.ɵdid(5,802816,(null as any),0,i4.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
+          i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted(-1,
+          (null as any),['\n    '])),(_l()(),i1.ɵted(-1,(null as any),['\n  ']))],
+      (_ck,_v) => {
+        var _co:any = _v.component;
+        const currVal_0:any = _co.keywords;
+        _ck(_v,5,0,currVal_0);
+      },(null as any));
+}
 export function View_KeywordsComponent_0(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[i1.ɵqud(402653184,1,{Keywords:0}),(_l()(),i1.ɵeld(1,0,[[1,0],['Keywords',
-      1]],(null as any),7,'div',[['class','keywords']],(null as any),(null as any),
+      1]],(null as any),4,'div',[['class','keywords']],(null as any),(null as any),
       (null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),
-      ['\n  '])),(_l()(),i1.ɵeld(3,0,(null as any),(null as any),4,'div',([] as any[]),
-      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i1.ɵted(-1,(null as any),['\n    '])),(_l()(),i1.ɵand(16777216,(null as any),
-      (null as any),1,(null as any),View_KeywordsComponent_1)),i1.ɵdid(6,802816,(null as any),
-      0,i4.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,i1.IterableDiffers],{ngForOf:[0,
-          'ngForOf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),
-      i1.ɵted(-1,(null as any),['\n'])),(_l()(),i1.ɵted(-1,(null as any),['\n']))],
-      (_ck,_v) => {
-        var _co:i5.KeywordsComponent = _v.component;
-        const currVal_0:any = _co.keywords;
-        _ck(_v,6,0,currVal_0);
-      },(null as any));
+      ['\n  '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
+      View_KeywordsComponent_1)),i1.ɵdid(4,16384,(null as any),0,i4.NgIf,[i1.ViewContainerRef,
+      i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),
+      ['\n'])),(_l()(),i1.ɵted(-1,(null as any),['\n']))],(_ck,_v) => {
+    var _co:i5.KeywordsComponent = _v.component;
+    const currVal_0:any = _co.isBrowser;
+    _ck(_v,4,0,currVal_0);
+  },(null as any));
 }
 export function View_KeywordsComponent_Host_0(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'SportSocialBlog-keywords',
@@ -72,4 +84,4 @@ export function View_KeywordsComponent_Host_0(_l:any):i1.ɵViewDefinition {
 }
 export const KeywordsComponentNgFactory:i1.ComponentFactory<i5.KeywordsComponent> = i1.ɵccf('SportSocialBlog-keywords',
     i5.KeywordsComponent,View_KeywordsComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovc3NibG9nL3NyYy9hcHAva2V5d29yZHMva2V5d29yZHMuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0M6L3NzYmxvZy9zcmMvYXBwL2tleXdvcmRzL2tleXdvcmRzLmNvbXBvbmVudC50cyIsIm5nOi8vL0M6L3NzYmxvZy9zcmMvYXBwL2tleXdvcmRzL2tleXdvcmRzLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovc3NibG9nL3NyYy9hcHAva2V5d29yZHMva2V5d29yZHMuY29tcG9uZW50LnRzLktleXdvcmRzQ29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiPGRpdiBjbGFzcz1cImtleXdvcmRzXCIgI0tleXdvcmRzPlxyXG4gIDxkaXY+XHJcbiAgICA8U3BvcnRTb2NpYWxCbG9nLWtleXdvcmQgKm5nRm9yPVwibGV0IGtleXdvcmQgb2Yga2V5d29yZHM7bGV0IGk9aW5kZXhcIiBcclxuICAgICAgW3RpdGxlXT1cImtleXdvcmQubmFtZVwiIGNsYXNzPVwia2V5d29yZFwiIHJvbGU9XCJidXR0b25cIiAoY2xpY2spPVwic2VuZChpKVwiPlxyXG4gICAgPC9TcG9ydFNvY2lhbEJsb2cta2V5d29yZD5cclxuICA8L2Rpdj5cclxuPC9kaXY+XHJcbiIsIjxTcG9ydFNvY2lhbEJsb2cta2V5d29yZHM+PC9TcG9ydFNvY2lhbEJsb2cta2V5d29yZHM+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztvQkNFSTtNQUFBO01BQUE7UUFBQTtRQUFBO1FBQ3VEO1VBQUE7VUFBQTtRQUFBO1FBRHZEO01BQUEscUVBQUE7TUFBQTtNQUN5RTtJQUF2RTtJQURGLFdBQ0UsU0FERjs7OztzREFGSjtNQUFBO01BQUEsNENBQWdDO01BQUEsV0FDOUI7TUFBQSx3RUFBSzthQUFBLCtCQUNIO01BQUEsZ0VBQUE7TUFBQTtVQUFBLDJCQUUwQiw0Q0FDdEI7YUFBQSwyQkFDRjs7O1FBSnVCO1FBQXpCLFdBQXlCLFNBQXpCOzs7O29CQ0ZKO01BQUE7UUFBQTtRQUFBO1VBQUE7VUFBQTtRQUFBO1FBQUE7TUFBQSxpRUFBQTtNQUFBOzt1QkFBQTtJQUFBOzs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovbmFkL3NzYmxvZy9zcmMvYXBwL2tleXdvcmRzL2tleXdvcmRzLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9uYWQvc3NibG9nL3NyYy9hcHAva2V5d29yZHMva2V5d29yZHMuY29tcG9uZW50LnRzIiwibmc6Ly8vQzovbmFkL3NzYmxvZy9zcmMvYXBwL2tleXdvcmRzL2tleXdvcmRzLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovbmFkL3NzYmxvZy9zcmMvYXBwL2tleXdvcmRzL2tleXdvcmRzLmNvbXBvbmVudC50cy5LZXl3b3Jkc0NvbXBvbmVudF9Ib3N0Lmh0bWwiXSwic291cmNlc0NvbnRlbnQiOlsiICIsIjxkaXYgIGNsYXNzPVwia2V5d29yZHNcIiAjS2V5d29yZHM+XHJcbiAgPG5nLWNvbnRhaW5lciAqbmdJZj1cImlzQnJvd3NlclwiPlxyXG4gICAgPGRpdj5cclxuICAgICAgPFNwb3J0U29jaWFsQmxvZy1rZXl3b3JkICpuZ0Zvcj1cImxldCBrZXl3b3JkIG9mIGtleXdvcmRzO2xldCBpPWluZGV4XCIgXHJcbiAgICAgICAgW3RpdGxlXT1cImtleXdvcmQubmFtZVwiIGNsYXNzPVwia2V5d29yZFwiIHJvbGU9XCJidXR0b25cIiAoY2xpY2spPVwic2VuZChpKVwiPlxyXG4gICAgICA8L1Nwb3J0U29jaWFsQmxvZy1rZXl3b3JkPlxyXG4gICAgPC9kaXY+XHJcbiAgPC9uZy1jb250YWluZXI+XHJcbjwvZGl2PlxyXG4iLCI8U3BvcnRTb2NpYWxCbG9nLWtleXdvcmRzPjwvU3BvcnRTb2NpYWxCbG9nLWtleXdvcmRzPiJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7b0JDR007TUFBQTtNQUFBO1FBQUE7UUFBQTtRQUN1RDtVQUFBO1VBQUE7UUFBQTtRQUR2RDtNQUFBLHFFQUFBO01BQUE7TUFDeUU7SUFBdkU7SUFERixXQUNFLFNBREY7Ozs7b0JBRko7TUFBQTtNQUFnQyw4Q0FDOUI7VUFBQTtVQUFBLDhCQUFLO01BQ0g7YUFBQTs0QkFBQSx5Q0FFMEI7VUFBQSwyQkFDdEI7OztRQUhxQjtRQUF6QixXQUF5QixTQUF6Qjs7OztzREFITjtNQUFBO01BQUEsNENBQWlDO01BQUEsV0FDL0I7TUFBQSxrQ0FBQTtvQkFBQSxtQ0FNZTtNQUFBLFNBQ1g7O0lBUFU7SUFBZCxXQUFjLFNBQWQ7Ozs7b0JDREY7TUFBQTtRQUFBO1FBQUE7VUFBQTtVQUFBO1FBQUE7UUFBQTtNQUFBLGlFQUFBO01BQUE7O3VCQUFBO0lBQUE7Ozs7In0=

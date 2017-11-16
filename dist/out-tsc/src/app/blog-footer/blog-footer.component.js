@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var status_service_1 = require(".././services/status.service");
 var post_service_1 = require(".././services/post.service");
-var common_1 = require("@angular/common");
+var platform_browser_1 = require("@angular/platform-browser");
 var BlogFooterComponent = /** @class */ (function () {
     function BlogFooterComponent(sendEmail, renderer, status, platformId) {
         this.sendEmail = sendEmail;
@@ -11,7 +11,6 @@ var BlogFooterComponent = /** @class */ (function () {
         this.status = status;
         this.showSubscriptionBox = false;
         this.errorMessage = false;
-        this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     BlogFooterComponent.prototype.ngOnInit = function () {
         this.setMobileView();
@@ -37,19 +36,18 @@ var BlogFooterComponent = /** @class */ (function () {
         this.showSubscriptionBox = false;
     };
     BlogFooterComponent.prototype.setMobileView = function () {
-        if (this.isBrowser) {
-            if (window.innerWidth < 850) {
-                this.renderer.setStyle(this.copyright.nativeElement, 'width', '100%');
-                this.renderer.setStyle(this.followUs.nativeElement, 'width', '100%');
-                this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'center');
-                this.renderer.setStyle(this.copyright.nativeElement, 'text-align', 'center');
-            }
-            else {
-                this.renderer.setStyle(this.followUs.nativeElement, 'width', '40%');
-                this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'right');
-                this.renderer.setStyle(this.copyright.nativeElement, 'width', '60%');
-                this.renderer.setStyle(this.copyright.nativeElement, 'text-align', 'left');
-            }
+        var width = platform_browser_1.ɵgetDOM().getBoundingClientRect(this.footer.nativeElement).width;
+        if (width < 850) {
+            this.renderer.setStyle(this.copyright.nativeElement, 'width', '100%');
+            this.renderer.setStyle(this.followUs.nativeElement, 'width', '100%');
+            this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'center');
+            this.renderer.setStyle(this.copyright.nativeElement, 'text-align', 'center');
+        }
+        else {
+            this.renderer.setStyle(this.followUs.nativeElement, 'width', '40%');
+            this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'right');
+            this.renderer.setStyle(this.copyright.nativeElement, 'width', '60%');
+            this.renderer.setStyle(this.copyright.nativeElement, 'text-align', 'left');
         }
     };
     BlogFooterComponent.prototype.onresize = function () {
@@ -73,6 +71,7 @@ var BlogFooterComponent = /** @class */ (function () {
         'followUs': [{ type: core_1.ViewChild, args: ['followUs',] },],
         'copyright': [{ type: core_1.ViewChild, args: ['copyright',] },],
         'subscriber': [{ type: core_1.ViewChild, args: ['subscriber',] },],
+        'footer': [{ type: core_1.ViewChild, args: ['footer',] },],
         'onresize': [{ type: core_1.HostListener, args: ['window:resize', [],] },],
     };
     return BlogFooterComponent;

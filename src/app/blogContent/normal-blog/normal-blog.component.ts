@@ -12,13 +12,15 @@ import {
 import {PropertyService} from '../../services/property.service';
 import {PostService} from '../../services/post.service';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { ɵgetDOM } from '@angular/platform-browser';
+import { BlogOpenComponent } from '../../blogContent/blog-open/blog-open.component';
 
 @Component({
   selector: 'SportSocial-normal-blog',
   templateUrl: './normal-blog.component.html',
   styleUrls: ['./normal-blog.component.css']
 })
-export class NormalBlogComponent implements OnInit {
+export class NormalBlogComponent  implements OnInit {
 
   @Input()  blogId:string;
   @Input()  blogImage:string;
@@ -34,7 +36,7 @@ export class NormalBlogComponent implements OnInit {
   @Input()  readingTime:string;
   @Input()  MetaDesc: string;
   @Input()  ImageDesc: string;
-
+ 
   content:string;
   blog:{
     blogId:string,
@@ -58,13 +60,16 @@ export class NormalBlogComponent implements OnInit {
   @ViewChild('fullImage') fullImage;
   @ViewChild('blog') Blog;
   @ViewChild('footer') footer;
+  @ViewChild ('BlogOpenComponent') blogOpen;
   isloading:boolean=true;
   openFullImage:boolean=false;
   dataRecieved:boolean=false;
   constructor(
     private Send: PropertyService,
+    private link: PropertyService,
     private renderer:Renderer2,
     private post:PostService,
+    private recievewidth: PropertyService,
     private zone:NgZone,
     @Inject(PLATFORM_ID) platformId: Object
   ) { 
@@ -117,40 +122,47 @@ export class NormalBlogComponent implements OnInit {
 
 
   setVariableFont() {
-      if (window.innerWidth > 1200) {
+    let width;
+    this.recievewidth.ofWindow.subscribe(
+    (data) => {
+      width = data;
+    }
+    )
+      if (width > 1200) {
         this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
       }
-      if (window.innerWidth > 1100 && window.innerWidth < 1200) {
+      if (width > 1100 && width < 1200) {
         this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
       }
-      if (window.innerWidth < 1100 && window.innerWidth > 1000) {
+      if (width < 1100 && width > 1000) {
       this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
       }
-      if (window.innerWidth < 1000 && window.innerWidth > 950) {
+      if (width < 1000 && width > 950) {
       this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.15em');
       }
-      if (window.innerWidth > 700 && window.innerWidth < 950) {
+      if (width > 700 && width < 950) {
         this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.25em');
       }
-      if (window.innerWidth > 600 && window.innerWidth < 700) {
+      if (width > 600 && width < 700) {
         this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
       }
-      if (window.innerWidth > 600 && window.innerWidth < 500) {
+      if (width > 600 && width < 500) {
         this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.3em');
       }
-      if (window.innerWidth > 500 && window.innerWidth < 600) {
+      if (width > 500 && width < 600) {
         this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.2em');
       }
-      if (window.innerWidth > 320 && window.innerWidth < 400) {
+      if (width > 320 && width < 400) {
         this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '1.1em');
       }
-      if (window.innerWidth < 320) {
+      if (width < 320) {
         this.renderer.setStyle(this.blogTitle.nativeElement, 'font-size', '0.9em');
       }
   }
  
   send() {
     this.Send.detailsofBlog.next(this.blog);
+    console.log(this.blogOpen);
     if ( this.isBrowser ) {
       window.scrollTo(0, 0);
     }

@@ -5,23 +5,25 @@
     <span *ngIf="blog">{{blog.readingTime}}</span>
   </p>
   <div class="blogImageHolder">
-    <img 
-      class="blogImage" 
-      alt="blogImage" 
-      src="{{blog.blogImage}}"  
-      (error)="setDefaultBlogImage()" 
-      (load)="removeInitalImage($event)"
-      role="button" 
-      *ngIf="blogDataRecieved"
-      (click)="openfullImage()">
-    <img 
-      class="blogImage"  
-      alt="InitialblogImage" 
-      src="/assets/images/default-image.png" 
-      *ngIf="loading" 
-      (click)="openfullImage()" 
-      role="button">
-    <img src="/assets/images/sports-social-zoom-out-orange.png" alt="sports-social-zoom-out-orange" role="button" (click)="openfullImage()"  class="zoom">
+    <ng-container *ngIf="isBrowser">
+      <img 
+        class="blogImage" 
+        alt="blogImage" 
+        src="{{blog.blogImage}}"  
+        (error)="setDefaultBlogImage()" 
+        (load)="removeInitalImage($event)"
+        role="button" 
+        *ngIf="blogDataRecieved"
+        (click)="openfullImage()">
+      <img 
+        class="blogImage"  
+        alt="InitialblogImage" 
+        src="/assets/images/default-image.png" 
+        *ngIf="loading" 
+        (click)="openfullImage()" 
+        role="button">
+      <img src="/assets/images/sports-social-zoom-out-orange.png" alt="sports-social-zoom-out-orange" role="button" (click)="openfullImage()"  class="zoom">
+    </ng-container>
   </div>
   
   <div class="content">
@@ -29,7 +31,8 @@
     <div class="blogInfo" #BlogInfo>
       <p *ngIf="blog" [innerHtml]="blog.heading" class="title"></p>
       <p  *ngIf="blog" class="shortDesc">{{blog.MetaDesc}}</p>
-      <div class="bloggerImage">
+      
+      <div class="bloggerImage" *ngIf="isBrowser">
         <img *ngIf="blog" src="{{blog.bloggerImage}}" (load)="removeBackgroundUserImage()"  (error)="setDefault()" #userImage>
       </div>
       <div class="blogger" *ngIf="blogDataRecieved">
@@ -48,7 +51,7 @@
           <span>{{blog.ShareCount}}</span>
         </span>
       </div>
-      
+      <img class="loading" *ngIf="!blogDataRecieved" src="/assets/images/sports-social-loading.gif" >
       <div class="shareOn" *ngIf="blogDataRecieved">
         Share on 
         <img src="/assets/images/sports-social-facebook-logo-black.png" role="button" (click)="shareOnFacebook()"  alt="sports-social-facebook-logo-black">
@@ -77,6 +80,7 @@
       </div>
       
     </div>
+    <ng-container >
     <div class="social" *ngIf="!removeSocial">
       <div class="follow">
         <p *ngIf="blogDataRecieved">Follow us</p>
@@ -110,12 +114,13 @@
           data-width="450"
           data-height="700"
           data-chrome="noheader nofooter"
-          href="https://twitter.com/chaseyoursport?ref_src=twsrc%5Etfw">
+          href="https://twitter.com/chaseyoursport">
           Tweets by chaseyoursport
         </a> 
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
     </div>
+  </ng-container>
   </div>
   <p class="shareOn center" *ngIf="blogDataRecieved"> 
      <span>Enjoy this article? Don't forget to share.</span>
@@ -135,12 +140,15 @@
       <img (click)="shareOngooglePlus()" src="/assets/images/sports-social-google-plus-blue.png" alt="Google+" title="Google+"/>
     </a>
   </p>
-  <div class="comments" *ngIf="blogDataRecieved">
-    <SportSocial-comments
-      [BlogId]="blogID">
-    </SportSocial-comments>
-  </div>
-<SportSocial-related-blogs></SportSocial-related-blogs>
+  <ng-container *ngIf="isBrowser">
+    <div class="comments" *ngIf="blogDataRecieved">
+      <SportSocial-comments
+        [BlogId]="blogID">
+      </SportSocial-comments>
+    </div>
+  </ng-container>
+  <SportSocial-related-blogs></SportSocial-related-blogs>
+
   
 </div> 
 <SportSocial-blog-footer *ngIf="blogDataRecieved"></SportSocial-blog-footer>
@@ -154,3 +162,6 @@
  <div class="fullImageHolder" *ngIf="openFullImage" #fullImage>
    <img src="{{blog.blogImage}}" title="{{blog.ImageDesc}}" (load)="onFullImageload()">
  </div>
+
+ 
+ 

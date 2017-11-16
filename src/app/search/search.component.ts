@@ -4,13 +4,16 @@ import {
   ViewChild,
   Renderer2,
   HostListener,
-  NgZone
+  NgZone,
+  PLATFORM_ID,
+  Inject
 } from '@angular/core';
 import { Meta,Title } from '@angular/platform-browser';
 import {PropertyService} from '../services/property.service';
 import {PostService} from '../services/post.service';
 import {ActivatedRoute} from '@angular/router';
-
+import { ɵgetDOM } from '@angular/platform-browser';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -24,7 +27,7 @@ export class SearchComponent implements OnInit {
   savedDetails:{
     tempBlog:any[],
     pageNumber:number
-  }
+  };
   tempBlogDetails;
   blogDetails;
 
@@ -33,9 +36,13 @@ export class SearchComponent implements OnInit {
   mobileView:boolean=false;
   haveData:boolean=true;
   keywords= ' ';
+  keys = ' ';
+  keyArray = [];
+  isBrowser: boolean = false;
   @ViewChild('searchPage') searchPage;
   @ViewChild('blog') blog;
   constructor(
+    @Inject(PLATFORM_ID) platformId: Object,
     private recieveHeight:PropertyService,
     private renderer:Renderer2,
     private recieveData: PropertyService,
@@ -46,37 +53,36 @@ export class SearchComponent implements OnInit {
     private titleService:Title,
     private metaService:Meta
   ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+    console.log(this.isBrowser);
   }
 
-  ngOnInit() {
-    this.setTopMargin();
-
-    this.recievekeyFromUrl();
-
-    this.setMobileView();
+    ngOnInit() {
+      this.setTopMargin();
+      if ( this.isBrowser ) {
+        this.recievekeyFromUrl();
+      }
+      this.setMobileView();
 
     }
+    
     ngAfterViewInit() {
       this.setTopMargin();
-      this.recievekeyFromUrl();
+     // this.recievekeyFromUrl();
     }
 
     setTitle() {
-      this.titleService.setTitle(this.recievedKey + ',' +
-                  'Read the latest articles, blogs, news and other informations related to '
-                  + this.recievedKey);
+      this.titleService.setTitle(this.recievedKey + ` | Latest updates,trends,blogs,news and articles | Sports Social Blog`);
     }
     setMetaTags() {
       this.metaService.addTags([
         { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-')},
-        { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to '
-          + this.recievedKey },
+        { name: 'description', content: 'All you need to know about' + this.recievekey + 'updates,news,trends and articles' },
         { name: 'title', content: this.recievedKey + ' Blogs'},
         { name: 'keywords' , content: this.keywords},
         { name: 'theme-color', content: '#4327a0'},
         { property: 'og:title', content: this.recievedKey + 'Blogs' },
-        { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to '
-           + this.recievedKey},
+        { property: 'og:description', content: 'All you need to know about' + this.recievekey + 'updates,news,trends and articles'},
         { property: 'og:url', content:  'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-')},
         { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
         { property: 'og:site_name', content: 'Chase Your Sport' },
@@ -85,8 +91,7 @@ export class SearchComponent implements OnInit {
         { name: 'twitter:site', content: '@Chaseyoursport'},
         { name: 'twitter:creator', content: '@NadeemKhan'},
         { name: 'twitter:title', content: this.recievedKey + ' Blogs'},
-        { name: 'twitter:description', content: 'Read the latest articles, blogs, news and other informations related to '
-          + this.recievedKey},
+        { name: 'twitter:description', content: 'All you need to know about' + this.recievekey + 'updates, news, trends and articles'},
         { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
       ]);
     }
@@ -116,7 +121,7 @@ export class SearchComponent implements OnInit {
 
           }
           this.show=true;
-          this.dataRecieved=true;
+          this.dataRecieved= true;
           for(let i in data){
               blogDetails.push(
                 {
@@ -133,94 +138,94 @@ export class SearchComponent implements OnInit {
                   exactDate: this.ExactDate(data[i].insertedDate),
                   readingTime: this.timeToRead(data[i].Content)
                 }
-              )
-              this.keywords += blogDetails[i].keywords + ','
+              );
+              this.keys += blogDetails[i].keywords + ',';
             }
           this.blogDetails = blogDetails;
-          console.log(this.keywords)
+          this.keyArray = this.keys.trim().split(',');
+          this.keyArray =  Array.from(new Set(this.keyArray));
+          this.keywords = this.keyArray.toString();
+          console.log(this.keys, this.keyArray, this.keywords);
           this.setMetaTags();
           }
-          
+
         );
-       
+
     }
     recievekeyFromUrl() {
 
-      this.recievedKey=this.route.snapshot.url[0].path.replace(/-/g, ' ')
-      this.route.params.subscribe(
-        (params)=>{
-          this.pageNumber=1
-          // console.log(params, " params")
-          this.recievedKey=params.tag.replace(/-/g, ' ')
-          this.setTitle()
-          this.getBlogs()
+      this.recievedKey = this.route.snapshot.url[0].path.replace(/-/g, ' ');
+        this.route.params.subscribe(
+          (params) => {
+            this.pageNumber = 1;
+            this.recievedKey = params.tag.replace(/-/g, ' ');
+            this.setTitle();
+            this.getBlogs();
 
-        }
-      )
-
+          }
+        );
     }
 
-    setMobileView(){
-      if(window.innerWidth<700){
-        this.mobileView=true;
+    setMobileView() {
+      const width = ɵgetDOM().getBoundingClientRect(this.searchPage.nativeElement).width;
+      if (width < 700) {
+        this.mobileView = true;
+       }else {
+         this.mobileView = false;
        }
-       else{
-         this.mobileView=false;
-       }
-
     }
 
     timeToRead(s:string){
       let words = s.split(' ');
-      let time=Math.round(words.length/180)
-      if(time>1){
-        return time + ' min read'
+      let time = Math.round(words.length / 180);
+      if (time > 1){
+        return time + ' min read';
       }
       else{
-        return '2 min read'
+        return '2 min read';
       }
     }
 
-    ExactDate(i:number){
-      let writtenDate=new Date(i*1000);
-      return writtenDate.toDateString()
+    ExactDate(i: number){
+      let writtenDate = new Date(i * 1000);
+      return writtenDate.toDateString();
     }
 
-    timePassed(i:string){
+    timePassed(i: string){
 
-        let writtenDate=new Date(parseInt(i)*1000);
-        let presentDate=new Date();
-        //console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
-        if(writtenDate.getFullYear()==presentDate.getFullYear()){
-          if(writtenDate.getMonth()==presentDate.getMonth()){
-            if(writtenDate.getDate()==presentDate.getDate()){
-                if(writtenDate.getHours()==presentDate.getHours()){
-                  if(writtenDate.getMinutes()==presentDate.getMinutes()){
-                    if(writtenDate.getSeconds()-presentDate.getSeconds()){
-                      return 'Just Now'
+        let writtenDate = new Date(parseInt(i) * 1000);
+        let presentDate = new Date();
+        // console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
+        if (writtenDate.getFullYear() == presentDate.getFullYear()){
+          if (writtenDate.getMonth() == presentDate.getMonth()){
+            if (writtenDate.getDate() == presentDate.getDate()){
+                if (writtenDate.getHours() == presentDate.getHours()){
+                  if (writtenDate.getMinutes() == presentDate.getMinutes()){
+                    if (writtenDate.getSeconds() - presentDate.getSeconds()){
+                      return 'Just Now';
                     }
                     else{
-                      return presentDate.getSeconds()-writtenDate.getSeconds()+' sec ago'
+                      return presentDate.getSeconds() - writtenDate.getSeconds() + ' sec ago';
                     }
                   }
                   else{
-                    return presentDate.getMinutes()-writtenDate.getMinutes()+' min ago'
+                    return presentDate.getMinutes() - writtenDate.getMinutes() + ' min ago';
                   }
                 }
                 else{
-                  return presentDate.getHours()-writtenDate.getHours()+' hrs ago'
+                  return presentDate.getHours() - writtenDate.getHours() + ' hrs ago';
                 }
             }
             else{
-              return presentDate.getDate()-writtenDate.getDate() + ' day ago'
+              return presentDate.getDate() - writtenDate.getDate() + ' day ago';
             }
           }
           else{
-            return presentDate.getMonth()-writtenDate.getMonth() + ' month ago'
+            return presentDate.getMonth() - writtenDate.getMonth() + ' month ago';
           }
         }
         else{
-          return presentDate.getFullYear()-writtenDate.getFullYear() + ' year ago'
+          return presentDate.getFullYear() - writtenDate.getFullYear() + ' year ago';
         }
 
     }
@@ -228,56 +233,55 @@ export class SearchComponent implements OnInit {
 
     setTopMargin(){
       this.recieveHeight.ofHeader.subscribe(
-        margin=>{
-        this.topMargin=margin
+        margin => {
+        this.topMargin = margin;
         }
-      )
-      this.renderer.setStyle(this.searchPage.nativeElement,'margin-top',this.topMargin+'px')
+      );
+      this.renderer.setStyle(this.searchPage.nativeElement, 'margin-top', this.topMargin + 'px');
     }
 
 
-    @HostListener('window:resize',[])onresize(){
-      this.setTopMargin()
+    @HostListener('window:resize', [])onresize(){
+      this.setTopMargin();
 
-      this.setMobileView()
+      this.setMobileView();
     }
-
 
     nextPage(){
       this.pageNumber++;
-      this.dataRecieved=false;
-      this.get.blogData(this.pageNumber,this.recievedKey).subscribe(
-        data=>{
-          console.log(data, ' nm')
-          this.dataRecieved=true;
-          if(data.length>0){
-            this.haveData=true
+      this.dataRecieved = false;
+      this.get.blogData(this.pageNumber, this.recievedKey).subscribe(
+        data => {
+          console.log(data, ' nm');
+          this.dataRecieved = true;
+          if (data.length > 0){
+            this.haveData = true;
           }
           else{
-            this.haveData=false;
+            this.haveData = false;
           }
-          console.log(this.haveData)
-          for(let i in data){
+          console.log(this.haveData);
+          for (let i in data){
             this.blogDetails.push(
               {
-                blogId:data[i].blogId,
-                blogImage:data[i].blogImage,
-                bloggerName:data[i].bloggerName,
-                bloggerImage:data[i].bloggerImage,
-                heading:data[i].heading,
-                Content:data[i].Content,
-                insertedDate:this.timePassed(data[i].insertedDate),
-                ViewCount:data[i].ViewCount,
-                ShareCount:data[i].ShareCount,
-                keywords:data[i].keywords.split(','),
-                exactDate:this.ExactDate(data[i].insertedDate),
-                readingTime:this.timeToRead(data[i].Content)
+                blogId: data[i].blogId,
+                blogImage: data[i].blogImage,
+                bloggerName: data[i].bloggerName,
+                bloggerImage: data[i].bloggerImage,
+                heading: data[i].heading,
+                Content: data[i].Content,
+                insertedDate: this.timePassed(data[i].insertedDate),
+                ViewCount: data[i].ViewCount,
+                ShareCount: data[i].ShareCount,
+                keywords: data[i].keywords.split(','),
+                exactDate: this.ExactDate(data[i].insertedDate),
+                readingTime: this.timeToRead(data[i].Content)
               }
-            )
+            );
          }
          //sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
         }
-      )
+      );
       //sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
     }
 

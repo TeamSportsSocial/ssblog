@@ -2,12 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
+var property_service_1 = require("../services/property.service");
 var TabViewAvailableDirective = /** @class */ (function () {
-    function TabViewAvailableDirective(elRef, renderer, platformId) {
+    function TabViewAvailableDirective(elRef, renderer, recieveWidth, platformId) {
+        var _this = this;
         this.elRef = elRef;
         this.renderer = renderer;
+        this.recieveWidth = recieveWidth;
         this.isBrowser = common_1.isPlatformBrowser(platformId);
-        this.windowWidth = window.innerWidth;
+        this.recieveWidth.ofWindow.subscribe(function (data) {
+            _this.windowWidth = data;
+        });
         if (this.windowWidth < 950 && this.windowWidth > 600) {
             this.className = this.elRef.nativeElement.className;
             if (this.className === 'col-8') {
@@ -21,7 +26,10 @@ var TabViewAvailableDirective = /** @class */ (function () {
         }
     }
     TabViewAvailableDirective.prototype.ngAfterViewInit = function () {
-        this.windowWidth = window.innerWidth;
+        var _this = this;
+        this.recieveWidth.ofWindow.subscribe(function (data) {
+            _this.windowWidth = data;
+        });
         if (this.windowWidth < 950 && this.windowWidth > 600) {
             this.className = this.elRef.nativeElement.className;
             if (this.className === 'col-8') {
@@ -36,7 +44,10 @@ var TabViewAvailableDirective = /** @class */ (function () {
         }
     };
     TabViewAvailableDirective.prototype.ngAfterContentInit = function () {
-        this.windowWidth = window.innerWidth;
+        var _this = this;
+        this.recieveWidth.ofWindow.subscribe(function (data) {
+            _this.windowWidth = data;
+        });
         if (this.windowWidth < 950 && this.windowWidth > 600) {
             this.className = this.elRef.nativeElement.className;
             if (this.className === 'col-8') {
@@ -51,7 +62,10 @@ var TabViewAvailableDirective = /** @class */ (function () {
         }
     };
     TabViewAvailableDirective.prototype.onresize = function () {
-        this.windowWidth = window.innerWidth;
+        var _this = this;
+        this.recieveWidth.ofWindow.subscribe(function (data) {
+            _this.windowWidth = data;
+        });
         if (this.windowWidth > 950) {
             this.className = this.elRef.nativeElement.className;
             if (this.className === 'col-12') {
@@ -84,6 +98,7 @@ var TabViewAvailableDirective = /** @class */ (function () {
     TabViewAvailableDirective.ctorParameters = function () { return [
         { type: core_1.ElementRef, },
         { type: core_1.Renderer2, },
+        { type: property_service_1.PropertyService, },
         { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
     ]; };
     TabViewAvailableDirective.propDecorators = {

@@ -9,10 +9,11 @@
 import * as i0 from './subscribe-card.component.css.shim.ngstyle';
 import * as i1 from '@angular/core';
 import * as i2 from '../../../../../src/app/directives/maintain-height-width-ratio.directive';
-import * as i3 from '@angular/common';
-import * as i4 from '../../../../../src/app/subscribe-card/subscribe-card.component';
-import * as i5 from '../../../../../src/app/services/post.service';
-import * as i6 from '../../../../../src/app/services/status.service';
+import * as i3 from '../../../../../src/app/services/property.service';
+import * as i4 from '@angular/common';
+import * as i5 from '../../../../../src/app/subscribe-card/subscribe-card.component';
+import * as i6 from '../../../../../src/app/services/post.service';
+import * as i7 from '../../../../../src/app/services/status.service';
 const styles_SubscribeCardComponent:any[] = [i0.styles];
 export const RenderType_SubscribeCardComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_SubscribeCardComponent,data:{}});
@@ -63,21 +64,22 @@ export function View_SubscribeCardComponent_0(_l:any):i1.ɵViewDefinition {
         }
         return ad;
       },(null as any),(null as any))),i1.ɵdid(3,4210688,(null as any),0,i2.MaintainHeightWidthRatioDirective,
-          [i1.ElementRef,i1.Renderer2,i1.PLATFORM_ID],(null as any),(null as any)),
-      (_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵeld(5,0,(null as any),
-          (null as any),1,'p',[['class','heading']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Subscribe via Email'])),
-      (_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵeld(8,0,[[1,0],['subscriber',
-          1]],(null as any),0,'input',[['email',''],['name','Email'],['placeholder',
-          'Enter your Email'],['type','email']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n  '])),
-      (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_SubscribeCardComponent_1)),
-      i1.ɵdid(11,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+          [i1.ElementRef,i1.Renderer2,i1.PLATFORM_ID,i3.PropertyService],(null as any),
+          (null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵeld(5,
+          0,(null as any),(null as any),1,'p',[['class','heading']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted(-1,
+          (null as any),['Subscribe via Email'])),(_l()(),i1.ɵted(-1,(null as any),
+          ['\n  '])),(_l()(),i1.ɵeld(8,0,[[1,0],['subscriber',1]],(null as any),0,
+          'input',[['email',''],['name','Email'],['placeholder','Enter your Email'],
+              ['type','email']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted(-1,(null as any),['\n  '])),(_l()(),i1.ɵand(16777216,
+          (null as any),(null as any),1,(null as any),View_SubscribeCardComponent_1)),
+      i1.ɵdid(11,16384,(null as any),0,i4.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
           {ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted(-1,(null as any),['\n  '])),
       (_l()(),i1.ɵeld(13,0,[[2,0],['button',1]],(null as any),1,'button',[['type',
           'submit']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
         var ad:boolean = true;
-        var _co:i4.SubscribeCardComponent = _v.component;
+        var _co:i5.SubscribeCardComponent = _v.component;
         if (('click' === en)) {
           const pd_0:any = ((<any>_co.Subscribe()) !== false);
           ad = (pd_0 && ad);
@@ -86,9 +88,9 @@ export function View_SubscribeCardComponent_0(_l:any):i1.ɵViewDefinition {
       },(null as any),(null as any))),(_l()(),i1.ɵted(-1,(null as any),['Submit'])),
       (_l()(),i1.ɵted(-1,(null as any),['\n'])),(_l()(),i1.ɵted(-1,(null as any),['\n'])),
       (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_SubscribeCardComponent_2)),
-      i1.ɵdid(18,16384,(null as any),0,i3.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
+      i1.ɵdid(18,16384,(null as any),0,i4.NgIf,[i1.ViewContainerRef,i1.TemplateRef],
           {ngIf:[0,'ngIf']},(null as any))],(_ck,_v) => {
-    var _co:i4.SubscribeCardComponent = _v.component;
+    var _co:i5.SubscribeCardComponent = _v.component;
     const currVal_0:any = _co.errorMessage;
     _ck(_v,11,0,currVal_0);
     const currVal_1:any = _co.showSubscriptionBox;
@@ -98,12 +100,12 @@ export function View_SubscribeCardComponent_0(_l:any):i1.ɵViewDefinition {
 export function View_SubscribeCardComponent_Host_0(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,0,(null as any),(null as any),1,'SportSocial-subscribe-card',
       ([] as any[]),(null as any),(null as any),(null as any),View_SubscribeCardComponent_0,
-      RenderType_SubscribeCardComponent)),i1.ɵdid(1,114688,(null as any),0,i4.SubscribeCardComponent,
-      [i5.PostService,i6.StatusService,i1.Renderer2],(null as any),(null as any))],
+      RenderType_SubscribeCardComponent)),i1.ɵdid(1,114688,(null as any),0,i5.SubscribeCardComponent,
+      [i6.PostService,i7.StatusService,i1.Renderer2],(null as any),(null as any))],
       (_ck,_v) => {
         _ck(_v,1,0);
       },(null as any));
 }
-export const SubscribeCardComponentNgFactory:i1.ComponentFactory<i4.SubscribeCardComponent> = i1.ɵccf('SportSocial-subscribe-card',
-    i4.SubscribeCardComponent,View_SubscribeCardComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovc3NibG9nL3NyYy9hcHAvc3Vic2NyaWJlLWNhcmQvc3Vic2NyaWJlLWNhcmQuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0M6L3NzYmxvZy9zcmMvYXBwL3N1YnNjcmliZS1jYXJkL3N1YnNjcmliZS1jYXJkLmNvbXBvbmVudC50cyIsIm5nOi8vL0M6L3NzYmxvZy9zcmMvYXBwL3N1YnNjcmliZS1jYXJkL3N1YnNjcmliZS1jYXJkLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovc3NibG9nL3NyYy9hcHAvc3Vic2NyaWJlLWNhcmQvc3Vic2NyaWJlLWNhcmQuY29tcG9uZW50LnRzLlN1YnNjcmliZUNhcmRDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwic3Vic2NyaWJlQ2FyZFwiIE1haW50YWluSGVpZ2h0V2lkdGhSYXRpbz5cclxuICA8cCBjbGFzcz1cImhlYWRpbmdcIj5TdWJzY3JpYmUgdmlhIEVtYWlsPC9wPlxyXG4gIDxpbnB1dCB0eXBlPVwiZW1haWxcIiBuYW1lPVwiRW1haWxcIiBwbGFjZWhvbGRlcj1cIkVudGVyIHlvdXIgRW1haWxcIiAgI3N1YnNjcmliZXIgZW1haWwgPlxyXG4gIDxwICBjbGFzcz1cImVycm9yTWVzc2FnZVwiICpuZ0lmPVwiZXJyb3JNZXNzYWdlXCI+RW1haWwgaXMgSW5hdmxpZCEhISBQbGVhc2UgZW50ZXIgY29ycmVjdCBFbWFpbDwvcD5cclxuICA8YnV0dG9uIChjbGljayk9XCJTdWJzY3JpYmUoKVwiIHR5cGU9XCJzdWJtaXRcIiAjYnV0dG9uPlN1Ym1pdDwvYnV0dG9uPlxyXG48L2Rpdj5cclxuPGRpdiBjbGFzcz1cInN1YnNjcmlwdGlvbkJveFwiICNzdWJzY3JpcHRpb25Cb3ggKm5nSWY9XCJzaG93U3Vic2NyaXB0aW9uQm94XCI+XHJcbiAgICA8ZGl2IGNsYXNzPVwidG9wXCI+XHJcbiAgICAgICAgPGltZyBzcmM9XCIvYXNzZXRzL2ltYWdlcy9zcG9ydHMtc29jaWFsLWNhbmNlbC1ibGFjay5wbmdcIiByb2xlPVwiYnV0dG9uXCIgY2xhc3M9XCJjbG9zZU1lc3NhZ2VcIiAgKGNsaWNrKT1cImNsb3NlKClcIj5cclxuICAgIDwvZGl2PlxyXG4gICAgPGRpdiBjbGFzcz1cImJvdHRvbVwiPlxyXG4gICAgICAgIDxwPkdyZWF0PC9wPlxyXG4gICAgICAgIDxwPlxyXG4gICAgICAgICAgICBZb3UgaGF2ZSBTdWJzY3JpYmVkIGZvciBvdXIgTmV3c2xldHRlciBhbmQgQmxvZyB1cGRhdGVzLlxyXG4gICAgICAgIDwvcD5cclxuICAgIDwvZGl2PlxyXG48L2Rpdj4iLCI8U3BvcnRTb2NpYWwtc3Vic2NyaWJlLWNhcmQ+PC9TcG9ydFNvY2lhbC1zdWJzY3JpYmUtY2FyZD4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7O29CQ0dFO01BQUE7TUFBOEM7Ozs7b0JBR2hEO01BQUE7TUFBQSxnQkFBMEUsOENBQ3RFO01BQUE7TUFBQSw0Q0FBaUI7TUFBQSxpQkFDYjtNQUFBO01BQUE7UUFBQTtRQUFBO1FBQTZGO1VBQUE7VUFBQTtRQUFBO1FBQTdGO01BQUEsZ0NBQStHO01BQzdHLDhDQUNOO1VBQUE7VUFBQSw4QkFBb0I7TUFDaEI7VUFBQSwwREFBRztVQUFBLDBCQUFTO01BQ1o7VUFBQSwwREFBRztVQUFBO01BRUMsOENBQ0Y7VUFBQTs7OztNQWZWO1VBQUE7Z0JBQUE7UUFBQTtRQUFBO1VBQUE7VUFBQTtRQUFBO1FBQUE7TUFBQSx1Q0FBQTtVQUFBO01BQW9ELDRDQUNsRDtVQUFBO1VBQUEsOEJBQW1CO01BQXVCLDRDQUMxQztVQUFBO1VBQUE7VUFBQSw4QkFBb0Y7TUFDcEY7YUFBQTtVQUFBLGlDQUFnRztNQUNoRztVQUFBO1FBQUE7UUFBQTtRQUFRO1VBQUE7VUFBQTtRQUFBO1FBQVI7TUFBQSxnQ0FBb0Q7TUFBZSwwQ0FDL0Q7TUFDTjthQUFBO1VBQUE7O0lBSDJCO0lBQXpCLFlBQXlCLFNBQXpCO0lBRzRDO0lBQTlDLFlBQThDLFNBQTlDOzs7O29CQ05BO01BQUE7dUNBQUEsVUFBQTtNQUFBOztRQUFBOzs7OyJ9
+export const SubscribeCardComponentNgFactory:i1.ComponentFactory<i5.SubscribeCardComponent> = i1.ɵccf('SportSocial-subscribe-card',
+    i5.SubscribeCardComponent,View_SubscribeCardComponent_Host_0,{},{},([] as any[]));
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovbmFkL3NzYmxvZy9zcmMvYXBwL3N1YnNjcmliZS1jYXJkL3N1YnNjcmliZS1jYXJkLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9uYWQvc3NibG9nL3NyYy9hcHAvc3Vic2NyaWJlLWNhcmQvc3Vic2NyaWJlLWNhcmQuY29tcG9uZW50LnRzIiwibmc6Ly8vQzovbmFkL3NzYmxvZy9zcmMvYXBwL3N1YnNjcmliZS1jYXJkL3N1YnNjcmliZS1jYXJkLmNvbXBvbmVudC5odG1sIiwibmc6Ly8vQzovbmFkL3NzYmxvZy9zcmMvYXBwL3N1YnNjcmliZS1jYXJkL3N1YnNjcmliZS1jYXJkLmNvbXBvbmVudC50cy5TdWJzY3JpYmVDYXJkQ29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiPGRpdiBjbGFzcz1cInN1YnNjcmliZUNhcmRcIiBNYWludGFpbkhlaWdodFdpZHRoUmF0aW8+XHJcbiAgPHAgY2xhc3M9XCJoZWFkaW5nXCI+U3Vic2NyaWJlIHZpYSBFbWFpbDwvcD5cclxuICA8aW5wdXQgdHlwZT1cImVtYWlsXCIgbmFtZT1cIkVtYWlsXCIgcGxhY2Vob2xkZXI9XCJFbnRlciB5b3VyIEVtYWlsXCIgICNzdWJzY3JpYmVyIGVtYWlsID5cclxuICA8cCAgY2xhc3M9XCJlcnJvck1lc3NhZ2VcIiAqbmdJZj1cImVycm9yTWVzc2FnZVwiPkVtYWlsIGlzIEluYXZsaWQhISEgUGxlYXNlIGVudGVyIGNvcnJlY3QgRW1haWw8L3A+XHJcbiAgPGJ1dHRvbiAoY2xpY2spPVwiU3Vic2NyaWJlKClcIiB0eXBlPVwic3VibWl0XCIgI2J1dHRvbj5TdWJtaXQ8L2J1dHRvbj5cclxuPC9kaXY+XHJcbjxkaXYgY2xhc3M9XCJzdWJzY3JpcHRpb25Cb3hcIiAjc3Vic2NyaXB0aW9uQm94ICpuZ0lmPVwic2hvd1N1YnNjcmlwdGlvbkJveFwiPlxyXG4gICAgPGRpdiBjbGFzcz1cInRvcFwiPlxyXG4gICAgICAgIDxpbWcgc3JjPVwiL2Fzc2V0cy9pbWFnZXMvc3BvcnRzLXNvY2lhbC1jYW5jZWwtYmxhY2sucG5nXCIgcm9sZT1cImJ1dHRvblwiIGNsYXNzPVwiY2xvc2VNZXNzYWdlXCIgIChjbGljayk9XCJjbG9zZSgpXCI+XHJcbiAgICA8L2Rpdj5cclxuICAgIDxkaXYgY2xhc3M9XCJib3R0b21cIj5cclxuICAgICAgICA8cD5HcmVhdDwvcD5cclxuICAgICAgICA8cD5cclxuICAgICAgICAgICAgWW91IGhhdmUgU3Vic2NyaWJlZCBmb3Igb3VyIE5ld3NsZXR0ZXIgYW5kIEJsb2cgdXBkYXRlcy5cclxuICAgICAgICA8L3A+XHJcbiAgICA8L2Rpdj5cclxuPC9kaXY+IiwiPFNwb3J0U29jaWFsLXN1YnNjcmliZS1jYXJkPjwvU3BvcnRTb2NpYWwtc3Vic2NyaWJlLWNhcmQ+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7b0JDR0U7TUFBQTtNQUE4Qzs7OztvQkFHaEQ7TUFBQTtNQUFBLGdCQUEwRSw4Q0FDdEU7TUFBQTtNQUFBLDRDQUFpQjtNQUFBLGlCQUNiO01BQUE7TUFBQTtRQUFBO1FBQUE7UUFBNkY7VUFBQTtVQUFBO1FBQUE7UUFBN0Y7TUFBQSxnQ0FBK0c7TUFDN0csOENBQ047VUFBQTtVQUFBLDhCQUFvQjtNQUNoQjtVQUFBLDBEQUFHO1VBQUEsMEJBQVM7TUFDWjtVQUFBLDBEQUFHO1VBQUE7TUFFQyw4Q0FDRjtVQUFBOzs7O01BZlY7VUFBQTtnQkFBQTtRQUFBO1FBQUE7VUFBQTtVQUFBO1FBQUE7UUFBQTtNQUFBLHVDQUFBO1VBQUE7VUFBQSxlQUFvRCw0Q0FDbEQ7VUFBQTtVQUFBLDBEQUFtQjtVQUFBLHdDQUF1QjtVQUFBLFdBQzFDO1VBQUE7Y0FBQTtVQUFBLGdCQUFvRiw0Q0FDcEY7VUFBQTthQUFBO1VBQUEsaUNBQWdHO01BQ2hHO1VBQUE7UUFBQTtRQUFBO1FBQVE7VUFBQTtVQUFBO1FBQUE7UUFBUjtNQUFBLGdDQUFvRDtNQUFlLDBDQUMvRDtNQUNOO2FBQUE7VUFBQTs7SUFIMkI7SUFBekIsWUFBeUIsU0FBekI7SUFHNEM7SUFBOUMsWUFBOEMsU0FBOUM7Ozs7b0JDTkE7TUFBQTt1Q0FBQSxVQUFBO01BQUE7O1FBQUE7Ozs7In0=

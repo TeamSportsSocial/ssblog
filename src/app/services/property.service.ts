@@ -9,9 +9,11 @@ export class PropertyService {
   constructor() { }
   
   ofHeader =new ReplaySubject();
+  ofWindow = new ReplaySubject();
   ofKeyWords=new ReplaySubject();
   ofBlogCard=new ReplaySubject();
   detailsofBlog= new ReplaySubject();
   saveDetailsOfBlog=new ReplaySubject();
-  ofsearchBlog=new Subject()
+  ofsearchBlog=new Subject();
+  isclicked = new ReplaySubject();
 }

@@ -201,14 +201,13 @@ calCharCount() {
     Element: document.activeElement
   };
 }
-AddH1Tag() {
+selectTag(event) {
   this.initialActiveElement.Element.focus();
-  document.execCommand('formatBlock', false, 'h1');
+  // console.log(event.target.value);
+  document.execCommand('formatBlock', false, (event.target.value));
+  // console.log(this.initialActiveElement.Element);
 }
-AddH2Tag() {
-  this.initialActiveElement.Element.focus();
-  document.execCommand('formatBlock', false, 'h2');
-}
+
 bold(event) {
   this.initialActiveElement.Element.focus();
   document.execCommand('bold', false, null);

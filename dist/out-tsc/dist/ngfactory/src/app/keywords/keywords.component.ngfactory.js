@@ -19,7 +19,7 @@ var i9 = require("../../../../../src/app/services/get.service");
 var styles_KeywordsComponent = [i0.styles];
 exports.RenderType_KeywordsComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_KeywordsComponent, data: {} });
-function View_KeywordsComponent_1(_l) {
+function View_KeywordsComponent_2(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 2, 'SportSocialBlog-keyword', [['class', 'keyword'], ['role', 'button']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -29,20 +29,29 @@ function View_KeywordsComponent_1(_l) {
             }
             return ad;
         }, i2.View_KeywordComponent_0, i2.RenderType_KeywordComponent)), i1.ɵdid(1, 114688, null, 0, i3.KeywordComponent, [i1.Renderer2], { title: [0, 'title'] }, null),
-        (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
+        (_l()(), i1.ɵted(-1, null, ['\n      ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.name;
         _ck(_v, 1, 0, currVal_0);
     }, null);
 }
-function View_KeywordsComponent_0(_l) {
-    return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { Keywords: 0 }), (_l()(), i1.ɵeld(1, 0, [[1, 0], ['Keywords',
-                1]], null, 7, 'div', [['class', 'keywords']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(3, 0, null, null, 4, 'div', [], null, null, null, null, null)), (_l()(),
-            i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_KeywordsComponent_1)), i1.ɵdid(6, 802816, null, 0, i4.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0,
-                'ngForOf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(),
-            i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵted(-1, null, ['\n']))], function (_ck, _v) {
+function View_KeywordsComponent_1(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 7, null, null, null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(2, 0, null, null, 4, 'div', [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])),
+        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_KeywordsComponent_2)),
+        i1.ɵdid(5, 802816, null, 0, i4.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
+            i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, ['\n  ']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.keywords;
-        _ck(_v, 6, 0, currVal_0);
+        _ck(_v, 5, 0, currVal_0);
+    }, null);
+}
+function View_KeywordsComponent_0(_l) {
+    return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { Keywords: 0 }), (_l()(), i1.ɵeld(1, 0, [[1, 0], ['Keywords',
+                1]], null, 4, 'div', [['class', 'keywords']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_KeywordsComponent_1)), i1.ɵdid(4, 16384, null, 0, i4.NgIf, [i1.ViewContainerRef,
+            i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵted(-1, null, ['\n']))], function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = _co.isBrowser;
+        _ck(_v, 4, 0, currVal_0);
     }, null);
 }
 exports.View_KeywordsComponent_0 = View_KeywordsComponent_0;

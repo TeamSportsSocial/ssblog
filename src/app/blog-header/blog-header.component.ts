@@ -20,7 +20,7 @@ import {Router} from '@angular/router';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { Subject } from 'rxjs/Subject';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
-
+import { ɵgetDOM } from '@angular/platform-browser';
 
 
 @Component({
@@ -51,9 +51,10 @@ export class BlogHeaderComponent implements OnInit {
   haveresult: boolean=false;
   searchKey = new ReplaySubject();
   SearchKey;
-  isBrowser: boolean;
+  isBrowser: boolean = false;
   constructor(
     private sendHeight: PropertyService,
+    private sendWidth: PropertyService,
     private renderer: Renderer2,
     private send: PropertyService,
     private get: GetService,
@@ -64,36 +65,31 @@ export class BlogHeaderComponent implements OnInit {
     private sendKey: PropertyService,
     private zone: NgZone,
     @Inject(PLATFORM_ID) platformId: Object
-  ) { 
-      this.isBrowser = isPlatformBrowser(platformId);
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
   }
   ngOnInit() {
+    this.responsiveView();
     this.get.keywords()
     .subscribe(
-      res=>{
-        for(let i in res){
+      res => {
+        // tslint:disable-next-line:forin
+        for (const i in res) {
           this.keywords.push(
             res[i].Keyword
-          )
+          );
         }
       }
     );
-    this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
-    if (this.isBrowser) {
-      if (window.innerWidth <= 750) {
-        this.mobileView = true;
-      }else {
-        this.mobileView = false;
-      }
-    }
+    this.sendHeight.ofHeader.next(ɵgetDOM().getBoundingClientRect(this.Header.nativeElement).bottom);
+    this.sendWindowWidth();
 
   }
   ngAfterViewChecked() {
-    if ( this.isBrowser ) {
-      this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
-    }
+    this.sendWindowWidth();
+    this.sendHeight.ofHeader.next(ɵgetDOM().getBoundingClientRect(this.Header.nativeElement).bottom);
   }
-
+  
   @HostListener('window:click', [])onclick() {
     this.haveresult = false;
     if (this.searchBox) {
@@ -102,16 +98,12 @@ export class BlogHeaderComponent implements OnInit {
   }
 
   @HostListener('window:resize', []) onresize() {
+    this.responsiveView();
     if (this.resultBox) {
      this.setStyleOfResultBox();
     }
-    this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
-    if ( this.isBrowser ) {
-    if ( window.innerWidth <= 750 ) {
-      this.mobileView = true;
-    } else {
-      this.mobileView = false;
-    }}
+    this.sendWindowWidth();
+    this.sendHeight.ofHeader.next(ɵgetDOM().getBoundingClientRect(this.Header.nativeElement).bottom);
 
   }
   openDropDown() {
@@ -127,10 +119,19 @@ export class BlogHeaderComponent implements OnInit {
     this.searchBox.nativeElement.value = '';
     this.haveresult = false;
   }
-
+  responsiveView() {
+    const width = ɵgetDOM().getBoundingClientRect(this.Header.nativeElement).width;
+    console.log(width, 'window');
+    if ( width <= 750 ) {
+      this.mobileView = true;
+    } else {
+      this.mobileView = false;
+    }
+  }
+  sendWindowWidth() {
+    this.sendWidth.ofWindow.next(ɵgetDOM().getBoundingClientRect(this.Header.nativeElement).width);
+  }
   sendData(event) {
-   // console.clear();
-     // console.log(event);
     if (event.target.value !== '' ) {
       this.haveresult = true;
     }

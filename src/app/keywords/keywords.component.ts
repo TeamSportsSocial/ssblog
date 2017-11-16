@@ -16,6 +16,8 @@ import {PostService} from '../services/post.service';
 import {GetService} from '../services/get.service';
 import {Router} from '@angular/router';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { ɵgetDOM } from '@angular/platform-browser';
+
 @Component({
   selector: 'SportSocialBlog-keywords',
   templateUrl: './keywords.component.html',
@@ -35,7 +37,7 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
   sumofkeyWordWidth;
   pageNumber=1;
   path:string;
-  isBrowser: boolean;
+  isBrowser: boolean = false;
   constructor(
     @Inject(PLATFORM_ID) platformId: Object,
     private renderer :Renderer2 ,
@@ -47,7 +49,7 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     private sendKey:PropertyService,
     private get: GetService
 
-  ) { 
+  ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
@@ -80,7 +82,7 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     )
     this.renderer.setStyle(this.Keywords.nativeElement,'position','fixed');
     this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+'px');
-    this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
+    this.sendHeight.ofKeyWords.next( ɵgetDOM().getBoundingClientRect(this.Keywords.nativeElement).bottom);
   }
   ngAfterViewChecked(){
     this.recieveHeight.ofHeader.subscribe(
@@ -91,7 +93,7 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     this.renderer.setStyle(this.Keywords.nativeElement, 'position','fixed');
     this.renderer.setStyle(this.Keywords.nativeElement,'top',this.topMargin+'px');
 
-      this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
+      this.sendHeight.ofKeyWords.next(ɵgetDOM().getBoundingClientRect(this.Keywords.nativeElement).bottom);
     
   }
   send(i:number){
@@ -106,9 +108,9 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
     //this.sendKey.ofBlogCard.next(this.keywords[i].name)
   }
   @HostListener('window:resize',[]) onresize(){
-    this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
+    this.sendHeight.ofKeyWords.next(ɵgetDOM().getBoundingClientRect(this.Keywords.nativeElement).bottom);
     this.recieveHeight.ofHeader.subscribe(
-      margin=> this.topMargin=margin
+      margin => this.topMargin=margin
     )
     
     this.renderer.setStyle(this.Keywords.nativeElement,'position','fixed');

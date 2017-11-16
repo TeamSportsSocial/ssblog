@@ -9,10 +9,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var i0 = require("./subscribe-card.component.css.shim.ngstyle");
 var i1 = require("@angular/core");
 var i2 = require("../../../../../src/app/directives/maintain-height-width-ratio.directive");
-var i3 = require("@angular/common");
-var i4 = require("../../../../../src/app/subscribe-card/subscribe-card.component");
-var i5 = require("../../../../../src/app/services/post.service");
-var i6 = require("../../../../../src/app/services/status.service");
+var i3 = require("../../../../../src/app/services/property.service");
+var i4 = require("@angular/common");
+var i5 = require("../../../../../src/app/subscribe-card/subscribe-card.component");
+var i6 = require("../../../../../src/app/services/post.service");
+var i7 = require("../../../../../src/app/services/status.service");
 var styles_SubscribeCardComponent = [i0.styles];
 exports.RenderType_SubscribeCardComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_SubscribeCardComponent, data: {} });
@@ -47,13 +48,9 @@ function View_SubscribeCardComponent_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(3, 4210688, null, 0, i2.MaintainHeightWidthRatioDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID], null, null),
-        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(5, 0, null, null, 1, 'p', [['class', 'heading']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['Subscribe via Email'])),
-        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(8, 0, [[1, 0], ['subscriber',
-                1]], null, 0, 'input', [['email', ''], ['name', 'Email'], ['placeholder',
-                'Enter your Email'], ['type', 'email']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n  '])),
-        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SubscribeCardComponent_1)),
-        i1.ɵdid(11, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n  '])),
+        }, null, null)), i1.ɵdid(3, 4210688, null, 0, i2.MaintainHeightWidthRatioDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID, i3.PropertyService], null, null), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(5, 0, null, null, 1, 'p', [['class', 'heading']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['Subscribe via Email'])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(8, 0, [[1, 0], ['subscriber', 1]], null, 0, 'input', [['email', ''], ['name', 'Email'], ['placeholder', 'Enter your Email'],
+            ['type', 'email']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SubscribeCardComponent_1)),
+        i1.ɵdid(11, 16384, null, 0, i4.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n  '])),
         (_l()(), i1.ɵeld(13, 0, [[2, 0], ['button', 1]], null, 1, 'button', [['type',
                 'submit']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
@@ -66,7 +63,7 @@ function View_SubscribeCardComponent_0(_l) {
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['Submit'])),
         (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵted(-1, null, ['\n'])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SubscribeCardComponent_2)),
-        i1.ɵdid(18, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null)], function (_ck, _v) {
+        i1.ɵdid(18, 16384, null, 0, i4.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null)], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.errorMessage;
         _ck(_v, 11, 0, currVal_0);
@@ -76,10 +73,10 @@ function View_SubscribeCardComponent_0(_l) {
 }
 exports.View_SubscribeCardComponent_0 = View_SubscribeCardComponent_0;
 function View_SubscribeCardComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocial-subscribe-card', [], null, null, null, View_SubscribeCardComponent_0, exports.RenderType_SubscribeCardComponent)), i1.ɵdid(1, 114688, null, 0, i4.SubscribeCardComponent, [i5.PostService, i6.StatusService, i1.Renderer2], null, null)], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocial-subscribe-card', [], null, null, null, View_SubscribeCardComponent_0, exports.RenderType_SubscribeCardComponent)), i1.ɵdid(1, 114688, null, 0, i5.SubscribeCardComponent, [i6.PostService, i7.StatusService, i1.Renderer2], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }
 exports.View_SubscribeCardComponent_Host_0 = View_SubscribeCardComponent_Host_0;
-exports.SubscribeCardComponentNgFactory = i1.ɵccf('SportSocial-subscribe-card', i4.SubscribeCardComponent, View_SubscribeCardComponent_Host_0, {}, {}, []);
+exports.SubscribeCardComponentNgFactory = i1.ɵccf('SportSocial-subscribe-card', i5.SubscribeCardComponent, View_SubscribeCardComponent_Host_0, {}, {}, []);
 //# sourceMappingURL=subscribe-card.component.ngfactory.js.map

@@ -247,6 +247,11 @@
     display: block;
     font-size: 1.4em; 
 }
+.loading{
+    display: block;
+    margin: auto;
+    z-index: 50;
+}
 @media (max-width:800px) and (min-width:600px){
     .fullImageHolder{
         width: 90%;

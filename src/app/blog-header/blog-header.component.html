@@ -1,12 +1,15 @@
 <header #Header>
+  <ng-container *ngIf="isBrowser">
   <ul class="left" #left>
     <a href="/">
       <li class="brand-image">
         <img src="/assets/images/sports-social-logo.png" alt="Sports Social logo">
       </li>
       <li class="brand-title">
-        <span>Sports</span> <span>Social</span> <span>Blog</span>
-        <p>Chase your Sport</p>
+        <h1>
+          <span>Sports</span> <span>Social</span> <span>Blog</span>
+          <p>Chase your Sport</p>
+        </h1>
       </li>
     </a>
     <li  *ngIf="!mobileView">
@@ -83,4 +86,5 @@
       
     </div>
   </div> 
+</ng-container>
 </header>

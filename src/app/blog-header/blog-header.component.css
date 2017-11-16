@@ -46,23 +46,26 @@ img{
     height: 100%;
 }
 .brand-title{
-   font-size: 1.4em;
-   font-weight: 700;
+  
    display: inline-block;
    vertical-align: middle;
 }
-.brand-title>span:first-child{
+.brand-title > h1{
+    font-size: 1.5em ;
+    font-weight: 700;
+}
+.brand-title span:first-child{
     color: #024770;
 }
-.brand-title>span:nth-child(2){
+.brand-title span:nth-child(2){
     color: #ffa600;
 }
-.brand-title>span:nth-child(3){
+.brand-title span:nth-child(3){
     font-size: 60%;
     color: black;
     font-weight: 700;
 }
-.brand-title>p{
+.brand-title p{
     font-size: 55%;
     color: #024770;
     font-weight: 400;

@@ -42,7 +42,7 @@ select,option{
 .file{
     margin: 1.5%;
 }
-.h1,.h2{
+.h{
     display: inline-block;
     color:#ffa600;
     font-size: 1.8em;

@@ -68,6 +68,7 @@ var EditorPanelComponent = /** @class */ (function () {
             key: 'hello',
             Element: document.activeElement
         };
+        // console.log(event)
     };
     EditorPanelComponent.prototype.onkeyup = function (event) {
         this.initialActiveElement = {
@@ -75,37 +76,33 @@ var EditorPanelComponent = /** @class */ (function () {
             Element: document.activeElement
         };
     };
-    EditorPanelComponent.prototype.AddH1Tag = function () {
+    EditorPanelComponent.prototype.selectTag = function (event) {
         this.initialActiveElement.Element.focus();
-        document.execCommand('formatBlock', false, 'h1');
-    };
-    EditorPanelComponent.prototype.AddH2Tag = function () {
-        this.initialActiveElement.Element.focus();
-        document.execCommand('formatBlock', false, 'h2');
+        // console.log(event.target.value);
+        document.execCommand('formatBlock', false, (event.target.value));
+        // console.log(this.initialActiveElement.Element);
     };
     EditorPanelComponent.prototype.bold = function (event) {
         this.initialActiveElement.Element.focus();
         document.execCommand('bold', false, null);
-        if (event.target.className === 'not-selected') {
-            this.renderer.removeClass(event.target, 'not-selected');
-            this.renderer.addClass(event.target, 'selected');
-        }
-        else {
-            this.renderer.removeClass(event.target, 'selected');
-            this.renderer.addClass(event.target, 'not-selected');
-        }
+        /*  if (event.target.className === 'not-selected') {
+           this.renderer.removeClass(event.target, 'not-selected');
+           this.renderer.addClass(event.target, 'selected');
+         } else {
+           this.renderer.removeClass(event.target, 'selected');
+           this.renderer.addClass(event.target, 'not-selected');
+         } */
     };
     EditorPanelComponent.prototype.italic = function (event) {
         this.initialActiveElement.Element.focus();
         document.execCommand('italic', false, null);
-        if (event.target.className === 'not-selected') {
-            this.renderer.removeClass(event.target, 'not-selected');
-            this.renderer.addClass(event.target, 'selected');
-        }
-        else {
-            this.renderer.removeClass(event.target, 'selected');
-            this.renderer.addClass(event.target, 'not-selected');
-        }
+        /* if (event.target.className === 'not-selected'){
+          this.renderer.removeClass(event.target, 'not-selected');
+          this.renderer.addClass(event.target, 'selected');
+        } else {
+          this.renderer.removeClass(event.target, 'selected');
+          this.renderer.addClass(event.target, 'not-selected');
+        } */
     };
     EditorPanelComponent.prototype.underline = function (event) {
         this.initialActiveElement.Element.focus();
@@ -204,7 +201,7 @@ var EditorPanelComponent = /** @class */ (function () {
     EditorPanelComponent.prototype.addLink = function (event) {
         this.selectedText = document.getSelection().toString();
         console.log(this.selectedText);
-        if (this.selectedText != '') {
+        if (this.selectedText !== '') {
             this.Text.nativeElement.value = this.selectedText;
             document.execCommand('cut', false, null);
         }
@@ -272,7 +269,6 @@ var EditorPanelComponent = /** @class */ (function () {
         var reader = event.target;
         this.imageSrc = reader.result;
         console.log(this.imageSrc);
-        //document.execCommand('insertImage', false, this.imageSrc);
         document.execCommand('insertHTML', false, "<div style=\"max-width:100%;height:auto;\" ><img style=\"max-width:100%;max-height:100%;\" src=\""
             + this.imageSrc + "\"></div>");
     };

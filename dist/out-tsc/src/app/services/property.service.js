@@ -6,11 +6,13 @@ var Subject_1 = require("rxjs/Subject");
 var PropertyService = /** @class */ (function () {
     function PropertyService() {
         this.ofHeader = new ReplaySubject_1.ReplaySubject();
+        this.ofWindow = new ReplaySubject_1.ReplaySubject();
         this.ofKeyWords = new ReplaySubject_1.ReplaySubject();
         this.ofBlogCard = new ReplaySubject_1.ReplaySubject();
         this.detailsofBlog = new ReplaySubject_1.ReplaySubject();
         this.saveDetailsOfBlog = new ReplaySubject_1.ReplaySubject();
         this.ofsearchBlog = new Subject_1.Subject();
+        this.isclicked = new ReplaySubject_1.ReplaySubject();
     }
     PropertyService.decorators = [
         { type: core_1.Injectable },

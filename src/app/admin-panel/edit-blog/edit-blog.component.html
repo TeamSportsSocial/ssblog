@@ -39,10 +39,14 @@
     </div>  
     
     <div>
-        <label >
-            <span class="h1" role="button" title="heading" (click)="AddH1Tag()">H1</span>
-            <span class="h2" role="button" title="subHeading" (click)="AddH2Tag()">H2</span>
-        </label>
+        <select (change)="selectTag($event)">
+            <option value="h1">h1</option>
+            <option value="h2">h2</option>
+            <option value="h3">h3</option>
+            <option value="h4">h4</option>
+            <option value="h5">h5</option>
+            <option value="h6">h6</option>
+        </select>
         <label class="file">
             <img src="/assets/images/sports-social-indent.png" title="indent" role="button" alt="" (click)="indent($event)" class="not-selected" >
         </label>

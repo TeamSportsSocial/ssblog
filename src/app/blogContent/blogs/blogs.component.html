@@ -1,4 +1,5 @@
 <SportSocialBlog-keywords></SportSocialBlog-keywords>
+<div #window>
 <div class="blog" #blog *ngIf="!mobileView" >
     <div class="latestBlog"  *ngFor="let data of latestBlogDetails;let i=index">
         <SportSocial-latest-blog 
@@ -136,4 +137,4 @@
     </p>
     <SportSocial-blog-footer *ngIf="show"></SportSocial-blog-footer> 
           
-       
+</div>      

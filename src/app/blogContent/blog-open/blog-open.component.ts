@@ -7,7 +7,8 @@ import {
     NgZone,
     PLATFORM_ID,
     Inject,
-    AfterViewInit
+    AfterViewInit,
+    OnDestroy
 } from '@angular/core';
 import {Http} from '@angular/http';
 import { Meta, Title } from '@angular/platform-browser';
@@ -16,7 +17,7 @@ import {SaveService} from '../../services/save.service';
 import {PostService} from '../../services/post.service';
 import {ActivatedRoute} from '@angular/router';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
-
+import { ɵgetDOM } from '@angular/platform-browser';
 
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import {Router} from '@angular/router';
@@ -34,7 +35,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
     blog;
     topMargin;
     removeSocial: boolean=false;
-    isConnectedWithFacebook:boolean=false;
+    isConnectedWithFacebook: boolean=false;
     mobileView=false;
     dataRecived=false;
     openFullImage=false;
@@ -48,7 +49,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
     content;
     contentForShare;
     keys;
-    isBrowser: boolean;
+    isBrowser = false;
     readTimeCalc: boolean;
     url;
     @ViewChild('openBlog') openBlog;
@@ -62,6 +63,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
         @Inject(PLATFORM_ID) platformId: Object,
         private recieve: PropertyService ,
         private recieveHeight: PropertyService,
+        private link: PropertyService,
         private renderer: Renderer2,
         private route: ActivatedRoute,
         private sanitizer: DomSanitizer,
@@ -76,17 +78,21 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
         private http: Http
     ) {
         this.isBrowser = isPlatformBrowser(platformId);
-    }
+     }
 
     ngOnInit() {
-        this.recieveBlogIdFromUrl();
-        this.setTopMargin();
-        this.setMobileView();
-
+        this.blogDataRecieved = false;
+        if (this.isBrowser) {
+            this.recieveBlogIdFromUrl();
+        }
+            this.setTopMargin();
+            this.setMobileView();
     }
 
     ngAfterViewInit() {
-        this.scriptOfTwitter();
+        if (this.isBrowser) {
+            this.scriptOfTwitter();
+        }
     }
     setTitle() {
         if (this.route.snapshot.url[0].path !== 'sportsocialblog' || this.route.snapshot.url[1].path !== 'page') {
@@ -156,36 +162,11 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
             { name: 'twitter:image:src', content: this.blog.blogImage},
           ]);
     }
-    /* loadBlogFromSendData() {
-        this.recieve.detailsofBlog
-        .subscribe(
-            data => {
-                this.blogDataRecieved = true;
-                this.blog = {
-                    blogId: data['blogId'],
-                    blogImage: data['blogImage'],
-                    bloggerName: data['bloggerName'],
-                    bloggerImage: data['bloggerImage'],
-                    heading: ( data['heading']),
-                    Content: this.sanitizer.bypassSecurityTrustHtml(data['Content']),
-                    insertedDate: data['insertedDate'],
-                    ViewCount: data['ViewCount'],
-                    ShareCount: data['ShareCount'],
-                    keywords: data['keywords'],
-                    exactDate: data['exactDate'],
-                    readingTime: data['readingTime'],
-                };
-            }
-        );
-    }
- */
     recieveBlogIdFromUrl() {
         this.blogID = this.route.snapshot.url[2].path;
         this.route.params.subscribe(
             (params) => {
               this.blogID = params.blogId;
-             // console.clear();
-             // console.log(this.blogID);
               this.getBlogDetails();
 
             });
@@ -309,24 +290,23 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
         }
     }
     setMobileView() {
-        if (this.isBrowser) {
-            if (window.innerWidth > 950 ) {
+        const width = ɵgetDOM().getBoundingClientRect(this.openBlog.nativeElement).width;
+            if (width > 950  ) {
                 this.mobileView = false;
                 this.removeSocial = false;
                 this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '68%');
             }
-            if (window.innerWidth <= 950 && window.innerWidth > 700 ){
+            if (width <= 950 && width > 700 ) {
             this.removeSocial = true;
             this.mobileView = false;
             this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
 
             }
-            if (window.innerWidth < 700) {
+            if (width < 700) {
                 this.removeSocial = true;
                 this.mobileView = true;
                 this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
             }
-        }
 
     }
 
@@ -405,7 +385,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
 
     shareOnTwitter(){
         this.sendShareCount();
-        let width  = 575,
+        const width  = 575,
         height = 400,
         left   = (window.innerWidth  - width)  / 2,
         top    = (window.innerHeight - height) / 2,
@@ -416,7 +396,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
                  ',top='    + top    +
                  ',left='   + left;
 
-    window.open(url, 'twitter', opts);
+        window.open(url, 'twitter', opts);
 
     return false;
     }

@@ -56,8 +56,8 @@ function View_TrendingBlogComponent_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(1, 4210688, null, 0, i5.MaintainHeightWidthRatioDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID], null, null), (_l()(),
-            i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(3, 0, null, null, 1, 'SportSocial-subscribe-card', [], null, null, null, i6.View_SubscribeCardComponent_0, i6.RenderType_SubscribeCardComponent)), i1.ɵdid(4, 114688, null, 0, i7.SubscribeCardComponent, [i8.PostService, i9.StatusService,
+        }, null, null)), i1.ɵdid(1, 4210688, null, 0, i5.MaintainHeightWidthRatioDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID, i4.PropertyService], null, null), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(3, 0, null, null, 1, 'SportSocial-subscribe-card', [], null, null, null, i6.View_SubscribeCardComponent_0, i6.RenderType_SubscribeCardComponent)),
+        i1.ɵdid(4, 114688, null, 0, i7.SubscribeCardComponent, [i8.PostService, i9.StatusService,
             i1.Renderer2], null, null), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(6, 0, null, null, 1, 'a', [['class',
                 'popular'], ['href', '#']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n       Most Popular >>\n    '])),
         (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TrendingBlogComponent_1)), i1.ɵdid(10, 802816, null, 0, i10.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n   \n']))], function (_ck, _v) {

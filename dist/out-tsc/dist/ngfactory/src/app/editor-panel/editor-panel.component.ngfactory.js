@@ -264,8 +264,8 @@ function View_EditorPanelComponent_11(_l) {
 function View_EditorPanelComponent_0(_l) {
     return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { title: 0 }), i1.ɵqud(402653184, 2, { desc: 0 }), i1.ɵqud(402653184, 3, { BlogImage: 0 }), i1.ɵqud(402653184, 4, { BloggerImage: 0 }), i1.ɵqud(402653184, 5, { blogImageDesc: 0 }),
         i1.ɵqud(402653184, 6, { shortDesc: 0 }), i1.ɵqud(402653184, 7, { BloggerName: 0 }), i1.ɵqud(402653184, 8, { URL: 0 }), i1.ɵqud(402653184, 9, { youtubeURL: 0 }), i1.ɵqud(402653184, 10, { pluginURL: 0 }),
-        i1.ɵqud(671088640, 11, { keys: 0 }), i1.ɵqud(402653184, 12, { Text: 0 }), i1.ɵqud(402653184, 13, { editorPanel: 0 }), i1.ɵqud(402653184, 14, { panel: 0 }), i1.ɵqud(402653184, 15, { linkpopup: 0 }), i1.ɵqud(402653184, 16, { youtubeLinkPopup: 0 }), i1.ɵqud(402653184, 17, { pluginLinkPopup: 0 }), i1.ɵqud(402653184, 18, { panelButton: 0 }), (_l()(), i1.ɵeld(18, 0, [[13, 0], ['editorPanel', 1]], null, 184, 'div', [['class', 'editorPanel']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(20, 0, null, null, 117, 'div', [['class', 'toolbar']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(22, 0, null, null, 43, 'div', [], null, null, null, null, null)),
+        i1.ɵqud(671088640, 11, { keys: 0 }), i1.ɵqud(402653184, 12, { Text: 0 }), i1.ɵqud(402653184, 13, { editorPanel: 0 }), i1.ɵqud(402653184, 14, { panel: 0 }), i1.ɵqud(402653184, 15, { linkpopup: 0 }), i1.ɵqud(402653184, 16, { youtubeLinkPopup: 0 }), i1.ɵqud(402653184, 17, { pluginLinkPopup: 0 }), i1.ɵqud(402653184, 18, { panelButton: 0 }), (_l()(), i1.ɵeld(18, 0, [[13, 0], ['editorPanel', 1]], null, 211, 'div', [['class', 'editorPanel']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(20, 0, null, null, 144, 'div', [['class', 'toolbar']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(22, 0, null, null, 43, 'div', [], null, null, null, null, null)),
         (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(24, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['role', 'button'],
             ['src', '/assets/images/sports-social-undo.png'], ['title', 'undo']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
@@ -424,38 +424,42 @@ function View_EditorPanelComponent_0(_l) {
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_EditorPanelComponent_1)),
         i1.ɵdid(63, 802816, null, 0, i3.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
             i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n      '])),
-        (_l()(), i1.ɵted(-1, null, ['  \n      \n      '])), (_l()(), i1.ɵeld(67, 0, null, null, 69, 'div', [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(69, 0, null, null, 1, 'span', [['class', 'h1'], ['role', 'button'], ['title', 'heading']], null, [[null,
-                'click']], function (_v, en, $event) {
+        (_l()(), i1.ɵted(-1, null, ['  \n      \n      '])), (_l()(), i1.ɵeld(67, 0, null, null, 96, 'div', [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(69, 0, null, null, 31, 'select', [], null, [[null, 'change']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
-            if (('click' === en)) {
-                var pd_0 = (_co.AddH1Tag() !== false);
+            if (('change' === en)) {
+                var pd_0 = (_co.selectTag($event) !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), (_l()(), i1.ɵted(-1, null, ['H1'])),
-        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(72, 0, null, null, 1, 'span', [['class', 'h2'], ['role', 'button'], ['title', 'subHeading']], null, [[null, 'click']], function (_v, en, $event) {
-            var ad = true;
-            var _co = _v.component;
-            if (('click' === en)) {
-                var pd_0 = (_co.AddH2Tag() !== false);
-                ad = (pd_0 && ad);
-            }
-            return ad;
-        }, null, null)), (_l()(), i1.ɵted(-1, null, ['H2'])),
-        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(75, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])),
-        (_l()(), i1.ɵeld(77, 0, null, null, 0, 'img', [['alt', ''], ['class',
-                'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-indent.png'],
-            ['title', 'indent']], null, [[null, 'click']], function (_v, en, $event) {
-            var ad = true;
-            var _co = _v.component;
-            if (('click' === en)) {
-                var pd_0 = (_co.indent($event) !== false);
-                ad = (pd_0 && ad);
-            }
-            return ad;
-        }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(80, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(82, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-outdent.png'],
+        }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n            '])),
+        (_l()(), i1.ɵeld(71, 0, null, null, 3, 'option', [['value', 'h1']], null, null, null, null, null)),
+        i1.ɵdid(72, 147456, null, 0, i2.NgSelectOption, [i1.ElementRef, i1.Renderer2,
+            [8, null]], { value: [0, 'value'] }, null), i1.ɵdid(73, 147456, null, 0, i2.ɵq, [i1.ElementRef, i1.Renderer2, [8, null]], { value: [0,
+                'value'] }, null), (_l()(), i1.ɵted(-1, null, ['h1'])), (_l()(),
+            i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵeld(76, 0, null, null, 3, 'option', [['value', 'h2']], null, null, null, null, null)), i1.ɵdid(77, 147456, null, 0, i2.NgSelectOption, [i1.ElementRef, i1.Renderer2, [8, null]], { value: [0, 'value'] }, null),
+        i1.ɵdid(78, 147456, null, 0, i2.ɵq, [i1.ElementRef, i1.Renderer2, [8, null]], { value: [0, 'value'] }, null), (_l()(), i1.ɵted(-1, null, ['h2'])),
+        (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵeld(81, 0, null, null, 3, 'option', [['value', 'h3']], null, null, null, null, null)), i1.ɵdid(82, 147456, null, 0, i2.NgSelectOption, [i1.ElementRef, i1.Renderer2, [8, null]], { value: [0, 'value'] }, null),
+        i1.ɵdid(83, 147456, null, 0, i2.ɵq, [i1.ElementRef, i1.Renderer2, [8, null]], { value: [0, 'value'] }, null), (_l()(), i1.ɵted(-1, null, ['h3'])),
+        (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵeld(86, 0, null, null, 3, 'option', [['value', 'h4']], null, null, null, null, null)), i1.ɵdid(87, 147456, null, 0, i2.NgSelectOption, [i1.ElementRef, i1.Renderer2, [8, null]], { value: [0, 'value'] }, null),
+        i1.ɵdid(88, 147456, null, 0, i2.ɵq, [i1.ElementRef, i1.Renderer2, [8, null]], { value: [0, 'value'] }, null), (_l()(), i1.ɵted(-1, null, ['h4'])),
+        (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵeld(91, 0, null, null, 3, 'option', [['value', 'h5']], null, null, null, null, null)), i1.ɵdid(92, 147456, null, 0, i2.NgSelectOption, [i1.ElementRef, i1.Renderer2, [8, null]], { value: [0, 'value'] }, null),
+        i1.ɵdid(93, 147456, null, 0, i2.ɵq, [i1.ElementRef, i1.Renderer2, [8, null]], { value: [0, 'value'] }, null), (_l()(), i1.ɵted(-1, null, ['h5'])),
+        (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵeld(96, 0, null, null, 3, 'option', [['value', 'h6']], null, null, null, null, null)), i1.ɵdid(97, 147456, null, 0, i2.NgSelectOption, [i1.ElementRef, i1.Renderer2, [8, null]], { value: [0, 'value'] }, null),
+        i1.ɵdid(98, 147456, null, 0, i2.ɵq, [i1.ElementRef, i1.Renderer2, [8, null]], { value: [0, 'value'] }, null), (_l()(), i1.ɵted(-1, null, ['h6'])),
+        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n\n        '])), (_l()(), i1.ɵeld(102, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(),
+            i1.ɵeld(104, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'],
+                ['role', 'button'], ['src', '/assets/images/sports-social-indent.png'],
+                ['title', 'indent']], null, [[null, 'click']], function (_v, en, $event) {
+                var ad = true;
+                var _co = _v.component;
+                if (('click' === en)) {
+                    var pd_0 = (_co.indent($event) !== false);
+                    ad = (pd_0 && ad);
+                }
+                return ad;
+            }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])),
+        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(107, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(109, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-outdent.png'],
             ['title', ' outdent']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -465,7 +469,7 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(85, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n           '])), (_l()(), i1.ɵeld(87, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-paragraph.png'],
+        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(112, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n           '])), (_l()(), i1.ɵeld(114, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-paragraph.png'],
             ['title', 'Paragraph']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -475,9 +479,9 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n         '])),
-        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(90, 0, null, null, 5, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(92, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-picture.png'],
+        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(117, 0, null, null, 5, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(119, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-picture.png'],
             ['title', 'Add Image']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(),
-            i1.ɵeld(94, 0, null, null, 0, 'input', [['accept', 'image/jpeg, image/png'],
+            i1.ɵeld(121, 0, null, null, 0, 'input', [['accept', 'image/jpeg, image/png'],
                 ['id', 'image'], ['name', 'image'], ['type', 'file']], null, [[null,
                     'change']], function (_v, en, $event) {
                 var ad = true;
@@ -488,8 +492,8 @@ function View_EditorPanelComponent_0(_l) {
                 }
                 return ad;
             }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵted(-1, null, ['\n        \n       '])), (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(98, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])),
-        (_l()(), i1.ɵeld(100, 0, null, null, 0, 'img', [['class', 'not-selected'],
+        (_l()(), i1.ɵted(-1, null, ['\n        \n       '])), (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(125, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])),
+        (_l()(), i1.ɵeld(127, 0, null, null, 0, 'img', [['class', 'not-selected'],
             ['role', 'button'], ['src', '/assets/images/sports-social-youtube-video.png'],
             ['title', 'Add Youtube Video']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
@@ -500,9 +504,9 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(103, 0, null, null, 5, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵeld(105, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['multiple', ''], ['role', 'button'],
+        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(130, 0, null, null, 5, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵeld(132, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['multiple', ''], ['role', 'button'],
             ['src', '/assets/images/sports-social-gif.png'], ['title', 'Add Gif']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵeld(107, 0, null, null, 0, 'input', [['accept', 'image/gif image/webp'],
+        (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵeld(134, 0, null, null, 0, 'input', [['accept', 'image/gif image/webp'],
             ['id', 'video'], ['name', 'video'], ['type', 'file']], null, [[null,
                 'change']], function (_v, en, $event) {
             var ad = true;
@@ -513,7 +517,7 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(110, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵeld(112, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-link.png'],
+        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(137, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵeld(139, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-link.png'],
             ['title', 'Add Link']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -523,8 +527,8 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵted(-1, null, ['\n        \n       '])), (_l()(), i1.ɵted(-1, null, ['\n        \n       '])), (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(117, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(),
-            i1.ɵeld(119, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'],
+        (_l()(), i1.ɵted(-1, null, ['\n        \n       '])), (_l()(), i1.ɵted(-1, null, ['\n        \n       '])), (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(144, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(),
+            i1.ɵeld(146, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'],
                 ['role', 'button'], ['src', '/assets/images/sports-social-remove-css.png'],
                 ['title', 'Remove Style']], null, [[null, 'click']], function (_v, en, $event) {
                 var ad = true;
@@ -535,7 +539,7 @@ function View_EditorPanelComponent_0(_l) {
                 }
                 return ad;
             }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(122, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(124, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-subscript.png'],
+        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(149, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(151, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-subscript.png'],
             ['title', 'Subscript']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -545,7 +549,7 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(127, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(129, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-superscript.png'],
+        (_l()(), i1.ɵted(-1, null, ['\n        \n        '])), (_l()(), i1.ɵeld(154, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(156, 0, null, null, 0, 'img', [['alt', ''], ['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-superscript.png'],
             ['title', 'Superscript']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -555,8 +559,8 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(132, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])),
-        (_l()(), i1.ɵeld(134, 0, null, null, 0, 'img', [['alt', ''], ['class',
+        (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(159, 0, null, null, 3, 'label', [['class', 'file']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])),
+        (_l()(), i1.ɵeld(161, 0, null, null, 0, 'img', [['alt', ''], ['class',
                 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-quote.png'],
             ['title', 'Quote']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
@@ -567,13 +571,13 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(139, 0, null, null, 62, 'div', [['class', 'panel-wrapper']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(141, 0, [[14, 0], ['panel',
-                1]], null, 53, 'div', [['class', 'panel']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, [' \n              '])), (_l()(), i1.ɵeld(143, 0, null, null, 9, 'label', [['class', 'file blog']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n                  '])),
+        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(166, 0, null, null, 62, 'div', [['class', 'panel-wrapper']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(168, 0, [[14, 0], ['panel',
+                1]], null, 53, 'div', [['class', 'panel']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, [' \n              '])), (_l()(), i1.ɵeld(170, 0, null, null, 9, 'label', [['class', 'file blog']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n                  '])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_EditorPanelComponent_2)),
-        i1.ɵdid(146, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n                  '])),
+        i1.ɵdid(173, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n                  '])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_EditorPanelComponent_3)),
-        i1.ɵdid(149, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['                \n                  '])),
-        (_l()(), i1.ɵeld(151, 0, [[3, 0], ['BlogImage', 1]], null, 0, 'input', [['accept',
+        i1.ɵdid(176, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['                \n                  '])),
+        (_l()(), i1.ɵeld(178, 0, [[3, 0], ['BlogImage', 1]], null, 0, 'input', [['accept',
                 'image/*'], ['id', 'blogImage'], ['name', 'blogImage'], ['type', 'file']], null, [[null, 'change']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -583,10 +587,10 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n              '])),
-        (_l()(), i1.ɵted(-1, null, ['\n              '])), (_l()(), i1.ɵeld(154, 0, [[5, 0], ['blogImageDesc', 1]], null, 0, 'div', [['class', 'imageDesc'],
-            ['contenteditable', 'true'], ['placeholder', 'Describe your Image']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['   \n              '])), (_l()(), i1.ɵeld(156, 0, [[1, 0], ['title',
+        (_l()(), i1.ɵted(-1, null, ['\n              '])), (_l()(), i1.ɵeld(181, 0, [[5, 0], ['blogImageDesc', 1]], null, 0, 'div', [['class', 'imageDesc'],
+            ['contenteditable', 'true'], ['placeholder', 'Describe your Image']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['   \n              '])), (_l()(), i1.ɵeld(183, 0, [[1, 0], ['title',
                 1]], null, 0, 'div', [['class', 'title'], ['contenteditable', 'true'],
-            ['placeholder', 'Hii Buddy, Your Title Goes Here']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n              '])), (_l()(), i1.ɵeld(158, 0, [[6, 0], ['shortDesc', 1]], null, 0, 'div', [['class', 'shortDesc'], ['contenteditable', 'true'], ['placeholder',
+            ['placeholder', 'Hii Buddy, Your Title Goes Here']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n              '])), (_l()(), i1.ɵeld(185, 0, [[6, 0], ['shortDesc', 1]], null, 0, 'div', [['class', 'shortDesc'], ['contenteditable', 'true'], ['placeholder',
                 'Add short description, max 140 Characters are allowed']], null, [[null, 'keyup']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -596,14 +600,14 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n              '])),
-        (_l()(), i1.ɵeld(160, 0, null, null, 1, 'div', [['class', 'charCount']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(161, null, ['', '/140'])), (_l()(), i1.ɵted(-1, null, ['\n              '])), (_l()(), i1.ɵeld(163, 0, null, null, 14, 'div', [['class', 'blogger']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n                  '])),
-        (_l()(), i1.ɵeld(165, 0, null, null, 9, 'label', [['class', 'file']], null, null, null, null, null)),
+        (_l()(), i1.ɵeld(187, 0, null, null, 1, 'div', [['class', 'charCount']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(188, null, ['', '/140'])), (_l()(), i1.ɵted(-1, null, ['\n              '])), (_l()(), i1.ɵeld(190, 0, null, null, 14, 'div', [['class', 'blogger']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n                  '])),
+        (_l()(), i1.ɵeld(192, 0, null, null, 9, 'label', [['class', 'file']], null, null, null, null, null)),
         (_l()(), i1.ɵted(-1, null, ['\n                      '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_EditorPanelComponent_4)),
-        i1.ɵdid(168, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n                      '])),
+        i1.ɵdid(195, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n                      '])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_EditorPanelComponent_5)),
-        i1.ɵdid(171, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n                      '])),
-        (_l()(), i1.ɵeld(173, 0, [[4, 0], ['BloggerImage', 1]], null, 0, 'input', [['accept',
+        i1.ɵdid(198, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n                      '])),
+        (_l()(), i1.ɵeld(200, 0, [[4, 0], ['BloggerImage', 1]], null, 0, 'input', [['accept',
                 'image/*'], ['id', 'bloggerImage'], ['name', 'bloggerImage'], ['type', 'file']], null, [[null, 'change']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -613,10 +617,10 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n                  '])),
-        (_l()(), i1.ɵted(-1, null, ['\n              '])), (_l()(), i1.ɵeld(176, 0, [[7, 0], ['BloggerName', 1]], null, 0, 'div', [['class', 'bloggerName'],
+        (_l()(), i1.ɵted(-1, null, ['\n              '])), (_l()(), i1.ɵeld(203, 0, [[7, 0], ['BloggerName', 1]], null, 0, 'div', [['class', 'bloggerName'],
             ['contenteditable', 'true'], ['placeholder', 'What\'s your name??']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n              '])), (_l()(), i1.ɵted(-1, null, ['\n              '])),
-        (_l()(), i1.ɵeld(179, 0, null, null, 9, 'div', [['class', 'keywords']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n                  '])), (_l()(), i1.ɵeld(181, 0, null, null, 0, 'img', [['class', 'not-selected'], ['role',
+        (_l()(), i1.ɵeld(206, 0, null, null, 9, 'div', [['class', 'keywords']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n                  '])), (_l()(), i1.ɵeld(208, 0, null, null, 0, 'img', [['class', 'not-selected'], ['role',
                 'button'], ['src', '/assets/images/sports-social-tags.png']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -627,12 +631,12 @@ function View_EditorPanelComponent_0(_l) {
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n                  '])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_EditorPanelComponent_6)),
-        i1.ɵdid(184, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n                  '])),
+        i1.ɵdid(211, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n                  '])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_EditorPanelComponent_7)),
-        i1.ɵdid(187, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n              '])),
+        i1.ɵdid(214, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n              '])),
         (_l()(), i1.ɵted(-1, null, ['\n              '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_EditorPanelComponent_9)),
-        i1.ɵdid(191, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, [' \n              '])),
-        (_l()(), i1.ɵeld(193, 0, [[2, 0], ['desc', 1]], null, 0, 'div', [['class', 'desc'],
+        i1.ɵdid(218, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, [' \n              '])),
+        (_l()(), i1.ɵeld(220, 0, [[2, 0], ['desc', 1]], null, 0, 'div', [['class', 'desc'],
             ['contenteditable', 'true']], null, [[null, 'keyup']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -642,7 +646,7 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, [' \n          '])),
-        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(196, 0, [[18,
+        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(223, 0, [[18,
                 0], ['panelButton', 1]], null, 1, 'button', [['class', 'panelButton']], [[8, 'disabled', 0]], [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -652,7 +656,7 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['Upload '])),
-        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(199, 0, null, null, 1, 'button', [['class', 'panelButton']], null, [[null,
+        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(226, 0, null, null, 1, 'button', [['class', 'panelButton']], null, [[null,
                 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -662,9 +666,9 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['Preview '])),
-        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n  \n  '])), (_l()(), i1.ɵeld(204, 0, [[15, 0], ['linkpopup', 1]], null, 28, 'div', [['class', 'linkPopup'],
+        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n  \n  '])), (_l()(), i1.ɵeld(231, 0, [[15, 0], ['linkpopup', 1]], null, 28, 'div', [['class', 'linkPopup'],
             ['role', 'dialog']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(),
-            i1.ɵeld(206, 0, null, null, 1, 'p', [['class', 'confirm']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['Please Click on tick to Confirm'])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(209, 0, null, null, 1, 'label', [['for', 'URL']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['Url'])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(212, 0, [[8, 0], ['url', 1]], null, 0, 'input', [['class', 'form-control'], ['id', 'url'], ['name', 'URl'], ['type',
+            i1.ɵeld(233, 0, null, null, 1, 'p', [['class', 'confirm']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['Please Click on tick to Confirm'])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(236, 0, null, null, 1, 'label', [['for', 'URL']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['Url'])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(239, 0, [[8, 0], ['url', 1]], null, 0, 'input', [['class', 'form-control'], ['id', 'url'], ['name', 'URl'], ['type',
                 'url']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -674,11 +678,11 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])),
-        (_l()(), i1.ɵeld(214, 0, null, null, 1, 'label', [['for', 'text']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['Text'])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(217, 0, [[12, 0], ['text', 1]], null, 0, 'input', [['class', 'form-control'], ['id', 'text'], ['name', 'text'], ['type',
+        (_l()(), i1.ɵeld(241, 0, null, null, 1, 'label', [['for', 'text']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['Text'])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(244, 0, [[12, 0], ['text', 1]], null, 0, 'input', [['class', 'form-control'], ['id', 'text'], ['name', 'text'], ['type',
                 'text']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(219, 0, null, null, 3, 'div', [['class', 'tick']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])),
-        (_l()(), i1.ɵeld(221, 0, null, null, 0, 'img', [['class', 'not-selected'],
+        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(246, 0, null, null, 3, 'div', [['class', 'tick']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])),
+        (_l()(), i1.ɵeld(248, 0, null, null, 0, 'img', [['class', 'not-selected'],
             ['role', 'button'], ['src', '/assets/images/sports-social-confirmation.png']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -688,8 +692,8 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])),
-        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(224, 0, null, null, 7, 'div', [['class', 'button']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])),
-        (_l()(), i1.ɵeld(226, 0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
+        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(251, 0, null, null, 7, 'div', [['class', 'button']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])),
+        (_l()(), i1.ɵeld(253, 0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('click' === en)) {
@@ -698,7 +702,7 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['Ok'])),
-        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(229, 0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
+        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(256, 0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('click' === en)) {
@@ -707,12 +711,12 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['Cancel'])),
-        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n  \n  '])), (_l()(), i1.ɵeld(234, 0, [[16, 0], ['youtubeLinkPopup', 1]], null, 23, 'div', [['class', 'linkPopup'],
+        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n  \n  '])), (_l()(), i1.ɵeld(261, 0, [[16, 0], ['youtubeLinkPopup', 1]], null, 23, 'div', [['class', 'linkPopup'],
             ['role', 'dialog']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(),
-            i1.ɵeld(236, 0, null, null, 1, 'p', [['class', 'confirm']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['Please Click on tick to Confirm'])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(239, 0, null, null, 1, 'label', [['for', 'URL']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['Url'])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(242, 0, [[9, 0], ['YoutubeUrl',
+            i1.ɵeld(263, 0, null, null, 1, 'p', [['class', 'confirm']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['Please Click on tick to Confirm'])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(266, 0, null, null, 1, 'label', [['for', 'URL']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['Url'])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(269, 0, [[9, 0], ['YoutubeUrl',
                 1]], null, 0, 'input', [['class', 'form-control'], ['id', 'url'], ['name',
                 'URl'], ['type', 'url']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(),
-            i1.ɵeld(244, 0, null, null, 3, 'div', [['class', 'tick']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(246, 0, null, null, 0, 'img', [['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-confirmation.png']], null, [[null, 'click']], function (_v, en, $event) {
+            i1.ɵeld(271, 0, null, null, 3, 'div', [['class', 'tick']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(273, 0, null, null, 0, 'img', [['class', 'not-selected'], ['role', 'button'], ['src', '/assets/images/sports-social-confirmation.png']], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('click' === en)) {
@@ -721,8 +725,8 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n      '])),
-        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(249, 0, null, null, 7, 'div', [['class', 'button']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])),
-        (_l()(), i1.ɵeld(251, 0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
+        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(276, 0, null, null, 7, 'div', [['class', 'button']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])),
+        (_l()(), i1.ɵeld(278, 0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('click' === en)) {
@@ -731,7 +735,7 @@ function View_EditorPanelComponent_0(_l) {
             }
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['Ok'])),
-        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(254, 0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
+        (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(281, 0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('click' === en)) {
@@ -741,38 +745,62 @@ function View_EditorPanelComponent_0(_l) {
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['Cancel'])),
         (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n  \n  \n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_EditorPanelComponent_10)),
-        i1.ɵdid(260, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n  \n  '])),
+        i1.ɵdid(287, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n  \n  '])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_EditorPanelComponent_11)),
-        i1.ɵdid(263, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null)], function (_ck, _v) {
+        i1.ɵdid(290, 16384, null, 0, i3.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null)], function (_ck, _v) {
         var _co = _v.component;
         var currVal_1 = _co.fontSize;
         _ck(_v, 63, 0, currVal_1);
-        var currVal_2 = !_co.blogimageLoaded;
-        _ck(_v, 146, 0, currVal_2);
-        var currVal_3 = _co.blogimageLoaded;
-        _ck(_v, 149, 0, currVal_3);
-        var currVal_5 = !_co.bloggerimageLoaded;
-        _ck(_v, 168, 0, currVal_5);
-        var currVal_6 = _co.bloggerimageLoaded;
-        _ck(_v, 171, 0, currVal_6);
-        var currVal_7 = !_co.keywordAdded;
-        _ck(_v, 184, 0, currVal_7);
-        var currVal_8 = _co.keywordAdded;
-        _ck(_v, 187, 0, currVal_8);
-        var currVal_9 = !_co.Keypress;
-        _ck(_v, 191, 0, currVal_9);
-        var currVal_11 = _co.isKeywordButtonClicked;
-        _ck(_v, 260, 0, currVal_11);
-        var currVal_12 = _co.Preview;
-        _ck(_v, 263, 0, currVal_12);
+        var currVal_2 = 'h1';
+        _ck(_v, 72, 0, currVal_2);
+        var currVal_3 = 'h1';
+        _ck(_v, 73, 0, currVal_3);
+        var currVal_4 = 'h2';
+        _ck(_v, 77, 0, currVal_4);
+        var currVal_5 = 'h2';
+        _ck(_v, 78, 0, currVal_5);
+        var currVal_6 = 'h3';
+        _ck(_v, 82, 0, currVal_6);
+        var currVal_7 = 'h3';
+        _ck(_v, 83, 0, currVal_7);
+        var currVal_8 = 'h4';
+        _ck(_v, 87, 0, currVal_8);
+        var currVal_9 = 'h4';
+        _ck(_v, 88, 0, currVal_9);
+        var currVal_10 = 'h5';
+        _ck(_v, 92, 0, currVal_10);
+        var currVal_11 = 'h5';
+        _ck(_v, 93, 0, currVal_11);
+        var currVal_12 = 'h6';
+        _ck(_v, 97, 0, currVal_12);
+        var currVal_13 = 'h6';
+        _ck(_v, 98, 0, currVal_13);
+        var currVal_14 = !_co.blogimageLoaded;
+        _ck(_v, 173, 0, currVal_14);
+        var currVal_15 = _co.blogimageLoaded;
+        _ck(_v, 176, 0, currVal_15);
+        var currVal_17 = !_co.bloggerimageLoaded;
+        _ck(_v, 195, 0, currVal_17);
+        var currVal_18 = _co.bloggerimageLoaded;
+        _ck(_v, 198, 0, currVal_18);
+        var currVal_19 = !_co.keywordAdded;
+        _ck(_v, 211, 0, currVal_19);
+        var currVal_20 = _co.keywordAdded;
+        _ck(_v, 214, 0, currVal_20);
+        var currVal_21 = !_co.Keypress;
+        _ck(_v, 218, 0, currVal_21);
+        var currVal_23 = _co.isKeywordButtonClicked;
+        _ck(_v, 287, 0, currVal_23);
+        var currVal_24 = _co.Preview;
+        _ck(_v, 290, 0, currVal_24);
     }, function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = 20;
         _ck(_v, 60, 0, currVal_0);
-        var currVal_4 = _co.charCount;
-        _ck(_v, 161, 0, currVal_4);
-        var currVal_10 = _co.isDisabled;
-        _ck(_v, 196, 0, currVal_10);
+        var currVal_16 = _co.charCount;
+        _ck(_v, 188, 0, currVal_16);
+        var currVal_22 = _co.isDisabled;
+        _ck(_v, 223, 0, currVal_22);
     });
 }
 exports.View_EditorPanelComponent_0 = View_EditorPanelComponent_0;

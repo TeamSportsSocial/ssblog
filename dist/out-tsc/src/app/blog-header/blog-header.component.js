@@ -8,9 +8,11 @@ var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 var ReplaySubject_1 = require("rxjs/ReplaySubject");
 var common_1 = require("@angular/common");
+var platform_browser_2 = require("@angular/platform-browser");
 var BlogHeaderComponent = /** @class */ (function () {
-    function BlogHeaderComponent(sendHeight, renderer, send, get, elRef, _sanitizer, searchKeyword, router, sendKey, zone, platformId) {
+    function BlogHeaderComponent(sendHeight, sendWidth, renderer, send, get, elRef, _sanitizer, searchKeyword, router, sendKey, zone, platformId) {
         this.sendHeight = sendHeight;
+        this.sendWidth = sendWidth;
         this.renderer = renderer;
         this.send = send;
         this.get = get;
@@ -29,30 +31,25 @@ var BlogHeaderComponent = /** @class */ (function () {
         this.results = [];
         this.haveresult = false;
         this.searchKey = new ReplaySubject_1.ReplaySubject();
+        this.isBrowser = false;
         this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     BlogHeaderComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.responsiveView();
         this.get.keywords()
             .subscribe(function (res) {
+            // tslint:disable-next-line:forin
             for (var i in res) {
                 _this.keywords.push(res[i].Keyword);
             }
         });
-        this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
-        if (this.isBrowser) {
-            if (window.innerWidth <= 750) {
-                this.mobileView = true;
-            }
-            else {
-                this.mobileView = false;
-            }
-        }
+        this.sendHeight.ofHeader.next(platform_browser_2.ɵgetDOM().getBoundingClientRect(this.Header.nativeElement).bottom);
+        this.sendWindowWidth();
     };
     BlogHeaderComponent.prototype.ngAfterViewChecked = function () {
-        if (this.isBrowser) {
-            this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
-        }
+        this.sendWindowWidth();
+        this.sendHeight.ofHeader.next(platform_browser_2.ɵgetDOM().getBoundingClientRect(this.Header.nativeElement).bottom);
     };
     BlogHeaderComponent.prototype.onclick = function () {
         this.haveresult = false;
@@ -61,18 +58,12 @@ var BlogHeaderComponent = /** @class */ (function () {
         }
     };
     BlogHeaderComponent.prototype.onresize = function () {
+        this.responsiveView();
         if (this.resultBox) {
             this.setStyleOfResultBox();
         }
-        this.sendHeight.ofHeader.next(this.Header.nativeElement.getBoundingClientRect().bottom);
-        if (this.isBrowser) {
-            if (window.innerWidth <= 750) {
-                this.mobileView = true;
-            }
-            else {
-                this.mobileView = false;
-            }
-        }
+        this.sendWindowWidth();
+        this.sendHeight.ofHeader.next(platform_browser_2.ɵgetDOM().getBoundingClientRect(this.Header.nativeElement).bottom);
     };
     BlogHeaderComponent.prototype.openDropDown = function () {
         this.open = true;
@@ -87,10 +78,21 @@ var BlogHeaderComponent = /** @class */ (function () {
         this.searchBox.nativeElement.value = '';
         this.haveresult = false;
     };
+    BlogHeaderComponent.prototype.responsiveView = function () {
+        var width = platform_browser_2.ɵgetDOM().getBoundingClientRect(this.Header.nativeElement).width;
+        console.log(width, 'window');
+        if (width <= 750) {
+            this.mobileView = true;
+        }
+        else {
+            this.mobileView = false;
+        }
+    };
+    BlogHeaderComponent.prototype.sendWindowWidth = function () {
+        this.sendWidth.ofWindow.next(platform_browser_2.ɵgetDOM().getBoundingClientRect(this.Header.nativeElement).width);
+    };
     BlogHeaderComponent.prototype.sendData = function (event) {
         var _this = this;
-        // console.clear();
-        // console.log(event);
         if (event.target.value !== '') {
             this.haveresult = true;
         }
@@ -152,6 +154,7 @@ var BlogHeaderComponent = /** @class */ (function () {
     ];
     /** @nocollapse */
     BlogHeaderComponent.ctorParameters = function () { return [
+        { type: property_service_1.PropertyService, },
         { type: property_service_1.PropertyService, },
         { type: core_1.Renderer2, },
         { type: property_service_1.PropertyService, },

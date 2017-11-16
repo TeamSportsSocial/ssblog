@@ -12,6 +12,7 @@ import {Http} from '@angular/http';
 import {StatusService} from '.././services/status.service';
 import {PostService} from '.././services/post.service';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { ɵgetDOM } from '@angular/platform-browser';
 
 @Component({
   selector: 'SportSocial-blog-footer',
@@ -25,13 +26,13 @@ export class BlogFooterComponent implements OnInit {
   @ViewChild('followUs') followUs;
   @ViewChild('copyright') copyright;
   @ViewChild('subscriber') subscriber;
+  @ViewChild( 'footer') footer;
   constructor(
     private sendEmail:PostService,
     private renderer: Renderer2,
     private status:StatusService,
     @Inject(PLATFORM_ID) platformId: Object
   ) {
-    this.isBrowser= isPlatformBrowser(platformId)
   }
 
   ngOnInit() {
@@ -58,8 +59,8 @@ export class BlogFooterComponent implements OnInit {
     this.showSubscriptionBox = false;
    }
    setMobileView() {
-    if (this.isBrowser) {
-     if ( window.innerWidth < 850 ) {
+     const width = ɵgetDOM().getBoundingClientRect(this.footer.nativeElement).width;
+     if (width < 850 ) {
        this.renderer.setStyle(this.copyright.nativeElement, 'width', '100%');
       this.renderer.setStyle(this.followUs.nativeElement, 'width', '100%');
       this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'center');
@@ -69,10 +70,9 @@ export class BlogFooterComponent implements OnInit {
       this.renderer.setStyle(this.followUs.nativeElement, 'text-align', 'right');
       this.renderer.setStyle(this.copyright.nativeElement, 'width', '60%');
       this.renderer.setStyle(this.copyright.nativeElement, 'text-align', 'left');
-     }}
+     }
    }
    @HostListener('window:resize', [])onresize() {
      this.setMobileView();
    }
-  
 }

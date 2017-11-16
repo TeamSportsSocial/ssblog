@@ -4,9 +4,11 @@ var core_1 = require("@angular/core");
 var property_service_1 = require("../../services/property.service");
 var post_service_1 = require("../../services/post.service");
 var common_1 = require("@angular/common");
+var platform_browser_1 = require("@angular/platform-browser");
 var LatestBlogComponent = /** @class */ (function () {
-    function LatestBlogComponent(Send, renderer, post, platformId) {
+    function LatestBlogComponent(Send, recieveWidth, renderer, post, platformId) {
         this.Send = Send;
+        this.recieveWidth = recieveWidth;
         this.renderer = renderer;
         this.post = post;
         this.openFullImage = false;
@@ -67,9 +69,10 @@ var LatestBlogComponent = /** @class */ (function () {
         this.openFullImage = false;
     };
     LatestBlogComponent.prototype.heightOfInitialImage = function () {
-        if (window.innerWidth <= 600) {
-            var width = this.initialImage.nativeElement.getBoundingClientRect().width;
-            var height = .72 * width;
+        var width = platform_browser_1.ɵgetDOM().getBoundingClientRect(this.latest.nativeElement).width;
+        if (width <= 600) {
+            var Width = platform_browser_1.ɵgetDOM().getBoundingClientRect(this.initialImage.nativeElement).width;
+            var height = .72 * Width;
             this.renderer.setStyle(this.initialImage.nativeElement, 'height', height + 'px');
         }
     };
@@ -77,32 +80,36 @@ var LatestBlogComponent = /** @class */ (function () {
         this.responsiveDesign();
     };
     LatestBlogComponent.prototype.responsiveDesign = function () {
-        if (window.innerWidth >= 1000) {
+        var width;
+        this.recieveWidth.ofWindow.subscribe(function (data) {
+            width = data;
+        });
+        if (width >= 1000) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '8% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '2.2em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.2em');
         }
-        if (window.innerWidth > 800 && window.innerWidth < 1000) {
+        if (width > 800 && width < 1000) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '8% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.8em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.2em');
         }
-        if (window.innerWidth < 800 && window.innerWidth >= 600) {
+        if (width < 800 && width >= 600) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '4% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1.1em');
         }
-        if (window.innerWidth < 600 && window.innerWidth > 400) {
+        if (width < 600 && width > 400) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.4em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
         }
-        if (window.innerWidth < 400 && window.innerWidth > 340) {
+        if (width < 400 && width > 340) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.3em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
         }
-        if (window.innerWidth < 340) {
+        if (width < 340) {
             this.renderer.setStyle(this.DescChild.nativeElement, 'margin', '15% auto');
             this.renderer.setStyle(this.latestTitle.nativeElement, 'font-size', '1.2em');
             this.renderer.setStyle(this.latestDesc.nativeElement, 'font-size', '1em');
@@ -117,6 +124,7 @@ var LatestBlogComponent = /** @class */ (function () {
     ];
     /** @nocollapse */
     LatestBlogComponent.ctorParameters = function () { return [
+        { type: property_service_1.PropertyService, },
         { type: property_service_1.PropertyService, },
         { type: core_1.Renderer2, },
         { type: post_service_1.PostService, },

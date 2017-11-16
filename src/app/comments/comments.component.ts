@@ -82,9 +82,6 @@ export class CommentsComponent implements OnInit {
         }
       }
     );
-    if(this.isBrowser){
-      this.getLoginStatus();
-    }
   }
 
   setDefault() {

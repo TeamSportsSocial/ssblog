@@ -8,12 +8,14 @@ var post_service_1 = require("../../services/post.service");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var platform_browser_2 = require("@angular/platform-browser");
+var platform_browser_3 = require("@angular/platform-browser");
 var router_2 = require("@angular/router");
 var facebook_service_1 = require("../../services/facebook.service");
 var BlogOpenComponent = /** @class */ (function () {
-    function BlogOpenComponent(platformId, recieve, recieveHeight, renderer, route, sanitizer, sendKey, router, post, send, metaService, load, titleService, Fb, http) {
+    function BlogOpenComponent(platformId, recieve, recieveHeight, link, renderer, route, sanitizer, sendKey, router, post, send, metaService, load, titleService, Fb, http) {
         this.recieve = recieve;
         this.recieveHeight = recieveHeight;
+        this.link = link;
         this.renderer = renderer;
         this.route = route;
         this.sanitizer = sanitizer;
@@ -35,15 +37,21 @@ var BlogOpenComponent = /** @class */ (function () {
         this.blogDataRecieved = false;
         this.Keywords = [];
         this.loading = true;
+        this.isBrowser = false;
         this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     BlogOpenComponent.prototype.ngOnInit = function () {
-        this.recieveBlogIdFromUrl();
+        this.blogDataRecieved = false;
+        if (this.isBrowser) {
+            this.recieveBlogIdFromUrl();
+        }
         this.setTopMargin();
         this.setMobileView();
     };
     BlogOpenComponent.prototype.ngAfterViewInit = function () {
-        this.scriptOfTwitter();
+        if (this.isBrowser) {
+            this.scriptOfTwitter();
+        }
     };
     BlogOpenComponent.prototype.setTitle = function () {
         if (this.route.snapshot.url[0].path !== 'sportsocialblog' || this.route.snapshot.url[1].path !== 'page') {
@@ -110,36 +118,11 @@ var BlogOpenComponent = /** @class */ (function () {
             { name: 'twitter:image:src', content: this.blog.blogImage },
         ]);
     };
-    /* loadBlogFromSendData() {
-        this.recieve.detailsofBlog
-        .subscribe(
-            data => {
-                this.blogDataRecieved = true;
-                this.blog = {
-                    blogId: data['blogId'],
-                    blogImage: data['blogImage'],
-                    bloggerName: data['bloggerName'],
-                    bloggerImage: data['bloggerImage'],
-                    heading: ( data['heading']),
-                    Content: this.sanitizer.bypassSecurityTrustHtml(data['Content']),
-                    insertedDate: data['insertedDate'],
-                    ViewCount: data['ViewCount'],
-                    ShareCount: data['ShareCount'],
-                    keywords: data['keywords'],
-                    exactDate: data['exactDate'],
-                    readingTime: data['readingTime'],
-                };
-            }
-        );
-    }
- */
     BlogOpenComponent.prototype.recieveBlogIdFromUrl = function () {
         var _this = this;
         this.blogID = this.route.snapshot.url[2].path;
         this.route.params.subscribe(function (params) {
             _this.blogID = params.blogId;
-            // console.clear();
-            // console.log(this.blogID);
             _this.getBlogDetails();
         });
     };
@@ -239,22 +222,21 @@ var BlogOpenComponent = /** @class */ (function () {
         }
     };
     BlogOpenComponent.prototype.setMobileView = function () {
-        if (this.isBrowser) {
-            if (window.innerWidth > 950) {
-                this.mobileView = false;
-                this.removeSocial = false;
-                this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '68%');
-            }
-            if (window.innerWidth <= 950 && window.innerWidth > 700) {
-                this.removeSocial = true;
-                this.mobileView = false;
-                this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
-            }
-            if (window.innerWidth < 700) {
-                this.removeSocial = true;
-                this.mobileView = true;
-                this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
-            }
+        var width = platform_browser_2.ɵgetDOM().getBoundingClientRect(this.openBlog.nativeElement).width;
+        if (width > 950) {
+            this.mobileView = false;
+            this.removeSocial = false;
+            this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '68%');
+        }
+        if (width <= 950 && width > 700) {
+            this.removeSocial = true;
+            this.mobileView = false;
+            this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
+        }
+        if (width < 700) {
+            this.removeSocial = true;
+            this.mobileView = true;
+            this.renderer.setStyle(this.BlogInfo.nativeElement, 'width', '100%');
         }
     };
     BlogOpenComponent.prototype.scriptOfTwitter = function () {
@@ -354,9 +336,10 @@ var BlogOpenComponent = /** @class */ (function () {
         { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
         { type: property_service_1.PropertyService, },
         { type: property_service_1.PropertyService, },
+        { type: property_service_1.PropertyService, },
         { type: core_1.Renderer2, },
         { type: router_1.ActivatedRoute, },
-        { type: platform_browser_2.DomSanitizer, },
+        { type: platform_browser_3.DomSanitizer, },
         { type: property_service_1.PropertyService, },
         { type: router_2.Router, },
         { type: post_service_1.PostService, },

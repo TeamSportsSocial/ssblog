@@ -6,6 +6,7 @@ var post_service_1 = require("../services/post.service");
 var get_service_1 = require("../services/get.service");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
+var platform_browser_1 = require("@angular/platform-browser");
 var KeywordsComponent = /** @class */ (function () {
     function KeywordsComponent(platformId, renderer, recieveHeight, sendHeight, searched, sendSearchedData, router, sendKey, get) {
         this.renderer = renderer;
@@ -18,6 +19,7 @@ var KeywordsComponent = /** @class */ (function () {
         this.get = get;
         this.keywords = [];
         this.pageNumber = 1;
+        this.isBrowser = false;
         this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     KeywordsComponent.prototype.ngOnInit = function () {
@@ -43,7 +45,7 @@ var KeywordsComponent = /** @class */ (function () {
         });
         this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
         this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');
-        this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
+        this.sendHeight.ofKeyWords.next(platform_browser_1.ɵgetDOM().getBoundingClientRect(this.Keywords.nativeElement).bottom);
     };
     KeywordsComponent.prototype.ngAfterViewChecked = function () {
         var _this = this;
@@ -52,7 +54,7 @@ var KeywordsComponent = /** @class */ (function () {
         });
         this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
         this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');
-        this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
+        this.sendHeight.ofKeyWords.next(platform_browser_1.ɵgetDOM().getBoundingClientRect(this.Keywords.nativeElement).bottom);
     };
     KeywordsComponent.prototype.send = function (i) {
         /* this.searched.blogData(this.pageNumber,this.keywords[i].name).subscribe(
@@ -67,7 +69,7 @@ var KeywordsComponent = /** @class */ (function () {
     };
     KeywordsComponent.prototype.onresize = function () {
         var _this = this;
-        this.sendHeight.ofKeyWords.next(this.Keywords.nativeElement.getBoundingClientRect().bottom);
+        this.sendHeight.ofKeyWords.next(platform_browser_1.ɵgetDOM().getBoundingClientRect(this.Keywords.nativeElement).bottom);
         this.recieveHeight.ofHeader.subscribe(function (margin) { return _this.topMargin = margin; });
         this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
         this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');

@@ -9,10 +9,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var i0 = require("./latest-blog.component.css.shim.ngstyle");
 var i1 = require("@angular/core");
 var i2 = require("../../../../../../src/app/directives/maintain-height-width-ratio.directive");
-var i3 = require("../../../../../../src/app/blogContent/latest-blog/latest-blog.component");
-var i4 = require("@angular/router");
-var i5 = require("@angular/common");
-var i6 = require("../../../../../../src/app/services/property.service");
+var i3 = require("../../../../../../src/app/services/property.service");
+var i4 = require("../../../../../../src/app/blogContent/latest-blog/latest-blog.component");
+var i5 = require("@angular/router");
+var i6 = require("@angular/common");
 var i7 = require("../../../../../../src/app/services/post.service");
 var styles_LatestBlogComponent = [i0.styles];
 exports.RenderType_LatestBlogComponent = i1.ɵcrt({ encapsulation: 0,
@@ -51,9 +51,8 @@ function View_LatestBlogComponent_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(9, 4210688, null, 0, i2.MaintainHeightWidthRatioDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID], null, null),
-        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(11, 0, null, null, 57, 'a', [], [[1, 'target', 0], [8, 'href', 4]], [[null,
-                'click']], function (_v, en, $event) {
+        }, null, null)), i1.ɵdid(9, 4210688, null, 0, i2.MaintainHeightWidthRatioDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID, i3.PropertyService], null, null), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(11, 0, null, null, 57, 'a', [], [[1, 'target', 0], [8, 'href',
+                4]], [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
             if (('click' === en)) {
@@ -65,10 +64,10 @@ function View_LatestBlogComponent_0(_l) {
                 ad = (pd_1 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(12, 671744, null, 0, i4.RouterLinkWithHref, [i4.Router, i4.ActivatedRoute, i5.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_LatestBlogComponent_1)),
-        i1.ɵdid(15, 16384, null, 0, i5.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])),
+        }, null, null)), i1.ɵdid(12, 671744, null, 0, i5.RouterLinkWithHref, [i5.Router, i5.ActivatedRoute, i6.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_LatestBlogComponent_1)),
+        i1.ɵdid(15, 16384, null, 0, i6.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    '])),
         (_l()(), i1.ɵand(16777216, null, null, 1, null, View_LatestBlogComponent_2)),
-        i1.ɵdid(18, 16384, null, 0, i5.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    \n    \n    '])),
+        i1.ɵdid(18, 16384, null, 0, i6.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    \n    \n    '])),
         (_l()(), i1.ɵeld(20, 0, [[7, 0], ['Desc', 1]], null, 47, 'div', [['class', 'desc']], null, null, null, null, null)),
         (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(22, 0, [[1, 0],
             ['DescChild', 1]], null, 44, 'div', [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(24, 0, null, null, 11, 'div', [['class', 'count']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(),
@@ -125,13 +124,13 @@ function View_LatestBlogComponent_Host_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, View_LatestBlogComponent_0, exports.RenderType_LatestBlogComponent)), i1.ɵdid(1, 4308992, null, 0, i3.LatestBlogComponent, [i6.PropertyService, i1.Renderer2, i7.PostService,
-            i1.PLATFORM_ID], null, null)], function (_ck, _v) {
+        }, View_LatestBlogComponent_0, exports.RenderType_LatestBlogComponent)), i1.ɵdid(1, 4308992, null, 0, i4.LatestBlogComponent, [i3.PropertyService, i3.PropertyService,
+            i1.Renderer2, i7.PostService, i1.PLATFORM_ID], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }
 exports.View_LatestBlogComponent_Host_0 = View_LatestBlogComponent_Host_0;
-exports.LatestBlogComponentNgFactory = i1.ɵccf('SportSocial-latest-blog', i3.LatestBlogComponent, View_LatestBlogComponent_Host_0, { blogId: 'blogId', blogImage: 'blogImage',
+exports.LatestBlogComponentNgFactory = i1.ɵccf('SportSocial-latest-blog', i4.LatestBlogComponent, View_LatestBlogComponent_Host_0, { blogId: 'blogId', blogImage: 'blogImage',
     bloggerName: 'bloggerName', bloggerImage: 'bloggerImage', heading: 'heading', Content: 'Content',
     insertedDate: 'insertedDate', ViewCount: 'ViewCount', ShareCount: 'ShareCount',
     keywords: 'keywords', exactDate: 'exactDate', readingTime: 'readingTime', MetaDesc: 'MetaDesc',

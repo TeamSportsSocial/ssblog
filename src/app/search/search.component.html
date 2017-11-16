@@ -1,7 +1,8 @@
-<div #searchPage>
-
-  <h2 class="topic">{{recievedKey}} blogs</h2>
-  <p class="topicDetails">Read the latest articles, blogs, news and other informations related to {{recievedKey}}</p>
+<div  #searchPage>
+  <ng-container *ngIf="isBrowser">
+    <h2 class="topic">{{recievedKey}} blogs</h2>
+    <p class="topicDetails">All you need to know about {{recievedKey}} updates, news, trends and articles </p>
+  </ng-container>
   <div class="Row"  *ngIf="!mobileView">
       
     <div TabViewAvailable class="col-4" *ngFor="let data of blogDetails">

@@ -4,6 +4,7 @@ var core_1 = require("@angular/core");
 var post_service_1 = require("../../services/post.service");
 var property_service_1 = require("../../services/property.service");
 var common_1 = require("@angular/common");
+var platform_browser_1 = require("@angular/platform-browser");
 var RelatedBlogsComponent = /** @class */ (function () {
     function RelatedBlogsComponent(getRelated, recieveKey, platformId) {
         this.getRelated = getRelated;
@@ -107,7 +108,8 @@ var RelatedBlogsComponent = /** @class */ (function () {
         return writtenDate.toDateString();
     };
     RelatedBlogsComponent.prototype.setMobileView = function () {
-        if (window.innerWidth > 950) {
+        var width = platform_browser_1.ɵgetDOM().getBoundingClientRect(this.window.nativeElement).width;
+        if (width > 950) {
             this.mobileView = false;
         }
         else {
@@ -131,6 +133,7 @@ var RelatedBlogsComponent = /** @class */ (function () {
         { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
     ]; };
     RelatedBlogsComponent.propDecorators = {
+        'window': [{ type: core_1.ViewChild, args: ['window',] },],
         'onresize': [{ type: core_1.HostListener, args: ['window:resize', [],] },],
     };
     return RelatedBlogsComponent;

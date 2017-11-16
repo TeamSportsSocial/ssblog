@@ -5,10 +5,12 @@ import {
   ElementRef,
   Renderer2,
   PLATFORM_ID,
-  Inject
+  Inject,
+  
 } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
-
+import { ɵgetDOM } from '@angular/platform-browser';
+import { PropertyService } from '../services/property.service';
 
 @Directive({
   selector: '[TabViewAvailable]'
@@ -17,9 +19,19 @@ export class TabViewAvailableDirective {
   windowWidth;
   className;
   isBrowser;
-  constructor(private elRef: ElementRef, private renderer: Renderer2, @Inject(PLATFORM_ID) platformId: Object) {
+  constructor(
+    private elRef: ElementRef, 
+    private renderer: Renderer2, 
+    private recieveWidth: PropertyService,
+    @Inject(PLATFORM_ID) platformId: Object,
+  ) {
+   
     this.isBrowser = isPlatformBrowser(platformId);
-      this.windowWidth = window.innerWidth;
+    this.recieveWidth.ofWindow.subscribe(
+      (data) => {
+        this.windowWidth = data;
+      }
+    )
       if (this.windowWidth < 950 && this.windowWidth > 600) {
         this.className = this.elRef.nativeElement.className;
 
@@ -34,7 +46,11 @@ export class TabViewAvailableDirective {
       }
   }
    ngAfterViewInit() {
-        this.windowWidth = window.innerWidth;
+    this.recieveWidth.ofWindow.subscribe(
+      (data) => {
+        this.windowWidth = data;
+      }
+    )
         if (this.windowWidth < 950 && this.windowWidth > 600) {
           this.className = this.elRef.nativeElement.className;
           if (this.className === 'col-8') {
@@ -50,7 +66,11 @@ export class TabViewAvailableDirective {
       }
   }
   ngAfterContentInit() {
-        this.windowWidth = window.innerWidth;
+    this.recieveWidth.ofWindow.subscribe(
+      (data) => {
+        this.windowWidth = data;
+      }
+    )
         if (this.windowWidth < 950 && this.windowWidth > 600 ) {
           this.className = this.elRef.nativeElement.className;
           if (this.className === 'col-8') {
@@ -65,7 +85,11 @@ export class TabViewAvailableDirective {
       }
   }
   @HostListener('window:resize', [])onresize() {
-      this.windowWidth = window.innerWidth;
+    this.recieveWidth.ofWindow.subscribe(
+      (data) => {
+        this.windowWidth = data;
+      }
+    )
       if (this.windowWidth > 950) {
         this.className = this.elRef.nativeElement.className;
         if (this.className === 'col-12') {

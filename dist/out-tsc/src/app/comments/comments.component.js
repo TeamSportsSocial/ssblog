@@ -35,9 +35,6 @@ var CommentsComponent = /** @class */ (function () {
                 });
             }
         });
-        if (this.isBrowser) {
-            this.getLoginStatus();
-        }
     };
     CommentsComponent.prototype.setDefault = function () {
         this.profilePicture = '/assets/images/user.png';

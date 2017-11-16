@@ -5,6 +5,7 @@ var property_service_1 = require("../../services/property.service");
 var post_service_1 = require("../../services/post.service");
 var platform_browser_1 = require("@angular/platform-browser");
 var common_1 = require("@angular/common");
+var platform_browser_2 = require("@angular/platform-browser");
 var BlogsComponent = /** @class */ (function () {
     function BlogsComponent(reciveHeight, renderer, get, metaService, platformId) {
         this.reciveHeight = reciveHeight;
@@ -25,12 +26,12 @@ var BlogsComponent = /** @class */ (function () {
         this.count = 0;
         metaService.addTags([
             { rel: 'canonical', href: 'https://www.chaseyoursport.com/' },
-            { name: 'description', content: "chase your sports provides a better & sustainable\n      platform for the sports analytics and latest national as well as international\n      sports news & update for better engagement with the sports-friendly environment &\n      future aspects in INDIA...." },
-            { name: 'keywords', content: "best sports social media, best sports social campaigns, extreme sports social network,\n      sports social network in india launch, sports social network india, action sports blog,\n      adventure sports blog, blog sports vent, indian sports blog, sports analytics blog,\n      all sports news, best college sports news network, best online sports news, best sports news channel,\n      cricket sports news, current sports news, daily sports news, indian sports news today, latest updates in sports in india\n      indian sports analysis group, indian sports analysis jobs, indian sports analysis news,\n      indian sports analysis questions, indian sports analysis report, international sports news & analysis report,\n      international news of sports, international sports breaking news, international sports news articles,\n      international sports news basketball, international sports news india, international sports news latest,\n      international sports news soccer, football sports news, latest international news about sports,\n      latest international sports news, latest national and international sports news" },
-            { name: 'title', content: 'Chase Your Sport: The Sports Social Blog' },
+            { name: 'description', content: "Sports Social Blog: Chase Your Sport aims to create a sustainable\n        platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and\n        career in sports." },
+            { name: 'keywords', content: "Indian Sports Trends,Sports Social,Career in Sports,current trends\n        in sports,Indian Sports History, Sports Social media,sports technology,Sports blog,Indian Sports\n        Blog,Multiplayer Strategy Video Games,Health and Fitness Tips,Sports Analytics blog, Indian sports\n        news,outlook in sports industry,future trends in sports,sports business trends, sports articles,\n        sports management,Sports Social network india,sports jobs" },
+            { name: 'title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook' },
             { name: 'theme-color', content: '#4327a0' },
-            { property: 'og:title', content: 'Chase Your Sport: The Sports Social Blog' },
-            { property: 'og:description', content: "chase your sports provides a better & sustainable\n      platform for the sports analytics and latest national as well as international\n      sports news & update for better engagement with the sports-friendly environment &\n      future aspects in INDIA...." },
+            { property: 'og:title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook' },
+            { property: 'og:description', content: "Sports Social Blog: Chase Your Sport aims to create a sustainable\n      platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and\n      career in sports." },
             { property: 'og:url', content: 'https://www.chaseyoursport.com/' },
             { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
             { property: 'og:site_name', content: 'Chase Your Sport' },
@@ -38,15 +39,17 @@ var BlogsComponent = /** @class */ (function () {
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@Chaseyoursport' },
             { name: 'twitter:creator', content: '@NadeemKhan' },
-            { name: 'twitter:title', content: 'Chase Your Sport:The Sports Social Blog' },
-            { name: 'twitter:description', content: "chase your sports provides a better & sustainable\n      platform for the sports analytics and latest national as well as international\n      sports news & update for better engagement with the sports-friendly environment &\n      future aspects in INDIA...." },
+            { name: 'twitter:title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook' },
+            { name: 'twitter:description', content: "Sports Social Blog: Chase Your Sport aims to create a sustainable\n      platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and\n      career in sports." },
             { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
         ]);
         this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     BlogsComponent.prototype.ngOnInit = function () {
         this.setMobileView();
-        this.getBlog();
+        if (this.isBrowser) {
+            this.getBlog();
+        }
     };
     BlogsComponent.prototype.getBlog = function () {
         var _this = this;
@@ -128,7 +131,9 @@ var BlogsComponent = /** @class */ (function () {
         });
     };
     BlogsComponent.prototype.setMobileView = function () {
-        if (window.innerWidth > 600) {
+        var width = platform_browser_2.ɵgetDOM().getBoundingClientRect(this.window.nativeElement).width;
+        console.log(width);
+        if (width > 600) {
             this.mobileView = false;
         }
         else {
@@ -141,10 +146,11 @@ var BlogsComponent = /** @class */ (function () {
         this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + 'px');
     };
     BlogsComponent.prototype.showTrendingBlock = function () {
-        if (this.blogDetails.length === 0 || window.innerWidth < 950) {
+        var width = platform_browser_2.ɵgetDOM().getBoundingClientRect(this.window.nativeElement).width;
+        if (this.blogDetails.length === 0 || width < 950) {
             return false;
         }
-        if (this.blogDetails.length >= 0 && window.innerWidth > 950) {
+        if (this.blogDetails.length >= 0 && width > 950) {
             return true;
         }
     };
@@ -157,6 +163,7 @@ var BlogsComponent = /** @class */ (function () {
         this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + 'px');
     };
     BlogsComponent.prototype.onresize = function () {
+        //console.log(ɵgetDOM().getBoundingClientRect(document.body).width, ' b');
         this.setTopMargin();
         this.showTrendingBlock();
         this.setMobileView();
@@ -269,6 +276,7 @@ var BlogsComponent = /** @class */ (function () {
     ]; };
     BlogsComponent.propDecorators = {
         'blog': [{ type: core_1.ViewChild, args: ['blog',] },],
+        'window': [{ type: core_1.ViewChild, args: ['window',] },],
         'onresize': [{ type: core_1.HostListener, args: ['window:resize', [],] },],
     };
     return BlogsComponent;

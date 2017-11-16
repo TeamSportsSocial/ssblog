@@ -1,7 +1,9 @@
-<div class="keywords" #Keywords>
-  <div>
-    <SportSocialBlog-keyword *ngFor="let keyword of keywords;let i=index" 
-      [title]="keyword.name" class="keyword" role="button" (click)="send(i)">
-    </SportSocialBlog-keyword>
-  </div>
+<div  class="keywords" #Keywords>
+  <ng-container *ngIf="isBrowser">
+    <div>
+      <SportSocialBlog-keyword *ngFor="let keyword of keywords;let i=index" 
+        [title]="keyword.name" class="keyword" role="button" (click)="send(i)">
+      </SportSocialBlog-keyword>
+    </div>
+  </ng-container>
 </div>

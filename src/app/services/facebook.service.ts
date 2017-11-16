@@ -8,20 +8,25 @@ declare var FB: any;
 @Injectable()
 export class FacebookService {
   connected = false;
+  isBrowser: boolean;
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
     if (isPlatformBrowser(platformId)) {
       if (window.FB)  {
         window.FB.XFBML.parse();
       }
     }
   }
+
   init() {
-    FB.init({
-      appId: '1750709328507665',
-      cookie: false,
-      xfbml: true,
-      version: 'v2.10'
-    });
+    if(this.isBrowser){
+      FB.init({
+        appId: '1750709328507665',
+        cookie: false,
+        xfbml: true,
+        version: 'v2.10'
+      });
+    }
   }
 
 }

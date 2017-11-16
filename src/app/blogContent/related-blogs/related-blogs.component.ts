@@ -1,7 +1,8 @@
-import { Component, OnInit, HostListener, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, OnInit, HostListener, PLATFORM_ID, Inject, ViewChild} from '@angular/core';
 import {PostService} from '../../services/post.service';
 import {PropertyService} from '../../services/property.service';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { ɵgetDOM } from '@angular/platform-browser';
 
 @Component({
   selector: 'SportSocial-related-blogs',
@@ -10,7 +11,7 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 })
 export class RelatedBlogsComponent implements OnInit {
 
-
+  @ViewChild('window') window;
   relatedBlogDetails;
   numberofBlog;
   dataRecived:boolean=false;
@@ -97,7 +98,7 @@ timeToRead(s: string) {
 
 timePassed(i: string) {
 
-    const writtenDate = new Date(parseInt(i) * 1000);
+    const writtenDate = new Date( parseInt(i) * 1000);
     const presentDate = new Date();
     if (writtenDate.getFullYear() === presentDate.getFullYear()) {
       if (writtenDate.getMonth() === presentDate.getMonth() || writtenDate.getDate() > presentDate.getDate()) {
@@ -143,7 +144,8 @@ const writtenDate = new Date(i * 1000);
 return writtenDate.toDateString();
 }
 setMobileView() {
-    if (window.innerWidth > 950 ) {
+  const width = ɵgetDOM().getBoundingClientRect(this.window.nativeElement).width;
+    if (width > 950 ) {
         this.mobileView = false;
     }else {
       this.mobileView = true;

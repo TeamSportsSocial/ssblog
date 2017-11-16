@@ -5,8 +5,10 @@ var platform_browser_1 = require("@angular/platform-browser");
 var property_service_1 = require("../services/property.service");
 var post_service_1 = require("../services/post.service");
 var router_1 = require("@angular/router");
+var platform_browser_2 = require("@angular/platform-browser");
+var common_1 = require("@angular/common");
 var SearchComponent = /** @class */ (function () {
-    function SearchComponent(recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService) {
+    function SearchComponent(platformId, recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService) {
         this.recieveHeight = recieveHeight;
         this.renderer = renderer;
         this.recieveData = recieveData;
@@ -23,32 +25,35 @@ var SearchComponent = /** @class */ (function () {
         this.mobileView = false;
         this.haveData = true;
         this.keywords = ' ';
+        this.keys = ' ';
+        this.keyArray = [];
+        this.isBrowser = false;
+        this.isBrowser = common_1.isPlatformBrowser(platformId);
+        console.log(this.isBrowser);
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.setTopMargin();
-        this.recievekeyFromUrl();
+        if (this.isBrowser) {
+            this.recievekeyFromUrl();
+        }
         this.setMobileView();
     };
     SearchComponent.prototype.ngAfterViewInit = function () {
         this.setTopMargin();
-        this.recievekeyFromUrl();
+        // this.recievekeyFromUrl();
     };
     SearchComponent.prototype.setTitle = function () {
-        this.titleService.setTitle(this.recievedKey + ',' +
-            'Read the latest articles, blogs, news and other informations related to '
-            + this.recievedKey);
+        this.titleService.setTitle(this.recievedKey + " | Latest updates,trends,blogs,news and articles | Sports Social Blog");
     };
     SearchComponent.prototype.setMetaTags = function () {
         this.metaService.addTags([
             { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
-            { name: 'description', content: 'Read the latest articles, blogs, news and other informations related to '
-                    + this.recievedKey },
+            { name: 'description', content: 'All you need to know about' + this.recievekey + 'updates,news,trends and articles' },
             { name: 'title', content: this.recievedKey + ' Blogs' },
             { name: 'keywords', content: this.keywords },
             { name: 'theme-color', content: '#4327a0' },
             { property: 'og:title', content: this.recievedKey + 'Blogs' },
-            { property: 'og:description', content: 'Read the latest articles, blogs, news and other informations related to '
-                    + this.recievedKey },
+            { property: 'og:description', content: 'All you need to know about' + this.recievekey + 'updates,news,trends and articles' },
             { property: 'og:url', content: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
             { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
             { property: 'og:site_name', content: 'Chase Your Sport' },
@@ -57,8 +62,7 @@ var SearchComponent = /** @class */ (function () {
             { name: 'twitter:site', content: '@Chaseyoursport' },
             { name: 'twitter:creator', content: '@NadeemKhan' },
             { name: 'twitter:title', content: this.recievedKey + ' Blogs' },
-            { name: 'twitter:description', content: 'Read the latest articles, blogs, news and other informations related to '
-                    + this.recievedKey },
+            { name: 'twitter:description', content: 'All you need to know about' + this.recievekey + 'updates, news, trends and articles' },
             { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
         ]);
     };
@@ -91,10 +95,13 @@ var SearchComponent = /** @class */ (function () {
                     exactDate: _this.ExactDate(data[i].insertedDate),
                     readingTime: _this.timeToRead(data[i].Content)
                 });
-                _this.keywords += blogDetails[i].keywords + ',';
+                _this.keys += blogDetails[i].keywords + ',';
             }
             _this.blogDetails = blogDetails;
-            console.log(_this.keywords);
+            _this.keyArray = _this.keys.trim().split(',');
+            _this.keyArray = Array.from(new Set(_this.keyArray));
+            _this.keywords = _this.keyArray.toString();
+            console.log(_this.keys, _this.keyArray, _this.keywords);
             _this.setMetaTags();
         });
     };
@@ -103,14 +110,14 @@ var SearchComponent = /** @class */ (function () {
         this.recievedKey = this.route.snapshot.url[0].path.replace(/-/g, ' ');
         this.route.params.subscribe(function (params) {
             _this.pageNumber = 1;
-            // console.log(params, " params")
             _this.recievedKey = params.tag.replace(/-/g, ' ');
             _this.setTitle();
             _this.getBlogs();
         });
     };
     SearchComponent.prototype.setMobileView = function () {
-        if (window.innerWidth < 700) {
+        var width = platform_browser_2.ɵgetDOM().getBoundingClientRect(this.searchPage.nativeElement).width;
+        if (width < 700) {
             this.mobileView = true;
         }
         else {
@@ -134,7 +141,7 @@ var SearchComponent = /** @class */ (function () {
     SearchComponent.prototype.timePassed = function (i) {
         var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
-        //console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
+        // console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
         if (writtenDate.getFullYear() == presentDate.getFullYear()) {
             if (writtenDate.getMonth() == presentDate.getMonth()) {
                 if (writtenDate.getDate() == presentDate.getDate()) {
@@ -221,6 +228,7 @@ var SearchComponent = /** @class */ (function () {
     ];
     /** @nocollapse */
     SearchComponent.ctorParameters = function () { return [
+        { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
         { type: property_service_1.PropertyService, },
         { type: core_1.Renderer2, },
         { type: property_service_1.PropertyService, },

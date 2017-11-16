@@ -9,9 +9,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var i0 = require("./search.component.css.shim.ngstyle");
 var i1 = require("@angular/core");
 var i2 = require("../../../../../src/app/directives/tab-view-available.directive");
-var i3 = require("../blogContent/normal-blog/normal-blog.component.ngfactory");
-var i4 = require("../../../../../src/app/blogContent/normal-blog/normal-blog.component");
-var i5 = require("../../../../../src/app/services/property.service");
+var i3 = require("../../../../../src/app/services/property.service");
+var i4 = require("../blogContent/normal-blog/normal-blog.component.ngfactory");
+var i5 = require("../../../../../src/app/blogContent/normal-blog/normal-blog.component");
 var i6 = require("../../../../../src/app/services/post.service");
 var i7 = require("@angular/common");
 var i8 = require("../blog-footer/blog-footer.component.ngfactory");
@@ -23,7 +23,19 @@ var i13 = require("@angular/platform-browser");
 var styles_SearchComponent = [i0.styles];
 exports.RenderType_SearchComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_SearchComponent, data: {} });
-function View_SearchComponent_2(_l) {
+function View_SearchComponent_1(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 7, null, null, null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(2, 0, null, null, 1, 'h2', [['class', 'topic']], null, null, null, null, null)), (_l()(), i1.ɵted(3, null, ['', ' blogs'])),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(5, 0, null, null, 1, 'p', [['class', 'topicDetails']], null, null, null, null, null)), (_l()(), i1.ɵted(6, null, ['All you need to know about ', ' updates, news, trends and articles '])),
+        (_l()(), i1.ɵted(-1, null, ['\n  ']))], null, function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = _co.recievedKey;
+        _ck(_v, 3, 0, currVal_0);
+        var currVal_1 = _co.recievedKey;
+        _ck(_v, 6, 0, currVal_1);
+    });
+}
+function View_SearchComponent_3(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 6, 'div', [['TabViewAvailable',
                 ''], ['class', 'col-4']], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
@@ -32,21 +44,20 @@ function View_SearchComponent_2(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(1, 5259264, null, 0, i2.TabViewAvailableDirective, [i1.ElementRef, i1.Renderer2, i1.PLATFORM_ID], null, null), (_l()(),
-            i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(3, 0, null, null, 2, 'SportSocial-normal-blog', [], null, [['window', 'resize']], function (_v, en, $event) {
+        }, null, null)), i1.ɵdid(1, 5259264, null, 0, i2.TabViewAvailableDirective, [i1.ElementRef, i1.Renderer2, i3.PropertyService, i1.PLATFORM_ID], null, null), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵeld(3, 0, null, null, 2, 'SportSocial-normal-blog', [], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
                 var pd_0 = (i1.ɵnov(_v, 4).onresize() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i3.View_NormalBlogComponent_0, i3.RenderType_NormalBlogComponent)), i1.ɵdid(4, 4308992, null, 0, i4.NormalBlogComponent, [i5.PropertyService, i1.Renderer2,
-            i6.PostService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1,
-                'blogImage'], bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'],
-            heading: [4, 'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'],
-            ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
-            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12, 'MetaDesc'],
-            ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
+        }, i4.View_NormalBlogComponent_0, i4.RenderType_NormalBlogComponent)), i1.ɵdid(4, 4308992, null, 0, i5.NormalBlogComponent, [i3.PropertyService, i3.PropertyService,
+            i1.Renderer2, i6.PostService, i3.PropertyService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'], bloggerImage: [2, 'bloggerImage'],
+            bloggerName: [3, 'bloggerName'], heading: [4, 'heading'], insertedDate: [5, 'insertedDate'],
+            Content: [6, 'Content'], ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'],
+            keywords: [9, 'keywords'], exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'],
+            MetaDesc: [12, 'MetaDesc'], ImageDesc: [13, 'ImageDesc'] }, null), (_l()(),
+            i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerImage;
@@ -65,16 +76,16 @@ function View_SearchComponent_2(_l) {
             currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13]);
     }, null);
 }
-function View_SearchComponent_1(_l) {
+function View_SearchComponent_2(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 4, 'div', [['class',
                 'Row']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n      \n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_2)), i1.ɵdid(3, 802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    \n  ']))], function (_ck, _v) {
+        (_l()(), i1.ɵted(-1, null, ['\n      \n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_3)), i1.ɵdid(3, 802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n    \n  ']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.blogDetails;
         _ck(_v, 3, 0, currVal_0);
     }, null);
 }
-function View_SearchComponent_4(_l) {
+function View_SearchComponent_5(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 5, 'div', [['class',
                 'col-4']], null, null, null, null, null)),
         (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵeld(2, 0, null, null, 2, 'SportSocial-normal-blog', [], null, [['window',
@@ -85,13 +96,14 @@ function View_SearchComponent_4(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i3.View_NormalBlogComponent_0, i3.RenderType_NormalBlogComponent)), i1.ɵdid(3, 4308992, null, 0, i4.NormalBlogComponent, [i5.PropertyService, i1.Renderer2,
-            i6.PostService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1,
-                'blogImage'], bloggerImage: [2, 'bloggerImage'], bloggerName: [3, 'bloggerName'],
-            heading: [4, 'heading'], insertedDate: [5, 'insertedDate'], Content: [6, 'Content'],
-            ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
-            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12,
-                'MetaDesc'], ImageDesc: [13, 'ImageDesc'] }, null), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵted(-1, null, ['\n      ']))], function (_ck, _v) {
+        }, i4.View_NormalBlogComponent_0, i4.RenderType_NormalBlogComponent)), i1.ɵdid(3, 4308992, null, 0, i5.NormalBlogComponent, [i3.PropertyService, i3.PropertyService,
+            i1.Renderer2, i6.PostService, i3.PropertyService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'], bloggerImage: [2, 'bloggerImage'],
+            bloggerName: [3, 'bloggerName'], heading: [4, 'heading'], insertedDate: [5,
+                'insertedDate'], Content: [6, 'Content'], ViewCount: [7, 'ViewCount'],
+            ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'], exactDate: [10, 'exactDate'],
+            readingTime: [11, 'readingTime'], MetaDesc: [12, 'MetaDesc'], ImageDesc: [13,
+                'ImageDesc'] }, null), (_l()(), i1.ɵted(-1, null, ['\n          '])),
+        (_l()(), i1.ɵted(-1, null, ['\n      ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerImage;
@@ -110,16 +122,16 @@ function View_SearchComponent_4(_l) {
             currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13]);
     }, null);
 }
-function View_SearchComponent_3(_l) {
+function View_SearchComponent_4(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 4, 'div', [['class',
                 'Row mobileView']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_4)), i1.ɵdid(3, 802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n  ']))], function (_ck, _v) {
+        (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_5)), i1.ɵdid(3, 802816, null, 0, i7.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n  ']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.blogDetails;
         _ck(_v, 3, 0, currVal_0);
     }, null);
 }
-function View_SearchComponent_6(_l) {
+function View_SearchComponent_7(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             var _co = _v.component;
@@ -130,14 +142,14 @@ function View_SearchComponent_6(_l) {
             return ad;
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['Load More']))], null, null);
 }
-function View_SearchComponent_7(_l) {
+function View_SearchComponent_8(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 0, 'img', [['class',
                 'loading'], ['src', '/assets/images/sports-social-loading.gif']], null, null, null, null, null))], null, null);
 }
-function View_SearchComponent_5(_l) {
+function View_SearchComponent_6(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 7, 'div', [], null, null, null, null, null)), (_l()(),
-            i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_6)), i1.ɵdid(3, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
-        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_7)), i1.ɵdid(6, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+            i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_7)), i1.ɵdid(3, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_8)), i1.ɵdid(6, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
         (_l()(), i1.ɵted(-1, null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.dataRecieved;
@@ -146,12 +158,12 @@ function View_SearchComponent_5(_l) {
         _ck(_v, 6, 0, currVal_1);
     }, null);
 }
-function View_SearchComponent_8(_l) {
+function View_SearchComponent_9(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'p', [['class',
                 'noMoreData']], null, null, null, null, null)),
         (_l()(), i1.ɵted(-1, null, ['No More Data !!!']))], null, null);
 }
-function View_SearchComponent_9(_l) {
+function View_SearchComponent_10(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'SportSocial-blog-footer', [], null, [['window', 'resize']], function (_v, en, $event) {
             var ad = true;
             if (('window:resize' === en)) {
@@ -166,35 +178,27 @@ function View_SearchComponent_9(_l) {
 }
 function View_SearchComponent_0(_l) {
     return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { searchPage: 0 }), i1.ɵqud(402653184, 2, { blog: 0 }),
-        (_l()(), i1.ɵeld(2, 0, [[1, 0], ['searchPage', 1]], null, 13, 'div', [], null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n\n  '])), (_l()(), i1.ɵeld(4, 0, null, null, 1, 'h2', [['class', 'topic']], null, null, null, null, null)), (_l()(), i1.ɵted(5, null, ['', ' blogs'])),
-        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵeld(7, 0, null, null, 1, 'p', [['class', 'topicDetails']], null, null, null, null, null)), (_l()(), i1.ɵted(8, null, ['Read the latest articles, blogs, news and other informations related to ',
-            ''])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_1)), i1.ɵdid(11, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
-                'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n  '])),
-        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_3)),
-        i1.ɵdid(14, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n'])),
-        (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_5)), i1.ɵdid(18, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_8)), i1.ɵdid(21, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
-                'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['         \n'])),
-        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_9)),
-        i1.ɵdid(24, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, [' ']))], function (_ck, _v) {
+        (_l()(), i1.ɵeld(2, 0, [[1, 0], ['searchPage', 1]], null, 10, 'div', [], null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_1)), i1.ɵdid(5, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_2)), i1.ɵdid(8, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_4)), i1.ɵdid(11, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_6)), i1.ɵdid(15, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_9)), i1.ɵdid(18, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['         \n'])), (_l()(),
+            i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_10)),
+        i1.ɵdid(21, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, [' ']))], function (_ck, _v) {
         var _co = _v.component;
-        var currVal_2 = !_co.mobileView;
-        _ck(_v, 11, 0, currVal_2);
-        var currVal_3 = _co.mobileView;
-        _ck(_v, 14, 0, currVal_3);
-        var currVal_4 = _co.haveData;
-        _ck(_v, 18, 0, currVal_4);
-        var currVal_5 = !_co.haveData;
-        _ck(_v, 21, 0, currVal_5);
-        var currVal_6 = _co.show;
-        _ck(_v, 24, 0, currVal_6);
-    }, function (_ck, _v) {
-        var _co = _v.component;
-        var currVal_0 = _co.recievedKey;
+        var currVal_0 = _co.isBrowser;
         _ck(_v, 5, 0, currVal_0);
-        var currVal_1 = _co.recievedKey;
+        var currVal_1 = !_co.mobileView;
         _ck(_v, 8, 0, currVal_1);
-    });
+        var currVal_2 = _co.mobileView;
+        _ck(_v, 11, 0, currVal_2);
+        var currVal_3 = _co.haveData;
+        _ck(_v, 15, 0, currVal_3);
+        var currVal_4 = !_co.haveData;
+        _ck(_v, 18, 0, currVal_4);
+        var currVal_5 = _co.show;
+        _ck(_v, 21, 0, currVal_5);
+    }, null);
 }
 exports.View_SearchComponent_0 = View_SearchComponent_0;
 function View_SearchComponent_Host_0(_l) {
@@ -205,8 +209,9 @@ function View_SearchComponent_Host_0(_l) {
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, View_SearchComponent_0, exports.RenderType_SearchComponent)), i1.ɵdid(1, 4308992, null, 0, i11.SearchComponent, [i5.PropertyService, i1.Renderer2, i5.PropertyService, i5.PropertyService,
-            i6.PostService, i12.ActivatedRoute, i1.NgZone, i13.Title, i13.Meta], null, null)], function (_ck, _v) {
+        }, View_SearchComponent_0, exports.RenderType_SearchComponent)), i1.ɵdid(1, 4308992, null, 0, i11.SearchComponent, [i1.PLATFORM_ID, i3.PropertyService, i1.Renderer2, i3.PropertyService,
+            i3.PropertyService, i6.PostService, i12.ActivatedRoute, i1.NgZone, i13.Title,
+            i13.Meta], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

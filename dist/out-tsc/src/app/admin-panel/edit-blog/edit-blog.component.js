@@ -114,13 +114,11 @@ var EditBlogComponent = /** @class */ (function () {
             Element: document.activeElement
         };
     };
-    EditBlogComponent.prototype.AddH1Tag = function () {
+    EditBlogComponent.prototype.selectTag = function (event) {
         this.initialActiveElement.Element.focus();
-        document.execCommand('formatBlock', false, 'h1');
-    };
-    EditBlogComponent.prototype.AddH2Tag = function () {
-        this.initialActiveElement.Element.focus();
-        document.execCommand('formatBlock', false, 'h2');
+        // console.log(event.target.value);
+        document.execCommand('formatBlock', false, (event.target.value));
+        // console.log(this.initialActiveElement.Element);
     };
     EditBlogComponent.prototype.bold = function (event) {
         this.initialActiveElement.Element.focus();
