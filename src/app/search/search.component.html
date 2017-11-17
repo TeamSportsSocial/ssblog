@@ -1,4 +1,5 @@
 <div  #searchPage>
+    <img class="loading" *ngIf="!isBrowser" src="/assets/images/sports-social-loading.gif" >
   <ng-container *ngIf="isBrowser">
     <h2 class="topic">{{recievedKey}} blogs</h2>
     <p class="topicDetails">All you need to know about {{recievedKey}} updates, news, trends and articles </p>
@@ -47,9 +48,11 @@
   </div>
  </ng-container>
 </div>
-<div *ngIf="haveData">
-    <button (click)="nextPage()" *ngIf="dataRecieved">Load More</button>
-    <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecieved" class="loading">
-</div>
-<p *ngIf="!haveData" class="noMoreData" >No More Data !!!</p>         
-<SportSocial-blog-footer *ngIf="show"></SportSocial-blog-footer> 
+<ng-container *ngIf="isBrowser">
+  <div *ngIf="haveData">
+      <button (click)="nextPage()" *ngIf="dataRecieved">Load More</button>
+      <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecieved" class="loading">
+  </div>
+  <p *ngIf="!haveData" class="noMoreData" >No More Data !!!</p>         
+  <SportSocial-blog-footer *ngIf="show"></SportSocial-blog-footer> 
+</ng-container>

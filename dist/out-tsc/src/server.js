@@ -35,10 +35,20 @@ function ngApp(req, res) {
         requestUrl: req.originalUrl,
         originUrl: "http://localhost:" + PORT
     });
+    console.log(req.originalUrl);
 }
 /* app.get('*', (req, res) => {
   res.render('index', { req});
 }); */
+/* function siteMap(urlArray) {
+ const XML = `<?xml version="1.0" encoding="UTF-8"?>
+ <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`
+ + urlArray + `</urlset>`;
+}
+
+function URLArray(url) {
+
+} */
 app.get('/', ngApp);
 app.get('/:tag', ngApp);
 app.get('/:tag/:title/:blogId', ngApp);

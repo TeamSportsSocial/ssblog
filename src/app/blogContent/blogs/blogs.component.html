@@ -1,5 +1,6 @@
 <SportSocialBlog-keywords></SportSocialBlog-keywords>
 <div #window>
+<img class="loading" *ngIf="!isBrowser" src="/assets/images/sports-social-loading.gif" >
 <div class="blog" #blog *ngIf="!mobileView" >
     <div class="latestBlog"  *ngFor="let data of latestBlogDetails;let i=index">
         <SportSocial-latest-blog 
@@ -126,7 +127,7 @@
         </SportSocial-normal-blog>
     </div>
 </div>
-
+<ng-container *ngIf="isBrowser">
     <div *ngIf="haveData">
         <button (click)="nextPage()" *ngIf="dataRecived">Load More</button>
         <img src="/assets/images/sports-social-loading.gif" *ngIf="!dataRecived" class="loading">
@@ -136,5 +137,5 @@
         <a href="https://goo.gl/qrgCz5">DOWNLOAD THE APP NOW</a>
     </p>
     <SportSocial-blog-footer *ngIf="show"></SportSocial-blog-footer> 
-          
+</ng-container>          
 </div>      
