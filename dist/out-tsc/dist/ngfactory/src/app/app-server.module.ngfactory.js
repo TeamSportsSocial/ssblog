@@ -36,16 +36,17 @@ var i26 = require("../../../../src/app/services/auth.service");
 var i27 = require("../../../../src/app/services/auth-gaurd.service");
 var i28 = require("../../../../src/app/services/facebook.service");
 var i29 = require("../../../../src/app/services/window-ref.service");
-var i30 = require("../../../../src/app/custom-url/custom-url.component");
-var i31 = require("../../../../src/app/blogContent/blogs/blogs.component");
-var i32 = require("../../../../src/app/editor-panel/editor-panel.component");
-var i33 = require("../../../../src/app/login-page/login-page.component");
-var i34 = require("../../../../src/app/admin-panel/admin-panel.component");
-var i35 = require("../../../../src/app/search/search.component");
-var i36 = require("../../../../src/app/admin-panel/edit-blog/edit-blog.component");
-var i37 = require("../../../../src/app/blogContent/blog-open/blog-open.component");
-var i38 = require("../../../../src/app/routing/routing.module");
-var i39 = require("../../../../src/app/app.module");
+var i30 = require("../../../../src/app/services/link.service");
+var i31 = require("../../../../src/app/custom-url/custom-url.component");
+var i32 = require("../../../../src/app/blogContent/blogs/blogs.component");
+var i33 = require("../../../../src/app/editor-panel/editor-panel.component");
+var i34 = require("../../../../src/app/login-page/login-page.component");
+var i35 = require("../../../../src/app/admin-panel/admin-panel.component");
+var i36 = require("../../../../src/app/search/search.component");
+var i37 = require("../../../../src/app/admin-panel/edit-blog/edit-blog.component");
+var i38 = require("../../../../src/app/blogContent/blog-open/blog-open.component");
+var i39 = require("../../../../src/app/routing/routing.module");
+var i40 = require("../../../../src/app/app.module");
 exports.AppServerModuleNgFactory = i0.ɵcmf(i1.AppServerModule, [i2.AppComponent], function (_l) {
     return i0.ɵmod([i0.ɵmpd(512, i0.ComponentFactoryResolver, i0.ɵCodegenComponentFactoryResolver, [[8, [i3.BlogsComponentNgFactory, i4.EditorPanelComponentNgFactory, i5.LoginPageComponentNgFactory,
                     i6.AdminPanelComponentNgFactory, i7.SearchComponentNgFactory, i8.EditBlogComponentNgFactory,
@@ -75,7 +76,8 @@ exports.AppServerModuleNgFactory = i0.ɵcmf(i1.AppServerModule, [i2.AppComponent
         }, [i20.ROUTER_INITIALIZER]), i0.ɵmpd(4608, i19.FormBuilder, i19.FormBuilder, []), i0.ɵmpd(4608, i21.PropertyService, i21.PropertyService, []), i0.ɵmpd(4608, i22.GetService, i22.GetService, [i11.Http]),
         i0.ɵmpd(4608, i23.SaveService, i23.SaveService, []), i0.ɵmpd(4608, i24.StatusService, i24.StatusService, []), i0.ɵmpd(4608, i25.PostService, i25.PostService, [i11.Http]), i0.ɵmpd(4608, i26.AuthService, i26.AuthService, []), i0.ɵmpd(4608, i27.AuthGuard, i27.AuthGuard, [i26.AuthService,
             i20.Router]), i0.ɵmpd(4608, i28.FacebookService, i28.FacebookService, [i0.PLATFORM_ID]),
-        i0.ɵmpd(4608, i29.WindowRefService, i29.WindowRefService, []), i0.ɵmpd(512, i11.HttpModule, i11.HttpModule, []), i0.ɵmpd(512, i13.HttpClientXsrfModule, i13.HttpClientXsrfModule, []), i0.ɵmpd(512, i13.HttpClientModule, i13.HttpClientModule, []), i0.ɵmpd(512, i14.CommonModule, i14.CommonModule, []), i0.ɵmpd(1024, i0.ErrorHandler, i15.ɵa, []), i0.ɵmpd(1024, i0.NgProbeToken, function () {
+        i0.ɵmpd(4608, i29.WindowRefService, i29.WindowRefService, []), i0.ɵmpd(4608, i30.LinkService, i30.LinkService, [i0.RendererFactory2, i15.DOCUMENT]),
+        i0.ɵmpd(512, i11.HttpModule, i11.HttpModule, []), i0.ɵmpd(512, i13.HttpClientXsrfModule, i13.HttpClientXsrfModule, []), i0.ɵmpd(512, i13.HttpClientModule, i13.HttpClientModule, []), i0.ɵmpd(512, i14.CommonModule, i14.CommonModule, []), i0.ɵmpd(1024, i0.ErrorHandler, i15.ɵa, []), i0.ɵmpd(1024, i0.NgProbeToken, function () {
             return [i20.ɵb()];
         }, []), i0.ɵmpd(512, i20.ɵg, i20.ɵg, [i0.Injector]), i0.ɵmpd(256, i0.APP_ID, 'blogist', []), i0.ɵmpd(2048, i15.ɵTRANSITION_ID, null, [i0.APP_ID]), i0.ɵmpd(1024, i0.APP_INITIALIZER, function (p0_0, p0_1, p1_0, p2_0, p2_1, p2_2) {
             return [i15.ɵc(p0_0, p0_1), i20.ɵh(p1_0), i15.ɵf(p2_0, p2_1, p2_2)];
@@ -83,21 +85,21 @@ exports.AppServerModuleNgFactory = i0.ɵcmf(i1.AppServerModule, [i2.AppComponent
             i0.Injector]), i0.ɵmpd(512, i0.ApplicationInitStatus, i0.ApplicationInitStatus, [[2, i0.APP_INITIALIZER]]), i0.ɵmpd(131584, i0.ɵe, i0.ɵe, [i0.NgZone, i0.ɵConsole,
             i0.Injector, i0.ErrorHandler, i0.ComponentFactoryResolver, i0.ApplicationInitStatus]),
         i0.ɵmpd(2048, i0.ApplicationRef, null, [i0.ɵe]), i0.ɵmpd(512, i0.ApplicationModule, i0.ApplicationModule, [i0.ApplicationRef]), i0.ɵmpd(512, i15.BrowserModule, i15.BrowserModule, [[3, i15.BrowserModule]]), i0.ɵmpd(512, i17.NoopAnimationsModule, i17.NoopAnimationsModule, []), i0.ɵmpd(512, i12.ServerModule, i12.ServerModule, []), i0.ɵmpd(512, i19.ɵba, i19.ɵba, []),
-        i0.ɵmpd(512, i19.FormsModule, i19.FormsModule, []), i0.ɵmpd(1024, i20.ɵa, i20.ɵd, [[3, i20.Router]]), i0.ɵmpd(512, i20.UrlSerializer, i30.CustomUrlComponent, []), i0.ɵmpd(512, i20.ChildrenOutletContexts, i20.ChildrenOutletContexts, []), i0.ɵmpd(256, i20.ROUTER_CONFIGURATION, {}, []),
+        i0.ɵmpd(512, i19.FormsModule, i19.FormsModule, []), i0.ɵmpd(1024, i20.ɵa, i20.ɵd, [[3, i20.Router]]), i0.ɵmpd(512, i20.UrlSerializer, i31.CustomUrlComponent, []), i0.ɵmpd(512, i20.ChildrenOutletContexts, i20.ChildrenOutletContexts, []), i0.ɵmpd(256, i20.ROUTER_CONFIGURATION, {}, []),
         i0.ɵmpd(1024, i14.LocationStrategy, i20.ɵc, [i14.PlatformLocation, [2, i14.APP_BASE_HREF],
             i20.ROUTER_CONFIGURATION]), i0.ɵmpd(512, i14.Location, i14.Location, [i14.LocationStrategy]),
         i0.ɵmpd(512, i0.Compiler, i0.Compiler, []), i0.ɵmpd(512, i0.NgModuleFactoryLoader, i0.SystemJsNgModuleLoader, [i0.Compiler, [2, i0.SystemJsNgModuleLoaderConfig]]),
         i0.ɵmpd(1024, i20.ROUTES, function () {
-            return [[{ path: '', component: i31.BlogsComponent }, { path: 'editorPanel', canActivate: [i27.AuthGuard],
-                        component: i32.EditorPanelComponent }, { path: 'login', component: i33.LoginPageComponent },
-                    { path: 'adminPanel', canActivate: [i27.AuthGuard], component: i34.AdminPanelComponent },
-                    { path: ':tag', component: i35.SearchComponent }, { path: ':blogId/edit', component: i36.EditBlogComponent },
-                    { path: ':tag/:title/:blogId', component: i37.BlogOpenComponent }, { path: '**',
+            return [[{ path: '', component: i32.BlogsComponent }, { path: 'editorPanel', canActivate: [i27.AuthGuard],
+                        component: i33.EditorPanelComponent }, { path: 'login', component: i34.LoginPageComponent },
+                    { path: 'adminPanel', canActivate: [i27.AuthGuard], component: i35.AdminPanelComponent },
+                    { path: ':tag', component: i36.SearchComponent }, { path: ':blogId/edit', component: i37.EditBlogComponent },
+                    { path: ':tag/:title/:blogId', component: i38.BlogOpenComponent }, { path: '**',
                         redirectTo: '' }]];
         }, []), i0.ɵmpd(1024, i20.Router, i20.ɵe, [i0.ApplicationRef, i20.UrlSerializer,
             i20.ChildrenOutletContexts, i14.Location, i0.Injector, i0.NgModuleFactoryLoader,
             i0.Compiler, i20.ROUTES, i20.ROUTER_CONFIGURATION, [2, i20.UrlHandlingStrategy],
-            [2, i20.RouteReuseStrategy]]), i0.ɵmpd(512, i20.RouterModule, i20.RouterModule, [[2, i20.ɵa], [2, i20.Router]]), i0.ɵmpd(512, i38.RoutingModule, i38.RoutingModule, []), i0.ɵmpd(512, i19.ReactiveFormsModule, i19.ReactiveFormsModule, []), i0.ɵmpd(512, i39.AppModule, i39.AppModule, []),
+            [2, i20.RouteReuseStrategy]]), i0.ɵmpd(512, i20.RouterModule, i20.RouterModule, [[2, i20.ɵa], [2, i20.Router]]), i0.ɵmpd(512, i39.RoutingModule, i39.RoutingModule, []), i0.ɵmpd(512, i19.ReactiveFormsModule, i19.ReactiveFormsModule, []), i0.ɵmpd(512, i40.AppModule, i40.AppModule, []),
         i0.ɵmpd(512, i1.AppServerModule, i1.AppServerModule, []), i0.ɵmpd(256, i13.ɵe, 'XSRF-TOKEN', []), i0.ɵmpd(256, i13.ɵf, 'X-XSRF-TOKEN', [])]);
 });
 //# sourceMappingURL=app-server.module.ngfactory.js.map

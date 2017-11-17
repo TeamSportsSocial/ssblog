@@ -20,8 +20,9 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { ɵgetDOM } from '@angular/platform-browser';
 
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import {Router} from '@angular/router';
-import {FacebookService} from '../../services/facebook.service';
+import { Router } from '@angular/router';
+import { FacebookService } from '../../services/facebook.service';
+import { LinkService } from '../../services/link.service';
 
 declare var FB: any;
 
@@ -75,16 +76,15 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
         private load: PostService,
         private titleService: Title,
         private Fb: FacebookService,
-        private http: Http
+        private http: Http,
+        private Link: LinkService,
     ) {
         this.isBrowser = isPlatformBrowser(platformId);
      }
 
     ngOnInit() {
         this.blogDataRecieved = false;
-        if (this.isBrowser) {
-            this.recieveBlogIdFromUrl();
-        }
+            this.recieveBlogIdFromUrl()
             this.setTopMargin();
             this.setMobileView();
     }
@@ -98,6 +98,17 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
         if (this.route.snapshot.url[0].path !== 'sportsocialblog' || this.route.snapshot.url[1].path !== 'page') {
             this.titleService.setTitle(this.blog.heading + ' | Chase Your Sport - Sports Social Blog');
         }
+    }
+    setCanonivalURL() {
+        let key;
+        if (this.Keywords[0].search(/ /g ) === -1) {
+           key = this.Keywords[0] ;
+        }else {
+            key = this.Keywords[0].replace(/\s/g, '-');
+        }
+        const url = 'https://www.chaseyoursport.com/' + key
+        + '/' + this.blog.heading.replace(/\s/g, '-') + '/' + this.blogID;
+        this.Link.addTag({ rel: 'canonical', href: url } )
     }
     sendViewCount() {
         this.send.viewCountOfBlog(this.blogID, this.ViewCount).subscribe(
@@ -143,7 +154,6 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
             + '/' + this.blog.heading.replace(/\s/g, '-') + '/' + this.blogID;
         // console.log(url);
         this.metaService.addTags([
-            { rel: 'canonical', href: url},
             { name: 'title', content: this.blog.heading},
             { name: 'keywords', content: this.keys},
             { name: 'theme-color', content: '#4327a0'},
@@ -227,6 +237,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
                 this.Keywords = blog.keywords;
                 this.content = this.sanitizer.bypassSecurityTrustHtml(data.Content);
                 this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length - 1]);
+                this.setCanonivalURL();
                 this.setMetaTags();
                 this.setTitle();
                 this.ShareCount = + blog.ShareCount;

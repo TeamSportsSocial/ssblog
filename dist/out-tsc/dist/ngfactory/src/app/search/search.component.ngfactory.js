@@ -20,21 +20,10 @@ var i10 = require("../../../../../src/app/services/status.service");
 var i11 = require("../../../../../src/app/search/search.component");
 var i12 = require("@angular/router");
 var i13 = require("@angular/platform-browser");
+var i14 = require("../../../../../src/app/services/link.service");
 var styles_SearchComponent = [i0.styles];
 exports.RenderType_SearchComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_SearchComponent, data: {} });
-function View_SearchComponent_1(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 7, null, null, null, null, null, null, null)),
-        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(2, 0, null, null, 1, 'h2', [['class', 'topic']], null, null, null, null, null)), (_l()(), i1.ɵted(3, null, ['', ' blogs'])),
-        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(5, 0, null, null, 1, 'p', [['class', 'topicDetails']], null, null, null, null, null)), (_l()(), i1.ɵted(6, null, ['All you need to know about ', ' updates, news, trends and articles '])),
-        (_l()(), i1.ɵted(-1, null, ['\n  ']))], null, function (_ck, _v) {
-        var _co = _v.component;
-        var currVal_0 = _co.recievedKey;
-        _ck(_v, 3, 0, currVal_0);
-        var currVal_1 = _co.recievedKey;
-        _ck(_v, 6, 0, currVal_1);
-    });
-}
 function View_SearchComponent_3(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 6, 'div', [['TabViewAvailable',
                 ''], ['class', 'col-4']], null, [['window', 'resize']], function (_v, en, $event) {
@@ -131,6 +120,25 @@ function View_SearchComponent_4(_l) {
         _ck(_v, 3, 0, currVal_0);
     }, null);
 }
+function View_SearchComponent_1(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 13, null, null, null, null, null, null, null)),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(2, 0, null, null, 1, 'h2', [['class', 'topic']], null, null, null, null, null)), (_l()(), i1.ɵted(3, null, ['', ' blogs'])),
+        (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(5, 0, null, null, 1, 'p', [['class', 'topicDetails']], null, null, null, null, null)), (_l()(), i1.ɵted(6, null, ['All you need to know about ', ' updates, news, trends and articles '])),
+        (_l()(), i1.ɵted(-1, null, ['\n  \n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_2)), i1.ɵdid(9, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_4)), i1.ɵdid(12, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n ']))], function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_2 = !_co.mobileView;
+        _ck(_v, 9, 0, currVal_2);
+        var currVal_3 = _co.mobileView;
+        _ck(_v, 12, 0, currVal_3);
+    }, function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = _co.recievedKey;
+        _ck(_v, 3, 0, currVal_0);
+        var currVal_1 = _co.recievedKey;
+        _ck(_v, 6, 0, currVal_1);
+    });
+}
 function View_SearchComponent_7(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, 'button', [], null, [[null, 'click']], function (_v, en, $event) {
             var ad = true;
@@ -178,26 +186,24 @@ function View_SearchComponent_10(_l) {
 }
 function View_SearchComponent_0(_l) {
     return i1.ɵvid(0, [i1.ɵqud(402653184, 1, { searchPage: 0 }), i1.ɵqud(402653184, 2, { blog: 0 }),
-        (_l()(), i1.ɵeld(2, 0, [[1, 0], ['searchPage', 1]], null, 10, 'div', [], null, null, null, null, null)),
+        (_l()(), i1.ɵeld(2, 0, [[1, 0], ['searchPage', 1]], null, 4, 'div', [], null, null, null, null, null)),
         (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_1)), i1.ɵdid(5, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
-        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_2)), i1.ɵdid(8, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
-        (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_4)), i1.ɵdid(11, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_6)), i1.ɵdid(15, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
-        (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_9)), i1.ɵdid(18, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['         \n'])), (_l()(),
-            i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_10)),
-        i1.ɵdid(21, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, [' ']))], function (_ck, _v) {
+        (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵted(-1, null, ['\n'])),
+        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_6)),
+        i1.ɵdid(9, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['\n'])),
+        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_9)),
+        i1.ɵdid(12, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, ['         \n'])),
+        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SearchComponent_10)),
+        i1.ɵdid(15, 16384, null, 0, i7.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(-1, null, [' ']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.isBrowser;
         _ck(_v, 5, 0, currVal_0);
-        var currVal_1 = !_co.mobileView;
-        _ck(_v, 8, 0, currVal_1);
-        var currVal_2 = _co.mobileView;
-        _ck(_v, 11, 0, currVal_2);
-        var currVal_3 = _co.haveData;
+        var currVal_1 = _co.haveData;
+        _ck(_v, 9, 0, currVal_1);
+        var currVal_2 = !_co.haveData;
+        _ck(_v, 12, 0, currVal_2);
+        var currVal_3 = _co.show;
         _ck(_v, 15, 0, currVal_3);
-        var currVal_4 = !_co.haveData;
-        _ck(_v, 18, 0, currVal_4);
-        var currVal_5 = _co.show;
-        _ck(_v, 21, 0, currVal_5);
     }, null);
 }
 exports.View_SearchComponent_0 = View_SearchComponent_0;
@@ -211,7 +217,7 @@ function View_SearchComponent_Host_0(_l) {
             return ad;
         }, View_SearchComponent_0, exports.RenderType_SearchComponent)), i1.ɵdid(1, 4308992, null, 0, i11.SearchComponent, [i1.PLATFORM_ID, i3.PropertyService, i1.Renderer2, i3.PropertyService,
             i3.PropertyService, i6.PostService, i12.ActivatedRoute, i1.NgZone, i13.Title,
-            i13.Meta], null, null)], function (_ck, _v) {
+            i13.Meta, i14.LinkService], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

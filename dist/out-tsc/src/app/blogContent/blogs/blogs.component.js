@@ -3,15 +3,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var property_service_1 = require("../../services/property.service");
 var post_service_1 = require("../../services/post.service");
+var link_service_1 = require("../../services/link.service");
 var platform_browser_1 = require("@angular/platform-browser");
 var common_1 = require("@angular/common");
 var platform_browser_2 = require("@angular/platform-browser");
 var BlogsComponent = /** @class */ (function () {
-    function BlogsComponent(reciveHeight, renderer, get, metaService, platformId) {
+    function BlogsComponent(reciveHeight, renderer, get, metaService, platformId, link) {
         this.reciveHeight = reciveHeight;
         this.renderer = renderer;
         this.get = get;
         this.metaService = metaService;
+        this.link = link;
         this.latestBlogDetails = [];
         this.blogDetails = [];
         this.topBlogDetails = [];
@@ -24,8 +26,8 @@ var BlogsComponent = /** @class */ (function () {
         this.dataRecived = false;
         this.haveData = true;
         this.count = 0;
+        link.addTag({ rel: 'canonical', href: 'https://www.chaseyoursport.com/' });
         metaService.addTags([
-            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' },
             { name: 'description', content: "Sports Social Blog: Chase Your Sport aims to create a sustainable\n        platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and\n        career in sports." },
             { name: 'keywords', content: "Indian Sports Trends,Sports Social,Career in Sports,current trends\n        in sports,Indian Sports History, Sports Social media,sports technology,Sports blog,Indian Sports\n        Blog,Multiplayer Strategy Video Games,Health and Fitness Tips,Sports Analytics blog, Indian sports\n        news,outlook in sports industry,future trends in sports,sports business trends, sports articles,\n        sports management,Sports Social network india,sports jobs" },
             { name: 'title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook' },
@@ -273,6 +275,7 @@ var BlogsComponent = /** @class */ (function () {
         { type: post_service_1.PostService, },
         { type: platform_browser_1.Meta, },
         { type: Object, decorators: [{ type: core_1.Inject, args: [core_1.PLATFORM_ID,] },] },
+        { type: link_service_1.LinkService, },
     ]; };
     BlogsComponent.propDecorators = {
         'blog': [{ type: core_1.ViewChild, args: ['blog',] },],

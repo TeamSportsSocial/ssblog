@@ -27,6 +27,7 @@ var auth_service_1 = require("./services/auth.service");
 var auth_gaurd_service_1 = require("./services/auth-gaurd.service");
 var facebook_service_1 = require("./services/facebook.service");
 var window_ref_service_1 = require("./services/window-ref.service");
+var link_service_1 = require("./services/link.service");
 var maintain_height_width_ratio_directive_1 = require("./directives/maintain-height-width-ratio.directive");
 var tab_view_available_directive_1 = require("./directives/tab-view-available.directive");
 var routing_module_1 = require("./routing/routing.module");
@@ -91,6 +92,7 @@ var AppModule = /** @class */ (function () {
                         auth_gaurd_service_1.AuthGuard,
                         facebook_service_1.FacebookService,
                         window_ref_service_1.WindowRefService,
+                        link_service_1.LinkService,
                         { provide: router_1.UrlSerializer, useClass: custom_url_component_1.CustomUrlComponent }
                     ],
                     bootstrap: [app_component_1.AppComponent]

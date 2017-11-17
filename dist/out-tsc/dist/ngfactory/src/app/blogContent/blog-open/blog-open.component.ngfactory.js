@@ -23,6 +23,7 @@ var i13 = require("../related-blogs/related-blogs.component.ngfactory");
 var i14 = require("../../../../../../src/app/blogContent/related-blogs/related-blogs.component");
 var i15 = require("../../../../../../src/app/services/property.service");
 var i16 = require("@angular/platform-browser");
+var i17 = require("../../../../../../src/app/services/link.service");
 var styles_BlogOpenComponent = [i0.styles];
 exports.RenderType_BlogOpenComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_BlogOpenComponent, data: {} });
@@ -578,7 +579,7 @@ function View_BlogOpenComponent_Host_0(_l) {
         }, View_BlogOpenComponent_0, exports.RenderType_BlogOpenComponent)), i1.ɵdid(1, 4308992, null, 0, i12.BlogOpenComponent, [i1.PLATFORM_ID, i15.PropertyService, i15.PropertyService,
             i15.PropertyService, i1.Renderer2, i3.ActivatedRoute, i16.DomSanitizer, i15.PropertyService,
             i3.Router, i8.PostService, i8.PostService, i16.Meta, i8.PostService, i16.Title,
-            i6.FacebookService, i7.Http], null, null)], function (_ck, _v) {
+            i6.FacebookService, i7.Http, i17.LinkService], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

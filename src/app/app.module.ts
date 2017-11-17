@@ -29,6 +29,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-gaurd.service';
 import { FacebookService } from './services/facebook.service';
 import { WindowRefService } from './services/window-ref.service';
+import { LinkService } from './services/link.service';
 
 import { MaintainHeightWidthRatioDirective } from './directives/maintain-height-width-ratio.directive';
 import { TabViewAvailableDirective } from './directives/tab-view-available.directive';
@@ -94,6 +95,7 @@ import { BlogPreviewComponent } from './editor-panel/blog-preview/blog-preview.c
     AuthGuard,
     FacebookService,
     WindowRefService,
+    LinkService,
     { provide: UrlSerializer, useClass: CustomUrlComponent }
   ],
   bootstrap: [AppComponent]

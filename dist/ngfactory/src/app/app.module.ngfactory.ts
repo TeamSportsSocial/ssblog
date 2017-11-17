@@ -31,15 +31,16 @@ import * as i21 from '../../../../src/app/services/auth.service';
 import * as i22 from '../../../../src/app/services/auth-gaurd.service';
 import * as i23 from '../../../../src/app/services/facebook.service';
 import * as i24 from '../../../../src/app/services/window-ref.service';
-import * as i25 from '../../../../src/app/custom-url/custom-url.component';
-import * as i26 from '../../../../src/app/blogContent/blogs/blogs.component';
-import * as i27 from '../../../../src/app/editor-panel/editor-panel.component';
-import * as i28 from '../../../../src/app/login-page/login-page.component';
-import * as i29 from '../../../../src/app/admin-panel/admin-panel.component';
-import * as i30 from '../../../../src/app/search/search.component';
-import * as i31 from '../../../../src/app/admin-panel/edit-blog/edit-blog.component';
-import * as i32 from '../../../../src/app/blogContent/blog-open/blog-open.component';
-import * as i33 from '../../../../src/app/routing/routing.module';
+import * as i25 from '../../../../src/app/services/link.service';
+import * as i26 from '../../../../src/app/custom-url/custom-url.component';
+import * as i27 from '../../../../src/app/blogContent/blogs/blogs.component';
+import * as i28 from '../../../../src/app/editor-panel/editor-panel.component';
+import * as i29 from '../../../../src/app/login-page/login-page.component';
+import * as i30 from '../../../../src/app/admin-panel/admin-panel.component';
+import * as i31 from '../../../../src/app/search/search.component';
+import * as i32 from '../../../../src/app/admin-panel/edit-blog/edit-blog.component';
+import * as i33 from '../../../../src/app/blogContent/blog-open/blog-open.component';
+import * as i34 from '../../../../src/app/routing/routing.module';
 export const AppModuleNgFactory:i0.NgModuleFactory<i1.AppModule> = i0.ɵcmf(i1.AppModule,
     [i2.AppComponent],(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -85,9 +86,10 @@ export const AppModuleNgFactory:i0.NgModuleFactory<i1.AppModule> = i0.ɵcmf(i1.A
               i20.PostService,[i14.Http]),i0.ɵmpd(4608,i21.AuthService,i21.AuthService,
               ([] as any[])),i0.ɵmpd(4608,i22.AuthGuard,i22.AuthGuard,[i21.AuthService,
               i15.Router]),i0.ɵmpd(4608,i23.FacebookService,i23.FacebookService,[i0.PLATFORM_ID]),
-          i0.ɵmpd(4608,i24.WindowRefService,i24.WindowRefService,([] as any[])),i0.ɵmpd(512,
-              i11.CommonModule,i11.CommonModule,([] as any[])),i0.ɵmpd(1024,i0.ErrorHandler,
-              i12.ɵa,([] as any[])),i0.ɵmpd(1024,i0.NgProbeToken,() => {
+          i0.ɵmpd(4608,i24.WindowRefService,i24.WindowRefService,([] as any[])),i0.ɵmpd(4608,
+              i25.LinkService,i25.LinkService,[i0.RendererFactory2,i12.DOCUMENT]),
+          i0.ɵmpd(512,i11.CommonModule,i11.CommonModule,([] as any[])),i0.ɵmpd(1024,
+              i0.ErrorHandler,i12.ɵa,([] as any[])),i0.ɵmpd(1024,i0.NgProbeToken,() => {
             return [i15.ɵb()];
           },([] as any[])),i0.ɵmpd(512,i15.ɵg,i15.ɵg,[i0.Injector]),i0.ɵmpd(256,i0.APP_ID,
               'blogist',([] as any[])),i0.ɵmpd(2048,i12.ɵTRANSITION_ID,(null as any),
@@ -103,7 +105,7 @@ export const AppModuleNgFactory:i0.NgModuleFactory<i1.AppModule> = i0.ɵcmf(i1.A
               i12.BrowserModule,[[3,i12.BrowserModule]]),i0.ɵmpd(512,i13.ɵba,i13.ɵba,
               ([] as any[])),i0.ɵmpd(512,i13.FormsModule,i13.FormsModule,([] as any[])),
           i0.ɵmpd(512,i14.HttpModule,i14.HttpModule,([] as any[])),i0.ɵmpd(1024,i15.ɵa,
-              i15.ɵd,[[3,i15.Router]]),i0.ɵmpd(512,i15.UrlSerializer,i25.CustomUrlComponent,
+              i15.ɵd,[[3,i15.Router]]),i0.ɵmpd(512,i15.UrlSerializer,i26.CustomUrlComponent,
               ([] as any[])),i0.ɵmpd(512,i15.ChildrenOutletContexts,i15.ChildrenOutletContexts,
               ([] as any[])),i0.ɵmpd(256,i15.ROUTER_CONFIGURATION,{},([] as any[])),
           i0.ɵmpd(1024,i11.LocationStrategy,i15.ɵc,[i11.PlatformLocation,[2,i11.APP_BASE_HREF],
@@ -111,18 +113,18 @@ export const AppModuleNgFactory:i0.NgModuleFactory<i1.AppModule> = i0.ɵcmf(i1.A
           i0.ɵmpd(512,i0.Compiler,i0.Compiler,([] as any[])),i0.ɵmpd(512,i0.NgModuleFactoryLoader,
               i0.SystemJsNgModuleLoader,[i0.Compiler,[2,i0.SystemJsNgModuleLoaderConfig]]),
           i0.ɵmpd(1024,i15.ROUTES,() => {
-            return [[{path:'',component:i26.BlogsComponent},{path:'editorPanel',canActivate:[i22.AuthGuard],
-                component:i27.EditorPanelComponent},{path:'login',component:i28.LoginPageComponent},
-                {path:'adminPanel',canActivate:[i22.AuthGuard],component:i29.AdminPanelComponent},
-                {path:':tag',component:i30.SearchComponent},{path:':blogId/edit',component:i31.EditBlogComponent},
-                {path:':tag/:title/:blogId',component:i32.BlogOpenComponent},{path:'**',
+            return [[{path:'',component:i27.BlogsComponent},{path:'editorPanel',canActivate:[i22.AuthGuard],
+                component:i28.EditorPanelComponent},{path:'login',component:i29.LoginPageComponent},
+                {path:'adminPanel',canActivate:[i22.AuthGuard],component:i30.AdminPanelComponent},
+                {path:':tag',component:i31.SearchComponent},{path:':blogId/edit',component:i32.EditBlogComponent},
+                {path:':tag/:title/:blogId',component:i33.BlogOpenComponent},{path:'**',
                     redirectTo:''}]];
           },([] as any[])),i0.ɵmpd(1024,i15.Router,i15.ɵe,[i0.ApplicationRef,i15.UrlSerializer,
               i15.ChildrenOutletContexts,i11.Location,i0.Injector,i0.NgModuleFactoryLoader,
               i0.Compiler,i15.ROUTES,i15.ROUTER_CONFIGURATION,[2,i15.UrlHandlingStrategy],
               [2,i15.RouteReuseStrategy]]),i0.ɵmpd(512,i15.RouterModule,i15.RouterModule,
-              [[2,i15.ɵa],[2,i15.Router]]),i0.ɵmpd(512,i33.RoutingModule,i33.RoutingModule,
+              [[2,i15.ɵa],[2,i15.Router]]),i0.ɵmpd(512,i34.RoutingModule,i34.RoutingModule,
               ([] as any[])),i0.ɵmpd(512,i13.ReactiveFormsModule,i13.ReactiveFormsModule,
               ([] as any[])),i0.ɵmpd(512,i1.AppModule,i1.AppModule,([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovbmFkL3NzYmxvZy9zcmMvYXBwL2FwcC5tb2R1bGUubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vQzovbmFkL3NzYmxvZy9zcmMvYXBwL2FwcC5tb2R1bGUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiICJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovbmFkL3NzYmxvZy9zcmMvYXBwL2FwcC5tb2R1bGUubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vQzovbmFkL3NzYmxvZy9zcmMvYXBwL2FwcC5tb2R1bGUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiICJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9

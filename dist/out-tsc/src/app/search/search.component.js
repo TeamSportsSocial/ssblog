@@ -4,11 +4,12 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var property_service_1 = require("../services/property.service");
 var post_service_1 = require("../services/post.service");
+var link_service_1 = require("../services/link.service");
 var router_1 = require("@angular/router");
 var platform_browser_2 = require("@angular/platform-browser");
 var common_1 = require("@angular/common");
 var SearchComponent = /** @class */ (function () {
-    function SearchComponent(platformId, recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService) {
+    function SearchComponent(platformId, recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService, link) {
         this.recieveHeight = recieveHeight;
         this.renderer = renderer;
         this.recieveData = recieveData;
@@ -18,6 +19,7 @@ var SearchComponent = /** @class */ (function () {
         this.zone = zone;
         this.titleService = titleService;
         this.metaService = metaService;
+        this.link = link;
         this.dataRecieved = false;
         this.show = false;
         this.tempBlog = [];
@@ -33,27 +35,27 @@ var SearchComponent = /** @class */ (function () {
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.setTopMargin();
-        if (this.isBrowser) {
-            this.recievekeyFromUrl();
-        }
+        this.recievekeyFromUrl();
         this.setMobileView();
     };
     SearchComponent.prototype.ngAfterViewInit = function () {
         this.setTopMargin();
         // this.recievekeyFromUrl();
     };
+    SearchComponent.prototype.setCanonicalURL = function () {
+        this.link.addTag({ rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') });
+    };
     SearchComponent.prototype.setTitle = function () {
         this.titleService.setTitle(this.recievedKey + " | Latest updates,trends,blogs,news and articles | Sports Social Blog");
     };
     SearchComponent.prototype.setMetaTags = function () {
         this.metaService.addTags([
-            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
-            { name: 'description', content: 'All you need to know about' + this.recievekey + 'updates,news,trends and articles' },
+            { name: 'description', content: 'All you need to know about' + this.recievedKey + 'updates,news,trends and articles' },
             { name: 'title', content: this.recievedKey + ' Blogs' },
             { name: 'keywords', content: this.keywords },
             { name: 'theme-color', content: '#4327a0' },
             { property: 'og:title', content: this.recievedKey + 'Blogs' },
-            { property: 'og:description', content: 'All you need to know about' + this.recievekey + 'updates,news,trends and articles' },
+            { property: 'og:description', content: 'All you need to know about' + this.recievedKey + 'updates,news,trends and articles' },
             { property: 'og:url', content: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
             { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
             { property: 'og:site_name', content: 'Chase Your Sport' },
@@ -62,7 +64,7 @@ var SearchComponent = /** @class */ (function () {
             { name: 'twitter:site', content: '@Chaseyoursport' },
             { name: 'twitter:creator', content: '@NadeemKhan' },
             { name: 'twitter:title', content: this.recievedKey + ' Blogs' },
-            { name: 'twitter:description', content: 'All you need to know about' + this.recievekey + 'updates, news, trends and articles' },
+            { name: 'twitter:description', content: 'All you need to know about' + this.recievedKey + 'updates, news, trends and articles' },
             { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
         ]);
     };
@@ -76,10 +78,11 @@ var SearchComponent = /** @class */ (function () {
             else {
                 _this.haveData = false;
             }
-            if (data.length == 0 && _this.pageNumber == 1) {
+            if (data.length === 0 && _this.pageNumber === 1) {
             }
             _this.show = true;
             _this.dataRecieved = true;
+            // tslint:disable-next-line:forin
             for (var i in data) {
                 blogDetails.push({
                     blogId: data[i].blogId,
@@ -102,6 +105,7 @@ var SearchComponent = /** @class */ (function () {
             _this.keyArray = Array.from(new Set(_this.keyArray));
             _this.keywords = _this.keyArray.toString();
             console.log(_this.keys, _this.keyArray, _this.keywords);
+            _this.setCanonicalURL();
             _this.setMetaTags();
         });
     };
@@ -142,11 +146,11 @@ var SearchComponent = /** @class */ (function () {
         var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
         // console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
-        if (writtenDate.getFullYear() == presentDate.getFullYear()) {
-            if (writtenDate.getMonth() == presentDate.getMonth()) {
-                if (writtenDate.getDate() == presentDate.getDate()) {
-                    if (writtenDate.getHours() == presentDate.getHours()) {
-                        if (writtenDate.getMinutes() == presentDate.getMinutes()) {
+        if (writtenDate.getFullYear() === presentDate.getFullYear()) {
+            if (writtenDate.getMonth() === presentDate.getMonth()) {
+                if (writtenDate.getDate() === presentDate.getDate()) {
+                    if (writtenDate.getHours() === presentDate.getHours()) {
+                        if (writtenDate.getMinutes() === presentDate.getMinutes()) {
                             if (writtenDate.getSeconds() - presentDate.getSeconds()) {
                                 return 'Just Now';
                             }
@@ -215,9 +219,9 @@ var SearchComponent = /** @class */ (function () {
                     readingTime: _this.timeToRead(data[i].Content)
                 });
             }
-            //sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
+            // sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
         });
-        //sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
+        // sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
     };
     SearchComponent.decorators = [
         { type: core_1.Component, args: [{
@@ -238,6 +242,7 @@ var SearchComponent = /** @class */ (function () {
         { type: core_1.NgZone, },
         { type: platform_browser_1.Title, },
         { type: platform_browser_1.Meta, },
+        { type: link_service_1.LinkService, },
     ]; };
     SearchComponent.propDecorators = {
         'searchPage': [{ type: core_1.ViewChild, args: ['searchPage',] },],

@@ -766,7 +766,7 @@ var EditBlogComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.html"),
             styles: [__webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _g || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _g || Object])
     ], EditBlogComponent);
     return EditBlogComponent;
     var _a, _b, _c, _d, _e, _f, _g;
@@ -997,26 +997,28 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_auth_gaurd_service__ = __webpack_require__("../../../../../src/app/services/auth-gaurd.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_facebook_service__ = __webpack_require__("../../../../../src/app/services/facebook.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_window_ref_service__ = __webpack_require__("../../../../../src/app/services/window-ref.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__directives_maintain_height_width_ratio_directive__ = __webpack_require__("../../../../../src/app/directives/maintain-height-width-ratio.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__directives_tab_view_available_directive__ = __webpack_require__("../../../../../src/app/directives/tab-view-available.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__routing_routing_module__ = __webpack_require__("../../../../../src/app/routing/routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__blog_footer_blog_footer_component__ = __webpack_require__("../../../../../src/app/blog-footer/blog-footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__search_search_component__ = __webpack_require__("../../../../../src/app/search/search.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__comments_comments_component__ = __webpack_require__("../../../../../src/app/comments/comments.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__message_message_component__ = __webpack_require__("../../../../../src/app/message/message.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__custom_url_custom_url_component__ = __webpack_require__("../../../../../src/app/custom-url/custom-url.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__open_full_image_open_full_image_component__ = __webpack_require__("../../../../../src/app/open-full-image/open-full-image.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__blogContent_related_blogs_related_blogs_component__ = __webpack_require__("../../../../../src/app/blogContent/related-blogs/related-blogs.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__admin_panel_single_panel_single_panel_component__ = __webpack_require__("../../../../../src/app/admin-panel/single-panel/single-panel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__admin_panel_edit_blog_edit_blog_component__ = __webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__editor_panel_blog_preview_blog_preview_component__ = __webpack_require__("../../../../../src/app/editor-panel/blog-preview/blog-preview.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_link_service__ = __webpack_require__("../../../../../src/app/services/link.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__directives_maintain_height_width_ratio_directive__ = __webpack_require__("../../../../../src/app/directives/maintain-height-width-ratio.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__directives_tab_view_available_directive__ = __webpack_require__("../../../../../src/app/directives/tab-view-available.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__routing_routing_module__ = __webpack_require__("../../../../../src/app/routing/routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__blog_footer_blog_footer_component__ = __webpack_require__("../../../../../src/app/blog-footer/blog-footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__search_search_component__ = __webpack_require__("../../../../../src/app/search/search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__comments_comments_component__ = __webpack_require__("../../../../../src/app/comments/comments.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__message_message_component__ = __webpack_require__("../../../../../src/app/message/message.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__custom_url_custom_url_component__ = __webpack_require__("../../../../../src/app/custom-url/custom-url.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__open_full_image_open_full_image_component__ = __webpack_require__("../../../../../src/app/open-full-image/open-full-image.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__blogContent_related_blogs_related_blogs_component__ = __webpack_require__("../../../../../src/app/blogContent/related-blogs/related-blogs.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__admin_panel_single_panel_single_panel_component__ = __webpack_require__("../../../../../src/app/admin-panel/single-panel/single-panel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__admin_panel_edit_blog_edit_blog_component__ = __webpack_require__("../../../../../src/app/admin-panel/edit-blog/edit-blog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__editor_panel_blog_preview_blog_preview_component__ = __webpack_require__("../../../../../src/app/editor-panel/blog-preview/blog-preview.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1078,24 +1080,24 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_15__blogContent_normal_blog_normal_blog_component__["a" /* NormalBlogComponent */],
                 __WEBPACK_IMPORTED_MODULE_16__blogContent_blogs_blogs_component__["a" /* BlogsComponent */],
                 __WEBPACK_IMPORTED_MODULE_17__blogContent_blog_open_blog_open_component__["a" /* BlogOpenComponent */],
-                __WEBPACK_IMPORTED_MODULE_27__directives_maintain_height_width_ratio_directive__["a" /* MaintainHeightWidthRatioDirective */],
-                __WEBPACK_IMPORTED_MODULE_28__directives_tab_view_available_directive__["a" /* TabViewAvailableDirective */],
-                __WEBPACK_IMPORTED_MODULE_30__blog_footer_blog_footer_component__["a" /* BlogFooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_31__search_search_component__["a" /* SearchComponent */],
-                __WEBPACK_IMPORTED_MODULE_32__comments_comments_component__["a" /* CommentsComponent */],
-                __WEBPACK_IMPORTED_MODULE_34__message_message_component__["a" /* MessageComponent */],
-                __WEBPACK_IMPORTED_MODULE_35__custom_url_custom_url_component__["a" /* CustomUrlComponent */],
-                __WEBPACK_IMPORTED_MODULE_36__open_full_image_open_full_image_component__["a" /* OpenFullImageComponent */],
-                __WEBPACK_IMPORTED_MODULE_37__blogContent_related_blogs_related_blogs_component__["a" /* RelatedBlogsComponent */],
-                __WEBPACK_IMPORTED_MODULE_38__admin_panel_single_panel_single_panel_component__["a" /* SinglePanelComponent */],
-                __WEBPACK_IMPORTED_MODULE_39__admin_panel_edit_blog_edit_blog_component__["a" /* EditBlogComponent */],
-                __WEBPACK_IMPORTED_MODULE_40__editor_panel_blog_preview_blog_preview_component__["a" /* BlogPreviewComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__directives_maintain_height_width_ratio_directive__["a" /* MaintainHeightWidthRatioDirective */],
+                __WEBPACK_IMPORTED_MODULE_29__directives_tab_view_available_directive__["a" /* TabViewAvailableDirective */],
+                __WEBPACK_IMPORTED_MODULE_31__blog_footer_blog_footer_component__["a" /* BlogFooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__search_search_component__["a" /* SearchComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__comments_comments_component__["a" /* CommentsComponent */],
+                __WEBPACK_IMPORTED_MODULE_35__message_message_component__["a" /* MessageComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__custom_url_custom_url_component__["a" /* CustomUrlComponent */],
+                __WEBPACK_IMPORTED_MODULE_37__open_full_image_open_full_image_component__["a" /* OpenFullImageComponent */],
+                __WEBPACK_IMPORTED_MODULE_38__blogContent_related_blogs_related_blogs_component__["a" /* RelatedBlogsComponent */],
+                __WEBPACK_IMPORTED_MODULE_39__admin_panel_single_panel_single_panel_component__["a" /* SinglePanelComponent */],
+                __WEBPACK_IMPORTED_MODULE_40__admin_panel_edit_blog_edit_blog_component__["a" /* EditBlogComponent */],
+                __WEBPACK_IMPORTED_MODULE_41__editor_panel_blog_preview_blog_preview_component__["a" /* BlogPreviewComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */].withServerTransition({ appId: 'blogist' }),
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_29__routing_routing_module__["a" /* RoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_30__routing_routing_module__["a" /* RoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* ReactiveFormsModule */],
             ],
             providers: [
@@ -1108,7 +1110,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_24__services_auth_gaurd_service__["a" /* AuthGuard */],
                 __WEBPACK_IMPORTED_MODULE_25__services_facebook_service__["a" /* FacebookService */],
                 __WEBPACK_IMPORTED_MODULE_26__services_window_ref_service__["a" /* WindowRefService */],
-                { provide: __WEBPACK_IMPORTED_MODULE_33__angular_router__["e" /* UrlSerializer */], useClass: __WEBPACK_IMPORTED_MODULE_35__custom_url_custom_url_component__["a" /* CustomUrlComponent */] }
+                __WEBPACK_IMPORTED_MODULE_27__services_link_service__["a" /* LinkService */],
+                { provide: __WEBPACK_IMPORTED_MODULE_34__angular_router__["e" /* UrlSerializer */], useClass: __WEBPACK_IMPORTED_MODULE_36__custom_url_custom_url_component__["a" /* CustomUrlComponent */] }
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
@@ -1202,7 +1205,7 @@ var BlogFooterComponent = /** @class */ (function () {
         this.showSubscriptionBox = false;
     };
     BlogFooterComponent.prototype.setMobileView = function () {
-        var width = Object(__WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.footer.nativeElement).width;
+        var width = Object(__WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.footer.nativeElement).width;
         if (width < 850) {
             this.renderer.setStyle(this.copyright.nativeElement, 'width', '100%');
             this.renderer.setStyle(this.followUs.nativeElement, 'width', '100%');
@@ -1352,12 +1355,12 @@ var BlogHeaderComponent = /** @class */ (function () {
                 _this.keywords.push(res[i].Keyword);
             }
         });
-        this.sendHeight.ofHeader.next(Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.Header.nativeElement).bottom);
+        this.sendHeight.ofHeader.next(Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.Header.nativeElement).bottom);
         this.sendWindowWidth();
     };
     BlogHeaderComponent.prototype.ngAfterViewChecked = function () {
         this.sendWindowWidth();
-        this.sendHeight.ofHeader.next(Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.Header.nativeElement).bottom);
+        this.sendHeight.ofHeader.next(Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.Header.nativeElement).bottom);
     };
     BlogHeaderComponent.prototype.onclick = function () {
         this.haveresult = false;
@@ -1371,7 +1374,7 @@ var BlogHeaderComponent = /** @class */ (function () {
             this.setStyleOfResultBox();
         }
         this.sendWindowWidth();
-        this.sendHeight.ofHeader.next(Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.Header.nativeElement).bottom);
+        this.sendHeight.ofHeader.next(Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.Header.nativeElement).bottom);
     };
     BlogHeaderComponent.prototype.openDropDown = function () {
         this.open = true;
@@ -1387,7 +1390,7 @@ var BlogHeaderComponent = /** @class */ (function () {
         this.haveresult = false;
     };
     BlogHeaderComponent.prototype.responsiveView = function () {
-        var width = Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.Header.nativeElement).width;
+        var width = Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.Header.nativeElement).width;
         console.log(width, 'window');
         if (width <= 750) {
             this.mobileView = true;
@@ -1397,7 +1400,7 @@ var BlogHeaderComponent = /** @class */ (function () {
         }
     };
     BlogHeaderComponent.prototype.sendWindowWidth = function () {
-        this.sendWidth.ofWindow.next(Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.Header.nativeElement).width);
+        this.sendWidth.ofWindow.next(Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.Header.nativeElement).width);
     };
     BlogHeaderComponent.prototype.sendData = function (event) {
         var _this = this;
@@ -1488,7 +1491,7 @@ var BlogHeaderComponent = /** @class */ (function () {
             styles: [__webpack_require__("../../../../../src/app/blog-header/blog-header.component.css")],
         }),
         __param(11, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
-        __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _q || Object, Object])
+        __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_get_service__["a" /* GetService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _q || Object, Object])
     ], BlogHeaderComponent);
     return BlogHeaderComponent;
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
@@ -1536,6 +1539,7 @@ module.exports = "<div class=openBlog  #openBlog>\r\n  <p class=\"Catagory\">\r\
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_facebook_service__ = __webpack_require__("../../../../../src/app/services/facebook.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_link_service__ = __webpack_require__("../../../../../src/app/services/link.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1559,8 +1563,9 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 
 
 
+
 var BlogOpenComponent = /** @class */ (function () {
-    function BlogOpenComponent(platformId, recieve, recieveHeight, link, renderer, route, sanitizer, sendKey, router, post, send, metaService, load, titleService, Fb, http) {
+    function BlogOpenComponent(platformId, recieve, recieveHeight, link, renderer, route, sanitizer, sendKey, router, post, send, metaService, load, titleService, Fb, http, Link) {
         this.recieve = recieve;
         this.recieveHeight = recieveHeight;
         this.link = link;
@@ -1576,6 +1581,7 @@ var BlogOpenComponent = /** @class */ (function () {
         this.titleService = titleService;
         this.Fb = Fb;
         this.http = http;
+        this.Link = Link;
         this.removeSocial = false;
         this.isConnectedWithFacebook = false;
         this.mobileView = false;
@@ -1590,9 +1596,7 @@ var BlogOpenComponent = /** @class */ (function () {
     }
     BlogOpenComponent.prototype.ngOnInit = function () {
         this.blogDataRecieved = false;
-        if (this.isBrowser) {
-            this.recieveBlogIdFromUrl();
-        }
+        this.recieveBlogIdFromUrl();
         this.setTopMargin();
         this.setMobileView();
     };
@@ -1605,6 +1609,18 @@ var BlogOpenComponent = /** @class */ (function () {
         if (this.route.snapshot.url[0].path !== 'sportsocialblog' || this.route.snapshot.url[1].path !== 'page') {
             this.titleService.setTitle(this.blog.heading + ' | Chase Your Sport - Sports Social Blog');
         }
+    };
+    BlogOpenComponent.prototype.setCanonivalURL = function () {
+        var key;
+        if (this.Keywords[0].search(/ /g) === -1) {
+            key = this.Keywords[0];
+        }
+        else {
+            key = this.Keywords[0].replace(/\s/g, '-');
+        }
+        var url = 'https://www.chaseyoursport.com/' + key
+            + '/' + this.blog.heading.replace(/\s/g, '-') + '/' + this.blogID;
+        this.Link.addTag({ rel: 'canonical', href: url });
     };
     BlogOpenComponent.prototype.sendViewCount = function () {
         this.send.viewCountOfBlog(this.blogID, this.ViewCount).subscribe(function (data) {
@@ -1647,7 +1663,6 @@ var BlogOpenComponent = /** @class */ (function () {
             + '/' + this.blog.heading.replace(/\s/g, '-') + '/' + this.blogID;
         // console.log(url);
         this.metaService.addTags([
-            { rel: 'canonical', href: url },
             { name: 'title', content: this.blog.heading },
             { name: 'keywords', content: this.keys },
             { name: 'theme-color', content: '#4327a0' },
@@ -1715,6 +1730,7 @@ var BlogOpenComponent = /** @class */ (function () {
             _this.Keywords = blog.keywords;
             _this.content = _this.sanitizer.bypassSecurityTrustHtml(data.Content);
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
+            _this.setCanonivalURL();
             _this.setMetaTags();
             _this.setTitle();
             _this.ShareCount = +blog.ShareCount;
@@ -1770,7 +1786,7 @@ var BlogOpenComponent = /** @class */ (function () {
         }
     };
     BlogOpenComponent.prototype.setMobileView = function () {
-        var width = Object(__WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.openBlog.nativeElement).width;
+        var width = Object(__WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.openBlog.nativeElement).width;
         if (width > 950) {
             this.mobileView = false;
             this.removeSocial = false;
@@ -1913,10 +1929,10 @@ var BlogOpenComponent = /** @class */ (function () {
             styles: [__webpack_require__("../../../../../src/app/blogContent/blog-open/blog-open.component.css")]
         }),
         __param(0, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
-        __metadata("design:paramtypes", [Object, typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_post_service__["a" /* PostService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_4__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_post_service__["a" /* PostService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* Meta */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_4__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_post_service__["a" /* PostService */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["d" /* Title */]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_7__services_facebook_service__["a" /* FacebookService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__services_facebook_service__["a" /* FacebookService */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _q || Object])
+        __metadata("design:paramtypes", [Object, typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_property_service__["a" /* PropertyService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_post_service__["a" /* PostService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_4__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_post_service__["a" /* PostService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["d" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["d" /* Meta */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_4__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_post_service__["a" /* PostService */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["e" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["e" /* Title */]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_7__services_facebook_service__["a" /* FacebookService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__services_facebook_service__["a" /* FacebookService */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _q || Object, typeof (_r = typeof __WEBPACK_IMPORTED_MODULE_8__services_link_service__["a" /* LinkService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__services_link_service__["a" /* LinkService */]) === "function" && _r || Object])
     ], BlogOpenComponent);
     return BlogOpenComponent;
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
 }());
 
 //# sourceMappingURL=blog-open.component.js.map
@@ -1956,8 +1972,9 @@ module.exports = "<SportSocialBlog-keywords></SportSocialBlog-keywords>\r\n<div 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_link_service__ = __webpack_require__("../../../../../src/app/services/link.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1976,12 +1993,14 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 
 
 
+
 var BlogsComponent = /** @class */ (function () {
-    function BlogsComponent(reciveHeight, renderer, get, metaService, platformId) {
+    function BlogsComponent(reciveHeight, renderer, get, metaService, platformId, link) {
         this.reciveHeight = reciveHeight;
         this.renderer = renderer;
         this.get = get;
         this.metaService = metaService;
+        this.link = link;
         this.latestBlogDetails = [];
         this.blogDetails = [];
         this.topBlogDetails = [];
@@ -1994,8 +2013,8 @@ var BlogsComponent = /** @class */ (function () {
         this.dataRecived = false;
         this.haveData = true;
         this.count = 0;
+        link.addTag({ rel: 'canonical', href: 'https://www.chaseyoursport.com/' });
         metaService.addTags([
-            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' },
             { name: 'description', content: "Sports Social Blog: Chase Your Sport aims to create a sustainable\n        platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and\n        career in sports." },
             { name: 'keywords', content: "Indian Sports Trends,Sports Social,Career in Sports,current trends\n        in sports,Indian Sports History, Sports Social media,sports technology,Sports blog,Indian Sports\n        Blog,Multiplayer Strategy Video Games,Health and Fitness Tips,Sports Analytics blog, Indian sports\n        news,outlook in sports industry,future trends in sports,sports business trends, sports articles,\n        sports management,Sports Social network india,sports jobs" },
             { name: 'title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook' },
@@ -2013,7 +2032,7 @@ var BlogsComponent = /** @class */ (function () {
             { name: 'twitter:description', content: "Sports Social Blog: Chase Your Sport aims to create a sustainable\n      platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and\n      career in sports." },
             { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
         ]);
-        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_4__angular_common__["j" /* isPlatformBrowser */])(platformId);
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_5__angular_common__["j" /* isPlatformBrowser */])(platformId);
     }
     BlogsComponent.prototype.ngOnInit = function () {
         this.setMobileView();
@@ -2101,7 +2120,7 @@ var BlogsComponent = /** @class */ (function () {
         });
     };
     BlogsComponent.prototype.setMobileView = function () {
-        var width = Object(__WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.window.nativeElement).width;
+        var width = Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.window.nativeElement).width;
         console.log(width);
         if (width > 600) {
             this.mobileView = false;
@@ -2116,7 +2135,7 @@ var BlogsComponent = /** @class */ (function () {
         this.renderer.setStyle(this.blog.nativeElement, 'margin-top', this.topMargin + 'px');
     };
     BlogsComponent.prototype.showTrendingBlock = function () {
-        var width = Object(__WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.window.nativeElement).width;
+        var width = Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.window.nativeElement).width;
         if (this.blogDetails.length === 0 || width < 950) {
             return false;
         }
@@ -2250,10 +2269,10 @@ var BlogsComponent = /** @class */ (function () {
             styles: [__webpack_require__("../../../../../src/app/blogContent/blogs/blogs.component.css")]
         }),
         __param(4, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* Meta */]) === "function" && _d || Object, Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_post_service__["a" /* PostService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["d" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["d" /* Meta */]) === "function" && _d || Object, Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_link_service__["a" /* LinkService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_link_service__["a" /* LinkService */]) === "function" && _e || Object])
     ], BlogsComponent);
     return BlogsComponent;
-    var _a, _b, _c, _d;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=blogs.component.js.map
@@ -2376,9 +2395,9 @@ var LatestBlogComponent = /** @class */ (function () {
         this.openFullImage = false;
     };
     LatestBlogComponent.prototype.heightOfInitialImage = function () {
-        var width = Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.latest.nativeElement).width;
+        var width = Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.latest.nativeElement).width;
         if (width <= 600) {
-            var Width = Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.initialImage.nativeElement).width;
+            var Width = Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.initialImage.nativeElement).width;
             var height = .72 * Width;
             this.renderer.setStyle(this.initialImage.nativeElement, 'height', height + 'px');
         }
@@ -2941,7 +2960,7 @@ var RelatedBlogsComponent = /** @class */ (function () {
         return writtenDate.toDateString();
     };
     RelatedBlogsComponent.prototype.setMobileView = function () {
-        var width = Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.window.nativeElement).width;
+        var width = Object(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.window.nativeElement).width;
         if (width > 950) {
             this.mobileView = false;
         }
@@ -3640,7 +3659,7 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
         this.setHeight();
     };
     MaintainHeightWidthRatioDirective.prototype.setHeight = function () {
-        this.width = Object(__WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.elRef.nativeElement).width;
+        this.width = Object(__WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.elRef.nativeElement).width;
         var windowWidth;
         this.recieveWidth.ofWindow.subscribe(function (data) {
             windowWidth = data;
@@ -3670,7 +3689,7 @@ var MaintainHeightWidthRatioDirective = /** @class */ (function () {
         }
         if (this.elRef.nativeElement.className === 'subscribeCard' && windowWidth < 950) {
             this.renderer.setStyle(this.elRef.nativeElement, 'width', '100%');
-            this.width = Object(__WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.elRef.nativeElement).width;
+            this.width = Object(__WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.elRef.nativeElement).width;
             this.height = -(.548751486325 * (this.width)) + this.width;
         }
         if (this.elRef.nativeElement.className === 'subscribeCard' && windowWidth >= 950) {
@@ -4459,7 +4478,7 @@ var EditorPanelComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/editor-panel/editor-panel.component.html"),
             styles: [__webpack_require__("../../../../../src/app/editor-panel/editor-panel.component.css")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DomSanitizer */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _e || Object])
     ], EditorPanelComponent);
     return EditorPanelComponent;
     var _a, _b, _c, _d, _e;
@@ -4634,7 +4653,7 @@ var KeywordsComponent = /** @class */ (function () {
         });
         this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
         this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');
-        this.sendHeight.ofKeyWords.next(Object(__WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.Keywords.nativeElement).bottom);
+        this.sendHeight.ofKeyWords.next(Object(__WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.Keywords.nativeElement).bottom);
     };
     KeywordsComponent.prototype.ngAfterViewChecked = function () {
         var _this = this;
@@ -4643,7 +4662,7 @@ var KeywordsComponent = /** @class */ (function () {
         });
         this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
         this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');
-        this.sendHeight.ofKeyWords.next(Object(__WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.Keywords.nativeElement).bottom);
+        this.sendHeight.ofKeyWords.next(Object(__WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.Keywords.nativeElement).bottom);
     };
     KeywordsComponent.prototype.send = function (i) {
         /* this.searched.blogData(this.pageNumber,this.keywords[i].name).subscribe(
@@ -4658,7 +4677,7 @@ var KeywordsComponent = /** @class */ (function () {
     };
     KeywordsComponent.prototype.onresize = function () {
         var _this = this;
-        this.sendHeight.ofKeyWords.next(Object(__WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.Keywords.nativeElement).bottom);
+        this.sendHeight.ofKeyWords.next(Object(__WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.Keywords.nativeElement).bottom);
         this.recieveHeight.ofHeader.subscribe(function (margin) { return _this.topMargin = margin; });
         this.renderer.setStyle(this.Keywords.nativeElement, 'position', 'fixed');
         this.renderer.setStyle(this.Keywords.nativeElement, 'top', this.topMargin + 'px');
@@ -5030,7 +5049,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/search/search.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div  #searchPage>\r\n  <ng-container *ngIf=\"isBrowser\">\r\n    <h2 class=\"topic\">{{recievedKey}} blogs</h2>\r\n    <p class=\"topicDetails\">All you need to know about {{recievedKey}} updates, news, trends and articles </p>\r\n  </ng-container>\r\n  <div class=\"Row\"  *ngIf=\"!mobileView\">\r\n      \r\n    <div TabViewAvailable class=\"col-4\" *ngFor=\"let data of blogDetails\">\r\n      <SportSocial-normal-blog \r\n        [blogId]=\"data.blogId\"\r\n        [blogImage]=\"data.blogImage\"\r\n        [bloggerImage]=\"data.bloggerImage\"\r\n        [bloggerName]=\"data.bloggerName\"\r\n        [insertedDate]=\"data.insertedDate\"\r\n        [heading]=\"data.heading\"\r\n        [Content]=\"data.Content\"\r\n        [ViewCount]=\"data.ViewCount\"\r\n        [ShareCount]=\"data.ShareCount\"\r\n        [keywords]=\"data.keywords\"\r\n        [exactDate]=\"data.exactDate\"\r\n        [readingTime]=\"data.readingTime\"\r\n        [MetaDesc]=\"data.MetaDesc\"\r\n        [ImageDesc]=\"data.ImageDesc\">\r\n      </SportSocial-normal-blog>\r\n    </div>\r\n    \r\n  </div>\r\n  <div class=\"Row mobileView\" *ngIf=\"mobileView\" >\r\n      <div class=\"col-4\" *ngFor=\"let data of blogDetails;let i=index\">\r\n          <SportSocial-normal-blog \r\n              [blogId]=\"data.blogId\"\r\n              [blogImage]=\"data.blogImage\"\r\n              [bloggerImage]=\"data.bloggerImage\"\r\n              [bloggerName]=\"data.bloggerName\"\r\n              [insertedDate]=\"data.insertedDate\"\r\n              [heading]=\"data.heading\"\r\n              [Content]=\"data.Content\"\r\n              [ViewCount]=\"data.ViewCount\"\r\n              [ShareCount]=\"data.ShareCount\"\r\n              [keywords]=\"data.keywords\"\r\n              [exactDate]=\"data.exactDate\"\r\n              [readingTime]=\"data.readingTime\" \r\n              [MetaDesc]=\"data.MetaDesc\"\r\n              [ImageDesc]=\"data.ImageDesc\">\r\n          </SportSocial-normal-blog>\r\n      </div>\r\n  </div>\r\n</div>\r\n<div *ngIf=\"haveData\">\r\n    <button (click)=\"nextPage()\" *ngIf=\"dataRecieved\">Load More</button>\r\n    <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecieved\" class=\"loading\">\r\n</div>\r\n<p *ngIf=\"!haveData\" class=\"noMoreData\" >No More Data !!!</p>         \r\n<SportSocial-blog-footer *ngIf=\"show\"></SportSocial-blog-footer> "
+module.exports = "<div  #searchPage>\r\n  <ng-container *ngIf=\"isBrowser\">\r\n    <h2 class=\"topic\">{{recievedKey}} blogs</h2>\r\n    <p class=\"topicDetails\">All you need to know about {{recievedKey}} updates, news, trends and articles </p>\r\n  \r\n  <div class=\"Row\"  *ngIf=\"!mobileView\">\r\n      \r\n    <div TabViewAvailable class=\"col-4\" *ngFor=\"let data of blogDetails\">\r\n      <SportSocial-normal-blog \r\n        [blogId]=\"data.blogId\"\r\n        [blogImage]=\"data.blogImage\"\r\n        [bloggerImage]=\"data.bloggerImage\"\r\n        [bloggerName]=\"data.bloggerName\"\r\n        [insertedDate]=\"data.insertedDate\"\r\n        [heading]=\"data.heading\"\r\n        [Content]=\"data.Content\"\r\n        [ViewCount]=\"data.ViewCount\"\r\n        [ShareCount]=\"data.ShareCount\"\r\n        [keywords]=\"data.keywords\"\r\n        [exactDate]=\"data.exactDate\"\r\n        [readingTime]=\"data.readingTime\"\r\n        [MetaDesc]=\"data.MetaDesc\"\r\n        [ImageDesc]=\"data.ImageDesc\">\r\n      </SportSocial-normal-blog>\r\n    </div>\r\n    \r\n  </div>\r\n  <div class=\"Row mobileView\" *ngIf=\"mobileView\" >\r\n      <div class=\"col-4\" *ngFor=\"let data of blogDetails;let i=index\">\r\n          <SportSocial-normal-blog \r\n              [blogId]=\"data.blogId\"\r\n              [blogImage]=\"data.blogImage\"\r\n              [bloggerImage]=\"data.bloggerImage\"\r\n              [bloggerName]=\"data.bloggerName\"\r\n              [insertedDate]=\"data.insertedDate\"\r\n              [heading]=\"data.heading\"\r\n              [Content]=\"data.Content\"\r\n              [ViewCount]=\"data.ViewCount\"\r\n              [ShareCount]=\"data.ShareCount\"\r\n              [keywords]=\"data.keywords\"\r\n              [exactDate]=\"data.exactDate\"\r\n              [readingTime]=\"data.readingTime\" \r\n              [MetaDesc]=\"data.MetaDesc\"\r\n              [ImageDesc]=\"data.ImageDesc\">\r\n          </SportSocial-normal-blog>\r\n      </div>\r\n  </div>\r\n </ng-container>\r\n</div>\r\n<div *ngIf=\"haveData\">\r\n    <button (click)=\"nextPage()\" *ngIf=\"dataRecieved\">Load More</button>\r\n    <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecieved\" class=\"loading\">\r\n</div>\r\n<p *ngIf=\"!haveData\" class=\"noMoreData\" >No More Data !!!</p>         \r\n<SportSocial-blog-footer *ngIf=\"show\"></SportSocial-blog-footer> "
 
 /***/ }),
 
@@ -5043,8 +5062,9 @@ module.exports = "<div  #searchPage>\r\n  <ng-container *ngIf=\"isBrowser\">\r\n
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_property_service__ = __webpack_require__("../../../../../src/app/services/property.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_post_service__ = __webpack_require__("../../../../../src/app/services/post.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_link_service__ = __webpack_require__("../../../../../src/app/services/link.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5064,8 +5084,9 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 
 
 
+
 var SearchComponent = /** @class */ (function () {
-    function SearchComponent(platformId, recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService) {
+    function SearchComponent(platformId, recieveHeight, renderer, recieveData, recievekey, get, route, zone, titleService, metaService, link) {
         this.recieveHeight = recieveHeight;
         this.renderer = renderer;
         this.recieveData = recieveData;
@@ -5075,6 +5096,7 @@ var SearchComponent = /** @class */ (function () {
         this.zone = zone;
         this.titleService = titleService;
         this.metaService = metaService;
+        this.link = link;
         this.dataRecieved = false;
         this.show = false;
         this.tempBlog = [];
@@ -5085,32 +5107,32 @@ var SearchComponent = /** @class */ (function () {
         this.keys = ' ';
         this.keyArray = [];
         this.isBrowser = false;
-        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_5__angular_common__["j" /* isPlatformBrowser */])(platformId);
+        this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_6__angular_common__["j" /* isPlatformBrowser */])(platformId);
         console.log(this.isBrowser);
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.setTopMargin();
-        if (this.isBrowser) {
-            this.recievekeyFromUrl();
-        }
+        this.recievekeyFromUrl();
         this.setMobileView();
     };
     SearchComponent.prototype.ngAfterViewInit = function () {
         this.setTopMargin();
         // this.recievekeyFromUrl();
     };
+    SearchComponent.prototype.setCanonicalURL = function () {
+        this.link.addTag({ rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') });
+    };
     SearchComponent.prototype.setTitle = function () {
         this.titleService.setTitle(this.recievedKey + " | Latest updates,trends,blogs,news and articles | Sports Social Blog");
     };
     SearchComponent.prototype.setMetaTags = function () {
         this.metaService.addTags([
-            { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
-            { name: 'description', content: 'All you need to know about' + this.recievekey + 'updates,news,trends and articles' },
+            { name: 'description', content: 'All you need to know about' + this.recievedKey + 'updates,news,trends and articles' },
             { name: 'title', content: this.recievedKey + ' Blogs' },
             { name: 'keywords', content: this.keywords },
             { name: 'theme-color', content: '#4327a0' },
             { property: 'og:title', content: this.recievedKey + 'Blogs' },
-            { property: 'og:description', content: 'All you need to know about' + this.recievekey + 'updates,news,trends and articles' },
+            { property: 'og:description', content: 'All you need to know about' + this.recievedKey + 'updates,news,trends and articles' },
             { property: 'og:url', content: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-') },
             { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
             { property: 'og:site_name', content: 'Chase Your Sport' },
@@ -5119,7 +5141,7 @@ var SearchComponent = /** @class */ (function () {
             { name: 'twitter:site', content: '@Chaseyoursport' },
             { name: 'twitter:creator', content: '@NadeemKhan' },
             { name: 'twitter:title', content: this.recievedKey + ' Blogs' },
-            { name: 'twitter:description', content: 'All you need to know about' + this.recievekey + 'updates, news, trends and articles' },
+            { name: 'twitter:description', content: 'All you need to know about' + this.recievedKey + 'updates, news, trends and articles' },
             { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
         ]);
     };
@@ -5133,10 +5155,11 @@ var SearchComponent = /** @class */ (function () {
             else {
                 _this.haveData = false;
             }
-            if (data.length == 0 && _this.pageNumber == 1) {
+            if (data.length === 0 && _this.pageNumber === 1) {
             }
             _this.show = true;
             _this.dataRecieved = true;
+            // tslint:disable-next-line:forin
             for (var i in data) {
                 blogDetails.push({
                     blogId: data[i].blogId,
@@ -5159,6 +5182,7 @@ var SearchComponent = /** @class */ (function () {
             _this.keyArray = Array.from(new Set(_this.keyArray));
             _this.keywords = _this.keyArray.toString();
             console.log(_this.keys, _this.keyArray, _this.keywords);
+            _this.setCanonicalURL();
             _this.setMetaTags();
         });
     };
@@ -5173,7 +5197,7 @@ var SearchComponent = /** @class */ (function () {
         });
     };
     SearchComponent.prototype.setMobileView = function () {
-        var width = Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["f" /* ɵgetDOM */])().getBoundingClientRect(this.searchPage.nativeElement).width;
+        var width = Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["g" /* ɵgetDOM */])().getBoundingClientRect(this.searchPage.nativeElement).width;
         if (width < 700) {
             this.mobileView = true;
         }
@@ -5199,11 +5223,11 @@ var SearchComponent = /** @class */ (function () {
         var writtenDate = new Date(parseInt(i) * 1000);
         var presentDate = new Date();
         // console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
-        if (writtenDate.getFullYear() == presentDate.getFullYear()) {
-            if (writtenDate.getMonth() == presentDate.getMonth()) {
-                if (writtenDate.getDate() == presentDate.getDate()) {
-                    if (writtenDate.getHours() == presentDate.getHours()) {
-                        if (writtenDate.getMinutes() == presentDate.getMinutes()) {
+        if (writtenDate.getFullYear() === presentDate.getFullYear()) {
+            if (writtenDate.getMonth() === presentDate.getMonth()) {
+                if (writtenDate.getDate() === presentDate.getDate()) {
+                    if (writtenDate.getHours() === presentDate.getHours()) {
+                        if (writtenDate.getMinutes() === presentDate.getMinutes()) {
                             if (writtenDate.getSeconds() - presentDate.getSeconds()) {
                                 return 'Just Now';
                             }
@@ -5272,9 +5296,9 @@ var SearchComponent = /** @class */ (function () {
                     readingTime: _this.timeToRead(data[i].Content)
                 });
             }
-            //sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
+            // sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
         });
-        //sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
+        // sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('searchPage'),
@@ -5297,10 +5321,10 @@ var SearchComponent = /** @class */ (function () {
             styles: [__webpack_require__("../../../../../src/app/search/search.component.css")]
         }),
         __param(0, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* PLATFORM_ID */])),
-        __metadata("design:paramtypes", [Object, typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Title */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Meta */]) === "function" && _j || Object])
+        __metadata("design:paramtypes", [Object, typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_property_service__["a" /* PropertyService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_post_service__["a" /* PostService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["e" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["e" /* Title */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Meta */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* Meta */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_4__services_link_service__["a" /* LinkService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_link_service__["a" /* LinkService */]) === "function" && _k || Object])
     ], SearchComponent);
     return SearchComponent;
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 }());
 
 //# sourceMappingURL=search.component.js.map
@@ -5502,6 +5526,72 @@ var GetService = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=get.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/link.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LinkService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+var LinkService = /** @class */ (function () {
+    function LinkService(rendererFactory, document) {
+        this.rendererFactory = rendererFactory;
+        this.document = document;
+    }
+    LinkService.prototype.addTag = function (tag, forceCreation) {
+        try {
+            var renderer_1 = this.rendererFactory.createRenderer(this.document, {
+                id: '-1',
+                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_19" /* ViewEncapsulation */].None,
+                styles: [],
+                data: {}
+            });
+            var link_1 = renderer_1.createElement('link');
+            var head = this.document.head;
+            var selector = this._parseSelector(tag);
+            if (head === null) {
+                throw new Error('<head> not found within DOCUMENT.');
+            }
+            Object.keys(tag).forEach(function (prop) {
+                return renderer_1.setAttribute(link_1, prop, tag[prop]);
+            });
+            renderer_1.appendChild(head, link_1);
+        }
+        catch (e) {
+            console.error('Error within linkService : ', e);
+        }
+    };
+    LinkService.prototype._parseSelector = function (tag) {
+        var attr = tag.rel ? 'rel' : 'hreflang';
+        return attr + "=\"" + tag[attr] + "\"";
+    };
+    LinkService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __param(1, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* DOCUMENT */])),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_3" /* RendererFactory2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_3" /* RendererFactory2 */]) === "function" && _a || Object, Object])
+    ], LinkService);
+    return LinkService;
+    var _a;
+}());
+
+//# sourceMappingURL=link.service.js.map
 
 /***/ }),
 

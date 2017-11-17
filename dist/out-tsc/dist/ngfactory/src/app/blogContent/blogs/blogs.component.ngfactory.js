@@ -29,6 +29,7 @@ var i19 = require("@angular/router");
 var i20 = require("../../../../../../src/app/services/get.service");
 var i21 = require("../../../../../../src/app/blogContent/blogs/blogs.component");
 var i22 = require("@angular/platform-browser");
+var i23 = require("../../../../../../src/app/services/link.service");
 var styles_BlogsComponent = [i0.styles];
 exports.RenderType_BlogsComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_BlogsComponent, data: {} });
@@ -423,7 +424,7 @@ function View_BlogsComponent_Host_0(_l) {
             }
             return ad;
         }, View_BlogsComponent_0, exports.RenderType_BlogsComponent)), i1.ɵdid(1, 12697600, null, 0, i21.BlogsComponent, [i4.PropertyService, i1.Renderer2, i5.PostService, i22.Meta,
-            i1.PLATFORM_ID], null, null)], function (_ck, _v) {
+            i1.PLATFORM_ID, i23.LinkService], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

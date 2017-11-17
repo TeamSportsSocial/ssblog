@@ -6,35 +6,38 @@ import {
   HostListener,
   NgZone,
   PLATFORM_ID,
-  Inject
+  Inject,
+  AfterViewInit
 } from '@angular/core';
-import { Meta,Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import {PropertyService} from '../services/property.service';
 import {PostService} from '../services/post.service';
+import {LinkService} from '../services/link.service';
 import {ActivatedRoute} from '@angular/router';
 import { ɵgetDOM } from '@angular/platform-browser';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit, AfterViewInit {
   topMargin;
-  dataRecieved:boolean=false;
-  show:boolean=false;
-  tempBlog=[];
-  savedDetails:{
-    tempBlog:any[],
-    pageNumber:number
+  dataRecieved: boolean = false;
+  show: boolean = false;
+  tempBlog= [];
+  savedDetails: {
+    tempBlog: any[],
+    pageNumber: number
   };
   tempBlogDetails;
   blogDetails;
 
-  pageNumber=1;
+  pageNumber= 1;
   recievedKey;
-  mobileView:boolean=false;
-  haveData:boolean=true;
+  mobileView: boolean= false;
+  haveData: boolean= true;
   keywords= ' ';
   keys = ' ';
   keyArray = [];
@@ -43,15 +46,16 @@ export class SearchComponent implements OnInit {
   @ViewChild('blog') blog;
   constructor(
     @Inject(PLATFORM_ID) platformId: Object,
-    private recieveHeight:PropertyService,
-    private renderer:Renderer2,
+    private recieveHeight: PropertyService,
+    private renderer: Renderer2,
     private recieveData: PropertyService,
     private recievekey: PropertyService,
     private get: PostService,
     private route:  ActivatedRoute,
     private zone: NgZone,
-    private titleService:Title,
-    private metaService:Meta
+    private titleService: Title,
+    private metaService: Meta,
+    private link: LinkService
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
     console.log(this.isBrowser);
@@ -59,30 +63,29 @@ export class SearchComponent implements OnInit {
 
     ngOnInit() {
       this.setTopMargin();
-      if ( this.isBrowser ) {
-        this.recievekeyFromUrl();
-      }
+      this.recievekeyFromUrl();
       this.setMobileView();
 
     }
-    
+
     ngAfterViewInit() {
       this.setTopMargin();
      // this.recievekeyFromUrl();
     }
-
+    setCanonicalURL() {
+      this.link.addTag( { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-')})
+    }
     setTitle() {
       this.titleService.setTitle(this.recievedKey + ` | Latest updates,trends,blogs,news and articles | Sports Social Blog`);
     }
     setMetaTags() {
       this.metaService.addTags([
-        { rel: 'canonical', href: 'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-')},
-        { name: 'description', content: 'All you need to know about' + this.recievekey + 'updates,news,trends and articles' },
+        { name: 'description', content: 'All you need to know about' + this.recievedKey + 'updates,news,trends and articles' },
         { name: 'title', content: this.recievedKey + ' Blogs'},
         { name: 'keywords' , content: this.keywords},
         { name: 'theme-color', content: '#4327a0'},
         { property: 'og:title', content: this.recievedKey + 'Blogs' },
-        { property: 'og:description', content: 'All you need to know about' + this.recievekey + 'updates,news,trends and articles'},
+        { property: 'og:description', content: 'All you need to know about' + this.recievedKey + 'updates,news,trends and articles'},
         { property: 'og:url', content:  'https://www.chaseyoursport.com/' + this.recievedKey.replace(/ /g, '-')},
         { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
         { property: 'og:site_name', content: 'Chase Your Sport' },
@@ -91,7 +94,7 @@ export class SearchComponent implements OnInit {
         { name: 'twitter:site', content: '@Chaseyoursport'},
         { name: 'twitter:creator', content: '@NadeemKhan'},
         { name: 'twitter:title', content: this.recievedKey + ' Blogs'},
-        { name: 'twitter:description', content: 'All you need to know about' + this.recievekey + 'updates, news, trends and articles'},
+        { name: 'twitter:description', content: 'All you need to know about' + this.recievedKey + 'updates, news, trends and articles'},
         { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
       ]);
     }
@@ -99,30 +102,31 @@ export class SearchComponent implements OnInit {
       const blogDetails: {
         blogId: string;
         blogImage: string;
-        bloggerName:string,
-        bloggerImage:string,
-        heading:string,
-        Content:string,
-        insertedDate:string,
-        ViewCount:string,
-        ShareCount:string,
-        keywords:string[],
-        exactDate:string;
-        readingTime:string
+        bloggerName: string,
+        bloggerImage: string,
+        heading: string,
+        Content: string,
+        insertedDate: string,
+        ViewCount: string,
+        ShareCount: string,
+        keywords: string[],
+        exactDate: string;
+        readingTime: string
       }[] = [];
-      this.get.blogData(this.pageNumber,this.recievedKey).subscribe(
+      this.get.blogData(this.pageNumber, this.recievedKey).subscribe(
         (data) => {
-          if(data.length > 0) {
+          if (data.length > 0) {
             this.haveData = true;
           } else {
             this.haveData = false;
           }
-          if(data.length==0 && this.pageNumber==1){
+          if (data.length === 0 && this.pageNumber === 1) {
 
           }
-          this.show=true;
-          this.dataRecieved= true;
-          for(let i in data){
+          this.show = true;
+          this.dataRecieved = true;
+          // tslint:disable-next-line:forin
+          for (const i in data) {
               blogDetails.push(
                 {
                   blogId: data[i].blogId,
@@ -146,6 +150,7 @@ export class SearchComponent implements OnInit {
           this.keyArray =  Array.from(new Set(this.keyArray));
           this.keywords = this.keyArray.toString();
           console.log(this.keys, this.keyArray, this.keywords);
+          this.setCanonicalURL();
           this.setMetaTags();
           }
 
@@ -175,40 +180,37 @@ export class SearchComponent implements OnInit {
        }
     }
 
-    timeToRead(s:string){
-      let words = s.split(' ');
-      let time = Math.round(words.length / 180);
-      if (time > 1){
+    timeToRead(s: string) {
+      const words = s.split(' ');
+      const time = Math.round(words.length / 180);
+      if (time > 1) {
         return time + ' min read';
-      }
-      else{
+      }else {
         return '2 min read';
       }
     }
 
-    ExactDate(i: number){
-      let writtenDate = new Date(i * 1000);
+    ExactDate(i: number) {
+      const writtenDate = new Date(i * 1000);
       return writtenDate.toDateString();
     }
 
     timePassed(i: string){
 
-        let writtenDate = new Date(parseInt(i) * 1000);
-        let presentDate = new Date();
+        const writtenDate = new Date(parseInt(i) * 1000);
+        const presentDate = new Date();
         // console.log(writtenDate.toDateString(),presentDate.getDate() ," date")
-        if (writtenDate.getFullYear() == presentDate.getFullYear()){
-          if (writtenDate.getMonth() == presentDate.getMonth()){
-            if (writtenDate.getDate() == presentDate.getDate()){
-                if (writtenDate.getHours() == presentDate.getHours()){
-                  if (writtenDate.getMinutes() == presentDate.getMinutes()){
+        if (writtenDate.getFullYear() === presentDate.getFullYear()){
+          if (writtenDate.getMonth() === presentDate.getMonth()){
+            if (writtenDate.getDate() === presentDate.getDate()){
+                if (writtenDate.getHours() === presentDate.getHours()){
+                  if (writtenDate.getMinutes() === presentDate.getMinutes()){
                     if (writtenDate.getSeconds() - presentDate.getSeconds()){
                       return 'Just Now';
-                    }
-                    else{
+                    }else {
                       return presentDate.getSeconds() - writtenDate.getSeconds() + ' sec ago';
                     }
-                  }
-                  else{
+                  }else {
                     return presentDate.getMinutes() - writtenDate.getMinutes() + ' min ago';
                   }
                 }
@@ -261,7 +263,7 @@ export class SearchComponent implements OnInit {
             this.haveData = false;
           }
           console.log(this.haveData);
-          for (let i in data){
+          for (const i in data){
             this.blogDetails.push(
               {
                 blogId: data[i].blogId,
@@ -279,10 +281,10 @@ export class SearchComponent implements OnInit {
               }
             );
          }
-         //sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
+         // sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
         }
       );
-      //sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
+      // sessionStorage.setItem('pageNumber',JSON.stringify(this.pageNumber));
     }
 
 }

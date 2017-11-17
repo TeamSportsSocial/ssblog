@@ -15,6 +15,7 @@ import {
 import {PropertyService} from '../../services/property.service';
 import {GetService} from '../../services/get.service';
 import {PostService} from '../../services/post.service';
+import { LinkService} from '../../services/link.service';
 import { Meta, Title } from '@angular/platform-browser';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { ɵgetDOM } from '@angular/platform-browser';
@@ -106,10 +107,11 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     private renderer: Renderer2,
     private get: PostService,
     private metaService: Meta,
-    @Inject(PLATFORM_ID) platformId: Object
+    @Inject(PLATFORM_ID) platformId: Object,
+    private link: LinkService,
   ) {
+    link.addTag(  { rel: 'canonical', href: 'https://www.chaseyoursport.com/'});
     metaService.addTags([
-      { rel: 'canonical', href: 'https://www.chaseyoursport.com/'},
       { name: 'description', content: `Sports Social Blog: Chase Your Sport aims to create a sustainable
         platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and
         career in sports.` },
