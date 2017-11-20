@@ -179,7 +179,7 @@ var BlogOpenComponent = /** @class */ (function () {
                 blog.ImageDesc = '';
             }
             _this.blog = blog;
-            console.log(_this.blog);
+            // console.log(this.blog);
             _this.Keywords = blog.keywords;
             _this.content = _this.sanitizer.bypassSecurityTrustHtml(data.Content);
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);

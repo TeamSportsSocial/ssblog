@@ -241,7 +241,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
                     blog.ImageDesc = '';
                 }
                 this.blog = blog;
-                 console.log(this.blog);
+                // console.log(this.blog);
                 this.Keywords = blog.keywords;
                 this.content = this.sanitizer.bypassSecurityTrustHtml(data.Content);
                 this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length - 1]);
