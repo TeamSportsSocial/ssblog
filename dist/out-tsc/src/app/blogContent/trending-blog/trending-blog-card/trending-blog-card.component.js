@@ -25,7 +25,9 @@ var TrendingBlogCardComponent = /** @class */ (function () {
             exactDate: this.exactDate,
             readingTime: this.readingTime,
             Metadesc: this.MetaDesc,
-            ImageDesc: this.ImageDesc
+            ImageDesc: this.ImageDesc,
+            PrimaryKeyword: this.PrimaryKeyword,
+            ShortTilte: this.ShortTitle
         };
         if (this.blogImage) {
             this.dataRecieved = true;
@@ -73,6 +75,8 @@ var TrendingBlogCardComponent = /** @class */ (function () {
         'readingTime': [{ type: core_1.Input },],
         'MetaDesc': [{ type: core_1.Input },],
         'ImageDesc': [{ type: core_1.Input },],
+        'PrimaryKeyword': [{ type: core_1.Input },],
+        'ShortTitle': [{ type: core_1.Input },],
     };
     return TrendingBlogCardComponent;
 }());

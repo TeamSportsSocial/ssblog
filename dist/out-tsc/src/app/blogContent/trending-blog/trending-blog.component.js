@@ -27,8 +27,10 @@ var TrendingBlogComponent = /** @class */ (function () {
                     keywords: data[i].keywords.split(","),
                     exactDate: _this.ExactDate(data[i].insertedDate),
                     readingTime: _this.timeToRead(data[i].Content),
-                    MetadDesc: data[i].MetadDesc,
-                    ImageDesc: data[i].ImageDesc
+                    MetaDesc: data[i].MetaDesc == null ? ' ' : data[i].MetaDesc,
+                    ImageDesc: data[i].ImageDesc == null ? ' ' : data[i].ImageDesc,
+                    PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
+                    ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
                 });
             }
         });

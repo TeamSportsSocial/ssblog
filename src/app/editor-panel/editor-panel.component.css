@@ -116,6 +116,17 @@ select,option{
     padding: 1% 1% 1% 0%;
    
 }
+.url{
+    color: #024771;
+}
+.primaryKey, .shortTitle{
+    color: #024771;
+    cursor: text;
+    padding: 1% 1% 1% 0%;
+    outline: none;
+    display: inline-block;
+    min-width: 15%;
+}
 .imageDesc, .shortDesc{
     cursor: text;
     padding: 1% 1% 1% 0%;

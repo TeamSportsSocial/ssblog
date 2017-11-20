@@ -29,6 +29,8 @@ export class EditorPanelComponent implements OnInit {
   @ViewChild('blogImageDesc') blogImageDesc;
   @ViewChild('shortDesc') shortDesc;
   @ViewChild('BloggerName') BloggerName;
+  @ViewChild('primaryKey') primaryKey;
+  @ViewChild('shortTitle') ShortTitle;
   @ViewChild('url') URL;
   @ViewChild('YoutubeUrl') youtubeURL;
   @ViewChild('PluginUrl') pluginURL;
@@ -93,7 +95,9 @@ export class EditorPanelComponent implements OnInit {
     blogDesc: any,
     keywords: any,
     metaDesc: any,
-    imageDesc: any
+    imageDesc: any,
+    primaryKey: any,
+    shortTitle: any,
 };
 blogPreview: {
   bloggerName: any,
@@ -104,7 +108,9 @@ blogPreview: {
   bloggerImage: any,
   readingTime: any,
   metaDesc: any,
-  imageDesc: any
+  imageDesc: any,
+  primaryKey: any,
+  shortTitle: any,
 };
 constructor(
   private http: Http,
@@ -474,6 +480,8 @@ makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
       formData.append('keywords', this.blog.keywords);
       formData.append('metaDesc', this.blog.metaDesc);
       formData.append('imageDesc', this.blog.imageDesc);
+      formData.append('primaryKey', this.blog.primaryKey);
+      formData.append('shortTitle', this.blog.shortTitle);
       xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
               if (xhr.status === 200) {
@@ -500,7 +508,9 @@ upload() {
     blogDesc: this.desc.nativeElement.innerHTML,
     keywords: this.Keys,
     metaDesc: this.shortDesc.nativeElement.innerText,
-    imageDesc: this.blogImageDesc.nativeElement.innerText
+    imageDesc: this.blogImageDesc.nativeElement.innerText,
+    primaryKey: this.primaryKey.nativeElement.innerText,
+    shortTitle: this.ShortTitle.nativeElement.innerText
   };
   console.log(this.blog);
   this.imageName = ['blogImage', 'bloggerImage'];
@@ -551,7 +561,9 @@ upload() {
     bloggerImage: this.bloggerimageSrc,
     readingTime: this.timeToRead(this.strip(Content)),
     metaDesc: this.shortDesc.nativeElement.innerText,
-    imageDesc: this.blogImageDesc.nativeElement.innerText
+    imageDesc: this.blogImageDesc.nativeElement.innerText,
+    primaryKey: this.primaryKey.nativeElement.innerText,
+    shortTitle: this.ShortTitle.nativeElement.innerText
   };
   console.log(this.blogPreview);
  }

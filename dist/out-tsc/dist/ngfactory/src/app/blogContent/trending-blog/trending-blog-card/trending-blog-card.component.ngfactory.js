@@ -66,7 +66,7 @@ function View_TrendingBlogCardComponent_0(_l) {
         (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵeld(30, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(31, null, ['', ''])),
         (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵeld(35, 0, null, null, 0, 'p', [], [[8, 'innerHTML', 1]], null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n'])), (_l()(), i1.ɵted(-1, null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
-        var currVal_2 = i1.ɵinlineInterpolate(3, '/', _co.keywords[0], '/', _co.heading, '/', _co.blogId, '');
+        var currVal_2 = i1.ɵinlineInterpolate(3, '/', _co.PrimaryKeyword, '/', _co.ShortTitle, '/', _co.blogId, '');
         _ck(_v, 3, 0, currVal_2);
         var currVal_3 = _co.isloading;
         _ck(_v, 8, 0, currVal_3);
@@ -96,5 +96,6 @@ exports.TrendingBlogCardComponentNgFactory = i1.ɵccf('SportSocial-trending-blog
     blogImage: 'blogImage', bloggerImage: 'bloggerImage', bloggerName: 'bloggerName',
     heading: 'heading', insertedDate: 'insertedDate', Content: 'Content', ViewCount: 'ViewCount',
     ShareCount: 'ShareCount', keywords: 'keywords', exactDate: 'exactDate', readingTime: 'readingTime',
-    MetaDesc: 'MetaDesc', ImageDesc: 'ImageDesc' }, {}, []);
+    MetaDesc: 'MetaDesc', ImageDesc: 'ImageDesc', PrimaryKeyword: 'PrimaryKeyword',
+    ShortTitle: 'ShortTitle' }, {}, []);
 //# sourceMappingURL=trending-blog-card.component.ngfactory.js.map

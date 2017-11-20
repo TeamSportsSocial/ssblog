@@ -28,7 +28,8 @@ export class TrendingBlogCardComponent implements OnInit {
   @Input()  readingTime:string;
   @Input()  MetaDesc: string;
   @Input()  ImageDesc: string;
-
+  @Input() PrimaryKeyword: string;
+  @Input() ShortTitle: string;
   isloading:boolean=true;
   dataRecieved:boolean=false;
   isBrowser: boolean;
@@ -46,7 +47,9 @@ export class TrendingBlogCardComponent implements OnInit {
     exactDate:string,
     readingTime:string,
     Metadesc: string,
-    ImageDesc: string
+    ImageDesc: string,
+    PrimaryKeyword: string,
+    ShortTilte: string
   };
   constructor(private Send: PropertyService, @Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -67,7 +70,9 @@ export class TrendingBlogCardComponent implements OnInit {
       exactDate:this.exactDate,
       readingTime:this.readingTime,
       Metadesc: this.MetaDesc,
-      ImageDesc: this.ImageDesc
+      ImageDesc: this.ImageDesc,
+      PrimaryKeyword: this.PrimaryKeyword,
+      ShortTilte: this.ShortTitle
     };
     if(this.blogImage){
       this.dataRecieved=true;

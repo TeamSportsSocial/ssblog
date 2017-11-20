@@ -41,8 +41,10 @@ var BlogOpenComponent = /** @class */ (function () {
         this.loading = true;
         this.isBrowser = false;
         this.isBrowser = common_1.isPlatformBrowser(platformId);
+        console.log("costructor call");
     }
     BlogOpenComponent.prototype.ngOnInit = function () {
+        console.log('blog opened');
         this.blogDataRecieved = false;
         this.recieveBlogIdFromUrl();
         this.setTopMargin();
@@ -52,6 +54,7 @@ var BlogOpenComponent = /** @class */ (function () {
         if (this.isBrowser) {
             this.scriptOfTwitter();
         }
+        console.log('blog opened after view');
     };
     BlogOpenComponent.prototype.setTitle = function () {
         if (this.route.snapshot.url[0].path !== 'sportsocialblog' || this.route.snapshot.url[1].path !== 'page') {
@@ -165,7 +168,9 @@ var BlogOpenComponent = /** @class */ (function () {
                 exactDate: _this.ExactDate(data.insertedDate),
                 readingTime: _this.timeToRead(data.Content),
                 MetaDesc: data.MetaDesc,
-                ImageDesc: data.ImageDesc == null ? ' ' : data.ImageDesc
+                ImageDesc: data.ImageDesc == null ? ' ' : data.ImageDesc,
+                PrimaryKeyword: data.PrimaryKeyword == null ? data.keys.split(',')[0] : data.PrimaryKeyword,
+                ShortTilte: data.ShortTilte == null ? data.heading : data.ShortTilte
             };
             if (blog.MetaDesc == null) {
                 blog.MetaDesc = '';
@@ -174,7 +179,7 @@ var BlogOpenComponent = /** @class */ (function () {
                 blog.ImageDesc = '';
             }
             _this.blog = blog;
-            // console.log(this.blog);
+            console.log(_this.blog);
             _this.Keywords = blog.keywords;
             _this.content = _this.sanitizer.bypassSecurityTrustHtml(data.Content);
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
@@ -293,6 +298,7 @@ var BlogOpenComponent = /** @class */ (function () {
         this.openFullImage = false;
     };
     BlogOpenComponent.prototype.sendShareCount = function () {
+        this.ShareCount++;
         this.post.shareCountOfBlog(this.blog.blogId, this.ShareCount).subscribe(function (data) {
             // console.log(data, "sharedOnFacebook")
         });

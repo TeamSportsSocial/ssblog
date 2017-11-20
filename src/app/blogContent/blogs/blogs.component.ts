@@ -41,6 +41,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     readingTime:string;
     MetaDesc: string;
     ImageDesc: string;
+    PrimaryKeyword: string;
+    ShortTitle: string;
   }[]=[];
   blogDetails:{
     blogId:string;
@@ -56,7 +58,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     exactDate:string;
     readingTime:string;
     MetaDesc: string;
-    ImageDesc: string
+    ImageDesc: string;
+    PrimaryKeyword: string;
+    ShortTitle: string;
   }[]=[];
   topBlogDetails:{
     blogId:string;
@@ -72,7 +76,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     exactDate:string;
     readingTime:string;
     MetaDesc: string;
-    ImageDesc: string
+    ImageDesc: string;
+    PrimaryKeyword: string;
+    ShortTitle: string;
   }[]= [];
   restBlogDetails:{
     blogId:string;
@@ -88,7 +94,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     exactDate: string;
     readingTime: string;
     MetaDesc: string;
-    ImageDesc: string
+    ImageDesc: string;
+    PrimaryKeyword: string;
+    ShortTitle: string;
   }[]= [];
   topMargin;
   removeTrendingBlock: boolean= false;
@@ -153,7 +161,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     this.get.blogData(this.nextPageNumber, this.defaultKey).subscribe(
       (data) => {
 
-       // console.log(data);
+        // console.log(data);
         this.show = true;
         this.dataRecived = true;
         // tslint:disable-next-line:forin
@@ -172,9 +180,12 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 exactDate: this.ExactDate(data[i].insertedDate),
                 readingTime: this.timeToRead(data[i].Content),
                 MetaDesc: data[i].MetaDesc,
-                ImageDesc: data[i].ImageDesc
+                ImageDesc: data[i].ImageDesc,
+                PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
+                ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
               });
         }
+       // console.log(this.blogDetails)
         this.latestBlogDetails.push(
           {
             blogId: this.blogDetails[0].blogId,
@@ -190,7 +201,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             exactDate: this.blogDetails[0].exactDate,
             readingTime: this.blogDetails[0].readingTime,
             MetaDesc: this.blogDetails[0].MetaDesc,
-            ImageDesc: this.blogDetails[0].ImageDesc
+            ImageDesc: this.blogDetails[0].ImageDesc,
+            PrimaryKeyword: this.blogDetails[0].PrimaryKeyword,
+            ShortTitle: this.blogDetails[0].ShortTitle
           }
         );
         for (let i = 1; i < 4; i++) {
@@ -209,7 +222,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               exactDate: this.blogDetails[i].exactDate,
               readingTime: this.blogDetails[i].readingTime,
               MetaDesc: this.blogDetails[i].MetaDesc,
-              ImageDesc: this.blogDetails[i].ImageDesc
+              ImageDesc: this.blogDetails[i].ImageDesc,
+              PrimaryKeyword: this.blogDetails[i].PrimaryKeyword,
+              ShortTitle: this.blogDetails[i].ShortTitle
             }
           );
         }
@@ -229,7 +244,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             exactDate: this.blogDetails[i].exactDate,
             readingTime: this.blogDetails[i].readingTime,
             MetaDesc: this.blogDetails[i].MetaDesc,
-            ImageDesc: this.blogDetails[i].ImageDesc
+            ImageDesc: this.blogDetails[i].ImageDesc,
+            PrimaryKeyword: this.blogDetails[i].PrimaryKeyword ,
+            ShortTitle: this.blogDetails[i].ShortTitle
           }
         );
       }
@@ -353,7 +370,9 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 exactDate: this.ExactDate(data[i].insertedDate),
                 readingTime: this.timeToRead(data[i].Content),
                 MetaDesc: data[i].MetaDesc,
-                ImageDesc: data[i].ImageDesc
+                ImageDesc: data[i].ImageDesc,
+                PrimaryKeyword:  data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
+                ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
               }
             );
            }

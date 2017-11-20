@@ -85,7 +85,7 @@ function View_NormalBlogComponent_0(_l) {
         (_l()(), i1.ɵted(48, null, ['\n            ', '\n          '])), (_l()(),
             i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n\n ']))], function (_ck, _v) {
         var _co = _v.component;
-        var currVal_2 = i1.ɵinlineInterpolate(3, '/', _co.keywords[0], '/', _co.heading, '/', _co.blogId, '');
+        var currVal_2 = i1.ɵinlineInterpolate(3, '/', _co.PrimaryKeyword, '/', _co.ShortTitle, '/', _co.blogId, '');
         _ck(_v, 11, 0, currVal_2);
         var currVal_3 = _co.isloading;
         _ck(_v, 16, 0, currVal_3);
@@ -128,5 +128,6 @@ exports.View_NormalBlogComponent_Host_0 = View_NormalBlogComponent_Host_0;
 exports.NormalBlogComponentNgFactory = i1.ɵccf('SportSocial-normal-blog', i4.NormalBlogComponent, View_NormalBlogComponent_Host_0, { blogId: 'blogId', blogImage: 'blogImage',
     bloggerImage: 'bloggerImage', bloggerName: 'bloggerName', heading: 'heading', insertedDate: 'insertedDate',
     Content: 'Content', ViewCount: 'ViewCount', ShareCount: 'ShareCount', keywords: 'keywords',
-    exactDate: 'exactDate', readingTime: 'readingTime', MetaDesc: 'MetaDesc', ImageDesc: 'ImageDesc' }, {}, []);
+    exactDate: 'exactDate', readingTime: 'readingTime', MetaDesc: 'MetaDesc', ImageDesc: 'ImageDesc',
+    PrimaryKeyword: 'PrimaryKeyword', ShortTitle: 'ShortTitle' }, {}, []);
 //# sourceMappingURL=normal-blog.component.ngfactory.js.map

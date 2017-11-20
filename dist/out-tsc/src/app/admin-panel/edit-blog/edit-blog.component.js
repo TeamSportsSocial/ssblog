@@ -75,6 +75,8 @@ var EditBlogComponent = /** @class */ (function () {
             _this.Keys = data[0].keys;
             _this.shortDesc.nativeElement.innerText = data[0].MetaDesc;
             _this.blogImageDesc.nativeElement.innerText = data[0].ImageDesc;
+            _this.ShortTitle.nativeElement.innerText = data[0].ShortTitle == null ? data[0].heading : data[0].ShortTitle;
+            _this.primaryKey.nativeElement.innerText = data[0].PrimaryKeyword == null ? data[0].keys.split(',')[0] : data[0].PrimaryKeyword;
         });
         this.calCharCount();
     };
@@ -384,6 +386,8 @@ var EditBlogComponent = /** @class */ (function () {
             formData.append('blogid', _this.blog.blogid);
             formData.append('metaDesc', _this.blog.metaDesc);
             formData.append('imageDesc', _this.blog.imageDesc);
+            formData.append('primaryKey', _this.blog.primaryKey);
+            formData.append('shortTitle', _this.blog.shortTitle);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
@@ -414,7 +418,9 @@ var EditBlogComponent = /** @class */ (function () {
             keywords: this.Keys,
             blogid: this.blogID,
             metaDesc: this.shortDesc.nativeElement.innerText,
-            imageDesc: this.blogImageDesc.nativeElement.innerText
+            imageDesc: this.blogImageDesc.nativeElement.innerText,
+            primaryKey: this.primaryKey.nativeElement.innerText,
+            shortTitle: this.ShortTitle.nativeElement.innerText
         };
         console.log(this.blog);
         this.imageName = ['blogImage', 'bloggerImage'];
@@ -462,7 +468,9 @@ var EditBlogComponent = /** @class */ (function () {
             bloggerImage: this.bloggerimageSrc,
             readingTime: this.timeToRead(this.strip(Content)),
             metaDesc: this.shortDesc.nativeElement.innerText,
-            imageDesc: this.blogImageDesc.nativeElement.innerText
+            imageDesc: this.blogImageDesc.nativeElement.innerText,
+            primaryKey: this.primaryKey.nativeElement.innerText,
+            shortTitle: this.ShortTitle.nativeElement.innerText
         };
         console.log(this.blogPreview);
     };
@@ -494,6 +502,8 @@ var EditBlogComponent = /** @class */ (function () {
         'blogImageDesc': [{ type: core_1.ViewChild, args: ['blogImageDesc',] },],
         'shortDesc': [{ type: core_1.ViewChild, args: ['shortDesc',] },],
         'BloggerName': [{ type: core_1.ViewChild, args: ['BloggerName',] },],
+        'primaryKey': [{ type: core_1.ViewChild, args: ['primaryKey',] },],
+        'ShortTitle': [{ type: core_1.ViewChild, args: ['shortTitle',] },],
         'URL': [{ type: core_1.ViewChild, args: ['url',] },],
         'youtubeURL': [{ type: core_1.ViewChild, args: ['YoutubeUrl',] },],
         'pluginURL': [{ type: core_1.ViewChild, args: ['PluginUrl',] },],

@@ -95,6 +95,12 @@
     </div>
     <div class="panel-wrapper">
         <div class="panel" #panel> 
+            <div class="url">
+                <span>www.chaseyoursport.com/</span>
+                <div contenteditable="true" class="primaryKey"  placeholder="Primary Key" #primaryKey></div>
+                <span>/</span>
+                <div contenteditable="true" class="shortTitle"  placeholder="Short Title" #shortTitle></div>
+            </div>
             <label class="file blog">
                 <ng-container  *ngIf="!blogimageLoaded">
                     <img src="/assets/images/sports-social-temp-blog-image.jpg" role="button" class="dummyBlogImage">

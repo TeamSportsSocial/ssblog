@@ -28,6 +28,8 @@ export class EditBlogComponent implements OnInit {
   @ViewChild('blogImageDesc') blogImageDesc;
   @ViewChild('shortDesc') shortDesc;
   @ViewChild('BloggerName') BloggerName;
+  @ViewChild('primaryKey') primaryKey;
+  @ViewChild('shortTitle') ShortTitle;
   @ViewChild('url') URL;
   @ViewChild('YoutubeUrl') youtubeURL;
   @ViewChild('PluginUrl') pluginURL;
@@ -92,7 +94,9 @@ export class EditBlogComponent implements OnInit {
     keywords: any,
     blogid: any,
     metaDesc: any,
-    imageDesc: any
+    imageDesc: any,
+    primaryKey: any,
+    shortTitle: any,
 };
 blogPreview: {
   bloggerName: any,
@@ -103,7 +107,9 @@ blogPreview: {
   bloggerImage: any,
   readingTime: any,
   metaDesc: any,
-  imageDesc: any
+  imageDesc: any,
+  primaryKey: any,
+  shortTitle: any,
 };
 constructor(
   private http: Http,
@@ -163,6 +169,8 @@ getBlogDetails() {
       this.Keys = data[0].keys;
       this.shortDesc.nativeElement.innerText = data[0].MetaDesc;
       this.blogImageDesc.nativeElement.innerText = data[0].ImageDesc;
+      this.ShortTitle.nativeElement.innerText = data[0].ShortTitle == null ? data[0].heading : data[0].ShortTitle ;
+      this.primaryKey.nativeElement.innerText = data[0].PrimaryKeyword == null ? data[0].keys.split(',')[0] : data[0].PrimaryKeyword;
     }
   );
   this.calCharCount();
@@ -511,6 +519,8 @@ makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
       formData.append('blogid', this.blog.blogid);
       formData.append('metaDesc', this.blog.metaDesc);
       formData.append('imageDesc', this.blog.imageDesc);
+      formData.append('primaryKey', this.blog.primaryKey);
+      formData.append('shortTitle', this.blog.shortTitle);
       xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
               if (xhr.status === 200) {
@@ -539,7 +549,9 @@ upload() {
     keywords: this.Keys,
     blogid: this.blogID,
     metaDesc: this.shortDesc.nativeElement.innerText,
-    imageDesc: this.blogImageDesc.nativeElement.innerText
+    imageDesc: this.blogImageDesc.nativeElement.innerText,
+    primaryKey: this.primaryKey.nativeElement.innerText,
+    shortTitle: this.ShortTitle.nativeElement.innerText
   };
   console.log(this.blog);
   this.imageName = ['blogImage', 'bloggerImage'];
@@ -588,7 +600,9 @@ upload() {
     bloggerImage: this.bloggerimageSrc,
     readingTime: this.timeToRead(this.strip(Content)),
     metaDesc: this.shortDesc.nativeElement.innerText,
-    imageDesc: this.blogImageDesc.nativeElement.innerText
+    imageDesc: this.blogImageDesc.nativeElement.innerText,
+    primaryKey: this.primaryKey.nativeElement.innerText,
+    shortTitle: this.ShortTitle.nativeElement.innerText
   };
   console.log(this.blogPreview);
  }

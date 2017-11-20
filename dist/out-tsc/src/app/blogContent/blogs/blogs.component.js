@@ -75,9 +75,12 @@ var BlogsComponent = /** @class */ (function () {
                     exactDate: _this.ExactDate(data[i].insertedDate),
                     readingTime: _this.timeToRead(data[i].Content),
                     MetaDesc: data[i].MetaDesc,
-                    ImageDesc: data[i].ImageDesc
+                    ImageDesc: data[i].ImageDesc,
+                    PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
+                    ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
                 });
             }
+            // console.log(this.blogDetails)
             _this.latestBlogDetails.push({
                 blogId: _this.blogDetails[0].blogId,
                 blogImage: _this.blogDetails[0].blogImage,
@@ -92,7 +95,9 @@ var BlogsComponent = /** @class */ (function () {
                 exactDate: _this.blogDetails[0].exactDate,
                 readingTime: _this.blogDetails[0].readingTime,
                 MetaDesc: _this.blogDetails[0].MetaDesc,
-                ImageDesc: _this.blogDetails[0].ImageDesc
+                ImageDesc: _this.blogDetails[0].ImageDesc,
+                PrimaryKeyword: _this.blogDetails[0].PrimaryKeyword,
+                ShortTitle: _this.blogDetails[0].ShortTitle
             });
             for (var i = 1; i < 4; i++) {
                 _this.topBlogDetails.push({
@@ -109,7 +114,9 @@ var BlogsComponent = /** @class */ (function () {
                     exactDate: _this.blogDetails[i].exactDate,
                     readingTime: _this.blogDetails[i].readingTime,
                     MetaDesc: _this.blogDetails[i].MetaDesc,
-                    ImageDesc: _this.blogDetails[i].ImageDesc
+                    ImageDesc: _this.blogDetails[i].ImageDesc,
+                    PrimaryKeyword: _this.blogDetails[i].PrimaryKeyword,
+                    ShortTitle: _this.blogDetails[i].ShortTitle
                 });
             }
             for (var i = 4; i < _this.blogDetails.length; i++) {
@@ -127,7 +134,9 @@ var BlogsComponent = /** @class */ (function () {
                     exactDate: _this.blogDetails[i].exactDate,
                     readingTime: _this.blogDetails[i].readingTime,
                     MetaDesc: _this.blogDetails[i].MetaDesc,
-                    ImageDesc: _this.blogDetails[i].ImageDesc
+                    ImageDesc: _this.blogDetails[i].ImageDesc,
+                    PrimaryKeyword: _this.blogDetails[i].PrimaryKeyword,
+                    ShortTitle: _this.blogDetails[i].ShortTitle
                 });
             }
         });
@@ -255,7 +264,9 @@ var BlogsComponent = /** @class */ (function () {
                         exactDate: _this.ExactDate(data[i].insertedDate),
                         readingTime: _this.timeToRead(data[i].Content),
                         MetaDesc: data[i].MetaDesc,
-                        ImageDesc: data[i].ImageDesc
+                        ImageDesc: data[i].ImageDesc,
+                        PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
+                        ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
                     });
                 }
             });

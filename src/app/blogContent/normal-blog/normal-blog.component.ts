@@ -36,7 +36,8 @@ export class NormalBlogComponent  implements OnInit {
   @Input()  readingTime:string;
   @Input()  MetaDesc: string;
   @Input()  ImageDesc: string;
- 
+  @Input()  PrimaryKeyword: string;
+  @Input() ShortTitle: string;
   content:string;
   blog:{
     blogId:string,
@@ -52,7 +53,9 @@ export class NormalBlogComponent  implements OnInit {
     exactDate:string,
     readingTime:string,
     MetaDesc: string,
-    ImageDesc: string
+    ImageDesc: string,
+    PrimaryKeyword: string,
+    ShortTitle: string
   };
   isBrowser: boolean;
   @ViewChild('blogTitle') blogTitle;
@@ -92,7 +95,9 @@ export class NormalBlogComponent  implements OnInit {
     exactDate: this.exactDate,
     readingTime: this.readingTime,
     MetaDesc: this.MetaDesc,
-    ImageDesc: this.ImageDesc
+    ImageDesc: this.ImageDesc,
+    PrimaryKeyword: this.PrimaryKeyword,
+    ShortTitle: this.ShortTitle
   };
    this.setVariableFont();
    if (this.blogImage) {
@@ -162,7 +167,7 @@ export class NormalBlogComponent  implements OnInit {
  
   send() {
     this.Send.detailsofBlog.next(this.blog);
-    console.log(this.blogOpen);
+    // console.log(this.blogOpen);
     if ( this.isBrowser ) {
       window.scrollTo(0, 0);
     }

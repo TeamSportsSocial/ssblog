@@ -88,7 +88,7 @@ function View_LatestBlogComponent_0(_l) {
             i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, ['\n  '])),
         (_l()(), i1.ɵted(-1, null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
-        var currVal_2 = i1.ɵinlineInterpolate(3, '/', _co.keywords[0], '/', _co.heading, '/', _co.blogId, '');
+        var currVal_2 = i1.ɵinlineInterpolate(3, '/', _co.PrimaryKeyword, '/', _co.ShortTitle, '/', _co.blogId, '');
         _ck(_v, 12, 0, currVal_2);
         var currVal_3 = _co.isloading;
         _ck(_v, 15, 0, currVal_3);
@@ -134,5 +134,5 @@ exports.LatestBlogComponentNgFactory = i1.ɵccf('SportSocial-latest-blog', i4.La
     bloggerName: 'bloggerName', bloggerImage: 'bloggerImage', heading: 'heading', Content: 'Content',
     insertedDate: 'insertedDate', ViewCount: 'ViewCount', ShareCount: 'ShareCount',
     keywords: 'keywords', exactDate: 'exactDate', readingTime: 'readingTime', MetaDesc: 'MetaDesc',
-    ImageDesc: 'ImageDesc' }, {}, []);
+    ImageDesc: 'ImageDesc', PrimaryKeyword: 'PrimaryKeyword', ShortTitle: 'ShortTitle' }, {}, []);
 //# sourceMappingURL=latest-blog.component.ngfactory.js.map

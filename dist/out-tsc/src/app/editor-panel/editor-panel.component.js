@@ -344,6 +344,8 @@ var EditorPanelComponent = /** @class */ (function () {
             formData.append('keywords', _this.blog.keywords);
             formData.append('metaDesc', _this.blog.metaDesc);
             formData.append('imageDesc', _this.blog.imageDesc);
+            formData.append('primaryKey', _this.blog.primaryKey);
+            formData.append('shortTitle', _this.blog.shortTitle);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
@@ -372,7 +374,9 @@ var EditorPanelComponent = /** @class */ (function () {
             blogDesc: this.desc.nativeElement.innerHTML,
             keywords: this.Keys,
             metaDesc: this.shortDesc.nativeElement.innerText,
-            imageDesc: this.blogImageDesc.nativeElement.innerText
+            imageDesc: this.blogImageDesc.nativeElement.innerText,
+            primaryKey: this.primaryKey.nativeElement.innerText,
+            shortTitle: this.ShortTitle.nativeElement.innerText
         };
         console.log(this.blog);
         this.imageName = ['blogImage', 'bloggerImage'];
@@ -421,7 +425,9 @@ var EditorPanelComponent = /** @class */ (function () {
             bloggerImage: this.bloggerimageSrc,
             readingTime: this.timeToRead(this.strip(Content)),
             metaDesc: this.shortDesc.nativeElement.innerText,
-            imageDesc: this.blogImageDesc.nativeElement.innerText
+            imageDesc: this.blogImageDesc.nativeElement.innerText,
+            primaryKey: this.primaryKey.nativeElement.innerText,
+            shortTitle: this.ShortTitle.nativeElement.innerText
         };
         console.log(this.blogPreview);
     };
@@ -451,6 +457,8 @@ var EditorPanelComponent = /** @class */ (function () {
         'blogImageDesc': [{ type: core_1.ViewChild, args: ['blogImageDesc',] },],
         'shortDesc': [{ type: core_1.ViewChild, args: ['shortDesc',] },],
         'BloggerName': [{ type: core_1.ViewChild, args: ['BloggerName',] },],
+        'primaryKey': [{ type: core_1.ViewChild, args: ['primaryKey',] },],
+        'ShortTitle': [{ type: core_1.ViewChild, args: ['shortTitle',] },],
         'URL': [{ type: core_1.ViewChild, args: ['url',] },],
         'youtubeURL': [{ type: core_1.ViewChild, args: ['YoutubeUrl',] },],
         'pluginURL': [{ type: core_1.ViewChild, args: ['PluginUrl',] },],

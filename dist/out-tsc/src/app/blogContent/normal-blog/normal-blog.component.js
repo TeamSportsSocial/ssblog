@@ -33,7 +33,9 @@ var NormalBlogComponent = /** @class */ (function () {
             exactDate: this.exactDate,
             readingTime: this.readingTime,
             MetaDesc: this.MetaDesc,
-            ImageDesc: this.ImageDesc
+            ImageDesc: this.ImageDesc,
+            PrimaryKeyword: this.PrimaryKeyword,
+            ShortTitle: this.ShortTitle
         };
         this.setVariableFont();
         if (this.blogImage) {
@@ -94,7 +96,7 @@ var NormalBlogComponent = /** @class */ (function () {
     };
     NormalBlogComponent.prototype.send = function () {
         this.Send.detailsofBlog.next(this.blog);
-        console.log(this.blogOpen);
+        // console.log(this.blogOpen);
         if (this.isBrowser) {
             window.scrollTo(0, 0);
         }
@@ -140,6 +142,8 @@ var NormalBlogComponent = /** @class */ (function () {
         'readingTime': [{ type: core_1.Input },],
         'MetaDesc': [{ type: core_1.Input },],
         'ImageDesc': [{ type: core_1.Input },],
+        'PrimaryKeyword': [{ type: core_1.Input },],
+        'ShortTitle': [{ type: core_1.Input },],
         'blogTitle': [{ type: core_1.ViewChild, args: ['blogTitle',] },],
         'holder': [{ type: core_1.ViewChild, args: ['holder',] },],
         'fullImage': [{ type: core_1.ViewChild, args: ['fullImage',] },],

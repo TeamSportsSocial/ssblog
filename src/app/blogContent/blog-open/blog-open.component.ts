@@ -80,20 +80,24 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
         private Link: LinkService,
     ) {
         this.isBrowser = isPlatformBrowser(platformId);
+        console.log("costructor call")
      }
 
     ngOnInit() {
+        console.log('blog opened');
         this.blogDataRecieved = false;
-            this.recieveBlogIdFromUrl()
-            this.setTopMargin();
-            this.setMobileView();
+        this.recieveBlogIdFromUrl();
+        this.setTopMargin();
+        this.setMobileView();
     }
-
+    
     ngAfterViewInit() {
         if (this.isBrowser) {
             this.scriptOfTwitter();
         }
+        console.log('blog opened after view');
     }
+
     setTitle() {
         if (this.route.snapshot.url[0].path !== 'sportsocialblog' || this.route.snapshot.url[1].path !== 'page') {
             this.titleService.setTitle(this.blog.heading + ' | Chase Your Sport - Sports Social Blog');
@@ -198,7 +202,9 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
             exactDate: string;
             readingTime: string;
             MetaDesc: string;
-            ImageDesc: string
+            ImageDesc: string;
+            PrimaryKeyword: string;
+            ShortTilte: string;
         };
         this.load.dataOfsingleBlog(this.blogID).subscribe(
             res => {
@@ -224,7 +230,9 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
                     exactDate: this.ExactDate(data.insertedDate),
                     readingTime: this.timeToRead(data.Content),
                     MetaDesc: data.MetaDesc,
-                    ImageDesc: data.ImageDesc == null ? ' ' : data.ImageDesc
+                    ImageDesc: data.ImageDesc == null ? ' ' : data.ImageDesc,
+                    PrimaryKeyword: data.PrimaryKeyword == null ? data.keys.split(',')[0] : data.PrimaryKeyword,
+                    ShortTilte: data.ShortTilte == null ? data.heading : data.ShortTilte
                 };
                 if (blog.MetaDesc == null) {
                     blog.MetaDesc = '';
@@ -233,7 +241,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
                     blog.ImageDesc = '';
                 }
                 this.blog = blog;
-                // console.log(this.blog);
+                 console.log(this.blog);
                 this.Keywords = blog.keywords;
                 this.content = this.sanitizer.bypassSecurityTrustHtml(data.Content);
                 this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length - 1]);
@@ -373,6 +381,7 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
         this.openFullImage = false;
     }
     sendShareCount() {
+        this.ShareCount++;
         this.post.shareCountOfBlog(this.blog.blogId, this.ShareCount).subscribe(
             data => {
                 // console.log(data, "sharedOnFacebook")
