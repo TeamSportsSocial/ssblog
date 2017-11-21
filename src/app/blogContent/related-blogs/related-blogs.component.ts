@@ -79,8 +79,8 @@ export class RelatedBlogsComponent implements OnInit {
                     keywords: data[i].keywords.split(','),
                     exactDate: this.ExactDate(data[i].insertedDate),
                     readingTime: this.timeToRead(data[i].Content),
-                    MetaDesc: data[i].MetaDesc,
-                    ImageDesc: data[i].ImageDesc,
+                    MetaDesc: data[i].MetaDesc == null ? ' ' : data[i].MetaDesc,
+                    ImageDesc: data[i].ImageDesc == null ? ' ' : data[i].ImageDesc,
                     PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
                     ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
                   }

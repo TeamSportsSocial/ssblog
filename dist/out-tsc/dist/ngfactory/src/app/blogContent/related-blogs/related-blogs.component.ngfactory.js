@@ -59,7 +59,7 @@ function View_RelatedBlogsComponent_3(_l) {
         var currVal_11 = _v.context.$implicit.readingTime;
         var currVal_12 = _v.context.$implicit.MetaDesc;
         var currVal_13 = _v.context.$implicit.ImageDesc;
-        var currVal_14 = _v.context.$implicit.Primarykeyword;
+        var currVal_14 = _v.context.$implicit.PrimaryKeyword;
         var currVal_15 = _v.context.$implicit.ShortTitle;
         _ck(_v, 4, 1, [currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6,
             currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13,
