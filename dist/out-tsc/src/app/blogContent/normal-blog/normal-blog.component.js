@@ -18,24 +18,23 @@ var NormalBlogComponent = /** @class */ (function () {
         this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     NormalBlogComponent.prototype.ngOnInit = function () {
-        this.content = this.strip(this.Content);
+        this.Content = this.strip(this.content);
         this.blog = {
             blogId: this.blogId,
             blogImage: this.blogImage,
             bloggerName: this.bloggerName,
-            bloggerImage: this.bloggerImage,
+            // bloggerImage:this.bloggerImage,
             heading: this.heading,
-            Content: this.Content,
+            // content:this.content,
             insertedDate: this.insertedDate,
-            ViewCount: this.ViewCount,
-            ShareCount: this.ShareCount,
-            keywords: this.keywords,
-            exactDate: this.exactDate,
-            readingTime: this.readingTime,
-            MetaDesc: this.MetaDesc,
-            ImageDesc: this.ImageDesc,
-            PrimaryKeyword: this.PrimaryKeyword,
-            ShortTitle: this.ShortTitle
+            viewCount: this.viewCount,
+            shareCount: this.shareCount,
+            // keywords:this.keywords,
+            // exactDate: this.exactDate,
+            // readingTime: this.readingTime,
+            metaDesc: this.metaDesc,
+            imageDesc: this.imageDesc,
+            primaryKeyword: this.primaryKeyword,
         };
         this.setVariableFont();
         if (this.blogImage) {
@@ -134,16 +133,16 @@ var NormalBlogComponent = /** @class */ (function () {
         'bloggerName': [{ type: core_1.Input },],
         'heading': [{ type: core_1.Input },],
         'insertedDate': [{ type: core_1.Input },],
-        'Content': [{ type: core_1.Input },],
-        'ViewCount': [{ type: core_1.Input },],
-        'ShareCount': [{ type: core_1.Input },],
+        'content': [{ type: core_1.Input },],
+        'viewCount': [{ type: core_1.Input },],
+        'shareCount': [{ type: core_1.Input },],
         'keywords': [{ type: core_1.Input },],
         'exactDate': [{ type: core_1.Input },],
         'readingTime': [{ type: core_1.Input },],
-        'MetaDesc': [{ type: core_1.Input },],
-        'ImageDesc': [{ type: core_1.Input },],
-        'PrimaryKeyword': [{ type: core_1.Input },],
-        'ShortTitle': [{ type: core_1.Input },],
+        'metaDesc': [{ type: core_1.Input },],
+        'imageDesc': [{ type: core_1.Input },],
+        'primaryKeyword': [{ type: core_1.Input },],
+        'shortTitle': [{ type: core_1.Input },],
         'blogTitle': [{ type: core_1.ViewChild, args: ['blogTitle',] },],
         'holder': [{ type: core_1.ViewChild, args: ['holder',] },],
         'fullImage': [{ type: core_1.ViewChild, args: ['fullImage',] },],

@@ -47,26 +47,26 @@ function View_SearchComponent_4(_l) {
         }, i4.View_NormalBlogComponent_0, i4.RenderType_NormalBlogComponent)), i1.ɵdid(4, 4308992, null, 0, i5.NormalBlogComponent, [i3.PropertyService, i3.PropertyService,
             i1.Renderer2, i6.PostService, i3.PropertyService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'], bloggerImage: [2, 'bloggerImage'],
             bloggerName: [3, 'bloggerName'], heading: [4, 'heading'], insertedDate: [5, 'insertedDate'],
-            Content: [6, 'Content'], ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'],
+            content: [6, 'content'], viewCount: [7, 'viewCount'], shareCount: [8, 'shareCount'],
             keywords: [9, 'keywords'], exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'],
-            MetaDesc: [12, 'MetaDesc'], ImageDesc: [13, 'ImageDesc'], PrimaryKeyword: [14, 'PrimaryKeyword'],
-            ShortTitle: [15, 'ShortTitle'] }, null), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
+            metaDesc: [12, 'metaDesc'], imageDesc: [13, 'imageDesc'], primaryKeyword: [14, 'primaryKeyword'],
+            shortTitle: [15, 'shortTitle'] }, null), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerImage;
         var currVal_3 = _v.context.$implicit.bloggerName;
         var currVal_4 = _v.context.$implicit.heading;
         var currVal_5 = _v.context.$implicit.insertedDate;
-        var currVal_6 = _v.context.$implicit.Content;
-        var currVal_7 = _v.context.$implicit.ViewCount;
-        var currVal_8 = _v.context.$implicit.ShareCount;
+        var currVal_6 = _v.context.$implicit.content;
+        var currVal_7 = _v.context.$implicit.viewCount;
+        var currVal_8 = _v.context.$implicit.shareCount;
         var currVal_9 = _v.context.$implicit.keywords;
         var currVal_10 = _v.context.$implicit.exactDate;
         var currVal_11 = _v.context.$implicit.readingTime;
-        var currVal_12 = _v.context.$implicit.MetaDesc;
-        var currVal_13 = _v.context.$implicit.ImageDesc;
-        var currVal_14 = _v.context.$implicit.PrimaryKeyword;
-        var currVal_15 = _v.context.$implicit.ShortTitle;
+        var currVal_12 = _v.context.$implicit.metaDesc;
+        var currVal_13 = _v.context.$implicit.imageDesc;
+        var currVal_14 = _v.context.$implicit.primaryKeyword;
+        var currVal_15 = _v.context.$implicit.shortTitle;
         _ck(_v, 4, 1, [currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6,
             currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13,
             currVal_14, currVal_15]);
@@ -95,11 +95,11 @@ function View_SearchComponent_6(_l) {
         }, i4.View_NormalBlogComponent_0, i4.RenderType_NormalBlogComponent)), i1.ɵdid(3, 4308992, null, 0, i5.NormalBlogComponent, [i3.PropertyService, i3.PropertyService,
             i1.Renderer2, i6.PostService, i3.PropertyService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'], bloggerImage: [2, 'bloggerImage'],
             bloggerName: [3, 'bloggerName'], heading: [4, 'heading'], insertedDate: [5,
-                'insertedDate'], Content: [6, 'Content'], ViewCount: [7, 'ViewCount'],
-            ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'], exactDate: [10, 'exactDate'],
-            readingTime: [11, 'readingTime'], MetaDesc: [12, 'MetaDesc'], ImageDesc: [13,
-                'ImageDesc'], PrimaryKeyword: [14, 'PrimaryKeyword'], ShortTitle: [15,
-                'ShortTitle'] }, null), (_l()(), i1.ɵted(-1, null, ['\n          '])),
+                'insertedDate'], content: [6, 'content'], viewCount: [7, 'viewCount'],
+            shareCount: [8, 'shareCount'], keywords: [9, 'keywords'], exactDate: [10, 'exactDate'],
+            readingTime: [11, 'readingTime'], metaDesc: [12, 'metaDesc'], imageDesc: [13,
+                'imageDesc'], primaryKeyword: [14, 'primaryKeyword'], shortTitle: [15,
+                'shortTitle'] }, null), (_l()(), i1.ɵted(-1, null, ['\n          '])),
         (_l()(), i1.ɵted(-1, null, ['\n      ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
@@ -107,16 +107,16 @@ function View_SearchComponent_6(_l) {
         var currVal_3 = _v.context.$implicit.bloggerName;
         var currVal_4 = _v.context.$implicit.heading;
         var currVal_5 = _v.context.$implicit.insertedDate;
-        var currVal_6 = _v.context.$implicit.Content;
-        var currVal_7 = _v.context.$implicit.ViewCount;
-        var currVal_8 = _v.context.$implicit.ShareCount;
+        var currVal_6 = _v.context.$implicit.content;
+        var currVal_7 = _v.context.$implicit.viewCount;
+        var currVal_8 = _v.context.$implicit.shareCount;
         var currVal_9 = _v.context.$implicit.keywords;
         var currVal_10 = _v.context.$implicit.exactDate;
         var currVal_11 = _v.context.$implicit.readingTime;
-        var currVal_12 = _v.context.$implicit.MetaDesc;
-        var currVal_13 = _v.context.$implicit.ImageDesc;
-        var currVal_14 = _v.context.$implicit.PrimaryKeyword;
-        var currVal_15 = _v.context.$implicit.ShortTitle;
+        var currVal_12 = _v.context.$implicit.metaDesc;
+        var currVal_13 = _v.context.$implicit.imageDesc;
+        var currVal_14 = _v.context.$implicit.primaryKeyword;
+        var currVal_15 = _v.context.$implicit.shortTitle;
         _ck(_v, 3, 1, [currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6,
             currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13,
             currVal_14, currVal_15]);

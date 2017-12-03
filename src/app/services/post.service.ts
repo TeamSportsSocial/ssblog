@@ -10,14 +10,12 @@ export class PostService {
     page: number
   };
   Email: {
-    userid: string;
     email:  string;
   };
   loginDetails: {
     id: string,
     email: string,
     name: string,
-    isFb: string,
     image: string
   };
   Comment: {
@@ -36,6 +34,10 @@ export class PostService {
     blogid: string;
     sharecount: number
   };
+  popularBlogReq: {
+    page: number;
+
+  };
 
  constructor(private http: Http) { }
  
@@ -45,15 +47,14 @@ export class PostService {
       page: i
     };
    // console.log(this.Page);
-    return this.http.post('https://admin.chaseyoursport.com/blog/loadblogdata', this.Page)
+    return this.http.post('http://test.chaseyoursport.com:3000/loadblogdata', this.Page)
     .map( res => res.json());
   }
   ofUser(s: string) {
     this.Email = {
-      userid: '2',
       email: s
     };
-    return this.http.post('https://admin.chaseyoursport.com/blog/subscribeBlog', this.Email)
+    return this.http.post('http://test.chaseyoursport.com:3000/subscribeBlog', this.Email)
     .map(res => res.json());
   }
   ofFacebookUser(id: string, name: string, email: string, image: string) {
@@ -61,7 +62,6 @@ export class PostService {
       id: id,
       email: email,
       name: name,
-      isFb: '1',
       image: image
     };
     return this.http.post('https://admin.chaseyoursport.com/blog/blogLogin', this.loginDetails)
@@ -90,7 +90,7 @@ export class PostService {
       viewcount: count
     };
    // console.log(this.viewCount, 'count');
-    return this.http.post('https://admin.chaseyoursport.com/blog/updateViewCount',this.viewCount)
+    return this.http.post('http://test.chaseyoursport.com:3000/updateViewCount', this.viewCount)
     .map(res => res.json());
   }
   shareCountOfBlog(id: string, count: number) {
@@ -100,7 +100,7 @@ export class PostService {
       sharecount: count
     };
     // console.log(this.shareCount, 'count');
-    return this.http.post('https://admin.chaseyoursport.com/blog/updateShareCount', this.shareCount)
+    return this.http.post('http://test.chaseyoursport.com:3000/updateShareCount', this.shareCount)
     .map(res => res.json());
   }
   dataOfsingleBlog(id: string) {
@@ -108,10 +108,10 @@ export class PostService {
       blogid: id
     };
    // console.log(this.BlogId);
-    return this.http.post('https://admin.chaseyoursport.com/blog/loadSingleBlogData',this.BlogId)
+    return this.http.post('http://test.chaseyoursport.com:3000/loadSingleBlogData', this.BlogId)
     .map((response: Response) => response.json());
   }
-  deleteBlog(id: string){
+  deleteBlog(id: string) {
     this.BlogId = {
       blogid: id
     };

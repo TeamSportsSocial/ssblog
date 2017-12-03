@@ -26,25 +26,35 @@ var BlogsComponent = /** @class */ (function () {
         this.dataRecived = false;
         this.haveData = true;
         this.count = 0;
-        link.addTag({ rel: 'canonical', href: 'https://www.chaseyoursport.com/' });
-        metaService.addTags([
-            { name: 'description', content: "Sports Social Blog: Chase Your Sport aims to create a sustainable\n        platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and\n        career in sports." },
-            { name: 'keywords', content: "Indian Sports Trends,Sports Social,Career in Sports,current trends\n        in sports,Indian Sports History, Sports Social media,sports technology,Sports blog,Indian Sports\n        Blog,Multiplayer Strategy Video Games,Health and Fitness Tips,Sports Analytics blog, Indian sports\n        news,outlook in sports industry,future trends in sports,sports business trends, sports articles,\n        sports management,Sports Social network india,sports jobs" },
-            { name: 'title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook' },
-            { name: 'theme-color', content: '#4327a0' },
-            { property: 'og:title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook' },
-            { property: 'og:description', content: "Sports Social Blog: Chase Your Sport aims to create a sustainable\n      platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and\n      career in sports." },
-            { property: 'og:url', content: 'https://www.chaseyoursport.com/' },
-            { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
-            { property: 'og:site_name', content: 'Chase Your Sport' },
-            { property: 'fb:app_id', content: '1750709328507665' },
-            { name: 'twitter:card', content: 'summary_large_image' },
-            { name: 'twitter:site', content: '@Chaseyoursport' },
-            { name: 'twitter:creator', content: '@NadeemKhan' },
-            { name: 'twitter:title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook' },
-            { name: 'twitter:description', content: "Sports Social Blog: Chase Your Sport aims to create a sustainable\n      platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and\n      career in sports." },
-            { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
-        ]);
+        //  link.addTag(  { rel: 'canonical', href: 'https://www.chaseyoursport.com/'});
+        /*  metaService.addTags([
+           { name: 'description', content: `Sports Social Blog: Chase Your Sport aims to create a sustainable
+             platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and
+             career in sports.` },
+           { name: 'keywords' , content: `Indian Sports Trends,Sports Social,Career in Sports,current trends
+             in sports,Indian Sports History, Sports Social media,sports technology,Sports blog,Indian Sports
+             Blog,Multiplayer Strategy Video Games,Health and Fitness Tips,Sports Analytics blog, Indian sports
+             news,outlook in sports industry,future trends in sports,sports business trends, sports articles,
+             sports management,Sports Social network india,sports jobs`},
+           { name: 'title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook'},
+           { name: 'theme-color', content: '#4327a0'},
+           { property: 'og:title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook' },
+           { property: 'og:description', content: `Sports Social Blog: Chase Your Sport aims to create a sustainable
+           platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and
+           career in sports.`},
+           { property: 'og:url', content:  'https://www.chaseyoursport.com/' },
+           { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
+           { property: 'og:site_name', content: 'Chase Your Sport' },
+           { property: 'fb:app_id', content: '1750709328507665'},
+           { name: 'twitter:card', content: 'summary_large_image'},
+           { name: 'twitter:site', content: '@Chaseyoursport'},
+           { name: 'twitter:creator', content: '@NadeemKhan'},
+           { name: 'twitter:title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook'},
+           { name: 'twitter:description', content: `Sports Social Blog: Chase Your Sport aims to create a sustainable
+           platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and
+           career in sports.`},
+           { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
+         ]); */
         this.isBrowser = common_1.isPlatformBrowser(platformId);
     }
     BlogsComponent.prototype.ngOnInit = function () {
@@ -56,7 +66,7 @@ var BlogsComponent = /** @class */ (function () {
     BlogsComponent.prototype.getBlog = function () {
         var _this = this;
         this.get.blogData(this.nextPageNumber, this.defaultKey).subscribe(function (data) {
-            // console.log(data);
+            console.log(data);
             _this.show = true;
             _this.dataRecived = true;
             // tslint:disable-next-line:forin
@@ -65,19 +75,18 @@ var BlogsComponent = /** @class */ (function () {
                     blogId: data[i].blogId,
                     blogImage: data[i].blogImage,
                     bloggerName: data[i].bloggerName,
-                    bloggerImage: data[i].bloggerImage,
+                    // bloggerImage: data[i].bloggerImage,
                     heading: data[i].heading,
-                    Content: data[i].Content,
+                    // content: data[i].content,
                     insertedDate: _this.timePassed(data[i].insertedDate),
-                    ViewCount: data[i].ViewCount,
-                    ShareCount: data[i].ShareCount,
-                    keywords: data[i].keywords.split(','),
-                    exactDate: _this.ExactDate(data[i].insertedDate),
-                    readingTime: _this.timeToRead(data[i].Content),
-                    MetaDesc: data[i].MetaDesc,
-                    ImageDesc: data[i].ImageDesc,
-                    PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
-                    ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
+                    viewCount: data[i].viewCount,
+                    shareCount: data[i].shareCount,
+                    // keywords: data[i].keywords.split(','),
+                    // exactDate: this.ExactDate(data[i].insertedDate),
+                    // readingTime: this.timeToRead(data[i].Content),
+                    metaDesc: 'chase your sport',
+                    imageDesc: data[i].imageDesc,
+                    primaryKeyword: data[i].primaryKeyword == null ? 'sports social' : data[i].primaryKeyword,
                 });
             }
             // console.log(this.blogDetails)
@@ -85,38 +94,36 @@ var BlogsComponent = /** @class */ (function () {
                 blogId: _this.blogDetails[0].blogId,
                 blogImage: _this.blogDetails[0].blogImage,
                 bloggerName: _this.blogDetails[0].bloggerName,
-                bloggerImage: _this.blogDetails[0].bloggerImage,
+                // bloggerImage: this.blogDetails[0].bloggerImage,
                 heading: _this.blogDetails[0].heading,
-                Content: _this.blogDetails[0].Content,
+                // content: this.blogDetails[0].content,
                 insertedDate: _this.blogDetails[0].insertedDate,
-                ViewCount: _this.blogDetails[0].ViewCount,
-                ShareCount: _this.blogDetails[0].ShareCount,
-                keywords: _this.blogDetails[0].keywords,
-                exactDate: _this.blogDetails[0].exactDate,
-                readingTime: _this.blogDetails[0].readingTime,
-                MetaDesc: _this.blogDetails[0].MetaDesc,
-                ImageDesc: _this.blogDetails[0].ImageDesc,
-                PrimaryKeyword: _this.blogDetails[0].PrimaryKeyword,
-                ShortTitle: _this.blogDetails[0].ShortTitle
+                viewCount: _this.blogDetails[0].viewCount,
+                shareCount: _this.blogDetails[0].shareCount,
+                // keywords: this.blogDetails[0].keywords,
+                // exactDate: this.blogDetails[0].exactDate,
+                // readingTime: this.blogDetails[0].readingTime,
+                metaDesc: _this.blogDetails[0].metaDesc,
+                imageDesc: _this.blogDetails[0].imageDesc,
+                primaryKeyword: _this.blogDetails[0].primaryKeyword,
             });
             for (var i = 1; i < 4; i++) {
                 _this.topBlogDetails.push({
                     blogId: _this.blogDetails[i].blogId,
                     blogImage: _this.blogDetails[i].blogImage,
                     bloggerName: _this.blogDetails[i].bloggerName,
-                    bloggerImage: _this.blogDetails[i].bloggerImage,
+                    // bloggerImage: this.blogDetails[i].bloggerImage,
                     heading: _this.blogDetails[i].heading,
-                    Content: _this.blogDetails[i].Content,
+                    // content: this.blogDetails[i].content,
                     insertedDate: _this.blogDetails[i].insertedDate,
-                    ViewCount: _this.blogDetails[i].ViewCount,
-                    ShareCount: _this.blogDetails[i].ShareCount,
-                    keywords: _this.blogDetails[i].keywords,
-                    exactDate: _this.blogDetails[i].exactDate,
-                    readingTime: _this.blogDetails[i].readingTime,
-                    MetaDesc: _this.blogDetails[i].MetaDesc,
-                    ImageDesc: _this.blogDetails[i].ImageDesc,
-                    PrimaryKeyword: _this.blogDetails[i].PrimaryKeyword,
-                    ShortTitle: _this.blogDetails[i].ShortTitle
+                    viewCount: _this.blogDetails[i].viewCount,
+                    shareCount: _this.blogDetails[i].shareCount,
+                    // keywords: this.blogDetails[i].keywords,
+                    // exactDate: this.blogDetails[i].exactDate,
+                    //  readingTime: this.blogDetails[i].readingTime,
+                    metaDesc: _this.blogDetails[i].metaDesc,
+                    imageDesc: _this.blogDetails[i].imageDesc,
+                    primaryKeyword: _this.blogDetails[i].primaryKeyword,
                 });
             }
             for (var i = 4; i < _this.blogDetails.length; i++) {
@@ -124,19 +131,18 @@ var BlogsComponent = /** @class */ (function () {
                     blogId: _this.blogDetails[i].blogId,
                     blogImage: _this.blogDetails[i].blogImage,
                     bloggerName: _this.blogDetails[i].bloggerName,
-                    bloggerImage: _this.blogDetails[i].bloggerImage,
+                    // bloggerImage: this.blogDetails[i].bloggerImage,
                     heading: _this.blogDetails[i].heading,
-                    Content: _this.blogDetails[i].Content,
+                    // content: this.blogDetails[i].content,
                     insertedDate: _this.blogDetails[i].insertedDate,
-                    ViewCount: _this.blogDetails[i].ViewCount,
-                    ShareCount: _this.blogDetails[i].ShareCount,
-                    keywords: _this.blogDetails[i].keywords,
-                    exactDate: _this.blogDetails[i].exactDate,
-                    readingTime: _this.blogDetails[i].readingTime,
-                    MetaDesc: _this.blogDetails[i].MetaDesc,
-                    ImageDesc: _this.blogDetails[i].ImageDesc,
-                    PrimaryKeyword: _this.blogDetails[i].PrimaryKeyword,
-                    ShortTitle: _this.blogDetails[i].ShortTitle
+                    viewCount: _this.blogDetails[i].viewCount,
+                    shareCount: _this.blogDetails[i].shareCount,
+                    // keywords: this.blogDetails[i].keywords,
+                    // exactDate: this.blogDetails[i].exactDate,
+                    // readingTime: this.blogDetails[i].readingTime,
+                    metaDesc: _this.blogDetails[i].metaDesc,
+                    imageDesc: _this.blogDetails[i].imageDesc,
+                    primaryKeyword: _this.blogDetails[i].primaryKeyword,
                 });
             }
         });
@@ -254,19 +260,18 @@ var BlogsComponent = /** @class */ (function () {
                         blogId: data[i].blogId,
                         blogImage: data[i].blogImage,
                         bloggerName: data[i].bloggerName,
-                        bloggerImage: data[i].bloggerImage,
+                        // bloggerImage: data[i].bloggerImage,
                         heading: data[i].heading,
-                        Content: data[i].Content,
+                        // content: data[i].content,
                         insertedDate: _this.timePassed(data[i].insertedDate),
-                        ViewCount: data[i].ViewCount,
-                        ShareCount: data[i].ShareCount,
-                        keywords: data[i].keywords.split(','),
-                        exactDate: _this.ExactDate(data[i].insertedDate),
-                        readingTime: _this.timeToRead(data[i].Content),
-                        MetaDesc: data[i].MetaDesc,
-                        ImageDesc: data[i].ImageDesc,
-                        PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
-                        ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
+                        viewCount: data[i].viewCount,
+                        shareCount: data[i].vhareCount,
+                        // keywords: data[i].keywords.split(','),
+                        //  exactDate: this.ExactDate(data[i].insertedDate),
+                        // readingTime: this.timeToRead(data[i].Content),
+                        metaDesc: data[i].metaDesc,
+                        imageDesc: data[i].imageDesc,
+                        primaryKeyword: data[i].primaryKeyword == null ? 'sport social' : data[i].primaryKeyword,
                     });
                 }
             });

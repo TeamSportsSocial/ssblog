@@ -148,7 +148,7 @@ function View_BlogOpenComponent_10(_l) {
                 'shortDesc']], null, null, null, null, null)),
         (_l()(), i1.ɵted(1, null, ['', '']))], null, function (_ck, _v) {
         var _co = _v.component;
-        var currVal_0 = _co.blog.MetaDesc;
+        var currVal_0 = _co.blog.metaDesc;
         _ck(_v, 1, 0, currVal_0);
     });
 }
@@ -216,9 +216,9 @@ function View_BlogOpenComponent_15(_l) {
         (_l()(), i1.ɵeld(12, 0, null, null, 0, 'img', [['alt', 'sports-social-share-orange'],
             ['src', '/assets/images/sports-social-share-orange.png']], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵeld(14, 0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(), i1.ɵted(15, null, ['', ''])), (_l()(), i1.ɵted(-1, null, ['\n          '])), (_l()(), i1.ɵted(-1, null, ['\n        ']))], null, function (_ck, _v) {
         var _co = _v.component;
-        var currVal_0 = _co.blog.ViewCount;
+        var currVal_0 = _co.blog.viewCount;
         _ck(_v, 7, 0, currVal_0);
-        var currVal_1 = _co.blog.ShareCount;
+        var currVal_1 = _co.blog.shareCount;
         _ck(_v, 15, 0, currVal_1);
     });
 }
@@ -577,7 +577,7 @@ function View_BlogOpenComponent_31(_l) {
         }, null, null)), (_l()(), i1.ɵted(-1, null, ['\n ']))], null, function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = i1.ɵinlineInterpolate(1, '', _co.blog.blogImage, '');
-        var currVal_1 = i1.ɵinlineInterpolate(1, '', _co.blog.ImageDesc, '');
+        var currVal_1 = i1.ɵinlineInterpolate(1, '', _co.blog.imageDesc, '');
         _ck(_v, 2, 0, currVal_0, currVal_1);
     });
 }

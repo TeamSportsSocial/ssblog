@@ -30,73 +30,73 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     blogId: string;
     blogImage:string;
     bloggerName:string,
-    bloggerImage:string,
+    // bloggerImage:string,
     heading:string,
-    Content:string,
+    // content:string,
     insertedDate:string,
-    ViewCount:string,
-    ShareCount:string,
-    keywords:string[],
-    exactDate:string;
-    readingTime:string;
-    MetaDesc: string;
-    ImageDesc: string;
-    PrimaryKeyword: string;
-    ShortTitle: string;
+    viewCount:string,
+    shareCount:string,
+    // keywords:string[],
+    // exactDate:string;
+    // readingTime:string;
+    metaDesc: string;
+    imageDesc: string;
+    primaryKeyword: string;
+    // shortTitle: string;
   }[]=[];
   blogDetails:{
     blogId:string;
     blogImage:string;
     bloggerName:string,
-    bloggerImage:string,
+    // bloggerImage:string,
     heading:string,
-    Content:string,
+    // content:string,
     insertedDate:string,
-    ViewCount:string,
-    ShareCount:string,
-    keywords:string[],
-    exactDate:string;
-    readingTime:string;
-    MetaDesc: string;
-    ImageDesc: string;
-    PrimaryKeyword: string;
-    ShortTitle: string;
+    viewCount:string,
+    shareCount:string,
+    // keywords:string[],
+    // exactDate:string;
+    // readingTime:string;
+    metaDesc: string;
+    imageDesc: string;
+    primaryKeyword: string;
+    // shortTitle: string;
   }[]=[];
   topBlogDetails:{
     blogId:string;
     blogImage:string;
     bloggerName:string,
-    bloggerImage:string,
+    // bloggerImage:string,
     heading:string,
-    Content:string,
+    // content:string,
     insertedDate:string,
-    ViewCount:string,
-    ShareCount:string,
-    keywords:string[],
-    exactDate:string;
-    readingTime:string;
-    MetaDesc: string;
-    ImageDesc: string;
-    PrimaryKeyword: string;
-    ShortTitle: string;
+    viewCount:string,
+    shareCount:string,
+    // keywords:string[],
+   //  exactDate:string;
+    // readingTime:string;
+    metaDesc: string;
+    imageDesc: string;
+    primaryKeyword: string;
+    // shortTitle: string;
   }[]= [];
   restBlogDetails:{
     blogId:string;
     blogImage: string;
     bloggerName: string,
-    bloggerImage: string,
+    // bloggerImage: string,
     heading: string,
-    Content: string,
+    // content: string,
     insertedDate: string,
-    ViewCount: string,
-    ShareCount: string,
-    keywords: string[],
-    exactDate: string;
-    readingTime: string;
-    MetaDesc: string;
-    ImageDesc: string;
-    PrimaryKeyword: string;
-    ShortTitle: string;
+    viewCount: string,
+    shareCount: string,
+    // keywords: string[],
+    // exactDate: string;
+    // readingTime: string;
+    metaDesc: string;
+    imageDesc: string;
+    primaryKeyword: string;
+    // shortTitle: string;
   }[]= [];
   topMargin;
   removeTrendingBlock: boolean= false;
@@ -118,8 +118,8 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     @Inject(PLATFORM_ID) platformId: Object,
     private link: LinkService,
   ) {
-    link.addTag(  { rel: 'canonical', href: 'https://www.chaseyoursport.com/'});
-    metaService.addTags([
+   //  link.addTag(  { rel: 'canonical', href: 'https://www.chaseyoursport.com/'});
+   /*  metaService.addTags([
       { name: 'description', content: `Sports Social Blog: Chase Your Sport aims to create a sustainable
         platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and
         career in sports.` },
@@ -146,7 +146,7 @@ export class BlogsComponent implements OnInit,AfterViewInit {
       platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and
       career in sports.`},
       { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
-    ]);
+    ]); */
     this.isBrowser = isPlatformBrowser( platformId );
   }
 
@@ -155,13 +155,13 @@ export class BlogsComponent implements OnInit,AfterViewInit {
     if (this.isBrowser) {
       this.getBlog();
   }
-   
+
   }
   getBlog() {
     this.get.blogData(this.nextPageNumber, this.defaultKey).subscribe(
       (data) => {
 
-        // console.log(data);
+         console.log(data);
         this.show = true;
         this.dataRecived = true;
         // tslint:disable-next-line:forin
@@ -170,19 +170,19 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 blogId: data[i].blogId,
                 blogImage: data[i].blogImage,
                 bloggerName: data[i].bloggerName,
-                bloggerImage: data[i].bloggerImage,
+                // bloggerImage: data[i].bloggerImage,
                 heading: data[i].heading,
-                Content: data[i].Content,
+                // content: data[i].content,
                 insertedDate: this.timePassed(data[i].insertedDate),
-                ViewCount: data[i].ViewCount,
-                ShareCount: data[i].ShareCount,
-                keywords: data[i].keywords.split(','),
-                exactDate: this.ExactDate(data[i].insertedDate),
-                readingTime: this.timeToRead(data[i].Content),
-                MetaDesc: data[i].MetaDesc,
-                ImageDesc: data[i].ImageDesc,
-                PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
-                ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
+                viewCount: data[i].viewCount,
+                shareCount: data[i].shareCount,
+                // keywords: data[i].keywords.split(','),
+                // exactDate: this.ExactDate(data[i].insertedDate),
+               // readingTime: this.timeToRead(data[i].Content),
+                metaDesc: 'chase your sport' ,
+                imageDesc: data[i].imageDesc,
+                primaryKeyword: data[i].primaryKeyword == null ? 'sports social' : data[i].primaryKeyword,
+                // shortTitle: data[i].shortTitle == null ? data[i].heading : data[i].shortTitle
               });
         }
        // console.log(this.blogDetails)
@@ -191,19 +191,19 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             blogId: this.blogDetails[0].blogId,
             blogImage: this.blogDetails[0].blogImage,
             bloggerName: this.blogDetails[0].bloggerName,
-            bloggerImage: this.blogDetails[0].bloggerImage,
+            // bloggerImage: this.blogDetails[0].bloggerImage,
             heading: this.blogDetails[0].heading,
-            Content: this.blogDetails[0].Content,
+            // content: this.blogDetails[0].content,
             insertedDate: this.blogDetails[0].insertedDate,
-            ViewCount: this.blogDetails[0].ViewCount,
-            ShareCount: this.blogDetails[0].ShareCount,
-            keywords: this.blogDetails[0].keywords,
-            exactDate: this.blogDetails[0].exactDate,
-            readingTime: this.blogDetails[0].readingTime,
-            MetaDesc: this.blogDetails[0].MetaDesc,
-            ImageDesc: this.blogDetails[0].ImageDesc,
-            PrimaryKeyword: this.blogDetails[0].PrimaryKeyword,
-            ShortTitle: this.blogDetails[0].ShortTitle
+            viewCount: this.blogDetails[0].viewCount,
+            shareCount: this.blogDetails[0].shareCount,
+            // keywords: this.blogDetails[0].keywords,
+            // exactDate: this.blogDetails[0].exactDate,
+            // readingTime: this.blogDetails[0].readingTime,
+            metaDesc: this.blogDetails[0].metaDesc,
+            imageDesc: this.blogDetails[0].imageDesc,
+            primaryKeyword: this.blogDetails[0].primaryKeyword,
+            // shortTitle: this.blogDetails[0].shortTitle
           }
         );
         for (let i = 1; i < 4; i++) {
@@ -212,19 +212,19 @@ export class BlogsComponent implements OnInit,AfterViewInit {
               blogId: this.blogDetails[i].blogId,
               blogImage: this.blogDetails[i].blogImage,
               bloggerName: this.blogDetails[i].bloggerName,
-              bloggerImage: this.blogDetails[i].bloggerImage,
+              // bloggerImage: this.blogDetails[i].bloggerImage,
               heading: this.blogDetails[i].heading,
-              Content: this.blogDetails[i].Content,
+              // content: this.blogDetails[i].content,
               insertedDate: this.blogDetails[i].insertedDate,
-              ViewCount: this.blogDetails[i].ViewCount,
-              ShareCount: this.blogDetails[i].ShareCount,
-              keywords: this.blogDetails[i].keywords,
-              exactDate: this.blogDetails[i].exactDate,
-              readingTime: this.blogDetails[i].readingTime,
-              MetaDesc: this.blogDetails[i].MetaDesc,
-              ImageDesc: this.blogDetails[i].ImageDesc,
-              PrimaryKeyword: this.blogDetails[i].PrimaryKeyword,
-              ShortTitle: this.blogDetails[i].ShortTitle
+              viewCount: this.blogDetails[i].viewCount,
+              shareCount: this.blogDetails[i].shareCount,
+              // keywords: this.blogDetails[i].keywords,
+              // exactDate: this.blogDetails[i].exactDate,
+             //  readingTime: this.blogDetails[i].readingTime,
+              metaDesc: this.blogDetails[i].metaDesc,
+              imageDesc: this.blogDetails[i].imageDesc,
+              primaryKeyword: this.blogDetails[i].primaryKeyword,
+              // shortTitle: this.blogDetails[i].shortTitle
             }
           );
         }
@@ -234,19 +234,19 @@ export class BlogsComponent implements OnInit,AfterViewInit {
             blogId: this.blogDetails[i].blogId,
             blogImage: this.blogDetails[i].blogImage,
             bloggerName: this.blogDetails[i].bloggerName,
-            bloggerImage: this.blogDetails[i].bloggerImage,
+            // bloggerImage: this.blogDetails[i].bloggerImage,
             heading: this.blogDetails[i].heading,
-            Content: this.blogDetails[i].Content,
+            // content: this.blogDetails[i].content,
             insertedDate: this.blogDetails[i].insertedDate,
-            ViewCount: this.blogDetails[i].ViewCount,
-            ShareCount: this.blogDetails[i].ShareCount,
-            keywords: this.blogDetails[i].keywords,
-            exactDate: this.blogDetails[i].exactDate,
-            readingTime: this.blogDetails[i].readingTime,
-            MetaDesc: this.blogDetails[i].MetaDesc,
-            ImageDesc: this.blogDetails[i].ImageDesc,
-            PrimaryKeyword: this.blogDetails[i].PrimaryKeyword ,
-            ShortTitle: this.blogDetails[i].ShortTitle
+            viewCount: this.blogDetails[i].viewCount,
+            shareCount: this.blogDetails[i].shareCount,
+            // keywords: this.blogDetails[i].keywords,
+            // exactDate: this.blogDetails[i].exactDate,
+           // readingTime: this.blogDetails[i].readingTime,
+            metaDesc: this.blogDetails[i].metaDesc,
+            imageDesc: this.blogDetails[i].imageDesc,
+            primaryKeyword: this.blogDetails[i].primaryKeyword ,
+            // shortTitle: this.blogDetails[i].shortTitle
           }
         );
       }
@@ -360,19 +360,19 @@ export class BlogsComponent implements OnInit,AfterViewInit {
                 blogId: data[i].blogId,
                 blogImage: data[i].blogImage,
                 bloggerName: data[i].bloggerName,
-                bloggerImage: data[i].bloggerImage,
+               // bloggerImage: data[i].bloggerImage,
                 heading: data[i].heading,
-                Content: data[i].Content,
+               // content: data[i].content,
                 insertedDate: this.timePassed(data[i].insertedDate),
-                ViewCount: data[i].ViewCount,
-                ShareCount: data[i].ShareCount,
-                keywords: data[i].keywords.split(','),
-                exactDate: this.ExactDate(data[i].insertedDate),
-                readingTime: this.timeToRead(data[i].Content),
-                MetaDesc: data[i].MetaDesc,
-                ImageDesc: data[i].ImageDesc,
-                PrimaryKeyword:  data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
-                ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
+                viewCount: data[i].viewCount,
+                shareCount: data[i].vhareCount,
+                // keywords: data[i].keywords.split(','),
+              //  exactDate: this.ExactDate(data[i].insertedDate),
+                // readingTime: this.timeToRead(data[i].Content),
+                metaDesc: data[i].metaDesc,
+                imageDesc: data[i].imageDesc,
+                primaryKeyword:  data[i].primaryKeyword == null ? 'sport social' : data[i].primaryKeyword,
+               // shortTitle: data[i].shortTitle == null ? data[i].heading : data[i].shortTitle
               }
             );
            }

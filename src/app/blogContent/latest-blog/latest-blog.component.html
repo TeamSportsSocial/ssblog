@@ -1,27 +1,27 @@
 
 
 <div class="latest" MaintainHeightWidthRatio #latest>
-  <a routerLink="/{{PrimaryKeyword}}/{{ShortTitle}}/{{blogId}}" (click)="send()">
+  <a routerLink="/{{primaryKeyword}}/{{heading}}/{{blogId}}" (click)="send()">
     <img #initialImage src="/assets/images/default-image.png" alt="InitialblogImage" *ngIf="isloading">
-    <img src="{{blogImage}}" title="{{ImageDesc}}" (error)="setDefault()" (load)="removeInitialImage()" alt="blogImage"  *ngIf="dataRecieved" #blogimage>
+    <img src="{{blogImage}}" title="{{imageDesc}}" (error)="setDefault()" (load)="removeInitialImage()" alt="blogImage"  *ngIf="dataRecieved" #blogimage>
     
     
     <div class="desc" #Desc>
       <div #DescChild>
         <div class="count">
           <img src="/assets/images/sports-social-view-white.png" alt="sports-social-view-white">
-          <span>{{ViewCount}}</span> 
+          <span>{{viewCount}}</span> 
           <img src="/assets/images/sports-social-share-white.png" alt="sports-social-share-white">
-          <span>{{ShareCount}}</span>
+          <span>{{shareCount}}</span>
         </div> 
         <div >
           <span>{{insertedDate}}</span>
           <span>|</span>
-          <span>{{keywords[0]}}</span>
+          <span>{{primaryKeyword}}</span>
         </div>
         <p class="heading" [innerHtml]="heading" #latestTitle> </p>
         <!-- <p  class="smallDesc" #latestDesc>{{Content}}</p> -->
-        <p  class="smallDesc" #latestDesc>{{content}}</p>
+        <p  class="smallDesc" #latestDesc>{{metaDesc}}</p>
         <div class="Blogger">
           <div class="bloggerImage" #BloggerImage>
               <img src="/assets/images/sports-social-blogger-white.png" alt="sports-social-blogger-white" >

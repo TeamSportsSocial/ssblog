@@ -34,7 +34,7 @@
     <div class="blogInfo" #BlogInfo>
       <ng-container *ngIf="isBrowser">
         <p *ngIf="blog" [innerHtml]="blog.heading" class="title"></p>
-        <p  *ngIf="blog" class="shortDesc">{{blog.MetaDesc}}</p>
+        <p  *ngIf="blog" class="shortDesc">{{blog.metaDesc}}</p>
       </ng-container>
       <div class="bloggerImage" *ngIf="isBrowser">
         <img *ngIf="blog" src="{{blog.bloggerImage}}" (load)="removeBackgroundUserImage()"  (error)="setDefault()" #userImage>
@@ -49,11 +49,11 @@
         <div class="count" *ngIf="blogDataRecieved">
           <span>
             <img src="/assets/images/sports-social-view-orange.png" alt="sports-social-view-orange">
-            <span >{{blog.ViewCount}}</span>
+            <span >{{blog.viewCount}}</span>
           </span>
           <span>
             <img src="/assets/images/sports-social-share-orange.png" alt="sports-social-share-orange">
-            <span>{{blog.ShareCount}}</span>
+            <span>{{blog.shareCount}}</span>
           </span>
         </div>  
         <img class="loading" *ngIf="!blogDataRecieved" src="/assets/images/sports-social-loading.gif" >
@@ -169,7 +169,7 @@
    
  </div>
  <div class="fullImageHolder" *ngIf="openFullImage" #fullImage>
-   <img src="{{blog.blogImage}}" title="{{blog.ImageDesc}}" (load)="onFullImageload()">
+   <img src="{{blog.blogImage}}" title="{{blog.imageDesc}}" (load)="onFullImageload()">
  </div>
 
  

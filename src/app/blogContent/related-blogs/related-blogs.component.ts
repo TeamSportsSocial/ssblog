@@ -41,19 +41,19 @@ export class RelatedBlogsComponent implements OnInit {
       blogId: string;
       blogImage: string;
       bloggerName: string,
-      bloggerImage: string,
+     // bloggerImage: string,
       heading: string,
-      Content: string,
+      // content: string,
       insertedDate: string,
-      ViewCount: string,
-      ShareCount: string,
-      keywords: string[],
-      exactDate: string;
-      readingTime: string;
-      MetaDesc: string;
-      ImageDesc: string;
-      PrimaryKeyword: string;
-      ShortTitle: string;
+      viewCount: string,
+      shareCount: string,
+      // keywords: string[],
+     // exactDate: string;
+      // readingTime: string;
+      metaDesc: string;
+      imageDesc: string;
+      primaryKeyword: string;
+      // shortTitle: string;
     }[] = [];
     this.getRelated.blogData(1, key).subscribe(
         data => {
@@ -70,19 +70,19 @@ export class RelatedBlogsComponent implements OnInit {
                     blogId: data[i].blogId,
                     blogImage: data[i].blogImage,
                     bloggerName: data[i].bloggerName,
-                    bloggerImage: data[i].bloggerImage,
+                   // bloggerImage: data[i].bloggerImage,
                     heading: data[i].heading,
-                    Content: data[i].Content,
+                   //  content: data[i].content,
                     insertedDate: this.timePassed(data[i].insertedDate),
-                    ViewCount: data[i].ViewCount,
-                    ShareCount: data[i].ShareCount,
-                    keywords: data[i].keywords.split(','),
-                    exactDate: this.ExactDate(data[i].insertedDate),
-                    readingTime: this.timeToRead(data[i].Content),
-                    MetaDesc: data[i].MetaDesc == null ? ' ' : data[i].MetaDesc,
-                    ImageDesc: data[i].ImageDesc == null ? ' ' : data[i].ImageDesc,
-                    PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
-                    ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
+                    viewCount: data[i].viewCount,
+                    shareCount: data[i].shareCount,
+                   // keywords: data[i].keywords.split(','),
+                   // exactDate: this.ExactDate(data[i].insertedDate),
+                   // readingTime: this.timeToRead(data[i].Content),
+                    metaDesc: data[i].metaDesc == null ? ' ' : data[i].metaDesc,
+                    imageDesc: data[i].imageDesc == null ? ' ' : data[i].imageDesc,
+                    primaryKeyword: data[i].primaryKeyword == null ? 'sport social' : data[i].primaryKeyword,
+                   // shortTitle: data[i].shortTitle == null ? data[i].heading : data[i].shortTitle
                   }
                 );
             }

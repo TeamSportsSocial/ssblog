@@ -85,7 +85,7 @@ function View_NormalBlogComponent_0(_l) {
         (_l()(), i1.ɵted(48, null, ['\n            ', '\n          '])), (_l()(),
             i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n      '])), (_l()(), i1.ɵted(-1, null, ['\n  '])), (_l()(), i1.ɵted(-1, null, ['\n\n ']))], function (_ck, _v) {
         var _co = _v.component;
-        var currVal_2 = i1.ɵinlineInterpolate(3, '/', _co.PrimaryKeyword, '/', _co.ShortTitle, '/', _co.blogId, '');
+        var currVal_2 = i1.ɵinlineInterpolate(3, '/', _co.primaryKeyword, '/', _co.heading, '/', _co.blogId, '');
         _ck(_v, 11, 0, currVal_2);
         var currVal_3 = _co.isloading;
         _ck(_v, 16, 0, currVal_3);
@@ -98,13 +98,13 @@ function View_NormalBlogComponent_0(_l) {
         _ck(_v, 10, 0, currVal_0, currVal_1);
         var currVal_5 = _co.insertedDate;
         _ck(_v, 27, 0, currVal_5);
-        var currVal_6 = _co.keywords[0];
+        var currVal_6 = _co.primaryKeyword;
         _ck(_v, 33, 0, currVal_6);
-        var currVal_7 = _co.ViewCount;
+        var currVal_7 = _co.viewCount;
         _ck(_v, 38, 0, currVal_7);
         var currVal_8 = _co.heading;
         _ck(_v, 41, 0, currVal_8);
-        var currVal_9 = _co.content;
+        var currVal_9 = _co.metaDesc;
         _ck(_v, 43, 0, currVal_9);
         var currVal_10 = _co.bloggerName;
         _ck(_v, 48, 0, currVal_10);
@@ -127,7 +127,7 @@ function View_NormalBlogComponent_Host_0(_l) {
 exports.View_NormalBlogComponent_Host_0 = View_NormalBlogComponent_Host_0;
 exports.NormalBlogComponentNgFactory = i1.ɵccf('SportSocial-normal-blog', i4.NormalBlogComponent, View_NormalBlogComponent_Host_0, { blogId: 'blogId', blogImage: 'blogImage',
     bloggerImage: 'bloggerImage', bloggerName: 'bloggerName', heading: 'heading', insertedDate: 'insertedDate',
-    Content: 'Content', ViewCount: 'ViewCount', ShareCount: 'ShareCount', keywords: 'keywords',
-    exactDate: 'exactDate', readingTime: 'readingTime', MetaDesc: 'MetaDesc', ImageDesc: 'ImageDesc',
-    PrimaryKeyword: 'PrimaryKeyword', ShortTitle: 'ShortTitle' }, {}, []);
+    content: 'content', viewCount: 'viewCount', shareCount: 'shareCount', keywords: 'keywords',
+    exactDate: 'exactDate', readingTime: 'readingTime', metaDesc: 'metaDesc', imageDesc: 'imageDesc',
+    primaryKeyword: 'primaryKeyword', shortTitle: 'shortTitle' }, {}, []);
 //# sourceMappingURL=normal-blog.component.ngfactory.js.map

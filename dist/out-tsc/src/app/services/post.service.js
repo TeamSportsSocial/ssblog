@@ -12,15 +12,14 @@ var PostService = /** @class */ (function () {
             page: i
         };
         // console.log(this.Page);
-        return this.http.post('https://admin.chaseyoursport.com/blog/loadblogdata', this.Page)
+        return this.http.post('http://test.chaseyoursport.com:3000/loadblogdata', this.Page)
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.ofUser = function (s) {
         this.Email = {
-            userid: '2',
             email: s
         };
-        return this.http.post('https://admin.chaseyoursport.com/blog/subscribeBlog', this.Email)
+        return this.http.post('http://test.chaseyoursport.com:3000/subscribeBlog', this.Email)
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.ofFacebookUser = function (id, name, email, image) {
@@ -28,7 +27,6 @@ var PostService = /** @class */ (function () {
             id: id,
             email: email,
             name: name,
-            isFb: '1',
             image: image
         };
         return this.http.post('https://admin.chaseyoursport.com/blog/blogLogin', this.loginDetails)
@@ -57,7 +55,7 @@ var PostService = /** @class */ (function () {
             viewcount: count
         };
         // console.log(this.viewCount, 'count');
-        return this.http.post('https://admin.chaseyoursport.com/blog/updateViewCount', this.viewCount)
+        return this.http.post('http://test.chaseyoursport.com:3000/updateViewCount', this.viewCount)
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.shareCountOfBlog = function (id, count) {
@@ -67,7 +65,7 @@ var PostService = /** @class */ (function () {
             sharecount: count
         };
         // console.log(this.shareCount, 'count');
-        return this.http.post('https://admin.chaseyoursport.com/blog/updateShareCount', this.shareCount)
+        return this.http.post('http://test.chaseyoursport.com:3000/updateShareCount', this.shareCount)
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.dataOfsingleBlog = function (id) {
@@ -75,7 +73,7 @@ var PostService = /** @class */ (function () {
             blogid: id
         };
         // console.log(this.BlogId);
-        return this.http.post('https://admin.chaseyoursport.com/blog/loadSingleBlogData', this.BlogId)
+        return this.http.post('http://test.chaseyoursport.com:3000/loadSingleBlogData', this.BlogId)
             .map(function (response) { return response.json(); });
     };
     PostService.prototype.deleteBlog = function (id) {

@@ -33,7 +33,7 @@ export class SubscribeCardComponent implements OnInit {
       .subscribe(
         res => {
          // console.log(res.Status)
-          if(res.Status=='Success'){
+          if(res.response =='Success'){
             this.showSubscriptionBox=true;
            // console.log(this.showSubscriptionBox)
             this.subscriber.nativeElement.value=''

@@ -78,6 +78,7 @@ export class EditorPanelComponent implements OnInit {
     keywords: string;
     bloggerName: string;
     content: string;
+    
   };
   blogImage;
   bloggerImage;
@@ -98,6 +99,7 @@ export class EditorPanelComponent implements OnInit {
     imageDesc: any,
     primaryKey: any,
     shortTitle: any,
+    readingTime: any,
 };
 blogPreview: {
   bloggerName: any,
@@ -475,13 +477,14 @@ makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
           formData.append(this.imageName[i], files[i]);
       }
       formData.append('bloggerName', this.blog.bloggerName);
-      formData.append('blogrTitle', this.blog.blogTitle);
-      formData.append('blogDesc', this.blog.blogDesc);
+      formData.append('heading', this.blog.blogTitle);
+      formData.append('content', this.blog.blogDesc);
       formData.append('keywords', this.blog.keywords);
       formData.append('metaDesc', this.blog.metaDesc);
       formData.append('imageDesc', this.blog.imageDesc);
-      formData.append('primaryKey', this.blog.primaryKey);
+      formData.append('topic', this.blog.primaryKey);
       formData.append('shortTitle', this.blog.shortTitle);
+      formData.append('readTime' , this.blog.readingTime);
       xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
               if (xhr.status === 200) {
@@ -497,6 +500,7 @@ makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
 }
 upload() {
  // console.log(this.BlogImage,this.BloggerImage,this.BloggerName,this.title,this.desc,this.shortDesc,this.blogImageDesc);
+  const Content = this.desc.nativeElement.innerHTML;
   this.blogImage = this.BlogImage.nativeElement.files[0];
   this.bloggerImage = this.BloggerImage.nativeElement.files[0];
   this.files = [ this.blogImage, this.bloggerImage];
@@ -510,14 +514,15 @@ upload() {
     metaDesc: this.shortDesc.nativeElement.innerText,
     imageDesc: this.blogImageDesc.nativeElement.innerText,
     primaryKey: this.primaryKey.nativeElement.innerText,
-    shortTitle: this.ShortTitle.nativeElement.innerText
+    shortTitle: this.ShortTitle.nativeElement.innerText,
+    readingTime: this.timeToRead(this.strip(Content)),
   };
   console.log(this.blog);
   this.imageName = ['blogImage', 'bloggerImage'];
   for (let i = 0 ; i < this.files.length; i++ ) {
     this.filesToUpload.push(<File> this.files[i]);
   }
-  this.makeFileRequest('https://admin.chaseyoursport.com/blog/saveNewBlog', [], this.filesToUpload)
+  this.makeFileRequest('http://test.chaseyoursport.com:3000/saveNewBlog', [], this.filesToUpload)
   .then((result) => {
     this.Result = result;
     console.log(result);

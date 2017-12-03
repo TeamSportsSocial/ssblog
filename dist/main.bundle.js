@@ -1538,7 +1538,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/blog-open/blog-open.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=openBlog  #openBlog>\r\n    <img class=\"loading\" *ngIf=\"!isBrowser\" src=\"/assets/images/sports-social-loading.gif\" >\r\n  <p class=\"Catagory\" *ngIf=\"isBrowser\">\r\n    <span role=\"button\" routerLink=\"/{{Keywords[0]}}\" (click)=\"getblogs($event)\">{{Keywords[0]}}</span>\r\n    <span  *ngIf=\"blogDataRecieved\">|</span>\r\n    <span *ngIf=\"blog\">{{blog.readingTime}}</span>\r\n  </p>\r\n  <div class=\"blogImageHolder\">\r\n    <ng-container *ngIf=\"isBrowser\">\r\n      <img \r\n        class=\"blogImage\" \r\n        alt=\"blogImage\" \r\n        src=\"{{blog.blogImage}}\"  \r\n        (error)=\"setDefaultBlogImage()\" \r\n        (load)=\"removeInitalImage($event)\"\r\n        role=\"button\" \r\n        *ngIf=\"blogDataRecieved\"\r\n        (click)=\"openfullImage()\">\r\n      \r\n      <img \r\n        class=\"blogImage\"  \r\n        alt=\"InitialblogImage\" \r\n        src=\"/assets/images/default-image.png\" \r\n        *ngIf=\"loading\" \r\n        (click)=\"openfullImage()\" \r\n        role=\"button\">\r\n      <img src=\"/assets/images/sports-social-zoom-out-orange.png\" alt=\"sports-social-zoom-out-orange\" role=\"button\" (click)=\"openfullImage()\"  class=\"zoom\">\r\n    </ng-container>\r\n    </div>\r\n  \r\n  <div class=\"content\">\r\n    \r\n    <div class=\"blogInfo\" #BlogInfo>\r\n      <ng-container *ngIf=\"isBrowser\">\r\n        <p *ngIf=\"blog\" [innerHtml]=\"blog.heading\" class=\"title\"></p>\r\n        <p  *ngIf=\"blog\" class=\"shortDesc\">{{blog.MetaDesc}}</p>\r\n      </ng-container>\r\n      <div class=\"bloggerImage\" *ngIf=\"isBrowser\">\r\n        <img *ngIf=\"blog\" src=\"{{blog.bloggerImage}}\" (load)=\"removeBackgroundUserImage()\"  (error)=\"setDefault()\" #userImage>\r\n      </div>\r\n      <ng-container *ngIf=\"isBrowser\">\r\n        <div class=\"blogger\" *ngIf=\"blogDataRecieved\">\r\n          <p  class=\"bloggerName\">Written by <span > {{blog.bloggerName}}</span></p>  \r\n          <p class=\"writtenDate\">\r\n            {{blog.exactDate}}\r\n          </p>\r\n        </div>\r\n        <div class=\"count\" *ngIf=\"blogDataRecieved\">\r\n          <span>\r\n            <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\">\r\n            <span >{{blog.ViewCount}}</span>\r\n          </span>\r\n          <span>\r\n            <img src=\"/assets/images/sports-social-share-orange.png\" alt=\"sports-social-share-orange\">\r\n            <span>{{blog.ShareCount}}</span>\r\n          </span>\r\n        </div>  \r\n        <img class=\"loading\" *ngIf=\"!blogDataRecieved\" src=\"/assets/images/sports-social-loading.gif\" >\r\n        <div class=\"shareOn\" *ngIf=\"blogDataRecieved\">\r\n          Share on \r\n          <img src=\"/assets/images/sports-social-facebook-logo-black.png\" role=\"button\" (click)=\"shareOnFacebook()\"  alt=\"sports-social-facebook-logo-black\">\r\n          <a href=\"https://twitter.com/share\" (click)=\"shareOnTwitter()\" #popup class=\"twitter\">\r\n            <img src=\"/assets/images/sports-social-twitter-logo-black.png\"  alt=\"sports-social-twitter-logo-black\">\r\n          </a> \r\n          <a href=\"https://www.pinterest.com/pin/create/button/?url={{url}}&media={{blog.blogImage}}\"  \r\n            data-pin-custom=\"true\"\r\n            target=\"_blank\">\r\n              <img (click)=\"shareOnPintrest()\" src=\"/assets/images/sports-social-pintrest-black.png\" alt=\"\">\r\n          </a>\r\n          <a href=\"https://www.linkedin.com/shareArticle?mini=true&url={{url}}\" target=\"_blank\">\r\n            <img (click)=\"shareOnLinkedin()\" src=\"/assets/images/sports-social-linkedin-black.png\" role=\"button\" >\r\n          </a>\r\n          <a href=\"https://plus.google.com/share?url={{url}}\" target=\"_blank\" >\r\n            <img (click)=\"shareOngooglePlus()\" src=\"/assets/images/sports-social-google-plus-black.png\" alt=\"Google+\" title=\"Google+\"/>\r\n          </a>\r\n        </div>\r\n        <p [innerHtml]=\"content\" class=\"desc\" *ngIf=\"blogDataRecieved\"></p>\r\n        <div class=\"tags\" *ngIf=\"blogDataRecieved\" >\r\n          <div class=\"tagHolder\">\r\n            <img src=\"/assets/images/sports-social-tag.png\" alt=\"sports-social-tag\">\r\n          </div>\r\n          <a *ngFor=\"let key of Keywords;let i=index\" role=\"button\" routerLink=\"/{{key}}\" (click)=\"getblogs($event)\">{{key}}</a>\r\n        </div>\r\n      </ng-container>\r\n    </div>\r\n    <ng-container *ngIf=\"isBrowser\" >\r\n    <div class=\"social\" *ngIf=\"!removeSocial\">\r\n      <div class=\"follow\">\r\n        <p *ngIf=\"blogDataRecieved\">Follow us</p>\r\n        <a href=\"https://www.facebook.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">\r\n          <img src=\"/assets/images/sports-social-facebook-logo-blue.png\" alt=\"sports-social-facebook-logo-blue\">\r\n        </a> \r\n        <a href=\"https://www.instagram.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\"> \r\n          <img src=\"/assets/images/sports-social-instagram-logo-blue.png\" alt=\"sports-social-instagram-logo-blue\">\r\n        </a>\r\n        <a href=\"https://www.twitter.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">  \r\n          <img src=\"/assets/images/sports-social-twitter-logo-blue.png\" alt=\"sports-social-twitter-logo-blue\">\r\n        </a>\r\n        <a href=\"https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ\" target=\"_blank\"  rel=\"noopener\">  \r\n          <img src=\"/assets/images/sports-social-youtube-logo-blue.png\" alt=\"sports-social-youtube-logo-blue\">\r\n        </a>\r\n        <a href=\"https://www.pinterest.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">  \r\n          <img src=\"/assets/images/sports-social-pinterest-logo-blue.png\" alt=\"sports-social-pinterest-logo-blue\">\r\n        </a>\r\n        <a href=\" https://in.linkedin.com/company/sports-social\" target=\"_blank\"  rel=\"noopener\">  \r\n          <img src=\"/assets/images/sports-social-linkedin-logo-blue.png\" alt=\"sports-social-linkedin-logo-blue\">\r\n        </a>\r\n        <a href=\"https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network\" target=\"_blank\"  rel=\"noopener\">  \r\n          <img src=\"/assets/images/sports-social-quora-logo-blue.png\" alt=\"sports-social-quora-logo-blue\">\r\n        </a>\r\n      </div>\r\n      <div class=\"twitter-profile\">\r\n        <p>\r\n          <img src=\"/assets/images/sports-social-twitter-logo-blue.png\" alt=\"sports-social-twitter-logo-blue\">\r\n          Tweets by @chaseyoursport</p>\r\n          <a class=\"twitter-timeline\" \r\n          data-width=\"450\"\r\n          data-height=\"700\"\r\n          data-chrome=\"noheader nofooter\"\r\n          href=\"https://twitter.com/chaseyoursport\">\r\n          Tweets by chaseyoursport\r\n        </a> \r\n        <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\r\n        </div>\r\n    </div>\r\n  </ng-container>\r\n  </div>\r\n  <ng-container *ngIf=\"isBrowser\">\r\n    <p class=\"shareOn center\" *ngIf=\"blogDataRecieved\"> \r\n      <span>Enjoy this article? Don't forget to share.</span>\r\n      <img src=\"/assets/images/sports-social-facebook-logo-blue.png\" role=\"button\" (click)=\"shareOnFacebook()\" alt=\"sports-social-facebook-logo-black\">\r\n      <a href=\"http://twitter.com/share\" (click)=\"shareOnTwitter()\" #popup class=\"twitter\">\r\n        <img src=\"/assets/images/sports-social-twitter-logo-blue.png\"   alt=\"sports-social-twitter-logo-black\">\r\n      </a> \r\n      <a href=\"https://www.pinterest.com/pin/create/button/?url={{url}}&media={{blog.blogImage}}\"  \r\n        data-pin-custom=\"true\"\r\n        target=\"_blank\">\r\n        <img (click)=\"shareOnPintrest()\" src=\"/assets/images/sports-social-pinterest-logo-blue.png\" alt=\"sports-social-pintrest-logo\">\r\n      </a>\r\n      <a href= \"http://www.linkedin.com/shareArticle?mini=true&url={{url}}&title={{blog.heading}}&summary={{blog.MetaDesc}}&source=chaseyoursport.com\" target=\"_blank\">\r\n        <img  (click)=\"shareOnLinkedin()\" src=\"/assets/images/sports-social-linkedin-logo-blue.png\" role=\"button\" >\r\n      </a>\r\n      <a href=\"https://plus.google.com/share?url={{url}}\" target=\"_blank\"  >\r\n        <img (click)=\"shareOngooglePlus()\" src=\"/assets/images/sports-social-google-plus-blue.png\" alt=\"Google+\" title=\"Google+\"/>\r\n      </a>\r\n    </p>\r\n  </ng-container>\r\n  <ng-container *ngIf=\"isBrowser\">\r\n    <div class=\"comments\" *ngIf=\"blogDataRecieved\">\r\n      <SportSocial-comments\r\n        [BlogId]=\"blogID\">\r\n      </SportSocial-comments>\r\n    </div>\r\n    <SportSocial-related-blogs></SportSocial-related-blogs>\r\n  </ng-container>\r\n  \r\n</div> \r\n<ng-container *ngIf=\"isBrowser\"> \r\n  <SportSocial-blog-footer *ngIf=\"blogDataRecieved\"></SportSocial-blog-footer>\r\n</ng-container>\r\n\r\n\r\n\r\n<div class=\"fullImage\"  *ngIf=\"openFullImage\" >\r\n  <img \r\n   src=\"/assets/images/sports-social-cancel-white.png\" \r\n   class=\"cancel\" role=\"button\" (click)=\"closeFullImage()\" >   \r\n   \r\n </div>\r\n <div class=\"fullImageHolder\" *ngIf=\"openFullImage\" #fullImage>\r\n   <img src=\"{{blog.blogImage}}\" title=\"{{blog.ImageDesc}}\" (load)=\"onFullImageload()\">\r\n </div>\r\n\r\n \r\n "
+module.exports = "\r\n<div class=openBlog  #openBlog>\r\n    <img class=\"loading\" *ngIf=\"!isBrowser\" src=\"/assets/images/sports-social-loading.gif\" >\r\n  <p class=\"Catagory\" *ngIf=\"isBrowser\">\r\n    <span role=\"button\" routerLink=\"/{{Keywords[0]}}\" (click)=\"getblogs($event)\">{{Keywords[0]}}</span>\r\n    <span  *ngIf=\"blogDataRecieved\">|</span>\r\n    <span *ngIf=\"blog\">{{blog.readingTime}}</span>\r\n  </p>\r\n  <div class=\"blogImageHolder\">\r\n    <ng-container *ngIf=\"isBrowser\">\r\n      <img \r\n        class=\"blogImage\" \r\n        alt=\"blogImage\" \r\n        src=\"{{blog.blogImage}}\"  \r\n        (error)=\"setDefaultBlogImage()\" \r\n        (load)=\"removeInitalImage($event)\"\r\n        role=\"button\" \r\n        *ngIf=\"blogDataRecieved\"\r\n        (click)=\"openfullImage()\">\r\n      \r\n      <img \r\n        class=\"blogImage\"  \r\n        alt=\"InitialblogImage\" \r\n        src=\"/assets/images/default-image.png\" \r\n        *ngIf=\"loading\" \r\n        (click)=\"openfullImage()\" \r\n        role=\"button\">\r\n      <img src=\"/assets/images/sports-social-zoom-out-orange.png\" alt=\"sports-social-zoom-out-orange\" role=\"button\" (click)=\"openfullImage()\"  class=\"zoom\">\r\n    </ng-container>\r\n    </div>\r\n  \r\n  <div class=\"content\">\r\n    \r\n    <div class=\"blogInfo\" #BlogInfo>\r\n      <ng-container *ngIf=\"isBrowser\">\r\n        <p *ngIf=\"blog\" [innerHtml]=\"blog.heading\" class=\"title\"></p>\r\n        <p  *ngIf=\"blog\" class=\"shortDesc\">{{blog.metaDesc}}</p>\r\n      </ng-container>\r\n      <div class=\"bloggerImage\" *ngIf=\"isBrowser\">\r\n        <img *ngIf=\"blog\" src=\"{{blog.bloggerImage}}\" (load)=\"removeBackgroundUserImage()\"  (error)=\"setDefault()\" #userImage>\r\n      </div>\r\n      <ng-container *ngIf=\"isBrowser\">\r\n        <div class=\"blogger\" *ngIf=\"blogDataRecieved\">\r\n          <p  class=\"bloggerName\">Written by <span > {{blog.bloggerName}}</span></p>  \r\n          <p class=\"writtenDate\">\r\n            {{blog.exactDate}}\r\n          </p>\r\n        </div>\r\n        <div class=\"count\" *ngIf=\"blogDataRecieved\">\r\n          <span>\r\n            <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\">\r\n            <span >{{blog.viewCount}}</span>\r\n          </span>\r\n          <span>\r\n            <img src=\"/assets/images/sports-social-share-orange.png\" alt=\"sports-social-share-orange\">\r\n            <span>{{blog.shareCount}}</span>\r\n          </span>\r\n        </div>  \r\n        <img class=\"loading\" *ngIf=\"!blogDataRecieved\" src=\"/assets/images/sports-social-loading.gif\" >\r\n        <div class=\"shareOn\" *ngIf=\"blogDataRecieved\">\r\n          Share on \r\n          <img src=\"/assets/images/sports-social-facebook-logo-black.png\" role=\"button\" (click)=\"shareOnFacebook()\"  alt=\"sports-social-facebook-logo-black\">\r\n          <a href=\"https://twitter.com/share\" (click)=\"shareOnTwitter()\" #popup class=\"twitter\">\r\n            <img src=\"/assets/images/sports-social-twitter-logo-black.png\"  alt=\"sports-social-twitter-logo-black\">\r\n          </a> \r\n          <a href=\"https://www.pinterest.com/pin/create/button/?url={{url}}&media={{blog.blogImage}}\"  \r\n            data-pin-custom=\"true\"\r\n            target=\"_blank\">\r\n              <img (click)=\"shareOnPintrest()\" src=\"/assets/images/sports-social-pintrest-black.png\" alt=\"\">\r\n          </a>\r\n          <a href=\"https://www.linkedin.com/shareArticle?mini=true&url={{url}}\" target=\"_blank\">\r\n            <img (click)=\"shareOnLinkedin()\" src=\"/assets/images/sports-social-linkedin-black.png\" role=\"button\" >\r\n          </a>\r\n          <a href=\"https://plus.google.com/share?url={{url}}\" target=\"_blank\" >\r\n            <img (click)=\"shareOngooglePlus()\" src=\"/assets/images/sports-social-google-plus-black.png\" alt=\"Google+\" title=\"Google+\"/>\r\n          </a>\r\n        </div>\r\n        <p [innerHtml]=\"content\" class=\"desc\" *ngIf=\"blogDataRecieved\"></p>\r\n        <div class=\"tags\" *ngIf=\"blogDataRecieved\" >\r\n          <div class=\"tagHolder\">\r\n            <img src=\"/assets/images/sports-social-tag.png\" alt=\"sports-social-tag\">\r\n          </div>\r\n          <a *ngFor=\"let key of Keywords;let i=index\" role=\"button\" routerLink=\"/{{key}}\" (click)=\"getblogs($event)\">{{key}}</a>\r\n        </div>\r\n      </ng-container>\r\n    </div>\r\n    <ng-container *ngIf=\"isBrowser\" >\r\n    <div class=\"social\" *ngIf=\"!removeSocial\">\r\n      <div class=\"follow\">\r\n        <p *ngIf=\"blogDataRecieved\">Follow us</p>\r\n        <a href=\"https://www.facebook.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">\r\n          <img src=\"/assets/images/sports-social-facebook-logo-blue.png\" alt=\"sports-social-facebook-logo-blue\">\r\n        </a> \r\n        <a href=\"https://www.instagram.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\"> \r\n          <img src=\"/assets/images/sports-social-instagram-logo-blue.png\" alt=\"sports-social-instagram-logo-blue\">\r\n        </a>\r\n        <a href=\"https://www.twitter.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">  \r\n          <img src=\"/assets/images/sports-social-twitter-logo-blue.png\" alt=\"sports-social-twitter-logo-blue\">\r\n        </a>\r\n        <a href=\"https://www.youtube.com/channel/UC8dRPjyfNkxmOozPuUs5YVQ\" target=\"_blank\"  rel=\"noopener\">  \r\n          <img src=\"/assets/images/sports-social-youtube-logo-blue.png\" alt=\"sports-social-youtube-logo-blue\">\r\n        </a>\r\n        <a href=\"https://www.pinterest.com/chaseyoursport\" target=\"_blank\"  rel=\"noopener\">  \r\n          <img src=\"/assets/images/sports-social-pinterest-logo-blue.png\" alt=\"sports-social-pinterest-logo-blue\">\r\n        </a>\r\n        <a href=\" https://in.linkedin.com/company/sports-social\" target=\"_blank\"  rel=\"noopener\">  \r\n          <img src=\"/assets/images/sports-social-linkedin-logo-blue.png\" alt=\"sports-social-linkedin-logo-blue\">\r\n        </a>\r\n        <a href=\"https://www.quora.com/topic/Sports-Social-Indias-First-Sports-Social-Network\" target=\"_blank\"  rel=\"noopener\">  \r\n          <img src=\"/assets/images/sports-social-quora-logo-blue.png\" alt=\"sports-social-quora-logo-blue\">\r\n        </a>\r\n      </div>\r\n      <div class=\"twitter-profile\">\r\n        <p>\r\n          <img src=\"/assets/images/sports-social-twitter-logo-blue.png\" alt=\"sports-social-twitter-logo-blue\">\r\n          Tweets by @chaseyoursport</p>\r\n          <a class=\"twitter-timeline\" \r\n          data-width=\"450\"\r\n          data-height=\"700\"\r\n          data-chrome=\"noheader nofooter\"\r\n          href=\"https://twitter.com/chaseyoursport\">\r\n          Tweets by chaseyoursport\r\n        </a> \r\n        <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\r\n        </div>\r\n    </div>\r\n  </ng-container>\r\n  </div>\r\n  <ng-container *ngIf=\"isBrowser\">\r\n    <p class=\"shareOn center\" *ngIf=\"blogDataRecieved\"> \r\n      <span>Enjoy this article? Don't forget to share.</span>\r\n      <img src=\"/assets/images/sports-social-facebook-logo-blue.png\" role=\"button\" (click)=\"shareOnFacebook()\" alt=\"sports-social-facebook-logo-black\">\r\n      <a href=\"http://twitter.com/share\" (click)=\"shareOnTwitter()\" #popup class=\"twitter\">\r\n        <img src=\"/assets/images/sports-social-twitter-logo-blue.png\"   alt=\"sports-social-twitter-logo-black\">\r\n      </a> \r\n      <a href=\"https://www.pinterest.com/pin/create/button/?url={{url}}&media={{blog.blogImage}}\"  \r\n        data-pin-custom=\"true\"\r\n        target=\"_blank\">\r\n        <img (click)=\"shareOnPintrest()\" src=\"/assets/images/sports-social-pinterest-logo-blue.png\" alt=\"sports-social-pintrest-logo\">\r\n      </a>\r\n      <a href= \"http://www.linkedin.com/shareArticle?mini=true&url={{url}}&title={{blog.heading}}&summary={{blog.MetaDesc}}&source=chaseyoursport.com\" target=\"_blank\">\r\n        <img  (click)=\"shareOnLinkedin()\" src=\"/assets/images/sports-social-linkedin-logo-blue.png\" role=\"button\" >\r\n      </a>\r\n      <a href=\"https://plus.google.com/share?url={{url}}\" target=\"_blank\"  >\r\n        <img (click)=\"shareOngooglePlus()\" src=\"/assets/images/sports-social-google-plus-blue.png\" alt=\"Google+\" title=\"Google+\"/>\r\n      </a>\r\n    </p>\r\n  </ng-container>\r\n  <ng-container *ngIf=\"isBrowser\">\r\n    <div class=\"comments\" *ngIf=\"blogDataRecieved\">\r\n      <SportSocial-comments\r\n        [BlogId]=\"blogID\">\r\n      </SportSocial-comments>\r\n    </div>\r\n    <SportSocial-related-blogs></SportSocial-related-blogs>\r\n  </ng-container>\r\n  \r\n</div> \r\n<ng-container *ngIf=\"isBrowser\"> \r\n  <SportSocial-blog-footer *ngIf=\"blogDataRecieved\"></SportSocial-blog-footer>\r\n</ng-container>\r\n\r\n\r\n\r\n<div class=\"fullImage\"  *ngIf=\"openFullImage\" >\r\n  <img \r\n   src=\"/assets/images/sports-social-cancel-white.png\" \r\n   class=\"cancel\" role=\"button\" (click)=\"closeFullImage()\" >   \r\n   \r\n </div>\r\n <div class=\"fullImageHolder\" *ngIf=\"openFullImage\" #fullImage>\r\n   <img src=\"{{blog.blogImage}}\" title=\"{{blog.imageDesc}}\" (load)=\"onFullImageload()\">\r\n </div>\r\n\r\n \r\n "
 
 /***/ }),
 
@@ -1728,34 +1728,35 @@ var BlogOpenComponent = /** @class */ (function () {
                 bloggerName: data.bloggerName,
                 bloggerImage: data.bloggerImage,
                 heading: data.heading,
-                Content: (data.Content),
+                content: (data.content),
                 insertedDate: _this.timePassed(data.insertedDate),
-                ViewCount: data.ViewCount,
-                ShareCount: data.ShareCount,
-                keywords: data.keys.split(','),
+                viewCount: data.viewCount,
+                shareCount: data.shareCount,
+                keywords: data.keywords.split(','),
                 exactDate: _this.ExactDate(data.insertedDate),
-                readingTime: _this.timeToRead(data.Content),
-                MetaDesc: data.MetaDesc,
-                ImageDesc: data.ImageDesc == null ? ' ' : data.ImageDesc,
-                PrimaryKeyword: data.PrimaryKeyword == null ? data.keys.split(',')[0] : data.PrimaryKeyword,
-                ShortTilte: data.ShortTilte == null ? data.heading : data.ShortTilte
+                readingTime: data.readTime + 'min read',
+                metaDesc: data.metaDesc,
+                imageDesc: data.imageDesc == null ? ' ' : data.imageDesc,
+                primaryKeyword: data.primaryKeyword == null ? data.keywords.split(',')[0] : data.primaryKeyword,
+                shortTilte: data.shortTilte == null ? data.heading : data.shortTilte
             };
-            if (blog.MetaDesc == null) {
-                blog.MetaDesc = '';
+            console.log(blog);
+            if (blog.metaDesc == null) {
+                blog.metaDesc = '';
             }
-            if (blog.ImageDesc == null) {
-                blog.ImageDesc = '';
+            if (blog.imageDesc == null) {
+                blog.imageDesc = '';
             }
             _this.blog = blog;
-            // console.log(this.blog);
+            console.log(_this.blog);
             _this.Keywords = blog.keywords;
-            _this.content = _this.sanitizer.bypassSecurityTrustHtml(data.Content);
+            _this.content = _this.sanitizer.bypassSecurityTrustHtml(data.content);
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
-            _this.setCanonivalURL();
-            _this.setMetaTags();
+            // this.setCanonivalURL();
+            // this.setMetaTags();
             _this.setTitle();
-            _this.ShareCount = +blog.ShareCount;
-            _this.ViewCount = +(blog.ViewCount);
+            _this.ShareCount = (+(blog.shareCount) - 1);
+            _this.ViewCount = +(blog.viewCount);
             _this.sendViewCount();
             _this.url = 'https://www.chaseyoursport.com/' + _this.Keywords[0].replace(/\s+/g, '-')
                 + '/' + _this.blog.heading.replace(/\s+/g, '-') + '/' + _this.blogID;
@@ -1982,7 +1983,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/blogs/blogs.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<SportSocialBlog-keywords></SportSocialBlog-keywords>\r\n<div #window>\r\n<img class=\"loading\" *ngIf=\"!isBrowser\" src=\"/assets/images/sports-social-loading.gif\" >\r\n<div class=\"blog\" #blog *ngIf=\"!mobileView\" >\r\n    <div class=\"latestBlog\"  *ngFor=\"let data of latestBlogDetails;let i=index\">\r\n        <SportSocial-latest-blog \r\n            [blogId]=\"data.blogId\"\r\n            [blogImage]=\"data.blogImage\"\r\n            [bloggerImage]=\"data.bloggerImage\"\r\n            [bloggerName]=\"data.bloggerName\"\r\n            [insertedDate]=\"data.insertedDate\"\r\n            [heading]=\"data.heading\"\r\n            [Content]=\"data.Content\"\r\n            [ViewCount]=\"data.ViewCount\"\r\n            [ShareCount]=\"data.ShareCount\"\r\n            [keywords]=\"data.keywords\"\r\n            [exactDate]=\"data.exactDate\"\r\n            [readingTime]=\"data.readingTime\"\r\n            [MetaDesc]=\"data.MetaDesc\"\r\n            [ImageDesc]=\"data.ImageDesc\"\r\n            [PrimaryKeyword]=\"data.PrimaryKeyword\"\r\n            [ShortTitle]=\"data.ShortTitle\">\r\n        </SportSocial-latest-blog>\r\n    </div>\r\n    <div class=\"col-8\" TabViewAvailable >\r\n        <div  \r\n            *ngFor=\"let data of topBlogDetails;let i=index\" \r\n            [ngClass]=\"{'col-6':i!=2,'col-12':i===2}\">\r\n            <SportSocial-normal-blog \r\n                [blogId]=\"data.blogId\"\r\n                [blogImage]=\"data.blogImage\"\r\n                [bloggerImage]=\"data.bloggerImage\"\r\n                [bloggerName]=\"data.bloggerName\"\r\n                [insertedDate]=\"data.insertedDate\"\r\n                [heading]=\"data.heading\"\r\n                [Content]=\"data.Content\"\r\n                [ViewCount]=\"data.ViewCount\"\r\n                [ShareCount]=\"data.ShareCount\"\r\n                [keywords]=\"data.keywords\"\r\n                [exactDate]=\"data.exactDate\"\r\n                [readingTime]=\"data.readingTime\"\r\n                [MetaDesc]=\"data.MetaDesc\"\r\n                [ImageDesc]=\"data.ImageDesc\"\r\n                [PrimaryKeyword]=\"data.PrimaryKeyword\"\r\n                [ShortTitle]=\"data.ShortTitle\">\r\n            </SportSocial-normal-blog>\r\n        </div>\r\n    </div>        \r\n    <div class=\"trendingBlogs\" *ngIf=\"showTrendingBlock()\" >\r\n            <SportSocial-trending-blog></SportSocial-trending-blog>\r\n    </div>\r\n    <div  TabViewAvailable \r\n        *ngFor=\"let data of restBlogDetails;let i=index\"\r\n        [ngClass]=\"{'col-8':i%5===0 ,'col-4': i%5!=0}\">\r\n        <SportSocial-normal-blog\r\n            [blogId]=\"data.blogId\"\r\n            [blogImage]=\"data.blogImage\"\r\n            [bloggerImage]=\"data.bloggerImage\"\r\n            [bloggerName]=\"data.bloggerName\"\r\n            [insertedDate]=\"data.insertedDate\"\r\n            [heading]=\"data.heading\"\r\n            [Content]=\"data.Content\"\r\n            [ViewCount]=\"data.ViewCount\"\r\n            [ShareCount]=\"data.ShareCount\"\r\n            [keywords]=\"data.keywords\"\r\n            [exactDate]=\"data.exactDate\"\r\n            [readingTime]=\"data.readingTime\"\r\n            [MetaDesc]=\"data.MetaDesc\"\r\n            [ImageDesc]=\"data.ImageDesc\"\r\n            [PrimaryKeyword]=\"data.PrimaryKeyword\"\r\n            [ShortTitle]=\"data.ShortTitle\">\r\n        </SportSocial-normal-blog>\r\n    </div>\r\n    \r\n</div> \r\n        \r\n<div class=\"blog mobileView\" *ngIf=\"mobileView\" #blog>\r\n    <div class=\"latestBlog col-4\" *ngFor=\"let data of latestBlogDetails;let i=index\" >\r\n        <SportSocial-latest-blog\r\n            [blogId]=\"data.blogId\"\r\n            [blogImage]=\"data.blogImage\"\r\n            [bloggerImage]=\"data.bloggerImage\"\r\n            [bloggerName]=\"data.bloggerName\"\r\n            [insertedDate]=\"data.insertedDate\"\r\n            [heading]=\"data.heading\"\r\n            [Content]=\"data.Content\"\r\n            [ViewCount]=\"data.ViewCount\"\r\n            [ShareCount]=\"data.ShareCount\"\r\n            [keywords]=\"data.keywords\"\r\n            [exactDate]=\"data.exactDate\"\r\n            [readingTime]=\"data.readingTime\"\r\n            [MetaDesc]=\"data.MetaDesc\"\r\n            [ImageDesc]=\"data.ImageDesc\"\r\n            [PrimaryKeyword]=\"data.PrimaryKeyword\"\r\n            [ShortTitle]=\"data.ShortTitle\">\r\n        </SportSocial-latest-blog>\r\n    </div>\r\n    <div class=\"col-4\" *ngFor=\"let data of topBlogDetails;let i=index\">\r\n        <SportSocial-normal-blog\r\n            [blogId]=\"data.blogId\"\r\n            [blogImage]=\"data.blogImage\"\r\n            [bloggerImage]=\"data.bloggerImage\"\r\n            [bloggerName]=\"data.bloggerName\"\r\n            [insertedDate]=\"data.insertedDate\"\r\n            [heading]=\"data.heading\"\r\n            [Content]=\"data.Content\"\r\n            [ViewCount]=\"data.ViewCount\"\r\n            [ShareCount]=\"data.ShareCount\"\r\n            [keywords]=\"data.keywords\"\r\n            [exactDate]=\"data.exactDate\"\r\n            [readingTime]=\"data.readingTime\"\r\n            [MetaDesc]=\"data.MetaDesc\"\r\n            [ImageDesc]=\"data.ImageDesc\"\r\n            [PrimaryKeyword]=\"data.PrimaryKeyword\"\r\n            [ShortTitle]=\"data.ShortTitle\">\r\n        </SportSocial-normal-blog>\r\n    </div>\r\n    <div class=\"suscribeCard\" *ngIf=\"show\">\r\n        <SportSocial-subscribe-card></SportSocial-subscribe-card>\r\n    </div>\r\n    <div class=\"col-4\" *ngFor=\"let data of restBlogDetails;let i=index\">\r\n        <SportSocial-normal-blog \r\n            [blogId]=\"data.blogId\"\r\n            [blogImage]=\"data.blogImage\"\r\n            [bloggerImage]=\"data.bloggerImage\"\r\n            [bloggerName]=\"data.bloggerName\"\r\n            [insertedDate]=\"data.insertedDate\"\r\n            [heading]=\"data.heading\"\r\n            [Content]=\"data.Content\"\r\n            [ViewCount]=\"data.ViewCount\"\r\n            [ShareCount]=\"data.ShareCount\"\r\n            [keywords]=\"data.keywords\"\r\n            [exactDate]=\"data.exactDate\"\r\n            [readingTime]=\"data.readingTime\"\r\n            [MetaDesc]=\"data.MetaDesc\"\r\n            [ImageDesc]=\"data.ImageDesc\"\r\n            [PrimaryKeyword]=\"data.PrimaryKeyword\"\r\n            [ShortTitle]=\"data.ShortTitle\">\r\n        </SportSocial-normal-blog>\r\n    </div>\r\n</div>\r\n<ng-container *ngIf=\"isBrowser\">\r\n    <div *ngIf=\"haveData\">\r\n        <button (click)=\"nextPage()\" *ngIf=\"dataRecived\">Load More</button>\r\n        <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\">\r\n    </div>\r\n    <p *ngIf=\"!haveData\" class=\"noMoreData\">\r\n        We don't stop playing because we grow old; we grow old because we stop playing.\r\n        <a href=\"https://goo.gl/qrgCz5\">DOWNLOAD THE APP NOW</a>\r\n    </p>\r\n    <SportSocial-blog-footer *ngIf=\"show\"></SportSocial-blog-footer> \r\n</ng-container>          \r\n</div>      "
+module.exports = "<SportSocialBlog-keywords></SportSocialBlog-keywords>\r\n<div #window>\r\n<img class=\"loading\" *ngIf=\"!isBrowser\" src=\"/assets/images/sports-social-loading.gif\" >\r\n<div class=\"blog\" #blog *ngIf=\"!mobileView\" >\r\n    <div class=\"latestBlog\"  *ngFor=\"let data of latestBlogDetails;let i=index\">\r\n        <SportSocial-latest-blog \r\n            [blogId]=\"data.blogId\"\r\n            [blogImage]=\"data.blogImage\"\r\n            [bloggerName]=\"data.bloggerName\"\r\n            [insertedDate]=\"data.insertedDate\"\r\n            [heading]=\"data.heading\"\r\n            [viewCount]=\"data.viewCount\"\r\n            [shareCount]=\"data.shareCount\"\r\n            [metaDesc]=\"data.metaDesc\"\r\n            [imageDesc]=\"data.imageDesc\"\r\n            [primaryKeyword]=\"data.primaryKeyword\">\r\n        </SportSocial-latest-blog>\r\n    </div>\r\n    <div class=\"col-8\" TabViewAvailable >\r\n        <div  \r\n            *ngFor=\"let data of topBlogDetails;let i=index\" \r\n            [ngClass]=\"{'col-6':i!=2,'col-12':i===2}\">\r\n            <SportSocial-normal-blog \r\n            [blogId]=\"data.blogId\"\r\n            [blogImage]=\"data.blogImage\"\r\n            [bloggerName]=\"data.bloggerName\"\r\n            [insertedDate]=\"data.insertedDate\"\r\n            [heading]=\"data.heading\"\r\n            [viewCount]=\"data.viewCount\"\r\n            [shareCount]=\"data.shareCount\"\r\n            [metaDesc]=\"data.metaDesc\"\r\n            [imageDesc]=\"data.imageDesc\"\r\n            [primaryKeyword]=\"data.primaryKeyword\">\r\n            </SportSocial-normal-blog>\r\n        </div>\r\n    </div>        \r\n    <div class=\"trendingBlogs\" *ngIf=\"showTrendingBlock()\" >\r\n            <SportSocial-trending-blog></SportSocial-trending-blog>\r\n    </div>\r\n    <div  TabViewAvailable \r\n        *ngFor=\"let data of restBlogDetails;let i=index\"\r\n        [ngClass]=\"{'col-8':i%5===0 ,'col-4': i%5!=0}\">\r\n        <SportSocial-normal-blog\r\n        [blogId]=\"data.blogId\"\r\n        [blogImage]=\"data.blogImage\"\r\n        [bloggerName]=\"data.bloggerName\"\r\n        [insertedDate]=\"data.insertedDate\"\r\n        [heading]=\"data.heading\"\r\n        [viewCount]=\"data.viewCount\"\r\n        [shareCount]=\"data.shareCount\"\r\n        [metaDesc]=\"data.metaDesc\"\r\n        [imageDesc]=\"data.imageDesc\"\r\n        [primaryKeyword]=\"data.primaryKeyword\">\r\n        </SportSocial-normal-blog>\r\n    </div>\r\n    \r\n</div> \r\n        \r\n<div class=\"blog mobileView\" *ngIf=\"mobileView\" #blog>\r\n    <div class=\"latestBlog col-4\" *ngFor=\"let data of latestBlogDetails;let i=index\" >\r\n        <SportSocial-latest-blog\r\n        [blogId]=\"data.blogId\"\r\n        [blogImage]=\"data.blogImage\"\r\n        [bloggerName]=\"data.bloggerName\"\r\n        [insertedDate]=\"data.insertedDate\"\r\n        [heading]=\"data.heading\"\r\n        [viewCount]=\"data.viewCount\"\r\n        [shareCount]=\"data.shareCount\"\r\n        [metaDesc]=\"data.metaDesc\"\r\n        [imageDesc]=\"data.imageDesc\"\r\n        [primaryKeyword]=\"data.primaryKeyword\">\r\n        </SportSocial-latest-blog>\r\n    </div>\r\n    <div class=\"col-4\" *ngFor=\"let data of topBlogDetails;let i=index\">\r\n        <SportSocial-normal-blog\r\n        [blogId]=\"data.blogId\"\r\n        [blogImage]=\"data.blogImage\"\r\n        [bloggerName]=\"data.bloggerName\"\r\n        [insertedDate]=\"data.insertedDate\"\r\n        [heading]=\"data.heading\"\r\n        [viewCount]=\"data.viewCount\"\r\n        [shareCount]=\"data.shareCount\"\r\n        [metaDesc]=\"data.metaDesc\"\r\n        [imageDesc]=\"data.imageDesc\"\r\n        [primaryKeyword]=\"data.primaryKeyword\">\r\n        </SportSocial-normal-blog>\r\n    </div>\r\n    <div class=\"suscribeCard\" *ngIf=\"show\">\r\n        <SportSocial-subscribe-card></SportSocial-subscribe-card>\r\n    </div>\r\n    <div class=\"col-4\" *ngFor=\"let data of restBlogDetails;let i=index\">\r\n        <SportSocial-normal-blog \r\n        [blogId]=\"data.blogId\"\r\n        [blogImage]=\"data.blogImage\"\r\n        [bloggerName]=\"data.bloggerName\"\r\n        [insertedDate]=\"data.insertedDate\"\r\n        [heading]=\"data.heading\"\r\n        [viewCount]=\"data.viewCount\"\r\n        [shareCount]=\"data.shareCount\"\r\n        [metaDesc]=\"data.metaDesc\"\r\n        [imageDesc]=\"data.imageDesc\"\r\n        [primaryKeyword]=\"data.primaryKeyword\">\r\n        </SportSocial-normal-blog>\r\n    </div>\r\n</div>\r\n<ng-container *ngIf=\"isBrowser\">\r\n    <div *ngIf=\"haveData\">\r\n        <button (click)=\"nextPage()\" *ngIf=\"dataRecived\">Load More</button>\r\n        <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\">\r\n    </div>\r\n    <p *ngIf=\"!haveData\" class=\"noMoreData\">\r\n        We don't stop playing because we grow old; we grow old because we stop playing.\r\n        <a href=\"https://goo.gl/qrgCz5\">DOWNLOAD THE APP NOW</a>\r\n    </p>\r\n    <SportSocial-blog-footer *ngIf=\"show\"></SportSocial-blog-footer> \r\n</ng-container>          \r\n</div>      "
 
 /***/ }),
 
@@ -2035,25 +2036,35 @@ var BlogsComponent = /** @class */ (function () {
         this.dataRecived = false;
         this.haveData = true;
         this.count = 0;
-        link.addTag({ rel: 'canonical', href: 'https://www.chaseyoursport.com/' });
-        metaService.addTags([
-            { name: 'description', content: "Sports Social Blog: Chase Your Sport aims to create a sustainable\n        platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and\n        career in sports." },
-            { name: 'keywords', content: "Indian Sports Trends,Sports Social,Career in Sports,current trends\n        in sports,Indian Sports History, Sports Social media,sports technology,Sports blog,Indian Sports\n        Blog,Multiplayer Strategy Video Games,Health and Fitness Tips,Sports Analytics blog, Indian sports\n        news,outlook in sports industry,future trends in sports,sports business trends, sports articles,\n        sports management,Sports Social network india,sports jobs" },
-            { name: 'title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook' },
-            { name: 'theme-color', content: '#4327a0' },
-            { property: 'og:title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook' },
-            { property: 'og:description', content: "Sports Social Blog: Chase Your Sport aims to create a sustainable\n      platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and\n      career in sports." },
-            { property: 'og:url', content: 'https://www.chaseyoursport.com/' },
-            { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
-            { property: 'og:site_name', content: 'Chase Your Sport' },
-            { property: 'fb:app_id', content: '1750709328507665' },
-            { name: 'twitter:card', content: 'summary_large_image' },
-            { name: 'twitter:site', content: '@Chaseyoursport' },
-            { name: 'twitter:creator', content: '@NadeemKhan' },
-            { name: 'twitter:title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook' },
-            { name: 'twitter:description', content: "Sports Social Blog: Chase Your Sport aims to create a sustainable\n      platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and\n      career in sports." },
-            { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg' },
-        ]);
+        //  link.addTag(  { rel: 'canonical', href: 'https://www.chaseyoursport.com/'});
+        /*  metaService.addTags([
+           { name: 'description', content: `Sports Social Blog: Chase Your Sport aims to create a sustainable
+             platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and
+             career in sports.` },
+           { name: 'keywords' , content: `Indian Sports Trends,Sports Social,Career in Sports,current trends
+             in sports,Indian Sports History, Sports Social media,sports technology,Sports blog,Indian Sports
+             Blog,Multiplayer Strategy Video Games,Health and Fitness Tips,Sports Analytics blog, Indian sports
+             news,outlook in sports industry,future trends in sports,sports business trends, sports articles,
+             sports management,Sports Social network india,sports jobs`},
+           { name: 'title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook'},
+           { name: 'theme-color', content: '#4327a0'},
+           { property: 'og:title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook' },
+           { property: 'og:description', content: `Sports Social Blog: Chase Your Sport aims to create a sustainable
+           platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and
+           career in sports.`},
+           { property: 'og:url', content:  'https://www.chaseyoursport.com/' },
+           { property: 'og:image', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
+           { property: 'og:site_name', content: 'Chase Your Sport' },
+           { property: 'fb:app_id', content: '1750709328507665'},
+           { name: 'twitter:card', content: 'summary_large_image'},
+           { name: 'twitter:site', content: '@Chaseyoursport'},
+           { name: 'twitter:creator', content: '@NadeemKhan'},
+           { name: 'twitter:title', content: 'Chase Your Sport: Sports Social Blog | Indian Sports Trends & Outlook'},
+           { name: 'twitter:description', content: `Sports Social Blog: Chase Your Sport aims to create a sustainable
+           platform for Indian sports lovers to provide latest updates on Indian Sports Trends, analytics and
+           career in sports.`},
+           { name: 'twitter:image:src', content: 'https://test.sportsocial.in/defaultimages/Chase_Your_Sport.jpg'},
+         ]); */
         this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_5__angular_common__["j" /* isPlatformBrowser */])(platformId);
     }
     BlogsComponent.prototype.ngOnInit = function () {
@@ -2065,7 +2076,7 @@ var BlogsComponent = /** @class */ (function () {
     BlogsComponent.prototype.getBlog = function () {
         var _this = this;
         this.get.blogData(this.nextPageNumber, this.defaultKey).subscribe(function (data) {
-            // console.log(data);
+            console.log(data);
             _this.show = true;
             _this.dataRecived = true;
             // tslint:disable-next-line:forin
@@ -2074,19 +2085,18 @@ var BlogsComponent = /** @class */ (function () {
                     blogId: data[i].blogId,
                     blogImage: data[i].blogImage,
                     bloggerName: data[i].bloggerName,
-                    bloggerImage: data[i].bloggerImage,
+                    // bloggerImage: data[i].bloggerImage,
                     heading: data[i].heading,
-                    Content: data[i].Content,
+                    // content: data[i].content,
                     insertedDate: _this.timePassed(data[i].insertedDate),
-                    ViewCount: data[i].ViewCount,
-                    ShareCount: data[i].ShareCount,
-                    keywords: data[i].keywords.split(','),
-                    exactDate: _this.ExactDate(data[i].insertedDate),
-                    readingTime: _this.timeToRead(data[i].Content),
-                    MetaDesc: data[i].MetaDesc,
-                    ImageDesc: data[i].ImageDesc,
-                    PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
-                    ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
+                    viewCount: data[i].viewCount,
+                    shareCount: data[i].shareCount,
+                    // keywords: data[i].keywords.split(','),
+                    // exactDate: this.ExactDate(data[i].insertedDate),
+                    // readingTime: this.timeToRead(data[i].Content),
+                    metaDesc: 'chase your sport',
+                    imageDesc: data[i].imageDesc,
+                    primaryKeyword: data[i].primaryKeyword == null ? 'sports social' : data[i].primaryKeyword,
                 });
             }
             // console.log(this.blogDetails)
@@ -2094,38 +2104,36 @@ var BlogsComponent = /** @class */ (function () {
                 blogId: _this.blogDetails[0].blogId,
                 blogImage: _this.blogDetails[0].blogImage,
                 bloggerName: _this.blogDetails[0].bloggerName,
-                bloggerImage: _this.blogDetails[0].bloggerImage,
+                // bloggerImage: this.blogDetails[0].bloggerImage,
                 heading: _this.blogDetails[0].heading,
-                Content: _this.blogDetails[0].Content,
+                // content: this.blogDetails[0].content,
                 insertedDate: _this.blogDetails[0].insertedDate,
-                ViewCount: _this.blogDetails[0].ViewCount,
-                ShareCount: _this.blogDetails[0].ShareCount,
-                keywords: _this.blogDetails[0].keywords,
-                exactDate: _this.blogDetails[0].exactDate,
-                readingTime: _this.blogDetails[0].readingTime,
-                MetaDesc: _this.blogDetails[0].MetaDesc,
-                ImageDesc: _this.blogDetails[0].ImageDesc,
-                PrimaryKeyword: _this.blogDetails[0].PrimaryKeyword,
-                ShortTitle: _this.blogDetails[0].ShortTitle
+                viewCount: _this.blogDetails[0].viewCount,
+                shareCount: _this.blogDetails[0].shareCount,
+                // keywords: this.blogDetails[0].keywords,
+                // exactDate: this.blogDetails[0].exactDate,
+                // readingTime: this.blogDetails[0].readingTime,
+                metaDesc: _this.blogDetails[0].metaDesc,
+                imageDesc: _this.blogDetails[0].imageDesc,
+                primaryKeyword: _this.blogDetails[0].primaryKeyword,
             });
             for (var i = 1; i < 4; i++) {
                 _this.topBlogDetails.push({
                     blogId: _this.blogDetails[i].blogId,
                     blogImage: _this.blogDetails[i].blogImage,
                     bloggerName: _this.blogDetails[i].bloggerName,
-                    bloggerImage: _this.blogDetails[i].bloggerImage,
+                    // bloggerImage: this.blogDetails[i].bloggerImage,
                     heading: _this.blogDetails[i].heading,
-                    Content: _this.blogDetails[i].Content,
+                    // content: this.blogDetails[i].content,
                     insertedDate: _this.blogDetails[i].insertedDate,
-                    ViewCount: _this.blogDetails[i].ViewCount,
-                    ShareCount: _this.blogDetails[i].ShareCount,
-                    keywords: _this.blogDetails[i].keywords,
-                    exactDate: _this.blogDetails[i].exactDate,
-                    readingTime: _this.blogDetails[i].readingTime,
-                    MetaDesc: _this.blogDetails[i].MetaDesc,
-                    ImageDesc: _this.blogDetails[i].ImageDesc,
-                    PrimaryKeyword: _this.blogDetails[i].PrimaryKeyword,
-                    ShortTitle: _this.blogDetails[i].ShortTitle
+                    viewCount: _this.blogDetails[i].viewCount,
+                    shareCount: _this.blogDetails[i].shareCount,
+                    // keywords: this.blogDetails[i].keywords,
+                    // exactDate: this.blogDetails[i].exactDate,
+                    //  readingTime: this.blogDetails[i].readingTime,
+                    metaDesc: _this.blogDetails[i].metaDesc,
+                    imageDesc: _this.blogDetails[i].imageDesc,
+                    primaryKeyword: _this.blogDetails[i].primaryKeyword,
                 });
             }
             for (var i = 4; i < _this.blogDetails.length; i++) {
@@ -2133,19 +2141,18 @@ var BlogsComponent = /** @class */ (function () {
                     blogId: _this.blogDetails[i].blogId,
                     blogImage: _this.blogDetails[i].blogImage,
                     bloggerName: _this.blogDetails[i].bloggerName,
-                    bloggerImage: _this.blogDetails[i].bloggerImage,
+                    // bloggerImage: this.blogDetails[i].bloggerImage,
                     heading: _this.blogDetails[i].heading,
-                    Content: _this.blogDetails[i].Content,
+                    // content: this.blogDetails[i].content,
                     insertedDate: _this.blogDetails[i].insertedDate,
-                    ViewCount: _this.blogDetails[i].ViewCount,
-                    ShareCount: _this.blogDetails[i].ShareCount,
-                    keywords: _this.blogDetails[i].keywords,
-                    exactDate: _this.blogDetails[i].exactDate,
-                    readingTime: _this.blogDetails[i].readingTime,
-                    MetaDesc: _this.blogDetails[i].MetaDesc,
-                    ImageDesc: _this.blogDetails[i].ImageDesc,
-                    PrimaryKeyword: _this.blogDetails[i].PrimaryKeyword,
-                    ShortTitle: _this.blogDetails[i].ShortTitle
+                    viewCount: _this.blogDetails[i].viewCount,
+                    shareCount: _this.blogDetails[i].shareCount,
+                    // keywords: this.blogDetails[i].keywords,
+                    // exactDate: this.blogDetails[i].exactDate,
+                    // readingTime: this.blogDetails[i].readingTime,
+                    metaDesc: _this.blogDetails[i].metaDesc,
+                    imageDesc: _this.blogDetails[i].imageDesc,
+                    primaryKeyword: _this.blogDetails[i].primaryKeyword,
                 });
             }
         });
@@ -2263,19 +2270,18 @@ var BlogsComponent = /** @class */ (function () {
                         blogId: data[i].blogId,
                         blogImage: data[i].blogImage,
                         bloggerName: data[i].bloggerName,
-                        bloggerImage: data[i].bloggerImage,
+                        // bloggerImage: data[i].bloggerImage,
                         heading: data[i].heading,
-                        Content: data[i].Content,
+                        // content: data[i].content,
                         insertedDate: _this.timePassed(data[i].insertedDate),
-                        ViewCount: data[i].ViewCount,
-                        ShareCount: data[i].ShareCount,
-                        keywords: data[i].keywords.split(','),
-                        exactDate: _this.ExactDate(data[i].insertedDate),
-                        readingTime: _this.timeToRead(data[i].Content),
-                        MetaDesc: data[i].MetaDesc,
-                        ImageDesc: data[i].ImageDesc,
-                        PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
-                        ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
+                        viewCount: data[i].viewCount,
+                        shareCount: data[i].vhareCount,
+                        // keywords: data[i].keywords.split(','),
+                        //  exactDate: this.ExactDate(data[i].insertedDate),
+                        // readingTime: this.timeToRead(data[i].Content),
+                        metaDesc: data[i].metaDesc,
+                        imageDesc: data[i].imageDesc,
+                        primaryKeyword: data[i].primaryKeyword == null ? 'sport social' : data[i].primaryKeyword,
                     });
                 }
             });
@@ -2333,7 +2339,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/latest-blog/latest-blog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n<div class=\"latest\" MaintainHeightWidthRatio #latest>\r\n  <a routerLink=\"/{{PrimaryKeyword}}/{{ShortTitle}}/{{blogId}}\" (click)=\"send()\">\r\n    <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\r\n    <img src=\"{{blogImage}}\" title=\"{{ImageDesc}}\" (error)=\"setDefault()\" (load)=\"removeInitialImage()\" alt=\"blogImage\"  *ngIf=\"dataRecieved\" #blogimage>\r\n    \r\n    \r\n    <div class=\"desc\" #Desc>\r\n      <div #DescChild>\r\n        <div class=\"count\">\r\n          <img src=\"/assets/images/sports-social-view-white.png\" alt=\"sports-social-view-white\">\r\n          <span>{{ViewCount}}</span> \r\n          <img src=\"/assets/images/sports-social-share-white.png\" alt=\"sports-social-share-white\">\r\n          <span>{{ShareCount}}</span>\r\n        </div> \r\n        <div >\r\n          <span>{{insertedDate}}</span>\r\n          <span>|</span>\r\n          <span>{{keywords[0]}}</span>\r\n        </div>\r\n        <p class=\"heading\" [innerHtml]=\"heading\" #latestTitle> </p>\r\n        <!-- <p  class=\"smallDesc\" #latestDesc>{{Content}}</p> -->\r\n        <p  class=\"smallDesc\" #latestDesc>{{content}}</p>\r\n        <div class=\"Blogger\">\r\n          <div class=\"bloggerImage\" #BloggerImage>\r\n              <img src=\"/assets/images/sports-social-blogger-white.png\" alt=\"sports-social-blogger-white\" >\r\n          </div>  \r\n          <p class=\"bloggerName\">{{bloggerName}}</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </a>\r\n</div>"
+module.exports = "\r\n\r\n<div class=\"latest\" MaintainHeightWidthRatio #latest>\r\n  <a routerLink=\"/{{primaryKeyword}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\r\n    <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\r\n    <img src=\"{{blogImage}}\" title=\"{{imageDesc}}\" (error)=\"setDefault()\" (load)=\"removeInitialImage()\" alt=\"blogImage\"  *ngIf=\"dataRecieved\" #blogimage>\r\n    \r\n    \r\n    <div class=\"desc\" #Desc>\r\n      <div #DescChild>\r\n        <div class=\"count\">\r\n          <img src=\"/assets/images/sports-social-view-white.png\" alt=\"sports-social-view-white\">\r\n          <span>{{viewCount}}</span> \r\n          <img src=\"/assets/images/sports-social-share-white.png\" alt=\"sports-social-share-white\">\r\n          <span>{{shareCount}}</span>\r\n        </div> \r\n        <div >\r\n          <span>{{insertedDate}}</span>\r\n          <span>|</span>\r\n          <span>{{primaryKeyword}}</span>\r\n        </div>\r\n        <p class=\"heading\" [innerHtml]=\"heading\" #latestTitle> </p>\r\n        <!-- <p  class=\"smallDesc\" #latestDesc>{{Content}}</p> -->\r\n        <p  class=\"smallDesc\" #latestDesc>{{metaDesc}}</p>\r\n        <div class=\"Blogger\">\r\n          <div class=\"bloggerImage\" #BloggerImage>\r\n              <img src=\"/assets/images/sports-social-blogger-white.png\" alt=\"sports-social-blogger-white\" >\r\n          </div>  \r\n          <p class=\"bloggerName\">{{bloggerName}}</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </a>\r\n</div>"
 
 /***/ }),
 
@@ -2376,24 +2382,23 @@ var LatestBlogComponent = /** @class */ (function () {
         this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_3__angular_common__["j" /* isPlatformBrowser */])(platformId);
     }
     LatestBlogComponent.prototype.ngOnInit = function () {
-        this.content = this.strip(this.Content);
+        this.Content = this.strip(this.content);
         this.blog = {
             blogId: this.blogId,
             blogImage: this.blogImage,
             bloggerName: this.bloggerName,
-            bloggerImage: this.bloggerImage,
+            // bloggerImage: this.bloggerImage,
             heading: this.heading,
-            Content: this.Content,
+            // content: this.content,
             insertedDate: this.insertedDate,
-            ViewCount: this.ViewCount,
-            ShareCount: this.ShareCount,
-            keywords: this.keywords,
-            exactDate: this.exactDate,
-            readingTime: this.readingTime,
-            MetaDesc: this.MetaDesc,
-            ImageDesc: this.ImageDesc,
-            PrimaryKeyword: this.PrimaryKeyword,
-            ShortTitle: this.ShortTitle
+            viewCount: this.viewCount,
+            shareCount: this.shareCount,
+            // keywords: this.keywords,
+            // exactDate: this.exactDate,
+            // readingTime: this.readingTime,
+            metaDesc: this.metaDesc,
+            imageDesc: this.imageDesc,
+            primaryKeyword: this.primaryKeyword,
         };
         this.responsiveDesign();
         if (this.blogImage) {
@@ -2499,7 +2504,7 @@ var LatestBlogComponent = /** @class */ (function () {
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], LatestBlogComponent.prototype, "Content", void 0);
+    ], LatestBlogComponent.prototype, "content", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
@@ -2507,11 +2512,11 @@ var LatestBlogComponent = /** @class */ (function () {
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], LatestBlogComponent.prototype, "ViewCount", void 0);
+    ], LatestBlogComponent.prototype, "viewCount", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], LatestBlogComponent.prototype, "ShareCount", void 0);
+    ], LatestBlogComponent.prototype, "shareCount", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", Array)
@@ -2527,19 +2532,19 @@ var LatestBlogComponent = /** @class */ (function () {
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], LatestBlogComponent.prototype, "MetaDesc", void 0);
+    ], LatestBlogComponent.prototype, "metaDesc", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], LatestBlogComponent.prototype, "ImageDesc", void 0);
+    ], LatestBlogComponent.prototype, "imageDesc", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], LatestBlogComponent.prototype, "PrimaryKeyword", void 0);
+    ], LatestBlogComponent.prototype, "primaryKeyword", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], LatestBlogComponent.prototype, "ShortTitle", void 0);
+    ], LatestBlogComponent.prototype, "shortTitle", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('DescChild'),
         __metadata("design:type", Object)
@@ -2612,7 +2617,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/normal-blog/normal-blog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n  <div class=\"blog\" MaintainHeightWidthRatio #blog >\r\n    <a routerLink=\"/{{PrimaryKeyword}}/{{ShortTitle}}/{{blogId}}\" (click)=\"send()\">\r\n        <div class=\"blogImageHolder\" #holder>\r\n          <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\r\n          <img src=\"{{blogImage}}\" title=\"{{ImageDesc}}\" (load)=\"removeInitialImage()\"  (error)=\"setDefault()\" alt=\"blogImage\"  *ngIf=\"dataRecieved\" >\r\n        </div>\r\n        <div class=\"blogFooter\" #footer>\r\n          <p>\r\n            <span>{{insertedDate}}</span>\r\n            <span>|</span>\r\n            <span>{{keywords[0]}}</span>\r\n            <span>\r\n              <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\" >\r\n              {{ViewCount}}\r\n            </span>\r\n          </p>\r\n          <p  [innerHtml]=\"heading\" #blogTitle></p>\r\n          <p  class=\"content\" [innerHtml]=\"content\"></p>\r\n          <p class=\"bloggerName\">\r\n            <img src=\"/assets/images/sports-social-blogger-black.png\"  alt=\"sports-social-blogger-black\">\r\n            {{bloggerName}}\r\n          </p>\r\n        </div>\r\n      </a>\r\n  </div>\r\n\r\n "
+module.exports = "\r\n  <div class=\"blog\" MaintainHeightWidthRatio #blog >\r\n    <a routerLink=\"/{{primaryKeyword}}/{{heading}}/{{blogId}}\" (click)=\"send()\">\r\n        <div class=\"blogImageHolder\" #holder>\r\n          <img #initialImage src=\"/assets/images/default-image.png\" alt=\"InitialblogImage\" *ngIf=\"isloading\">\r\n          <img src=\"{{blogImage}}\" title=\"{{ImageDesc}}\" (load)=\"removeInitialImage()\"  (error)=\"setDefault()\" alt=\"blogImage\"  *ngIf=\"dataRecieved\" >\r\n        </div>\r\n        <div class=\"blogFooter\" #footer>\r\n          <p>\r\n            <span>{{insertedDate}}</span>\r\n            <span>|</span>\r\n            <span>{{primaryKeyword}}</span>\r\n            <span>\r\n              <img src=\"/assets/images/sports-social-view-orange.png\" alt=\"sports-social-view-orange\" >\r\n              {{viewCount}}\r\n            </span>\r\n          </p>\r\n          <p  [innerHtml]=\"heading\" #blogTitle></p>\r\n          <p  class=\"content\" [innerHtml]=\"metaDesc\"></p>\r\n          <p class=\"bloggerName\">\r\n            <img src=\"/assets/images/sports-social-blogger-black.png\"  alt=\"sports-social-blogger-black\">\r\n            {{bloggerName}}\r\n          </p>\r\n        </div>\r\n      </a>\r\n  </div>\r\n\r\n "
 
 /***/ }),
 
@@ -2655,24 +2660,23 @@ var NormalBlogComponent = /** @class */ (function () {
         this.isBrowser = Object(__WEBPACK_IMPORTED_MODULE_3__angular_common__["j" /* isPlatformBrowser */])(platformId);
     }
     NormalBlogComponent.prototype.ngOnInit = function () {
-        this.content = this.strip(this.Content);
+        this.Content = this.strip(this.content);
         this.blog = {
             blogId: this.blogId,
             blogImage: this.blogImage,
             bloggerName: this.bloggerName,
-            bloggerImage: this.bloggerImage,
+            // bloggerImage:this.bloggerImage,
             heading: this.heading,
-            Content: this.Content,
+            // content:this.content,
             insertedDate: this.insertedDate,
-            ViewCount: this.ViewCount,
-            ShareCount: this.ShareCount,
-            keywords: this.keywords,
-            exactDate: this.exactDate,
-            readingTime: this.readingTime,
-            MetaDesc: this.MetaDesc,
-            ImageDesc: this.ImageDesc,
-            PrimaryKeyword: this.PrimaryKeyword,
-            ShortTitle: this.ShortTitle
+            viewCount: this.viewCount,
+            shareCount: this.shareCount,
+            // keywords:this.keywords,
+            // exactDate: this.exactDate,
+            // readingTime: this.readingTime,
+            metaDesc: this.metaDesc,
+            imageDesc: this.imageDesc,
+            primaryKeyword: this.primaryKeyword,
         };
         this.setVariableFont();
         if (this.blogImage) {
@@ -2774,15 +2778,15 @@ var NormalBlogComponent = /** @class */ (function () {
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], NormalBlogComponent.prototype, "Content", void 0);
+    ], NormalBlogComponent.prototype, "content", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], NormalBlogComponent.prototype, "ViewCount", void 0);
+    ], NormalBlogComponent.prototype, "viewCount", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], NormalBlogComponent.prototype, "ShareCount", void 0);
+    ], NormalBlogComponent.prototype, "shareCount", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", Array)
@@ -2798,19 +2802,19 @@ var NormalBlogComponent = /** @class */ (function () {
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], NormalBlogComponent.prototype, "MetaDesc", void 0);
+    ], NormalBlogComponent.prototype, "metaDesc", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], NormalBlogComponent.prototype, "ImageDesc", void 0);
+    ], NormalBlogComponent.prototype, "imageDesc", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], NormalBlogComponent.prototype, "PrimaryKeyword", void 0);
+    ], NormalBlogComponent.prototype, "primaryKeyword", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", String)
-    ], NormalBlogComponent.prototype, "ShortTitle", void 0);
+    ], NormalBlogComponent.prototype, "shortTitle", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('blogTitle'),
         __metadata("design:type", Object)
@@ -2879,7 +2883,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/blogContent/related-blogs/related-blogs.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div #window>\r\n  <div  *ngIf=\"!mobileView\" class=\"relatedBlog\">\r\n    <p >Related Articles</p>\r\n    <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\" >\r\n    <div TabViewAvailable class=\"col-4\" *ngFor=\"let data of relatedBlogDetails;let i=index\">\r\n      <SportSocial-normal-blog \r\n        [blogId]=\"data.blogId\"\r\n        [blogImage]=\"data.blogImage\"\r\n        [bloggerImage]=\"data.bloggerImage\"\r\n        [bloggerName]=\"data.bloggerName\"\r\n        [insertedDate]=\"data.insertedDate\"\r\n        [heading]=\"data.heading\"\r\n        [Content]=\"data.Content\"\r\n        [ViewCount]=\"data.ViewCount\"\r\n        [ShareCount]=\"data.ShareCount\"\r\n        [keywords]=\"data.keywords\"\r\n        [exactDate]=\"data.exactDate\"\r\n        [readingTime]=\"data.readingTime\"\r\n        [MetaDesc]=\"data.MetaDesc\"\r\n        [ImageDesc]=\"data.ImageDesc\"\r\n        [PrimaryKeyword]=\"data.PrimaryKeyword\"\r\n        [ShortTitle]=\"data.ShortTitle\">\r\n      </SportSocial-normal-blog>\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"mobileView\" class=\"mobileView relatedBlog\">\r\n    <p>Related Articles</p>\r\n    <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\">\r\n    <div class=\"col-4\" *ngFor=\"let data of relatedBlogDetails;let i=index\">\r\n      <SportSocial-normal-blog \r\n          [blogId]=\"data.blogId\"\r\n          [blogImage]=\"data.blogImage\"\r\n          [bloggerImage]=\"data.bloggerImage\"\r\n          [bloggerName]=\"data.bloggerName\"\r\n          [insertedDate]=\"data.insertedDate\"\r\n          [heading]=\"data.heading\"\r\n          [Content]=\"data.Content\"\r\n          [ViewCount]=\"data.ViewCount\"\r\n          [ShareCount]=\"data.ShareCount\"\r\n          [keywords]=\"data.keywords\"\r\n          [exactDate]=\"data.exactDate\"\r\n          [readingTime]=\"data.readingTime\"\r\n          [MetaDesc]=\"data.MetaDesc\"\r\n          [ImageDesc]=\"data.ImageDesc\"\r\n          [PrimaryKeyword]=\"data.PrimaryKeyword\"\r\n          [ShortTitle]=\"data.ShortTitle\">\r\n      </SportSocial-normal-blog>\r\n  </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div #window>\r\n  <div  *ngIf=\"!mobileView\" class=\"relatedBlog\">\r\n    <p >Related Articles</p>\r\n    <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\" >\r\n    <div TabViewAvailable class=\"col-4\" *ngFor=\"let data of relatedBlogDetails;let i=index\">\r\n      <SportSocial-normal-blog \r\n      [blogId]=\"data.blogId\"\r\n      [blogImage]=\"data.blogImage\"\r\n      [bloggerName]=\"data.bloggerName\"\r\n      [insertedDate]=\"data.insertedDate\"\r\n      [heading]=\"data.heading\"\r\n      [viewCount]=\"data.viewCount\"\r\n      [shareCount]=\"data.shareCount\"\r\n      [metaDesc]=\"data.metaDesc\"\r\n      [imageDesc]=\"data.imageDesc\"\r\n      [primaryKeyword]=\"data.primaryKeyword\">\r\n      </SportSocial-normal-blog>\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"mobileView\" class=\"mobileView relatedBlog\">\r\n    <p>Related Articles</p>\r\n    <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecived\" class=\"loading\">\r\n    <div class=\"col-4\" *ngFor=\"let data of relatedBlogDetails;let i=index\">\r\n      <SportSocial-normal-blog \r\n          [blogId]=\"data.blogId\"\r\n          [blogImage]=\"data.blogImage\"\r\n          [bloggerName]=\"data.bloggerName\"\r\n          [insertedDate]=\"data.insertedDate\"\r\n          [heading]=\"data.heading\"\r\n          [viewCount]=\"data.viewCount\"\r\n          [shareCount]=\"data.shareCount\"\r\n          [metaDesc]=\"data.metaDesc\"\r\n          [imageDesc]=\"data.imageDesc\"\r\n          [primaryKeyword]=\"data.primaryKeyword\">\r\n      </SportSocial-normal-blog>\r\n  </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2943,19 +2947,18 @@ var RelatedBlogsComponent = /** @class */ (function () {
                     blogId: data[i].blogId,
                     blogImage: data[i].blogImage,
                     bloggerName: data[i].bloggerName,
-                    bloggerImage: data[i].bloggerImage,
+                    // bloggerImage: data[i].bloggerImage,
                     heading: data[i].heading,
-                    Content: data[i].Content,
+                    //  content: data[i].content,
                     insertedDate: _this.timePassed(data[i].insertedDate),
-                    ViewCount: data[i].ViewCount,
-                    ShareCount: data[i].ShareCount,
-                    keywords: data[i].keywords.split(','),
-                    exactDate: _this.ExactDate(data[i].insertedDate),
-                    readingTime: _this.timeToRead(data[i].Content),
-                    MetaDesc: data[i].MetaDesc == null ? ' ' : data[i].MetaDesc,
-                    ImageDesc: data[i].ImageDesc == null ? ' ' : data[i].ImageDesc,
-                    PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
-                    ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
+                    viewCount: data[i].viewCount,
+                    shareCount: data[i].shareCount,
+                    // keywords: data[i].keywords.split(','),
+                    // exactDate: this.ExactDate(data[i].insertedDate),
+                    // readingTime: this.timeToRead(data[i].Content),
+                    metaDesc: data[i].metaDesc == null ? ' ' : data[i].metaDesc,
+                    imageDesc: data[i].imageDesc == null ? ' ' : data[i].imageDesc,
+                    primaryKeyword: data[i].primaryKeyword == null ? 'sport social' : data[i].primaryKeyword,
                 });
             }
             _this.relatedBlogDetails = relatedBlogDetails;
@@ -4366,13 +4369,14 @@ var EditorPanelComponent = /** @class */ (function () {
                 formData.append(_this.imageName[i], files[i]);
             }
             formData.append('bloggerName', _this.blog.bloggerName);
-            formData.append('blogrTitle', _this.blog.blogTitle);
-            formData.append('blogDesc', _this.blog.blogDesc);
+            formData.append('heading', _this.blog.blogTitle);
+            formData.append('content', _this.blog.blogDesc);
             formData.append('keywords', _this.blog.keywords);
             formData.append('metaDesc', _this.blog.metaDesc);
             formData.append('imageDesc', _this.blog.imageDesc);
-            formData.append('primaryKey', _this.blog.primaryKey);
+            formData.append('topic', _this.blog.primaryKey);
             formData.append('shortTitle', _this.blog.shortTitle);
+            formData.append('readTime', _this.blog.readingTime);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
@@ -4390,6 +4394,7 @@ var EditorPanelComponent = /** @class */ (function () {
     EditorPanelComponent.prototype.upload = function () {
         var _this = this;
         // console.log(this.BlogImage,this.BloggerImage,this.BloggerName,this.title,this.desc,this.shortDesc,this.blogImageDesc);
+        var Content = this.desc.nativeElement.innerHTML;
         this.blogImage = this.BlogImage.nativeElement.files[0];
         this.bloggerImage = this.BloggerImage.nativeElement.files[0];
         this.files = [this.blogImage, this.bloggerImage];
@@ -4403,14 +4408,15 @@ var EditorPanelComponent = /** @class */ (function () {
             metaDesc: this.shortDesc.nativeElement.innerText,
             imageDesc: this.blogImageDesc.nativeElement.innerText,
             primaryKey: this.primaryKey.nativeElement.innerText,
-            shortTitle: this.ShortTitle.nativeElement.innerText
+            shortTitle: this.ShortTitle.nativeElement.innerText,
+            readingTime: this.timeToRead(this.strip(Content)),
         };
         console.log(this.blog);
         this.imageName = ['blogImage', 'bloggerImage'];
         for (var i = 0; i < this.files.length; i++) {
             this.filesToUpload.push(this.files[i]);
         }
-        this.makeFileRequest('https://admin.chaseyoursport.com/blog/saveNewBlog', [], this.filesToUpload)
+        this.makeFileRequest('http://test.chaseyoursport.com:3000/saveNewBlog', [], this.filesToUpload)
             .then(function (result) {
             _this.Result = result;
             console.log(result);
@@ -4716,7 +4722,7 @@ var KeywordsComponent = /** @class */ (function () {
         this.get.keywords().subscribe(function (res) {
             for (var i in res) {
                 _this.keywords.push({
-                    name: res[i].Keyword
+                    name: res[i].keywordName
                 });
             }
         });
@@ -5130,7 +5136,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/search/search.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div  #searchPage>\r\n    <img class=\"loading\" *ngIf=\"!isBrowser\" src=\"/assets/images/sports-social-loading.gif\" >\r\n  <ng-container *ngIf=\"isBrowser\">\r\n    <h2 class=\"topic\">{{recievedKey}} blogs</h2>\r\n    <p class=\"topicDetails\">All you need to know about {{recievedKey}} updates, news, trends and articles </p>\r\n  \r\n  <div class=\"Row\"  *ngIf=\"!mobileView\">\r\n      \r\n    <div TabViewAvailable class=\"col-4\" *ngFor=\"let data of blogDetails\">\r\n      <SportSocial-normal-blog \r\n        [blogId]=\"data.blogId\"\r\n        [blogImage]=\"data.blogImage\"\r\n        [bloggerImage]=\"data.bloggerImage\"\r\n        [bloggerName]=\"data.bloggerName\"\r\n        [insertedDate]=\"data.insertedDate\"\r\n        [heading]=\"data.heading\"\r\n        [Content]=\"data.Content\"\r\n        [ViewCount]=\"data.ViewCount\"\r\n        [ShareCount]=\"data.ShareCount\"\r\n        [keywords]=\"data.keywords\"\r\n        [exactDate]=\"data.exactDate\"\r\n        [readingTime]=\"data.readingTime\"\r\n        [MetaDesc]=\"data.MetaDesc\"\r\n        [ImageDesc]=\"data.ImageDesc\"\r\n        [PrimaryKeyword]=\"data.PrimaryKeyword\"\r\n        [ShortTitle]=\"data.ShortTitle\">\r\n      </SportSocial-normal-blog>\r\n    </div>\r\n    \r\n  </div>\r\n  <div class=\"Row mobileView\" *ngIf=\"mobileView\" >\r\n      <div class=\"col-4\" *ngFor=\"let data of blogDetails;let i=index\">\r\n          <SportSocial-normal-blog \r\n              [blogId]=\"data.blogId\"\r\n              [blogImage]=\"data.blogImage\"\r\n              [bloggerImage]=\"data.bloggerImage\"\r\n              [bloggerName]=\"data.bloggerName\"\r\n              [insertedDate]=\"data.insertedDate\"\r\n              [heading]=\"data.heading\"\r\n              [Content]=\"data.Content\"\r\n              [ViewCount]=\"data.ViewCount\"\r\n              [ShareCount]=\"data.ShareCount\"\r\n              [keywords]=\"data.keywords\"\r\n              [exactDate]=\"data.exactDate\"\r\n              [readingTime]=\"data.readingTime\" \r\n              [MetaDesc]=\"data.MetaDesc\"\r\n              [ImageDesc]=\"data.ImageDesc\"\r\n              [PrimaryKeyword]=\"data.PrimaryKeyword\"\r\n              [ShortTitle]=\"data.ShortTitle\">\r\n          </SportSocial-normal-blog>\r\n      </div>\r\n  </div>\r\n </ng-container>\r\n</div>\r\n<ng-container *ngIf=\"isBrowser\">\r\n  <div *ngIf=\"haveData\">\r\n      <button (click)=\"nextPage()\" *ngIf=\"dataRecieved\">Load More</button>\r\n      <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecieved\" class=\"loading\">\r\n  </div>\r\n  <p *ngIf=\"!haveData\" class=\"noMoreData\" >No More Data !!!</p>         \r\n  <SportSocial-blog-footer *ngIf=\"show\"></SportSocial-blog-footer> \r\n</ng-container>"
+module.exports = "<div  #searchPage>\r\n    <img class=\"loading\" *ngIf=\"!isBrowser\" src=\"/assets/images/sports-social-loading.gif\" >\r\n  <ng-container *ngIf=\"isBrowser\">\r\n    <h2 class=\"topic\">{{recievedKey}} blogs</h2>\r\n    <p class=\"topicDetails\">All you need to know about {{recievedKey}} updates, news, trends and articles </p>\r\n  \r\n  <div class=\"Row\"  *ngIf=\"!mobileView\">\r\n      \r\n    <div TabViewAvailable class=\"col-4\" *ngFor=\"let data of blogDetails\">\r\n      <SportSocial-normal-blog \r\n        [blogId]=\"data.blogId\"\r\n        [blogImage]=\"data.blogImage\"\r\n        [bloggerImage]=\"data.bloggerImage\"\r\n        [bloggerName]=\"data.bloggerName\"\r\n        [insertedDate]=\"data.insertedDate\"\r\n        [heading]=\"data.heading\"\r\n        [content]=\"data.content\"\r\n        [viewCount]=\"data.viewCount\"\r\n        [shareCount]=\"data.shareCount\"\r\n        [keywords]=\"data.keywords\"\r\n        [exactDate]=\"data.exactDate\"\r\n        [readingTime]=\"data.readingTime\"\r\n        [metaDesc]=\"data.metaDesc\"\r\n        [imageDesc]=\"data.imageDesc\"\r\n        [primaryKeyword]=\"data.primaryKeyword\"\r\n        [shortTitle]=\"data.shortTitle\">\r\n      </SportSocial-normal-blog>\r\n    </div>\r\n    \r\n  </div>\r\n  <div class=\"Row mobileView\" *ngIf=\"mobileView\" >\r\n      <div class=\"col-4\" *ngFor=\"let data of blogDetails;let i=index\">\r\n          <SportSocial-normal-blog \r\n            [blogId]=\"data.blogId\"\r\n            [blogImage]=\"data.blogImage\"\r\n            [bloggerImage]=\"data.bloggerImage\"\r\n            [bloggerName]=\"data.bloggerName\"\r\n            [insertedDate]=\"data.insertedDate\"\r\n            [heading]=\"data.heading\"\r\n            [content]=\"data.content\"\r\n            [viewCount]=\"data.viewCount\"\r\n            [shareCount]=\"data.shareCount\"\r\n            [keywords]=\"data.keywords\"\r\n            [exactDate]=\"data.exactDate\"\r\n            [readingTime]=\"data.readingTime\"\r\n            [metaDesc]=\"data.metaDesc\"\r\n            [imageDesc]=\"data.imageDesc\"\r\n            [primaryKeyword]=\"data.primaryKeyword\"\r\n            [shortTitle]=\"data.shortTitle\">\r\n          </SportSocial-normal-blog>\r\n      </div>\r\n  </div>\r\n </ng-container>\r\n</div>\r\n<ng-container *ngIf=\"isBrowser\">\r\n  <div *ngIf=\"haveData\">\r\n      <button (click)=\"nextPage()\" *ngIf=\"dataRecieved\">Load More</button>\r\n      <img src=\"/assets/images/sports-social-loading.gif\" *ngIf=\"!dataRecieved\" class=\"loading\">\r\n  </div>\r\n  <p *ngIf=\"!haveData\" class=\"noMoreData\" >No More Data !!!</p>         \r\n  <SportSocial-blog-footer *ngIf=\"show\"></SportSocial-blog-footer> \r\n</ng-container>"
 
 /***/ }),
 
@@ -5246,19 +5252,18 @@ var SearchComponent = /** @class */ (function () {
                     blogId: data[i].blogId,
                     blogImage: data[i].blogImage,
                     bloggerName: data[i].bloggerName,
-                    bloggerImage: data[i].bloggerImage,
+                    // bloggerImage: data[i].bloggerImage,
                     heading: data[i].heading,
-                    Content: data[i].Content,
+                    // content: data[i].content,
                     insertedDate: _this.timePassed(data[i].insertedDate),
-                    ViewCount: data[i].ViewCount,
-                    ShareCount: data[i].ShareCount,
-                    keywords: data[i].keywords.split(','),
-                    exactDate: _this.ExactDate(data[i].insertedDate),
-                    readingTime: _this.timeToRead(data[i].Content),
-                    MetaDesc: data[i].MetaDesc == null ? ' ' : data[i].MetaDesc,
-                    ImageDesc: data[i].ImageDesc == null ? ' ' : data[i].ImageDesc,
-                    PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
-                    ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
+                    viewCount: data[i].viewCount,
+                    shareCount: data[i].shareCount,
+                    // keywords: data[i].keywords.split(','),
+                    //  exactDate: this.ExactDate(data[i].insertedDate),
+                    // readingTime: this.timeToRead(data[i].Content),
+                    metaDesc: data[i].metaDesc == null ? ' ' : data[i].metaDesc,
+                    imageDesc: data[i].imageDesc == null ? ' ' : data[i].imageDesc,
+                    primaryKeyword: data[i].primaryKeyword == null ? 'sports social' : data[i].primaryKeyword,
                 });
                 _this.keys += blogDetails[i].keywords + ',';
             }
@@ -5267,8 +5272,8 @@ var SearchComponent = /** @class */ (function () {
             _this.keyArray = Array.from(new Set(_this.keyArray));
             _this.keywords = _this.keyArray.toString();
             console.log(_this.keys, _this.keyArray, _this.keywords);
-            _this.setCanonicalURL();
-            _this.setMetaTags();
+            // this.setCanonicalURL();
+            // this.setMetaTags();
         });
     };
     SearchComponent.prototype.recievekeyFromUrl = function () {
@@ -5370,19 +5375,18 @@ var SearchComponent = /** @class */ (function () {
                     blogId: data[i].blogId,
                     blogImage: data[i].blogImage,
                     bloggerName: data[i].bloggerName,
-                    bloggerImage: data[i].bloggerImage,
+                    // bloggerImage: data[i].bloggerImage,
                     heading: data[i].heading,
-                    Content: data[i].Content,
+                    // Content: data[i].Content,
                     insertedDate: _this.timePassed(data[i].insertedDate),
-                    ViewCount: data[i].ViewCount,
-                    ShareCount: data[i].ShareCount,
-                    keywords: data[i].keywords.split(','),
-                    exactDate: _this.ExactDate(data[i].insertedDate),
-                    readingTime: _this.timeToRead(data[i].Content),
-                    MetaDesc: data[i].MetaDesc == null ? ' ' : data[i].MetaDesc,
-                    ImageDesc: data[i].ImageDesc == null ? ' ' : data[i].ImageDesc,
-                    PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
-                    ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
+                    viewCount: data[i].viewCount,
+                    shareCount: data[i].shareCount,
+                    //  keywords: data[i].keywords.split(','),
+                    // exactDate: this.ExactDate(data[i].insertedDate),
+                    //  readingTime: this.timeToRead(data[i].Content),
+                    metaDesc: data[i].metaDesc == null ? ' ' : data[i].metaDesc,
+                    imageDesc: data[i].imageDesc == null ? ' ' : data[i].imageDesc,
+                    primaryKeyword: data[i].primaryKeyword == null ? 'sport social' : data[i].primaryKeyword,
                 });
             }
             // sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))
@@ -5603,7 +5607,7 @@ var GetService = /** @class */ (function () {
         this.http = http;
     }
     GetService.prototype.keywords = function () {
-        return this.http.get('https://admin.chaseyoursport.com/blog/getKeywords')
+        return this.http.get('http://test.chaseyoursport.com:3000/getKeywords')
             .map(function (res) { return res.json(); });
     };
     GetService = __decorate([
@@ -5712,15 +5716,14 @@ var PostService = /** @class */ (function () {
             page: i
         };
         // console.log(this.Page);
-        return this.http.post('https://admin.chaseyoursport.com/blog/loadblogdata', this.Page)
+        return this.http.post('http://test.chaseyoursport.com:3000/loadblogdata', this.Page)
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.ofUser = function (s) {
         this.Email = {
-            userid: '2',
             email: s
         };
-        return this.http.post('https://admin.chaseyoursport.com/blog/subscribeBlog', this.Email)
+        return this.http.post('http://test.chaseyoursport.com:3000/subscribeBlog', this.Email)
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.ofFacebookUser = function (id, name, email, image) {
@@ -5728,7 +5731,6 @@ var PostService = /** @class */ (function () {
             id: id,
             email: email,
             name: name,
-            isFb: '1',
             image: image
         };
         return this.http.post('https://admin.chaseyoursport.com/blog/blogLogin', this.loginDetails)
@@ -5757,7 +5759,7 @@ var PostService = /** @class */ (function () {
             viewcount: count
         };
         // console.log(this.viewCount, 'count');
-        return this.http.post('https://admin.chaseyoursport.com/blog/updateViewCount', this.viewCount)
+        return this.http.post('http://test.chaseyoursport.com:3000/updateViewCount', this.viewCount)
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.shareCountOfBlog = function (id, count) {
@@ -5767,7 +5769,7 @@ var PostService = /** @class */ (function () {
             sharecount: count
         };
         // console.log(this.shareCount, 'count');
-        return this.http.post('https://admin.chaseyoursport.com/blog/updateShareCount', this.shareCount)
+        return this.http.post('http://test.chaseyoursport.com:3000/updateShareCount', this.shareCount)
             .map(function (res) { return res.json(); });
     };
     PostService.prototype.dataOfsingleBlog = function (id) {
@@ -5775,7 +5777,7 @@ var PostService = /** @class */ (function () {
             blogid: id
         };
         // console.log(this.BlogId);
-        return this.http.post('https://admin.chaseyoursport.com/blog/loadSingleBlogData', this.BlogId)
+        return this.http.post('http://test.chaseyoursport.com:3000/loadSingleBlogData', this.BlogId)
             .map(function (response) { return response.json(); });
     };
     PostService.prototype.deleteBlog = function (id) {
@@ -6009,7 +6011,7 @@ var SubscribeCardComponent = /** @class */ (function () {
             this.sendEmail.ofUser(this.subscriber.nativeElement.value)
                 .subscribe(function (res) {
                 // console.log(res.Status)
-                if (res.Status == 'Success') {
+                if (res.response == 'Success') {
                     _this.showSubscriptionBox = true;
                     // console.log(this.showSubscriptionBox)
                     _this.subscriber.nativeElement.value = '';

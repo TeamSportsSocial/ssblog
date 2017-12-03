@@ -6,7 +6,7 @@ import 'rxjs/Rx';
 export class GetService {
   constructor(private http: Http) { }
   keywords() {
-    return this.http.get('https://admin.chaseyoursport.com/blog/getKeywords')
+    return this.http.get('http://test.chaseyoursport.com:3000/getKeywords')
     .map(res => res.json());
   }
 }

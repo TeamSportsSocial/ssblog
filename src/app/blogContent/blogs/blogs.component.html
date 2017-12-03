@@ -6,20 +6,14 @@
         <SportSocial-latest-blog 
             [blogId]="data.blogId"
             [blogImage]="data.blogImage"
-            [bloggerImage]="data.bloggerImage"
             [bloggerName]="data.bloggerName"
             [insertedDate]="data.insertedDate"
             [heading]="data.heading"
-            [Content]="data.Content"
-            [ViewCount]="data.ViewCount"
-            [ShareCount]="data.ShareCount"
-            [keywords]="data.keywords"
-            [exactDate]="data.exactDate"
-            [readingTime]="data.readingTime"
-            [MetaDesc]="data.MetaDesc"
-            [ImageDesc]="data.ImageDesc"
-            [PrimaryKeyword]="data.PrimaryKeyword"
-            [ShortTitle]="data.ShortTitle">
+            [viewCount]="data.viewCount"
+            [shareCount]="data.shareCount"
+            [metaDesc]="data.metaDesc"
+            [imageDesc]="data.imageDesc"
+            [primaryKeyword]="data.primaryKeyword">
         </SportSocial-latest-blog>
     </div>
     <div class="col-8" TabViewAvailable >
@@ -27,22 +21,16 @@
             *ngFor="let data of topBlogDetails;let i=index" 
             [ngClass]="{'col-6':i!=2,'col-12':i===2}">
             <SportSocial-normal-blog 
-                [blogId]="data.blogId"
-                [blogImage]="data.blogImage"
-                [bloggerImage]="data.bloggerImage"
-                [bloggerName]="data.bloggerName"
-                [insertedDate]="data.insertedDate"
-                [heading]="data.heading"
-                [Content]="data.Content"
-                [ViewCount]="data.ViewCount"
-                [ShareCount]="data.ShareCount"
-                [keywords]="data.keywords"
-                [exactDate]="data.exactDate"
-                [readingTime]="data.readingTime"
-                [MetaDesc]="data.MetaDesc"
-                [ImageDesc]="data.ImageDesc"
-                [PrimaryKeyword]="data.PrimaryKeyword"
-                [ShortTitle]="data.ShortTitle">
+            [blogId]="data.blogId"
+            [blogImage]="data.blogImage"
+            [bloggerName]="data.bloggerName"
+            [insertedDate]="data.insertedDate"
+            [heading]="data.heading"
+            [viewCount]="data.viewCount"
+            [shareCount]="data.shareCount"
+            [metaDesc]="data.metaDesc"
+            [imageDesc]="data.imageDesc"
+            [primaryKeyword]="data.primaryKeyword">
             </SportSocial-normal-blog>
         </div>
     </div>        
@@ -53,22 +41,16 @@
         *ngFor="let data of restBlogDetails;let i=index"
         [ngClass]="{'col-8':i%5===0 ,'col-4': i%5!=0}">
         <SportSocial-normal-blog
-            [blogId]="data.blogId"
-            [blogImage]="data.blogImage"
-            [bloggerImage]="data.bloggerImage"
-            [bloggerName]="data.bloggerName"
-            [insertedDate]="data.insertedDate"
-            [heading]="data.heading"
-            [Content]="data.Content"
-            [ViewCount]="data.ViewCount"
-            [ShareCount]="data.ShareCount"
-            [keywords]="data.keywords"
-            [exactDate]="data.exactDate"
-            [readingTime]="data.readingTime"
-            [MetaDesc]="data.MetaDesc"
-            [ImageDesc]="data.ImageDesc"
-            [PrimaryKeyword]="data.PrimaryKeyword"
-            [ShortTitle]="data.ShortTitle">
+        [blogId]="data.blogId"
+        [blogImage]="data.blogImage"
+        [bloggerName]="data.bloggerName"
+        [insertedDate]="data.insertedDate"
+        [heading]="data.heading"
+        [viewCount]="data.viewCount"
+        [shareCount]="data.shareCount"
+        [metaDesc]="data.metaDesc"
+        [imageDesc]="data.imageDesc"
+        [primaryKeyword]="data.primaryKeyword">
         </SportSocial-normal-blog>
     </div>
     
@@ -77,42 +59,30 @@
 <div class="blog mobileView" *ngIf="mobileView" #blog>
     <div class="latestBlog col-4" *ngFor="let data of latestBlogDetails;let i=index" >
         <SportSocial-latest-blog
-            [blogId]="data.blogId"
-            [blogImage]="data.blogImage"
-            [bloggerImage]="data.bloggerImage"
-            [bloggerName]="data.bloggerName"
-            [insertedDate]="data.insertedDate"
-            [heading]="data.heading"
-            [Content]="data.Content"
-            [ViewCount]="data.ViewCount"
-            [ShareCount]="data.ShareCount"
-            [keywords]="data.keywords"
-            [exactDate]="data.exactDate"
-            [readingTime]="data.readingTime"
-            [MetaDesc]="data.MetaDesc"
-            [ImageDesc]="data.ImageDesc"
-            [PrimaryKeyword]="data.PrimaryKeyword"
-            [ShortTitle]="data.ShortTitle">
+        [blogId]="data.blogId"
+        [blogImage]="data.blogImage"
+        [bloggerName]="data.bloggerName"
+        [insertedDate]="data.insertedDate"
+        [heading]="data.heading"
+        [viewCount]="data.viewCount"
+        [shareCount]="data.shareCount"
+        [metaDesc]="data.metaDesc"
+        [imageDesc]="data.imageDesc"
+        [primaryKeyword]="data.primaryKeyword">
         </SportSocial-latest-blog>
     </div>
     <div class="col-4" *ngFor="let data of topBlogDetails;let i=index">
         <SportSocial-normal-blog
-            [blogId]="data.blogId"
-            [blogImage]="data.blogImage"
-            [bloggerImage]="data.bloggerImage"
-            [bloggerName]="data.bloggerName"
-            [insertedDate]="data.insertedDate"
-            [heading]="data.heading"
-            [Content]="data.Content"
-            [ViewCount]="data.ViewCount"
-            [ShareCount]="data.ShareCount"
-            [keywords]="data.keywords"
-            [exactDate]="data.exactDate"
-            [readingTime]="data.readingTime"
-            [MetaDesc]="data.MetaDesc"
-            [ImageDesc]="data.ImageDesc"
-            [PrimaryKeyword]="data.PrimaryKeyword"
-            [ShortTitle]="data.ShortTitle">
+        [blogId]="data.blogId"
+        [blogImage]="data.blogImage"
+        [bloggerName]="data.bloggerName"
+        [insertedDate]="data.insertedDate"
+        [heading]="data.heading"
+        [viewCount]="data.viewCount"
+        [shareCount]="data.shareCount"
+        [metaDesc]="data.metaDesc"
+        [imageDesc]="data.imageDesc"
+        [primaryKeyword]="data.primaryKeyword">
         </SportSocial-normal-blog>
     </div>
     <div class="suscribeCard" *ngIf="show">
@@ -120,22 +90,16 @@
     </div>
     <div class="col-4" *ngFor="let data of restBlogDetails;let i=index">
         <SportSocial-normal-blog 
-            [blogId]="data.blogId"
-            [blogImage]="data.blogImage"
-            [bloggerImage]="data.bloggerImage"
-            [bloggerName]="data.bloggerName"
-            [insertedDate]="data.insertedDate"
-            [heading]="data.heading"
-            [Content]="data.Content"
-            [ViewCount]="data.ViewCount"
-            [ShareCount]="data.ShareCount"
-            [keywords]="data.keywords"
-            [exactDate]="data.exactDate"
-            [readingTime]="data.readingTime"
-            [MetaDesc]="data.MetaDesc"
-            [ImageDesc]="data.ImageDesc"
-            [PrimaryKeyword]="data.PrimaryKeyword"
-            [ShortTitle]="data.ShortTitle">
+        [blogId]="data.blogId"
+        [blogImage]="data.blogImage"
+        [bloggerName]="data.bloggerName"
+        [insertedDate]="data.insertedDate"
+        [heading]="data.heading"
+        [viewCount]="data.viewCount"
+        [shareCount]="data.shareCount"
+        [metaDesc]="data.metaDesc"
+        [imageDesc]="data.imageDesc"
+        [primaryKeyword]="data.primaryKeyword">
         </SportSocial-normal-blog>
     </div>
 </div>

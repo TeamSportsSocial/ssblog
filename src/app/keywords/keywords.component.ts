@@ -59,7 +59,7 @@ export class KeywordsComponent implements OnInit,AfterViewInit {
           for(let i in res){
             this.keywords.push(
             {
-             name:res[i].Keyword
+             name:res[i].keywordName
             }
           )
         }

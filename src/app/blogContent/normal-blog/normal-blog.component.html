@@ -1,6 +1,6 @@
 
   <div class="blog" MaintainHeightWidthRatio #blog >
-    <a routerLink="/{{PrimaryKeyword}}/{{ShortTitle}}/{{blogId}}" (click)="send()">
+    <a routerLink="/{{primaryKeyword}}/{{heading}}/{{blogId}}" (click)="send()">
         <div class="blogImageHolder" #holder>
           <img #initialImage src="/assets/images/default-image.png" alt="InitialblogImage" *ngIf="isloading">
           <img src="{{blogImage}}" title="{{ImageDesc}}" (load)="removeInitialImage()"  (error)="setDefault()" alt="blogImage"  *ngIf="dataRecieved" >
@@ -9,14 +9,14 @@
           <p>
             <span>{{insertedDate}}</span>
             <span>|</span>
-            <span>{{keywords[0]}}</span>
+            <span>{{primaryKeyword}}</span>
             <span>
               <img src="/assets/images/sports-social-view-orange.png" alt="sports-social-view-orange" >
-              {{ViewCount}}
+              {{viewCount}}
             </span>
           </p>
           <p  [innerHtml]="heading" #blogTitle></p>
-          <p  class="content" [innerHtml]="content"></p>
+          <p  class="content" [innerHtml]="metaDesc"></p>
           <p class="bloggerName">
             <img src="/assets/images/sports-social-blogger-black.png"  alt="sports-social-blogger-black">
             {{bloggerName}}

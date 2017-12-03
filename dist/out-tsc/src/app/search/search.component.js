@@ -88,19 +88,18 @@ var SearchComponent = /** @class */ (function () {
                     blogId: data[i].blogId,
                     blogImage: data[i].blogImage,
                     bloggerName: data[i].bloggerName,
-                    bloggerImage: data[i].bloggerImage,
+                    // bloggerImage: data[i].bloggerImage,
                     heading: data[i].heading,
-                    Content: data[i].Content,
+                    // content: data[i].content,
                     insertedDate: _this.timePassed(data[i].insertedDate),
-                    ViewCount: data[i].ViewCount,
-                    ShareCount: data[i].ShareCount,
-                    keywords: data[i].keywords.split(','),
-                    exactDate: _this.ExactDate(data[i].insertedDate),
-                    readingTime: _this.timeToRead(data[i].Content),
-                    MetaDesc: data[i].MetaDesc == null ? ' ' : data[i].MetaDesc,
-                    ImageDesc: data[i].ImageDesc == null ? ' ' : data[i].ImageDesc,
-                    PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
-                    ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
+                    viewCount: data[i].viewCount,
+                    shareCount: data[i].shareCount,
+                    // keywords: data[i].keywords.split(','),
+                    //  exactDate: this.ExactDate(data[i].insertedDate),
+                    // readingTime: this.timeToRead(data[i].Content),
+                    metaDesc: data[i].metaDesc == null ? ' ' : data[i].metaDesc,
+                    imageDesc: data[i].imageDesc == null ? ' ' : data[i].imageDesc,
+                    primaryKeyword: data[i].primaryKeyword == null ? 'sports social' : data[i].primaryKeyword,
                 });
                 _this.keys += blogDetails[i].keywords + ',';
             }
@@ -109,8 +108,8 @@ var SearchComponent = /** @class */ (function () {
             _this.keyArray = Array.from(new Set(_this.keyArray));
             _this.keywords = _this.keyArray.toString();
             console.log(_this.keys, _this.keyArray, _this.keywords);
-            _this.setCanonicalURL();
-            _this.setMetaTags();
+            // this.setCanonicalURL();
+            // this.setMetaTags();
         });
     };
     SearchComponent.prototype.recievekeyFromUrl = function () {
@@ -212,19 +211,18 @@ var SearchComponent = /** @class */ (function () {
                     blogId: data[i].blogId,
                     blogImage: data[i].blogImage,
                     bloggerName: data[i].bloggerName,
-                    bloggerImage: data[i].bloggerImage,
+                    // bloggerImage: data[i].bloggerImage,
                     heading: data[i].heading,
-                    Content: data[i].Content,
+                    // Content: data[i].Content,
                     insertedDate: _this.timePassed(data[i].insertedDate),
-                    ViewCount: data[i].ViewCount,
-                    ShareCount: data[i].ShareCount,
-                    keywords: data[i].keywords.split(','),
-                    exactDate: _this.ExactDate(data[i].insertedDate),
-                    readingTime: _this.timeToRead(data[i].Content),
-                    MetaDesc: data[i].MetaDesc == null ? ' ' : data[i].MetaDesc,
-                    ImageDesc: data[i].ImageDesc == null ? ' ' : data[i].ImageDesc,
-                    PrimaryKeyword: data[i].PrimaryKeyword == null ? data[i].keywords.split(',')[0] : data[i].PrimaryKeyword,
-                    ShortTitle: data[i].ShortTitle == null ? data[i].heading : data[i].ShortTitle
+                    viewCount: data[i].viewCount,
+                    shareCount: data[i].shareCount,
+                    //  keywords: data[i].keywords.split(','),
+                    // exactDate: this.ExactDate(data[i].insertedDate),
+                    //  readingTime: this.timeToRead(data[i].Content),
+                    metaDesc: data[i].metaDesc == null ? ' ' : data[i].metaDesc,
+                    imageDesc: data[i].imageDesc == null ? ' ' : data[i].imageDesc,
+                    primaryKeyword: data[i].primaryKeyword == null ? 'sport social' : data[i].primaryKeyword,
                 });
             }
             // sessionStorage.setItem('searchedBlog',JSON.stringify(this.blogDetails))

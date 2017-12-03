@@ -37,7 +37,7 @@ function View_LatestBlogComponent_2(_l) {
         }, null, null))], null, function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = i1.ɵinlineInterpolate(1, '', _co.blogImage, '');
-        var currVal_1 = i1.ɵinlineInterpolate(1, '', _co.ImageDesc, '');
+        var currVal_1 = i1.ɵinlineInterpolate(1, '', _co.imageDesc, '');
         _ck(_v, 0, 0, currVal_0, currVal_1);
     });
 }
@@ -88,7 +88,7 @@ function View_LatestBlogComponent_0(_l) {
             i1.ɵted(-1, null, ['\n    '])), (_l()(), i1.ɵted(-1, null, ['\n  '])),
         (_l()(), i1.ɵted(-1, null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
-        var currVal_2 = i1.ɵinlineInterpolate(3, '/', _co.PrimaryKeyword, '/', _co.ShortTitle, '/', _co.blogId, '');
+        var currVal_2 = i1.ɵinlineInterpolate(3, '/', _co.primaryKeyword, '/', _co.heading, '/', _co.blogId, '');
         _ck(_v, 12, 0, currVal_2);
         var currVal_3 = _co.isloading;
         _ck(_v, 15, 0, currVal_3);
@@ -99,17 +99,17 @@ function View_LatestBlogComponent_0(_l) {
         var currVal_0 = i1.ɵnov(_v, 12).target;
         var currVal_1 = i1.ɵnov(_v, 12).href;
         _ck(_v, 11, 0, currVal_0, currVal_1);
-        var currVal_5 = _co.ViewCount;
+        var currVal_5 = _co.viewCount;
         _ck(_v, 29, 0, currVal_5);
-        var currVal_6 = _co.ShareCount;
+        var currVal_6 = _co.shareCount;
         _ck(_v, 34, 0, currVal_6);
         var currVal_7 = _co.insertedDate;
         _ck(_v, 40, 0, currVal_7);
-        var currVal_8 = _co.keywords[0];
+        var currVal_8 = _co.primaryKeyword;
         _ck(_v, 46, 0, currVal_8);
         var currVal_9 = _co.heading;
         _ck(_v, 49, 0, currVal_9);
-        var currVal_10 = _co.content;
+        var currVal_10 = _co.metaDesc;
         _ck(_v, 54, 0, currVal_10);
         var currVal_11 = _co.bloggerName;
         _ck(_v, 64, 0, currVal_11);
@@ -131,8 +131,8 @@ function View_LatestBlogComponent_Host_0(_l) {
 }
 exports.View_LatestBlogComponent_Host_0 = View_LatestBlogComponent_Host_0;
 exports.LatestBlogComponentNgFactory = i1.ɵccf('SportSocial-latest-blog', i4.LatestBlogComponent, View_LatestBlogComponent_Host_0, { blogId: 'blogId', blogImage: 'blogImage',
-    bloggerName: 'bloggerName', bloggerImage: 'bloggerImage', heading: 'heading', Content: 'Content',
-    insertedDate: 'insertedDate', ViewCount: 'ViewCount', ShareCount: 'ShareCount',
-    keywords: 'keywords', exactDate: 'exactDate', readingTime: 'readingTime', MetaDesc: 'MetaDesc',
-    ImageDesc: 'ImageDesc', PrimaryKeyword: 'PrimaryKeyword', ShortTitle: 'ShortTitle' }, {}, []);
+    bloggerName: 'bloggerName', bloggerImage: 'bloggerImage', heading: 'heading', content: 'content',
+    insertedDate: 'insertedDate', viewCount: 'viewCount', shareCount: 'shareCount',
+    keywords: 'keywords', exactDate: 'exactDate', readingTime: 'readingTime', metaDesc: 'metaDesc',
+    imageDesc: 'imageDesc', primaryKeyword: 'primaryKeyword', shortTitle: 'shortTitle' }, {}, []);
 //# sourceMappingURL=latest-blog.component.ngfactory.js.map

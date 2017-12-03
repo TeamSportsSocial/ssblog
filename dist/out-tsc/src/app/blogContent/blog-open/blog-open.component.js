@@ -160,34 +160,35 @@ var BlogOpenComponent = /** @class */ (function () {
                 bloggerName: data.bloggerName,
                 bloggerImage: data.bloggerImage,
                 heading: data.heading,
-                Content: (data.Content),
+                content: (data.content),
                 insertedDate: _this.timePassed(data.insertedDate),
-                ViewCount: data.ViewCount,
-                ShareCount: data.ShareCount,
-                keywords: data.keys.split(','),
+                viewCount: data.viewCount,
+                shareCount: data.shareCount,
+                keywords: data.keywords.split(','),
                 exactDate: _this.ExactDate(data.insertedDate),
-                readingTime: _this.timeToRead(data.Content),
-                MetaDesc: data.MetaDesc,
-                ImageDesc: data.ImageDesc == null ? ' ' : data.ImageDesc,
-                PrimaryKeyword: data.PrimaryKeyword == null ? data.keys.split(',')[0] : data.PrimaryKeyword,
-                ShortTilte: data.ShortTilte == null ? data.heading : data.ShortTilte
+                readingTime: data.readTime + 'min read',
+                metaDesc: data.metaDesc,
+                imageDesc: data.imageDesc == null ? ' ' : data.imageDesc,
+                primaryKeyword: data.primaryKeyword == null ? data.keywords.split(',')[0] : data.primaryKeyword,
+                shortTilte: data.shortTilte == null ? data.heading : data.shortTilte
             };
-            if (blog.MetaDesc == null) {
-                blog.MetaDesc = '';
+            console.log(blog);
+            if (blog.metaDesc == null) {
+                blog.metaDesc = '';
             }
-            if (blog.ImageDesc == null) {
-                blog.ImageDesc = '';
+            if (blog.imageDesc == null) {
+                blog.imageDesc = '';
             }
             _this.blog = blog;
-            // console.log(this.blog);
+            console.log(_this.blog);
             _this.Keywords = blog.keywords;
-            _this.content = _this.sanitizer.bypassSecurityTrustHtml(data.Content);
+            _this.content = _this.sanitizer.bypassSecurityTrustHtml(data.content);
             _this.sendKey.ofBlogCard.next(_this.Keywords[_this.Keywords.length - 1]);
-            _this.setCanonivalURL();
-            _this.setMetaTags();
+            // this.setCanonivalURL();
+            // this.setMetaTags();
             _this.setTitle();
-            _this.ShareCount = +blog.ShareCount;
-            _this.ViewCount = +(blog.ViewCount);
+            _this.ShareCount = (+(blog.shareCount) - 1);
+            _this.ViewCount = +(blog.viewCount);
             _this.sendViewCount();
             _this.url = 'https://www.chaseyoursport.com/' + _this.Keywords[0].replace(/\s+/g, '-')
                 + '/' + _this.blog.heading.replace(/\s+/g, '-') + '/' + _this.blogID;

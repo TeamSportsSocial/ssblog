@@ -50,31 +50,21 @@ function View_BlogsComponent_3(_l) {
             return ad;
         }, i2.View_LatestBlogComponent_0, i2.RenderType_LatestBlogComponent)), i1.ɵdid(3, 4308992, null, 0, i3.LatestBlogComponent, [i4.PropertyService, i4.PropertyService,
             i1.Renderer2, i5.PostService, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1,
-                'blogImage'], bloggerName: [2, 'bloggerName'], bloggerImage: [3, 'bloggerImage'],
-            heading: [4, 'heading'], Content: [5, 'Content'], insertedDate: [6, 'insertedDate'],
-            ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
-            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12,
-                'MetaDesc'], ImageDesc: [13, 'ImageDesc'], PrimaryKeyword: [14, 'PrimaryKeyword'],
-            ShortTitle: [15, 'ShortTitle'] }, null), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
+                'blogImage'], bloggerName: [2, 'bloggerName'], heading: [3, 'heading'], insertedDate: [4,
+                'insertedDate'], viewCount: [5, 'viewCount'], shareCount: [6, 'shareCount'],
+            metaDesc: [7, 'metaDesc'], imageDesc: [8, 'imageDesc'], primaryKeyword: [9,
+                'primaryKeyword'] }, null), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerName;
-        var currVal_3 = _v.context.$implicit.bloggerImage;
-        var currVal_4 = _v.context.$implicit.heading;
-        var currVal_5 = _v.context.$implicit.Content;
-        var currVal_6 = _v.context.$implicit.insertedDate;
-        var currVal_7 = _v.context.$implicit.ViewCount;
-        var currVal_8 = _v.context.$implicit.ShareCount;
-        var currVal_9 = _v.context.$implicit.keywords;
-        var currVal_10 = _v.context.$implicit.exactDate;
-        var currVal_11 = _v.context.$implicit.readingTime;
-        var currVal_12 = _v.context.$implicit.MetaDesc;
-        var currVal_13 = _v.context.$implicit.ImageDesc;
-        var currVal_14 = _v.context.$implicit.PrimaryKeyword;
-        var currVal_15 = _v.context.$implicit.ShortTitle;
-        _ck(_v, 3, 1, [currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6,
-            currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13,
-            currVal_14, currVal_15]);
+        var currVal_3 = _v.context.$implicit.heading;
+        var currVal_4 = _v.context.$implicit.insertedDate;
+        var currVal_5 = _v.context.$implicit.viewCount;
+        var currVal_6 = _v.context.$implicit.shareCount;
+        var currVal_7 = _v.context.$implicit.metaDesc;
+        var currVal_8 = _v.context.$implicit.imageDesc;
+        var currVal_9 = _v.context.$implicit.primaryKeyword;
+        _ck(_v, 3, 0, currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7, currVal_8, currVal_9);
     }, null);
 }
 function View_BlogsComponent_4(_l) {
@@ -88,33 +78,23 @@ function View_BlogsComponent_4(_l) {
             }
             return ad;
         }, i7.View_NormalBlogComponent_0, i7.RenderType_NormalBlogComponent)), i1.ɵdid(5, 4308992, null, 0, i8.NormalBlogComponent, [i4.PropertyService, i4.PropertyService,
-            i1.Renderer2, i5.PostService, i4.PropertyService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'], bloggerImage: [2, 'bloggerImage'],
-            bloggerName: [3, 'bloggerName'], heading: [4, 'heading'], insertedDate: [5, 'insertedDate'],
-            Content: [6, 'Content'], ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'],
-            keywords: [9, 'keywords'], exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'],
-            MetaDesc: [12, 'MetaDesc'], ImageDesc: [13, 'ImageDesc'], PrimaryKeyword: [14, 'PrimaryKeyword'],
-            ShortTitle: [15, 'ShortTitle'] }, null), (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵted(-1, null, ['\n        ']))], function (_ck, _v) {
+            i1.Renderer2, i5.PostService, i4.PropertyService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'], bloggerName: [2, 'bloggerName'],
+            heading: [3, 'heading'], insertedDate: [4, 'insertedDate'], viewCount: [5, 'viewCount'],
+            shareCount: [6, 'shareCount'], metaDesc: [7, 'metaDesc'], imageDesc: [8, 'imageDesc'],
+            primaryKeyword: [9, 'primaryKeyword'] }, null), (_l()(), i1.ɵted(-1, null, ['\n            '])), (_l()(), i1.ɵted(-1, null, ['\n        ']))], function (_ck, _v) {
         var currVal_0 = _ck(_v, 2, 0, (_v.context.index != 2), (_v.context.index === 2));
         _ck(_v, 1, 0, currVal_0);
         var currVal_1 = _v.context.$implicit.blogId;
         var currVal_2 = _v.context.$implicit.blogImage;
-        var currVal_3 = _v.context.$implicit.bloggerImage;
-        var currVal_4 = _v.context.$implicit.bloggerName;
-        var currVal_5 = _v.context.$implicit.heading;
-        var currVal_6 = _v.context.$implicit.insertedDate;
-        var currVal_7 = _v.context.$implicit.Content;
-        var currVal_8 = _v.context.$implicit.ViewCount;
-        var currVal_9 = _v.context.$implicit.ShareCount;
-        var currVal_10 = _v.context.$implicit.keywords;
-        var currVal_11 = _v.context.$implicit.exactDate;
-        var currVal_12 = _v.context.$implicit.readingTime;
-        var currVal_13 = _v.context.$implicit.MetaDesc;
-        var currVal_14 = _v.context.$implicit.ImageDesc;
-        var currVal_15 = _v.context.$implicit.PrimaryKeyword;
-        var currVal_16 = _v.context.$implicit.ShortTitle;
-        _ck(_v, 5, 1, [currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7,
-            currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13, currVal_14,
-            currVal_15, currVal_16]);
+        var currVal_3 = _v.context.$implicit.bloggerName;
+        var currVal_4 = _v.context.$implicit.heading;
+        var currVal_5 = _v.context.$implicit.insertedDate;
+        var currVal_6 = _v.context.$implicit.viewCount;
+        var currVal_7 = _v.context.$implicit.shareCount;
+        var currVal_8 = _v.context.$implicit.metaDesc;
+        var currVal_9 = _v.context.$implicit.imageDesc;
+        var currVal_10 = _v.context.$implicit.primaryKeyword;
+        _ck(_v, 5, 0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7, currVal_8, currVal_9, currVal_10);
     }, null);
 }
 function View_BlogsComponent_5(_l) {
@@ -147,33 +127,24 @@ function View_BlogsComponent_6(_l) {
             }, i7.View_NormalBlogComponent_0, i7.RenderType_NormalBlogComponent)),
         i1.ɵdid(6, 4308992, null, 0, i8.NormalBlogComponent, [i4.PropertyService,
             i4.PropertyService, i1.Renderer2, i5.PostService, i4.PropertyService, i1.NgZone,
-            i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'], bloggerImage: [2,
-                'bloggerImage'], bloggerName: [3, 'bloggerName'], heading: [4, 'heading'], insertedDate: [5,
-                'insertedDate'], Content: [6, 'Content'], ViewCount: [7, 'ViewCount'], ShareCount: [8,
-                'ShareCount'], keywords: [9, 'keywords'], exactDate: [10, 'exactDate'], readingTime: [11,
-                'readingTime'], MetaDesc: [12, 'MetaDesc'], ImageDesc: [13, 'ImageDesc'], PrimaryKeyword: [14,
-                'PrimaryKeyword'], ShortTitle: [15, 'ShortTitle'] }, null), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
+            i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'], bloggerName: [2,
+                'bloggerName'], heading: [3, 'heading'], insertedDate: [4, 'insertedDate'], viewCount: [5,
+                'viewCount'], shareCount: [6, 'shareCount'], metaDesc: [7, 'metaDesc'], imageDesc: [8,
+                'imageDesc'], primaryKeyword: [9, 'primaryKeyword'] }, null), (_l()(),
+            i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _ck(_v, 2, 0, ((_v.context.index % 5) === 0), ((_v.context.index % 5) != 0));
         _ck(_v, 1, 0, currVal_0);
         var currVal_1 = _v.context.$implicit.blogId;
         var currVal_2 = _v.context.$implicit.blogImage;
-        var currVal_3 = _v.context.$implicit.bloggerImage;
-        var currVal_4 = _v.context.$implicit.bloggerName;
-        var currVal_5 = _v.context.$implicit.heading;
-        var currVal_6 = _v.context.$implicit.insertedDate;
-        var currVal_7 = _v.context.$implicit.Content;
-        var currVal_8 = _v.context.$implicit.ViewCount;
-        var currVal_9 = _v.context.$implicit.ShareCount;
-        var currVal_10 = _v.context.$implicit.keywords;
-        var currVal_11 = _v.context.$implicit.exactDate;
-        var currVal_12 = _v.context.$implicit.readingTime;
-        var currVal_13 = _v.context.$implicit.MetaDesc;
-        var currVal_14 = _v.context.$implicit.ImageDesc;
-        var currVal_15 = _v.context.$implicit.PrimaryKeyword;
-        var currVal_16 = _v.context.$implicit.ShortTitle;
-        _ck(_v, 6, 1, [currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7,
-            currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13, currVal_14,
-            currVal_15, currVal_16]);
+        var currVal_3 = _v.context.$implicit.bloggerName;
+        var currVal_4 = _v.context.$implicit.heading;
+        var currVal_5 = _v.context.$implicit.insertedDate;
+        var currVal_6 = _v.context.$implicit.viewCount;
+        var currVal_7 = _v.context.$implicit.shareCount;
+        var currVal_8 = _v.context.$implicit.metaDesc;
+        var currVal_9 = _v.context.$implicit.imageDesc;
+        var currVal_10 = _v.context.$implicit.primaryKeyword;
+        _ck(_v, 6, 0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7, currVal_8, currVal_9, currVal_10);
     }, null);
 }
 function View_BlogsComponent_2(_l) {
@@ -219,32 +190,20 @@ function View_BlogsComponent_8(_l) {
             return ad;
         }, i2.View_LatestBlogComponent_0, i2.RenderType_LatestBlogComponent)), i1.ɵdid(3, 4308992, null, 0, i3.LatestBlogComponent, [i4.PropertyService, i4.PropertyService,
             i1.Renderer2, i5.PostService, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1,
-                'blogImage'], bloggerName: [2, 'bloggerName'], bloggerImage: [3, 'bloggerImage'],
-            heading: [4, 'heading'], Content: [5, 'Content'], insertedDate: [6, 'insertedDate'],
-            ViewCount: [7, 'ViewCount'], ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'],
-            exactDate: [10, 'exactDate'], readingTime: [11, 'readingTime'], MetaDesc: [12, 'MetaDesc'],
-            ImageDesc: [13, 'ImageDesc'], PrimaryKeyword: [14, 'PrimaryKeyword'], ShortTitle: [15,
-                'ShortTitle'] }, null), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
+                'blogImage'], bloggerName: [2, 'bloggerName'], heading: [3, 'heading'], insertedDate: [4,
+                'insertedDate'], viewCount: [5, 'viewCount'], shareCount: [6, 'shareCount'], metaDesc: [7,
+                'metaDesc'], imageDesc: [8, 'imageDesc'], primaryKeyword: [9, 'primaryKeyword'] }, null), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
         var currVal_2 = _v.context.$implicit.bloggerName;
-        var currVal_3 = _v.context.$implicit.bloggerImage;
-        var currVal_4 = _v.context.$implicit.heading;
-        var currVal_5 = _v.context.$implicit.Content;
-        var currVal_6 = _v.context.$implicit.insertedDate;
-        var currVal_7 = _v.context.$implicit.ViewCount;
-        var currVal_8 = _v.context.$implicit.ShareCount;
-        var currVal_9 = _v.context.$implicit.keywords;
-        var currVal_10 = _v.context.$implicit.exactDate;
-        var currVal_11 = _v.context.$implicit.readingTime;
-        var currVal_12 = _v.context.$implicit.MetaDesc;
-        var currVal_13 = _v.context.$implicit.ImageDesc;
-        var currVal_14 = _v.context.$implicit.PrimaryKeyword;
-        var currVal_15 = _v.context.$implicit.ShortTitle;
-        _ck(_v, 3, 1, [currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6,
-            currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13,
-            currVal_14, currVal_15]);
+        var currVal_3 = _v.context.$implicit.heading;
+        var currVal_4 = _v.context.$implicit.insertedDate;
+        var currVal_5 = _v.context.$implicit.viewCount;
+        var currVal_6 = _v.context.$implicit.shareCount;
+        var currVal_7 = _v.context.$implicit.metaDesc;
+        var currVal_8 = _v.context.$implicit.imageDesc;
+        var currVal_9 = _v.context.$implicit.primaryKeyword;
+        _ck(_v, 3, 0, currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7, currVal_8, currVal_9);
     }, null);
 }
 function View_BlogsComponent_9(_l) {
@@ -259,33 +218,21 @@ function View_BlogsComponent_9(_l) {
             }
             return ad;
         }, i7.View_NormalBlogComponent_0, i7.RenderType_NormalBlogComponent)), i1.ɵdid(3, 4308992, null, 0, i8.NormalBlogComponent, [i4.PropertyService, i4.PropertyService,
-            i1.Renderer2, i5.PostService, i4.PropertyService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'], bloggerImage: [2, 'bloggerImage'],
-            bloggerName: [3, 'bloggerName'], heading: [4, 'heading'], insertedDate: [5,
-                'insertedDate'], Content: [6, 'Content'], ViewCount: [7, 'ViewCount'],
-            ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'], exactDate: [10, 'exactDate'],
-            readingTime: [11, 'readingTime'], MetaDesc: [12, 'MetaDesc'], ImageDesc: [13,
-                'ImageDesc'], PrimaryKeyword: [14, 'PrimaryKeyword'], ShortTitle: [15,
-                'ShortTitle'] }, null), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
+            i1.Renderer2, i5.PostService, i4.PropertyService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'], bloggerName: [2, 'bloggerName'],
+            heading: [3, 'heading'], insertedDate: [4, 'insertedDate'], viewCount: [5, 'viewCount'],
+            shareCount: [6, 'shareCount'], metaDesc: [7, 'metaDesc'], imageDesc: [8, 'imageDesc'],
+            primaryKeyword: [9, 'primaryKeyword'] }, null), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
-        var currVal_2 = _v.context.$implicit.bloggerImage;
-        var currVal_3 = _v.context.$implicit.bloggerName;
-        var currVal_4 = _v.context.$implicit.heading;
-        var currVal_5 = _v.context.$implicit.insertedDate;
-        var currVal_6 = _v.context.$implicit.Content;
-        var currVal_7 = _v.context.$implicit.ViewCount;
-        var currVal_8 = _v.context.$implicit.ShareCount;
-        var currVal_9 = _v.context.$implicit.keywords;
-        var currVal_10 = _v.context.$implicit.exactDate;
-        var currVal_11 = _v.context.$implicit.readingTime;
-        var currVal_12 = _v.context.$implicit.MetaDesc;
-        var currVal_13 = _v.context.$implicit.ImageDesc;
-        var currVal_14 = _v.context.$implicit.PrimaryKeyword;
-        var currVal_15 = _v.context.$implicit.ShortTitle;
-        _ck(_v, 3, 1, [currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6,
-            currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13,
-            currVal_14, currVal_15]);
+        var currVal_2 = _v.context.$implicit.bloggerName;
+        var currVal_3 = _v.context.$implicit.heading;
+        var currVal_4 = _v.context.$implicit.insertedDate;
+        var currVal_5 = _v.context.$implicit.viewCount;
+        var currVal_6 = _v.context.$implicit.shareCount;
+        var currVal_7 = _v.context.$implicit.metaDesc;
+        var currVal_8 = _v.context.$implicit.imageDesc;
+        var currVal_9 = _v.context.$implicit.primaryKeyword;
+        _ck(_v, 3, 0, currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7, currVal_8, currVal_9);
     }, null);
 }
 function View_BlogsComponent_10(_l) {
@@ -309,33 +256,21 @@ function View_BlogsComponent_11(_l) {
             }
             return ad;
         }, i7.View_NormalBlogComponent_0, i7.RenderType_NormalBlogComponent)), i1.ɵdid(3, 4308992, null, 0, i8.NormalBlogComponent, [i4.PropertyService, i4.PropertyService,
-            i1.Renderer2, i5.PostService, i4.PropertyService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'], bloggerImage: [2, 'bloggerImage'],
-            bloggerName: [3, 'bloggerName'], heading: [4, 'heading'], insertedDate: [5,
-                'insertedDate'], Content: [6, 'Content'], ViewCount: [7, 'ViewCount'],
-            ShareCount: [8, 'ShareCount'], keywords: [9, 'keywords'], exactDate: [10, 'exactDate'],
-            readingTime: [11, 'readingTime'], MetaDesc: [12, 'MetaDesc'], ImageDesc: [13,
-                'ImageDesc'], PrimaryKeyword: [14, 'PrimaryKeyword'], ShortTitle: [15,
-                'ShortTitle'] }, null), (_l()(), i1.ɵted(-1, null, ['\n        '])),
-        (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
+            i1.Renderer2, i5.PostService, i4.PropertyService, i1.NgZone, i1.PLATFORM_ID], { blogId: [0, 'blogId'], blogImage: [1, 'blogImage'], bloggerName: [2, 'bloggerName'],
+            heading: [3, 'heading'], insertedDate: [4, 'insertedDate'], viewCount: [5, 'viewCount'],
+            shareCount: [6, 'shareCount'], metaDesc: [7, 'metaDesc'], imageDesc: [8, 'imageDesc'],
+            primaryKeyword: [9, 'primaryKeyword'] }, null), (_l()(), i1.ɵted(-1, null, ['\n        '])), (_l()(), i1.ɵted(-1, null, ['\n    ']))], function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.blogId;
         var currVal_1 = _v.context.$implicit.blogImage;
-        var currVal_2 = _v.context.$implicit.bloggerImage;
-        var currVal_3 = _v.context.$implicit.bloggerName;
-        var currVal_4 = _v.context.$implicit.heading;
-        var currVal_5 = _v.context.$implicit.insertedDate;
-        var currVal_6 = _v.context.$implicit.Content;
-        var currVal_7 = _v.context.$implicit.ViewCount;
-        var currVal_8 = _v.context.$implicit.ShareCount;
-        var currVal_9 = _v.context.$implicit.keywords;
-        var currVal_10 = _v.context.$implicit.exactDate;
-        var currVal_11 = _v.context.$implicit.readingTime;
-        var currVal_12 = _v.context.$implicit.MetaDesc;
-        var currVal_13 = _v.context.$implicit.ImageDesc;
-        var currVal_14 = _v.context.$implicit.PrimaryKeyword;
-        var currVal_15 = _v.context.$implicit.ShortTitle;
-        _ck(_v, 3, 1, [currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6,
-            currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13,
-            currVal_14, currVal_15]);
+        var currVal_2 = _v.context.$implicit.bloggerName;
+        var currVal_3 = _v.context.$implicit.heading;
+        var currVal_4 = _v.context.$implicit.insertedDate;
+        var currVal_5 = _v.context.$implicit.viewCount;
+        var currVal_6 = _v.context.$implicit.shareCount;
+        var currVal_7 = _v.context.$implicit.metaDesc;
+        var currVal_8 = _v.context.$implicit.imageDesc;
+        var currVal_9 = _v.context.$implicit.primaryKeyword;
+        _ck(_v, 3, 0, currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7, currVal_8, currVal_9);
     }, null);
 }
 function View_BlogsComponent_7(_l) {

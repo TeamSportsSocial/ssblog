@@ -339,13 +339,14 @@ var EditorPanelComponent = /** @class */ (function () {
                 formData.append(_this.imageName[i], files[i]);
             }
             formData.append('bloggerName', _this.blog.bloggerName);
-            formData.append('blogrTitle', _this.blog.blogTitle);
-            formData.append('blogDesc', _this.blog.blogDesc);
+            formData.append('heading', _this.blog.blogTitle);
+            formData.append('content', _this.blog.blogDesc);
             formData.append('keywords', _this.blog.keywords);
             formData.append('metaDesc', _this.blog.metaDesc);
             formData.append('imageDesc', _this.blog.imageDesc);
-            formData.append('primaryKey', _this.blog.primaryKey);
+            formData.append('topic', _this.blog.primaryKey);
             formData.append('shortTitle', _this.blog.shortTitle);
+            formData.append('readTime', _this.blog.readingTime);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
@@ -363,6 +364,7 @@ var EditorPanelComponent = /** @class */ (function () {
     EditorPanelComponent.prototype.upload = function () {
         var _this = this;
         // console.log(this.BlogImage,this.BloggerImage,this.BloggerName,this.title,this.desc,this.shortDesc,this.blogImageDesc);
+        var Content = this.desc.nativeElement.innerHTML;
         this.blogImage = this.BlogImage.nativeElement.files[0];
         this.bloggerImage = this.BloggerImage.nativeElement.files[0];
         this.files = [this.blogImage, this.bloggerImage];
@@ -376,14 +378,15 @@ var EditorPanelComponent = /** @class */ (function () {
             metaDesc: this.shortDesc.nativeElement.innerText,
             imageDesc: this.blogImageDesc.nativeElement.innerText,
             primaryKey: this.primaryKey.nativeElement.innerText,
-            shortTitle: this.ShortTitle.nativeElement.innerText
+            shortTitle: this.ShortTitle.nativeElement.innerText,
+            readingTime: this.timeToRead(this.strip(Content)),
         };
         console.log(this.blog);
         this.imageName = ['blogImage', 'bloggerImage'];
         for (var i = 0; i < this.files.length; i++) {
             this.filesToUpload.push(this.files[i]);
         }
-        this.makeFileRequest('https://admin.chaseyoursport.com/blog/saveNewBlog', [], this.filesToUpload)
+        this.makeFileRequest('http://test.chaseyoursport.com:3000/saveNewBlog', [], this.filesToUpload)
             .then(function (result) {
             _this.Result = result;
             console.log(result);

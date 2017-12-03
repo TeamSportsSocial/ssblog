@@ -27,7 +27,7 @@ var KeywordsComponent = /** @class */ (function () {
         this.get.keywords().subscribe(function (res) {
             for (var i in res) {
                 _this.keywords.push({
-                    name: res[i].Keyword
+                    name: res[i].keywordName
                 });
             }
         });

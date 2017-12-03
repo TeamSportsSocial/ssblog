@@ -19,7 +19,7 @@ var SubscribeCardComponent = /** @class */ (function () {
             this.sendEmail.ofUser(this.subscriber.nativeElement.value)
                 .subscribe(function (res) {
                 // console.log(res.Status)
-                if (res.Status == 'Success') {
+                if (res.response == 'Success') {
                     _this.showSubscriptionBox = true;
                     // console.log(this.showSubscriptionBox)
                     _this.subscriber.nativeElement.value = '';

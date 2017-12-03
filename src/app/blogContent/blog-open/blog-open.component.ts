@@ -194,17 +194,17 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
             bloggerName: string,
             bloggerImage: string,
             heading: string,
-            Content: any,
+            content: any,
             insertedDate: string,
-            ViewCount: string,
-            ShareCount: string,
+            viewCount: string,
+            shareCount: string,
             keywords: string[],
             exactDate: string;
             readingTime: string;
-            MetaDesc: string;
-            ImageDesc: string;
-            PrimaryKeyword: string;
-            ShortTilte: string;
+            metaDesc: string;
+            imageDesc: string;
+            primaryKeyword: string;
+            shortTilte: string;
         };
         this.load.dataOfsingleBlog(this.blogID).subscribe(
             res => {
@@ -222,34 +222,35 @@ export class BlogOpenComponent implements OnInit, AfterViewInit {
                     bloggerName: data.bloggerName,
                     bloggerImage: data.bloggerImage,
                     heading: data.heading,
-                    Content: (data.Content),
+                    content: (data.content),
                     insertedDate: this.timePassed(data.insertedDate),
-                    ViewCount: data.ViewCount,
-                    ShareCount: data.ShareCount,
-                    keywords: data.keys.split(','),
+                    viewCount: data.viewCount,
+                    shareCount: data.shareCount,
+                    keywords: data.keywords.split(','),
                     exactDate: this.ExactDate(data.insertedDate),
-                    readingTime: this.timeToRead(data.Content),
-                    MetaDesc: data.MetaDesc,
-                    ImageDesc: data.ImageDesc == null ? ' ' : data.ImageDesc,
-                    PrimaryKeyword: data.PrimaryKeyword == null ? data.keys.split(',')[0] : data.PrimaryKeyword,
-                    ShortTilte: data.ShortTilte == null ? data.heading : data.ShortTilte
+                    readingTime: data.readTime + 'min read',
+                    metaDesc: data.metaDesc,
+                    imageDesc: data.imageDesc == null ? ' ' : data.imageDesc,
+                    primaryKeyword: data.primaryKeyword == null ? data.keywords.split(',')[0] : data.primaryKeyword,
+                    shortTilte: data.shortTilte == null ? data.heading : data.shortTilte
                 };
-                if (blog.MetaDesc == null) {
-                    blog.MetaDesc = '';
+                console.log(blog)
+                if (blog.metaDesc == null) {
+                    blog.metaDesc = '';
                 }
-                if (blog.ImageDesc == null) {
-                    blog.ImageDesc = '';
+                if (blog.imageDesc == null) {
+                    blog.imageDesc = '';
                 }
                 this.blog = blog;
-                // console.log(this.blog);
+                console.log(this.blog);
                 this.Keywords = blog.keywords;
-                this.content = this.sanitizer.bypassSecurityTrustHtml(data.Content);
+                this.content = this.sanitizer.bypassSecurityTrustHtml(data.content);
                 this.sendKey.ofBlogCard.next(this.Keywords[this.Keywords.length - 1]);
-                this.setCanonivalURL();
-                this.setMetaTags();
+               // this.setCanonivalURL();
+               // this.setMetaTags();
                 this.setTitle();
-                this.ShareCount = + blog.ShareCount;
-                this.ViewCount = + (blog.ViewCount);
+                this.ShareCount = (+( blog.shareCount) - 1);
+                this.ViewCount = + (blog.viewCount);
                 this.sendViewCount();
                 this.url = 'https://www.chaseyoursport.com/' + this.Keywords[0].replace(/\s+/g, '-')
                 + '/' + this.blog.heading.replace(/\s+/g, '-') + '/' + this.blogID;

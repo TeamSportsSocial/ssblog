@@ -23,40 +23,40 @@ import { ɵgetDOM } from '@angular/platform-browser';
 export class LatestBlogComponent implements OnInit {
 
   openFullImage: boolean = false;
-  content:string;
+  Content:string;
   @Input()  blogId:string
   @Input()  blogImage:string
   @Input()  bloggerName:string
   @Input()  bloggerImage:string
   @Input()  heading:string
-  @Input()  Content:string
+  @Input()  content:string
   @Input()  insertedDate:string
-  @Input()  ViewCount:string
-  @Input()  ShareCount: string
+  @Input()  viewCount:string
+  @Input()  shareCount: string
   @Input()  keywords:string[]
   @Input()  exactDate:string
   @Input()  readingTime:string;
-  @Input()  MetaDesc: string;
-  @Input()  ImageDesc: string;
-  @Input() PrimaryKeyword: string;
-  @Input() ShortTitle: string;
+  @Input()  metaDesc: string;
+  @Input()  imageDesc: string;
+  @Input() primaryKeyword: string;
+  @Input() shortTitle: string;
   blog:{
     blogId:string;
     blogImage:string;
     bloggerName:string,
-    bloggerImage:string,
+     // bloggerImage:string,
     heading: string,
-    Content: string,
+    // content: string,
     insertedDate: string,
-    ViewCount: string,
-    ShareCount: string,
-    keywords: string[],
-    exactDate: string,
-    readingTime: string,
-    MetaDesc: string,
-    ImageDesc: string,
-    PrimaryKeyword: string;
-    ShortTitle: string;
+    viewCount: string,
+    shareCount: string,
+    // keywords: string[],
+    // exactDate: string,
+    // readingTime: string,
+    metaDesc: string,
+    imageDesc: string,
+    primaryKeyword: string;
+    // shortTitle: string;
   }
 
   isloading: boolean= true;
@@ -80,24 +80,24 @@ export class LatestBlogComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.content = this.strip( this.Content);
+    this.Content = this.strip( this.content);
     this.blog = {
       blogId: this.blogId,
       blogImage: this.blogImage,
       bloggerName: this.bloggerName,
-      bloggerImage: this.bloggerImage,
+      // bloggerImage: this.bloggerImage,
       heading: this.heading,
-      Content: this.Content,
+       // content: this.content,
       insertedDate: this.insertedDate,
-      ViewCount: this.ViewCount,
-      ShareCount: this.ShareCount,
-      keywords: this.keywords,
-      exactDate: this.exactDate,
-      readingTime: this.readingTime,
-      MetaDesc: this.MetaDesc,
-      ImageDesc: this.ImageDesc,
-      PrimaryKeyword: this.PrimaryKeyword,
-      ShortTitle: this.ShortTitle
+      viewCount: this.viewCount,
+      shareCount: this.shareCount,
+     // keywords: this.keywords,
+      // exactDate: this.exactDate,
+      // readingTime: this.readingTime,
+      metaDesc: this.metaDesc,
+      imageDesc: this.imageDesc,
+      primaryKeyword: this.primaryKeyword,
+      // shortTitle: this.shortTitle
      }
      this.responsiveDesign()
     if (this.blogImage){
